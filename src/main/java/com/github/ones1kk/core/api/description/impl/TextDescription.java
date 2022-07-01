@@ -1,11 +1,11 @@
 package com.github.ones1kk.core.api.description.impl;
 
 import com.github.ones1kk.core.api.description.Description;
-import com.github.ones1kk.core.api.description.constant.Colors;
 
 import javax.annotation.Nullable;
 
-import static com.github.ones1kk.core.api.description.constant.Colors.*;
+import static com.github.ones1kk.core.api.description.constant.Colors.RED;
+import static com.github.ones1kk.core.api.description.constant.Colors.WHITE;
 
 public class TextDescription extends Description {
 

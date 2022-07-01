@@ -2,7 +2,7 @@ package com.github.ones1kk.core.api.description.constant;
 
 public enum Colors {
 
-    RESET( "\033[0m"),
+    RESET("\033[0m"),
     BLACK("\033[0;30m"),
     RED("\033[0;31m"),
     GREEN("\033[0;32m"),
@@ -27,7 +27,7 @@ public enum Colors {
     PURPLE_UNDERLINED("\033[4;35m"),
     CYAN_UNDERLINED("\033[4;36m"),
     WHITE_UNDERLINED("\033[4;37m");
-    
+
     private final String value;
 
     Colors(String value) {
