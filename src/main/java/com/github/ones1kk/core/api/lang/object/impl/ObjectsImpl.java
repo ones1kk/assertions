@@ -15,7 +15,7 @@ public class ObjectsImpl extends AbstractObjects {
     @Override
     public void assertIsNull(Object actual) {
         defaultDescription = describable.describedDefault(actual, null, "");
-        if(actual == null) throw getException();
+        if (actual == null) throw getException();
     }
 
     @Override

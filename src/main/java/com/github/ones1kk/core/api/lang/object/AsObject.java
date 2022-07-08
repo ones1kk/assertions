@@ -1,6 +1,5 @@
 package com.github.ones1kk.core.api.lang.object;
 
-import com.github.ones1kk.core.api.lang.object.AbstractObjectAssert;
 import com.github.ones1kk.core.api.lang.model.ObjectAssert;
 
 import javax.annotation.Nullable;
