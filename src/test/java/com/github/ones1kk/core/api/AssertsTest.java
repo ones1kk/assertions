@@ -1,7 +1,7 @@
 package com.github.ones1kk.core.api;
 
-import com.github.ones1kk.core.api.lang.AbstractObjectAssert;
-import com.github.ones1kk.core.api.lang.model.ObjectAssert;
+import com.github.ones1kk.core.api.lang.object.AbstractObjectAssert;
+import com.github.ones1kk.core.api.lang.object.AsObject;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,12 +16,24 @@ class AssertsTest {
         Object actual = new Object();
 
         // when
-        AbstractObjectAssert<?, Object> asserts = Asserts.that(actual);
+        AsObject asserts = Asserts.that(actual);
 
         //then
-        assertThat(asserts).isInstanceOf(ObjectAssert.class);
         assertThat(asserts).isInstanceOf(AbstractObjectAssert.class);
+        assertThat(asserts).isInstanceOf(AsObject.class);
 
+    }
+
+    @Test
+    @DisplayName("Version of added as() method")
+    public void test2() throws Exception {
+        // given
+        Object actual = new Object();
+
+        // when
+        Asserts.that(actual).as("").isNull();
+
+        //then
     }
 
 }

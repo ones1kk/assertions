@@ -1,6 +1,6 @@
 package com.github.ones1kk.core.api;
 
-import com.github.ones1kk.core.api.lang.AbstractObjectAssert;
+import com.github.ones1kk.core.api.lang.object.AbstractObjectAssert;
 import com.github.ones1kk.core.api.lang.model.ObjectAssert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
