@@ -8,4 +8,6 @@ public interface Describable {
     String describedAs(Supplier<String> description, @Nullable Object... args);
 
     String describedAs(String description, @Nullable Object... args);
+
+    String describedDefault(Object actual, @Nullable Object expected, String description);
 }
