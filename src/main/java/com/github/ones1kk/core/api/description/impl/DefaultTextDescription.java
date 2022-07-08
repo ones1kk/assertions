@@ -7,9 +7,10 @@ import javax.annotation.Nullable;
 import static com.github.ones1kk.core.api.description.constant.Colors.RED;
 import static com.github.ones1kk.core.api.description.constant.Colors.WHITE;
 
-public class TextDescription extends Description {
+public class DefaultTextDescription extends Description {
 
-    public String setDefaultText(Object actual, @Nullable Object expected, String description) {
+    @Override
+    public String describedDefault(Object actual, @Nullable Object expected, String description) {
         if (expected != null) {
             return String.format("%n%sExpected    : %s %n%sActual      : %s%n%sDescription : %s",
                     WHITE.getValue(), RED.getValue() + expected, WHITE.getValue(), RED.getValue() + actual, WHITE.getValue(), RED.getValue() + description);
