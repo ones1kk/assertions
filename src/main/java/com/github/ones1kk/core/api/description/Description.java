@@ -17,13 +17,17 @@ public abstract class Description implements Describable {
 
     private String getFormattingDescription(String description, Object[] args) {
         if (description.contains("{}")) {
-            if (args == null) {
-                throw new IllegalArgumentException("argument is missing");
-            }
+            throwIfNull(args);
             return String.format(description.replace("{}", "%s"), args);
-        } else {
-            return description;
         }
 
+        return description;
     }
+
+    private void throwIfNull(Object[] args) {
+        if (args == null) {
+            throw new IllegalArgumentException("argument is missing");
+        }
+    }
+
 }
