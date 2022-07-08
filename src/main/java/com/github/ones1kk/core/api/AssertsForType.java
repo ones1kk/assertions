@@ -1,11 +1,11 @@
 package com.github.ones1kk.core.api;
 
-import com.github.ones1kk.core.api.lang.AbstractObjectAssert;
-import com.github.ones1kk.core.api.lang.model.ObjectAssert;
+import com.github.ones1kk.core.api.lang.object.AsObject;
 
 public class AssertsForType {
 
-    public static AbstractObjectAssert<?, Object> that(Object actual) {
-        return new ObjectAssert(ObjectAssert.class, actual);
+    public static AsObject that(Object actual) {
+        return new AsObject(AsObject.class, actual);
     }
+
 }
