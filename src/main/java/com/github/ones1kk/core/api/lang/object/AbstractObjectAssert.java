@@ -1,4 +1,4 @@
-package com.github.ones1kk.core.api.lang;
+package com.github.ones1kk.core.api.lang.object;
 
 import com.github.ones1kk.core.api.AbstractAssert;
 
@@ -10,7 +10,7 @@ public class AbstractObjectAssert<SELF extends AbstractAssert<SELF, Object>, ACT
 
     @Override
     public SELF isNull() {
-        return null;
+        return self;
     }
 
     @Override

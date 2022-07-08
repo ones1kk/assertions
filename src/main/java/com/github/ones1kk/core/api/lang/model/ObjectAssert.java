@@ -1,6 +1,6 @@
 package com.github.ones1kk.core.api.lang.model;
 
-import com.github.ones1kk.core.api.lang.AbstractObjectAssert;
+import com.github.ones1kk.core.api.lang.object.AbstractObjectAssert;
 
 public class ObjectAssert extends AbstractObjectAssert<ObjectAssert, Object> {
 
