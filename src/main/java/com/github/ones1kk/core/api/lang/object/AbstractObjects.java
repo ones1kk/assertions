@@ -28,14 +28,15 @@ public abstract class AbstractObjects implements Objects<Object> {
     }
 
     @Override
-    public String describedAs(Supplier<String> description, @Nullable Object... args) {
-        return describable.describedAs(description.get(), args);
+    public String described(Supplier<String> description, @Nullable Object... args) {
+        return describable.described(description.get(), args);
     }
 
     @Override
-    public String describedAs(String description, @Nullable Object... args) {
-        return describable.describedAs(description, args);
+    public String described(String description, @Nullable Object... args) {
+        return describable.described(description, args);
     }
+
 
     protected boolean isEmptyAsDescription() {
         return StringUtils.isEmpty(asDescription);

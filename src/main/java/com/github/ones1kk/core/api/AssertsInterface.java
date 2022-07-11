@@ -8,6 +8,8 @@ public interface AssertsInterface<SELF, ACTUAL> {
 
     SELF isSameAs(ACTUAL expected);
 
+    SELF isNotSameAs(ACTUAL expected);
+
     SELF isEqualTo(ACTUAL expected);
 
     SELF isNotEqualTo(ACTUAL expected);

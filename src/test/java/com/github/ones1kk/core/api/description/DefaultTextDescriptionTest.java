@@ -15,7 +15,7 @@ class DefaultTextDescriptionTest {
         Object expected = new Object();
 
         // when
-        String text = describable.describedDefault(actual, expected, "is can not be null");
+        String text = describable.describedFormat(actual, expected, "is can not be null");
 
         //then
         // It's working well in the format that I want

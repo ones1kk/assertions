@@ -13,14 +13,14 @@ public class ObjectsImpl extends AbstractObjects {
 
     @Override
     public void assertIsNull(Object actual) {
-        defaultDescription = describable.describedDefault(actual, null,
+        defaultDescription = describable.describedFormat(actual, null,
                 String.format("%s is not null", actual));
         if (actual != null) throw getException();
     }
 
     @Override
     public void assertIsNotNull(Object actual) {
-        defaultDescription = describable.describedDefault(actual, null,
+        defaultDescription = describable.describedFormat(actual, null,
                 String.format("%s is null", actual));
         if (actual == null) throw getException();
     }

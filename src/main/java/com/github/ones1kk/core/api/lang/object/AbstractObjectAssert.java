@@ -32,6 +32,11 @@ public class AbstractObjectAssert<SELF extends AbstractAssert<SELF, Object>, ACT
     }
 
     @Override
+    public SELF isNotSameAs(Object expected) {
+        return null;
+    }
+
+    @Override
     public SELF isEqualTo(Object expected) {
         return null;
     }

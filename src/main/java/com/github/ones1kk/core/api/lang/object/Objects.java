@@ -17,8 +17,8 @@ public interface Objects<TYPE> {
 
     void assertIsAssignableFrom(Class<?> expected);
 
-    String describedAs(Supplier<String> description, @Nullable Object... args);
+    String described(Supplier<String> description, @Nullable Object... args);
 
-    String describedAs(String description, @Nullable Object... args);
+    String described(String description, @Nullable Object... args);
 
 }
