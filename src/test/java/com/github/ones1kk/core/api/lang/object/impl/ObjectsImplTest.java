@@ -94,4 +94,28 @@ class ObjectsImplTest {
 
     }
 
+    @Test
+    @DisplayName("Methods test")
+    public void test4() throws Exception {
+        Objects<Object> objects = new ObjectsImpl(describable);
+
+        objects.assertIsSameAs("A", "A");
+        assertThrows(AssertException.class, () -> objects.assertIsSameAs(new String("A"), new String("A")));
+
+        objects.assertIsNotSameAs("A", new String("A"));
+        assertThrows(AssertException.class, () ->  objects.assertIsNotSameAs("A", "A"));
+
+        objects.assertIsEqualTo(new String("A"), new String("A"));
+        assertThrows(AssertException.class, () ->objects.assertIsEqualTo("A", "B"));
+
+        objects.assertIsNotEqualTo("A", "B");
+        assertThrows(AssertException.class, () ->objects.assertIsNotEqualTo("A", "A"));
+
+        objects.assertIsAssignableFrom("A", String.class);
+        assertThrows(AssertException.class, () -> objects.assertIsAssignableFrom("A", Integer.class));
+
+        objects.assertIsNotAssignableFrom("A", Integer.class);
+        assertThrows(AssertException.class, () -> objects.assertIsNotAssignableFrom("A", String.class));
+    }
+
 }
