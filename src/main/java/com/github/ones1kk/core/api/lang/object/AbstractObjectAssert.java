@@ -1,21 +1,29 @@
 package com.github.ones1kk.core.api.lang.object;
 
 import com.github.ones1kk.core.api.AbstractAssert;
+import com.github.ones1kk.core.api.description.Describable;
+import com.github.ones1kk.core.api.description.impl.DefaultTextDescription;
+import com.github.ones1kk.core.api.lang.object.impl.ObjectsImpl;
 
 public class AbstractObjectAssert<SELF extends AbstractAssert<SELF, Object>, ACTUAL> extends AbstractAssert<SELF, Object> {
 
-    protected AbstractObjectAssert(Class<?> self, Object actual) {
+    protected AbstractObjects objects;
+
+    protected AbstractObjectAssert(Class<?> self, Object actual, AbstractObjects objects) {
         super(self, actual);
+        this.objects = objects;
     }
 
     @Override
     public SELF isNull() {
+        objects.assertIsNull(actual);
         return self;
     }
 
     @Override
     public SELF isNotNull() {
-        return null;
+        objects.assertIsNotNull(actual);
+        return self;
     }
 
     @Override

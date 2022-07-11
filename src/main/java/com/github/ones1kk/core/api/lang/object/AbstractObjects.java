@@ -10,12 +10,13 @@ import java.util.function.Supplier;
 
 public abstract class AbstractObjects implements Objects<Object> {
 
-    protected final String asDescription;
+    protected String asDescription;
 
     protected String defaultDescription;
 
-    protected AbstractObjects(Describable describable, String asDescription) {
-        this.asDescription = asDescription;
+    protected final Describable describable;
+
+    protected AbstractObjects() {
         describable = new DefaultTextDescription();
     }
 
@@ -28,12 +29,12 @@ public abstract class AbstractObjects implements Objects<Object> {
 
     @Override
     public String describedAs(Supplier<String> description, @Nullable Object... args) {
-        return null;
+        return describable.describedAs(description.get(), args);
     }
 
     @Override
     public String describedAs(String description, @Nullable Object... args) {
-        return null;
+        return describable.describedAs(description, args);
     }
 
     protected boolean isEmptyAsDescription() {

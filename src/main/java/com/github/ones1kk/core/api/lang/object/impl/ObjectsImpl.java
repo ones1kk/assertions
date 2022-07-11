@@ -7,20 +7,22 @@ public class ObjectsImpl extends AbstractObjects {
 
     private final Describable describable;
 
-    public ObjectsImpl(Describable describable, String asDescription) {
-        super(describable, asDescription);
+    public ObjectsImpl(Describable describable) {
         this.describable = describable;
     }
 
     @Override
     public void assertIsNull(Object actual) {
-        defaultDescription = describable.describedDefault(actual, null, "");
-        if (actual == null) throw getException();
+        defaultDescription = describable.describedDefault(actual, null,
+                String.format("%s is not null", actual));
+        if (actual != null) throw getException();
     }
 
     @Override
     public void assertIsNotNull(Object actual) {
-
+        defaultDescription = describable.describedDefault(actual, null,
+                String.format("%s is null", actual));
+        if (actual == null) throw getException();
     }
 
     @Override
