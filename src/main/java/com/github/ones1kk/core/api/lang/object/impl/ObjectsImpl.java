@@ -13,35 +13,73 @@ public class ObjectsImpl extends AbstractObjects {
 
     @Override
     public void assertIsNull(Object actual) {
-        defaultDescription = describable.describedFormat(actual, null,
-                String.format("%s is not null", actual));
-        if (actual != null) throw getException();
+        if (actual != null) {
+            defaultDescription = describable.describedFormat(actual, null,
+                    String.format("%s is not null", actual));
+            throw getException();
+        }
     }
 
     @Override
     public void assertIsNotNull(Object actual) {
-        defaultDescription = describable.describedFormat(actual, null,
-                String.format("%s is null", actual));
-        if (actual == null) throw getException();
+        if (actual == null) {
+            defaultDescription = describable.describedFormat(actual, null,
+                    String.format("%s is null", actual));
+            throw getException();
+        }
     }
 
     @Override
     public void assertIsSameAs(Object actual, Object expected) {
+        if(actual != expected) {
+            defaultDescription = describable.describedFormat(actual, null,
+                    String.format("%s is not same as %s", actual, expected));
+            throw getException();
+        }
+    }
 
+    @Override
+    public void assertIsNotSameAs(Object actual, Object expected) {
+        if(actual == expected) {
+            defaultDescription = describable.describedFormat(actual, null,
+                    String.format("%s is same as %s", actual, expected));
+            throw getException();
+        }
     }
 
     @Override
     public void assertIsEqualTo(Object actual, Object expected) {
-
+        if(!actual.equals(expected)) {
+            defaultDescription = describable.describedFormat(actual, null,
+                    String.format("%s is not equal to %s", actual, expected));
+            throw getException();
+        }
     }
 
     @Override
     public void assertIsNotEqualTo(Object actual, Object expected) {
-
+        if(actual.equals(expected)) {
+            defaultDescription = describable.describedFormat(actual, null,
+                    String.format("%s is equal to %s", actual, expected));
+            throw getException();
+        }
     }
 
     @Override
-    public void assertIsAssignableFrom(Class<?> expected) {
+    public void assertIsAssignableFrom(Object actual, Class<?> expected) {
+        if(!actual.getClass().isAssignableFrom(expected)) {
+            defaultDescription = describable.describedFormat(actual, null,
+                    String.format("%s is not assignable from %s", actual, expected));
+            throw getException();
+        }
+    }
 
+    @Override
+    public void assertIsNotAssignableFrom(Object actual, Class<?> expected) {
+        if(actual.getClass().isAssignableFrom(expected)) {
+            defaultDescription = describable.describedFormat(actual, null,
+                    String.format("%s is assignable from %s", actual, expected));
+            throw getException();
+        }
     }
 }

@@ -15,4 +15,6 @@ public interface AssertsInterface<SELF, ACTUAL> {
     SELF isNotEqualTo(ACTUAL expected);
 
     SELF isAssignableFrom(Class<?> expected);
+
+    SELF isNotAssignableFrom(Class<?> expected);
 }

@@ -25,26 +25,37 @@ public class AbstractObjectAssert<SELF extends AbstractAssert<SELF, Object>, ACT
 
     @Override
     public SELF isSameAs(Object expected) {
-        return null;
+        objects.assertIsSameAs(actual, expected);
+        return self;
     }
 
     @Override
     public SELF isNotSameAs(Object expected) {
-        return null;
+        objects.assertIsNotSameAs(actual, expected);
+        return self;
     }
 
     @Override
     public SELF isEqualTo(Object expected) {
-        return null;
+        objects.assertIsEqualTo(actual, expected);
+        return self;
     }
 
     @Override
     public SELF isNotEqualTo(Object expected) {
-        return null;
+        objects.assertIsNotEqualTo(actual, expected);
+        return self;
     }
 
     @Override
     public SELF isAssignableFrom(Class<?> expected) {
-        return null;
+        objects.assertIsAssignableFrom(actual, expected);
+        return self;
+    }
+
+    @Override
+    public SELF isNotAssignableFrom(Class<?> expected) {
+        objects.assertIsNotAssignableFrom(actual, expected);
+        return self;
     }
 }
