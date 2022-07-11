@@ -24,16 +24,4 @@ class AssertsTest {
 
     }
 
-    @Test
-    @DisplayName("Version of added as() method")
-    public void test2() throws Exception {
-        // given
-        Object actual = new Object();
-
-        // when
-        Asserts.that(actual).as("").isNull();
-
-        //then
-    }
-
 }
