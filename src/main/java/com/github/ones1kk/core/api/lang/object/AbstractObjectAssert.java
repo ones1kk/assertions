@@ -1,12 +1,13 @@
 package com.github.ones1kk.core.api.lang.object;
 
 import com.github.ones1kk.core.api.AbstractAssert;
+import com.github.ones1kk.core.api.lang.object.impl.ObjectsImpl;
 
 public class AbstractObjectAssert<SELF extends AbstractAssert<SELF, Object>, ACTUAL> extends AbstractAssert<SELF, Object> {
 
-    protected AbstractObjects objects;
+    protected ObjectsImpl objects;
 
-    protected AbstractObjectAssert(Class<?> self, Object actual, AbstractObjects objects) {
+    protected AbstractObjectAssert(Class<?> self, Object actual, ObjectsImpl objects) {
         super(self, actual);
         this.objects = objects;
     }

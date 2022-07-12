@@ -1,14 +1,41 @@
 package com.github.ones1kk.core.api.lang.object.impl;
 
 import com.github.ones1kk.core.api.description.Describable;
-import com.github.ones1kk.core.api.lang.object.AbstractObjects;
+import com.github.ones1kk.core.api.description.impl.DefaultTextDescription;
+import com.github.ones1kk.core.api.lang.object.Objects;
+import com.github.ones1kk.core.exception.AssertException;
+import org.apache.commons.lang3.StringUtils;
 
-public class ObjectsImpl extends AbstractObjects {
+import javax.annotation.Nullable;
+import java.util.function.Supplier;
 
-    private final Describable describable;
+public abstract class ObjectsImpl implements Objects<Object> {
+
+    public String asDescription;
+
+    protected String defaultDescription;
+
+    public final Describable describable;
 
     public ObjectsImpl(Describable describable) {
         this.describable = describable;
+    }
+
+    protected AssertException getException() {
+        if (isEmptyAsDescription()) {
+            return new AssertException(defaultDescription);
+        }
+        return new AssertException(asDescription);
+    }
+
+    @Override
+    public String described(Supplier<String> description, @Nullable Object... args) {
+        return describable.described(description.get(), args);
+    }
+
+    @Override
+    public String described(String description, @Nullable Object... args) {
+        return describable.described(description, args);
     }
 
     @Override
@@ -81,5 +108,9 @@ public class ObjectsImpl extends AbstractObjects {
                     String.format("%s is assignable from %s", actual, expected));
             throw getException();
         }
+    }
+
+    protected boolean isEmptyAsDescription() {
+        return StringUtils.isEmpty(asDescription);
     }
 }

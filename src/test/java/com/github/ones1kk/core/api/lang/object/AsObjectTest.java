@@ -24,7 +24,7 @@ class AsObjectTest {
     @DisplayName("Can use as() & Objects methods? ")
     public void test1() throws Exception {
         // given
-        AbstractObjects objects = new ObjectsImpl(describable);
+        ObjectsImpl objects = new ObjectsImpl(describable);
 
         // when
         AsObject asObject = new AsObject(AsObject.class, new Object(), objects);
