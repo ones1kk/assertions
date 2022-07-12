@@ -1,6 +1,5 @@
 package com.github.ones1kk.asserts.api;
 
-import com.github.ones1kk.asserts.api.lang.model.ObjectAssert;
 import com.github.ones1kk.asserts.api.lang.object.ObjectAssertWrapper;
 
 public class AssertsForType {

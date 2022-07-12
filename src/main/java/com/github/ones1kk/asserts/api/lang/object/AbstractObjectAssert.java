@@ -2,7 +2,6 @@ package com.github.ones1kk.asserts.api.lang.object;
 
 import com.github.ones1kk.asserts.api.AssertFactory;
 import com.github.ones1kk.asserts.api.AssertsInterface;
-import com.github.ones1kk.asserts.api.lang.object.impl.Objects;
 
 public class AbstractObjectAssert<SELF extends AssertsInterface<SELF, Object>, ACTUAL> implements AssertsInterface<SELF, Object> {
 
