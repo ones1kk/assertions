@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.api.description.constant;
+package com.github.ones1kk.asserts.api.feature.print.constant;
 
 public enum Colors {
 
