@@ -1,6 +1,6 @@
-package com.github.ones1kk.core.api.description.impl;
+package com.github.ones1kk.asserts.api.description.impl;
 
-import com.github.ones1kk.core.api.description.Description;
+import com.github.ones1kk.asserts.api.description.Description;
 
 import javax.annotation.Nullable;
 

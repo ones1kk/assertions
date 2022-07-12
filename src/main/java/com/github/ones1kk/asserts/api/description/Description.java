@@ -1,6 +1,6 @@
-package com.github.ones1kk.core.api.description;
+package com.github.ones1kk.asserts.api.description;
 
-import com.github.ones1kk.core.exception.AssertException;
+import com.github.ones1kk.asserts.api.exception.AssertException;
 
 import javax.annotation.Nullable;
 import java.util.function.Supplier;

@@ -1,4 +1,4 @@
-package com.github.ones1kk.core.api;
+package com.github.ones1kk.asserts.api;
 
 public interface AssertsInterface<SELF, ACTUAL> {
 

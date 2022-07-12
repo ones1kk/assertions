@@ -1,4 +1,4 @@
-package com.github.ones1kk.core.exception;
+package com.github.ones1kk.asserts.api.exception;
 
 public class AssertException extends RuntimeException {
 

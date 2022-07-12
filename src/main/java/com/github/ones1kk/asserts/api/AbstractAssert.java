@@ -1,4 +1,4 @@
-package com.github.ones1kk.core.api;
+package com.github.ones1kk.asserts.api;
 
 public abstract class AbstractAssert<SELF extends AssertsInterface<SELF, ACTUAL>, ACTUAL> implements AssertsInterface<SELF, ACTUAL> {
 

@@ -1,4 +1,4 @@
-package com.github.ones1kk.core.api.description;
+package com.github.ones1kk.asserts.api.description;
 
 import javax.annotation.Nullable;
 import java.util.function.Supplier;
