@@ -1,9 +1,8 @@
 package com.github.ones1kk.asserts.api.lang.object;
 
 import com.github.ones1kk.asserts.api.AssertFactory;
-import com.github.ones1kk.asserts.api.AssertsInterface;
 
-public class AbstractObjectAssert<SELF extends AssertsInterface<SELF, Object>, ACTUAL> implements AssertsInterface<SELF, Object> {
+public class AbstractObjectAssert<SELF, ACTUAL> implements ObjectAssertInterface<SELF, Object> {
 
     protected final SELF self;
 
@@ -30,36 +29,43 @@ public class AbstractObjectAssert<SELF extends AssertsInterface<SELF, Object>, A
 
     @Override
     public SELF isNotNull() {
+        objects.assertIsNotNull(actual);
         return self;
     }
 
     @Override
     public SELF isSameAs(Object expected) {
+        objects.assertIsSameAs(actual, expected);
         return self;
     }
 
     @Override
     public SELF isNotSameAs(Object expected) {
+        objects.assertIsNotSameAs(actual, expected);
         return self;
     }
 
     @Override
     public SELF isEqualTo(Object expected) {
+        objects.assertIsEqualTo(actual, expected);
         return self;
     }
 
     @Override
     public SELF isNotEqualTo(Object expected) {
+        objects.assertIsNotEqualTo(actual, expected);
         return self;
     }
 
     @Override
     public SELF isAssignableFrom(Class<?> expected) {
+        objects.assertIsAssignableFrom(actual, expected);
         return self;
     }
 
     @Override
     public SELF isNotAssignableFrom(Class<?> expected) {
+        objects.assertIsNotAssignableFrom(actual, expected);
         return self;
     }
 }
