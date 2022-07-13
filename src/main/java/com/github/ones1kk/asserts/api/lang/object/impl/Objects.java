@@ -11,8 +11,8 @@ public class Objects extends AbstractObjects {
     @Override
     public void assertIsNull(Object actual) {
         if (actual != null) {
-            description = describable.print(actual, null,
-                    String.format("%s is not null", actual));
+            description = printer.writeOutput(actual, null,
+                    describable.as("{} is not null", actual));
             throw getException();
         }
     }
@@ -20,8 +20,8 @@ public class Objects extends AbstractObjects {
     @Override
     public void assertIsNotNull(Object actual) {
         if (actual == null) {
-            description = describable.print(actual, null,
-                    String.format("%s is null", actual));
+            description = printer.writeOutput(actual, null,
+                    describable.as("{} is null", actual));
             throw getException();
         }
     }
@@ -29,8 +29,8 @@ public class Objects extends AbstractObjects {
     @Override
     public void assertIsSameAs(Object actual, Object expected) {
         if (actual != expected) {
-            description = describable.print(actual, null,
-                    String.format("%s is not same as %s", actual, expected));
+            description = printer.writeOutput(actual, null,
+                    describable.as("{} is not same as {}", actual, expected));
             throw getException();
         }
     }
@@ -38,8 +38,8 @@ public class Objects extends AbstractObjects {
     @Override
     public void assertIsNotSameAs(Object actual, Object expected) {
         if (actual == expected) {
-            description = describable.print(actual, null,
-                    String.format("%s is same as %s", actual, expected));
+            description = printer.writeOutput(actual, null,
+                    describable.as("{} is same as {}", actual, expected));
             throw getException();
         }
     }
@@ -47,8 +47,8 @@ public class Objects extends AbstractObjects {
     @Override
     public void assertIsEqualTo(Object actual, Object expected) {
         if (!actual.equals(expected)) {
-            description = describable.print(actual, null,
-                    String.format("%s is not equal to %s", actual, expected));
+            description = printer.writeOutput(actual, null,
+                    describable.as("{} is not equal to {}", actual, expected));
             throw getException();
         }
     }
@@ -56,8 +56,8 @@ public class Objects extends AbstractObjects {
     @Override
     public void assertIsNotEqualTo(Object actual, Object expected) {
         if (actual.equals(expected)) {
-            description = describable.print(actual, null,
-                    String.format("%s is equal to %s", actual, expected));
+            description = printer.writeOutput(actual, null,
+                    describable.as("{} is equal to {}", actual, expected));
             throw getException();
         }
     }
@@ -65,8 +65,8 @@ public class Objects extends AbstractObjects {
     @Override
     public void assertIsAssignableFrom(Object actual, Class<?> expected) {
         if (!actual.getClass().isAssignableFrom(expected)) {
-            description = describable.print(actual, null,
-                    String.format("%s is not assignable from %s", actual, expected));
+            description = printer.writeOutput(actual, null,
+                    describable.as("{} is not assignable from {}", actual, expected));
             throw getException();
         }
     }
@@ -74,8 +74,8 @@ public class Objects extends AbstractObjects {
     @Override
     public void assertIsNotAssignableFrom(Object actual, Class<?> expected) {
         if (actual.getClass().isAssignableFrom(expected)) {
-            description = describable.print(actual, null,
-                    String.format("%s is assignable from %s", actual, expected));
+            description = printer.writeOutput(actual, null,
+                    describable.as("{} is assignable from {}", actual, expected));
             throw getException();
         }
     }
