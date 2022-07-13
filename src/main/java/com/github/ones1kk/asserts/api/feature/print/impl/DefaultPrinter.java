@@ -2,8 +2,6 @@ package com.github.ones1kk.asserts.api.feature.print.impl;
 
 import com.github.ones1kk.asserts.api.feature.print.Printer;
 
-import javax.annotation.Nullable;
-
 import static com.github.ones1kk.asserts.api.feature.print.constant.Colors.RED;
 import static com.github.ones1kk.asserts.api.feature.print.constant.Colors.WHITE;
 
