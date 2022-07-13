@@ -2,6 +2,7 @@ package com.github.ones1kk.asserts.api.description.impl;
 
 import com.github.ones1kk.asserts.api.description.Describable;
 import com.github.ones1kk.asserts.api.exception.AssertException;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 import java.util.function.Supplier;
@@ -27,7 +28,7 @@ public class Description implements Describable {
     }
 
     private void throwIfNull(Object[] args) {
-        if (args == null) {
+        if (ArrayUtils.isEmpty(args) || args == null) {
             throw new AssertException("arguments are missing");
         }
     }

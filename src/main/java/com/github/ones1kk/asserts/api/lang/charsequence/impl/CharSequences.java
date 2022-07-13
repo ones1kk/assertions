@@ -13,8 +13,7 @@ public class CharSequences extends Objects implements CharSequencesInterface<Cha
     @Override
     public void assertIsEmpty(CharSequence actual) {
         if (!StringUtils.isEmpty(actual)) {
-            description = printer.writeOutput(actual, null,
-                    describable.as("{} is not empty", actual));
+            description = printer.writeOutput(actual, describable.as("{} is not empty", actual));
             throw getException();
         }
     }
@@ -22,8 +21,7 @@ public class CharSequences extends Objects implements CharSequencesInterface<Cha
     @Override
     public void assertIsNotEmpty(CharSequence actual) {
         if (StringUtils.isEmpty(actual)) {
-            description = printer.writeOutput(actual, null,
-                    describable.as("{} is empty", actual));
+            description = printer.writeOutput(actual, describable.as("{} is empty", actual));
             throw getException();
         }
     }
@@ -31,8 +29,7 @@ public class CharSequences extends Objects implements CharSequencesInterface<Cha
     @Override
     public void assertIsBlank(CharSequence actual) {
         if (StringUtils.isNotBlank(actual)) {
-            description = printer.writeOutput(actual, null,
-                    describable.as("{} is not blank", actual));
+            description = printer.writeOutput(actual, describable.as("{} is not blank", actual));
         }
         throw getException();
     }
@@ -40,8 +37,7 @@ public class CharSequences extends Objects implements CharSequencesInterface<Cha
     @Override
     public void assertIsNotBlank(CharSequence actual) {
         if (StringUtils.isBlank(actual)) {
-            description = printer.writeOutput(actual, null,
-                    describable.as("{} is blank", actual));
+            description = printer.writeOutput(actual, describable.as("{} is blank", actual));
         }
         throw getException();
     }
@@ -49,8 +45,7 @@ public class CharSequences extends Objects implements CharSequencesInterface<Cha
     @Override
     public void assertIsEqualToIgnoreCase(CharSequence actual, CharSequence expected) {
         if (StringUtils.equalsIgnoreCase(actual, expected)) {
-            description = printer.writeOutput(actual, null,
-                    describable.as("{} is not equal as ignore case", actual));
+            description = printer.writeOutput(actual, describable.as("{} is not equal as ignore case", actual));
         }
         throw getException();
     }

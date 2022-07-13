@@ -5,13 +5,11 @@ import com.github.ones1kk.asserts.api.wrapper.impl.ObjectAssertWrapper;
 
 public class AssertsForType {
 
-    private final static String INIT = "";
-
     public static ObjectAssertWrapper that(Object actual) {
-        return new ObjectAssertWrapper(actual, INIT);
+        return new ObjectAssertWrapper(actual);
     }
 
     public static CharSequenceAssertWrapper that(CharSequence actual) {
-        return new CharSequenceAssertWrapper(actual, INIT);
+        return new CharSequenceAssertWrapper(actual);
     }
 }

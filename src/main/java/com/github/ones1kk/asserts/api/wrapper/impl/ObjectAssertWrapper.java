@@ -21,6 +21,10 @@ public class ObjectAssertWrapper extends AbstractObjectAssert<ObjectAssert, Obje
         super(ObjectAssertWrapper.class, actual, asDescription);
     }
 
+    public ObjectAssertWrapper(Object actual) {
+        this(actual, null);
+    }
+
     @Override
     public ObjectAssert as(Supplier<String> description, @Nullable Object... args) {
         String asDescription = describable.as(description, args);

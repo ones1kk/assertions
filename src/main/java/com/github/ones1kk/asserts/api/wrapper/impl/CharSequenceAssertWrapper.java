@@ -21,6 +21,11 @@ public class CharSequenceAssertWrapper extends AbstractCharSequenceAssert<CharSe
         super(CharSequenceAssertWrapper.class, actual, asDescription);
     }
 
+
+    public CharSequenceAssertWrapper(CharSequence actual) {
+        this(actual, null);
+    }
+
     @Override
     public CharSequenceAssert as(Supplier<String> description, @Nullable Object... args) {
         String asDescription = describable.as(description, args);
