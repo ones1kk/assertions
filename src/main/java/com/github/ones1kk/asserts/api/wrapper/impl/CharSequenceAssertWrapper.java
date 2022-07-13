@@ -18,7 +18,7 @@ public class CharSequenceAssertWrapper extends AbstractCharSequenceAssert<CharSe
     protected final Printer printer = new DefaultPrinter();
 
     public CharSequenceAssertWrapper(CharSequence actual, String asDescription) {
-        super(CharSequenceAssert.class, actual, asDescription);
+        super(CharSequenceAssertWrapper.class, actual, asDescription);
     }
 
     @Override

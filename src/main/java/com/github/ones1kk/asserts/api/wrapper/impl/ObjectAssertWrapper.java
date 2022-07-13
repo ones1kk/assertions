@@ -18,7 +18,7 @@ public class ObjectAssertWrapper extends AbstractObjectAssert<ObjectAssert, Obje
     protected final Printer printer = new DefaultPrinter();
 
     public ObjectAssertWrapper(Object actual, String asDescription) {
-        super(ObjectAssert.class, actual, asDescription);
+        super(ObjectAssertWrapper.class, actual, asDescription);
     }
 
     @Override
