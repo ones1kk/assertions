@@ -5,11 +5,11 @@ import com.github.ones1kk.asserts.api.lang.object.impl.Objects;
 
 public final class AssertFactory {
 
-    public Objects createAssert(Object actual, String asDescription) {
-        return new Objects(asDescription);
+    public Objects<Object> createAssert(Object actual, AsAssert<?> asAssert) {
+        return new Objects<>(actual, asAssert);
     }
 
-    public CharSequences createAssert(CharSequence actual, String asDescription) {
-        return new CharSequences(asDescription);
+    public CharSequences createAssert(CharSequence actual, AsAssert<?> asAssert) {
+        return new CharSequences(actual, asAssert);
     }
 }
