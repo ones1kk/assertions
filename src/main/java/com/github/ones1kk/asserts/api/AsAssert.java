@@ -1,12 +1,7 @@
 package com.github.ones1kk.asserts.api;
 
-import com.github.ones1kk.asserts.api.description.Describable;
 import com.github.ones1kk.asserts.api.description.DescriptionHandler;
-import com.github.ones1kk.asserts.api.description.impl.Description;
 import com.github.ones1kk.asserts.api.exception.AssertException;
-import com.github.ones1kk.asserts.api.feature.print.Printer;
-import com.github.ones1kk.asserts.api.feature.print.impl.DefaultPrinter;
-import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.Nullable;
 import java.util.function.Supplier;
@@ -42,7 +37,7 @@ public class AsAssert<SELF> implements AsAssertInterface<SELF> {
     }
 
     public AssertException getException() {
-       return handler.getException();
+        return handler.getException();
     }
 
 }

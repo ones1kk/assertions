@@ -22,6 +22,7 @@ public class DescriptionHandler {
         }
         return new AssertException(asDescription);
     }
+
     private boolean isEmptyAsDescription() {
         return StringUtils.isEmpty(asDescription);
     }
