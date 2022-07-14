@@ -16,4 +16,9 @@ public class DefaultPrinter implements Printer {
         return String.format("%n%sActual      : %s%n%sDescription : %s", WHITE.getValue(), RED.getValue() + actual,
                 WHITE.getValue(), RED.getValue() + description);
     }
+
+    @Override
+    public String writeOutput(String description) {
+        return String.format("%n%sDescription : %s", WHITE.getValue(), RED.getValue() + description);
+    }
 }
