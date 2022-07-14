@@ -1,24 +1,23 @@
 package com.github.ones1kk.asserts.api.lang.object;
 
+import com.github.ones1kk.asserts.api.AbstractAssert;
 import com.github.ones1kk.asserts.api.AssertFactory;
 
-public class AbstractObjectAssert<SELF, ACTUAL> implements ObjectAssertInterface<SELF, Object> {
+public class AbstractObjectAssert<SELF, ACTUAL> extends AbstractAssert<SELF, Object> {
 
     protected final SELF self;
 
     protected final ACTUAL actual;
 
-    protected final String asDescription;
-
     protected final AssertFactory assertFactory = new AssertFactory();
 
-    private final ObjectsInterface<Object> objects;
+    protected final AbstractObjects<Object> objects;
 
-    protected AbstractObjectAssert(Class<?> self, ACTUAL actual, String asDescription) {
+    public AbstractObjectAssert(Class<?> self, ACTUAL actual) {
+        super(self);
         this.self = (SELF) self.cast(this);
         this.actual = actual;
-        this.asDescription = asDescription;
-        this.objects = assertFactory.createAssert(actual, asDescription);
+        this.objects = assertFactory.createAssert(actual, this);
     }
 
     @Override
