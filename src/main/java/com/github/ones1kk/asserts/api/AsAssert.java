@@ -18,22 +18,22 @@ public class AsAssert<SELF> implements AsAssertInterface<SELF> {
 
     @Override
     public SELF as(Supplier<String> description, @Nullable Object... args) {
-        handler.setAsDescription(handler.getPrinter().writeOutput(handler.getDescribable().as(description, args)));
+        handler.setAsDescription(handler.from(description.get(), args));
         return self;
     }
 
     @Override
     public SELF as(String description, @Nullable Object... args) {
-        handler.setAsDescription(handler.getPrinter().writeOutput(handler.getDescribable().as(description, args)));
+        handler.setAsDescription(handler.from(description, args));
         return self;
     }
 
     public void setDescription(Object actual, Object expected, String description) {
-        handler.setDescription(handler.getPrinter().writeOutput(actual, expected, handler.getDescribable().as(description, actual, expected)));
+        handler.setDescription(handler.from(actual, expected, description));
     }
 
     public void setDescription(Object actual, String description) {
-        handler.setDescription(handler.getPrinter().writeOutput(actual, handler.getDescribable().as(description, actual)));
+        handler.setDescription(handler.from(actual, description));
     }
 
     public AssertException getException() {

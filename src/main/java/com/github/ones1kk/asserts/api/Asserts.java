@@ -16,5 +16,4 @@ public class Asserts {
         return AssertsForType.that(actual);
     }
 
-
 }
