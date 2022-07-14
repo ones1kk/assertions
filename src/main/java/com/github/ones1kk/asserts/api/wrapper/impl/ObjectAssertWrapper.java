@@ -11,29 +11,23 @@ import com.github.ones1kk.asserts.api.wrapper.AssertWrapper;
 import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
-public class ObjectAssertWrapper extends AbstractObjectAssert<ObjectAssert, Object> implements AssertWrapper<ObjectAssert> {
+@Deprecated
+public class ObjectAssertWrapper implements AssertWrapper<ObjectAssert> {
 
     protected final Describable describable = new Description();
 
     protected final Printer printer = new DefaultPrinter();
 
-    public ObjectAssertWrapper(Object actual, String asDescription) {
-        super(ObjectAssertWrapper.class, actual, asDescription);
-    }
-
-    public ObjectAssertWrapper(Object actual) {
-        this(actual, null);
-    }
 
     @Override
     public ObjectAssert as(Supplier<String> description, @Nullable Object... args) {
         String asDescription = describable.as(description, args);
-        return new ObjectAssert(actual, printer.writeOutput(actual, asDescription));
+        return null;
     }
 
     @Override
     public ObjectAssert as(String description, @Nullable Object... args) {
         String asDescription = describable.as(description, args);
-        return new ObjectAssert(actual, printer.writeOutput(actual, asDescription));
+        return null;
     }
 }

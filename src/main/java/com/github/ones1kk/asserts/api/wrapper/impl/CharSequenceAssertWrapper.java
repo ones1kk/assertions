@@ -11,30 +11,24 @@ import com.github.ones1kk.asserts.api.wrapper.AssertWrapper;
 import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
-public class CharSequenceAssertWrapper extends AbstractCharSequenceAssert<CharSequenceAssert, CharSequence> implements AssertWrapper<CharSequenceAssert> {
+@Deprecated
+public class CharSequenceAssertWrapper implements AssertWrapper<CharSequenceAssert> {
 
     protected final Describable describable = new Description();
 
     protected final Printer printer = new DefaultPrinter();
 
-    public CharSequenceAssertWrapper(CharSequence actual, String asDescription) {
-        super(CharSequenceAssertWrapper.class, actual, asDescription);
-    }
 
-
-    public CharSequenceAssertWrapper(CharSequence actual) {
-        this(actual, null);
-    }
 
     @Override
     public CharSequenceAssert as(Supplier<String> description, @Nullable Object... args) {
         String asDescription = describable.as(description, args);
-        return new CharSequenceAssert(actual, printer.writeOutput(actual, asDescription));
+        return null;
     }
 
     @Override
     public CharSequenceAssert as(String description, @Nullable Object... args) {
         String asDescription = describable.as(description, args);
-        return new CharSequenceAssert(actual, printer.writeOutput(actual, asDescription));
+        return null;
     }
 }
