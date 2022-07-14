@@ -4,8 +4,6 @@ import com.github.ones1kk.asserts.api.feature.print.Printer;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class DefaultPrinterTest {
 
     @Test

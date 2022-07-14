@@ -4,7 +4,6 @@ import com.github.ones1kk.asserts.api.description.Describable;
 import com.github.ones1kk.asserts.api.description.impl.Description;
 import com.github.ones1kk.asserts.api.feature.print.Printer;
 import com.github.ones1kk.asserts.api.feature.print.impl.DefaultPrinter;
-import com.github.ones1kk.asserts.api.lang.charsequence.AbstractCharSequenceAssert;
 import com.github.ones1kk.asserts.api.lang.model.CharSequenceAssert;
 import com.github.ones1kk.asserts.api.wrapper.AssertWrapper;
 
@@ -17,7 +16,6 @@ public class CharSequenceAssertWrapper implements AssertWrapper<CharSequenceAsse
     protected final Describable describable = new Description();
 
     protected final Printer printer = new DefaultPrinter();
-
 
 
     @Override

@@ -12,7 +12,7 @@ public class Objects<ACTUAL> extends AbstractObjects<Object> {
     @Override
     public void assertIsNull(Object actual) {
         if (actual != null) {
-            asAssert.setDescription(actual,"{} is not null");
+            asAssert.setDescription(actual, "{} is not null");
             throw asAssert.getException();
         }
     }
@@ -20,7 +20,7 @@ public class Objects<ACTUAL> extends AbstractObjects<Object> {
     @Override
     public void assertIsNotNull(Object actual) {
         if (actual == null) {
-            asAssert.setDescription(actual,"{} is null");
+            asAssert.setDescription(actual, "{} is null");
             throw asAssert.getException();
         }
     }

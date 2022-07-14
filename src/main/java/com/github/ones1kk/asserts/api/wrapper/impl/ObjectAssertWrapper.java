@@ -5,7 +5,6 @@ import com.github.ones1kk.asserts.api.description.impl.Description;
 import com.github.ones1kk.asserts.api.feature.print.Printer;
 import com.github.ones1kk.asserts.api.feature.print.impl.DefaultPrinter;
 import com.github.ones1kk.asserts.api.lang.model.ObjectAssert;
-import com.github.ones1kk.asserts.api.lang.object.AbstractObjectAssert;
 import com.github.ones1kk.asserts.api.wrapper.AssertWrapper;
 
 import javax.annotation.Nullable;

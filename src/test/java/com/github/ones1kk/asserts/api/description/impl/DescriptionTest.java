@@ -2,12 +2,11 @@ package com.github.ones1kk.asserts.api.description.impl;
 
 import com.github.ones1kk.asserts.api.description.Describable;
 import com.github.ones1kk.asserts.api.exception.AssertException;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class DescriptionTest {
 

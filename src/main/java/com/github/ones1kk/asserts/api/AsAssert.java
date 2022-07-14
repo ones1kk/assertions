@@ -48,7 +48,7 @@ public class AsAssert<SELF> implements AsAssertInterface<SELF> {
     }
 
     public AssertException getException() {
-        if(isEmptyAsDescription()) {
+        if (isEmptyAsDescription()) {
             return new AssertException(description);
         }
         return new AssertException(asDescription);
