@@ -2,7 +2,7 @@ package com.github.ones1kk.asserts.api.lang.charsequence;
 
 import com.github.ones1kk.asserts.api.lang.object.AbstractObjectAssert;
 
-public class AbstractCharSequenceAssert<SELF extends AbstractCharSequenceAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, CharSequence> implements CharSequenceAssertInterface<SELF, CharSequence> {
+public class AbstractCharSequenceAssert<SELF extends AbstractCharSequenceAssert<SELF, ACTUAL>, ACTUAL extends CharSequence> extends AbstractObjectAssert<SELF, CharSequence> implements CharSequenceAssertInterface<SELF, CharSequence> {
 
     private final CharSequencesInterface<CharSequence> charSequences;
 

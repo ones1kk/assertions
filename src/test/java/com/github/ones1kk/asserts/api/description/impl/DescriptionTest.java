@@ -1,13 +1,9 @@
 package com.github.ones1kk.asserts.api.description.impl;
 
-import com.github.ones1kk.asserts.api.Asserts;
 import com.github.ones1kk.asserts.api.description.Describable;
 import com.github.ones1kk.asserts.api.exception.AssertException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
