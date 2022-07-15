@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.api.feature;
+package com.github.ones1kk.asserts.api.feature.comparable;
 
 public interface ComparableAssert<TYPE> {
 
