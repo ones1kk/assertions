@@ -12,7 +12,7 @@ public class AsAssert<SELF> implements AsAssertInterface<SELF> {
 
     private final SELF self;
 
-    protected AsAssert(Class<?> self) {
+    public AsAssert(Class<?> self) {
         this.self = (SELF) self.cast(this);
     }
 
