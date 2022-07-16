@@ -3,14 +3,13 @@ package com.github.ones1kk.asserts.api;
 import com.github.ones1kk.asserts.api.lang.charsequence.impl.CharSequences;
 import com.github.ones1kk.asserts.api.lang.object.impl.Objects;
 import com.github.ones1kk.asserts.api.lang.string.impl.Strings;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class AssertFactoryTest {
 
