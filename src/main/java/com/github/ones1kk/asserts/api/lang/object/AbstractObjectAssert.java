@@ -15,7 +15,7 @@ public class AbstractObjectAssert<SELF, ACTUAL> extends AbstractAssert<SELF, Obj
 
     public AbstractObjectAssert(Class<?> self, ACTUAL actual) {
         super(self);
-        this.self = (SELF) self.cast(this);
+        this.self = (SELF) self;
         this.actual = actual;
         this.objects = assertFactory.createAssert(actual, this);
     }

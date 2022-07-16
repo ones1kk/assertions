@@ -13,7 +13,7 @@ public class AsAssert<SELF> implements AsAssertInterface<SELF> {
     private final SELF self;
 
     public AsAssert(Class<?> self) {
-        this.self = (SELF) self.cast(this);
+        this.self = (SELF) self;
     }
 
     @Override
