@@ -5,8 +5,8 @@ import com.github.ones1kk.asserts.api.lang.object.AbstractObjects;
 
 public class Objects<ACTUAL> extends AbstractObjects<Object> {
 
-    public Objects(ACTUAL actual, AsAssert<?> asAssert) {
-        super(actual, asAssert);
+    public Objects(AsAssert<?> asAssert) {
+        super(asAssert);
     }
 
     @Override

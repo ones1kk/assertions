@@ -9,7 +9,7 @@ public abstract class AbstractObjects<ACTUAL> implements ObjectsInterface<Object
 
     protected final DescriptionHandler handler;
 
-    protected AbstractObjects(ACTUAL actual, AsAssert<?> asAssert) {
+    protected AbstractObjects(AsAssert<?> asAssert) {
         this.asAssert = asAssert;
         this.handler = asAssert.handler;
     }

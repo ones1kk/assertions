@@ -7,8 +7,8 @@ import org.apache.commons.lang3.StringUtils;
 
 public class CharSequences extends Objects<CharSequence> implements CharSequencesInterface<CharSequence> {
 
-    public CharSequences(CharSequence actual, AsAssert<?> asAssert) {
-        super(actual, asAssert);
+    public CharSequences( AsAssert<?> asAssert) {
+        super(asAssert);
     }
 
     @Override

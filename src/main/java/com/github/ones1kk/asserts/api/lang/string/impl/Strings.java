@@ -10,8 +10,8 @@ public class Strings extends CharSequences implements StringsInterface<String> {
 
     private final ComparableCalculatorInterface<String> calculator = new StringCalculator();
 
-    public Strings(CharSequence actual, AsAssert<?> asAssert) {
-        super(actual, asAssert);
+    public Strings(AsAssert<?> asAssert) {
+        super(asAssert);
     }
 
     @Override
