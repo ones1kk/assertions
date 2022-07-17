@@ -1,7 +1,6 @@
 package com.github.ones1kk.asserts.api.lang.object;
 
 import com.github.ones1kk.asserts.api.exception.AssertException;
-import com.github.ones1kk.asserts.api.lang.model.ObjectAssert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,8 +13,8 @@ class AbstractObjectAssertTest {
     public void test1() throws Exception {
         // given
         Object actual = new Object();
-        AbstractObjectAssert<Object, Object> asset1 = new AbstractObjectAssert<>(ObjectAssert.class, actual);
-        AbstractObjectAssert<Object, Object> assert2 = new AbstractObjectAssert<>(ObjectAssert.class, null);
+        AbstractObjectAssert<?, Object> asset1 = new AbstractObjectAssert<>(Object.class, actual);
+        AbstractObjectAssert<?, Object> assert2 = new AbstractObjectAssert<>(Object.class, null);
 
         //then
         assert2.isNull();
