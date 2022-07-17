@@ -3,7 +3,7 @@ package com.github.ones1kk.asserts.api.lang.object;
 import com.github.ones1kk.asserts.api.AbstractAssert;
 import com.github.ones1kk.asserts.api.AssertFactory;
 
-public class AbstractObjectAssert<SELF, ACTUAL> extends AbstractAssert<SELF, Object> {
+public class AbstractObjectAssert<SELF extends AbstractAssert<SELF, Object>, ACTUAL> extends AbstractAssert<SELF, Object> {
 
     protected final SELF self;
 
@@ -15,7 +15,7 @@ public class AbstractObjectAssert<SELF, ACTUAL> extends AbstractAssert<SELF, Obj
 
     public AbstractObjectAssert(Class<?> self, ACTUAL actual) {
         super(self);
-        this.self = (SELF) self;
+        this.self = (SELF) self.cast(this);
         this.actual = actual;
         this.objects = assertFactory.createAssert(actual, this);
     }

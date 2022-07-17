@@ -14,40 +14,40 @@ public class CharSequences extends Objects<CharSequence> implements CharSequence
     @Override
     public void assertIsEmpty(CharSequence actual) {
         if (!StringUtils.isEmpty(actual)) {
-            asAssert.setDescription(actual, "{} is not empty");
-            throw asAssert.getException();
+            handler.setDescription(handler.from(actual, "{} is not empty"));
+            throw handler.getException();
         }
     }
 
     @Override
     public void assertIsNotEmpty(CharSequence actual) {
         if (StringUtils.isEmpty(actual)) {
-            asAssert.setDescription(actual, "{} is empty");
-            throw asAssert.getException();
+            handler.setDescription(handler.from(actual, "{} is empty"));
+            throw handler.getException();
         }
     }
 
     @Override
     public void assertIsBlank(CharSequence actual) {
         if (StringUtils.isNotBlank(actual)) {
-            asAssert.setDescription(actual, "{} is not blank");
-            throw asAssert.getException();
+            handler.setDescription(handler.from(actual, "{} is not blank"));
+            throw handler.getException();
         }
     }
 
     @Override
     public void assertIsNotBlank(CharSequence actual) {
         if (StringUtils.isBlank(actual)) {
-            asAssert.setDescription(actual, "{} is blank");
-            throw asAssert.getException();
+            handler.setDescription(handler.from(actual, "{} is blank"));
+            throw handler.getException();
         }
     }
 
     @Override
     public void assertIsEqualToIgnoreCase(CharSequence actual, CharSequence expected) {
         if (!StringUtils.equalsIgnoreCase(actual, expected)) {
-            asAssert.setDescription(actual, expected, "{} is not equal as ignore case with {}");
-            throw asAssert.getException();
+            handler.setDescription(handler.from(actual, expected, "{} is not equal as ignore case with {}"));
+            throw handler.getException();
         }
     }
 }
