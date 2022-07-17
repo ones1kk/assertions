@@ -13,30 +13,30 @@ class AbstractObjectAssertTest {
     public void test1() throws Exception {
         // given
         Object actual = new Object();
-        AbstractObjectAssert<?, Object> asset1 = new AbstractObjectAssert<>(Object.class, actual);
-        AbstractObjectAssert<?, Object> assert2 = new AbstractObjectAssert<>(Object.class, null);
+        AbstractObjectAssert<?, Object> assert1 = new AbstractObjectAssert<>(AbstractObjectAssert.class, actual);
+        AbstractObjectAssert<?, Object> assert2 = new AbstractObjectAssert<>(AbstractObjectAssert.class, null);
 
         //then
         assert2.isNull();
-        assertThrows(AssertException.class, asset1::isNull);
+        assertThrows(AssertException.class, assert1::isNull);
 
-        asset1.isNotNull();
+        assert1.isNotNull();
         assertThrows(AssertException.class, assert2::isNotNull);
 
-        asset1.isSameAs(actual);
-        assertThrows(AssertException.class, () -> asset1.isSameAs(asset1));
+        assert1.isSameAs(actual);
+        assertThrows(AssertException.class, () -> assert1.isSameAs(assert1));
 
-        asset1.isNotSameAs(asset1);
-        assertThrows(AssertException.class, () -> asset1.isNotSameAs(actual));
+        assert1.isNotSameAs(assert1);
+        assertThrows(AssertException.class, () -> assert1.isNotSameAs(actual));
 
-        asset1.isEqualTo(actual);
-        assertThrows(AssertException.class, () -> asset1.isEqualTo(asset1));
+        assert1.isEqualTo(actual);
+        assertThrows(AssertException.class, () -> assert1.isEqualTo(assert1));
 
-        asset1.isNotEqualTo(asset1);
-        assertThrows(AssertException.class, () -> asset1.isNotEqualTo(actual));
+        assert1.isNotEqualTo(assert1);
+        assertThrows(AssertException.class, () -> assert1.isNotEqualTo(actual));
 
-        asset1.isAssignableFrom(Object.class);
-        asset1.isAssignableFrom(String.class);
+        assert1.isAssignableFrom(Object.class);
+        assert1.isAssignableFrom(String.class);
 
         // Caution : Object can't test about notAssignableFrom method
 

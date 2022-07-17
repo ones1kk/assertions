@@ -44,31 +44,29 @@ class AbstractCharSequenceAssertTest {
     public void test2() throws Exception {
         // given
         CharSequence actual1 = "actual";
-        CharSequence actual2 = null;
-        CharSequence actual3 = "";
-        CharSequence actual4 = " ";
+        CharSequence actual2 = "";
+        CharSequence actual3= " ";
 
         // when
         AbstractCharSequenceAssert<?, CharSequence> assert1 = new AbstractCharSequenceAssert<>(AbstractCharSequenceAssert.class, actual1);
         AbstractCharSequenceAssert<?, CharSequence> assert2 = new AbstractCharSequenceAssert<>(AbstractCharSequenceAssert.class, actual2);
         AbstractCharSequenceAssert<?, CharSequence> assert3 = new AbstractCharSequenceAssert<>(AbstractCharSequenceAssert.class, actual3);
-        AbstractCharSequenceAssert<?, CharSequence> assert4 = new AbstractCharSequenceAssert<>(AbstractCharSequenceAssert.class, actual4);
 
         // then
-        assert3.isEmpty();
+        assert2.isEmpty();
         assertThrows(AssertException.class, assert1::isEmpty);
 
         assert1.isNotEmpty();
-        assertThrows(AssertException.class, assert3::isNotEmpty);
+        assertThrows(AssertException.class, assert2::isNotEmpty);
 
-        assert4.isBlank();
+        assert3.isBlank();
         assertThrows(AssertException.class, assert1::isBlank);
 
         assert1.isNotBlank();
-        assertThrows(AssertException.class, assert4::isNotBlank);
+        assertThrows(AssertException.class, assert3::isNotBlank);
 
         assert1.isEqualToIgnoreCase("ACTUAL");
-        assertThrows(AssertException.class, () -> assert4.isEqualToIgnoreCase(actual1));
+        assertThrows(AssertException.class, () -> assert3.isEqualToIgnoreCase(actual1));
     }
 
 }
