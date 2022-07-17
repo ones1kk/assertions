@@ -9,12 +9,15 @@ class DefaultPrinterTest {
     @Test
     @DisplayName("Check format of output")
     void test1() {
-        // given
         Printer printer = new DefaultPrinter();
+        String result1 = printer.writeOutput("test", "test", "test is equal to test");
+        String result2 = printer.writeOutput("printer test");
+        String result3 = printer.writeOutput("test", "test");
 
-        // when
-//        printer.writeOutput()
-        // then
+        System.out.println(result1);
+        System.out.println(result2);
+        System.out.println(result3);
+
     }
 
 }

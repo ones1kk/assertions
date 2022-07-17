@@ -35,7 +35,10 @@ class AbstractObjectAssertTest {
         asset1.isNotEqualTo(asset1);
         assertThrows(AssertException.class, () -> asset1.isNotEqualTo(actual));
 
-        // Caution : Object can't test about assignableFrom method
+        asset1.isAssignableFrom(Object.class);
+        asset1.isAssignableFrom(String.class);
+
+        // Caution : Object can't test about notAssignableFrom method
 
     }
 
