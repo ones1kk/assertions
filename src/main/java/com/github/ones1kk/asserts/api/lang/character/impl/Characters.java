@@ -16,7 +16,7 @@ public class Characters extends Objects<Character> implements CharactersInterfac
 
     @Override
     public void assertIsLowerCase(Character actual) {
-        if(!Character.isLowerCase(actual)) {
+        if (!Character.isLowerCase(actual)) {
             handler.setDescription(handler.from(actual, "{} is not lower case"));
             throw handler.getException();
         }
@@ -25,7 +25,7 @@ public class Characters extends Objects<Character> implements CharactersInterfac
 
     @Override
     public void assertIsNotLowerCase(Character actual) {
-        if(Character.isLowerCase(actual)) {
+        if (Character.isLowerCase(actual)) {
             handler.setDescription(handler.from(actual, "{} is lower case"));
             throw handler.getException();
         }
@@ -33,7 +33,7 @@ public class Characters extends Objects<Character> implements CharactersInterfac
 
     @Override
     public void assertIsUpperCase(Character actual) {
-        if(!Character.isUpperCase(actual)) {
+        if (!Character.isUpperCase(actual)) {
             handler.setDescription(handler.from(actual, "{} is not upper case"));
             throw handler.getException();
         }
@@ -41,7 +41,7 @@ public class Characters extends Objects<Character> implements CharactersInterfac
 
     @Override
     public void assertIsNotUpperCase(Character actual) {
-        if(Character.isUpperCase(actual)) {
+        if (Character.isUpperCase(actual)) {
             handler.setDescription(handler.from(actual, "{} is upper case"));
             throw handler.getException();
         }
@@ -49,7 +49,7 @@ public class Characters extends Objects<Character> implements CharactersInterfac
 
     @Override
     public void assertIsLetter(Character actual) {
-        if(!Character.isLetter(actual)) {
+        if (!Character.isLetter(actual)) {
             handler.setDescription(handler.from(actual, "{} is not letter"));
             throw handler.getException();
         }
@@ -57,7 +57,7 @@ public class Characters extends Objects<Character> implements CharactersInterfac
 
     @Override
     public void assertIsNotLetter(Character actual) {
-        if(Character.isLetter(actual)) {
+        if (Character.isLetter(actual)) {
             handler.setDescription(handler.from(actual, "{} is letter"));
             throw handler.getException();
         }
@@ -65,7 +65,7 @@ public class Characters extends Objects<Character> implements CharactersInterfac
 
     @Override
     public void assertIsDigit(Character actual) {
-        if(!Character.isDigit(actual)) {
+        if (!Character.isDigit(actual)) {
             handler.setDescription(handler.from(actual, "{} is not digit"));
             throw handler.getException();
         }
@@ -73,7 +73,7 @@ public class Characters extends Objects<Character> implements CharactersInterfac
 
     @Override
     public void assertIsNotDigit(Character actual) {
-        if(Character.isDigit(actual)) {
+        if (Character.isDigit(actual)) {
             handler.setDescription(handler.from(actual, "{} is digit"));
             throw handler.getException();
         }
@@ -81,7 +81,7 @@ public class Characters extends Objects<Character> implements CharactersInterfac
 
     @Override
     public void assertIsWhitespace(Character actual) {
-        if(!Character.isWhitespace(actual)) {
+        if (!Character.isWhitespace(actual)) {
             handler.setDescription(handler.from(actual, "{} is not whitespace"));
             throw handler.getException();
         }
@@ -89,7 +89,7 @@ public class Characters extends Objects<Character> implements CharactersInterfac
 
     @Override
     public void assertIsNotWhitespace(Character actual) {
-        if(Character.isWhitespace(actual)) {
+        if (Character.isWhitespace(actual)) {
             handler.setDescription(handler.from(actual, "{} is whitespace"));
             throw handler.getException();
         }
