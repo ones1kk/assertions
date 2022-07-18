@@ -4,19 +4,19 @@ import com.github.ones1kk.asserts.api.feature.Offset;
 
 public interface NumerableAssert<SELF, ACTUAL extends Number> {
 
-    SELF isPositive(ACTUAL actual);
+    SELF isPositive();
 
-    SELF isNotPositive(ACTUAL actual);
+    SELF isNotPositive();
 
-    SELF isNegative(ACTUAL actual);
+    SELF isNegative();
 
-    SELF isNotNegative(ACTUAL actual);
+    SELF isNotNegative();
 
-    SELF isZero(ACTUAL actual);
+    SELF isZero();
 
-    SELF isNotZero(ACTUAL actual);
+    SELF isNotZero();
 
-    SELF isCloseTo(ACTUAL actual, ACTUAL expected, Offset<ACTUAL> offset);
+    SELF isCloseTo(ACTUAL expected, Offset<ACTUAL> offset);
 
-    SELF isNotCloseTo(ACTUAL actual, ACTUAL expected, Offset<ACTUAL> offset);
+    SELF isNotCloseTo(ACTUAL expected, Offset<ACTUAL> offset);
 }
