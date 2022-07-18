@@ -16,7 +16,7 @@ class AssertsTest {
         // given
         AbstractObjectAssert<?, Object> actual1 = Asserts.that(new Object());
         AbstractCharSequenceAssert<?, CharSequence> actual2 = Asserts.that((CharSequence) "actual2");
-        AbstractStringAssert<?, String> actual3 = Asserts.that("actual3");
+        AbstractStringAssert<?> actual3 = Asserts.that("actual3");
 
         //then
         assertThat(actual1).isInstanceOf(AbstractObjectAssert.class);
