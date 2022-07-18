@@ -1,15 +1,15 @@
 package com.github.ones1kk.asserts.api.feature.comparable;
 
-public interface Comparable<SELF, ACTUAL> {
+public interface Comparable<TYPE> {
 
-    SELF isLessThan(ACTUAL actual, ACTUAL expected);
+    void assertIsLessThan(TYPE actual, TYPE expected);
 
-    SELF isLessThanOrEqualTo(ACTUAL actual, ACTUAL expected);
+    void assertIsLessThanOrEqualTo(TYPE actual, TYPE expected);
 
-    SELF isGreaterThan(ACTUAL actual, ACTUAL expected);
+    void assertIsGreaterThan(TYPE actual, TYPE expected);
 
-    SELF isGreaterThanOrEqualTo(ACTUAL actual, ACTUAL expected);
+    void assertIsGreaterThanOrEqualTo(TYPE actual, TYPE expected);
 
-    SELF isBetween(ACTUAL actual, ACTUAL start, ACTUAL end);
+    void assertIsBetween(TYPE actual, TYPE start, TYPE end);
 
 }
