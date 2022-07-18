@@ -17,7 +17,7 @@ public class AssertsForType {
         return new CharSequenceAssert(actual);
     }
 
-    public static AbstractStringAssert<?, String> that(String actual) {
+    public static AbstractStringAssert<?> that(String actual) {
         return new StringAssert(actual);
     }
 

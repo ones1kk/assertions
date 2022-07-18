@@ -17,7 +17,7 @@ public class Asserts {
         return AssertsForType.that(actual);
     }
 
-    public static AbstractStringAssert<?, String> that(String actual) {
+    public static AbstractStringAssert<?> that(String actual) {
         return AssertsForType.that(actual);
     }
 
