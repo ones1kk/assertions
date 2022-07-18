@@ -1,7 +1,6 @@
 package com.github.ones1kk.asserts.api.lang.charsequence;
 
 import com.github.ones1kk.asserts.api.exception.AssertException;
-import com.github.ones1kk.asserts.api.lang.string.AbstractStringAssert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

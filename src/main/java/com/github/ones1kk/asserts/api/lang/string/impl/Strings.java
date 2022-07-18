@@ -49,7 +49,7 @@ public class Strings extends CharSequences implements StringsInterface<String> {
     @Override
     public void assertIsBetween(String actual, String start, String end) {
         if (calculator.isLessThan(actual, start) || calculator.isGraterThan(actual, end)) {
-            String description = handler.from("{} is not between {} and {}",  actual, start, end);
+            String description = handler.from("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();
         }
