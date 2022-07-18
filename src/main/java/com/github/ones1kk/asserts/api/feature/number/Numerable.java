@@ -1,6 +1,8 @@
-package com.github.ones1kk.asserts.api.feature;
+package com.github.ones1kk.asserts.api.feature.number;
 
-public interface NumberAssert<TYPE extends Number> {
+import com.github.ones1kk.asserts.api.feature.Offset;
+
+public interface Numerable<TYPE extends Number> {
 
     void assertIsPositive(TYPE actual);
 
