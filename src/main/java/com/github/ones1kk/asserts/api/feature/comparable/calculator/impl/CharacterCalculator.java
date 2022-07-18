@@ -5,22 +5,22 @@ import com.github.ones1kk.asserts.api.feature.comparable.calculator.ComparableCa
 public class CharacterCalculator implements ComparableCalculatorInterface<Character> {
 
     @Override
-    public boolean isGraterThan(Character character, Character expected) {
-        return false;
+    public boolean isGraterThan(Character actual, Character expected) {
+        return actual.compareTo(expected) >= 0;
     }
 
     @Override
-    public boolean isLessThan(Character character, Character expected) {
-        return false;
+    public boolean isLessThan(Character actual, Character expected) {
+        return actual.compareTo(expected) <= 0;
     }
 
     @Override
-    public boolean isLessThanOrEqualTo(Character character, Character expected) {
-        return false;
+    public boolean isLessThanOrEqualTo(Character actual, Character expected) {
+        return actual.compareTo(expected) < 0;
     }
 
     @Override
-    public boolean isGraterThanOrEqualTo(Character character, Character expected) {
-        return false;
+    public boolean isGraterThanOrEqualTo(Character actual, Character expected) {
+        return actual.compareTo(expected) > 0;
     }
 }

@@ -2,7 +2,7 @@ package com.github.ones1kk.asserts.api.lang.character;
 
 import com.github.ones1kk.asserts.api.lang.object.AbstractObjectAssert;
 
-public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Character> implements CharacterAssertInterface<SELF, Character> {
+public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Character> implements CharacterAssertInterface<SELF> {
 
     private final CharactersInterface<Character> characters;
 

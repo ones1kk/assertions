@@ -2,7 +2,7 @@ package com.github.ones1kk.asserts.api.lang.character;
 
 import com.github.ones1kk.asserts.api.feature.comparable.ComparableAssert;
 
-public interface CharacterAssertInterface<SELF, ACTUAL> extends ComparableAssert<SELF, Character> {
+public interface CharacterAssertInterface<SELF> extends ComparableAssert<SELF, Character> {
 
     SELF isLowerCase();
 
