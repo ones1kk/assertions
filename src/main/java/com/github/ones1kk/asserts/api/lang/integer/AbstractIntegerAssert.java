@@ -13,6 +13,30 @@ public class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<SELF, ACTU
     }
 
     @Override
+    public SELF isOdd() {
+        integers.assertIsOdd(actual);
+        return self;
+    }
+
+    @Override
+    public SELF isNotOdd() {
+        integers.assertIsNotOdd(actual);
+        return self;
+    }
+
+    @Override
+    public SELF isEven() {
+        integers.assertIsEven(actual);
+        return self;
+    }
+
+    @Override
+    public SELF isNotEven() {
+        integers.assertIsNotEven(actual);
+        return self;
+    }
+
+    @Override
     public SELF isPositive() {
         integers.assertIsPositive(actual);
         return self;
