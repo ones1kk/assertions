@@ -49,4 +49,7 @@ public final class DescriptionHandler {
         this.description = description;
     }
 
+    public Describable getDescribable() {
+        return describable;
+    }
 }

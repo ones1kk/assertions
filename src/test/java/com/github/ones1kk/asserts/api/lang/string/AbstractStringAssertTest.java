@@ -40,7 +40,7 @@ class AbstractStringAssertTest {
     }
 
     @Test
-    @DisplayName("Strings test")
+    @DisplayName("String method test")
     public void test2() throws Exception {
         // given
         String actual1 = "actual";
