@@ -3,9 +3,10 @@ package com.github.ones1kk.asserts.api.lang.lng;
 import com.github.ones1kk.asserts.api.feature.Offset;
 import com.github.ones1kk.asserts.api.lang.object.AbstractObjectAssert;
 
-public class AbstractLongAssert<SELF extends  AbstractLongAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Long> implements LongAssertInterface<SELF> {
+public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Long> implements LongAssertInterface<SELF> {
 
     private final LongsInterface<Long> longs;
+
     public AbstractLongAssert(Class<?> self, Long actual) {
         super(self, actual);
         this.longs = assertFactory.createAssert(actual, this);
