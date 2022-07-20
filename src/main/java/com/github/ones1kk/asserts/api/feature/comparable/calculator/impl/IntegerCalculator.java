@@ -6,21 +6,21 @@ public class IntegerCalculator implements ComparableCalculatorInterface<Integer>
 
     @Override
     public boolean isGraterThan(Integer actual, Integer expected) {
-        return false;
+        return Integer.compare(actual, expected) == 1;
     }
 
     @Override
     public boolean isLessThan(Integer actual, Integer expected) {
-        return false;
+        return Integer.compare(actual, expected) == -1;
     }
 
     @Override
     public boolean isLessThanOrEqualTo(Integer actual, Integer expected) {
-        return false;
+        return (Integer.compare(actual, expected) == -1 || Integer.compare(actual, expected) == 0);
     }
 
     @Override
     public boolean isGraterThanOrEqualTo(Integer actual, Integer expected) {
-        return false;
+        return (Integer.compare(actual, expected) == 1 || Integer.compare(actual, expected) == 0);
     }
 }
