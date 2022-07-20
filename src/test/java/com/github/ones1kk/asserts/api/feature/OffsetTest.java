@@ -19,8 +19,11 @@ class OffsetTest {
         // then
         assertThat(offset.getValue()).isEqualTo(3)
                 .isNotNull()
-                .isInstanceOf(Offset.class);
-        assertThat(value).isNotNull();
+                .isInstanceOf(Integer.class);
+
+        assertThat(offset)
+                .isInstanceOf(Offset.class)
+                .isNotNull();
     }
 
 }
