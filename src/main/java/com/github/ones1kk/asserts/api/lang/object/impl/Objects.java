@@ -73,4 +73,12 @@ public class Objects<ACTUAL> extends AbstractObjects<Object> {
         }
     }
 
+    @Override
+    public void assertIsInstanceOf(Object actual, Class<?> expected) {
+        if (!expected.isInstance(actual)) {
+            handler.setDescription(handler.from(actual, expected, "{} is not instance of {}"));
+            throw handler.getException();
+        }
+    }
+
 }

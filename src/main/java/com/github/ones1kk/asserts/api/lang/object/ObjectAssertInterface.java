@@ -17,4 +17,6 @@ public interface ObjectAssertInterface<SELF, ACTUAL> {
     SELF isAssignableFrom(Class<?> expected);
 
     SELF isNotAssignableFrom(Class<?> expected);
+
+    SELF isInstanceOf(Class<?> expected);
 }

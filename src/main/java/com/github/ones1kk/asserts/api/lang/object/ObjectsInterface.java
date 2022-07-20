@@ -18,4 +18,6 @@ public interface ObjectsInterface<TYPE> {
 
     void assertIsNotAssignableFrom(TYPE actual, Class<?> expected);
 
+    void assertIsInstanceOf(TYPE actual, Class<?> expected);
+
 }
