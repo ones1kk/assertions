@@ -39,6 +39,7 @@ class ObjectsTest {
         assertThrows(Exception.class, () -> objects.assertIsNotSameAs(actual1, actual1));
         assertThrows(Exception.class, () -> objects.assertIsEqualTo(actual1, actual2));
         assertThrows(Exception.class, () -> objects.assertIsNotEqualTo(actual1, actual1));
+        assertThrows(Exception.class, () -> objects.assertIsInstanceOf(actual2, Object.class));
 
         objects.assertIsNull(actual2);
         objects.assertIsNotNull(actual1);
@@ -48,6 +49,7 @@ class ObjectsTest {
         objects.assertIsNotEqualTo(actual1, actual3);
         objects.assertIsAssignableFrom(actual1, Object.class);
         objects.assertIsAssignableFrom(actual1, String.class);
+        objects.assertIsInstanceOf(actual1, Object.class);
 
         // Caution : Object can't test about notAssignableFrom method
     }

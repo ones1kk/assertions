@@ -38,6 +38,9 @@ class AbstractObjectAssertTest {
         assert1.isAssignableFrom(Object.class);
         assert1.isAssignableFrom(String.class);
 
+        assert1.isInstanceOf(Object.class);
+        assertThrows(AssertException.class, () -> assert2.isInstanceOf(Object.class));
+
         // Caution : Object can't test about notAssignableFrom method
 
     }
