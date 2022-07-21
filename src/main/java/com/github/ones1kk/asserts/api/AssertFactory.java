@@ -5,6 +5,7 @@ import com.github.ones1kk.asserts.api.lang.charsequence.impl.CharSequences;
 import com.github.ones1kk.asserts.api.lang.integer.impl.Integers;
 import com.github.ones1kk.asserts.api.lang.lng.impl.Longs;
 import com.github.ones1kk.asserts.api.lang.object.impl.Objects;
+import com.github.ones1kk.asserts.api.lang.shrt.impl.Shorts;
 import com.github.ones1kk.asserts.api.lang.string.impl.Strings;
 
 public final class AssertFactory {
@@ -31,5 +32,9 @@ public final class AssertFactory {
 
     public Longs createAssert(Long actual, AsAssert<?> asAssert) {
         return new Longs(asAssert);
+    }
+
+    public Shorts createAssert(Short actual, AsAssert<?> asAssert) {
+        return new Shorts(asAssert);
     }
 }

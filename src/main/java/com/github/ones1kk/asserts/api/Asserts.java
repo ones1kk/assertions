@@ -5,6 +5,7 @@ import com.github.ones1kk.asserts.api.lang.charsequence.AbstractCharSequenceAsse
 import com.github.ones1kk.asserts.api.lang.integer.AbstractIntegerAssert;
 import com.github.ones1kk.asserts.api.lang.lng.AbstractLongAssert;
 import com.github.ones1kk.asserts.api.lang.object.AbstractObjectAssert;
+import com.github.ones1kk.asserts.api.lang.shrt.AbstractShortAssert;
 import com.github.ones1kk.asserts.api.lang.string.AbstractStringAssert;
 
 public class Asserts {
@@ -33,6 +34,10 @@ public class Asserts {
     }
 
     public static AbstractLongAssert<?, Long> that(Long actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static AbstractShortAssert<?, Short> that(Short actual) {
         return AssertsForType.that(actual);
     }
 }
