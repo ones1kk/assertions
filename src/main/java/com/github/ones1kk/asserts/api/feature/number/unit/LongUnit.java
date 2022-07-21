@@ -8,11 +8,6 @@ public class LongUnit {
     }
 
     public static ArithmeticUtil of(Long value) {
-        Asserts.that(value)
-                .as("Only Integers type is allowed")
-                .isNotNull()
-                .isInstanceOf(Integer.class);
-
         return new ArithmeticUtil(value);
     }
 
@@ -21,6 +16,10 @@ public class LongUnit {
         private final Long value;
 
         public ArithmeticUtil(Long value) {
+            Asserts.that(value)
+                    .as("Only Integers type is allowed")
+                    .isNotNull()
+                    .isInstanceOf(Long.class);
             this.value = value;
         }
 

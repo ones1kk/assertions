@@ -3,6 +3,7 @@ package com.github.ones1kk.asserts.api;
 import com.github.ones1kk.asserts.api.lang.character.AbstractCharacterAssert;
 import com.github.ones1kk.asserts.api.lang.charsequence.AbstractCharSequenceAssert;
 import com.github.ones1kk.asserts.api.lang.integer.AbstractIntegerAssert;
+import com.github.ones1kk.asserts.api.lang.lng.AbstractLongAssert;
 import com.github.ones1kk.asserts.api.lang.model.*;
 import com.github.ones1kk.asserts.api.lang.object.AbstractObjectAssert;
 import com.github.ones1kk.asserts.api.lang.string.AbstractStringAssert;
@@ -27,5 +28,9 @@ public class AssertsForType {
 
     public static AbstractIntegerAssert<?, Integer> that(Integer actual) {
         return new IntegerAssert(actual);
+    }
+
+    public static AbstractLongAssert<?, Long> that(Long actual) {
+        return new LongAssert(actual);
     }
 }
