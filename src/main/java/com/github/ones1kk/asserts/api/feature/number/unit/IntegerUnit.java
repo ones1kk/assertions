@@ -4,15 +4,7 @@ import com.github.ones1kk.asserts.api.Asserts;
 
 public final class IntegerUnit {
 
-    private IntegerUnit() {
-    }
-
     public static ArithmeticUtil of(Integer value) {
-        Asserts.that(value)
-                .as("Only Integers type is allowed")
-                .isNotNull()
-                .isInstanceOf(Integer.class);
-
         return new ArithmeticUtil(value);
     }
 
@@ -21,6 +13,10 @@ public final class IntegerUnit {
         private final Integer value;
 
         public ArithmeticUtil(Integer value) {
+            Asserts.that(value)
+                    .as("Only Integers type is allowed")
+                    .isNotNull()
+                    .isInstanceOf(Integer.class);
             this.value = value;
         }
 

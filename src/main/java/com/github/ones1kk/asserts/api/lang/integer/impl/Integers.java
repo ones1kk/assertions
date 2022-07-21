@@ -151,7 +151,8 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
         int startResult = Integer.compare(actual, (expected - offset.getValue()));
         int endResult = Integer.compare(actual, (expected + offset.getValue()));
 
-        if (startResult == -1 || endResult == 1) {
+        if (calculator.is(startResult, -1)
+                || calculator.is(endResult, 1)) {
             setAssertClose(actual, expected, offset);
         }
     }
@@ -161,7 +162,8 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
         int startResult = Integer.compare(actual, (expected - offset.getValue()));
         int endResult = Integer.compare(actual, (expected + offset.getValue()));
 
-        if (startResult == 1 || endResult == 1) {
+        if (calculator.is(startResult, 1)
+                || calculator.is(endResult, 1)) {
             setAssertClose(actual, expected, offset);
         }
     }
