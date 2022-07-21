@@ -24,4 +24,9 @@ public class StringCalculator implements ComparableCalculatorInterface<String> {
         return actual.compareTo(expected) > 0;
     }
 
+    @Override
+    public boolean is(String actual, String expected) {
+        return actual.equals(expected);
+    }
+
 }

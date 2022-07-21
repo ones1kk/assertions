@@ -23,4 +23,9 @@ public class CharacterCalculator implements ComparableCalculatorInterface<Charac
     public boolean isGraterThanOrEqualTo(Character actual, Character expected) {
         return actual.compareTo(expected) > 0;
     }
+
+    @Override
+    public boolean is(Character character, Character expected) {
+        return character.equals(expected);
+    }
 }

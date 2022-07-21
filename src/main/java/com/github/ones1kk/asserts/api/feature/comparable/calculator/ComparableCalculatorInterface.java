@@ -10,4 +10,6 @@ public interface ComparableCalculatorInterface<ACTUAL extends java.lang.Comparab
 
     boolean isGraterThanOrEqualTo(ACTUAL actual, ACTUAL expected);
 
+    boolean is(ACTUAL actual, ACTUAL expected);
+
 }

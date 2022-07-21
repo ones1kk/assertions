@@ -23,4 +23,9 @@ public class IntegerCalculator implements ComparableCalculatorInterface<Integer>
     public boolean isGraterThanOrEqualTo(Integer actual, Integer expected) {
         return (Integer.compare(actual, expected) == 1 || Integer.compare(actual, expected) == 0);
     }
+
+    @Override
+    public boolean is(Integer actual, Integer expected) {
+        return actual.equals(expected);
+    }
 }
