@@ -1,7 +1,6 @@
 package com.github.ones1kk.asserts.api.lang.string.impl;
 
 import com.github.ones1kk.asserts.api.AsAssert;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -58,10 +57,10 @@ class StringsTest {
         assertThrows(Exception.class, () -> strings.assertIsGreaterThanOrEqualTo("B", "C"));
 
         // actual < start
-        Assertions.assertThrows(Exception.class,
+        assertThrows(Exception.class,
                 () -> strings.assertIsBetween("A", "B", "C"));
         // actual > end
-        Assertions.assertThrows(Exception.class,
+        assertThrows(Exception.class,
                 () -> strings.assertIsBetween("C", "A", "B"));
 
 

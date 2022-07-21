@@ -1,7 +1,6 @@
 package com.github.ones1kk.asserts.api.lang.integer.impl;
 
 import com.github.ones1kk.asserts.api.AsAssert;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -68,10 +67,10 @@ class IntegersTest {
         assertThrows(Exception.class, () -> integers.assertIsGreaterThanOrEqualTo(2, 3));
 
         // actual < start
-        Assertions.assertThrows(Exception.class,
+        assertThrows(Exception.class,
                 () -> integers.assertIsBetween(1, 2, 3));
         // actual > end
-        Assertions.assertThrows(Exception.class,
+        assertThrows(Exception.class,
                 () -> integers.assertIsBetween(3, 1, 2));
 
 

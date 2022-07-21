@@ -3,7 +3,7 @@ package com.github.ones1kk.asserts.api.lang.shrt;
 import com.github.ones1kk.asserts.api.feature.Offset;
 import com.github.ones1kk.asserts.api.lang.object.AbstractObjectAssert;
 
-public class AbstractShortAssert<SELF extends AbstractShortAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Short> implements ShortAssertInterface<SELF>  {
+public class AbstractShortAssert<SELF extends AbstractShortAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Short> implements ShortAssertInterface<SELF> {
 
     private final ShortsInterface<Short> shorts;
 

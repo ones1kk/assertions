@@ -1,7 +1,6 @@
 package com.github.ones1kk.asserts.api.lang.character.impl;
 
 import com.github.ones1kk.asserts.api.AsAssert;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -63,10 +62,10 @@ class CharactersTest {
         assertThrows(Exception.class, () -> characters.assertIsGreaterThanOrEqualTo('B', 'C'));
 
         // actual < start
-        Assertions.assertThrows(Exception.class,
+        assertThrows(Exception.class,
                 () -> characters.assertIsBetween('A', 'B', 'C'));
         // actual > end
-        Assertions.assertThrows(Exception.class,
+        assertThrows(Exception.class,
                 () -> characters.assertIsBetween('C', 'A', 'B'));
 
 

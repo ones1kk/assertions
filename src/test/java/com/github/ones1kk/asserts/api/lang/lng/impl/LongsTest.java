@@ -1,7 +1,6 @@
 package com.github.ones1kk.asserts.api.lang.lng.impl;
 
 import com.github.ones1kk.asserts.api.AsAssert;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -68,10 +67,10 @@ class LongsTest {
         assertThrows(Exception.class, () -> longs.assertIsGreaterThanOrEqualTo(2L, 3L));
 
         // actual < start
-        Assertions.assertThrows(Exception.class,
+        assertThrows(Exception.class,
                 () -> longs.assertIsBetween(1L, 2L, 3L));
         // actual > end
-        Assertions.assertThrows(Exception.class,
+        assertThrows(Exception.class,
                 () -> longs.assertIsBetween(3L, 1L, 2L));
 
 
