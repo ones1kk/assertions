@@ -1,23 +1,23 @@
 package com.github.ones1kk.asserts.api.lang.object;
 
-public interface ObjectsInterface<TYPE> {
+public interface ObjectsInterface<ACTUAL> {
 
-    void assertIsNull(TYPE actual);
+    void assertIsNull(ACTUAL actual);
 
-    void assertIsNotNull(TYPE actual);
+    void assertIsNotNull(ACTUAL actual);
 
-    void assertIsSameAs(TYPE actual, TYPE expected);
+    void assertIsSameAs(ACTUAL actual, ACTUAL expected);
 
-    void assertIsNotSameAs(TYPE actual, TYPE expected);
+    void assertIsNotSameAs(ACTUAL actual, ACTUAL expected);
 
-    void assertIsEqualTo(TYPE actual, TYPE expected);
+    void assertIsEqualTo(ACTUAL actual, ACTUAL expected);
 
-    void assertIsNotEqualTo(TYPE actual, TYPE expected);
+    void assertIsNotEqualTo(ACTUAL actual, ACTUAL expected);
 
-    void assertIsAssignableFrom(TYPE actual, Class<?> expected);
+    void assertIsAssignableFrom(ACTUAL actual, Class<?> expected);
 
-    void assertIsNotAssignableFrom(TYPE actual, Class<?> expected);
+    void assertIsNotAssignableFrom(ACTUAL actual, Class<?> expected);
 
-    void assertIsInstanceOf(TYPE actual, Class<?> expected);
+    void assertIsInstanceOf(ACTUAL actual, Class<?> expected);
 
 }

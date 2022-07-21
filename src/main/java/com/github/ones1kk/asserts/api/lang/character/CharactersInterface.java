@@ -2,26 +2,26 @@ package com.github.ones1kk.asserts.api.lang.character;
 
 import com.github.ones1kk.asserts.api.feature.comparable.Comparable;
 
-public interface CharactersInterface<TYPE> extends Comparable<TYPE> {
+public interface CharactersInterface<ACTUAL> extends Comparable<ACTUAL> {
 
-    void assertIsLowerCase(TYPE actual);
+    void assertIsLowerCase(ACTUAL actual);
 
-    void assertIsNotLowerCase(TYPE actual);
+    void assertIsNotLowerCase(ACTUAL actual);
 
-    void assertIsUpperCase(TYPE actual);
+    void assertIsUpperCase(ACTUAL actual);
 
-    void assertIsNotUpperCase(TYPE actual);
+    void assertIsNotUpperCase(ACTUAL actual);
 
-    void assertIsLetter(TYPE actual);
+    void assertIsLetter(ACTUAL actual);
 
-    void assertIsNotLetter(TYPE actual);
+    void assertIsNotLetter(ACTUAL actual);
 
-    void assertIsDigit(TYPE actual);
+    void assertIsDigit(ACTUAL actual);
 
-    void assertIsNotDigit(TYPE actual);
+    void assertIsNotDigit(ACTUAL actual);
 
-    void assertIsWhitespace(TYPE actual);
+    void assertIsWhitespace(ACTUAL actual);
 
-    void assertIsNotWhitespace(TYPE actual);
+    void assertIsNotWhitespace(ACTUAL actual);
 
 }

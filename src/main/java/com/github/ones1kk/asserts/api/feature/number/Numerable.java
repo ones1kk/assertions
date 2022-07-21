@@ -2,22 +2,22 @@ package com.github.ones1kk.asserts.api.feature.number;
 
 import com.github.ones1kk.asserts.api.feature.Offset;
 
-public interface Numerable<TYPE extends Number> {
+public interface Numerable<ACTUAL extends Number> {
 
-    void assertIsPositive(TYPE actual);
+    void assertIsPositive(ACTUAL actual);
 
-    void assertIsNotPositive(TYPE actual);
+    void assertIsNotPositive(ACTUAL actual);
 
-    void assertIsNegative(TYPE actual);
+    void assertIsNegative(ACTUAL actual);
 
-    void assertIsNotNegative(TYPE actual);
+    void assertIsNotNegative(ACTUAL actual);
 
-    void assertIsZero(TYPE actual);
+    void assertIsZero(ACTUAL actual);
 
-    void assertIsNotZero(TYPE actual);
+    void assertIsNotZero(ACTUAL actual);
 
-    void assertIsCloseTo(TYPE actual, TYPE expected, Offset<TYPE> offset);
+    void assertIsCloseTo(ACTUAL actual, ACTUAL expected, Offset<ACTUAL> offset);
 
-    void assertIsNotCloseTo(TYPE actual, TYPE expected, Offset<TYPE> offset);
+    void assertIsNotCloseTo(ACTUAL actual, ACTUAL expected, Offset<ACTUAL> offset);
 
 }

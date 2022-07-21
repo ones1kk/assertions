@@ -1,15 +1,15 @@
 package com.github.ones1kk.asserts.api.lang.charsequence;
 
-public interface CharSequencesInterface<TYPE> {
+public interface CharSequencesInterface<ACTUAL> {
 
-    void assertIsEmpty(TYPE actual);
+    void assertIsEmpty(ACTUAL actual);
 
-    void assertIsNotEmpty(TYPE actual);
+    void assertIsNotEmpty(ACTUAL actual);
 
-    void assertIsBlank(TYPE actual);
+    void assertIsBlank(ACTUAL actual);
 
-    void assertIsNotBlank(TYPE actual);
+    void assertIsNotBlank(ACTUAL actual);
 
-    void assertIsEqualToIgnoreCase(TYPE actual, TYPE expected);
+    void assertIsEqualToIgnoreCase(ACTUAL actual, ACTUAL expected);
 
 }
