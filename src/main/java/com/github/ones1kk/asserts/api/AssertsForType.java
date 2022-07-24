@@ -2,6 +2,7 @@ package com.github.ones1kk.asserts.api;
 
 import com.github.ones1kk.asserts.api.lang.character.AbstractCharacterAssert;
 import com.github.ones1kk.asserts.api.lang.charsequence.AbstractCharSequenceAssert;
+import com.github.ones1kk.asserts.api.lang.duble.AbstractDoubleAssert;
 import com.github.ones1kk.asserts.api.lang.integer.AbstractIntegerAssert;
 import com.github.ones1kk.asserts.api.lang.lng.AbstractLongAssert;
 import com.github.ones1kk.asserts.api.lang.model.*;
@@ -37,5 +38,9 @@ public class AssertsForType {
 
     public static AbstractShortAssert<?, Short> that(Short actual) {
         return new ShortAssert(actual);
+    }
+
+    public static AbstractDoubleAssert<?, Double> that(Double actual) {
+        return new DoubleAssert(actual);
     }
 }
