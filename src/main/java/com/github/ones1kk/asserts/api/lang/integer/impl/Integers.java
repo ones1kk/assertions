@@ -59,7 +59,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
     @Override
     public void assertIsLessThan(Integer actual, Integer expected) {
         if (calculator.isGraterThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, "{} is not less than {}"));
+            handler.setDescription(handler.from(actual, expected, "{} is not less than {}"));
             throw handler.getException();
         }
     }

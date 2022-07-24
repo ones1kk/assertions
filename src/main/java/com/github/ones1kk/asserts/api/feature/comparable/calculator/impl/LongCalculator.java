@@ -6,22 +6,22 @@ public class LongCalculator implements ComparableCalculatorInterface<Long> {
 
     @Override
     public boolean isGraterThan(Long actual, Long expected) {
-        return Long.compare(actual, expected) == 1;
+        return Long.compare(actual, expected) > 0;
     }
 
     @Override
     public boolean isLessThan(Long actual, Long expected) {
-        return Long.compare(actual, expected) == -1;
+        return Long.compare(actual, expected) < 0;
     }
 
     @Override
     public boolean isLessThanOrEqualTo(Long actual, Long expected) {
-        return (Long.compare(actual, expected) == -1 || Long.compare(actual, expected) == 0);
+        return Long.compare(actual, expected) <= 0;
     }
 
     @Override
     public boolean isGraterThanOrEqualTo(Long actual, Long expected) {
-        return (Long.compare(actual, expected) == 1 || Long.compare(actual, expected) == 0);
+        return Long.compare(actual, expected) >= 0;
     }
 
     @Override
