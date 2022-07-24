@@ -7,8 +7,8 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     private final DoublesInterface<Double> doubles;
 
-    public AbstractDoubleAssert(Class<?> self, Double aDouble) {
-        super(self, aDouble);
+    public AbstractDoubleAssert(Class<?> self, Double actual) {
+        super(self, actual);
         this.doubles = assertFactory.createAssert(actual, this);
     }
 

@@ -3,6 +3,7 @@ package com.github.ones1kk.asserts.api;
 import com.github.ones1kk.asserts.api.lang.character.impl.Characters;
 import com.github.ones1kk.asserts.api.lang.charsequence.impl.CharSequences;
 import com.github.ones1kk.asserts.api.lang.duble.impl.Doubles;
+import com.github.ones1kk.asserts.api.lang.flot.impl.Floats;
 import com.github.ones1kk.asserts.api.lang.integer.impl.Integers;
 import com.github.ones1kk.asserts.api.lang.lng.impl.Longs;
 import com.github.ones1kk.asserts.api.lang.object.impl.Objects;
@@ -41,5 +42,9 @@ public final class AssertFactory {
 
     public Doubles createAssert(Double actual, AsAssert<?> asAssert) {
         return new Doubles(asAssert);
+    }
+
+    public Floats createAssert(Float actual, AsAssert<?> asAssert) {
+        return new Floats(asAssert);
     }
 }
