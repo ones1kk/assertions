@@ -3,10 +3,10 @@ package com.github.ones1kk.asserts.api.lang.flot;
 import com.github.ones1kk.asserts.api.feature.Offset;
 import com.github.ones1kk.asserts.api.lang.object.AbstractObjectAssert;
 
-public class AbstractFloatAssert<SELF extends AbstractFloatAssert<SELF, ACTUAL>, ACTUAL > extends AbstractObjectAssert<SELF, Float> implements FloatAssertInterface<SELF> {
-    
+public class AbstractFloatAssert<SELF extends AbstractFloatAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Float> implements FloatAssertInterface<SELF> {
+
     private final FloatsInterface<Float> floats;
-    
+
     public AbstractFloatAssert(Class<?> self, Float actual) {
         super(self, actual);
         this.floats = assertFactory.createAssert(actual, this);

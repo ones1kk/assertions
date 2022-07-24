@@ -136,7 +136,7 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
         float startResult = Float.compare(actual, (expected - offset.getValue()));
         float endResult = Float.compare(actual, (expected + offset.getValue()));
 
-        if (calculator.is(startResult, - 1F)
+        if (calculator.is(startResult, -1F)
                 || calculator.is(endResult, 1F)) {
             setAssertClose(actual, expected, offset);
         }
