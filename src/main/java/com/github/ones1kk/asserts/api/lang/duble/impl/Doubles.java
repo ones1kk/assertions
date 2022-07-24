@@ -45,7 +45,7 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
     @Override
     public void assertIsLessThan(Double actual, Double expected) {
         if (calculator.isGraterThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual,  expected, "{} is not less than {}"));
+            handler.setDescription(handler.from(actual, expected, "{} is not less than {}"));
             throw handler.getException();
         }
     }
