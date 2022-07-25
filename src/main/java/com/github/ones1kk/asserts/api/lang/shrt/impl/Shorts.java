@@ -107,7 +107,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
     @Override
     public void assertIsLessThan(Short actual, Short expected) {
         if (calculator.isGraterThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, "{} is not less than {}"));
+            handler.setDescription(handler.from(actual, expected, "{} is not less than {}"));
             throw handler.getException();
         }
     }

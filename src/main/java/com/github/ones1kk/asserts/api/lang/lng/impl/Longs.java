@@ -107,7 +107,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
     @Override
     public void assertIsLessThan(Long actual, Long expected) {
         if (calculator.isGraterThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, "{} is not less than {}"));
+            handler.setDescription(handler.from(actual, expected, "{} is not less than {}"));
             throw handler.getException();
         }
     }
