@@ -1,5 +1,6 @@
 package com.github.ones1kk.asserts.api;
 
+import com.github.ones1kk.asserts.api.lang.bte.impl.Bytes;
 import com.github.ones1kk.asserts.api.lang.character.impl.Characters;
 import com.github.ones1kk.asserts.api.lang.charsequence.impl.CharSequences;
 import com.github.ones1kk.asserts.api.lang.duble.impl.Doubles;
@@ -46,5 +47,9 @@ public final class AssertFactory {
 
     public Floats createAssert(Float actual, AsAssert<?> asAssert) {
         return new Floats(asAssert);
+    }
+
+    public Bytes createAssert(Byte actual, AsAssert<?> asAssert) {
+        return new Bytes(asAssert);
     }
 }
