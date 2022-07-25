@@ -66,4 +66,71 @@ class AbstractStringAssertTest {
         assert1.isEqualToIgnoreCase("ACTUAL");
     }
 
+    @Test
+    @DisplayName("Comparable Test")
+    public void test3() throws Exception {
+        // given
+        String actual1 = "1";
+        String actual2 = "2";
+        String actual3 = "3";
+
+        String expected1 = "1";
+        String expected2 = "2";
+        String expected3 = "3";
+
+        // when
+        AbstractStringAssert<?> assert1 = new AbstractStringAssert<>(AbstractStringAssert.class, actual1);
+        AbstractStringAssert<?> assert2 = new AbstractStringAssert<>(AbstractStringAssert.class, actual2);
+        AbstractStringAssert<?> assert3 = new AbstractStringAssert<>(AbstractStringAssert.class, actual3);
+
+        // then
+        // actual > expected
+        assertThrows(AssertException.class,
+                () -> assert2.isLessThan(expected1));
+        // actual == expected
+        assertThrows(AssertException.class,
+                () -> assert2.isLessThan(expected2));
+
+        // actual < expected
+        assertThrows(AssertException.class,
+                () -> assert1.isGreaterThan(expected2));
+        // actual == expected
+        assertThrows(AssertException.class,
+                () -> assert1.isGreaterThan(expected1));
+
+        // actual > expected
+        assertThrows(AssertException.class,
+                () -> assert2.isLessThanOrEqualTo(expected1));
+
+        // actual < expected
+        assertThrows(AssertException.class,
+                () -> assert2.isGreaterThanOrEqualTo(expected3));
+
+        // actual < start
+        assertThrows(AssertException.class,
+                () -> assert1.isBetween(expected2, expected3));
+        // actual > end
+        assertThrows(AssertException.class,
+                () -> assert3.isBetween(expected1, expected2));
+
+        // actual < expected
+        assert1.isLessThan(expected2);
+
+        // actual > expected
+        assert2.isGreaterThan(expected1);
+
+        // actual == expected
+        assert1.isLessThanOrEqualTo(expected1);
+        // actual < expected
+        assert1.isLessThanOrEqualTo(expected2);
+
+        // actual == expected
+        assert3.isGreaterThanOrEqualTo(expected3);
+        // actual >= expected
+        assert3.isGreaterThanOrEqualTo(expected2);
+
+        // start < actual < end
+        assert2.isBetween(expected1, expected3);
+    }
+
 }

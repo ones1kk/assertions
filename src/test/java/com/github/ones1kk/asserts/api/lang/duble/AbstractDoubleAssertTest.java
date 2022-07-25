@@ -151,5 +151,4 @@ class AbstractDoubleAssertTest {
         assert2.isBetween(expected1, expected3);
     }
 
-
 }
