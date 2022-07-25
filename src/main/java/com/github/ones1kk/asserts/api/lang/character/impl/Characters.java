@@ -98,7 +98,7 @@ public class Characters extends Objects<Character> implements CharactersInterfac
     @Override
     public void assertIsLessThan(Character actual, Character expected) {
         if (calculator.isGraterThan(actual, expected)) {
-            handler.setDescription(handler.from(actual, "{} is not less than {}"));
+            handler.setDescription(handler.from(actual, expected, "{} is not less than {}"));
             throw handler.getException();
         }
     }
