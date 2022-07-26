@@ -52,4 +52,7 @@ public final class AssertFactory {
     public Bytes createAssert(Byte actual, AsAssert<?> asAssert) {
         return new Bytes(asAssert);
     }
+    public Booleans createAssert(Boolean actual, AsAssert<?> asAssert) {
+        return new Booleans(asAssert);
+    }
 }
