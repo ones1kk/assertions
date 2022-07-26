@@ -31,7 +31,7 @@ public class NumberArrayContainable implements Containable<Number[], Number> {
     @Override
     public boolean containsAny(Number[] actual, Number... expected) {
         for (Number number : expected) {
-            if(Arrays.asList(actual).contains(number)) return true;
+            if (Arrays.asList(actual).contains(number)) return true;
         }
         return false;
     }
