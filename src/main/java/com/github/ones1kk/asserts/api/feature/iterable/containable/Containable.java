@@ -4,7 +4,7 @@ public interface Containable<ACTUAL, EXPECTED> {
 
     boolean contains(ACTUAL actual, EXPECTED expected);
 
-    boolean doesNotContains(ACTUAL actual, EXPECTED expected);
+    boolean doesNotContain(ACTUAL actual, EXPECTED expected);
 
     boolean containsAll(ACTUAL actual, EXPECTED... expected);
 
@@ -13,5 +13,11 @@ public interface Containable<ACTUAL, EXPECTED> {
     boolean containsNull(ACTUAL actual);
 
     boolean doesNotContainNull(ACTUAL actual);
+
+    boolean doseNotContainAny(ACTUAL actual, EXPECTED... expected);
+
+    boolean isMax(ACTUAL actual, EXPECTED expected);
+
+    boolean isMin(ACTUAL actual, EXPECTED expected);
 
 }
