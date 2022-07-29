@@ -1,9 +1,9 @@
 package com.github.ones1kk.asserts.api.feature.iterable.containable.impl;
 
 import com.github.ones1kk.asserts.api.feature.iterable.containable.Containable;
+import org.apache.commons.lang3.ArrayUtils;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class NumberArrayContainable implements Containable<Number[], Number> {
 
@@ -13,7 +13,7 @@ public class NumberArrayContainable implements Containable<Number[], Number> {
     }
 
     @Override
-    public boolean doesNotContains(Number[] actual, Number expected) {
+    public boolean doesNotContain(Number[] actual, Number expected) {
         return !(Arrays.asList(actual).contains(expected));
     }
 
@@ -37,6 +37,12 @@ public class NumberArrayContainable implements Containable<Number[], Number> {
     }
 
     @Override
+    public boolean doseNotContainAny(Number[] actual, Number... expected) {
+        return !(new HashSet<>(Arrays.asList(actual))
+                .containsAll(List.of(expected)));
+    }
+
+    @Override
     public boolean containsNull(Number[] actual) {
         return Arrays.asList(actual).contains(null);
     }
@@ -44,5 +50,15 @@ public class NumberArrayContainable implements Containable<Number[], Number> {
     @Override
     public boolean doesNotContainNull(Number[] actual) {
         return !(Arrays.asList(actual).contains(null));
+    }
+
+    @Override
+    public boolean isMax(Number[] actual, Number expected) {
+        return false;
+    }
+
+    @Override
+    public boolean isMin(Number[] actual, Number expected) {
+        return false;
     }
 }
