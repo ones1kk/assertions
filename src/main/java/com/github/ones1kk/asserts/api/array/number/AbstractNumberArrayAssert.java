@@ -26,6 +26,12 @@ public class AbstractNumberArrayAssert<SELF extends AbstractNumberArrayAssert<SE
     }
 
     @Override
+    public SELF isSum(Number expected) {
+        numberArrays.assertIsSum(actual, expected);
+        return self;
+    }
+
+    @Override
     public SELF isEmpty() {
         numberArrays.assertIsEmpty(actual);
         return self;
