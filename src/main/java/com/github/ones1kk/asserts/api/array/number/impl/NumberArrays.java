@@ -54,11 +54,10 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
 
     @Override
     public void assertContains(Number[] actual, Number expected) {
-        if (containable.doesNotContains(actual, expected)) {
+        if (containable.doesNotContain(actual, expected)) {
             handler.setDescription(handler.from(toString(actual), expected, "{} doesn't contains of {}"));
             throw handler.getException();
         }
-
     }
 
     @Override
@@ -71,32 +70,54 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
 
     @Override
     public void assertContainsAll(Number[] actual, Number... expected) {
-
+        if (containable.doseNotContainAny(actual, expected)) {
+            handler.setDescription(handler.from(toString(actual), toString(expected), "{} doesn't contain any of {}"));
+            throw handler.getException();
+        }
     }
 
     @Override
     public void assertContainsAny(Number[] actual, Number... expected) {
-
+        if (containable.doseNotContainAny(actual, expected)) {
+            handler.setDescription(handler.from(toString(actual), toString(expected), "{} doesn't contain any of {}"));
+            throw handler.getException();
+        }
     }
 
     @Override
     public void assertContainsNull(Number[] actual) {
-
+        if (containable.doesNotContainNull(actual)) {
+            handler.setDescription(handler.from(toString(actual), "{} doesn't contain of null"));
+            throw handler.getException();
+        }
     }
 
     @Override
     public void assertDoesNotContainNull(Number[] actual) {
-
+        if (containable.containsNull(actual)) {
+            handler.setDescription(handler.from(toString(actual), "{} contains of null"));
+            throw handler.getException();
+        }
     }
 
     @Override
     public void assertAllMatch(Number[] actual, Predicate<Number> expected) {
-
+        for (Number number : actual) {
+            if (!expected.test(number)) {
+                handler.setDescription(handler.from(toString(actual), "{} is not all matched"));
+                throw handler.getException();
+            }
+        }
     }
 
     @Override
     public void assertNoneMatch(Number[] actual, Predicate<Number> expected) {
-
+        for (Number number : actual) {
+            if (expected.test(number)) {
+                handler.setDescription(handler.from(toString(actual), "{} is matched with all of expected"));
+                throw handler.getException();
+            }
+        }
     }
 
     private String toString(Number[] actual) {
