@@ -7,4 +7,6 @@ public interface NumberArrayAssertInterface<SELF> extends IterableAssert<SELF, N
     SELF isMax(Number expected);
 
     SELF isMin(Number expected);
+
+    SELF isSum(Number expected);
 }

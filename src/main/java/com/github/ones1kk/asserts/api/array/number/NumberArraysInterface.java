@@ -7,4 +7,6 @@ public interface NumberArraysInterface<ACTUAL, EXPECTED> extends Iterable<ACTUAL
     void assertIsMax(ACTUAL actual, EXPECTED expected);
 
     void assertIsMin(ACTUAL actual, EXPECTED expected);
+
+    void assertIsSum(ACTUAL actual, EXPECTED expected);
 }

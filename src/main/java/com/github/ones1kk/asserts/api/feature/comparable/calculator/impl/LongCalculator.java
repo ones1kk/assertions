@@ -1,7 +1,6 @@
 package com.github.ones1kk.asserts.api.feature.comparable.calculator.impl;
 
 import com.github.ones1kk.asserts.api.feature.comparable.calculator.AbstractComparableCalculator;
-import com.github.ones1kk.asserts.api.feature.comparable.calculator.ComparableCalculatorInterface;
 
 public class LongCalculator extends AbstractComparableCalculator<Long> {
 

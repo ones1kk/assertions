@@ -55,11 +55,30 @@ public class NumberArrayContainable implements Containable<Number[], Number> {
 
     @Override
     public boolean isMax(Number[] actual, Number expected) {
-        return false;
+        double max = actual[0].doubleValue();
+        for (Number value : actual) {
+            if (value.doubleValue() > max)
+                max = value.doubleValue();
+        }
+        return max == expected.doubleValue();
     }
 
     @Override
     public boolean isMin(Number[] actual, Number expected) {
-        return false;
+        double min = actual[0].doubleValue();
+        for (Number value : actual) {
+            if (value.doubleValue() < min)
+                min = value.doubleValue();
+        }
+        return min == expected.doubleValue();
+    }
+
+    @Override
+    public boolean isSum(Number[] actual, Number expected) {
+        double sum = 0;
+        for (Number value : actual) {
+            sum += (double) value;
+        }
+        return sum == expected.doubleValue();
     }
 }

@@ -20,4 +20,6 @@ public interface Containable<ACTUAL, EXPECTED> {
 
     boolean isMin(ACTUAL actual, EXPECTED expected);
 
+    boolean isSum(ACTUAL actual, EXPECTED expected);
+
 }

@@ -20,12 +20,26 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
 
     @Override
     public void assertIsMax(Number[] actual, Number expected) {
-        // TODO
+        if(!containable.isMax(actual, expected)) {
+            handler.setDescription(handler.from(toString(actual), expected, "Max of {} is not {}"));
+            throw handler.getException();
+        }
     }
 
     @Override
     public void assertIsMin(Number[] actual, Number expected) {
-        // TODO
+        if(!containable.isMin(actual, expected)) {
+            handler.setDescription(handler.from(toString(actual), expected, "Minimum of {} is not {}"));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsSum(Number[] actual, Number expected) {
+        if(!containable.isSum(actual, expected)) {
+            handler.setDescription(handler.from(toString(actual), expected, "Sum of {} is not {}"));
+            throw handler.getException();
+        }
     }
 
     @Override
