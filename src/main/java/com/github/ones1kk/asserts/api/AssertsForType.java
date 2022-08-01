@@ -63,7 +63,7 @@ public class AssertsForType {
         return new BooleanAssert(actual);
     }
 
-    public static AbstractArrayAssert<?, Object[], Object> that(Object[] actual) {
+    public static AbstractArrayAssert<?, Object> that(Object[] actual) {
         return new ArrayAssert<>(actual);
     }
 
@@ -71,15 +71,15 @@ public class AssertsForType {
         return new NumberArrayAssert(actual);
     }
 
-    public static AbstractArrayAssert<?, CharSequence[], CharSequence> that(CharSequence[] actual) {
+    public static AbstractArrayAssert<?, CharSequence> that(CharSequence[] actual) {
         return new ArrayAssert<>(actual);
     }
 
-    public static AbstractArrayAssert<?, String[], String> that(String[] actual) {
+    public static AbstractArrayAssert<?, String> that(String[] actual) {
         return new ArrayAssert<>(actual);
     }
 
-    public static AbstractArrayAssert<?, Character[], Character> that(Character[] actual) {
+    public static AbstractArrayAssert<?, Character> that(Character[] actual) {
         return new ArrayAssert<>(actual);
     }
 

@@ -4,14 +4,14 @@ import com.github.ones1kk.asserts.api.lang.object.AbstractObjectAssert;
 
 import java.util.function.Predicate;
 
-public class AbstractArrayAssert<SELF extends AbstractArrayAssert<SELF, ACTUAL, EXPECTED>, ACTUAL, EXPECTED> extends AbstractObjectAssert<SELF, ACTUAL> implements ArrayAssertInterface<SELF, ACTUAL, EXPECTED> {
+public class AbstractArrayAssert<SELF extends AbstractArrayAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, ACTUAL[]> implements ArrayAssertInterface<SELF, ACTUAL> {
 
-    private final ArraysInterface<ACTUAL, EXPECTED> arrays;
+    private final ArraysInterface<ACTUAL> arrays;
 
     @SuppressWarnings("unchecked")
-    public AbstractArrayAssert(Class<?> self, ACTUAL actual) {
+    public AbstractArrayAssert(Class<?> self, ACTUAL[] actual) {
         super(self, actual);
-        this.arrays = (ArraysInterface<ACTUAL, EXPECTED>) assertFactory.createAssert(actual, this);
+        this.arrays = (ArraysInterface<ACTUAL>) assertFactory.createAssert(actual, this);
     }
 
     @Override
@@ -33,25 +33,25 @@ public class AbstractArrayAssert<SELF extends AbstractArrayAssert<SELF, ACTUAL, 
     }
 
     @Override
-    public SELF contains(EXPECTED expected) {
+    public SELF contains(ACTUAL expected) {
         arrays.assertContains(actual, expected);
         return self;
     }
 
     @Override
-    public SELF doesNotContain(EXPECTED expected) {
+    public SELF doesNotContain(ACTUAL expected) {
         arrays.assertDoesNotContain(actual, expected);
         return self;
     }
 
     @Override
-    public SELF containsAll(EXPECTED... expected) {
+    public SELF containsAll(ACTUAL... expected) {
         arrays.assertContainsAll(actual, expected);
         return self;
     }
 
     @Override
-    public SELF containsAny(EXPECTED... expected) {
+    public SELF containsAny(ACTUAL... expected) {
         arrays.assertContainsAny(actual, expected);
         return self;
     }
@@ -69,13 +69,13 @@ public class AbstractArrayAssert<SELF extends AbstractArrayAssert<SELF, ACTUAL, 
     }
 
     @Override
-    public SELF allMatch(Predicate<EXPECTED> expected) {
+    public SELF allMatch(Predicate<ACTUAL> expected) {
         arrays.assertAllMatch(actual, expected);
         return self;
     }
 
     @Override
-    public SELF noneMatch(Predicate<EXPECTED> expected) {
+    public SELF noneMatch(Predicate<ACTUAL> expected) {
         arrays.assertNoneMatch(actual, expected);
         return self;
     }

@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
-public class NumberArrayContainable implements Containable<Number[], Number> {
+public class NumberArrayContainable implements Containable<Number> {
 
     @Override
     public boolean contains(Number[] actual, Number expected) {
@@ -72,7 +72,7 @@ public class NumberArrayContainable implements Containable<Number[], Number> {
         }
         return max == expected.doubleValue();
     }
-    
+
     public boolean isMin(Number[] actual, Number expected) {
         double min = actual[0].doubleValue();
         for (Number value : actual) {

@@ -2,28 +2,28 @@ package com.github.ones1kk.asserts.api.feature.iterable;
 
 import java.util.function.Predicate;
 
-public interface Iterable<ACTUAL, EXPECTED> {
+public interface Iterable<ELEMENT> {
 
-    void assertIsEmpty(ACTUAL actual);
+    void assertIsEmpty(ELEMENT[] actual);
 
-    void assertIsNotEmpty(ACTUAL actual);
+    void assertIsNotEmpty(ELEMENT[] actual);
 
-    void assertIsNullOrEmpty(ACTUAL actual);
+    void assertIsNullOrEmpty(ELEMENT[] actual);
 
-    void assertContains(ACTUAL actual, EXPECTED expected);
+    void assertContains(ELEMENT[] actual, ELEMENT expected);
 
-    void assertDoesNotContain(ACTUAL actual, EXPECTED expected);
+    void assertDoesNotContain(ELEMENT[] actual, ELEMENT expected);
 
-    void assertContainsAll(ACTUAL actual, EXPECTED... expected);
+    void assertContainsAll(ELEMENT[] actual, ELEMENT... expected);
 
-    void assertContainsAny(ACTUAL actual, EXPECTED... expected);
+    void assertContainsAny(ELEMENT[] actual, ELEMENT... expected);
 
-    void assertContainsNull(ACTUAL actual);
+    void assertContainsNull(ELEMENT[] actual);
 
-    void assertDoesNotContainNull(ACTUAL actual);
+    void assertDoesNotContainNull(ELEMENT[] actual);
 
-    void assertAllMatch(ACTUAL actual, Predicate<EXPECTED> expected);
+    void assertAllMatch(ELEMENT[] actual, Predicate<ELEMENT> expected);
 
-    void assertNoneMatch(ACTUAL actual, Predicate<EXPECTED> expected);
+    void assertNoneMatch(ELEMENT[] actual, Predicate<ELEMENT> expected);
 
 }

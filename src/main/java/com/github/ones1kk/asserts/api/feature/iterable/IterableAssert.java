@@ -2,7 +2,7 @@ package com.github.ones1kk.asserts.api.feature.iterable;
 
 import java.util.function.Predicate;
 
-public interface IterableAssert<SELF, ACTUAL, EXPECTED> {
+public interface IterableAssert<SELF, ELEMENT> {
 
     SELF isEmpty();
 
@@ -10,19 +10,19 @@ public interface IterableAssert<SELF, ACTUAL, EXPECTED> {
 
     SELF isNullOrEmpty();
 
-    SELF contains(EXPECTED expected);
+    SELF contains(ELEMENT expected);
 
-    SELF doesNotContain(EXPECTED expected);
+    SELF doesNotContain(ELEMENT expected);
 
-    SELF containsAll(EXPECTED... expected);
+    SELF containsAll(ELEMENT... expected);
 
-    SELF containsAny(EXPECTED... expected);
+    SELF containsAny(ELEMENT... expected);
 
     SELF containsNull();
 
     SELF doesNotContainNull();
 
-    SELF allMatch(Predicate<EXPECTED> expected);
+    SELF allMatch(Predicate<ELEMENT> expected);
 
-    SELF noneMatch(Predicate<EXPECTED> expected);
+    SELF noneMatch(Predicate<ELEMENT> expected);
 }

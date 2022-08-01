@@ -6,22 +6,22 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
-public class ArrayContainable<ACTUAL, EXPECTED> implements Containable<ACTUAL, EXPECTED> {
+public class ArrayContainable<ELEMENT> implements Containable<ELEMENT> {
 
     @Override
-    public boolean contains(ACTUAL actual, EXPECTED expected) {
+    public boolean contains(ELEMENT[] actual, ELEMENT expected) {
         return Arrays.asList(actual).contains(expected);
     }
 
     @Override
-    public boolean doesNotContain(ACTUAL actual, EXPECTED expected) {
+    public boolean doesNotContain(ELEMENT[] actual, ELEMENT expected) {
         return !(Arrays.asList(actual).contains(expected));
     }
 
     @Override
-    public boolean containsAll(ACTUAL actual, EXPECTED... expected) {
-        List<ACTUAL> actuals = Arrays.asList(actual);
-        for (EXPECTED value : expected) {
+    public boolean containsAll(ELEMENT[] actual, ELEMENT... expected) {
+        List<ELEMENT> actuals = Arrays.asList(actual);
+        for (ELEMENT value : expected) {
             if (!actuals.contains(value)) {
                 return false;
             }
@@ -30,23 +30,23 @@ public class ArrayContainable<ACTUAL, EXPECTED> implements Containable<ACTUAL, E
     }
 
     @Override
-    public boolean containsNotAll(ACTUAL actual, EXPECTED... expected) {
+    public boolean containsNotAll(ELEMENT[] actual, ELEMENT... expected) {
         return !(new HashSet<>(Arrays.asList(actual))
                 .containsAll(List.of(expected)));
     }
 
     @Override
-    public boolean containsAny(ACTUAL actual, EXPECTED... expected) {
-        for (EXPECTED value : expected) {
+    public boolean containsAny(ELEMENT[] actual, ELEMENT... expected) {
+        for (ELEMENT value : expected) {
             if (Arrays.asList(actual).contains(value)) return true;
         }
         return false;
     }
 
     @Override
-    public boolean doseNotContainAny(ACTUAL actual, EXPECTED... expected) {
-        List<ACTUAL> actuals = Arrays.asList(actual);
-        for (EXPECTED value : expected) {
+    public boolean doseNotContainAny(ELEMENT[] actual, ELEMENT... expected) {
+        List<ELEMENT> actuals = Arrays.asList(actual);
+        for (ELEMENT value : expected) {
             if (actuals.contains(value)) {
                 return false;
             }
@@ -55,12 +55,12 @@ public class ArrayContainable<ACTUAL, EXPECTED> implements Containable<ACTUAL, E
     }
 
     @Override
-    public boolean containsNull(ACTUAL actual) {
+    public boolean containsNull(ELEMENT[] actual) {
         return Arrays.asList(actual).contains(null);
     }
 
     @Override
-    public boolean doesNotContainNull(ACTUAL actual) {
+    public boolean doesNotContainNull(ELEMENT[] actual) {
         return !(Arrays.asList(actual).contains(null));
     }
 

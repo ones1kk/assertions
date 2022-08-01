@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 public class AbstractNumberArrayAssert<SELF extends AbstractNumberArrayAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Number[]> implements NumberArrayAssertInterface<SELF> {
 
-    private final NumberArraysInterface<Number[], Number> numberArrays;
+    private final NumberArraysInterface<Number> numberArrays;
 
     public AbstractNumberArrayAssert(Class<?> self, Number[] actual) {
         super(self, actual);
