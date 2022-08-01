@@ -60,7 +60,7 @@ public final class AssertFactory {
         return new Booleans(asAssert);
     }
 
-    public Arrays<Object[], Object> createAssert(Object[] actual, AsAssert<?> asAssert) {
+    public Arrays<Object> createAssert(Object[] actual, AsAssert<?> asAssert) {
         return new Arrays<>(asAssert);
     }
 
@@ -68,19 +68,19 @@ public final class AssertFactory {
         return new NumberArrays(asAssert);
     }
 
-    public Arrays<CharSequence[], CharSequence> createAssert(CharSequence[] actual, AsAssert<?> asAssert) {
+    public Arrays<CharSequence> createAssert(CharSequence[] actual, AsAssert<?> asAssert) {
         return new Arrays<>(asAssert);
     }
 
-    public Arrays<String[], String> createAssert(String[] actual, AsAssert<?> asAssert) {
+    public Arrays<String> createAssert(String[] actual, AsAssert<?> asAssert) {
         return new Arrays<>(asAssert);
     }
 
-    public Arrays<Character[], Character> createAssert(Character[] actual, AsAssert<?> asAssert) {
+    public Arrays<Character> createAssert(Character[] actual, AsAssert<?> asAssert) {
         return new Arrays<>(asAssert);
     }
 
-    public Arrays<Boolean[], Boolean> createAssert(Boolean[] actual, AsAssert<?> asAssert) {
+    public Arrays<Boolean> createAssert(Boolean[] actual, AsAssert<?> asAssert) {
         return new Arrays<>(asAssert);
     }
 

@@ -1,21 +1,21 @@
 package com.github.ones1kk.asserts.api.feature.iterable.containable;
 
-public interface Containable<ACTUAL, EXPECTED> {
+public interface Containable<ELEMENT> {
 
-    boolean contains(ACTUAL actual, EXPECTED expected);
+    boolean contains(ELEMENT[] actual, ELEMENT expected);
 
-    boolean doesNotContain(ACTUAL actual, EXPECTED expected);
+    boolean doesNotContain(ELEMENT[] actual, ELEMENT expected);
 
-    boolean containsAll(ACTUAL actual, EXPECTED... expected);
+    boolean containsAll(ELEMENT[] actual, ELEMENT... expected);
 
-    boolean containsNotAll(ACTUAL actual, EXPECTED... expected);
+    boolean containsNotAll(ELEMENT[] actual, ELEMENT... expected);
 
-    boolean containsAny(ACTUAL actual, EXPECTED... expected);
+    boolean containsAny(ELEMENT[] actual, ELEMENT... expected);
 
-    boolean doseNotContainAny(ACTUAL actual, EXPECTED... expected);
+    boolean doseNotContainAny(ELEMENT[] actual, ELEMENT... expected);
 
-    boolean containsNull(ACTUAL actual);
+    boolean containsNull(ELEMENT[] actual);
 
-    boolean doesNotContainNull(ACTUAL actual);
+    boolean doesNotContainNull(ELEMENT[] actual);
 
 }

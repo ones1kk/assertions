@@ -9,7 +9,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import java.util.Arrays;
 import java.util.function.Predicate;
 
-public class NumberArrays extends Objects<Number[]> implements NumberArraysInterface<Number[], Number> {
+public class NumberArrays extends Objects<Number[]> implements NumberArraysInterface<Number> {
 
     private final NumberArrayContainable containable = new NumberArrayContainable();
 

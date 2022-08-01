@@ -8,9 +8,9 @@ import com.github.ones1kk.asserts.api.lang.object.impl.Objects;
 
 import java.util.function.Predicate;
 
-public class Arrays<ACTUAL, EXPECTED> extends Objects<ACTUAL> implements ArraysInterface<ACTUAL, EXPECTED> {
+public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<ACTUAL> {
 
-    private final Containable<ACTUAL, EXPECTED> containable = new ArrayContainable<>();
+    private final Containable<ACTUAL> containable = new ArrayContainable<>();
 
     public Arrays(AsAssert<?> asAssert) {
         super(asAssert);
@@ -18,98 +18,98 @@ public class Arrays<ACTUAL, EXPECTED> extends Objects<ACTUAL> implements ArraysI
 
 
     @Override
-    public void assertIsEmpty(ACTUAL actual) {
-        if (((Object[]) actual).length != 0) {
-            handler.setDescription(handler.from(toString((Object[]) actual), "{} is not empty"));
+    public void assertIsEmpty(ACTUAL[] actual) {
+        if ( actual.length != 0) {
+            handler.setDescription(handler.from(toString( actual), "{} is not empty"));
             throw handler.getException();
         }
     }
 
     @Override
-    public void assertIsNotEmpty(ACTUAL actual) {
-        if (((Object[]) actual).length == 0) {
-            handler.setDescription(handler.from(toString((Object[]) actual), "{} is empty"));
+    public void assertIsNotEmpty(ACTUAL[] actual) {
+        if ( actual.length == 0) {
+            handler.setDescription(handler.from(toString( actual), "{} is empty"));
             throw handler.getException();
         }
     }
 
     @Override
-    public void assertIsNullOrEmpty(ACTUAL actual) {
-        if (((Object[]) actual).length != 0) {
-            handler.setDescription(handler.from(toString((Object[]) actual), "{} is not null or not empty"));
+    public void assertIsNullOrEmpty(ACTUAL[] actual) {
+        if ( actual.length != 0) {
+            handler.setDescription(handler.from(toString(actual), "{} is not null or not empty"));
             throw handler.getException();
         }
     }
 
     @Override
-    public void assertContains(ACTUAL actual, EXPECTED expected) {
+    public void assertContains(ACTUAL[] actual, ACTUAL expected) {
         if (containable.doesNotContain(actual, expected)) {
-            handler.setDescription(handler.from(toString((Object[]) actual), expected, "{} doesn't contains of {}"));
+            handler.setDescription(handler.from(toString( actual), expected, "{} doesn't contains of {}"));
             throw handler.getException();
         }
     }
 
     @Override
-    public void assertDoesNotContain(ACTUAL actual, EXPECTED expected) {
+    public void assertDoesNotContain(ACTUAL[] actual, ACTUAL expected) {
         if (containable.contains(actual, expected)) {
-            handler.setDescription(handler.from(toString((Object[]) actual), expected, "{} contains of {}"));
+            handler.setDescription(handler.from(toString(actual), expected, "{} contains of {}"));
             throw handler.getException();
         }
     }
 
     @Override
-    public void assertContainsAll(ACTUAL actual, EXPECTED... expected) {
+    public void assertContainsAll(ACTUAL[] actual, ACTUAL... expected) {
         if (containable.containsNotAll(actual, expected)) {
-            handler.setDescription(handler.from(toString((Object[]) actual), toString(expected), "{} doesn't contain any of {}"));
+            handler.setDescription(handler.from(toString( actual), toString(expected), "{} doesn't contain any of {}"));
             throw handler.getException();
         }
     }
 
     @Override
-    public void assertContainsAny(ACTUAL actual, EXPECTED... expected) {
+    public void assertContainsAny(ACTUAL[] actual, ACTUAL... expected) {
         if (containable.doseNotContainAny(actual, expected)) {
-            handler.setDescription(handler.from(toString((Object[]) actual), toString(expected), "{} doesn't contain any of {}"));
+            handler.setDescription(handler.from(toString( actual), toString(expected), "{} doesn't contain any of {}"));
             throw handler.getException();
         }
     }
 
     @Override
-    public void assertContainsNull(ACTUAL actual) {
+    public void assertContainsNull(ACTUAL[] actual) {
         if (containable.doesNotContainNull(actual)) {
-            handler.setDescription(handler.from(toString((Object[]) actual), "{} doesn't contain of null"));
+            handler.setDescription(handler.from(toString( actual), "{} doesn't contain of null"));
             throw handler.getException();
         }
     }
 
     @Override
-    public void assertDoesNotContainNull(ACTUAL actual) {
+    public void assertDoesNotContainNull(ACTUAL[] actual) {
         if (containable.containsNull(actual)) {
-            handler.setDescription(handler.from(toString((Object[]) actual), "{} contains of null"));
+            handler.setDescription(handler.from(toString(actual), "{} contains of null"));
             throw handler.getException();
         }
     }
 
     @Override
-    public void assertAllMatch(ACTUAL actual, Predicate<EXPECTED> expected) {
-        for (Object value : (Object[]) actual) {
-            if (!expected.test((EXPECTED) value)) {
-                handler.setDescription(handler.from(toString((Object[]) actual), "{} is not all matched"));
+    public void assertAllMatch(ACTUAL[] actual, Predicate<ACTUAL> expected) {
+        for (ACTUAL value : actual) {
+            if (!expected.test(value)) {
+                handler.setDescription(handler.from(toString(actual), "{} is not all matched"));
                 throw handler.getException();
             }
         }
     }
 
     @Override
-    public void assertNoneMatch(ACTUAL actual, Predicate<EXPECTED> expected) {
-        for (Object value : (Object[]) actual) {
-            if (expected.test((EXPECTED) value)) {
-                handler.setDescription(handler.from(toString((Object[]) actual), "{} is matched with all of expected"));
+    public void assertNoneMatch(ACTUAL[] actual, Predicate<ACTUAL> expected) {
+        for (ACTUAL value : actual) {
+            if (expected.test(value)) {
+                handler.setDescription(handler.from(toString(actual), "{} is matched with all of expected"));
                 throw handler.getException();
             }
         }
     }
 
-    private String toString(Object[] actual) {
+    private String toString(ACTUAL[] actual) {
         return java.util.Arrays.deepToString(actual);
     }
 }

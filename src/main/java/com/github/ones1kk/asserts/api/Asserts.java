@@ -63,7 +63,7 @@ public class Asserts {
         return AssertsForType.that(actual);
     }
 
-    public static AbstractArrayAssert<?, Object[], Object> that(Object[] actual) {
+    public static AbstractArrayAssert<?, Object> that(Object[] actual) {
         return AssertsForType.that(actual);
     }
 
@@ -71,15 +71,15 @@ public class Asserts {
         return AssertsForType.that(actual);
     }
 
-    public static AbstractArrayAssert<?, CharSequence[], CharSequence> that(CharSequence[] actual) {
+    public static AbstractArrayAssert<?, CharSequence> that(CharSequence[] actual) {
         return AssertsForType.that(actual);
     }
 
-    public static AbstractArrayAssert<?, String[], String> that(String[] actual) {
+    public static AbstractArrayAssert<?, String> that(String[] actual) {
         return AssertsForType.that(actual);
     }
 
-    public static AbstractArrayAssert<?, Character[], Character> that(Character[] actual) {
+    public static AbstractArrayAssert<?, Character> that(Character[] actual) {
         return AssertsForType.that(actual);
     }
 
