@@ -9,7 +9,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.Objects;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class NumberArraysTest {
 
@@ -35,7 +35,7 @@ class NumberArraysTest {
         assertThrows(Exception.class, () -> numberArrays.assertIsMin(actual, 888));
         assertThrows(Exception.class, () -> numberArrays.assertIsSum(actual, 1234));
         assertThrows(Exception.class, () -> numberArrays.assertIsEmpty(actual));
-        assertThrows(Exception.class, () -> numberArrays.assertIsNotEmpty(new Number[] {}));
+        assertThrows(Exception.class, () -> numberArrays.assertIsNotEmpty(new Number[]{}));
 
         assertThrows(Exception.class, () -> numberArrays.assertIsNullOrEmpty(actual));
 
@@ -55,25 +55,25 @@ class NumberArraysTest {
         numberArrays.assertIsMax(actual, 2352F);
         numberArrays.assertIsMin(actual, 1);
         numberArrays.assertIsSum(actual, 2481.6);
-        numberArrays.assertIsEmpty(new Number[] {});
+        numberArrays.assertIsEmpty(new Number[]{});
         numberArrays.assertIsNotEmpty(actual);
 
         // Null check
         numberArrays.assertIsNullOrEmpty(null);
         // Empty check
-        numberArrays.assertIsNullOrEmpty(new Number[] {});
+        numberArrays.assertIsNullOrEmpty(new Number[]{});
 
         numberArrays.assertContains(actual, 3.6);
         numberArrays.assertDoesNotContain(actual, 5);
 
-        numberArrays.assertContainsAll(actual, 1,  123L, 2352F);
+        numberArrays.assertContainsAll(actual, 1, 123L, 2352F);
 
         // One
         numberArrays.assertContainsAny(actual, 0, 3.6, 100);
         // Every
         numberArrays.assertContainsAny(actual, 1, 2, 3.6);
 
-        numberArrays.assertContainsNull(new Number[]{1, 6F, null, (short)23, (byte) 12});
+        numberArrays.assertContainsNull(new Number[]{1, 6F, null, (short) 23, (byte) 12});
         numberArrays.assertDoesNotContainNull(actual);
 
         numberArrays.assertAllMatch(actual, it -> it.doubleValue() > 0);
