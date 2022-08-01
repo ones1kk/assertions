@@ -1,5 +1,6 @@
 package com.github.ones1kk.asserts.api;
 
+import com.github.ones1kk.asserts.api.array.impl.Arrays;
 import com.github.ones1kk.asserts.api.array.number.impl.NumberArrays;
 import com.github.ones1kk.asserts.api.lang.bolean.impl.Booleans;
 import com.github.ones1kk.asserts.api.lang.bte.impl.Bytes;
@@ -59,7 +60,27 @@ public final class AssertFactory {
         return new Booleans(asAssert);
     }
 
+    public Arrays<Object[], Object> createAssert(Object[] actual, AsAssert<?> asAssert) {
+        return new Arrays<>(asAssert);
+    }
+
     public NumberArrays createAssert(Number[] actual, AsAssert<?> asAssert) {
         return new NumberArrays(asAssert);
     }
+
+    public Arrays<CharSequence[], CharSequence> createAssert(CharSequence[] actual, AsAssert<?> asAssert) {
+        return new Arrays<>(asAssert);
+    }
+    public Arrays<String[], String> createAssert(String[] actual, AsAssert<?> asAssert) {
+        return new Arrays<>(asAssert);
+    }
+
+    public Arrays<Character[], Character> createAssert(Character[] actual, AsAssert<?> asAssert) {
+        return new Arrays<>(asAssert);
+    }
+
+    public Arrays<Boolean[], Boolean> createAssert(Boolean[] actual, AsAssert<?> asAssert) {
+        return new Arrays<>(asAssert);
+    }
+
 }
