@@ -14,9 +14,9 @@ public interface Iterable<ELEMENT> {
 
     void assertDoesNotContain(ELEMENT[] actual, ELEMENT expected);
 
-    void assertContainsAll(ELEMENT[] actual, ELEMENT... expected);
+    void assertContainsAll(ELEMENT[] actual, ELEMENT[] expected);
 
-    void assertContainsAny(ELEMENT[] actual, ELEMENT... expected);
+    void assertContainsAny(ELEMENT[] actual, ELEMENT[] expected);
 
     void assertContainsNull(ELEMENT[] actual);
 
