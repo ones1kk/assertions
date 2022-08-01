@@ -1,5 +1,7 @@
 package com.github.ones1kk.asserts.api;
 
+import com.github.ones1kk.asserts.api.array.AbstractArrayAssert;
+import com.github.ones1kk.asserts.api.array.model.ArrayAssert;
 import com.github.ones1kk.asserts.api.array.model.NumberArrayAssert;
 import com.github.ones1kk.asserts.api.array.number.AbstractNumberArrayAssert;
 import com.github.ones1kk.asserts.api.lang.bolean.AbstractBooleanAssert;
@@ -61,7 +63,24 @@ public class AssertsForType {
         return new BooleanAssert(actual);
     }
 
+    public static AbstractArrayAssert<?, Object[], Object> that(Object[] actual) {
+        return new ArrayAssert<>(actual);
+    }
+
     public static AbstractNumberArrayAssert<?, Number[]> that(Number[] actual) {
         return new NumberArrayAssert(actual);
     }
+
+    public static AbstractArrayAssert<?, CharSequence[], CharSequence> that(CharSequence[] actual) {
+        return new ArrayAssert<>(actual);
+    }
+    public static AbstractArrayAssert<?, String[], String> that(String[] actual) {
+        return new ArrayAssert<>(actual);
+    }
+
+    public static AbstractArrayAssert<?, Character[], Character> that(Character[] actual) {
+        return new ArrayAssert<>(actual);
+    }
+
+
 }
