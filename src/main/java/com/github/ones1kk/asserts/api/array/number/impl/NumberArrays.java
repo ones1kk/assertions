@@ -2,7 +2,6 @@ package com.github.ones1kk.asserts.api.array.number.impl;
 
 import com.github.ones1kk.asserts.api.AsAssert;
 import com.github.ones1kk.asserts.api.array.number.NumberArraysInterface;
-import com.github.ones1kk.asserts.api.feature.iterable.containable.Containable;
 import com.github.ones1kk.asserts.api.feature.iterable.containable.impl.NumberArrayContainable;
 import com.github.ones1kk.asserts.api.lang.object.impl.Objects;
 import org.apache.commons.lang3.ArrayUtils;
@@ -12,7 +11,7 @@ import java.util.function.Predicate;
 
 public class NumberArrays extends Objects<Number[]> implements NumberArraysInterface<Number[], Number> {
 
-    private final Containable<Number[], Number> containable = new NumberArrayContainable();
+    private final NumberArrayContainable containable = new NumberArrayContainable();
 
     public NumberArrays(AsAssert<?> asAssert) {
         super(asAssert);
@@ -20,7 +19,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
 
     @Override
     public void assertIsMax(Number[] actual, Number expected) {
-        if(!containable.isMax(actual, expected)) {
+        if (!containable.isMax(actual, expected)) {
             handler.setDescription(handler.from(toString(actual), expected, "Max of {} is not {}"));
             throw handler.getException();
         }
@@ -28,7 +27,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
 
     @Override
     public void assertIsMin(Number[] actual, Number expected) {
-        if(!containable.isMin(actual, expected)) {
+        if (!containable.isMin(actual, expected)) {
             handler.setDescription(handler.from(toString(actual), expected, "Minimum of {} is not {}"));
             throw handler.getException();
         }
@@ -36,7 +35,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
 
     @Override
     public void assertIsSum(Number[] actual, Number expected) {
-        if(!containable.isSum(actual, expected)) {
+        if (!containable.isSum(actual, expected)) {
             handler.setDescription(handler.from(toString(actual), expected, "Sum of {} is not {}"));
             throw handler.getException();
         }
@@ -60,7 +59,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
 
     @Override
     public void assertIsNullOrEmpty(Number[] actual) {
-        if (ArrayUtils.isNotEmpty(actual) || actual == null) {
+        if (ArrayUtils.isNotEmpty(actual)) {
             handler.setDescription(handler.from(toString(actual), "{} is not null or not empty"));
             throw handler.getException();
         }
@@ -84,7 +83,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
 
     @Override
     public void assertContainsAll(Number[] actual, Number... expected) {
-        if (containable.doseNotContainAny(actual, expected)) {
+        if (containable.containsNotAll(actual, expected)) {
             handler.setDescription(handler.from(toString(actual), toString(expected), "{} doesn't contain any of {}"));
             throw handler.getException();
         }
