@@ -71,6 +71,7 @@ public final class AssertFactory {
     public Arrays<CharSequence[], CharSequence> createAssert(CharSequence[] actual, AsAssert<?> asAssert) {
         return new Arrays<>(asAssert);
     }
+
     public Arrays<String[], String> createAssert(String[] actual, AsAssert<?> asAssert) {
         return new Arrays<>(asAssert);
     }

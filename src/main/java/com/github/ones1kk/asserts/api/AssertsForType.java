@@ -74,6 +74,7 @@ public class AssertsForType {
     public static AbstractArrayAssert<?, CharSequence[], CharSequence> that(CharSequence[] actual) {
         return new ArrayAssert<>(actual);
     }
+
     public static AbstractArrayAssert<?, String[], String> that(String[] actual) {
         return new ArrayAssert<>(actual);
     }

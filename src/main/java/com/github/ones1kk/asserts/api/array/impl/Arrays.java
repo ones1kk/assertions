@@ -19,7 +19,7 @@ public class Arrays<ACTUAL, EXPECTED> extends Objects<ACTUAL> implements ArraysI
 
     @Override
     public void assertIsEmpty(ACTUAL actual) {
-        if(((Object[]) actual).length != 0) {
+        if (((Object[]) actual).length != 0) {
             handler.setDescription(handler.from(toString((Object[]) actual), "{} is not empty"));
             throw handler.getException();
         }
@@ -27,7 +27,7 @@ public class Arrays<ACTUAL, EXPECTED> extends Objects<ACTUAL> implements ArraysI
 
     @Override
     public void assertIsNotEmpty(ACTUAL actual) {
-        if(((Object[]) actual).length == 0) {
+        if (((Object[]) actual).length == 0) {
             handler.setDescription(handler.from(toString((Object[]) actual), "{} is empty"));
             throw handler.getException();
         }
@@ -35,7 +35,7 @@ public class Arrays<ACTUAL, EXPECTED> extends Objects<ACTUAL> implements ArraysI
 
     @Override
     public void assertIsNullOrEmpty(ACTUAL actual) {
-        if(((Object[]) actual).length != 0) {
+        if (((Object[]) actual).length != 0) {
             handler.setDescription(handler.from(toString((Object[]) actual), "{} is not null or not empty"));
             throw handler.getException();
         }
