@@ -30,6 +30,12 @@ public class NumberArrayContainable implements Containable<Number[], Number> {
     }
 
     @Override
+    public boolean containsNotAll(Number[] actual, Number... expected) {
+        return !(new HashSet<>(Arrays.asList(actual))
+                .containsAll(List.of(expected)));
+    }
+
+    @Override
     public boolean containsAny(Number[] actual, Number... expected) {
         for (Number number : expected) {
             if (Arrays.asList(actual).contains(number)) return true;
@@ -39,8 +45,13 @@ public class NumberArrayContainable implements Containable<Number[], Number> {
 
     @Override
     public boolean doseNotContainAny(Number[] actual, Number... expected) {
-        return !(new HashSet<>(Arrays.asList(actual))
-                .containsAll(List.of(expected)));
+        List<Number> numbers = Arrays.asList(actual);
+        for (Number value : expected) {
+            if (numbers.contains(value)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
@@ -73,11 +84,11 @@ public class NumberArrayContainable implements Containable<Number[], Number> {
         return min == expected.doubleValue();
     }
 
-    @Override
+
     public boolean isSum(Number[] actual, Number expected) {
         double sum = 0;
-        for (Number value : actual) {
-            sum += (double) value;
+        for (Number number : actual) {
+            sum += number.doubleValue();
         }
         return sum == expected.doubleValue();
     }
