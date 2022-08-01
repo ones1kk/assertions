@@ -64,7 +64,6 @@ public class NumberArrayContainable implements Containable<Number[], Number> {
         return !(Arrays.asList(actual).contains(null));
     }
 
-    @Override
     public boolean isMax(Number[] actual, Number expected) {
         double max = actual[0].doubleValue();
         for (Number value : actual) {
@@ -73,8 +72,7 @@ public class NumberArrayContainable implements Containable<Number[], Number> {
         }
         return max == expected.doubleValue();
     }
-
-    @Override
+    
     public boolean isMin(Number[] actual, Number expected) {
         double min = actual[0].doubleValue();
         for (Number value : actual) {
