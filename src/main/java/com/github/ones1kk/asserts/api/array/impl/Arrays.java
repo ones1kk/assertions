@@ -5,6 +5,7 @@ import com.github.ones1kk.asserts.api.array.ArraysInterface;
 import com.github.ones1kk.asserts.api.feature.iterable.containable.Containable;
 import com.github.ones1kk.asserts.api.feature.iterable.containable.impl.ArrayContainable;
 import com.github.ones1kk.asserts.api.lang.object.impl.Objects;
+import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.function.Predicate;
 
@@ -19,7 +20,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
 
     @Override
     public void assertIsEmpty(ACTUAL[] actual) {
-        if (actual.length != 0) {
+        if (ArrayUtils.isNotEmpty(actual)) {
             handler.setDescription(handler.from(toString(actual), "{} is not empty"));
             throw handler.getException();
         }
@@ -27,7 +28,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
 
     @Override
     public void assertIsNotEmpty(ACTUAL[] actual) {
-        if (actual.length == 0) {
+        if (ArrayUtils.isEmpty(actual)) {
             handler.setDescription(handler.from(toString(actual), "{} is empty"));
             throw handler.getException();
         }
@@ -35,7 +36,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
 
     @Override
     public void assertIsNullOrEmpty(ACTUAL[] actual) {
-        if (actual.length != 0) {
+        if (ArrayUtils.isNotEmpty(actual)) {
             handler.setDescription(handler.from(toString(actual), "{} is not null or not empty"));
             throw handler.getException();
         }
@@ -58,7 +59,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     }
 
     @Override
-    public void assertContainsAll(ACTUAL[] actual, ACTUAL[] expected) {
+    public void assertContainsAll(ACTUAL[] actual, ACTUAL... expected) {
         if (containable.containsNotAll(actual, expected)) {
             handler.setDescription(handler.from(toString(actual), toString(expected), "{} doesn't contain any of {}"));
             throw handler.getException();
@@ -66,7 +67,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     }
 
     @Override
-    public void assertContainsAny(ACTUAL[] actual, ACTUAL[] expected) {
+    public void assertContainsAny(ACTUAL[] actual, ACTUAL... expected) {
         if (containable.doseNotContainAny(actual, expected)) {
             handler.setDescription(handler.from(toString(actual), toString(expected), "{} doesn't contain any of {}"));
             throw handler.getException();

@@ -45,13 +45,13 @@ public class AbstractArrayAssert<SELF extends AbstractArrayAssert<SELF, ACTUAL>,
     }
 
     @Override
-    public SELF containsAll(ACTUAL[] expected) {
+    public SELF containsAll(ACTUAL... expected) {
         arrays.assertContainsAll(actual, expected);
         return self;
     }
 
     @Override
-    public SELF containsAny(ACTUAL[] expected) {
+    public SELF containsAny(ACTUAL... expected) {
         arrays.assertContainsAny(actual, expected);
         return self;
     }
