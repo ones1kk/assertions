@@ -19,7 +19,7 @@ public class ArrayContainable<ELEMENT> implements Containable<ELEMENT> {
     }
 
     @Override
-    public boolean containsAll(ELEMENT[] actual, ELEMENT[] expected) {
+    public boolean containsAll(ELEMENT[] actual, ELEMENT... expected) {
         List<ELEMENT> actuals = Arrays.asList(actual);
         for (ELEMENT value : expected) {
             if (!actuals.contains(value)) {
@@ -30,13 +30,13 @@ public class ArrayContainable<ELEMENT> implements Containable<ELEMENT> {
     }
 
     @Override
-    public boolean containsNotAll(ELEMENT[] actual, ELEMENT[] expected) {
+    public boolean containsNotAll(ELEMENT[] actual, ELEMENT... expected) {
         return !(new HashSet<>(Arrays.asList(actual))
                 .containsAll(List.of(expected)));
     }
 
     @Override
-    public boolean containsAny(ELEMENT[] actual, ELEMENT[] expected) {
+    public boolean containsAny(ELEMENT[] actual, ELEMENT... expected) {
         for (ELEMENT value : expected) {
             if (Arrays.asList(actual).contains(value)) return true;
         }
@@ -44,7 +44,7 @@ public class ArrayContainable<ELEMENT> implements Containable<ELEMENT> {
     }
 
     @Override
-    public boolean doseNotContainAny(ELEMENT[] actual, ELEMENT[] expected) {
+    public boolean doseNotContainAny(ELEMENT[] actual, ELEMENT... expected) {
         List<ELEMENT> actuals = Arrays.asList(actual);
         for (ELEMENT value : expected) {
             if (actuals.contains(value)) {

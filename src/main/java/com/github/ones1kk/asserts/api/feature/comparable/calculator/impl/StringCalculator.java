@@ -6,22 +6,22 @@ public class StringCalculator implements ComparableCalculatorInterface<String> {
 
     @Override
     public boolean isGraterThan(String actual, String expected) {
-        return actual.compareTo(expected) >= 0;
+        return actual.compareTo(expected) > 0;
     }
 
     @Override
     public boolean isLessThan(String actual, String expected) {
-        return actual.compareTo(expected) <= 0;
-    }
-
-    @Override
-    public boolean isLessThanOrEqualTo(String actual, String expected) {
         return actual.compareTo(expected) < 0;
     }
 
     @Override
+    public boolean isLessThanOrEqualTo(String actual, String expected) {
+        return actual.compareTo(expected) <= 0;
+    }
+
+    @Override
     public boolean isGraterThanOrEqualTo(String actual, String expected) {
-        return actual.compareTo(expected) > 0;
+        return actual.compareTo(expected) >= 0;
     }
 
     @Override

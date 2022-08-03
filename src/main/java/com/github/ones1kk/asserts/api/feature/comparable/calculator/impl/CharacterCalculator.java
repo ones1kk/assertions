@@ -7,21 +7,13 @@ public class CharacterCalculator extends AbstractComparableCalculator<Character>
     @Override
     public boolean isGraterThan(Character actual, Character expected) {
         if (isPrimitive(actual, expected)) {
-            return Character.compare(actual, expected) >= 0;
+            return Character.compare(actual, expected) > 0;
         }
-        return actual.compareTo(expected) >= 0;
+        return actual.compareTo(expected) >0;
     }
 
     @Override
     public boolean isLessThan(Character actual, Character expected) {
-        if (isPrimitive(actual, expected)) {
-            return Character.compare(actual, expected) <= 0;
-        }
-        return actual.compareTo(expected) <= 0;
-    }
-
-    @Override
-    public boolean isLessThanOrEqualTo(Character actual, Character expected) {
         if (isPrimitive(actual, expected)) {
             return Character.compare(actual, expected) < 0;
         }
@@ -29,11 +21,19 @@ public class CharacterCalculator extends AbstractComparableCalculator<Character>
     }
 
     @Override
+    public boolean isLessThanOrEqualTo(Character actual, Character expected) {
+        if (isPrimitive(actual, expected)) {
+            return Character.compare(actual, expected) <= 0;
+        }
+        return actual.compareTo(expected) <= 0;
+    }
+
+    @Override
     public boolean isGraterThanOrEqualTo(Character actual, Character expected) {
         if (isPrimitive(actual, expected)) {
-            return Character.compare(actual, expected) > 0;
+            return Character.compare(actual, expected) >= 0;
         }
-        return actual.compareTo(expected) > 0;
+        return actual.compareTo(expected) >= 0;
     }
 
     @Override

@@ -16,7 +16,7 @@ public class Strings extends CharSequences implements StringsInterface<String> {
 
     @Override
     public void assertIsLessThan(String actual, String expected) {
-        if (calculator.isGraterThan(actual, expected)) {
+        if (calculator.isGraterThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not less than {}"));
             throw handler.getException();
         }
@@ -24,7 +24,7 @@ public class Strings extends CharSequences implements StringsInterface<String> {
 
     @Override
     public void assertIsLessThanOrEqualTo(String actual, String expected) {
-        if (calculator.isGraterThanOrEqualTo(actual, expected)) {
+        if (calculator.isGraterThan(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not less than or equal to {}"));
             throw handler.getException();
         }
@@ -32,7 +32,7 @@ public class Strings extends CharSequences implements StringsInterface<String> {
 
     @Override
     public void assertIsGreaterThan(String actual, String expected) {
-        if (calculator.isLessThan(actual, expected)) {
+        if (calculator.isLessThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not greater than {}"));
             throw handler.getException();
         }
@@ -40,7 +40,7 @@ public class Strings extends CharSequences implements StringsInterface<String> {
 
     @Override
     public void assertIsGreaterThanOrEqualTo(String actual, String expected) {
-        if (calculator.isLessThanOrEqualTo(actual, expected)) {
+        if (calculator.isLessThan(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not greater than or equal to {}"));
             throw handler.getException();
         }
