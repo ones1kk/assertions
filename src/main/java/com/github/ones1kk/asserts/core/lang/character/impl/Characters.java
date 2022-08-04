@@ -130,7 +130,6 @@ public class Characters extends Objects<Character> implements CharactersInterfac
     @Override
     public void assertIsBetween(Character actual, Character start, Character end) {
         if (calculator.isLessThan(actual, start) || calculator.isGraterThan(actual, end)) {
-            // TODO : getter
             String description = handler.getDescribable().as("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();

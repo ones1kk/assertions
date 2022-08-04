@@ -155,8 +155,8 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
     }
 
     private void setAssertClose(Double actual, Double expected, Offset<Double> offset) {
-        // TODO : getter
-        String scope = handler.getDescribable().as("{} is close to {}", actual,
+        
+        String scope = handler.getDescribable().as("{} have to close to {}", actual,
                 (expected - offset.getValue()) + " ~ " + (expected + offset.getValue()));
         handler.setDescription(handler.from(actual, scope));
         throw handler.getException();

@@ -29,7 +29,7 @@ public class Description implements Describable {
 
     private void throwIfNull(Object[] args) {
         if (ArrayUtils.isEmpty(args) || args == null) {
-            throw new AssertException("arguments are missing");
+            throw new AssertException("argument is missing");
         }
     }
 
