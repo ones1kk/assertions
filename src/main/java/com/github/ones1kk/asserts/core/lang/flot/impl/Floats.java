@@ -154,7 +154,7 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
     }
 
     private void setAssertClose(Float actual, Float expected, Offset<Float> offset) {
-        
+
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
                 (expected - offset.getValue()) + " ~ " + (expected + offset.getValue()));
         handler.setDescription(handler.from(actual, scope));
