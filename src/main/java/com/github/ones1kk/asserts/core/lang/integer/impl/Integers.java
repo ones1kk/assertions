@@ -169,7 +169,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
     }
 
     private void setAssertClose(Integer actual, Integer expected, Offset<Integer> offset) {
-        
+
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
                 (expected - offset.getValue()) + " ~ " + (expected + offset.getValue()));
         handler.setDescription(handler.from(actual, scope));
