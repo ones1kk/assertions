@@ -125,4 +125,42 @@ class ArrayContainableTest {
         assertThat(containable.doesNotContainNull(new Character[]{'a', null, 'b', 'c'})).isFalse();
     }
 
+    @Test
+    @DisplayName("Method test(Boolean)")
+    public void test4() throws Exception {
+        Containable<Boolean> containable = new ArrayContainable<>();
+        Boolean[] actual = {true, true};
+        Boolean[] actual2 = {false, false};
+
+        assertThat(containable.contains(actual, true)).isTrue();
+
+        assertThat(containable.doesNotContain(actual, true)).isFalse();
+
+        assertThat(containable.containsAll(actual, true, true, true)).isTrue();
+        assertThat(containable.containsAll(actual, true, true, true)).isTrue();
+
+        // all
+        assertThat(containable.containsNotAll(actual2, true, true, true)).isTrue();
+        // one
+        assertThat(containable.containsNotAll(actual2, true, true, true)).isTrue();
+
+        // one
+        assertThat(containable.containsAny(actual2, true, false, true)).isTrue();
+        // all
+        assertThat(containable.containsAny(actual, false, true, false)).isTrue();
+        // nothing
+        assertThat(containable.containsAny(actual, false, true, true)).isTrue();
+
+        // all
+        assertThat(containable.doseNotContainAny(actual, false, false, false)).isTrue();
+        // one
+        assertThat(containable.doseNotContainAny(actual2, true, true, true)).isTrue();
+
+        assertThat(containable.containsNull(actual)).isFalse();
+        assertThat(containable.containsNull(new Boolean[]{true, null, true, true})).isTrue();
+
+        assertThat(containable.doesNotContainNull(actual)).isTrue();
+        assertThat(containable.doesNotContainNull(new Boolean[]{true, null, true, true})).isFalse();
+    }
+
 }
