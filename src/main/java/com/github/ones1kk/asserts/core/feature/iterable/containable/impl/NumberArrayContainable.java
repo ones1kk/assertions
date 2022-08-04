@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
-public class NumberArrayContainable implements Containable<Number> {
+public class NumberArrayContainable<ELEMENT extends Number> implements Containable<ELEMENT> {
 
     @Override
     public boolean contains(Number[] actual, Number expected) {
