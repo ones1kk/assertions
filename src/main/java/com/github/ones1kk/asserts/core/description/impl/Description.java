@@ -9,6 +9,10 @@ import java.util.function.Supplier;
 
 public class Description implements Describable {
 
+    private static final String REG_EXR = "Special characters can not be inserted between strings";
+
+    private static final String ARGUMENT_DESCRIPTION = "Argument is missing";
+
     @Override
     public String as(Supplier<String> supplier, @Nullable Object... args) {
         return getFormattingDescription(supplier.get(), args);
@@ -20,6 +24,8 @@ public class Description implements Describable {
     }
 
     private String getFormattingDescription(String description, Object[] args) {
+        throwIfHavingSpecialChar(description);
+
         if (description.contains("{}")) {
             throwIfNull(args);
             return String.format(description.replace("{}", "%s"), args);
@@ -29,7 +35,13 @@ public class Description implements Describable {
 
     private void throwIfNull(Object[] args) {
         if (ArrayUtils.isEmpty(args) || args == null) {
-            throw new AssertException("argument is missing");
+            throw new AssertException(ARGUMENT_DESCRIPTION);
+        }
+    }
+
+    private void throwIfHavingSpecialChar(String formatted) {
+        if (formatted.contains("%s")) {
+            throw new AssertException(REG_EXR);
         }
     }
 
