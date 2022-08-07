@@ -1,7 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.shrt;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
-import com.github.ones1kk.asserts.core.feature.Offset;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
