@@ -66,8 +66,8 @@ class AbstractShortAssertTest {
         assertThrows(AssertException.class, assert2::isNotNegative);
         assertThrows(AssertException.class, assert2::isZero);
         assertThrows(AssertException.class, assert3::isNotZero);
-        assertThrows(AssertException.class, () -> assert3.isCloseTo((short) 5, Offset.offset((short) 2)));
-        assertThrows(AssertException.class, () -> assert3.isNotCloseTo((short) 5, Offset.offset((short) 6)));
+        assertThrows(AssertException.class, () -> assert3.isCloseTo((short) 5, (short) 2));
+        assertThrows(AssertException.class, () -> assert3.isNotCloseTo((short) 5, (short) 6));
 
         assert1.isOdd();
         assert4.isNotOdd();
@@ -79,8 +79,8 @@ class AbstractShortAssertTest {
         assert1.isNotNegative();
         assert3.isZero();
         assert1.isNotZero();
-        assert1.isCloseTo(actual2, Offset.offset((short) 3));
-        assert1.isNotCloseTo((short) 5, Offset.offset((short) 1));
+        assert1.isCloseTo(actual2, (short) 3);
+        assert1.isNotCloseTo((short) 5, (short) 1);
 
     }
 

@@ -66,8 +66,8 @@ class AbstractLongAssertTest {
         assertThrows(AssertException.class, assert2::isNotNegative);
         assertThrows(AssertException.class, assert2::isZero);
         assertThrows(AssertException.class, assert3::isNotZero);
-        assertThrows(AssertException.class, () -> assert3.isCloseTo(5L, Offset.offset(2L)));
-        assertThrows(AssertException.class, () -> assert3.isNotCloseTo(5L, Offset.offset(6L)));
+        assertThrows(AssertException.class, () -> assert3.isCloseTo(5L, 2L));
+        assertThrows(AssertException.class, () -> assert3.isNotCloseTo(5L, 6L));
 
         assert1.isOdd();
         assert4.isNotOdd();
@@ -79,8 +79,8 @@ class AbstractLongAssertTest {
         assert1.isNotNegative();
         assert3.isZero();
         assert1.isNotZero();
-        assert1.isCloseTo(actual2, Offset.offset(3L));
-        assert1.isNotCloseTo(5L, Offset.offset(1L));
+        assert1.isCloseTo(actual2, 3L);
+        assert1.isNotCloseTo(5L, 1L);
     }
 
     @Test
