@@ -133,8 +133,8 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
 
     @Override
     public void assertIsCloseTo(Float actual, Float expected, Offset<Float> offset) {
-        float startResult = Float.compare(actual, (expected - offset.getValue()));
-        float endResult = Float.compare(actual, (expected + offset.getValue()));
+        float startResult = Float.compare(actual, (float) offset.getBefore(expected));
+        float endResult = Float.compare(actual, (float) offset.getAfter(expected));
 
         if (calculator.is(startResult, -1F)
                 || calculator.is(endResult, 1F)) {
@@ -144,8 +144,8 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
 
     @Override
     public void assertIsNotCloseTo(Float actual, Float expected, Offset<Float> offset) {
-        float startResult = Float.compare(actual, (expected - offset.getValue()));
-        float endResult = Float.compare(actual, (expected + offset.getValue()));
+        float startResult = Float.compare(actual, (float) offset.getBefore(expected));
+        float endResult = Float.compare(actual, (float) offset.getAfter(expected));
 
         if (calculator.is(startResult, 1F)
                 || calculator.is(endResult, 1F)) {
@@ -156,7 +156,7 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
     private void setAssertClose(Float actual, Float expected, Offset<Float> offset) {
 
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                (expected - offset.getValue()) + " ~ " + (expected + offset.getValue()));
+                offset.getBefore(expected) + " ~ " + offset.getAfter(expected));
         handler.setDescription(handler.from(actual, scope));
         throw handler.getException();
     }

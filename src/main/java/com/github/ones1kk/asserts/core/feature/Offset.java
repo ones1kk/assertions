@@ -10,7 +10,8 @@ public final class Offset<T extends Number> {
     private Offset(T value) {
         Asserts.that(value)
                 .as("Offset value can not be null")
-                .isNotNull();
+                .isNotNull()
+                .isInstanceOf(Number.class);
         this.value = value;
     }
 
@@ -21,4 +22,17 @@ public final class Offset<T extends Number> {
     public T getValue() {
         return value;
     }
+
+    public double getBefore(T expected) {
+        return (offset(expected).getValueInternal() - value.doubleValue());
+    }
+
+    public double getAfter(T expected) {
+        return (offset(expected).getValueInternal() + value.doubleValue());
+    }
+
+    private double getValueInternal() {
+        return offset(value).getValue().doubleValue();
+    }
+
 }

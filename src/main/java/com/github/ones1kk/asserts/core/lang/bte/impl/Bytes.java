@@ -148,8 +148,8 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsCloseTo(Byte actual, Byte expected, Offset<Byte> offset) {
-        byte startResult = (byte) Byte.compare(actual, (byte) (expected - offset.getValue()));
-        byte endResult = (byte) Byte.compare(actual, (byte) (expected + offset.getValue()));
+        byte startResult = (byte) Byte.compare(actual, (byte) offset.getBefore(expected));
+        byte endResult = (byte) Byte.compare(actual, (byte) offset.getAfter(expected));
 
         if (calculator.isLessThan(startResult, (byte) 0)
                 || calculator.isGraterThan(endResult, (byte) 0)) {
@@ -159,8 +159,8 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsNotCloseTo(Byte actual, Byte expected, Offset<Byte> offset) {
-        byte startResult = (byte) Byte.compare(actual, (byte) (expected - offset.getValue()));
-        byte endResult = (byte) Byte.compare(actual, (byte) (expected + offset.getValue()));
+        byte startResult = (byte) Byte.compare(actual, (byte) offset.getBefore(expected));
+        byte endResult = (byte) Byte.compare(actual, (byte) offset.getAfter(expected));
 
         if (calculator.isGraterThanOrEqualTo(startResult, (byte) 0)
                 || calculator.isGraterThanOrEqualTo(endResult, (byte) 0)) {
@@ -170,7 +170,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     private void setAssertClose(Byte actual, Byte expected, Offset<Byte> offset) {
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                (expected - offset.getValue()) + " ~ " + (expected + offset.getValue()));
+                offset.getBefore(expected) + " ~ " + offset.getAfter(expected));
         handler.setDescription(handler.from(actual, scope));
         throw handler.getException();
     }

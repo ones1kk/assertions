@@ -148,8 +148,8 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
 
     @Override
     public void assertIsCloseTo(Long actual, Long expected, Offset<Long> offset) {
-        long startResult = Long.compare(actual, (expected - offset.getValue()));
-        long endResult = Long.compare(actual, (expected + offset.getValue()));
+        long startResult = Long.compare(actual, (long) offset.getBefore(expected));
+        long endResult = Long.compare(actual, (long) offset.getAfter(expected));
 
         if (calculator.is(startResult, -1L)
                 || calculator.is(endResult, 1L)) {
@@ -159,8 +159,8 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
 
     @Override
     public void assertIsNotCloseTo(Long actual, Long expected, Offset<Long> offset) {
-        long startResult = Long.compare(actual, (expected - offset.getValue()));
-        long endResult = Long.compare(actual, (expected + offset.getValue()));
+        long startResult = Long.compare(actual, (long) offset.getBefore(expected));
+        long endResult = Long.compare(actual, (long) offset.getAfter(expected));
 
         if (calculator.is(startResult, 1L)
                 || calculator.is(endResult, 1L)) {
@@ -171,7 +171,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
     private void setAssertClose(Long actual, Long expected, Offset<Long> offset) {
 
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                (expected - offset.getValue()) + " ~ " + (expected + offset.getValue()));
+                offset.getBefore(expected) + " ~ " + offset.getAfter(expected));
         handler.setDescription(handler.from(actual, scope));
         throw handler.getException();
     }
