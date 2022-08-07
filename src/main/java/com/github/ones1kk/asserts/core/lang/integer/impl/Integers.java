@@ -148,8 +148,8 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
 
     @Override
     public void assertIsCloseTo(Integer actual, Integer expected, Offset<Integer> offset) {
-        int startResult = Integer.compare(actual, (expected - offset.getValue()));
-        int endResult = Integer.compare(actual, (expected + offset.getValue()));
+        int startResult = Integer.compare(actual, (int) offset.getBefore(expected));
+        int endResult = Integer.compare(actual, (int) offset.getAfter(expected));
 
         if (calculator.is(startResult, -1)
                 || calculator.is(endResult, 1)) {
@@ -159,8 +159,8 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
 
     @Override
     public void assertIsNotCloseTo(Integer actual, Integer expected, Offset<Integer> offset) {
-        int startResult = Integer.compare(actual, (expected - offset.getValue()));
-        int endResult = Integer.compare(actual, (expected + offset.getValue()));
+        int startResult = Integer.compare(actual, (int) offset.getBefore(expected));
+        int endResult = Integer.compare(actual, (int) offset.getAfter(expected));
 
         if (calculator.is(startResult, 1)
                 || calculator.is(endResult, 1)) {
@@ -171,7 +171,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
     private void setAssertClose(Integer actual, Integer expected, Offset<Integer> offset) {
 
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                (expected - offset.getValue()) + " ~ " + (expected + offset.getValue()));
+                offset.getBefore(expected) + " ~ " + offset.getAfter(expected));
         handler.setDescription(handler.from(actual, scope));
         throw handler.getException();
     }

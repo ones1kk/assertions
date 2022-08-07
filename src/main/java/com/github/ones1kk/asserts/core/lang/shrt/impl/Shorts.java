@@ -148,8 +148,8 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
 
     @Override
     public void assertIsCloseTo(Short actual, Short expected, Offset<Short> offset) {
-        short startResult = (short) Short.compare(actual, (short) (expected - offset.getValue()));
-        short endResult = (short) Short.compare(actual, (short) (expected + offset.getValue()));
+        short startResult = (short) Short.compare(actual, (short) offset.getBefore(expected));
+        short endResult = (short) Short.compare(actual, (short) offset.getAfter(expected));
 
         if (calculator.isLessThan(startResult, (short) 0)
                 || calculator.isGraterThan(endResult, (short) 0)) {
@@ -159,8 +159,8 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
 
     @Override
     public void assertIsNotCloseTo(Short actual, Short expected, Offset<Short> offset) {
-        short startResult = (short) Short.compare(actual, (short) (expected - offset.getValue()));
-        short endResult = (short) Short.compare(actual, (short) (expected + offset.getValue()));
+        short startResult = (short) Short.compare(actual, (short) offset.getBefore(expected));
+        short endResult = (short) Short.compare(actual, (short) offset.getAfter(expected));
 
         if (calculator.isGraterThanOrEqualTo(startResult, (short) 0)
                 || calculator.isGraterThanOrEqualTo(endResult, (short) 0)) {
@@ -171,7 +171,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
     private void setAssertClose(Short actual, Short expected, Offset<Short> offset) {
 
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                (expected - offset.getValue()) + " ~ " + (expected + offset.getValue()));
+                offset.getBefore(expected) + " ~ " + offset.getAfter(expected));
         handler.setDescription(handler.from(actual, scope));
         throw handler.getException();
     }

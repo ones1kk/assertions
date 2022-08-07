@@ -134,8 +134,8 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
 
     @Override
     public void assertIsCloseTo(Double actual, Double expected, Offset<Double> offset) {
-        double startResult = Double.compare(actual, (expected - offset.getValue()));
-        double endResult = Double.compare(actual, (expected + offset.getValue()));
+        double startResult = Double.compare(actual, offset.getBefore(expected));
+        double endResult = Double.compare(actual, offset.getAfter(expected));
 
         if (calculator.is(startResult, (double) -1)
                 || calculator.is(endResult, (double) 1)) {
@@ -145,8 +145,8 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
 
     @Override
     public void assertIsNotCloseTo(Double actual, Double expected, Offset<Double> offset) {
-        double startResult = Double.compare(actual, (expected - offset.getValue()));
-        double endResult = Double.compare(actual, (expected + offset.getValue()));
+        double startResult = Double.compare(actual, offset.getBefore(expected));
+        double endResult = Double.compare(actual, offset.getAfter(expected));
 
         if (calculator.is(startResult, (double) 1)
                 || calculator.is(endResult, (double) 1)) {
@@ -157,7 +157,7 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
     private void setAssertClose(Double actual, Double expected, Offset<Double> offset) {
 
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                (expected - offset.getValue()) + " ~ " + (expected + offset.getValue()));
+                offset.getBefore(expected) + " ~ " + offset.getAfter(expected));
         handler.setDescription(handler.from(actual, scope));
         throw handler.getException();
     }
