@@ -73,14 +73,14 @@ public class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<SELF, ACTU
     }
 
     @Override
-    public SELF isCloseTo(Integer expected, Offset<Integer> offset) {
-        integers.assertIsCloseTo(actual, expected, offset);
+    public SELF isCloseTo(Integer expected, Integer offset) {
+        integers.assertIsCloseTo(actual, expected, Offset.offset(offset));
         return self;
     }
 
     @Override
-    public SELF isNotCloseTo(Integer expected, Offset<Integer> offset) {
-        integers.assertIsNotCloseTo(actual, expected, offset);
+    public SELF isNotCloseTo(Integer expected, Integer offset) {
+        integers.assertIsNotCloseTo(actual, expected, Offset.offset(offset));
         return self;
     }
 

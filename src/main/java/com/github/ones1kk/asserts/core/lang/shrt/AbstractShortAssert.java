@@ -103,14 +103,14 @@ public class AbstractShortAssert<SELF extends AbstractShortAssert<SELF, ACTUAL>,
     }
 
     @Override
-    public SELF isCloseTo(Short expected, Offset<Short> offset) {
-        shorts.assertIsCloseTo(actual, expected, offset);
+    public SELF isCloseTo(Short expected, Short offset) {
+        shorts.assertIsCloseTo(actual, expected, Offset.offset(offset));
         return self;
     }
 
     @Override
-    public SELF isNotCloseTo(Short expected, Offset<Short> offset) {
-        shorts.assertIsNotCloseTo(actual, expected, offset);
+    public SELF isNotCloseTo(Short expected, Short offset) {
+        shorts.assertIsNotCloseTo(actual, expected, Offset.offset(offset));
         return self;
     }
 }

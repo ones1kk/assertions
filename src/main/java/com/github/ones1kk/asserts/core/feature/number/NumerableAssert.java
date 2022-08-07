@@ -16,7 +16,7 @@ public interface NumerableAssert<SELF, ACTUAL extends Number> {
 
     SELF isNotZero();
 
-    SELF isCloseTo(ACTUAL expected, Offset<ACTUAL> offset);
+    SELF isCloseTo(ACTUAL expected,ACTUAL offset);
 
-    SELF isNotCloseTo(ACTUAL expected, Offset<ACTUAL> offset);
+    SELF isNotCloseTo(ACTUAL expected, ACTUAL offset);
 }
