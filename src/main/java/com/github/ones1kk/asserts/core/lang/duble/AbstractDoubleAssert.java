@@ -67,14 +67,14 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     @Override
-    public SELF isCloseTo(Double expected, Offset<Double> offset) {
-        doubles.assertIsCloseTo(actual, expected, offset);
+    public SELF isCloseTo(Double expected, Double offset) {
+        doubles.assertIsCloseTo(actual, expected, Offset.offset(offset));
         return self;
     }
 
     @Override
-    public SELF isNotCloseTo(Double expected, Offset<Double> offset) {
-        doubles.assertIsNotCloseTo(actual, expected, offset);
+    public SELF isNotCloseTo(Double expected, Double offset) {
+        doubles.assertIsNotCloseTo(actual, expected, Offset.offset(offset));
         return self;
     }
 
