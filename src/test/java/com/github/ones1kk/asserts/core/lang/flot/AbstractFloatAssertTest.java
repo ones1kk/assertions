@@ -68,8 +68,8 @@ class AbstractFloatAssertTest {
         assertThrows(AssertException.class, assert2::isNotNegative);
         assertThrows(AssertException.class, assert2::isZero);
         assertThrows(AssertException.class, assert3::isNotZero);
-        assertThrows(AssertException.class, () -> assert3.isCloseTo(5F, Offset.offset(2F)));
-        assertThrows(AssertException.class, () -> assert3.isNotCloseTo(5F, Offset.offset(6F)));
+        assertThrows(AssertException.class, () -> assert3.isCloseTo(5F, 2F));
+        assertThrows(AssertException.class, () -> assert3.isNotCloseTo(5F, 6F));
 
         assert1.isFinite();
         assert4.isInfinity();
@@ -80,8 +80,8 @@ class AbstractFloatAssertTest {
         assert1.isNotNegative();
         assert3.isZero();
         assert1.isNotZero();
-        assert1.isCloseTo(actual2, Offset.offset(3.4F));
-        assert1.isNotCloseTo(5.8F, Offset.offset(1.2F));
+        assert1.isCloseTo(actual2, 3.4F);
+        assert1.isNotCloseTo(5.8F, 1.2F);
     }
 
     @Test

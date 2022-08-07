@@ -58,7 +58,6 @@ class AbstractDoubleAssertTest {
         AbstractDoubleAssert<?, Double> assert5 = new AbstractDoubleAssert<>(AbstractDoubleAssert.class, actual5);
 
         // then
-
         assertThrows(AssertException.class, assert4::isFinite);
         assertThrows(AssertException.class, assert2::isInfinity);
         assertThrows(AssertException.class, assert2::isNaN);
@@ -68,8 +67,8 @@ class AbstractDoubleAssertTest {
         assertThrows(AssertException.class, assert2::isNotNegative);
         assertThrows(AssertException.class, assert2::isZero);
         assertThrows(AssertException.class, assert3::isNotZero);
-        assertThrows(AssertException.class, () -> assert3.isCloseTo((double) 5, Offset.offset((double) 2)));
-        assertThrows(AssertException.class, () -> assert3.isNotCloseTo((double) 5, Offset.offset((double) 6)));
+        assertThrows(AssertException.class, () -> assert3.isCloseTo((double) 5, (double) 2));
+        assertThrows(AssertException.class, () -> assert3.isNotCloseTo((double) 5, (double) 6));
 
         assert1.isFinite();
         assert4.isInfinity();
@@ -80,8 +79,8 @@ class AbstractDoubleAssertTest {
         assert1.isNotNegative();
         assert3.isZero();
         assert1.isNotZero();
-        assert1.isCloseTo(actual2, Offset.offset(3.4));
-        assert1.isNotCloseTo(5.8, Offset.offset(1.2));
+        assert1.isCloseTo(actual2, 3.4);
+        assert1.isNotCloseTo(5.8, 1.2);
     }
 
     @Test

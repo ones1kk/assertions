@@ -66,8 +66,8 @@ class AbstractIntegerAssertTest {
         assertThrows(AssertException.class, assert2::isNotNegative);
         assertThrows(AssertException.class, assert2::isZero);
         assertThrows(AssertException.class, assert3::isNotZero);
-        assertThrows(AssertException.class, () -> assert3.isCloseTo(5, Offset.offset(2)));
-        assertThrows(AssertException.class, () -> assert3.isNotCloseTo(5, Offset.offset(6)));
+        assertThrows(AssertException.class, () -> assert3.isCloseTo(5, 2));
+        assertThrows(AssertException.class, () -> assert3.isNotCloseTo(5, 6));
 
         assert1.isOdd();
         assert4.isNotOdd();
@@ -79,8 +79,8 @@ class AbstractIntegerAssertTest {
         assert1.isNotNegative();
         assert3.isZero();
         assert1.isNotZero();
-        assert1.isCloseTo(actual2, Offset.offset(3));
-        assert1.isNotCloseTo(5, Offset.offset(1));
+        assert1.isCloseTo(actual2, 3);
+        assert1.isNotCloseTo(5, 1);
     }
 
     @Test
