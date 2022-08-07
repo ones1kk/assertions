@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class DescriptionTest {
 
-    // TODO : Regex
     @Test
     @DisplayName("Description is working well?")
     public void test1() throws Exception {
@@ -20,17 +19,31 @@ class DescriptionTest {
         // when
         String description1 = describable.as("Description test");
         String description2 = describable.as("Description {}", "test");
-        String description3 = "Description test %%s";
-        String description4 = "Description test %s";
-//        Matcher matcher1 = describable.pattern.matcher(description3);
-//        Matcher matcher2 = describable.pattern.matcher(description4);
 
         //then
         assertThat(description1).isEqualTo("Description test");
         assertThat(description2).isEqualTo("Description test");
         assertThrows(AssertException.class, () -> describable.as("Description {}"));
-//        assertThat(matcher1.matches()).isFalse();
-//        assertThat(matcher2.matches()).isTrue();
+    }
+
+    @Test
+    @DisplayName("Description validation")
+    public void test2() throws Exception {
+        // given
+        Describable describable = new Description();
+
+        // when
+        String case1 = "hello {} is test";
+        String case2 = "he@llo %s i#s t]es-t";
+        String case3 = "he@llo %%s i!s te@#{(st";
+
+        // then
+        assertThat(describable.as(case1, "this"))
+                .isEqualTo("hello this is test")
+                .isNotEmpty();
+
+        assertThrows(AssertException.class, () -> describable.as(case2, "this"));
+        assertThrows(AssertException.class, () -> describable.as(case3, "this"));
 
     }
 
