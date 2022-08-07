@@ -7,7 +7,7 @@ import com.github.ones1kk.asserts.core.feature.comparable.calculator.impl.Intege
 import com.github.ones1kk.asserts.core.lang.integer.IntegersInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
-import static com.github.ones1kk.asserts.core.feature.number.unit.IntegerUnit.of;
+import static com.github.ones1kk.asserts.core.feature.number.arithmetic.IntegerUnitArithmetic.of;
 
 public class Integers extends Objects<Integer> implements IntegersInterface<Integer> {
 
@@ -19,7 +19,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
 
     @Override
     public void assertIsOdd(Integer actual) {
-        if (of(actual).isZeroRemainder()
+        if (of(actual).isEven()
                 || calculator.isLessThan(actual, 0)) {
             handler.setDescription(handler.from(actual, "{} is not odd"));
             throw handler.getException();
@@ -28,7 +28,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
 
     @Override
     public void assertIsNotOdd(Integer actual) {
-        if (of(actual).isNotZeroRemainder()
+        if (of(actual).isOdd()
                 || calculator.isLessThan(actual, 0)) {
             handler.setDescription(handler.from(actual, "{} is odd"));
             throw handler.getException();
@@ -37,7 +37,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
 
     @Override
     public void assertIsEven(Integer actual) {
-        if (of(actual).isNotZeroRemainder()
+        if (of(actual).isOdd()
                 || calculator.isLessThan(actual, 0)
                 || of(actual).isZero()) {
             handler.setDescription(handler.from(actual, "{} is not even"));
@@ -48,7 +48,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
     @Override
     public void assertIsNotEven(Integer actual) {
         if (of(actual).isNotZero()) {
-            if (of(actual).isZeroRemainder()
+            if (of(actual).isEven()
                     || calculator.isLessThan(actual, 0)) {
                 handler.setDescription(handler.from(actual, "{} is even"));
                 throw handler.getException();

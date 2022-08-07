@@ -1,25 +1,21 @@
-package com.github.ones1kk.asserts.core.feature.number.unit;
+package com.github.ones1kk.asserts.core.feature.number.arithmetic;
 
 import com.github.ones1kk.asserts.core.Asserts;
 
-public class LongUnit {
+public class ByteUnitArithmetic {
 
-    private LongUnit() {
-    }
-
-    public static ArithmeticUtil of(Long value) {
+    public static ArithmeticUtil of(Byte value) {
         return new ArithmeticUtil(value);
     }
 
     public final static class ArithmeticUtil {
 
-        private final Long value;
+        private final Byte value;
 
-        public ArithmeticUtil(Long value) {
+        public ArithmeticUtil(Byte value) {
             Asserts.that(value)
-                    .as("Only Integers type is allowed")
                     .isNotNull()
-                    .isInstanceOf(Long.class);
+                    .isInstanceOf(Byte.class);
             this.value = value;
         }
 
@@ -31,11 +27,11 @@ public class LongUnit {
             return value != 0;
         }
 
-        public boolean isZeroRemainder() {
+        public boolean isEven() {
             return (value % 2 == 0);
         }
 
-        public boolean isNotZeroRemainder() {
+        public boolean isOdd() {
             return (value % 2 != 0);
         }
     }

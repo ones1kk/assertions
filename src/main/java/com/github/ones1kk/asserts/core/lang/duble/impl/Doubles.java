@@ -7,7 +7,7 @@ import com.github.ones1kk.asserts.core.feature.comparable.calculator.impl.Double
 import com.github.ones1kk.asserts.core.lang.duble.DoublesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
-import static com.github.ones1kk.asserts.core.feature.number.unit.DoubleUnit.of;
+import static com.github.ones1kk.asserts.core.feature.number.arithmetic.DoubleUnitArithmetic.of;
 
 public class Doubles extends Objects<Double> implements DoublesInterface<Double> {
 

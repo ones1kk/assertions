@@ -7,7 +7,7 @@ import com.github.ones1kk.asserts.core.feature.comparable.calculator.impl.LongCa
 import com.github.ones1kk.asserts.core.lang.lng.LongsInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
-import static com.github.ones1kk.asserts.core.feature.number.unit.LongUnit.of;
+import static com.github.ones1kk.asserts.core.feature.number.arithmetic.LongUnitArithmetic.of;
 
 public class Longs extends Objects<Long> implements LongsInterface<Long> {
 
@@ -19,7 +19,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
 
     @Override
     public void assertIsOdd(Long actual) {
-        if (of(actual).isZeroRemainder()
+        if (of(actual).isEven()
                 || calculator.isLessThan(actual, 0L)) {
             handler.setDescription(handler.from(actual, "{} is not odd"));
             throw handler.getException();
@@ -28,7 +28,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
 
     @Override
     public void assertIsNotOdd(Long actual) {
-        if (of(actual).isNotZeroRemainder()
+        if (of(actual).isOdd()
                 || calculator.isLessThan(actual, 0L)) {
             handler.setDescription(handler.from(actual, "{} is odd"));
             throw handler.getException();
@@ -37,7 +37,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
 
     @Override
     public void assertIsEven(Long actual) {
-        if (of(actual).isNotZeroRemainder()
+        if (of(actual).isOdd()
                 || calculator.isLessThan(actual, 0L)
                 || of(actual).isZero()) {
             handler.setDescription(handler.from(actual, "{} is not even"));
@@ -48,7 +48,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
     @Override
     public void assertIsNotEven(Long actual) {
         if (of(actual).isNotZero()) {
-            if (of(actual).isZeroRemainder()
+            if (of(actual).isEven()
                     || calculator.isLessThan(actual, 0L)) {
                 handler.setDescription(handler.from(actual, "{} is even"));
                 throw handler.getException();
