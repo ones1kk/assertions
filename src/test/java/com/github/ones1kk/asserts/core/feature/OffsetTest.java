@@ -14,7 +14,7 @@ class OffsetTest {
         int value = 3;
 
         // when
-        Offset<Integer> offset = Offset.offset(3);
+        Offset<Integer> offset = Offset.offset(value);
 
         // then
         assertThat(offset.getValue()).isEqualTo(3)
@@ -24,6 +24,21 @@ class OffsetTest {
         assertThat(offset)
                 .isInstanceOf(Offset.class)
                 .isNotNull();
+    }
+
+    @Test
+    @DisplayName("Offset method test")
+    public void test2() throws Exception {
+        // given
+        int value = 2;
+
+        // when
+        Offset<Integer> offset = Offset.offset(value);
+
+        // then
+        assertThat(offset.getValue()).isEqualTo(2);
+        assertThat((int) offset.getBefore(1)).isEqualTo(-1);
+        assertThat((int) offset.getAfter(1)).isEqualTo(3);
     }
 
 }
