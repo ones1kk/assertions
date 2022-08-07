@@ -7,7 +7,7 @@ import com.github.ones1kk.asserts.core.feature.comparable.calculator.impl.ByteCa
 import com.github.ones1kk.asserts.core.lang.bte.BytesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
-import static com.github.ones1kk.asserts.core.feature.number.unit.ByteUnit.of;
+import static com.github.ones1kk.asserts.core.feature.number.arithmetic.ByteUnitArithmetic.of;
 
 public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
@@ -19,7 +19,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsOdd(Byte actual) {
-        if (of(actual).isZeroRemainder()
+        if (of(actual).isEven()
                 || calculator.isLessThan(actual, (byte) 0)) {
             handler.setDescription(handler.from(actual, "{} is not odd"));
             throw handler.getException();
@@ -28,7 +28,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsNotOdd(Byte actual) {
-        if (of(actual).isNotZeroRemainder()
+        if (of(actual).isOdd()
                 || calculator.isLessThan(actual, (byte) 0)) {
             handler.setDescription(handler.from(actual, "{} is odd"));
             throw handler.getException();
@@ -37,7 +37,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsEven(Byte actual) {
-        if (of(actual).isNotZeroRemainder()
+        if (of(actual).isOdd()
                 || calculator.isLessThan(actual, (byte) 0)
                 || of(actual).isZero()) {
             handler.setDescription(handler.from(actual, "{} is not even"));
@@ -48,7 +48,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
     @Override
     public void assertIsNotEven(Byte actual) {
         if (of(actual).isNotZero()) {
-            if (of(actual).isZeroRemainder()
+            if (of(actual).isEven()
                     || calculator.isLessThan(actual, (byte) 0)) {
                 handler.setDescription(handler.from(actual, "{} is even"));
                 throw handler.getException();

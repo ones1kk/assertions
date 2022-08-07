@@ -1,21 +1,21 @@
-package com.github.ones1kk.asserts.core.feature.number.unit;
+package com.github.ones1kk.asserts.core.feature.number.arithmetic;
 
 import com.github.ones1kk.asserts.core.Asserts;
 
-public class DoubleUnit {
+public class FloatUnitArithmetic {
 
-    public static ArithmeticUtil of(Double value) {
+    public static ArithmeticUtil of(Float value) {
         return new ArithmeticUtil(value);
     }
 
     public final static class ArithmeticUtil {
 
-        private final Double value;
+        private final Float value;
 
-        public ArithmeticUtil(Double value) {
+        public ArithmeticUtil(Float value) {
             Asserts.that(value)
                     .isNotNull()
-                    .isInstanceOf(Double.class);
+                    .isInstanceOf(Float.class);
             this.value = value;
         }
 
@@ -27,11 +27,11 @@ public class DoubleUnit {
             return value != 0;
         }
 
-        public boolean isZeroRemainder() {
+        public boolean isEven() {
             return (value % 2 == 0);
         }
 
-        public boolean isNotZeroRemainder() {
+        public boolean isOdd() {
             return (value % 2 != 0);
         }
     }
