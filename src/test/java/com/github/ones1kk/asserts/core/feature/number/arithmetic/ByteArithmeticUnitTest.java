@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class IntegerUnitArithmeticTest {
+class ByteArithmeticUnitTest {
 
     @Test
     @DisplayName("Method test")
     public void test1() throws Exception {
         // given
-        IntegerUnitArithmetic.ArithmeticUtil util = IntegerUnitArithmetic.of(10);
+        ByteArithmeticUnit.ArithmeticUtil util = ByteArithmeticUnit.of((byte) 10);
 
         // when
         // then
@@ -25,7 +25,7 @@ class IntegerUnitArithmeticTest {
     @DisplayName("Method test(Negative number)")
     public void test2() throws Exception {
         // given
-        IntegerUnitArithmetic.ArithmeticUtil util = IntegerUnitArithmetic.of(-10);
+        ByteArithmeticUnit.ArithmeticUtil util = ByteArithmeticUnit.of((byte) -10);
 
         // when
         // then

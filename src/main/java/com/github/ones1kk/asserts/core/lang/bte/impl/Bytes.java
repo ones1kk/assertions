@@ -7,7 +7,7 @@ import com.github.ones1kk.asserts.core.feature.comparable.calculator.impl.ByteCa
 import com.github.ones1kk.asserts.core.lang.bte.BytesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
-import static com.github.ones1kk.asserts.core.feature.number.arithmetic.ByteUnitArithmetic.of;
+import static com.github.ones1kk.asserts.core.feature.number.arithmetic.ByteArithmeticUnit.of;
 
 public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 

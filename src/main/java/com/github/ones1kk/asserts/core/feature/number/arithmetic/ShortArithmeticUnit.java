@@ -2,9 +2,9 @@ package com.github.ones1kk.asserts.core.feature.number.arithmetic;
 
 import com.github.ones1kk.asserts.core.Asserts;
 
-public class ShortUnitArithmetic {
+public class ShortArithmeticUnit {
 
-    private ShortUnitArithmetic() {
+    private ShortArithmeticUnit() {
     }
 
     public static ArithmeticUtil of(Short value) {

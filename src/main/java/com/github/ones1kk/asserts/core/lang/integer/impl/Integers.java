@@ -7,7 +7,7 @@ import com.github.ones1kk.asserts.core.feature.comparable.calculator.impl.Intege
 import com.github.ones1kk.asserts.core.lang.integer.IntegersInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
-import static com.github.ones1kk.asserts.core.feature.number.arithmetic.IntegerUnitArithmetic.of;
+import static com.github.ones1kk.asserts.core.feature.number.arithmetic.IntegerArithmeticUnit.of;
 
 public class Integers extends Objects<Integer> implements IntegersInterface<Integer> {
 

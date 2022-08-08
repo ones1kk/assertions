@@ -7,7 +7,7 @@ import com.github.ones1kk.asserts.core.feature.comparable.calculator.impl.LongCa
 import com.github.ones1kk.asserts.core.lang.lng.LongsInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
-import static com.github.ones1kk.asserts.core.feature.number.arithmetic.LongUnitArithmetic.of;
+import static com.github.ones1kk.asserts.core.feature.number.arithmetic.LongArithmeticUnit.of;
 
 public class Longs extends Objects<Long> implements LongsInterface<Long> {
 

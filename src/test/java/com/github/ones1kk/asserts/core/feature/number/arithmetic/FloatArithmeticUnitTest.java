@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class DoubleUnitArithmeticTest {
+class FloatArithmeticUnitTest {
 
     @Test
     @DisplayName("Method test")
     public void test1() throws Exception {
         // given
-        DoubleUnitArithmetic.ArithmeticUtil util = DoubleUnitArithmetic.of(10.4);
+        FloatArithmeticUnit.ArithmeticUtil util = FloatArithmeticUnit.of(10.4F);
 
         // when
         // then
@@ -22,10 +22,24 @@ class DoubleUnitArithmeticTest {
     }
 
     @Test
-    @DisplayName("Method test(Negative number)")
+    @DisplayName("Method test(Integer Type)")
     public void test2() throws Exception {
         // given
-        DoubleUnitArithmetic.ArithmeticUtil util = DoubleUnitArithmetic.of(-10.4);
+        FloatArithmeticUnit.ArithmeticUtil util = FloatArithmeticUnit.of(10F);
+
+        // when
+        // then
+        assertThat(util.isZero()).isFalse();
+        assertThat(util.isNotZero()).isTrue();
+        assertThat(util.isEven()).isTrue();
+        assertThat(util.isOdd()).isFalse();
+    }
+
+    @Test
+    @DisplayName("Method test(Negative number)")
+    public void test3() throws Exception {
+        // given
+        FloatArithmeticUnit.ArithmeticUtil util = FloatArithmeticUnit.of(-10.4F);
 
         // when
         // then
@@ -34,4 +48,5 @@ class DoubleUnitArithmeticTest {
         assertThat(util.isEven()).isFalse();
         assertThat(util.isOdd()).isTrue();
     }
+
 }
