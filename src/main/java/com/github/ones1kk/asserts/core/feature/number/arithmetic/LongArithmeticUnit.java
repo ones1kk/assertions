@@ -2,9 +2,9 @@ package com.github.ones1kk.asserts.core.feature.number.arithmetic;
 
 import com.github.ones1kk.asserts.core.Asserts;
 
-public class LongUnitArithmetic {
+public class LongArithmeticUnit {
 
-    private LongUnitArithmetic() {
+    private LongArithmeticUnit() {
     }
 
     public static ArithmeticUtil of(Long value) {

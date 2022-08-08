@@ -7,7 +7,7 @@ import com.github.ones1kk.asserts.core.feature.comparable.calculator.impl.FloatC
 import com.github.ones1kk.asserts.core.lang.flot.FloatsInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
-import static com.github.ones1kk.asserts.core.feature.number.arithmetic.FloatUnitArithmetic.of;
+import static com.github.ones1kk.asserts.core.feature.number.arithmetic.FloatArithmeticUnit.of;
 
 public class Floats extends Objects<Float> implements FloatsInterface<Float> {
 

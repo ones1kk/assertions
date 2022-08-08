@@ -2,21 +2,20 @@ package com.github.ones1kk.asserts.core.feature.number.arithmetic;
 
 import com.github.ones1kk.asserts.core.Asserts;
 
-public final class IntegerUnitArithmetic {
+public class DoubleArithmeticUnit {
 
-    public static ArithmeticUtil of(Integer value) {
+    public static ArithmeticUtil of(Double value) {
         return new ArithmeticUtil(value);
     }
 
     public final static class ArithmeticUtil {
 
-        private final Integer value;
+        private final Double value;
 
-        public ArithmeticUtil(Integer value) {
+        public ArithmeticUtil(Double value) {
             Asserts.that(value)
-                    .as("Only Integers type is allowed")
                     .isNotNull()
-                    .isInstanceOf(Integer.class);
+                    .isInstanceOf(Double.class);
             this.value = value;
         }
 

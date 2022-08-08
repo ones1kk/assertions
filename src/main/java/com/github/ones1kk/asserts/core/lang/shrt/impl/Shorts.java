@@ -7,7 +7,7 @@ import com.github.ones1kk.asserts.core.feature.comparable.calculator.impl.ShortC
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import com.github.ones1kk.asserts.core.lang.shrt.ShortsInterface;
 
-import static com.github.ones1kk.asserts.core.feature.number.arithmetic.ShortUnitArithmetic.of;
+import static com.github.ones1kk.asserts.core.feature.number.arithmetic.ShortArithmeticUnit.of;
 
 public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
 

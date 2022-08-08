@@ -2,20 +2,20 @@ package com.github.ones1kk.asserts.core.feature.number.arithmetic;
 
 import com.github.ones1kk.asserts.core.Asserts;
 
-public class DoubleUnitArithmetic {
+public class ByteArithmeticUnit {
 
-    public static ArithmeticUtil of(Double value) {
+    public static ArithmeticUtil of(Byte value) {
         return new ArithmeticUtil(value);
     }
 
     public final static class ArithmeticUtil {
 
-        private final Double value;
+        private final Byte value;
 
-        public ArithmeticUtil(Double value) {
+        public ArithmeticUtil(Byte value) {
             Asserts.that(value)
                     .isNotNull()
-                    .isInstanceOf(Double.class);
+                    .isInstanceOf(Byte.class);
             this.value = value;
         }
 
