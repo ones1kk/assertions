@@ -124,7 +124,7 @@ public class Files implements FilesInterface {
     @Override
     public void assertHasExtension(File actual, String extension) {
         if (!FilenameUtils.getExtension(actual.getName()).equals(extension)) {
-            handler.setDescription(handler.from(actual,  extension, "{} does not have {} as extension"));
+            handler.setDescription(handler.from(actual, extension, "{} does not have {} as extension"));
             throw handler.getException();
         }
     }
