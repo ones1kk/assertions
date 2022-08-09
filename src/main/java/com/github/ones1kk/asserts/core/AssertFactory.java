@@ -2,6 +2,7 @@ package com.github.ones1kk.asserts.core;
 
 import com.github.ones1kk.asserts.core.array.impl.Arrays;
 import com.github.ones1kk.asserts.core.array.number.impl.NumberArrays;
+import com.github.ones1kk.asserts.core.file.impl.Files;
 import com.github.ones1kk.asserts.core.lang.bolean.impl.Booleans;
 import com.github.ones1kk.asserts.core.lang.bte.impl.Bytes;
 import com.github.ones1kk.asserts.core.lang.character.impl.Characters;
@@ -13,6 +14,8 @@ import com.github.ones1kk.asserts.core.lang.lng.impl.Longs;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import com.github.ones1kk.asserts.core.lang.shrt.impl.Shorts;
 import com.github.ones1kk.asserts.core.lang.string.impl.Strings;
+
+import java.io.File;
 
 public final class AssertFactory {
 
@@ -82,6 +85,10 @@ public final class AssertFactory {
 
     public Arrays<Boolean> createAssert(Boolean[] actual, AsAssert<?> asAssert) {
         return new Arrays<>(asAssert);
+    }
+
+    public Files createAssert(File actual, AsAssert<?> asAssert) {
+        return new Files(asAssert);
     }
 
 }

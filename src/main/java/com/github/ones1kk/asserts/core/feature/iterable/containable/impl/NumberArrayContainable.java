@@ -5,6 +5,7 @@ import com.github.ones1kk.asserts.core.feature.iterable.containable.Containable;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class NumberArrayContainable<ELEMENT extends Number> implements Containable<ELEMENT> {
 
@@ -32,7 +33,7 @@ public class NumberArrayContainable<ELEMENT extends Number> implements Containab
     @Override
     public boolean containsNotAll(Number[] actual, Number... expected) {
         return !(new HashSet<>(Arrays.asList(actual))
-                .containsAll(List.of(expected)));
+                .containsAll(Arrays.asList(expected)));
     }
 
     @Override
