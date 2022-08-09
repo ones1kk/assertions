@@ -4,6 +4,8 @@ import com.github.ones1kk.asserts.core.array.AbstractArrayAssert;
 import com.github.ones1kk.asserts.core.array.model.ArrayAssert;
 import com.github.ones1kk.asserts.core.array.model.NumberArrayAssert;
 import com.github.ones1kk.asserts.core.array.number.AbstractNumberArrayAssert;
+import com.github.ones1kk.asserts.core.file.AbstractFileAssert;
+import com.github.ones1kk.asserts.core.file.model.FileAssert;
 import com.github.ones1kk.asserts.core.lang.bolean.AbstractBooleanAssert;
 import com.github.ones1kk.asserts.core.lang.bte.AbstractByteAssert;
 import com.github.ones1kk.asserts.core.lang.character.AbstractCharacterAssert;
@@ -16,6 +18,8 @@ import com.github.ones1kk.asserts.core.lang.model.*;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 import com.github.ones1kk.asserts.core.lang.shrt.AbstractShortAssert;
 import com.github.ones1kk.asserts.core.lang.string.AbstractStringAssert;
+
+import java.io.File;
 
 public class AssertsForType {
 
@@ -83,5 +87,8 @@ public class AssertsForType {
         return new ArrayAssert<>(actual);
     }
 
+    public static AbstractFileAssert<?> that(File actual) {
+        return new FileAssert(actual);
+    }
 
 }
