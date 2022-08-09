@@ -19,7 +19,7 @@ dependencies {
 group = 'com.github.ones1kk'
 version = '1.0.0'
 description = 'asserts'
-java.sourceCompatibility = JavaVersion.VERSION_11
+java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 publishing {
     publications {
