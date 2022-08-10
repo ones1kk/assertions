@@ -1,7 +1,5 @@
 package com.github.ones1kk.asserts.core.file.impl;
 
-import com.github.ones1kk.asserts.core.feature.comparable.Comparable;
-
 import java.io.File;
 
 public interface FilesInterface {
