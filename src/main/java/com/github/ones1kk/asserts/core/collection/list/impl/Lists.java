@@ -12,13 +12,14 @@ import java.util.function.Predicate;
 public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACTUAL> {
 
     private final ListContainable<ACTUAL> containable = new ListContainableImpl<>();
+
     public Lists(AsAssert<?> asAssert) {
         super(asAssert);
     }
 
     @Override
     public void assertIsEmpty(List<? extends ACTUAL> actual) {
-        if(!actual.isEmpty()) {
+        if (!actual.isEmpty()) {
             handler.setDescription(handler.from("actual is not empty"));
             throw handler.getException();
         }
@@ -26,7 +27,7 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
 
     @Override
     public void assertIsNotEmpty(List<? extends ACTUAL> actual) {
-        if(actual.isEmpty()) {
+        if (actual.isEmpty()) {
             handler.setDescription(handler.from("actual is empty"));
             throw handler.getException();
         }
@@ -34,7 +35,7 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
 
     @Override
     public void assertIsNullOrEmpty(List<? extends ACTUAL> actual) {
-        if(!actual.isEmpty()) {
+        if (!actual.isEmpty()) {
             handler.setDescription(handler.from("actual is not null or not empty"));
             throw handler.getException();
         }
