@@ -1,6 +1,6 @@
 package com.github.ones1kk.asserts.core.feature.iterable.containable;
 
-public interface Containable<ELEMENT> {
+public interface ArrayContainable<ELEMENT> {
 
     boolean contains(ELEMENT[] actual, ELEMENT expected);
 
