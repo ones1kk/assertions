@@ -2,7 +2,7 @@ package com.github.ones1kk.asserts.core.feature.iterable;
 
 import java.util.function.Predicate;
 
-public interface Iterable<ELEMENT> {
+public interface ArrayIterable<ELEMENT> {
 
     void assertIsEmpty(ELEMENT[] actual);
 
