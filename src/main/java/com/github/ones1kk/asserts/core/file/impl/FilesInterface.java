@@ -4,7 +4,7 @@ import com.github.ones1kk.asserts.core.feature.comparable.Comparable;
 
 import java.io.File;
 
-public interface FilesInterface extends Comparable<File> {
+public interface FilesInterface {
 
     void assertExists(File actual);
 
