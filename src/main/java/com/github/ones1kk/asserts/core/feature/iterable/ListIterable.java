@@ -26,5 +26,5 @@ public interface ListIterable<ELEMENT> {
     void assertAllMatch(List<? extends ELEMENT> actual, Predicate<ELEMENT> expected);
 
     void assertNoneMatch(List<? extends ELEMENT> actual, Predicate<ELEMENT> expected);
-    
+
 }

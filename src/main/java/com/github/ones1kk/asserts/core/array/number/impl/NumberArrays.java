@@ -6,7 +6,6 @@ import com.github.ones1kk.asserts.core.feature.iterable.containable.impl.NumberA
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import org.apache.commons.lang3.ArrayUtils;
 
-import java.util.Arrays;
 import java.util.function.Predicate;
 
 public class NumberArrays extends Objects<Number[]> implements NumberArraysInterface<Number> {
