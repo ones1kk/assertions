@@ -2,6 +2,7 @@ package com.github.ones1kk.asserts.core;
 
 import com.github.ones1kk.asserts.core.array.AbstractArrayAssert;
 import com.github.ones1kk.asserts.core.array.number.AbstractNumberArrayAssert;
+import com.github.ones1kk.asserts.core.collection.list.AbstractListAssert;
 import com.github.ones1kk.asserts.core.file.AbstractFileAssert;
 import com.github.ones1kk.asserts.core.lang.bolean.AbstractBooleanAssert;
 import com.github.ones1kk.asserts.core.lang.bte.AbstractByteAssert;
@@ -16,6 +17,7 @@ import com.github.ones1kk.asserts.core.lang.shrt.AbstractShortAssert;
 import com.github.ones1kk.asserts.core.lang.string.AbstractStringAssert;
 
 import java.io.File;
+import java.util.List;
 
 public class Asserts {
 
@@ -87,6 +89,10 @@ public class Asserts {
     }
 
     public static AbstractFileAssert<?> that(File actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static AbstractListAssert<?, Object> that(List<Object> actual) {
         return AssertsForType.that(actual);
     }
 
