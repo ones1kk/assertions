@@ -3,7 +3,6 @@ package com.github.ones1kk.asserts.core.file;
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.AssertFactory;
 import com.github.ones1kk.asserts.core.file.impl.Files;
-import com.github.ones1kk.asserts.core.file.impl.FilesInterface;
 
 import java.io.File;
 
