@@ -137,39 +137,34 @@ public class Files implements FilesInterface {
         }
     }
 
-    @Override
-    public void assertIsLessThan(File actual, File expected) {
+    public void assertIsSmallerThan(File actual, File expected) {
         if (comparable.isLargerThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "size of {} is not less than {} size of "));
             throw handler.getException();
         }
     }
 
-    @Override
-    public void assertIsLessThanOrEqualTo(File actual, File expected) {
+    public void assertIsSmallerThanOrEqualTo(File actual, File expected) {
         if (comparable.isLargerThan(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "size of {} is not less than or equal to size of {}"));
             throw handler.getException();
         }
     }
 
-    @Override
-    public void assertIsGreaterThan(File actual, File expected) {
+    public void assertIsLargerThan(File actual, File expected) {
         if (comparable.isSmallerThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "size of {} is not greater than size of {}"));
             throw handler.getException();
         }
     }
 
-    @Override
-    public void assertIsGreaterThanOrEqualTo(File actual, File expected) {
+    public void assertIsLargerThanOrEqualTo(File actual, File expected) {
         if (comparable.isSmallerThan(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "size of {} is not greater than or equal to size of {}"));
             throw handler.getException();
         }
     }
 
-    @Override
     public void assertIsBetween(File actual, File start, File end) {
         if (comparable.isSmallerThan(actual, start)
                 || comparable.isLargerThan(actual, end)) {

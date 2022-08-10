@@ -2,6 +2,7 @@ package com.github.ones1kk.asserts.core.file;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.AssertFactory;
+import com.github.ones1kk.asserts.core.file.impl.Files;
 import com.github.ones1kk.asserts.core.file.impl.FilesInterface;
 
 import java.io.File;
@@ -14,7 +15,7 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
 
     protected final AssertFactory assertFactory = new AssertFactory();
 
-    private final FilesInterface files;
+    private final Files files;
 
     public AbstractFileAssert(Class<?> self, File actual) {
         super(self);
@@ -114,26 +115,26 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     @Override
-    public SELF isLessThan(File expected) {
-        files.assertIsLessThan(actual, expected);
+    public SELF isSmallerThan(File expected) {
+        files.assertIsSmallerThan(actual, expected);
         return self;
     }
 
     @Override
-    public SELF isLessThanOrEqualTo(File expected) {
-        files.assertIsLessThanOrEqualTo(actual, expected);
+    public SELF isSmallerThanOrEqualTo(File expected) {
+        files.assertIsSmallerThanOrEqualTo(actual, expected);
         return self;
     }
 
     @Override
-    public SELF isGreaterThan(File expected) {
-        files.assertIsGreaterThan(actual, expected);
+    public SELF isLargerThan(File expected) {
+        files.assertIsLargerThan(actual, expected);
         return self;
     }
 
     @Override
-    public SELF isGreaterThanOrEqualTo(File expected) {
-        files.assertIsGreaterThanOrEqualTo(actual, expected);
+    public SELF isLargerThanOrEqualTo(File expected) {
+        files.assertIsLargerThanOrEqualTo(actual, expected);
         return self;
     }
 
