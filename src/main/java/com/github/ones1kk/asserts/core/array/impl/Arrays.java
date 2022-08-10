@@ -2,8 +2,8 @@ package com.github.ones1kk.asserts.core.array.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.array.ArraysInterface;
-import com.github.ones1kk.asserts.core.feature.iterable.containable.Containable;
-import com.github.ones1kk.asserts.core.feature.iterable.containable.impl.ArrayContainable;
+import com.github.ones1kk.asserts.core.feature.iterable.containable.ArrayContainable;
+import com.github.ones1kk.asserts.core.feature.iterable.containable.impl.ArrayContainableImpl;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -11,7 +11,7 @@ import java.util.function.Predicate;
 
 public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<ACTUAL> {
 
-    private final Containable<ACTUAL> containable = new ArrayContainable<>();
+    private final ArrayContainable<ACTUAL> containable = new ArrayContainableImpl<>();
 
     public Arrays(AsAssert<?> asAssert) {
         super(asAssert);
@@ -21,7 +21,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     @Override
     public void assertIsEmpty(ACTUAL[] actual) {
         if (ArrayUtils.isNotEmpty(actual)) {
-            handler.setDescription(handler.from(toString(actual), "{} is not empty"));
+            handler.setDescription(handler.from("actual is not empty"));
             throw handler.getException();
         }
     }
@@ -29,7 +29,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     @Override
     public void assertIsNotEmpty(ACTUAL[] actual) {
         if (ArrayUtils.isEmpty(actual)) {
-            handler.setDescription(handler.from(toString(actual), "{} is empty"));
+            handler.setDescription(handler.from("actual is empty"));
             throw handler.getException();
         }
     }
@@ -37,7 +37,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     @Override
     public void assertIsNullOrEmpty(ACTUAL[] actual) {
         if (ArrayUtils.isNotEmpty(actual)) {
-            handler.setDescription(handler.from(toString(actual), "{} is not null or not empty"));
+            handler.setDescription(handler.from("actual is not null or not empty"));
             throw handler.getException();
         }
     }
@@ -45,7 +45,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     @Override
     public void assertContains(ACTUAL[] actual, ACTUAL expected) {
         if (containable.doesNotContain(actual, expected)) {
-            handler.setDescription(handler.from(toString(actual), expected, "{} doesn't contains of {}"));
+            handler.setDescription(handler.from(expected, "actual doesn't contains of {}"));
             throw handler.getException();
         }
     }
@@ -53,7 +53,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     @Override
     public void assertDoesNotContain(ACTUAL[] actual, ACTUAL expected) {
         if (containable.contains(actual, expected)) {
-            handler.setDescription(handler.from(toString(actual), expected, "{} contains of {}"));
+            handler.setDescription(handler.from(expected, "actual contains of {}"));
             throw handler.getException();
         }
     }
@@ -61,7 +61,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     @Override
     public void assertContainsAll(ACTUAL[] actual, ACTUAL... expected) {
         if (containable.containsNotAll(actual, expected)) {
-            handler.setDescription(handler.from(toString(actual), toString(expected), "{} doesn't contain any of {}"));
+            handler.setDescription(handler.from("actual doesn't contain any of expected"));
             throw handler.getException();
         }
     }
@@ -69,7 +69,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     @Override
     public void assertContainsAny(ACTUAL[] actual, ACTUAL... expected) {
         if (containable.doseNotContainAny(actual, expected)) {
-            handler.setDescription(handler.from(toString(actual), toString(expected), "{} doesn't contain any of {}"));
+            handler.setDescription(handler.from("actual doesn't contain any of expected"));
             throw handler.getException();
         }
     }
@@ -77,7 +77,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     @Override
     public void assertContainsNull(ACTUAL[] actual) {
         if (containable.doesNotContainNull(actual)) {
-            handler.setDescription(handler.from(toString(actual), "{} doesn't contain of null"));
+            handler.setDescription(handler.from("actual doesn't contain of null"));
             throw handler.getException();
         }
     }
@@ -85,7 +85,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     @Override
     public void assertDoesNotContainNull(ACTUAL[] actual) {
         if (containable.containsNull(actual)) {
-            handler.setDescription(handler.from(toString(actual), "{} contains of null"));
+            handler.setDescription(handler.from("actual contains of null"));
             throw handler.getException();
         }
     }
@@ -94,7 +94,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     public void assertAllMatch(ACTUAL[] actual, Predicate<ACTUAL> expected) {
         for (ACTUAL value : actual) {
             if (!expected.test(value)) {
-                handler.setDescription(handler.from(toString(actual), "{} is not all matched"));
+                handler.setDescription(handler.from("actual is not all matched"));
                 throw handler.getException();
             }
         }
@@ -104,13 +104,9 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     public void assertNoneMatch(ACTUAL[] actual, Predicate<ACTUAL> expected) {
         for (ACTUAL value : actual) {
             if (expected.test(value)) {
-                handler.setDescription(handler.from(toString(actual), "{} is matched with all of expected"));
+                handler.setDescription(handler.from("actual is matched with all of expected"));
                 throw handler.getException();
             }
         }
-    }
-
-    private String toString(ACTUAL[] actual) {
-        return java.util.Arrays.deepToString(actual);
     }
 }
