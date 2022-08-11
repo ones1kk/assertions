@@ -169,7 +169,6 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
     }
 
     private void setAssertClose(Long actual, Long expected, Offset<Long> offset) {
-
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
                 offset.getBefore(expected) + " ~ " + offset.getAfter(expected));
         handler.setDescription(handler.from(actual, scope));

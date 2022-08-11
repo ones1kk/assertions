@@ -169,7 +169,6 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
     }
 
     private void setAssertClose(Short actual, Short expected, Offset<Short> offset) {
-
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
                 offset.getBefore(expected) + " ~ " + offset.getAfter(expected));
         handler.setDescription(handler.from(actual, scope));
