@@ -94,7 +94,7 @@ public class AssertsForType {
         return new FileAssert(actual);
     }
 
-    public static AbstractListAssert<?, Object> that(List<Object> actual) {
+    public static <ELEMENT> AbstractListAssert<?, ELEMENT> that(List<ELEMENT> actual) {
         return new ListAssert<>(actual);
     }
 
