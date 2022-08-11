@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.collection.list.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import com.github.ones1kk.asserts.core.collection.list.ListCalculator;
 import com.github.ones1kk.asserts.core.collection.list.ListsInterface;
 import com.github.ones1kk.asserts.core.feature.iterable.containable.ListContainable;
 import com.github.ones1kk.asserts.core.feature.iterable.containable.impl.ListContainableImpl;
@@ -12,6 +13,8 @@ import java.util.function.Predicate;
 public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACTUAL> {
 
     private final ListContainable<ACTUAL> containable = new ListContainableImpl<>();
+
+    private final ListCalculator<ACTUAL> calculator = new ListCalculator<>();
 
     public Lists(AsAssert<?> asAssert) {
         super(asAssert);
@@ -35,9 +38,11 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
 
     @Override
     public void assertIsNullOrEmpty(List<? extends ACTUAL> actual) {
-        if (!actual.isEmpty()) {
-            handler.setDescription(handler.from("actual is not null or not empty"));
-            throw handler.getException();
+        if(actual != null) {
+            if(!actual.isEmpty()) {
+                handler.setDescription(handler.from("actual is not null or not empty"));
+                throw handler.getException();
+            }
         }
     }
 
@@ -106,6 +111,47 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
                 handler.setDescription(handler.from("actual is matched with all of expected"));
                 throw handler.getException();
             }
+        }
+    }
+
+    @Override
+    public void assertIsLessThan(List<? extends ACTUAL> actual, List<? extends ACTUAL> expected) {
+        if (calculator.isGraterThanOrEqualTo(actual, expected)) {
+            handler.setDescription(handler.from("size of actual is not less than size of expected"));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsLessThanOrEqualTo(List<? extends ACTUAL> actual, List<? extends ACTUAL> expected) {
+        if (calculator.isGraterThan(actual, expected)) {
+            handler.setDescription(handler.from("size of actual is not less than or equal to size of expected"));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsGreaterThan(List<? extends ACTUAL> actual, List<? extends ACTUAL> expected) {
+        if (calculator.isLessThanOrEqualTo(actual, expected)) {
+            handler.setDescription(handler.from("size of actual is not greater than size of expected"));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsGreaterThanOrEqualTo(List<? extends ACTUAL> actual, List<? extends ACTUAL> expected) {
+        if (calculator.isLessThan(actual, expected)) {
+            handler.setDescription(handler.from("size of actual is not greater than or equal to size of expected"));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsBetween(List<? extends ACTUAL> actual, List<? extends ACTUAL> start, List<? extends ACTUAL> end) {
+        if (calculator.isLessThan(actual, start) || calculator.isGraterThan(actual, end)) {
+            String description = handler.getDescribable().as("size of actual is not between {} and {}", start.size(), end.size());
+            handler.setDescription(handler.from(actual, description));
+            throw handler.getException();
         }
     }
 }

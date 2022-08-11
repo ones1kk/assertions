@@ -79,4 +79,34 @@ public class AbstractListAssert<SELF extends AbstractListAssert<SELF, ACTUAL>, A
         lists.assertNoneMatch(actual, expected);
         return self;
     }
+
+    @Override
+    public SELF isLessThan(List<? extends ACTUAL> expected) {
+        lists.assertIsLessThan(actual, expected);
+        return self;
+    }
+
+    @Override
+    public SELF isLessThanOrEqualTo(List<? extends ACTUAL> expected) {
+        lists.assertIsLessThanOrEqualTo(actual, expected);
+        return self;
+    }
+
+    @Override
+    public SELF isGreaterThan(List<? extends ACTUAL> expected) {
+        lists.assertIsGreaterThan(actual, expected);
+        return self;
+    }
+
+    @Override
+    public SELF isGreaterThanOrEqualTo(List<? extends ACTUAL> expected) {
+        lists.assertIsGreaterThanOrEqualTo(actual, expected);
+        return self;
+    }
+
+    @Override
+    public SELF isBetween(List<? extends ACTUAL> start, List<? extends ACTUAL> end) {
+        lists.assertIsBetween(actual, start, end);
+        return self;
+    }
 }
