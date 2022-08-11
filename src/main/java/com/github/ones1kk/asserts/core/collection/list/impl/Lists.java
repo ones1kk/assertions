@@ -38,8 +38,8 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
 
     @Override
     public void assertIsNullOrEmpty(List<? extends ACTUAL> actual) {
-        if(actual != null) {
-            if(!actual.isEmpty()) {
+        if (actual != null) {
+            if (!actual.isEmpty()) {
                 handler.setDescription(handler.from("actual is not null or not empty"));
                 throw handler.getException();
             }

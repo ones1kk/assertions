@@ -35,29 +35,29 @@ class ListsTest {
         assertThrows(Exception.class, () -> lists.assertIsEmpty(singletonList("")));
         assertThrows(Exception.class, () -> lists.assertIsNotEmpty(emptyList()));
 
-        assertThrows(Exception.class, () ->  lists.assertContains(asList("a", "b"), "c"));
-        assertThrows(Exception.class, () ->  lists.assertDoesNotContain(asList("a", "b"), "a"));
-        assertThrows(Exception.class, () ->  lists.assertContainsAll(asList("a", "b"), "z", "x"));
+        assertThrows(Exception.class, () -> lists.assertContains(asList("a", "b"), "c"));
+        assertThrows(Exception.class, () -> lists.assertDoesNotContain(asList("a", "b"), "a"));
+        assertThrows(Exception.class, () -> lists.assertContainsAll(asList("a", "b"), "z", "x"));
 
-        assertThrows(Exception.class, () ->  lists.assertContainsAny(asList("a", "b", "c"), "1", "2", "z"));
-        assertThrows(Exception.class, () ->  lists.assertContainsNull(asList("a", "b", "c")));
-        assertThrows(Exception.class, () ->  lists.assertDoesNotContainNull(asList("a", "b", "c", null)));
+        assertThrows(Exception.class, () -> lists.assertContainsAny(asList("a", "b", "c"), "1", "2", "z"));
+        assertThrows(Exception.class, () -> lists.assertContainsNull(asList("a", "b", "c")));
+        assertThrows(Exception.class, () -> lists.assertDoesNotContainNull(asList("a", "b", "c", null)));
 
-        assertThrows(Exception.class, () ->  lists.assertAllMatch(asList("a", "b", "c"), Objects::isNull));
-        assertThrows(Exception.class, () ->  lists.assertNoneMatch(asList("a", "b", "c"), Objects::nonNull));
+        assertThrows(Exception.class, () -> lists.assertAllMatch(asList("a", "b", "c"), Objects::isNull));
+        assertThrows(Exception.class, () -> lists.assertNoneMatch(asList("a", "b", "c"), Objects::nonNull));
 
-        assertThrows(Exception.class, () ->  lists.assertIsLessThan(asList("a", "b"), singletonList("a")));
-        assertThrows(Exception.class, () ->  lists.assertIsLessThan(asList("a", "b"), asList("a", "b")));
+        assertThrows(Exception.class, () -> lists.assertIsLessThan(asList("a", "b"), singletonList("a")));
+        assertThrows(Exception.class, () -> lists.assertIsLessThan(asList("a", "b"), asList("a", "b")));
 
-        assertThrows(Exception.class, () ->  lists.assertIsLessThanOrEqualTo(asList("a", "b"), singletonList("a")));
+        assertThrows(Exception.class, () -> lists.assertIsLessThanOrEqualTo(asList("a", "b"), singletonList("a")));
 
 
-        assertThrows(Exception.class, () ->  lists.assertIsGreaterThan(singletonList("a"), asList("a", "b")));
-        assertThrows(Exception.class, () ->  lists.assertIsGreaterThan(singletonList("a"), singletonList("a")));
+        assertThrows(Exception.class, () -> lists.assertIsGreaterThan(singletonList("a"), asList("a", "b")));
+        assertThrows(Exception.class, () -> lists.assertIsGreaterThan(singletonList("a"), singletonList("a")));
 
-        assertThrows(Exception.class, () ->  lists.assertIsGreaterThanOrEqualTo(singletonList("a"), asList("a", "b")));
+        assertThrows(Exception.class, () -> lists.assertIsGreaterThanOrEqualTo(singletonList("a"), asList("a", "b")));
 
-        assertThrows(Exception.class, () ->  lists.assertIsBetween(asList("a", "b"),  asList("a", "b", "c"), asList("a", "b", "c", "d")));
+        assertThrows(Exception.class, () -> lists.assertIsBetween(asList("a", "b"), asList("a", "b", "c"), asList("a", "b", "c", "d")));
 
         lists.assertIsEmpty(emptyList());
         lists.assertIsNotEmpty(singletonList(""));
