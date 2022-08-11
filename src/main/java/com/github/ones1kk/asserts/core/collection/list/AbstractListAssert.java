@@ -9,10 +9,9 @@ public class AbstractListAssert<SELF extends AbstractListAssert<SELF, ACTUAL>, A
 
     private final ListsInterface<ACTUAL> lists;
 
-    @SuppressWarnings("unchecked")
     public AbstractListAssert(Class<?> self, List<? extends ACTUAL> actual) {
         super(self, actual);
-        this.lists = (ListsInterface<ACTUAL>) assertFactory.createAssert(actual, this);
+        this.lists = assertFactory.createAssert(actual, this);
     }
 
     @Override

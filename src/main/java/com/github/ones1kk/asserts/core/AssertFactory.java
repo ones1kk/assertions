@@ -93,7 +93,7 @@ public final class AssertFactory {
         return new Files(asAssert);
     }
 
-    public Lists<Object> createAssert(List<Object> actual, AsAssert<?> asAssert) {
+    public <ELEMENT> Lists<ELEMENT> createAssert(List<? extends ELEMENT> actual, AsAssert<?> asAssert) {
         return new Lists<>(asAssert);
     }
 

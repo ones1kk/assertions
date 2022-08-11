@@ -92,7 +92,7 @@ public class Asserts {
         return AssertsForType.that(actual);
     }
 
-    public static AbstractListAssert<?, Object> that(List<Object> actual) {
+    public static <ELEMENT> AbstractListAssert<?, ELEMENT> that(List<ELEMENT> actual) {
         return AssertsForType.that(actual);
     }
 
