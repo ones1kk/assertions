@@ -22,76 +22,91 @@ public class AbstractSetAssert<SELF extends AbstractSetAssert<SELF, ACTUAL>, ACT
 
     @Override
     public SELF isNotEmpty() {
+        sets.assertIsNotEmpty(actual);
         return self;
     }
 
     @Override
     public SELF isNullOrEmpty() {
+        sets.assertIsNullOrEmpty(actual);
         return self;
     }
 
     @Override
     public SELF contains(ACTUAL expected) {
+        sets.assertContains(actual, expected);
         return self;
     }
 
     @Override
     public SELF doesNotContain(ACTUAL expected) {
+        sets.assertDoesNotContain(actual, expected);
         return self;
     }
 
     @Override
     public SELF containsAll(ACTUAL... expected) {
+        sets.assertContainsAll(actual, expected);
         return self;
     }
 
     @Override
     public SELF containsAny(ACTUAL... expected) {
+        sets.assertContainsAny(actual, expected);
         return self;
     }
 
     @Override
     public SELF containsNull() {
+        sets.assertContainsNull(actual);
         return self;
     }
 
     @Override
     public SELF doesNotContainNull() {
+        sets.assertDoesNotContainNull(actual);
         return self;
     }
 
     @Override
     public SELF allMatch(Predicate<ACTUAL> expected) {
+        sets.assertAllMatch(actual, expected);
         return self;
     }
 
     @Override
     public SELF noneMatch(Predicate<ACTUAL> expected) {
+        sets.assertNoneMatch(actual, expected);
         return self;
     }
 
     @Override
     public SELF isLessThan(Set<? extends ACTUAL> expected) {
+        sets.assertIsLessThan(actual, expected);
         return self;
     }
 
     @Override
     public SELF isLessThanOrEqualTo(Set<? extends ACTUAL> expected) {
+        sets.assertIsLessThanOrEqualTo(actual, expected);
         return self;
     }
 
     @Override
     public SELF isGreaterThan(Set<? extends ACTUAL> expected) {
+        sets.assertIsGreaterThan(actual, expected);
         return self;
     }
 
     @Override
     public SELF isGreaterThanOrEqualTo(Set<? extends ACTUAL> expected) {
+        sets.assertIsGreaterThanOrEqualTo(actual, expected);
         return self;
     }
 
     @Override
     public SELF isBetween(Set<? extends ACTUAL> start, Set<? extends ACTUAL> end) {
+        sets.assertIsBetween(actual, start, end);
         return self;
     }
 }
