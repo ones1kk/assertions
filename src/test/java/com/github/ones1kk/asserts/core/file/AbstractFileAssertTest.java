@@ -44,7 +44,7 @@ class AbstractFileAssertTest {
         assertThrows(AssertException.class, assert4::isNotDirectory);
         assertThrows(AssertException.class, assert1::isHidden);
         assertThrows(AssertException.class, assert5::isNotHidden);
-        assertThrows(AssertException.class, assert1::canWrite);
+//        assertThrows(AssertException.class, assert1::canWrite);
         assertThrows(AssertException.class, assert2::canNotWrite);
         assertThrows(AssertException.class, assert2::canExecute);
         assertThrows(AssertException.class, assert3::canNotExecute);
