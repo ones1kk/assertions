@@ -4,8 +4,8 @@ import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.collection.CollectionsInterface;
 import com.github.ones1kk.asserts.core.feature.comparable.calculator.collection.CollectionComparableCalculator;
 import com.github.ones1kk.asserts.core.feature.comparable.calculator.collection.impl.CollectionCalculator;
-import com.github.ones1kk.asserts.core.feature.iterable.containable.CollectionContainable;
-import com.github.ones1kk.asserts.core.feature.iterable.containable.impl.CollectionContainableImpl;
+import com.github.ones1kk.asserts.core.feature.iterable.containable.collection.CollectionContainable;
+import com.github.ones1kk.asserts.core.feature.iterable.containable.collection.impl.CollectionContainableImpl;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
 import java.util.Collection;
