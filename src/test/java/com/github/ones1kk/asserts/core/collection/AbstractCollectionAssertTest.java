@@ -18,7 +18,7 @@ class AbstractCollectionAssertTest {
     @DisplayName("Object method test")
     public void test1() throws Exception {
         // given
-        Collection<String> actual1 = Collections.unmodifiableSet(new HashSet<>(asList("1", "2" ,"3")));
+        Collection<String> actual1 = Collections.unmodifiableSet(new HashSet<>(asList("1", "2", "3")));
         Collection<String> actual2 = null;
 
         // when
