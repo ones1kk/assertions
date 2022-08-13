@@ -1,7 +1,6 @@
 package com.github.ones1kk.asserts.core.collection.list;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -45,6 +44,7 @@ class AbstractListAssertTest {
     }
 
     @Test
+    @DisplayName("List method test")
     public void test2() throws Exception {
         // given
         List<String> actual1 = asList("1", "2", "3");
@@ -59,32 +59,32 @@ class AbstractListAssertTest {
         AbstractListAssert<?, String> assert4 = new AbstractListAssert<>(AbstractListAssert.class, actual4);
 
         // then
-        Assertions.assertThrows(AssertException.class, assert1::isEmpty);
-        Assertions.assertThrows(AssertException.class, assert3::isNotEmpty);
-        Assertions.assertThrows(AssertException.class, assert1::isNullOrEmpty);
-        Assertions.assertThrows(AssertException.class, () -> assert1.contains("4"));
-        Assertions.assertThrows(AssertException.class, () -> assert1.doesNotContain("1"));
+        assertThrows(AssertException.class, assert1::isEmpty);
+        assertThrows(AssertException.class, assert3::isNotEmpty);
+        assertThrows(AssertException.class, assert1::isNullOrEmpty);
+        assertThrows(AssertException.class, () -> assert1.contains("4"));
+        assertThrows(AssertException.class, () -> assert1.doesNotContain("1"));
 
-        Assertions.assertThrows(AssertException.class, () -> assert1.containsAll("4", "5"));
-        Assertions.assertThrows(AssertException.class, () -> assert1.containsAll("1", "2", "4"));
+        assertThrows(AssertException.class, () -> assert1.containsAll("4", "5"));
+        assertThrows(AssertException.class, () -> assert1.containsAll("1", "2", "4"));
 
-        Assertions.assertThrows(AssertException.class, () -> assert1.containsAny("4", "5", "6"));
-        Assertions.assertThrows(AssertException.class, assert1::containsNull);
-        Assertions.assertThrows(AssertException.class, assert4::doesNotContainNull);
-        Assertions.assertThrows(AssertException.class, () -> assert1.allMatch(Objects::isNull));
-        Assertions.assertThrows(AssertException.class, () -> assert1.noneMatch(Objects::nonNull));
+        assertThrows(AssertException.class, () -> assert1.containsAny("4", "5", "6"));
+        assertThrows(AssertException.class, assert1::containsNull);
+        assertThrows(AssertException.class, assert4::doesNotContainNull);
+        assertThrows(AssertException.class, () -> assert1.allMatch(Objects::isNull));
+        assertThrows(AssertException.class, () -> assert1.noneMatch(Objects::nonNull));
 
-        Assertions.assertThrows(AssertException.class, () -> assert1.isLessThan(asList("1", "2")));
-        Assertions.assertThrows(AssertException.class, () -> assert1.isLessThan(asList("1", "2", "3")));
+        assertThrows(AssertException.class, () -> assert1.isLessThan(asList("1", "2")));
+        assertThrows(AssertException.class, () -> assert1.isLessThan(asList("1", "2", "3")));
 
-        Assertions.assertThrows(AssertException.class, () -> assert1.isLessThanOrEqualTo(asList("1", "2")));
+        assertThrows(AssertException.class, () -> assert1.isLessThanOrEqualTo(asList("1", "2")));
 
-        Assertions.assertThrows(AssertException.class, () -> assert1.isGreaterThan(asList("1", "2", "3", "4")));
-        Assertions.assertThrows(AssertException.class, () -> assert1.isGreaterThan(asList("1", "2", "3")));
+        assertThrows(AssertException.class, () -> assert1.isGreaterThan(asList("1", "2", "3", "4")));
+        assertThrows(AssertException.class, () -> assert1.isGreaterThan(asList("1", "2", "3")));
 
-        Assertions.assertThrows(AssertException.class, () -> assert1.isGreaterThanOrEqualTo(asList("1", "2", "3", "4")));
+        assertThrows(AssertException.class, () -> assert1.isGreaterThanOrEqualTo(asList("1", "2", "3", "4")));
 
-        Assertions.assertThrows(AssertException.class, () -> assert1.isBetween(asList("1", "2", "3", "4"), asList("1", "2", "3", "4", "5")));
+        assertThrows(AssertException.class, () -> assert1.isBetween(asList("1", "2", "3", "4"), asList("1", "2", "3", "4", "5")));
 
         assert3.isEmpty();
         assert1.isNotEmpty();
