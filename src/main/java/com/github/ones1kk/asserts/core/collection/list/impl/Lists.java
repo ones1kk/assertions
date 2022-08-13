@@ -1,10 +1,11 @@
 package com.github.ones1kk.asserts.core.collection.list.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.collection.list.ListCalculator;
 import com.github.ones1kk.asserts.core.collection.list.ListsInterface;
-import com.github.ones1kk.asserts.core.feature.iterable.containable.ListContainable;
-import com.github.ones1kk.asserts.core.feature.iterable.containable.impl.ListContainableImpl;
+import com.github.ones1kk.asserts.core.feature.comparable.calculator.collection.CollectionComparableCalculator;
+import com.github.ones1kk.asserts.core.feature.comparable.calculator.collection.impl.CollectionCalculator;
+import com.github.ones1kk.asserts.core.feature.iterable.containable.collection.CollectionContainable;
+import com.github.ones1kk.asserts.core.feature.iterable.containable.collection.impl.CollectionContainableImpl;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
 import java.util.List;
@@ -12,9 +13,9 @@ import java.util.function.Predicate;
 
 public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACTUAL> {
 
-    private final ListContainable<ACTUAL> containable = new ListContainableImpl<>();
+    private final CollectionContainable<ACTUAL> containable = new CollectionContainableImpl<>();
 
-    private final ListCalculator<ACTUAL> calculator = new ListCalculator<>();
+    private final CollectionComparableCalculator<ACTUAL> calculator = new CollectionCalculator<>();
 
     public Lists(AsAssert<?> asAssert) {
         super(asAssert);
