@@ -53,7 +53,6 @@ jacocoTestReport {
         xml.enabled false
         csv.enabled false
     }
-
     finalizedBy 'jacocoTestCoverageVerification'
 }
 
@@ -64,11 +63,9 @@ jacocoTestCoverageVerification {
                 minimum = 0.30
             }
         }
-
         rule {
             enabled = true
             element = 'CLASS'
-
         }
     }
 }
