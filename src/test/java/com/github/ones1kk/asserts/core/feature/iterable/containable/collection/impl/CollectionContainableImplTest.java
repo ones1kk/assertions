@@ -65,6 +65,7 @@ class CollectionContainableImplTest {
     public void test2() throws Exception {
         // given
         CollectionContainable<User> containable = new CollectionContainableImpl<>();
+
         // when
         User userA = new User("userA", 10);
         User userB = new User("userB", 20);
