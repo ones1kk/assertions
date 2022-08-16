@@ -6,8 +6,10 @@ import com.github.ones1kk.asserts.core.array.model.NumberArrayAssert;
 import com.github.ones1kk.asserts.core.array.number.AbstractNumberArrayAssert;
 import com.github.ones1kk.asserts.core.collection.AbstractCollectionAssert;
 import com.github.ones1kk.asserts.core.collection.list.AbstractListAssert;
+import com.github.ones1kk.asserts.core.collection.map.AbstractMapAssert;
 import com.github.ones1kk.asserts.core.collection.model.CollectionAssert;
 import com.github.ones1kk.asserts.core.collection.model.ListAssert;
+import com.github.ones1kk.asserts.core.collection.model.MapAssert;
 import com.github.ones1kk.asserts.core.collection.model.SetAssert;
 import com.github.ones1kk.asserts.core.collection.set.AbstractSetAssert;
 import com.github.ones1kk.asserts.core.file.AbstractFileAssert;
@@ -28,6 +30,7 @@ import com.github.ones1kk.asserts.core.lang.string.AbstractStringAssert;
 import java.io.File;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class AssertsForType {
@@ -112,4 +115,7 @@ public class AssertsForType {
         return new SetAssert<>(actual);
     }
 
+    public <ELEMENT extends Map<K, V>, K, V> AbstractMapAssert<?, ELEMENT, K, V> createAssert(ELEMENT actual) {
+        return new MapAssert<>(actual);
+    }
 }
