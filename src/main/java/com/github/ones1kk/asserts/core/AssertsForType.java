@@ -114,8 +114,4 @@ public class AssertsForType {
     public static <ELEMENT> AbstractSetAssert<?, ELEMENT> that(Set<ELEMENT> actual) {
         return new SetAssert<>(actual);
     }
-
-    public <ELEMENT extends Map<K, V>, K, V> AbstractMapAssert<?, ELEMENT, K, V> createAssert(ELEMENT actual) {
-        return new MapAssert<>(actual);
-    }
 }

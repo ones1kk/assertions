@@ -110,8 +110,5 @@ public class Asserts {
     public static <ELEMENT> AbstractSetAssert<?, ELEMENT> that(Set<ELEMENT> actual) {
         return AssertsForType.that(actual);
     }
-
-    public <ELEMENT extends Map<K, V>, K, V> AbstractMapAssert<?, ELEMENT, K, V> createAssert(Map<K, V> actual) {
-        return AssertsForType.that(actual);
-    }
+    
 }
