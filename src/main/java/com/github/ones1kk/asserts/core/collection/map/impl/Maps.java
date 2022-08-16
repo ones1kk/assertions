@@ -4,7 +4,6 @@ import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.collection.map.MapsInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
-import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 

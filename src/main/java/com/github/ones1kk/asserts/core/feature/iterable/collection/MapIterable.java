@@ -1,6 +1,5 @@
 package com.github.ones1kk.asserts.core.feature.iterable.collection;
 
-import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 
