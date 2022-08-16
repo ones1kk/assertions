@@ -4,6 +4,7 @@ import com.github.ones1kk.asserts.core.array.impl.Arrays;
 import com.github.ones1kk.asserts.core.array.number.impl.NumberArrays;
 import com.github.ones1kk.asserts.core.collection.impl.Collections;
 import com.github.ones1kk.asserts.core.collection.list.impl.Lists;
+import com.github.ones1kk.asserts.core.collection.map.impl.Maps;
 import com.github.ones1kk.asserts.core.collection.set.impl.Sets;
 import com.github.ones1kk.asserts.core.file.impl.Files;
 import com.github.ones1kk.asserts.core.lang.bolean.impl.Booleans;
@@ -21,6 +22,7 @@ import com.github.ones1kk.asserts.core.lang.string.impl.Strings;
 import java.io.File;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public final class AssertFactory {
@@ -107,6 +109,10 @@ public final class AssertFactory {
 
     public <ELEMENT> Sets<ELEMENT> createAssert(Set<? extends ELEMENT> actual, AsAssert<?> asAssert) {
         return new Sets<>(asAssert);
+    }
+
+    public <ELEMENT extends Map<K, V>, K, V> Maps<ELEMENT, K, V> createAssert(Map<K, V> actual, AsAssert<?> asAssert) {
+        return new Maps<>(asAssert);
     }
 
 }
