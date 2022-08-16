@@ -110,5 +110,5 @@ public class Asserts {
     public static <ELEMENT> AbstractSetAssert<?, ELEMENT> that(Set<ELEMENT> actual) {
         return AssertsForType.that(actual);
     }
-    
+
 }
