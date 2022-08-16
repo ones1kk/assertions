@@ -4,8 +4,6 @@ import com.github.ones1kk.asserts.core.array.AbstractArrayAssert;
 import com.github.ones1kk.asserts.core.array.number.AbstractNumberArrayAssert;
 import com.github.ones1kk.asserts.core.collection.AbstractCollectionAssert;
 import com.github.ones1kk.asserts.core.collection.list.AbstractListAssert;
-import com.github.ones1kk.asserts.core.collection.map.AbstractMapAssert;
-import com.github.ones1kk.asserts.core.collection.map.impl.Maps;
 import com.github.ones1kk.asserts.core.collection.set.AbstractSetAssert;
 import com.github.ones1kk.asserts.core.file.AbstractFileAssert;
 import com.github.ones1kk.asserts.core.lang.bolean.AbstractBooleanAssert;
@@ -23,7 +21,6 @@ import com.github.ones1kk.asserts.core.lang.string.AbstractStringAssert;
 import java.io.File;
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class Asserts {
