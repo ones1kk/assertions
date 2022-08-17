@@ -9,7 +9,6 @@ import com.github.ones1kk.asserts.core.collection.list.AbstractListAssert;
 import com.github.ones1kk.asserts.core.collection.map.AbstractMapAssert;
 import com.github.ones1kk.asserts.core.collection.model.CollectionAssert;
 import com.github.ones1kk.asserts.core.collection.model.ListAssert;
-import com.github.ones1kk.asserts.core.collection.model.MapAssert;
 import com.github.ones1kk.asserts.core.collection.model.SetAssert;
 import com.github.ones1kk.asserts.core.collection.set.AbstractSetAssert;
 import com.github.ones1kk.asserts.core.file.AbstractFileAssert;

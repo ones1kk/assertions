@@ -20,11 +20,11 @@ public class MapCalculator<ELEMENT extends Map<K, V>, K, V> {
         return actual.size() >= expected.size();
     }
 
-    public boolean hasSameSizeOf(ELEMENT actual, Map<?,?> expected) {
+    public boolean hasSameSizeOf(ELEMENT actual, Map<?, ?> expected) {
         return actual.size() == expected.size();
     }
 
-    public boolean doesNotHaveSameSizeOf(ELEMENT actual, Map<?,?> expected) {
+    public boolean doesNotHaveSameSizeOf(ELEMENT actual, Map<?, ?> expected) {
         return actual.size() != expected.size();
     }
 }

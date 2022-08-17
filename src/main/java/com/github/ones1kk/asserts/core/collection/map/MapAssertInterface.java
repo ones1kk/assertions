@@ -3,7 +3,6 @@ package com.github.ones1kk.asserts.core.collection.map;
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableAssert;
 
 import java.util.Map;
-import java.util.function.Predicate;
 
 public interface MapAssertInterface<SELF, ACTUAL extends Map<K, V>, K, V> extends ComparableAssert<SELF, ACTUAL> {
 
