@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.feature.comparable.calculator.collection.impl;
+package com.github.ones1kk.asserts.core.feature.comparable.collection.impl;
 
 import java.util.Map;
 

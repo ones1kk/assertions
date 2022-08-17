@@ -2,8 +2,8 @@ package com.github.ones1kk.asserts.core.lang.duble.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.Offset;
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.ComparableCalculatorInterface;
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.impl.DoubleCalculator;
+import com.github.ones1kk.asserts.core.feature.comparable.ComparableCalculatorInterface;
+import com.github.ones1kk.asserts.core.feature.comparable.impl.DoubleComparableImpl;
 import com.github.ones1kk.asserts.core.lang.duble.DoublesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
@@ -11,7 +11,7 @@ import static com.github.ones1kk.asserts.core.feature.number.arithmetic.DoubleAr
 
 public class Doubles extends Objects<Double> implements DoublesInterface<Double> {
 
-    private final ComparableCalculatorInterface<Double> calculator = new DoubleCalculator();
+    private final ComparableCalculatorInterface<Double> comparable = new DoubleComparableImpl();
 
 
     public Doubles(AsAssert<?> asAssert) {
@@ -44,7 +44,7 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
 
     @Override
     public void assertIsLessThan(Double actual, Double expected) {
-        if (calculator.isGraterThanOrEqualTo(actual, expected)) {
+        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not less than {}"));
             throw handler.getException();
         }
@@ -52,7 +52,7 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
 
     @Override
     public void assertIsLessThanOrEqualTo(Double actual, Double expected) {
-        if (calculator.isGraterThan(actual, expected)) {
+        if (comparable.isGraterThan(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not less than or equal to {}"));
             throw handler.getException();
         }
@@ -60,7 +60,7 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
 
     @Override
     public void assertIsGreaterThan(Double actual, Double expected) {
-        if (calculator.isLessThanOrEqualTo(actual, expected)) {
+        if (comparable.isLessThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not greater than {}"));
             throw handler.getException();
         }
@@ -68,7 +68,7 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
 
     @Override
     public void assertIsGreaterThanOrEqualTo(Double actual, Double expected) {
-        if (calculator.isLessThan(actual, expected)) {
+        if (comparable.isLessThan(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not greater than or equal to {}"));
             throw handler.getException();
         }
@@ -76,8 +76,8 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
 
     @Override
     public void assertIsBetween(Double actual, Double start, Double end) {
-        if (calculator.isLessThan(actual, start)
-                || calculator.isGraterThan(actual, end)) {
+        if (comparable.isLessThan(actual, start)
+                || comparable.isGraterThan(actual, end)) {
             String description = handler.from("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();
@@ -86,7 +86,7 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
 
     @Override
     public void assertIsPositive(Double actual) {
-        if (calculator.isLessThanOrEqualTo(actual, (double) 0)) {
+        if (comparable.isLessThanOrEqualTo(actual, (double) 0)) {
             handler.setDescription(handler.from(actual, "{} is not positive"));
             throw handler.getException();
         }
@@ -94,7 +94,7 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
 
     @Override
     public void assertIsNotPositive(Double actual) {
-        if (calculator.isGraterThan(actual, (double) 0)) {
+        if (comparable.isGraterThan(actual, (double) 0)) {
             handler.setDescription(handler.from(actual, "{} is positive"));
             throw handler.getException();
         }
@@ -102,7 +102,7 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
 
     @Override
     public void assertIsNegative(Double actual) {
-        if (calculator.isGraterThanOrEqualTo(actual, (double) 0)) {
+        if (comparable.isGraterThanOrEqualTo(actual, (double) 0)) {
             handler.setDescription(handler.from(actual, "{} is not negative"));
             throw handler.getException();
         }
@@ -110,7 +110,7 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
 
     @Override
     public void assertIsNotNegative(Double actual) {
-        if (calculator.isLessThan(actual, (double) 0)) {
+        if (comparable.isLessThan(actual, (double) 0)) {
             handler.setDescription(handler.from(actual, "{} is negative"));
             throw handler.getException();
         }
@@ -137,8 +137,8 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
         double startResult = Double.compare(actual, offset.getBefore(expected));
         double endResult = Double.compare(actual, offset.getAfter(expected));
 
-        if (calculator.is(startResult, (double) -1)
-                || calculator.is(endResult, (double) 1)) {
+        if (comparable.is(startResult, (double) -1)
+                || comparable.is(endResult, (double) 1)) {
             setAssertClose(actual, expected, offset);
         }
     }
@@ -148,8 +148,8 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
         double startResult = Double.compare(actual, offset.getBefore(expected));
         double endResult = Double.compare(actual, offset.getAfter(expected));
 
-        if (calculator.is(startResult, (double) 1)
-                || calculator.is(endResult, (double) 1)) {
+        if (comparable.is(startResult, (double) 1)
+                || comparable.is(endResult, (double) 1)) {
             setAssertClose(actual, expected, offset);
         }
     }

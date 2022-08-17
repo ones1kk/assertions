@@ -2,8 +2,8 @@ package com.github.ones1kk.asserts.core.collection.list.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.collection.list.ListsInterface;
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.collection.CollectionComparableCalculator;
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.collection.impl.CollectionCalculator;
+import com.github.ones1kk.asserts.core.feature.comparable.collection.CollectionComparableCalculator;
+import com.github.ones1kk.asserts.core.feature.comparable.collection.impl.CollectionCalculator;
 import com.github.ones1kk.asserts.core.feature.iterable.containable.collection.CollectionContainable;
 import com.github.ones1kk.asserts.core.feature.iterable.containable.collection.impl.CollectionContainableImpl;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;

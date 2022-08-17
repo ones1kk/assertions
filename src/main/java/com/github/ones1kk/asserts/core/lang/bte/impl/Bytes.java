@@ -2,8 +2,8 @@ package com.github.ones1kk.asserts.core.lang.bte.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.Offset;
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.ComparableCalculatorInterface;
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.impl.ByteCalculator;
+import com.github.ones1kk.asserts.core.feature.comparable.ComparableCalculatorInterface;
+import com.github.ones1kk.asserts.core.feature.comparable.impl.ByteComparableImpl;
 import com.github.ones1kk.asserts.core.lang.bte.BytesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
@@ -11,7 +11,7 @@ import static com.github.ones1kk.asserts.core.feature.number.arithmetic.ByteArit
 
 public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
-    private final ComparableCalculatorInterface<Byte> calculator = new ByteCalculator();
+    private final ComparableCalculatorInterface<Byte> comparable = new ByteComparableImpl();
 
     public Bytes(AsAssert<?> asAssert) {
         super(asAssert);
@@ -20,7 +20,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
     @Override
     public void assertIsOdd(Byte actual) {
         if (of(actual).isEven()
-                || calculator.isLessThan(actual, (byte) 0)) {
+                || comparable.isLessThan(actual, (byte) 0)) {
             handler.setDescription(handler.from(actual, "{} is not odd"));
             throw handler.getException();
         }
@@ -29,7 +29,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
     @Override
     public void assertIsNotOdd(Byte actual) {
         if (of(actual).isOdd()
-                || calculator.isLessThan(actual, (byte) 0)) {
+                || comparable.isLessThan(actual, (byte) 0)) {
             handler.setDescription(handler.from(actual, "{} is odd"));
             throw handler.getException();
         }
@@ -38,7 +38,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
     @Override
     public void assertIsEven(Byte actual) {
         if (of(actual).isOdd()
-                || calculator.isLessThan(actual, (byte) 0)
+                || comparable.isLessThan(actual, (byte) 0)
                 || of(actual).isZero()) {
             handler.setDescription(handler.from(actual, "{} is not even"));
             throw handler.getException();
@@ -49,7 +49,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
     public void assertIsNotEven(Byte actual) {
         if (of(actual).isNotZero()) {
             if (of(actual).isEven()
-                    || calculator.isLessThan(actual, (byte) 0)) {
+                    || comparable.isLessThan(actual, (byte) 0)) {
                 handler.setDescription(handler.from(actual, "{} is even"));
                 throw handler.getException();
             }
@@ -58,7 +58,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsPositive(Byte actual) {
-        if (calculator.isLessThanOrEqualTo(actual, (byte) 0)) {
+        if (comparable.isLessThanOrEqualTo(actual, (byte) 0)) {
             handler.setDescription(handler.from(actual, "{} is not positive"));
             throw handler.getException();
         }
@@ -66,7 +66,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsNotPositive(Byte actual) {
-        if (calculator.isGraterThan(actual, (byte) 0)) {
+        if (comparable.isGraterThan(actual, (byte) 0)) {
             handler.setDescription(handler.from(actual, "{} is positive"));
             throw handler.getException();
         }
@@ -74,7 +74,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsNegative(Byte actual) {
-        if (calculator.isGraterThanOrEqualTo(actual, (byte) 0)) {
+        if (comparable.isGraterThanOrEqualTo(actual, (byte) 0)) {
             handler.setDescription(handler.from(actual, "{} is not negative"));
             throw handler.getException();
         }
@@ -82,7 +82,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsNotNegative(Byte actual) {
-        if (calculator.isLessThan(actual, (byte) 0)) {
+        if (comparable.isLessThan(actual, (byte) 0)) {
             handler.setDescription(handler.from(actual, "{} is negative"));
             throw handler.getException();
         }
@@ -106,7 +106,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsLessThan(Byte actual, Byte expected) {
-        if (calculator.isGraterThanOrEqualTo(actual, expected)) {
+        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not less than {}"));
             throw handler.getException();
         }
@@ -114,7 +114,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsLessThanOrEqualTo(Byte actual, Byte expected) {
-        if (calculator.isGraterThan(actual, expected)) {
+        if (comparable.isGraterThan(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not less than or equal to {}"));
             throw handler.getException();
         }
@@ -122,7 +122,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsGreaterThan(Byte actual, Byte expected) {
-        if (calculator.isLessThanOrEqualTo(actual, expected)) {
+        if (comparable.isLessThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not greater than {}"));
             throw handler.getException();
         }
@@ -130,7 +130,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsGreaterThanOrEqualTo(Byte actual, Byte expected) {
-        if (calculator.isLessThan(actual, expected)) {
+        if (comparable.isLessThan(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not greater than or equal to {}"));
             throw handler.getException();
         }
@@ -138,8 +138,8 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsBetween(Byte actual, Byte start, Byte end) {
-        if (calculator.isLessThan(actual, start)
-                || calculator.isGraterThan(actual, end)) {
+        if (comparable.isLessThan(actual, start)
+                || comparable.isGraterThan(actual, end)) {
             String description = handler.from("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();
@@ -151,8 +151,8 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
         byte startResult = (byte) Byte.compare(actual, (byte) offset.getBefore(expected));
         byte endResult = (byte) Byte.compare(actual, (byte) offset.getAfter(expected));
 
-        if (calculator.isLessThan(startResult, (byte) 0)
-                || calculator.isGraterThan(endResult, (byte) 0)) {
+        if (comparable.isLessThan(startResult, (byte) 0)
+                || comparable.isGraterThan(endResult, (byte) 0)) {
             setAssertClose(actual, expected, offset);
         }
     }
@@ -162,8 +162,8 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
         byte startResult = (byte) Byte.compare(actual, (byte) offset.getBefore(expected));
         byte endResult = (byte) Byte.compare(actual, (byte) offset.getAfter(expected));
 
-        if (calculator.isGraterThanOrEqualTo(startResult, (byte) 0)
-                || calculator.isGraterThanOrEqualTo(endResult, (byte) 0)) {
+        if (comparable.isGraterThanOrEqualTo(startResult, (byte) 0)
+                || comparable.isGraterThanOrEqualTo(endResult, (byte) 0)) {
             setAssertClose(actual, expected, offset);
         }
     }

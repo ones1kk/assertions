@@ -1,14 +1,14 @@
 package com.github.ones1kk.asserts.core.lang.character.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.ComparableCalculatorInterface;
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.impl.CharacterCalculator;
+import com.github.ones1kk.asserts.core.feature.comparable.ComparableCalculatorInterface;
+import com.github.ones1kk.asserts.core.feature.comparable.impl.CharacterComparableImpl;
 import com.github.ones1kk.asserts.core.lang.character.CharactersInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
 public class Characters extends Objects<Character> implements CharactersInterface<Character> {
 
-    private final ComparableCalculatorInterface<Character> calculator = new CharacterCalculator();
+    private final ComparableCalculatorInterface<Character> comparable = new CharacterComparableImpl();
 
     public Characters(AsAssert<?> asAssert) {
         super(asAssert);
@@ -97,7 +97,7 @@ public class Characters extends Objects<Character> implements CharactersInterfac
 
     @Override
     public void assertIsLessThan(Character actual, Character expected) {
-        if (calculator.isGraterThanOrEqualTo(actual, expected)) {
+        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not less than {}"));
             throw handler.getException();
         }
@@ -105,7 +105,7 @@ public class Characters extends Objects<Character> implements CharactersInterfac
 
     @Override
     public void assertIsLessThanOrEqualTo(Character actual, Character expected) {
-        if (calculator.isGraterThan(actual, expected)) {
+        if (comparable.isGraterThan(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not less than or equal to {}"));
             throw handler.getException();
         }
@@ -113,7 +113,7 @@ public class Characters extends Objects<Character> implements CharactersInterfac
 
     @Override
     public void assertIsGreaterThan(Character actual, Character expected) {
-        if (calculator.isLessThanOrEqualTo(actual, expected)) {
+        if (comparable.isLessThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not greater than {}"));
             throw handler.getException();
         }
@@ -121,7 +121,7 @@ public class Characters extends Objects<Character> implements CharactersInterfac
 
     @Override
     public void assertIsGreaterThanOrEqualTo(Character actual, Character expected) {
-        if (calculator.isLessThan(actual, expected)) {
+        if (comparable.isLessThan(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not greater than or equal to {}"));
             throw handler.getException();
         }
@@ -129,7 +129,7 @@ public class Characters extends Objects<Character> implements CharactersInterfac
 
     @Override
     public void assertIsBetween(Character actual, Character start, Character end) {
-        if (calculator.isLessThan(actual, start) || calculator.isGraterThan(actual, end)) {
+        if (comparable.isLessThan(actual, start) || comparable.isGraterThan(actual, end)) {
             String description = handler.getDescribable().as("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();

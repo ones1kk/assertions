@@ -1,8 +1,8 @@
-package com.github.ones1kk.asserts.core.feature.comparable.calculator.impl;
+package com.github.ones1kk.asserts.core.feature.comparable.impl;
 
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.AbstractComparableCalculator;
+import com.github.ones1kk.asserts.core.feature.comparable.AbstractComparableCalculator;
 
-public class DoubleCalculator extends AbstractComparableCalculator<Double> {
+public class DoubleComparableImpl extends AbstractComparableCalculator<Double> {
 
     @Override
     public boolean isGraterThan(Double actual, Double expected) {

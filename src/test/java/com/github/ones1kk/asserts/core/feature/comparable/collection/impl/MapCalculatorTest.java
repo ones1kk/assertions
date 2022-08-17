@@ -1,6 +1,5 @@
-package com.github.ones1kk.asserts.core.feature.comparable.calculator.collection.impl;
+package com.github.ones1kk.asserts.core.feature.comparable.collection.impl;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

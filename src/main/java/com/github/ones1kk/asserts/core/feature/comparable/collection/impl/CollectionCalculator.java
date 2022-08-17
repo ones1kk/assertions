@@ -1,6 +1,6 @@
-package com.github.ones1kk.asserts.core.feature.comparable.calculator.collection.impl;
+package com.github.ones1kk.asserts.core.feature.comparable.collection.impl;
 
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.collection.CollectionComparableCalculator;
+import com.github.ones1kk.asserts.core.feature.comparable.collection.CollectionComparableCalculator;
 
 import java.util.Collection;
 
