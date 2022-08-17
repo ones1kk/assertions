@@ -1,7 +1,6 @@
 package com.github.ones1kk.asserts.core.collection.model;
 
 import com.github.ones1kk.asserts.core.collection.map.AbstractMapAssert;
-import com.github.ones1kk.asserts.core.collection.map.impl.Maps;
 
 import java.util.Map;
 
