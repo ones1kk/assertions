@@ -50,7 +50,7 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
     @Override
     public void assertContains(List<? extends ACTUAL> actual, ACTUAL expected) {
         if (containable.doesNotContain(actual, expected)) {
-            handler.setDescription(handler.from(expected, "actual doesn't contains of {}"));
+            handler.setDescription(handler.from(expected, "actual does not contain of {}"));
             throw handler.getException();
         }
     }

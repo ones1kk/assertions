@@ -45,7 +45,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     @Override
     public void assertContains(ACTUAL[] actual, ACTUAL expected) {
         if (containable.doesNotContain(actual, expected)) {
-            handler.setDescription(handler.from(expected, "actual doesn't contains of {}"));
+            handler.setDescription(handler.from(expected, "actual does not contain of {}"));
             throw handler.getException();
         }
     }
