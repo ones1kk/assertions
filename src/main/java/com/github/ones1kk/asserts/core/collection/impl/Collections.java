@@ -64,6 +64,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     }
 
     @Override
+    @SuppressWarnings("all")
     public void assertContainsAll(Collection<? extends ACTUAL> actual, ACTUAL... expected) {
         if (containable.containsNotAll(actual, expected)) {
             handler.setDescription(handler.from("actual doesn't contain any of expected"));
@@ -72,6 +73,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     }
 
     @Override
+    @SuppressWarnings("all")
     public void assertContainsAny(Collection<? extends ACTUAL> actual, ACTUAL... expected) {
         if (containable.doseNotContainAny(actual, expected)) {
             handler.setDescription(handler.from("actual doesn't contain any of expected"));
