@@ -2,8 +2,8 @@ package com.github.ones1kk.asserts.core.collection.set.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.collection.set.SetsInterfaces;
-import com.github.ones1kk.asserts.core.feature.comparable.collection.CollectionComparableCalculator;
-import com.github.ones1kk.asserts.core.feature.comparable.collection.impl.CollectionCalculator;
+import com.github.ones1kk.asserts.core.feature.comparable.collection.CollectionComparable;
+import com.github.ones1kk.asserts.core.feature.comparable.collection.impl.CollectionComparableImpl;
 import com.github.ones1kk.asserts.core.feature.iterable.containable.collection.CollectionContainable;
 import com.github.ones1kk.asserts.core.feature.iterable.containable.collection.impl.CollectionContainableImpl;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
@@ -15,7 +15,7 @@ public class Sets<ACTUAL> extends Objects<ACTUAL> implements SetsInterfaces<ACTU
 
     private final CollectionContainable<ACTUAL> containable = new CollectionContainableImpl<>();
 
-    private final CollectionComparableCalculator<ACTUAL> calculator = new CollectionCalculator<>();
+    private final CollectionComparable<ACTUAL> calculator = new CollectionComparableImpl<>();
 
     public Sets(AsAssert<?> asAssert) {
         super(asAssert);

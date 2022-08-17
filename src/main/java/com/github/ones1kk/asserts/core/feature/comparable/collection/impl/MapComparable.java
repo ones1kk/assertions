@@ -2,7 +2,7 @@ package com.github.ones1kk.asserts.core.feature.comparable.collection.impl;
 
 import java.util.Map;
 
-public class MapCalculator<ELEMENT extends Map<K, V>, K, V> {
+public class MapComparable<ELEMENT extends Map<K, V>, K, V> {
 
     public boolean isGraterThan(ELEMENT actual, ELEMENT expected) {
         return actual.size() > expected.size();

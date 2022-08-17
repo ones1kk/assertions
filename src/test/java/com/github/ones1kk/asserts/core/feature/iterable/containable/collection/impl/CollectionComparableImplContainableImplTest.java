@@ -10,7 +10,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class CollectionContainableImplTest {
+class CollectionComparableImplContainableImplTest {
 
     @Test
     @DisplayName("method test(String)")
