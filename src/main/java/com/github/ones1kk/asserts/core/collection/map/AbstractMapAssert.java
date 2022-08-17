@@ -3,7 +3,6 @@ package com.github.ones1kk.asserts.core.collection.map;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 import java.util.Map;
-import java.util.function.Predicate;
 
 public class AbstractMapAssert<SELF extends AbstractMapAssert<SELF, ACTUAL, K, V>, ACTUAL extends Map<K, V>, K, V> extends AbstractObjectAssert<SELF, ACTUAL> implements MapAssertInterface<SELF, ACTUAL, K, V> {
 
@@ -28,55 +27,49 @@ public class AbstractMapAssert<SELF extends AbstractMapAssert<SELF, ACTUAL, K, V
 
     @Override
     public SELF isNullOrEmpty() {
-        maps.assertIsNotEmpty(actual);
+        maps.assertIsNullOrEmpty(actual);
         return self;
     }
 
     @Override
-    public SELF contains(ACTUAL expected) {
-        maps.assertContains(actual, expected);
+    public SELF containsKey(K expected) {
+        maps.assertContainsKey(actual, expected);
         return self;
     }
 
     @Override
-    public SELF doesNotContain(ACTUAL expected) {
-        maps.assertDoesNotContain(actual, expected);
+    public SELF containsAllKey(Map<? extends K, ?> expected) {
+        maps.assertContainsAllKey(actual, expected);
         return self;
     }
 
     @Override
-    public SELF containsAll(ACTUAL... expected) {
-        maps.assertContainsAll(actual, expected);
+    public SELF containsValue(V expected) {
+        maps.assertContainsValue(actual, expected);
         return self;
     }
 
     @Override
-    public SELF containsAny(ACTUAL... expected) {
-        maps.assertContainsAny(actual, expected);
+    public SELF containsAllValue(Map<?, ? extends V> expected) {
+        maps.assertContainsAllValue(actual, expected);
         return self;
     }
 
     @Override
-    public SELF containsNull() {
-        maps.assertContainsNull(actual);
+    public SELF hasSizeOf(int expected) {
+        maps.assertHasSizeOf(actual, expected);
         return self;
     }
 
     @Override
-    public SELF doesNotContainNull() {
-        maps.assertDoesNotContainNull(actual);
+    public SELF hasSameSizeOf(Map<?, ?> expected) {
+        maps.assertHasSameSizeOf(actual, expected);
         return self;
     }
 
     @Override
-    public SELF allMatch(Predicate<ACTUAL> expected) {
-        maps.assertAllMatch(actual, expected);
-        return self;
-    }
-
-    @Override
-    public SELF noneMatch(Predicate<ACTUAL> expected) {
-        maps.assertNoneMatch(actual, expected);
+    public SELF doesNotHaveSameSizeOf(Map<?, ?> expected) {
+        maps.assertDoesNotHaveSameSizeOf(actual, expected);
         return self;
     }
 
