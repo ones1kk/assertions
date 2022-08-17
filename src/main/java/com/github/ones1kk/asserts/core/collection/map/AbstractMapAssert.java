@@ -5,7 +5,7 @@ import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 import java.util.Map;
 import java.util.function.Predicate;
 
-public class AbstractMapAssert<SELF extends AbstractMapAssert<SELF, Map<K, V>, K, V>, ACTUAL extends Map<K, V>, K, V> extends AbstractObjectAssert<SELF, ACTUAL> implements MapAssertInterface<SELF, ACTUAL, K, V> {
+public class AbstractMapAssert<SELF extends AbstractMapAssert<SELF, ACTUAL, K, V>, ACTUAL extends Map<K, V>, K, V> extends AbstractObjectAssert<SELF, ACTUAL> implements MapAssertInterface<SELF, ACTUAL, K, V> {
 
     private final MapsInterface<ACTUAL, K, V> maps;
 
