@@ -2,27 +2,26 @@ package com.github.ones1kk.asserts.core.collection.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.collection.CollectionsInterface;
-import com.github.ones1kk.asserts.core.feature.comparable.collection.CollectionComparableCalculator;
-import com.github.ones1kk.asserts.core.feature.comparable.collection.impl.CollectionCalculator;
+import com.github.ones1kk.asserts.core.feature.comparable.collection.CollectionComparable;
+import com.github.ones1kk.asserts.core.feature.comparable.collection.impl.CollectionComparableImpl;
 import com.github.ones1kk.asserts.core.feature.iterable.containable.collection.CollectionContainable;
 import com.github.ones1kk.asserts.core.feature.iterable.containable.collection.impl.CollectionContainableImpl;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
-import java.util.Collection;
 import java.util.function.Predicate;
 
 public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsInterface<ACTUAL> {
 
     private final CollectionContainable<ACTUAL> containable = new CollectionContainableImpl<>();
 
-    private final CollectionComparableCalculator<ACTUAL> calculator = new CollectionCalculator<>();
+    private final CollectionComparable<ACTUAL> calculator = new CollectionComparableImpl<>();
 
     public Collections(AsAssert<?> asAssert) {
         super(asAssert);
     }
 
     @Override
-    public void assertIsEmpty(Collection<? extends ACTUAL> actual) {
+    public void assertIsEmpty(java.util.Collection<? extends ACTUAL> actual) {
         if (!actual.isEmpty()) {
             handler.setDescription(handler.from("actual is not empty"));
             throw handler.getException();
@@ -30,7 +29,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     }
 
     @Override
-    public void assertIsNotEmpty(Collection<? extends ACTUAL> actual) {
+    public void assertIsNotEmpty(java.util.Collection<? extends ACTUAL> actual) {
         if (actual.isEmpty()) {
             handler.setDescription(handler.from("actual is empty"));
             throw handler.getException();
@@ -38,7 +37,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     }
 
     @Override
-    public void assertIsNullOrEmpty(Collection<? extends ACTUAL> actual) {
+    public void assertIsNullOrEmpty(java.util.Collection<? extends ACTUAL> actual) {
         if (actual != null) {
             if (!actual.isEmpty()) {
                 handler.setDescription(handler.from("actual is not null or not empty"));
@@ -48,7 +47,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     }
 
     @Override
-    public void assertContains(Collection<? extends ACTUAL> actual, ACTUAL expected) {
+    public void assertContains(java.util.Collection<? extends ACTUAL> actual, ACTUAL expected) {
         if (containable.doesNotContain(actual, expected)) {
             handler.setDescription(handler.from(expected, "actual does not contain of {}"));
             throw handler.getException();
@@ -56,7 +55,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     }
 
     @Override
-    public void assertDoesNotContain(Collection<? extends ACTUAL> actual, ACTUAL expected) {
+    public void assertDoesNotContain(java.util.Collection<? extends ACTUAL> actual, ACTUAL expected) {
         if (containable.contains(actual, expected)) {
             handler.setDescription(handler.from(expected, "actual contains of {}"));
             throw handler.getException();
@@ -65,7 +64,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
 
     @Override
     @SuppressWarnings("all")
-    public void assertContainsAll(Collection<? extends ACTUAL> actual, ACTUAL... expected) {
+    public void assertContainsAll(java.util.Collection<? extends ACTUAL> actual, ACTUAL... expected) {
         if (containable.containsNotAll(actual, expected)) {
             handler.setDescription(handler.from("actual doesn't contain any of expected"));
             throw handler.getException();
@@ -74,7 +73,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
 
     @Override
     @SuppressWarnings("all")
-    public void assertContainsAny(Collection<? extends ACTUAL> actual, ACTUAL... expected) {
+    public void assertContainsAny(java.util.Collection<? extends ACTUAL> actual, ACTUAL... expected) {
         if (containable.doseNotContainAny(actual, expected)) {
             handler.setDescription(handler.from("actual doesn't contain any of expected"));
             throw handler.getException();
@@ -82,7 +81,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     }
 
     @Override
-    public void assertContainsNull(Collection<? extends ACTUAL> actual) {
+    public void assertContainsNull(java.util.Collection<? extends ACTUAL> actual) {
         if (containable.doesNotContainNull(actual)) {
             handler.setDescription(handler.from("actual doesn't contain of null"));
             throw handler.getException();
@@ -90,7 +89,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     }
 
     @Override
-    public void assertDoesNotContainNull(Collection<? extends ACTUAL> actual) {
+    public void assertDoesNotContainNull(java.util.Collection<? extends ACTUAL> actual) {
         if (containable.containsNull(actual)) {
             handler.setDescription(handler.from("actual contains of null"));
             throw handler.getException();
@@ -98,7 +97,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     }
 
     @Override
-    public void assertAllMatch(Collection<? extends ACTUAL> actual, Predicate<ACTUAL> expected) {
+    public void assertAllMatch(java.util.Collection<? extends ACTUAL> actual, Predicate<ACTUAL> expected) {
         for (ACTUAL value : actual) {
             if (!expected.test(value)) {
                 handler.setDescription(handler.from("actual is not all matched"));
@@ -108,7 +107,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     }
 
     @Override
-    public void assertNoneMatch(Collection<? extends ACTUAL> actual, Predicate<ACTUAL> expected) {
+    public void assertNoneMatch(java.util.Collection<? extends ACTUAL> actual, Predicate<ACTUAL> expected) {
         for (ACTUAL value : actual) {
             if (expected.test(value)) {
                 handler.setDescription(handler.from("actual is matched with all of expected"));
@@ -118,7 +117,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     }
 
     @Override
-    public void assertIsLessThan(Collection<? extends ACTUAL> actual, Collection<? extends ACTUAL> expected) {
+    public void assertIsLessThan(java.util.Collection<? extends ACTUAL> actual, java.util.Collection<? extends ACTUAL> expected) {
         if (calculator.isGraterThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not less than size of expected"));
             throw handler.getException();
@@ -126,7 +125,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     }
 
     @Override
-    public void assertIsLessThanOrEqualTo(Collection<? extends ACTUAL> actual, Collection<? extends ACTUAL> expected) {
+    public void assertIsLessThanOrEqualTo(java.util.Collection<? extends ACTUAL> actual, java.util.Collection<? extends ACTUAL> expected) {
         if (calculator.isGraterThan(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not less than or equal to size of expected"));
             throw handler.getException();
@@ -134,7 +133,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     }
 
     @Override
-    public void assertIsGreaterThan(Collection<? extends ACTUAL> actual, Collection<? extends ACTUAL> expected) {
+    public void assertIsGreaterThan(java.util.Collection<? extends ACTUAL> actual, java.util.Collection<? extends ACTUAL> expected) {
         if (calculator.isLessThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not greater than size of expected"));
             throw handler.getException();
@@ -142,7 +141,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     }
 
     @Override
-    public void assertIsGreaterThanOrEqualTo(Collection<? extends ACTUAL> actual, Collection<? extends ACTUAL> expected) {
+    public void assertIsGreaterThanOrEqualTo(java.util.Collection<? extends ACTUAL> actual, java.util.Collection<? extends ACTUAL> expected) {
         if (calculator.isLessThan(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not greater than or equal to size of expected"));
             throw handler.getException();
@@ -150,7 +149,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     }
 
     @Override
-    public void assertIsBetween(Collection<? extends ACTUAL> actual, Collection<? extends ACTUAL> start, Collection<? extends ACTUAL> end) {
+    public void assertIsBetween(java.util.Collection<? extends ACTUAL> actual, java.util.Collection<? extends ACTUAL> start, java.util.Collection<? extends ACTUAL> end) {
         if (calculator.isLessThan(actual, start) || calculator.isGraterThan(actual, end)) {
             String description = handler.getDescribable().as("size of actual is not between {} and {}", start.size(), end.size());
             handler.setDescription(handler.from(actual, description));

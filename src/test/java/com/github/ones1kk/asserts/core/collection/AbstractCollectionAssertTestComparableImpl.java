@@ -12,7 +12,7 @@ import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class AbstractCollectionAssertTest {
+class AbstractCollectionAssertTestComparableImpl {
 
     @Test
     @DisplayName("Object method test")

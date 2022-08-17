@@ -2,7 +2,7 @@ package com.github.ones1kk.asserts.core.collection.map.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.collection.map.MapsInterface;
-import com.github.ones1kk.asserts.core.feature.comparable.collection.impl.MapCalculator;
+import com.github.ones1kk.asserts.core.feature.comparable.collection.impl.MapComparable;
 import com.github.ones1kk.asserts.core.feature.iterable.containable.impl.MapContainable;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
@@ -11,7 +11,7 @@ import java.util.Map;
 public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implements MapsInterface<ACTUAL, K, V> {
 
     private final MapContainable<ACTUAL, K, V> containable = new MapContainable<>();
-    private final MapCalculator<ACTUAL, K, V> calculator = new MapCalculator<>();
+    private final MapComparable<ACTUAL, K, V> calculator = new MapComparable<>();
 
     public Maps(AsAssert<?> asAssert) {
         super(asAssert);

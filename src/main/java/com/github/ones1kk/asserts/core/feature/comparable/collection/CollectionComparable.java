@@ -2,7 +2,7 @@ package com.github.ones1kk.asserts.core.feature.comparable.collection;
 
 import java.util.Collection;
 
-public interface CollectionComparableCalculator<ELEMENT> {
+public interface CollectionComparable<ELEMENT> {
 
     boolean isGraterThan(Collection<? extends ELEMENT> actual, Collection<? extends ELEMENT> expected);
 
