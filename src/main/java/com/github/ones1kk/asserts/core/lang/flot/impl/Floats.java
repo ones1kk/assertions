@@ -2,8 +2,8 @@ package com.github.ones1kk.asserts.core.lang.flot.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.Offset;
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.ComparableCalculatorInterface;
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.impl.FloatCalculator;
+import com.github.ones1kk.asserts.core.feature.comparable.ComparableCalculatorInterface;
+import com.github.ones1kk.asserts.core.feature.comparable.impl.FloatComparableImpl;
 import com.github.ones1kk.asserts.core.lang.flot.FloatsInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
@@ -11,7 +11,7 @@ import static com.github.ones1kk.asserts.core.feature.number.arithmetic.FloatAri
 
 public class Floats extends Objects<Float> implements FloatsInterface<Float> {
 
-    private final ComparableCalculatorInterface<Float> calculator = new FloatCalculator();
+    private final ComparableCalculatorInterface<Float> comparable = new FloatComparableImpl();
 
     public Floats(AsAssert<?> asAssert) {
         super(asAssert);
@@ -43,7 +43,7 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
 
     @Override
     public void assertIsLessThan(Float actual, Float expected) {
-        if (calculator.isGraterThanOrEqualTo(actual, expected)) {
+        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not less than {}"));
             throw handler.getException();
         }
@@ -51,7 +51,7 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
 
     @Override
     public void assertIsLessThanOrEqualTo(Float actual, Float expected) {
-        if (calculator.isGraterThan(actual, expected)) {
+        if (comparable.isGraterThan(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not less than or equal to {}"));
             throw handler.getException();
         }
@@ -59,7 +59,7 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
 
     @Override
     public void assertIsGreaterThan(Float actual, Float expected) {
-        if (calculator.isLessThanOrEqualTo(actual, expected)) {
+        if (comparable.isLessThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not greater than {}"));
             throw handler.getException();
         }
@@ -67,7 +67,7 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
 
     @Override
     public void assertIsGreaterThanOrEqualTo(Float actual, Float expected) {
-        if (calculator.isLessThan(actual, expected)) {
+        if (comparable.isLessThan(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not greater than or equal to {}"));
             throw handler.getException();
         }
@@ -75,8 +75,8 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
 
     @Override
     public void assertIsBetween(Float actual, Float start, Float end) {
-        if (calculator.isLessThan(actual, start)
-                || calculator.isGraterThan(actual, end)) {
+        if (comparable.isLessThan(actual, start)
+                || comparable.isGraterThan(actual, end)) {
             String description = handler.from("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();
@@ -85,7 +85,7 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
 
     @Override
     public void assertIsPositive(Float actual) {
-        if (calculator.isLessThanOrEqualTo(actual, 0F)) {
+        if (comparable.isLessThanOrEqualTo(actual, 0F)) {
             handler.setDescription(handler.from(actual, "{} is not positive"));
             throw handler.getException();
         }
@@ -93,7 +93,7 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
 
     @Override
     public void assertIsNotPositive(Float actual) {
-        if (calculator.isGraterThan(actual, 0F)) {
+        if (comparable.isGraterThan(actual, 0F)) {
             handler.setDescription(handler.from(actual, "{} is positive"));
             throw handler.getException();
         }
@@ -101,7 +101,7 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
 
     @Override
     public void assertIsNegative(Float actual) {
-        if (calculator.isGraterThanOrEqualTo(actual, 0F)) {
+        if (comparable.isGraterThanOrEqualTo(actual, 0F)) {
             handler.setDescription(handler.from(actual, "{} is not negative"));
             throw handler.getException();
         }
@@ -109,7 +109,7 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
 
     @Override
     public void assertIsNotNegative(Float actual) {
-        if (calculator.isLessThan(actual, 0F)) {
+        if (comparable.isLessThan(actual, 0F)) {
             handler.setDescription(handler.from(actual, "{} is negative"));
             throw handler.getException();
         }
@@ -136,8 +136,8 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
         float startResult = Float.compare(actual, (float) offset.getBefore(expected));
         float endResult = Float.compare(actual, (float) offset.getAfter(expected));
 
-        if (calculator.is(startResult, -1F)
-                || calculator.is(endResult, 1F)) {
+        if (comparable.is(startResult, -1F)
+                || comparable.is(endResult, 1F)) {
             setAssertClose(actual, expected, offset);
         }
     }
@@ -147,8 +147,8 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
         float startResult = Float.compare(actual, (float) offset.getBefore(expected));
         float endResult = Float.compare(actual, (float) offset.getAfter(expected));
 
-        if (calculator.is(startResult, 1F)
-                || calculator.is(endResult, 1F)) {
+        if (comparable.is(startResult, 1F)
+                || comparable.is(endResult, 1F)) {
             setAssertClose(actual, expected, offset);
         }
     }

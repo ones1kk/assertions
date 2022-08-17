@@ -2,8 +2,8 @@ package com.github.ones1kk.asserts.core.lang.shrt.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.Offset;
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.ComparableCalculatorInterface;
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.impl.ShortCalculator;
+import com.github.ones1kk.asserts.core.feature.comparable.ComparableCalculatorInterface;
+import com.github.ones1kk.asserts.core.feature.comparable.impl.ShortComparableImpl;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import com.github.ones1kk.asserts.core.lang.shrt.ShortsInterface;
 
@@ -11,7 +11,7 @@ import static com.github.ones1kk.asserts.core.feature.number.arithmetic.ShortAri
 
 public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
 
-    private final ComparableCalculatorInterface<Short> calculator = new ShortCalculator();
+    private final ComparableCalculatorInterface<Short> comparable = new ShortComparableImpl();
 
     public Shorts(AsAssert<?> asAssert) {
         super(asAssert);
@@ -20,7 +20,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
     @Override
     public void assertIsOdd(Short actual) {
         if (of(actual).isEven()
-                || calculator.isLessThan(actual, (short) 0)) {
+                || comparable.isLessThan(actual, (short) 0)) {
             handler.setDescription(handler.from(actual, "{} is not odd"));
             throw handler.getException();
         }
@@ -29,7 +29,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
     @Override
     public void assertIsNotOdd(Short actual) {
         if (of(actual).isOdd()
-                || calculator.isLessThan(actual, (short) 0)) {
+                || comparable.isLessThan(actual, (short) 0)) {
             handler.setDescription(handler.from(actual, "{} is odd"));
             throw handler.getException();
         }
@@ -38,7 +38,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
     @Override
     public void assertIsEven(Short actual) {
         if (of(actual).isOdd()
-                || calculator.isLessThan(actual, (short) 0)
+                || comparable.isLessThan(actual, (short) 0)
                 || of(actual).isZero()) {
             handler.setDescription(handler.from(actual, "{} is not even"));
             throw handler.getException();
@@ -49,7 +49,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
     public void assertIsNotEven(Short actual) {
         if (of(actual).isNotZero()) {
             if (of(actual).isEven()
-                    || calculator.isLessThan(actual, (short) 0)) {
+                    || comparable.isLessThan(actual, (short) 0)) {
                 handler.setDescription(handler.from(actual, "{} is even"));
                 throw handler.getException();
             }
@@ -58,7 +58,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
 
     @Override
     public void assertIsPositive(Short actual) {
-        if (calculator.isLessThanOrEqualTo(actual, (short) 0)) {
+        if (comparable.isLessThanOrEqualTo(actual, (short) 0)) {
             handler.setDescription(handler.from(actual, "{} is not positive"));
             throw handler.getException();
         }
@@ -66,7 +66,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
 
     @Override
     public void assertIsNotPositive(Short actual) {
-        if (calculator.isGraterThan(actual, (short) 0)) {
+        if (comparable.isGraterThan(actual, (short) 0)) {
             handler.setDescription(handler.from(actual, "{} is positive"));
             throw handler.getException();
         }
@@ -74,7 +74,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
 
     @Override
     public void assertIsNegative(Short actual) {
-        if (calculator.isGraterThanOrEqualTo(actual, (short) 0)) {
+        if (comparable.isGraterThanOrEqualTo(actual, (short) 0)) {
             handler.setDescription(handler.from(actual, "{} is not negative"));
             throw handler.getException();
         }
@@ -82,7 +82,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
 
     @Override
     public void assertIsNotNegative(Short actual) {
-        if (calculator.isLessThan(actual, (short) 0)) {
+        if (comparable.isLessThan(actual, (short) 0)) {
             handler.setDescription(handler.from(actual, "{} is negative"));
             throw handler.getException();
         }
@@ -106,7 +106,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
 
     @Override
     public void assertIsLessThan(Short actual, Short expected) {
-        if (calculator.isGraterThanOrEqualTo(actual, expected)) {
+        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not less than {}"));
             throw handler.getException();
         }
@@ -114,7 +114,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
 
     @Override
     public void assertIsLessThanOrEqualTo(Short actual, Short expected) {
-        if (calculator.isGraterThan(actual, expected)) {
+        if (comparable.isGraterThan(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not less than or equal to {}"));
             throw handler.getException();
         }
@@ -122,7 +122,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
 
     @Override
     public void assertIsGreaterThan(Short actual, Short expected) {
-        if (calculator.isLessThanOrEqualTo(actual, expected)) {
+        if (comparable.isLessThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not greater than {}"));
             throw handler.getException();
         }
@@ -130,7 +130,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
 
     @Override
     public void assertIsGreaterThanOrEqualTo(Short actual, Short expected) {
-        if (calculator.isLessThan(actual, expected)) {
+        if (comparable.isLessThan(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not greater than or equal to {}"));
             throw handler.getException();
         }
@@ -138,8 +138,8 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
 
     @Override
     public void assertIsBetween(Short actual, Short start, Short end) {
-        if (calculator.isLessThan(actual, start)
-                || calculator.isGraterThan(actual, end)) {
+        if (comparable.isLessThan(actual, start)
+                || comparable.isGraterThan(actual, end)) {
             String description = handler.from("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();
@@ -151,8 +151,8 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
         short startResult = (short) Short.compare(actual, (short) offset.getBefore(expected));
         short endResult = (short) Short.compare(actual, (short) offset.getAfter(expected));
 
-        if (calculator.isLessThan(startResult, (short) 0)
-                || calculator.isGraterThan(endResult, (short) 0)) {
+        if (comparable.isLessThan(startResult, (short) 0)
+                || comparable.isGraterThan(endResult, (short) 0)) {
             setAssertClose(actual, expected, offset);
         }
     }
@@ -162,8 +162,8 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
         short startResult = (short) Short.compare(actual, (short) offset.getBefore(expected));
         short endResult = (short) Short.compare(actual, (short) offset.getAfter(expected));
 
-        if (calculator.isGraterThanOrEqualTo(startResult, (short) 0)
-                || calculator.isGraterThanOrEqualTo(endResult, (short) 0)) {
+        if (comparable.isGraterThanOrEqualTo(startResult, (short) 0)
+                || comparable.isGraterThanOrEqualTo(endResult, (short) 0)) {
             setAssertClose(actual, expected, offset);
         }
     }

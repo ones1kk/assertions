@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.feature.comparable.calculator;
+package com.github.ones1kk.asserts.core.feature.comparable;
 
 public interface ComparableCalculatorInterface<ACTUAL extends java.lang.Comparable<ACTUAL>> {
 

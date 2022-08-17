@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.feature.comparable.calculator.collection;
+package com.github.ones1kk.asserts.core.feature.comparable.collection;
 
 import java.util.Collection;
 

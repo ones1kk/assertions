@@ -1,14 +1,14 @@
 package com.github.ones1kk.asserts.core.lang.string.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.ComparableCalculatorInterface;
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.impl.StringCalculator;
+import com.github.ones1kk.asserts.core.feature.comparable.ComparableCalculatorInterface;
+import com.github.ones1kk.asserts.core.feature.comparable.impl.StringComparableImpl;
 import com.github.ones1kk.asserts.core.lang.charsequence.impl.CharSequences;
 import com.github.ones1kk.asserts.core.lang.string.StringsInterface;
 
 public class Strings extends CharSequences implements StringsInterface<String> {
 
-    private final ComparableCalculatorInterface<String> calculator = new StringCalculator();
+    private final ComparableCalculatorInterface<String> comparable = new StringComparableImpl();
 
     public Strings(AsAssert<?> asAssert) {
         super(asAssert);
@@ -16,7 +16,7 @@ public class Strings extends CharSequences implements StringsInterface<String> {
 
     @Override
     public void assertIsLessThan(String actual, String expected) {
-        if (calculator.isGraterThanOrEqualTo(actual, expected)) {
+        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not less than {}"));
             throw handler.getException();
         }
@@ -24,7 +24,7 @@ public class Strings extends CharSequences implements StringsInterface<String> {
 
     @Override
     public void assertIsLessThanOrEqualTo(String actual, String expected) {
-        if (calculator.isGraterThan(actual, expected)) {
+        if (comparable.isGraterThan(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not less than or equal to {}"));
             throw handler.getException();
         }
@@ -32,7 +32,7 @@ public class Strings extends CharSequences implements StringsInterface<String> {
 
     @Override
     public void assertIsGreaterThan(String actual, String expected) {
-        if (calculator.isLessThanOrEqualTo(actual, expected)) {
+        if (comparable.isLessThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not greater than {}"));
             throw handler.getException();
         }
@@ -40,7 +40,7 @@ public class Strings extends CharSequences implements StringsInterface<String> {
 
     @Override
     public void assertIsGreaterThanOrEqualTo(String actual, String expected) {
-        if (calculator.isLessThan(actual, expected)) {
+        if (comparable.isLessThan(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is not greater than or equal to {}"));
             throw handler.getException();
         }
@@ -48,7 +48,7 @@ public class Strings extends CharSequences implements StringsInterface<String> {
 
     @Override
     public void assertIsBetween(String actual, String start, String end) {
-        if (calculator.isLessThan(actual, start) || calculator.isGraterThan(actual, end)) {
+        if (comparable.isLessThan(actual, start) || comparable.isGraterThan(actual, end)) {
             String description = handler.getDescribable().as("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();

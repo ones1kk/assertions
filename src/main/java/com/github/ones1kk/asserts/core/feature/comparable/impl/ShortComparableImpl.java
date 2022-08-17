@@ -1,8 +1,8 @@
-package com.github.ones1kk.asserts.core.feature.comparable.calculator.impl;
+package com.github.ones1kk.asserts.core.feature.comparable.impl;
 
-import com.github.ones1kk.asserts.core.feature.comparable.calculator.AbstractComparableCalculator;
+import com.github.ones1kk.asserts.core.feature.comparable.AbstractComparableCalculator;
 
-public class ShortCalculator extends AbstractComparableCalculator<Short> {
+public class ShortComparableImpl extends AbstractComparableCalculator<Short> {
 
     @Override
     public boolean isGraterThan(Short actual, Short expected) {
