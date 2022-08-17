@@ -50,7 +50,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     @Override
     public void assertContains(Collection<? extends ACTUAL> actual, ACTUAL expected) {
         if (containable.doesNotContain(actual, expected)) {
-            handler.setDescription(handler.from(expected, "actual doesn't contains of {}"));
+            handler.setDescription(handler.from(expected, "actual does not contain of {}"));
             throw handler.getException();
         }
     }

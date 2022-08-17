@@ -67,7 +67,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertContains(Number[] actual, Number expected) {
         if (containable.doesNotContain(actual, expected)) {
-            handler.setDescription(handler.from(expected, "actual doesn't contains of {}"));
+            handler.setDescription(handler.from(expected, "actual does not contain of {}"));
             throw handler.getException();
         }
     }
