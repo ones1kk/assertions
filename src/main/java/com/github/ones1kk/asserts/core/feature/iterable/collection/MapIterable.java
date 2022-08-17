@@ -11,19 +11,17 @@ public interface MapIterable<ELEMENT extends Map<K, V>, K, V> {
 
     void assertIsNullOrEmpty(ELEMENT actual);
 
-    void assertContains(ELEMENT actual, ELEMENT expected);
+    void assertContainsKey(ELEMENT actual, K expected);
 
-    void assertDoesNotContain(ELEMENT actual, ELEMENT expected);
+    void assertContainsAllKey(ELEMENT actual, Map<? extends K, ?> expected);
 
-    void assertContainsAll(ELEMENT actual, ELEMENT... expected);
+    void assertContainsValue(ELEMENT actual, V expected);
 
-    void assertContainsAny(ELEMENT actual, ELEMENT... expected);
+    void assertContainsAllValue(ELEMENT actual, Map<?, ? extends V> expected);
 
-    void assertContainsNull(ELEMENT actual);
+    void assertHasSizeOf(ELEMENT actual, int expected);
 
-    void assertDoesNotContainNull(ELEMENT actual);
+    void assertHasSameSizeOf(ELEMENT actual, Map<?, ?> expected);
 
-    void assertAllMatch(ELEMENT actual, Predicate<ELEMENT> expected);
-
-    void assertNoneMatch(ELEMENT actual, Predicate<ELEMENT> expected);
+    void assertDoesNotHaveSameSizeOf(ELEMENT actual, Map<?, ?> expected);
 }
