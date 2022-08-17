@@ -12,8 +12,7 @@ public class MapContainable<ACTUAL extends Map<K, V>, K, V> {
     }
 
     public boolean doesNotContainAllKey(ACTUAL actual, Map<? extends K, ?> expected) {
-        Set<K> actualKeys = actual.keySet();
-        return !(actualKeys.containsAll(expected.keySet()));
+        return !(containsAllKey(actual, expected));
     }
 
     public boolean containsAllValue(ACTUAL actual, Map<?, ? extends V> expected) {
@@ -22,8 +21,7 @@ public class MapContainable<ACTUAL extends Map<K, V>, K, V> {
     }
 
     public boolean doesNotContainAllValue(ACTUAL actual, Map<?, ? extends V> expected) {
-        Collection<V> actualKeys = actual.values();
-        return !(actualKeys.containsAll(expected.values()));
+        return !(containsAllValue(actual, expected));
     }
 
 }
