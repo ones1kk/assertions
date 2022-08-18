@@ -1,9 +1,8 @@
 package com.github.ones1kk.asserts.core.feature.print.impl;
 
 import com.github.ones1kk.asserts.core.feature.print.Printer;
-import com.github.ones1kk.asserts.core.feature.print.constant.Colors;
 
-import static com.github.ones1kk.asserts.core.feature.print.constant.Colors.*;
+import static com.github.ones1kk.asserts.core.feature.print.constant.Colors.RED;
 
 public class SimplePrinter implements Printer {
 
@@ -14,7 +13,7 @@ public class SimplePrinter implements Printer {
 
     @Override
     public String writeOutput(Object actual, String description) {
-        return String.format("%s%s(actual : %s)",RED.getValue(), description, actual);
+        return String.format("%s%s(actual : %s)", RED.getValue(), description, actual);
     }
 
     @Override

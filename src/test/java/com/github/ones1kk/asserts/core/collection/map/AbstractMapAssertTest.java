@@ -1,16 +1,14 @@
 package com.github.ones1kk.asserts.core.collection.map;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import static java.util.Collections.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static java.util.Collections.emptyMap;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractMapAssertTest {
 
