@@ -1,14 +1,14 @@
 package com.github.ones1kk.asserts.core.lang.character.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.feature.comparable.ComparableCalculatorInterface;
-import com.github.ones1kk.asserts.core.feature.comparable.impl.CharacterComparableImpl;
+import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
+import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
 import com.github.ones1kk.asserts.core.lang.character.CharactersInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
 public class Characters extends Objects<Character> implements CharactersInterface<Character> {
 
-    private final ComparableCalculatorInterface<Character> comparable = new CharacterComparableImpl();
+    private final ComparableLanguage<Character> comparable = new ComparableLanguageImpl<>();
 
     public Characters(AsAssert<?> asAssert) {
         super(asAssert);

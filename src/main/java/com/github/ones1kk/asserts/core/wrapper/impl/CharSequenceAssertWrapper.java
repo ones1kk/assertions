@@ -7,7 +7,6 @@ import com.github.ones1kk.asserts.core.feature.print.impl.DefaultPrinter;
 import com.github.ones1kk.asserts.core.lang.model.CharSequenceAssert;
 import com.github.ones1kk.asserts.core.wrapper.AssertWrapper;
 
-import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
 @Deprecated
@@ -19,13 +18,13 @@ public class CharSequenceAssertWrapper implements AssertWrapper<CharSequenceAsse
 
 
     @Override
-    public CharSequenceAssert as(Supplier<String> description, @Nullable Object... args) {
+    public CharSequenceAssert as(Supplier<String> description, Object... args) {
         String asDescription = describable.as(description, args);
         return null;
     }
 
     @Override
-    public CharSequenceAssert as(String description, @Nullable Object... args) {
+    public CharSequenceAssert as(String description, Object... args) {
         String asDescription = describable.as(description, args);
         return null;
     }

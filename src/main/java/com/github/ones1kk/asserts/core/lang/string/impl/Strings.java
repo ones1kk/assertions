@@ -1,14 +1,14 @@
 package com.github.ones1kk.asserts.core.lang.string.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.feature.comparable.ComparableCalculatorInterface;
-import com.github.ones1kk.asserts.core.feature.comparable.impl.StringComparableImpl;
+import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
+import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
 import com.github.ones1kk.asserts.core.lang.charsequence.impl.CharSequences;
 import com.github.ones1kk.asserts.core.lang.string.StringsInterface;
 
 public class Strings extends CharSequences implements StringsInterface<String> {
 
-    private final ComparableCalculatorInterface<String> comparable = new StringComparableImpl();
+    private final ComparableLanguage<String> comparable = new ComparableLanguageImpl<>();
 
     public Strings(AsAssert<?> asAssert) {
         super(asAssert);

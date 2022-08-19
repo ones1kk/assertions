@@ -2,8 +2,8 @@ package com.github.ones1kk.asserts.core.lang.integer.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.Offset;
-import com.github.ones1kk.asserts.core.feature.comparable.ComparableCalculatorInterface;
-import com.github.ones1kk.asserts.core.feature.comparable.impl.IntegerComparableImpl;
+import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
+import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
 import com.github.ones1kk.asserts.core.lang.integer.IntegersInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
@@ -11,7 +11,7 @@ import static com.github.ones1kk.asserts.core.feature.number.arithmetic.IntegerA
 
 public class Integers extends Objects<Integer> implements IntegersInterface<Integer> {
 
-    private final ComparableCalculatorInterface<Integer> comparable = new IntegerComparableImpl();
+    private final ComparableLanguage<Integer> comparable = new ComparableLanguageImpl<>();
 
     public Integers(AsAssert<?> asAssert) {
         super(asAssert);
@@ -20,7 +20,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
     @Override
     public void assertIsOdd(Integer actual) {
         if (of(actual).isEven()
-                || comparable.isLessThan(actual, 0)) {
+            || comparable.isLessThan(actual, 0)) {
             handler.setDescription(handler.from(actual, "{} is not odd"));
             throw handler.getException();
         }
@@ -29,7 +29,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
     @Override
     public void assertIsNotOdd(Integer actual) {
         if (of(actual).isOdd()
-                || comparable.isLessThan(actual, 0)) {
+            || comparable.isLessThan(actual, 0)) {
             handler.setDescription(handler.from(actual, "{} is odd"));
             throw handler.getException();
         }
@@ -38,8 +38,8 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
     @Override
     public void assertIsEven(Integer actual) {
         if (of(actual).isOdd()
-                || comparable.isLessThan(actual, 0)
-                || of(actual).isZero()) {
+            || comparable.isLessThan(actual, 0)
+            || of(actual).isZero()) {
             handler.setDescription(handler.from(actual, "{} is not even"));
             throw handler.getException();
         }
@@ -49,7 +49,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
     public void assertIsNotEven(Integer actual) {
         if (of(actual).isNotZero()) {
             if (of(actual).isEven()
-                    || comparable.isLessThan(actual, 0)) {
+                || comparable.isLessThan(actual, 0)) {
                 handler.setDescription(handler.from(actual, "{} is even"));
                 throw handler.getException();
             }
@@ -91,7 +91,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
     @Override
     public void assertIsBetween(Integer actual, Integer start, Integer end) {
         if (comparable.isLessThan(actual, start)
-                || comparable.isGraterThan(actual, end)) {
+            || comparable.isGraterThan(actual, end)) {
             String description = handler.from("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();
@@ -152,7 +152,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
         int endResult = Integer.compare(actual, (int) offset.getAfter(expected));
 
         if (comparable.is(startResult, -1)
-                || comparable.is(endResult, 1)) {
+            || comparable.is(endResult, 1)) {
             setAssertClose(actual, expected, offset);
         }
     }
@@ -163,7 +163,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
         int endResult = Integer.compare(actual, (int) offset.getAfter(expected));
 
         if (comparable.is(startResult, 1)
-                || comparable.is(endResult, 1)) {
+            || comparable.is(endResult, 1)) {
             setAssertClose(actual, expected, offset);
         }
     }
