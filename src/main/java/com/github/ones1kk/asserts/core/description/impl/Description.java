@@ -4,7 +4,6 @@ import com.github.ones1kk.asserts.core.description.Describable;
 import com.github.ones1kk.asserts.core.exception.AssertException;
 import org.apache.commons.lang3.ArrayUtils;
 
-import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
 public class Description implements Describable {
@@ -14,12 +13,12 @@ public class Description implements Describable {
     private static final String ARGUMENT_DESCRIPTION = "Argument is missing";
 
     @Override
-    public String as(Supplier<String> supplier, @Nullable Object... args) {
+    public String as(Supplier<String> supplier, Object... args) {
         return getFormattingDescription(supplier.get(), args);
     }
 
     @Override
-    public String as(String description, @Nullable Object... args) {
+    public String as(String description, Object... args) {
         return getFormattingDescription(description, args);
     }
 
