@@ -7,7 +7,6 @@ import com.github.ones1kk.asserts.core.feature.print.impl.DefaultPrinter;
 import com.github.ones1kk.asserts.core.lang.model.ObjectAssert;
 import com.github.ones1kk.asserts.core.wrapper.AssertWrapper;
 
-import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
 @Deprecated
@@ -19,13 +18,13 @@ public class ObjectAssertWrapper implements AssertWrapper<ObjectAssert> {
 
 
     @Override
-    public ObjectAssert as(Supplier<String> description, @Nullable Object... args) {
+    public ObjectAssert as(Supplier<String> description, Object... args) {
         String asDescription = describable.as(description, args);
         return null;
     }
 
     @Override
-    public ObjectAssert as(String description, @Nullable Object... args) {
+    public ObjectAssert as(String description, Object... args) {
         String asDescription = describable.as(description, args);
         return null;
     }

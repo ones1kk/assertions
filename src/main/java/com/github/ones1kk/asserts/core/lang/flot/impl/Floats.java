@@ -2,8 +2,8 @@ package com.github.ones1kk.asserts.core.lang.flot.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.Offset;
-import com.github.ones1kk.asserts.core.feature.comparable.ComparableCalculatorInterface;
-import com.github.ones1kk.asserts.core.feature.comparable.impl.FloatComparableImpl;
+import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
+import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
 import com.github.ones1kk.asserts.core.lang.flot.FloatsInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
@@ -11,7 +11,7 @@ import static com.github.ones1kk.asserts.core.feature.number.arithmetic.FloatAri
 
 public class Floats extends Objects<Float> implements FloatsInterface<Float> {
 
-    private final ComparableCalculatorInterface<Float> comparable = new FloatComparableImpl();
+    private final ComparableLanguage<Float> comparable = new ComparableLanguageImpl<>();
 
     public Floats(AsAssert<?> asAssert) {
         super(asAssert);
@@ -76,7 +76,7 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
     @Override
     public void assertIsBetween(Float actual, Float start, Float end) {
         if (comparable.isLessThan(actual, start)
-                || comparable.isGraterThan(actual, end)) {
+            || comparable.isGraterThan(actual, end)) {
             String description = handler.from("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();
@@ -137,7 +137,7 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
         float endResult = Float.compare(actual, (float) offset.getAfter(expected));
 
         if (comparable.is(startResult, -1F)
-                || comparable.is(endResult, 1F)) {
+            || comparable.is(endResult, 1F)) {
             setAssertClose(actual, expected, offset);
         }
     }
@@ -148,7 +148,7 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
         float endResult = Float.compare(actual, (float) offset.getAfter(expected));
 
         if (comparable.is(startResult, 1F)
-                || comparable.is(endResult, 1F)) {
+            || comparable.is(endResult, 1F)) {
             setAssertClose(actual, expected, offset);
         }
     }

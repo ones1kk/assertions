@@ -2,8 +2,8 @@ package com.github.ones1kk.asserts.core.lang.lng.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.Offset;
-import com.github.ones1kk.asserts.core.feature.comparable.ComparableCalculatorInterface;
-import com.github.ones1kk.asserts.core.feature.comparable.impl.LongComparableImpl;
+import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
+import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
 import com.github.ones1kk.asserts.core.lang.lng.LongsInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
@@ -11,7 +11,7 @@ import static com.github.ones1kk.asserts.core.feature.number.arithmetic.LongArit
 
 public class Longs extends Objects<Long> implements LongsInterface<Long> {
 
-    private final ComparableCalculatorInterface<Long> comparable = new LongComparableImpl();
+    private final ComparableLanguage<Long> comparable = new ComparableLanguageImpl<>();
 
     public Longs(AsAssert<?> asAssert) {
         super(asAssert);
@@ -20,7 +20,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
     @Override
     public void assertIsOdd(Long actual) {
         if (of(actual).isEven()
-                || comparable.isLessThan(actual, 0L)) {
+            || comparable.isLessThan(actual, 0L)) {
             handler.setDescription(handler.from(actual, "{} is not odd"));
             throw handler.getException();
         }
@@ -29,7 +29,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
     @Override
     public void assertIsNotOdd(Long actual) {
         if (of(actual).isOdd()
-                || comparable.isLessThan(actual, 0L)) {
+            || comparable.isLessThan(actual, 0L)) {
             handler.setDescription(handler.from(actual, "{} is odd"));
             throw handler.getException();
         }
@@ -38,8 +38,8 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
     @Override
     public void assertIsEven(Long actual) {
         if (of(actual).isOdd()
-                || comparable.isLessThan(actual, 0L)
-                || of(actual).isZero()) {
+            || comparable.isLessThan(actual, 0L)
+            || of(actual).isZero()) {
             handler.setDescription(handler.from(actual, "{} is not even"));
             throw handler.getException();
         }
@@ -49,7 +49,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
     public void assertIsNotEven(Long actual) {
         if (of(actual).isNotZero()) {
             if (of(actual).isEven()
-                    || comparable.isLessThan(actual, 0L)) {
+                || comparable.isLessThan(actual, 0L)) {
                 handler.setDescription(handler.from(actual, "{} is even"));
                 throw handler.getException();
             }
@@ -139,7 +139,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
     @Override
     public void assertIsBetween(Long actual, Long start, Long end) {
         if (comparable.isLessThan(actual, start)
-                || comparable.isGraterThan(actual, end)) {
+            || comparable.isGraterThan(actual, end)) {
             String description = handler.from("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();
@@ -152,7 +152,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
         long endResult = Long.compare(actual, (long) offset.getAfter(expected));
 
         if (comparable.is(startResult, -1L)
-                || comparable.is(endResult, 1L)) {
+            || comparable.is(endResult, 1L)) {
             setAssertClose(actual, expected, offset);
         }
     }
@@ -163,7 +163,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
         long endResult = Long.compare(actual, (long) offset.getAfter(expected));
 
         if (comparable.is(startResult, 1L)
-                || comparable.is(endResult, 1L)) {
+            || comparable.is(endResult, 1L)) {
             setAssertClose(actual, expected, offset);
         }
     }

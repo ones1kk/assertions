@@ -2,8 +2,8 @@ package com.github.ones1kk.asserts.core.lang.duble.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.Offset;
-import com.github.ones1kk.asserts.core.feature.comparable.ComparableCalculatorInterface;
-import com.github.ones1kk.asserts.core.feature.comparable.impl.DoubleComparableImpl;
+import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
+import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
 import com.github.ones1kk.asserts.core.lang.duble.DoublesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
@@ -11,8 +11,7 @@ import static com.github.ones1kk.asserts.core.feature.number.arithmetic.DoubleAr
 
 public class Doubles extends Objects<Double> implements DoublesInterface<Double> {
 
-    private final ComparableCalculatorInterface<Double> comparable = new DoubleComparableImpl();
-
+    private final ComparableLanguage<Double> comparable = new ComparableLanguageImpl<>();
 
     public Doubles(AsAssert<?> asAssert) {
         super(asAssert);
@@ -77,7 +76,7 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
     @Override
     public void assertIsBetween(Double actual, Double start, Double end) {
         if (comparable.isLessThan(actual, start)
-                || comparable.isGraterThan(actual, end)) {
+            || comparable.isGraterThan(actual, end)) {
             String description = handler.from("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();
@@ -138,7 +137,7 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
         double endResult = Double.compare(actual, offset.getAfter(expected));
 
         if (comparable.is(startResult, (double) -1)
-                || comparable.is(endResult, (double) 1)) {
+            || comparable.is(endResult, (double) 1)) {
             setAssertClose(actual, expected, offset);
         }
     }
@@ -149,7 +148,7 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
         double endResult = Double.compare(actual, offset.getAfter(expected));
 
         if (comparable.is(startResult, (double) 1)
-                || comparable.is(endResult, (double) 1)) {
+            || comparable.is(endResult, (double) 1)) {
             setAssertClose(actual, expected, offset);
         }
     }
