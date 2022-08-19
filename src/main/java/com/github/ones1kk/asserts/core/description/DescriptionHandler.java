@@ -6,8 +6,6 @@ import com.github.ones1kk.asserts.core.feature.print.Printer;
 import com.github.ones1kk.asserts.core.feature.print.impl.DefaultPrinter;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.annotation.Nullable;
-
 public final class DescriptionHandler {
 
     private final Printer printer = new DefaultPrinter();
@@ -18,7 +16,7 @@ public final class DescriptionHandler {
 
     private String asDescription;
 
-    public String from(String description, @Nullable Object... args) {
+    public String from(String description, Object... args) {
         return printer.writeOutput(describable.as(description, args));
     }
 
