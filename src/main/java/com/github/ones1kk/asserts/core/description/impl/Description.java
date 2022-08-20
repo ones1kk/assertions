@@ -12,6 +12,8 @@ public class Description implements Describable {
 
     private static final String ARGUMENT_DESCRIPTION = "Argument is missing";
 
+    private static final String ARGUMENTS_EXPRESSION_WITH_BRACE = "Arguments only can be expressed in braces";
+
     @Override
     public String as(Supplier<String> supplier, Object... args) {
         return getFormattingDescription(supplier.get(), args);
@@ -24,6 +26,7 @@ public class Description implements Describable {
 
     private String getFormattingDescription(String description, Object[] args) {
         throwIfHavingSpecialChar(description);
+        throwIfOnlyArgumentsExist(description, args);
 
         if (description.contains("{}")) {
             throwIfNull(args);
@@ -41,6 +44,12 @@ public class Description implements Describable {
     private void throwIfHavingSpecialChar(String formatted) {
         if (formatted.contains("%s")) {
             throw new AssertException(REG_EXR);
+        }
+    }
+
+    private void throwIfOnlyArgumentsExist(String description, Object[] args) {
+        if(args.length > 0 && !(description.contains("{}"))) {
+            throw new AssertException(ARGUMENTS_EXPRESSION_WITH_BRACE);
         }
     }
 
