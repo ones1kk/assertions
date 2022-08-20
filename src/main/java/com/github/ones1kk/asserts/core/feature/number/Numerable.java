@@ -1,6 +1,5 @@
 package com.github.ones1kk.asserts.core.feature.number;
 
-import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
 
 public interface Numerable<ACTUAL extends Number> {

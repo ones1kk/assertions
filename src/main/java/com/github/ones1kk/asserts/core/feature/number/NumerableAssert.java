@@ -1,7 +1,5 @@
 package com.github.ones1kk.asserts.core.feature.number;
 
-import com.github.ones1kk.asserts.core.feature.data.Percentage;
-
 public interface NumerableAssert<SELF, ACTUAL extends Number> {
 
     SELF isPositive();

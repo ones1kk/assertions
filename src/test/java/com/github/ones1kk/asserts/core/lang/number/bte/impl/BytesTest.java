@@ -1,7 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.number.bte.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.lang.number.bte.impl.Bytes;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
