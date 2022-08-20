@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.number.lng;
 
 import com.github.ones1kk.asserts.core.feature.data.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 public class AbstractLongAssertAssert<SELF extends AbstractLongAssertAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Long> implements LongAssertAssertInterface<SELF> {
@@ -103,14 +104,14 @@ public class AbstractLongAssertAssert<SELF extends AbstractLongAssertAssert<SELF
     }
 
     @Override
-    public SELF isCloseTo(Long expected, Long offset) {
-        longs.assertIsCloseTo(actual, expected, Offset.offset(offset));
+    public SELF isCloseTo(Long expected, Double percentage) {
+        longs.assertIsCloseTo(actual, expected, Percentage.of(percentage));
         return self;
     }
 
     @Override
-    public SELF isNotCloseTo(Long expected, Long offset) {
-        longs.assertIsNotCloseTo(actual, expected, Offset.offset(offset));
+    public SELF isNotCloseTo(Long expected, Double percentage) {
+        longs.assertIsNotCloseTo(actual, expected, Percentage.of(percentage));
         return self;
     }
 

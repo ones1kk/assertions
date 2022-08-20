@@ -10,5 +10,4 @@ public interface FloatAssertInterface<SELF> extends NumerableAssert<SELF, Float>
     SELF isFinite();
 
     SELF isNaN();
-
 }

@@ -1,6 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.number.flot;
 
-import com.github.ones1kk.asserts.core.feature.data.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 public class AbstractFloatAssert<SELF extends AbstractFloatAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Float> implements FloatAssertInterface<SELF> {
@@ -67,14 +67,14 @@ public class AbstractFloatAssert<SELF extends AbstractFloatAssert<SELF, ACTUAL>,
     }
 
     @Override
-    public SELF isCloseTo(Float expected, Float offset) {
-        floats.assertIsCloseTo(actual, expected, Offset.offset(offset));
+    public SELF isCloseTo(Float expected, Double percentage) {
+        floats.assertIsCloseTo(actual, expected, Percentage.of(percentage));
         return self;
     }
 
     @Override
-    public SELF isNotCloseTo(Float expected, Float offset) {
-        floats.assertIsNotCloseTo(actual, expected, Offset.offset(offset));
+    public SELF isNotCloseTo(Float expected, Double percentage) {
+        floats.assertIsNotCloseTo(actual, expected, Percentage.of(percentage));
         return self;
     }
 

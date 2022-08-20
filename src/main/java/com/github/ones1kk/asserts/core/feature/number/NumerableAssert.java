@@ -1,5 +1,7 @@
 package com.github.ones1kk.asserts.core.feature.number;
 
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
+
 public interface NumerableAssert<SELF, ACTUAL extends Number> {
 
     SELF isPositive();
@@ -14,7 +16,7 @@ public interface NumerableAssert<SELF, ACTUAL extends Number> {
 
     SELF isNotZero();
 
-    SELF isCloseTo(ACTUAL expected, ACTUAL offset);
+    SELF isCloseTo(ACTUAL expected, Double percentage);
 
-    SELF isNotCloseTo(ACTUAL expected, ACTUAL offset);
+    SELF isNotCloseTo(ACTUAL expected, Double percentage);
 }

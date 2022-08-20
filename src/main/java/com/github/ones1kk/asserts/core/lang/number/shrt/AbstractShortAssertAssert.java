@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.number.shrt;
 
 import com.github.ones1kk.asserts.core.feature.data.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 public class AbstractShortAssertAssert<SELF extends AbstractShortAssertAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Short> implements ShortAssertAssertInterface<SELF> {
@@ -103,14 +104,14 @@ public class AbstractShortAssertAssert<SELF extends AbstractShortAssertAssert<SE
     }
 
     @Override
-    public SELF isCloseTo(Short expected, Short offset) {
-        shorts.assertIsCloseTo(actual, expected, Offset.offset(offset));
+    public SELF isCloseTo(Short expected, Double percentage) {
+        shorts.assertIsCloseTo(actual, expected, Percentage.of(percentage));
         return self;
     }
 
     @Override
-    public SELF isNotCloseTo(Short expected, Short offset) {
-        shorts.assertIsNotCloseTo(actual, expected, Offset.offset(offset));
+    public SELF isNotCloseTo(Short expected, Double percentage) {
+        shorts.assertIsNotCloseTo(actual, expected, Percentage.of(percentage));
         return self;
     }
 }

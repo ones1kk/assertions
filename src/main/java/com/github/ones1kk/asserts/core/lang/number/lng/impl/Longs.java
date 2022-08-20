@@ -4,6 +4,7 @@ import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
 import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.number.lng.LongsInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
@@ -147,32 +148,23 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
     }
 
     @Override
-    public void assertIsCloseTo(Long actual, Long expected, Offset<Long> offset) {
-        long startResult = Long.compare(actual, (long) offset.getBefore(expected));
-        long endResult = Long.compare(actual, (long) offset.getAfter(expected));
-
-        if (comparable.is(startResult, -1L)
-            || comparable.is(endResult, 1L)) {
-            setAssertClose(actual, expected, offset);
+    public void assertIsCloseTo(Long actual, Long expected, Percentage<Long> percentage) {
+        if (!percentage.isRange(actual, expected)) {
+            setAssertClose(actual, percentage);
         }
     }
 
     @Override
-    public void assertIsNotCloseTo(Long actual, Long expected, Offset<Long> offset) {
-        long startResult = Long.compare(actual, (long) offset.getBefore(expected));
-        long endResult = Long.compare(actual, (long) offset.getAfter(expected));
-
-        if (comparable.is(startResult, 1L)
-            || comparable.is(endResult, 1L)) {
-            setAssertClose(actual, expected, offset);
+    public void assertIsNotCloseTo(Long actual, Long expected, Percentage<Long> percentage) {
+        if (percentage.isRange(actual, expected)) {
+            setAssertClose(actual, percentage);
         }
     }
 
-    private void setAssertClose(Long actual, Long expected, Offset<Long> offset) {
+    private void setAssertClose(Long actual, Percentage<Long> percentage) {
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                offset.getBefore(expected) + " ~ " + offset.getAfter(expected));
+                percentage.getStartingRage() + " ~ " + percentage.getEndingRage());
         handler.setDescription(handler.from(actual, scope));
         throw handler.getException();
     }
-
 }

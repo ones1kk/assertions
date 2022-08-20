@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.number.duble;
 
 import com.github.ones1kk.asserts.core.feature.data.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Double> implements DoubleAssertInterface<SELF> {
@@ -67,14 +68,14 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     @Override
-    public SELF isCloseTo(Double expected, Double offset) {
-        doubles.assertIsCloseTo(actual, expected, Offset.offset(offset));
+    public SELF isCloseTo(Double expected, Double percentage) {
+        doubles.assertIsCloseTo(actual, expected, Percentage.of(percentage));
         return self;
     }
 
     @Override
-    public SELF isNotCloseTo(Double expected, Double offset) {
-        doubles.assertIsNotCloseTo(actual, expected, Offset.offset(offset));
+    public SELF isNotCloseTo(Double expected, Double percentage) {
+        doubles.assertIsNotCloseTo(actual, expected, Percentage.of(percentage));
         return self;
     }
 

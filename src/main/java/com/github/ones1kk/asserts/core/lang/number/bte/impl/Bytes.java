@@ -4,6 +4,7 @@ import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
 import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.number.bte.BytesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
@@ -147,30 +148,22 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
     }
 
     @Override
-    public void assertIsCloseTo(Byte actual, Byte expected, Offset<Byte> offset) {
-        byte startResult = (byte) Byte.compare(actual, (byte) offset.getBefore(expected));
-        byte endResult = (byte) Byte.compare(actual, (byte) offset.getAfter(expected));
-
-        if (comparable.isLessThan(startResult, (byte) 0)
-            || comparable.isGraterThan(endResult, (byte) 0)) {
-            setAssertClose(actual, expected, offset);
+    public void assertIsCloseTo(Byte actual, Byte expected, Percentage<Byte> percentage) {
+        if (!percentage.isRange(actual, expected)) {
+            setAssertClose(actual, percentage);
         }
     }
 
     @Override
-    public void assertIsNotCloseTo(Byte actual, Byte expected, Offset<Byte> offset) {
-        byte startResult = (byte) Byte.compare(actual, (byte) offset.getBefore(expected));
-        byte endResult = (byte) Byte.compare(actual, (byte) offset.getAfter(expected));
-
-        if (comparable.isGraterThanOrEqualTo(startResult, (byte) 0)
-            || comparable.isGraterThanOrEqualTo(endResult, (byte) 0)) {
-            setAssertClose(actual, expected, offset);
+    public void assertIsNotCloseTo(Byte actual, Byte expected, Percentage<Byte> percentage) {
+        if (percentage.isRange(actual, expected)) {
+            setAssertClose(actual, percentage);
         }
     }
 
-    private void setAssertClose(Byte actual, Byte expected, Offset<Byte> offset) {
+    private void setAssertClose(Byte actual, Percentage<Byte> percentage) {
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                offset.getBefore(expected) + " ~ " + offset.getAfter(expected));
+                percentage.getStartingRage() + " ~ " + percentage.getEndingRage());
         handler.setDescription(handler.from(actual, scope));
         throw handler.getException();
     }

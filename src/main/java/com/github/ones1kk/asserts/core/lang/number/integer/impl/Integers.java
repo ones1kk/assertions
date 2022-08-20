@@ -4,6 +4,7 @@ import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
 import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.number.integer.IntegersInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
@@ -147,30 +148,22 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
     }
 
     @Override
-    public void assertIsCloseTo(Integer actual, Integer expected, Offset<Integer> offset) {
-        int startResult = Integer.compare(actual, (int) offset.getBefore(expected));
-        int endResult = Integer.compare(actual, (int) offset.getAfter(expected));
-
-        if (comparable.is(startResult, -1)
-            || comparable.is(endResult, 1)) {
-            setAssertClose(actual, expected, offset);
+    public void assertIsCloseTo(Integer actual, Integer expected, Percentage<Integer> percentage) {
+        if (!percentage.isRange(actual, expected)) {
+            setAssertClose(actual, percentage);
         }
     }
 
     @Override
-    public void assertIsNotCloseTo(Integer actual, Integer expected, Offset<Integer> offset) {
-        int startResult = Integer.compare(actual, (int) offset.getBefore(expected));
-        int endResult = Integer.compare(actual, (int) offset.getAfter(expected));
-
-        if (comparable.is(startResult, 1)
-            || comparable.is(endResult, 1)) {
-            setAssertClose(actual, expected, offset);
+    public void assertIsNotCloseTo(Integer actual, Integer expected, Percentage<Integer> percentage) {
+        if (percentage.isRange(actual, expected)) {
+            setAssertClose(actual, percentage);
         }
     }
 
-    private void setAssertClose(Integer actual, Integer expected, Offset<Integer> offset) {
+    private void setAssertClose(Integer actual, Percentage<Integer> percentage) {
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                offset.getBefore(expected) + " ~ " + offset.getAfter(expected));
+                percentage.getStartingRage() + " ~ " + percentage.getEndingRage());
         handler.setDescription(handler.from(actual, scope));
         throw handler.getException();
     }
