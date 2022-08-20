@@ -6,6 +6,10 @@ public final class Percentage<T extends Number> {
 
     private final Double value;
 
+    private Double startingRage;
+
+    private Double endingRage;
+
     private Percentage(Double value) {
         Asserts.that(value)
                 .as("the percentage value can not be null")
@@ -19,16 +23,48 @@ public final class Percentage<T extends Number> {
         return new Percentage<>(value);
     }
 
-    public boolean isStartingRange(T actual, T expected) {
-        Double startingRage = actual.doubleValue() - getStandard(actual);
-        return startingRage.equals(expected.doubleValue());
+    public boolean isRange(T actual, T expected) {
+        Asserts.that(expected.doubleValue())
+                .as("Negative numbers cannot be compared")
+                .isPositive();
+        init(actual);
+        return expected.doubleValue() >= startingRage && expected.doubleValue() <= endingRage;
     }
 
-    public boolean isEndingRange(T actual, T expected) {
-        Double endingRage = actual.doubleValue() + getStandard(actual);
-        return endingRage.equals(expected.doubleValue());
+    @Deprecated
+    public boolean isStartingRange(T actual, T expected) {
+        init(actual);
+        return expected.doubleValue() >= startingRage && expected.doubleValue() <= endingRage;
     }
+
+    @Deprecated
+    public boolean isEndingRange(T actual, T expected) {
+        init(actual);
+        return expected.doubleValue() >= startingRage && expected.doubleValue() <= endingRage;
+    }
+
     private Double getStandard(T actual) {
         return (actual.doubleValue() / value);
+    }
+
+    public Double getStartingRage() {
+        return startingRage;
+    }
+
+    public Double getEndingRage() {
+        return endingRage;
+    }
+
+    private void init(T actual) {
+        setStartingRage(actual);
+        setEndingRage(actual);
+    }
+
+    private void setStartingRage(T actual) {
+        this.startingRage = actual.doubleValue() - getStandard(actual);
+    }
+
+    private void setEndingRage(T actual) {
+        this.endingRage = actual.doubleValue() + getStandard(actual);
     }
 }
