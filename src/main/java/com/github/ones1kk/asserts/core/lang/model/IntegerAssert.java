@@ -1,6 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.model;
 
-import com.github.ones1kk.asserts.core.lang.integer.AbstractIntegerAssert;
+import com.github.ones1kk.asserts.core.lang.number.integer.AbstractIntegerAssert;
 
 public class IntegerAssert extends AbstractIntegerAssert<IntegerAssert, Integer> {
 

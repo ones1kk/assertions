@@ -1,6 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.model;
 
-import com.github.ones1kk.asserts.core.lang.bte.AbstractByteAssert;
+import com.github.ones1kk.asserts.core.lang.number.bte.AbstractByteAssert;
 
 public class ByteAssert extends AbstractByteAssert<ByteAssert, Byte> {
 

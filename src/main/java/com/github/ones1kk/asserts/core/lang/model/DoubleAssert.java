@@ -1,6 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.model;
 
-import com.github.ones1kk.asserts.core.lang.duble.AbstractDoubleAssert;
+import com.github.ones1kk.asserts.core.lang.number.duble.AbstractDoubleAssert;
 
 public class DoubleAssert extends AbstractDoubleAssert<DoubleAssert, Double> {
 

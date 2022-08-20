@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.flot.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import com.github.ones1kk.asserts.core.lang.number.flot.impl.Floats;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

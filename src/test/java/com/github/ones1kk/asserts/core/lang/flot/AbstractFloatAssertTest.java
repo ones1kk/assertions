@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.flot;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import com.github.ones1kk.asserts.core.lang.number.flot.AbstractFloatAssert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
