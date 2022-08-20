@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.lang.duble.impl;
+package com.github.ones1kk.asserts.core.lang.number.duble.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.lang.number.duble.impl.Doubles;
