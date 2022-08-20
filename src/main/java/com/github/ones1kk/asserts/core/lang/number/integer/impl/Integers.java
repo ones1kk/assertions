@@ -1,7 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.number.integer.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
 import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
@@ -21,7 +20,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
     @Override
     public void assertIsOdd(Integer actual) {
         if (of(actual).isEven()
-            || comparable.isLessThan(actual, 0)) {
+                || comparable.isLessThan(actual, 0)) {
             handler.setDescription(handler.from(actual, "{} is not odd"));
             throw handler.getException();
         }
@@ -30,7 +29,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
     @Override
     public void assertIsNotOdd(Integer actual) {
         if (of(actual).isOdd()
-            || comparable.isLessThan(actual, 0)) {
+                || comparable.isLessThan(actual, 0)) {
             handler.setDescription(handler.from(actual, "{} is odd"));
             throw handler.getException();
         }
@@ -39,8 +38,8 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
     @Override
     public void assertIsEven(Integer actual) {
         if (of(actual).isOdd()
-            || comparable.isLessThan(actual, 0)
-            || of(actual).isZero()) {
+                || comparable.isLessThan(actual, 0)
+                || of(actual).isZero()) {
             handler.setDescription(handler.from(actual, "{} is not even"));
             throw handler.getException();
         }
@@ -50,7 +49,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
     public void assertIsNotEven(Integer actual) {
         if (of(actual).isNotZero()) {
             if (of(actual).isEven()
-                || comparable.isLessThan(actual, 0)) {
+                    || comparable.isLessThan(actual, 0)) {
                 handler.setDescription(handler.from(actual, "{} is even"));
                 throw handler.getException();
             }
@@ -92,7 +91,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
     @Override
     public void assertIsBetween(Integer actual, Integer start, Integer end) {
         if (comparable.isLessThan(actual, start)
-            || comparable.isGraterThan(actual, end)) {
+                || comparable.isGraterThan(actual, end)) {
             String description = handler.from("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();

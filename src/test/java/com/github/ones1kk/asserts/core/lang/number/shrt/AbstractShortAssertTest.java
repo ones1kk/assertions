@@ -1,7 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.number.shrt;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
-import com.github.ones1kk.asserts.core.lang.number.shrt.AbstractShortAssertAssert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
