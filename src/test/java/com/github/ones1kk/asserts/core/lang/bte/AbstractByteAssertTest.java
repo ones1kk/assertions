@@ -1,7 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.bte;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
-import com.github.ones1kk.asserts.core.lang.number.bte.AbstractByteAssert;
+import com.github.ones1kk.asserts.core.lang.number.bte.AbstractByteAssertAssert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -17,8 +17,8 @@ class AbstractByteAssertTest {
         Byte actual2 = null;
 
         // when
-        AbstractByteAssert<?, Byte> assert1 = new AbstractByteAssert<>(AbstractByteAssert.class, actual1);
-        AbstractByteAssert<?, Byte> assert2 = new AbstractByteAssert<>(AbstractByteAssert.class, actual2);
+        AbstractByteAssertAssert<?, Byte> assert1 = new AbstractByteAssertAssert<>(AbstractByteAssertAssert.class, actual1);
+        AbstractByteAssertAssert<?, Byte> assert2 = new AbstractByteAssertAssert<>(AbstractByteAssertAssert.class, actual2);
 
         // then
         assertThrows(AssertException.class, assert1::isNull);
@@ -27,7 +27,7 @@ class AbstractByteAssertTest {
         assertThrows(AssertException.class, () -> assert1.isNotSameAs(actual1));
         assertThrows(AssertException.class, () -> assert1.isEqualTo(assert1));
         assertThrows(AssertException.class, () -> assert1.isNotEqualTo(actual1));
-        assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractByteAssert.class));
+        assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractByteAssertAssert.class));
         assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(Byte.class));
 
         assert2.isNull();
@@ -37,7 +37,7 @@ class AbstractByteAssertTest {
         assert1.isEqualTo(actual1);
         assert1.isNotEqualTo(assert1);
         assert1.isAssignableFrom(Byte.class);
-        assert1.isNotAssignableFrom(AbstractByteAssert.class);
+        assert1.isNotAssignableFrom(AbstractByteAssertAssert.class);
     }
 
     @Test
@@ -50,10 +50,10 @@ class AbstractByteAssertTest {
         Byte actual4 = 2;
 
         // when
-        AbstractByteAssert<?, Byte> assert1 = new AbstractByteAssert<>(AbstractByteAssert.class, actual1);
-        AbstractByteAssert<?, Byte> assert2 = new AbstractByteAssert<>(AbstractByteAssert.class, actual2);
-        AbstractByteAssert<?, Byte> assert3 = new AbstractByteAssert<>(AbstractByteAssert.class, actual3);
-        AbstractByteAssert<?, Byte> assert4 = new AbstractByteAssert<>(AbstractByteAssert.class, actual4);
+        AbstractByteAssertAssert<?, Byte> assert1 = new AbstractByteAssertAssert<>(AbstractByteAssertAssert.class, actual1);
+        AbstractByteAssertAssert<?, Byte> assert2 = new AbstractByteAssertAssert<>(AbstractByteAssertAssert.class, actual2);
+        AbstractByteAssertAssert<?, Byte> assert3 = new AbstractByteAssertAssert<>(AbstractByteAssertAssert.class, actual3);
+        AbstractByteAssertAssert<?, Byte> assert4 = new AbstractByteAssertAssert<>(AbstractByteAssertAssert.class, actual4);
 
         // then
         assertThrows(AssertException.class, assert4::isOdd);
@@ -97,9 +97,9 @@ class AbstractByteAssertTest {
         Byte expected3 = 3;
 
         // when
-        AbstractByteAssert<?, Byte> assert1 = new AbstractByteAssert<>(AbstractByteAssert.class, actual1);
-        AbstractByteAssert<?, Byte> assert2 = new AbstractByteAssert<>(AbstractByteAssert.class, actual2);
-        AbstractByteAssert<?, Byte> assert3 = new AbstractByteAssert<>(AbstractByteAssert.class, actual3);
+        AbstractByteAssertAssert<?, Byte> assert1 = new AbstractByteAssertAssert<>(AbstractByteAssertAssert.class, actual1);
+        AbstractByteAssertAssert<?, Byte> assert2 = new AbstractByteAssertAssert<>(AbstractByteAssertAssert.class, actual2);
+        AbstractByteAssertAssert<?, Byte> assert3 = new AbstractByteAssertAssert<>(AbstractByteAssertAssert.class, actual3);
 
         // then
         // actual > expected

@@ -1,7 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.lng;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
-import com.github.ones1kk.asserts.core.lang.number.lng.AbstractLongAssert;
+import com.github.ones1kk.asserts.core.lang.number.lng.AbstractLongAssertAssert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -17,8 +17,8 @@ class AbstractLongAssertTest {
         Long actual2 = null;
 
         // when
-        AbstractLongAssert<?, Long> assert1 = new AbstractLongAssert<>(AbstractLongAssert.class, actual1);
-        AbstractLongAssert<?, Long> assert2 = new AbstractLongAssert<>(AbstractLongAssert.class, actual2);
+        AbstractLongAssertAssert<?, Long> assert1 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual1);
+        AbstractLongAssertAssert<?, Long> assert2 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual2);
 
         // then
         assertThrows(AssertException.class, assert1::isNull);
@@ -27,7 +27,7 @@ class AbstractLongAssertTest {
         assertThrows(AssertException.class, () -> assert1.isNotSameAs(actual1));
         assertThrows(AssertException.class, () -> assert1.isEqualTo(assert1));
         assertThrows(AssertException.class, () -> assert1.isNotEqualTo(actual1));
-        assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractLongAssert.class));
+        assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractLongAssertAssert.class));
         assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(Long.class));
 
         assert2.isNull();
@@ -37,7 +37,7 @@ class AbstractLongAssertTest {
         assert1.isEqualTo(actual1);
         assert1.isNotEqualTo(assert1);
         assert1.isAssignableFrom(Long.class);
-        assert1.isNotAssignableFrom(AbstractLongAssert.class);
+        assert1.isNotAssignableFrom(AbstractLongAssertAssert.class);
     }
 
     @Test
@@ -50,10 +50,10 @@ class AbstractLongAssertTest {
         Long actual4 = 2L;
 
         // when
-        AbstractLongAssert<?, Long> assert1 = new AbstractLongAssert<>(AbstractLongAssert.class, actual1);
-        AbstractLongAssert<?, Long> assert2 = new AbstractLongAssert<>(AbstractLongAssert.class, actual2);
-        AbstractLongAssert<?, Long> assert3 = new AbstractLongAssert<>(AbstractLongAssert.class, actual3);
-        AbstractLongAssert<?, Long> assert4 = new AbstractLongAssert<>(AbstractLongAssert.class, actual4);
+        AbstractLongAssertAssert<?, Long> assert1 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual1);
+        AbstractLongAssertAssert<?, Long> assert2 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual2);
+        AbstractLongAssertAssert<?, Long> assert3 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual3);
+        AbstractLongAssertAssert<?, Long> assert4 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual4);
 
         // then
         assertThrows(AssertException.class, assert4::isOdd);
@@ -96,9 +96,9 @@ class AbstractLongAssertTest {
         Long expected3 = 3L;
 
         // when
-        AbstractLongAssert<?, Long> assert1 = new AbstractLongAssert<>(AbstractLongAssert.class, actual1);
-        AbstractLongAssert<?, Long> assert2 = new AbstractLongAssert<>(AbstractLongAssert.class, actual2);
-        AbstractLongAssert<?, Long> assert3 = new AbstractLongAssert<>(AbstractLongAssert.class, actual3);
+        AbstractLongAssertAssert<?, Long> assert1 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual1);
+        AbstractLongAssertAssert<?, Long> assert2 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual2);
+        AbstractLongAssertAssert<?, Long> assert3 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual3);
 
         // then
         // actual > expected
