@@ -1,24 +1,24 @@
-package com.github.ones1kk.asserts.core.lang.integer;
+package com.github.ones1kk.asserts.core.lang.number.lng;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
-import com.github.ones1kk.asserts.core.lang.number.integer.AbstractIntegerAssertAssert;
+import com.github.ones1kk.asserts.core.lang.number.lng.AbstractLongAssertAssert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class AbstractIntegerAssertTest {
+class AbstractLongAssertTest {
 
     @Test
     @DisplayName("Object method test")
     public void test1() throws Exception {
         // given
-        Integer actual1 = 1;
-        Integer actual2 = null;
+        Long actual1 = 1L;
+        Long actual2 = null;
 
         // when
-        AbstractIntegerAssertAssert<?, Integer> assert1 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual1);
-        AbstractIntegerAssertAssert<?, Integer> assert2 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual2);
+        AbstractLongAssertAssert<?, Long> assert1 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual1);
+        AbstractLongAssertAssert<?, Long> assert2 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual2);
 
         // then
         assertThrows(AssertException.class, assert1::isNull);
@@ -27,8 +27,8 @@ class AbstractIntegerAssertTest {
         assertThrows(AssertException.class, () -> assert1.isNotSameAs(actual1));
         assertThrows(AssertException.class, () -> assert1.isEqualTo(assert1));
         assertThrows(AssertException.class, () -> assert1.isNotEqualTo(actual1));
-        assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractIntegerAssertAssert.class));
-        assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(Integer.class));
+        assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractLongAssertAssert.class));
+        assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(Long.class));
 
         assert2.isNull();
         assert1.isNotNull();
@@ -36,24 +36,24 @@ class AbstractIntegerAssertTest {
         assert1.isNotSameAs(assert1);
         assert1.isEqualTo(actual1);
         assert1.isNotEqualTo(assert1);
-        assert1.isAssignableFrom(Integer.class);
-        assert1.isNotAssignableFrom(AbstractIntegerAssertAssert.class);
+        assert1.isAssignableFrom(Long.class);
+        assert1.isNotAssignableFrom(AbstractLongAssertAssert.class);
     }
 
     @Test
-    @DisplayName("Integer method test")
+    @DisplayName("Long method test")
     public void test2() throws Exception {
         // given
-        Integer actual1 = 1;
-        Integer actual2 = -1;
-        Integer actual3 = 0;
-        Integer actual4 = 2;
+        Long actual1 = 1L;
+        Long actual2 = -1L;
+        Long actual3 = 0L;
+        Long actual4 = 2L;
 
         // when
-        AbstractIntegerAssertAssert<?, Integer> assert1 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual1);
-        AbstractIntegerAssertAssert<?, Integer> assert2 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual2);
-        AbstractIntegerAssertAssert<?, Integer> assert3 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual3);
-        AbstractIntegerAssertAssert<?, Integer> assert4 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual4);
+        AbstractLongAssertAssert<?, Long> assert1 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual1);
+        AbstractLongAssertAssert<?, Long> assert2 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual2);
+        AbstractLongAssertAssert<?, Long> assert3 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual3);
+        AbstractLongAssertAssert<?, Long> assert4 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual4);
 
         // then
         assertThrows(AssertException.class, assert4::isOdd);
@@ -66,8 +66,8 @@ class AbstractIntegerAssertTest {
         assertThrows(AssertException.class, assert2::isNotNegative);
         assertThrows(AssertException.class, assert2::isZero);
         assertThrows(AssertException.class, assert3::isNotZero);
-        assertThrows(AssertException.class, () -> assert3.isCloseTo(5, 2));
-        assertThrows(AssertException.class, () -> assert3.isNotCloseTo(5, 6));
+        assertThrows(AssertException.class, () -> assert3.isCloseTo(5L, 2.0));
+        assertThrows(AssertException.class, () -> assert4.isNotCloseTo(2L, 6.0));
 
         assert1.isOdd();
         assert4.isNotOdd();
@@ -79,26 +79,26 @@ class AbstractIntegerAssertTest {
         assert1.isNotNegative();
         assert3.isZero();
         assert1.isNotZero();
-        assert1.isCloseTo(actual2, 3);
-        assert1.isNotCloseTo(5, 1);
+        assert4.isCloseTo(actual4, 100.0);
+        assert1.isNotCloseTo(5L, 1.0);
     }
 
     @Test
     @DisplayName("Comparable Test")
     public void test3() throws Exception {
         // given
-        Integer actual1 = 1;
-        Integer actual2 = 2;
-        Integer actual3 = 3;
+        Long actual1 = 1L;
+        Long actual2 = 2L;
+        Long actual3 = 3L;
 
-        Integer expected1 = 1;
-        Integer expected2 = 2;
-        Integer expected3 = 3;
+        Long expected1 = 1L;
+        Long expected2 = 2L;
+        Long expected3 = 3L;
 
         // when
-        AbstractIntegerAssertAssert<?, Integer> assert1 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual1);
-        AbstractIntegerAssertAssert<?, Integer> assert2 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual2);
-        AbstractIntegerAssertAssert<?, Integer> assert3 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual3);
+        AbstractLongAssertAssert<?, Long> assert1 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual1);
+        AbstractLongAssertAssert<?, Long> assert2 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual2);
+        AbstractLongAssertAssert<?, Long> assert3 = new AbstractLongAssertAssert<>(AbstractLongAssertAssert.class, actual3);
 
         // then
         // actual > expected
@@ -151,5 +151,3 @@ class AbstractIntegerAssertTest {
     }
 
 }
-
-

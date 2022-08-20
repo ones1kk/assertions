@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.lang.shrt;
+package com.github.ones1kk.asserts.core.lang.number.shrt;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
 import com.github.ones1kk.asserts.core.lang.number.shrt.AbstractShortAssertAssert;
@@ -66,8 +66,8 @@ class AbstractShortAssertTest {
         assertThrows(AssertException.class, assert2::isNotNegative);
         assertThrows(AssertException.class, assert2::isZero);
         assertThrows(AssertException.class, assert3::isNotZero);
-        assertThrows(AssertException.class, () -> assert3.isCloseTo((short) 5, (short) 2));
-        assertThrows(AssertException.class, () -> assert3.isNotCloseTo((short) 5, (short) 6));
+        assertThrows(AssertException.class, () -> assert3.isCloseTo((short) 5, 2.0));
+        assertThrows(AssertException.class, () -> assert1.isNotCloseTo((short) 1, 100.0));
 
         assert1.isOdd();
         assert4.isNotOdd();
@@ -79,8 +79,8 @@ class AbstractShortAssertTest {
         assert1.isNotNegative();
         assert3.isZero();
         assert1.isNotZero();
-        assert1.isCloseTo(actual2, (short) 3);
-        assert1.isNotCloseTo((short) 5, (short) 1);
+        assert1.isCloseTo(actual1, 50.0);
+        assert1.isNotCloseTo((short) 5, 1.0);
 
     }
 

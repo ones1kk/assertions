@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.lang.bte.impl;
+package com.github.ones1kk.asserts.core.lang.number.bte.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.lang.number.bte.impl.Bytes;

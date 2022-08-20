@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.lang.shrt.impl;
+package com.github.ones1kk.asserts.core.lang.number.shrt.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.lang.number.shrt.impl.Shorts;

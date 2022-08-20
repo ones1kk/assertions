@@ -1,24 +1,24 @@
-package com.github.ones1kk.asserts.core.lang.flot;
+package com.github.ones1kk.asserts.core.lang.number.duble;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
-import com.github.ones1kk.asserts.core.lang.number.flot.AbstractFloatAssert;
+import com.github.ones1kk.asserts.core.lang.number.duble.AbstractDoubleAssert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class AbstractFloatAssertTest {
+class AbstractDoubleAssertTest {
 
     @Test
     @DisplayName("Object method test")
     public void test1() throws Exception {
         // given
-        Float actual1 = 1.0F;
-        Float actual2 = null;
+        Double actual1 = 1.0;
+        Double actual2 = null;
 
         // when
-        AbstractFloatAssert<?, Float> assert1 = new AbstractFloatAssert<>(AbstractFloatAssert.class, actual1);
-        AbstractFloatAssert<?, Float> assert2 = new AbstractFloatAssert<>(AbstractFloatAssert.class, actual2);
+        AbstractDoubleAssert<?, Double> assert1 = new AbstractDoubleAssert<>(AbstractDoubleAssert.class, actual1);
+        AbstractDoubleAssert<?, Double> assert2 = new AbstractDoubleAssert<>(AbstractDoubleAssert.class, actual2);
 
         // then
         assertThrows(AssertException.class, assert1::isNull);
@@ -27,8 +27,8 @@ class AbstractFloatAssertTest {
         assertThrows(AssertException.class, () -> assert1.isNotSameAs(actual1));
         assertThrows(AssertException.class, () -> assert1.isEqualTo(assert1));
         assertThrows(AssertException.class, () -> assert1.isNotEqualTo(actual1));
-        assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractFloatAssert.class));
-        assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(Float.class));
+        assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractDoubleAssert.class));
+        assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(Double.class));
 
         assert2.isNull();
         assert1.isNotNull();
@@ -36,29 +36,28 @@ class AbstractFloatAssertTest {
         assert1.isNotSameAs(assert1);
         assert1.isEqualTo(actual1);
         assert1.isNotEqualTo(assert1);
-        assert1.isAssignableFrom(Float.class);
-        assert1.isNotAssignableFrom(AbstractFloatAssert.class);
+        assert1.isAssignableFrom(Double.class);
+        assert1.isNotAssignableFrom(AbstractDoubleAssert.class);
     }
 
     @Test
-    @DisplayName("Float method test")
+    @DisplayName("Double method test")
     public void test2() throws Exception {
         // given
-        Float actual1 = 1.0F;
-        Float actual2 = -1.0F;
-        Float actual3 = 0.0F;
-        Float actual4 = (float) (3 / 0.0);
-        Float actual5 = (float) (5 % 0.0);
+        Double actual1 = 1.0;
+        Double actual2 = -1.0;
+        Double actual3 = 0.0;
+        Double actual4 = 3 / 0.0;
+        Double actual5 = 5 % 0.0;
 
         // when
-        AbstractFloatAssert<?, Float> assert1 = new AbstractFloatAssert<>(AbstractFloatAssert.class, actual1);
-        AbstractFloatAssert<?, Float> assert2 = new AbstractFloatAssert<>(AbstractFloatAssert.class, actual2);
-        AbstractFloatAssert<?, Float> assert3 = new AbstractFloatAssert<>(AbstractFloatAssert.class, actual3);
-        AbstractFloatAssert<?, Float> assert4 = new AbstractFloatAssert<>(AbstractFloatAssert.class, actual4);
-        AbstractFloatAssert<?, Float> assert5 = new AbstractFloatAssert<>(AbstractFloatAssert.class, actual5);
+        AbstractDoubleAssert<?, Double> assert1 = new AbstractDoubleAssert<>(AbstractDoubleAssert.class, actual1);
+        AbstractDoubleAssert<?, Double> assert2 = new AbstractDoubleAssert<>(AbstractDoubleAssert.class, actual2);
+        AbstractDoubleAssert<?, Double> assert3 = new AbstractDoubleAssert<>(AbstractDoubleAssert.class, actual3);
+        AbstractDoubleAssert<?, Double> assert4 = new AbstractDoubleAssert<>(AbstractDoubleAssert.class, actual4);
+        AbstractDoubleAssert<?, Double> assert5 = new AbstractDoubleAssert<>(AbstractDoubleAssert.class, actual5);
 
         // then
-
         assertThrows(AssertException.class, assert4::isFinite);
         assertThrows(AssertException.class, assert2::isInfinity);
         assertThrows(AssertException.class, assert2::isNaN);
@@ -68,8 +67,8 @@ class AbstractFloatAssertTest {
         assertThrows(AssertException.class, assert2::isNotNegative);
         assertThrows(AssertException.class, assert2::isZero);
         assertThrows(AssertException.class, assert3::isNotZero);
-        assertThrows(AssertException.class, () -> assert3.isCloseTo(5F, 2F));
-        assertThrows(AssertException.class, () -> assert3.isNotCloseTo(5F, 6F));
+        assertThrows(AssertException.class, () -> assert3.isCloseTo((double) 5, (double) 2));
+        assertThrows(AssertException.class, () -> assert1.isNotCloseTo((double) 1, (double) 100));
 
         assert1.isFinite();
         assert4.isInfinity();
@@ -80,26 +79,26 @@ class AbstractFloatAssertTest {
         assert1.isNotNegative();
         assert3.isZero();
         assert1.isNotZero();
-        assert1.isCloseTo(actual2, 3.4F);
-        assert1.isNotCloseTo(5.8F, 1.2F);
+        assert1.isCloseTo(actual1, 50.4);
+        assert1.isNotCloseTo(5.8, 1.2);
     }
 
     @Test
     @DisplayName("Comparable Test")
     public void test3() throws Exception {
         // given
-        Float actual1 = 1.0F;
-        Float actual2 = 2.1F;
-        Float actual3 = 3.2F;
+        Double actual1 = 1.0;
+        Double actual2 = 2.1;
+        Double actual3 = 3.2;
 
-        Float expected1 = 1.0F;
-        Float expected2 = 2.1F;
-        Float expected3 = 3.2F;
+        Double expected1 = 1.0;
+        Double expected2 = 2.1;
+        Double expected3 = 3.2;
 
         // when
-        AbstractFloatAssert<?, Float> assert1 = new AbstractFloatAssert<>(AbstractFloatAssert.class, actual1);
-        AbstractFloatAssert<?, Float> assert2 = new AbstractFloatAssert<>(AbstractFloatAssert.class, actual2);
-        AbstractFloatAssert<?, Float> assert3 = new AbstractFloatAssert<>(AbstractFloatAssert.class, actual3);
+        AbstractDoubleAssert<?, Double> assert1 = new AbstractDoubleAssert<>(AbstractDoubleAssert.class, actual1);
+        AbstractDoubleAssert<?, Double> assert2 = new AbstractDoubleAssert<>(AbstractDoubleAssert.class, actual2);
+        AbstractDoubleAssert<?, Double> assert3 = new AbstractDoubleAssert<>(AbstractDoubleAssert.class, actual3);
 
         // then
         // actual > expected

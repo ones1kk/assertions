@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.lang.bte;
+package com.github.ones1kk.asserts.core.lang.number.bte;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
 import com.github.ones1kk.asserts.core.lang.number.bte.AbstractByteAssertAssert;
@@ -48,12 +48,14 @@ class AbstractByteAssertTest {
         Byte actual2 = -1;
         Byte actual3 = 0;
         Byte actual4 = 2;
+        Byte actual5 = 100;
 
         // when
         AbstractByteAssertAssert<?, Byte> assert1 = new AbstractByteAssertAssert<>(AbstractByteAssertAssert.class, actual1);
         AbstractByteAssertAssert<?, Byte> assert2 = new AbstractByteAssertAssert<>(AbstractByteAssertAssert.class, actual2);
         AbstractByteAssertAssert<?, Byte> assert3 = new AbstractByteAssertAssert<>(AbstractByteAssertAssert.class, actual3);
         AbstractByteAssertAssert<?, Byte> assert4 = new AbstractByteAssertAssert<>(AbstractByteAssertAssert.class, actual4);
+        AbstractByteAssertAssert<?, Byte> assert5 = new AbstractByteAssertAssert<>(AbstractByteAssertAssert.class, actual5);
 
         // then
         assertThrows(AssertException.class, assert4::isOdd);
@@ -66,8 +68,8 @@ class AbstractByteAssertTest {
         assertThrows(AssertException.class, assert2::isNotNegative);
         assertThrows(AssertException.class, assert2::isZero);
         assertThrows(AssertException.class, assert3::isNotZero);
-        assertThrows(AssertException.class, () -> assert3.isCloseTo((byte) 5, (byte) 2));
-        assertThrows(AssertException.class, () -> assert3.isNotCloseTo((byte) 5, (byte) 6));
+        assertThrows(AssertException.class, () -> assert5.isCloseTo((byte) 5,  2.0));
+        assertThrows(AssertException.class, () -> assert5.isNotCloseTo((byte) 95, 10.0));
 
         assert1.isOdd();
         assert4.isNotOdd();
@@ -79,8 +81,8 @@ class AbstractByteAssertTest {
         assert1.isNotNegative();
         assert3.isZero();
         assert1.isNotZero();
-        assert1.isCloseTo(actual2, (byte) 3);
-        assert1.isNotCloseTo((byte) 5, (byte) 1);
+        assert1.isCloseTo((byte) 1, 3.0);
+        assert1.isNotCloseTo((byte) 5, 1.0);
 
     }
 
