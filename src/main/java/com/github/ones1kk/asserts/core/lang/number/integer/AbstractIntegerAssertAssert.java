@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.number.integer;
 
 import com.github.ones1kk.asserts.core.feature.data.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 public class AbstractIntegerAssertAssert<SELF extends AbstractIntegerAssertAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Integer> implements IntegerAssertAssertInterface<SELF> {
@@ -73,14 +74,14 @@ public class AbstractIntegerAssertAssert<SELF extends AbstractIntegerAssertAsser
     }
 
     @Override
-    public SELF isCloseTo(Integer expected, Integer offset) {
-        integers.assertIsCloseTo(actual, expected, Offset.offset(offset));
+    public SELF isCloseTo(Integer expected, Double percentage) {
+        integers.assertIsCloseTo(actual, expected, Percentage.of(percentage));
         return self;
     }
 
     @Override
-    public SELF isNotCloseTo(Integer expected, Integer offset) {
-        integers.assertIsNotCloseTo(actual, expected, Offset.offset(offset));
+    public SELF isNotCloseTo(Integer expected, Double percentage) {
+        integers.assertIsNotCloseTo(actual, expected, Percentage.of(percentage));
         return self;
     }
 

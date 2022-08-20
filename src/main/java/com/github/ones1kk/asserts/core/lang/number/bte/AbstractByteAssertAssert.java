@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.number.bte;
 
 import com.github.ones1kk.asserts.core.feature.data.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 public class AbstractByteAssertAssert<SELF extends AbstractByteAssertAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Byte> implements ByteAssertAssertInterface<SELF> {
@@ -103,14 +104,14 @@ public class AbstractByteAssertAssert<SELF extends AbstractByteAssertAssert<SELF
     }
 
     @Override
-    public SELF isCloseTo(Byte expected, Byte offset) {
-        bytes.assertIsCloseTo(actual, expected, Offset.offset(offset));
+    public SELF isCloseTo(Byte expected, Double percentage) {
+        bytes.assertIsCloseTo(actual, expected, Percentage.of(percentage));
         return self;
     }
 
     @Override
-    public SELF isNotCloseTo(Byte expected, Byte offset) {
-        bytes.assertIsNotCloseTo(actual, expected, Offset.offset(offset));
+    public SELF isNotCloseTo(Byte expected, Double percentage) {
+        bytes.assertIsNotCloseTo(actual, expected, Percentage.of(percentage));
         return self;
     }
 }

@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.feature.number;
 
 import com.github.ones1kk.asserts.core.feature.data.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 
 public interface Numerable<ACTUAL extends Number> {
 
@@ -16,8 +17,8 @@ public interface Numerable<ACTUAL extends Number> {
 
     void assertIsNotZero(ACTUAL actual);
 
-    void assertIsCloseTo(ACTUAL actual, ACTUAL expected, Offset<ACTUAL> offset);
+    void assertIsCloseTo(ACTUAL actual, ACTUAL expected, Percentage<ACTUAL> offset);
 
-    void assertIsNotCloseTo(ACTUAL actual, ACTUAL expected, Offset<ACTUAL> offset);
+    void assertIsNotCloseTo(ACTUAL actual, ACTUAL expected, Percentage<ACTUAL> offset);
 
 }

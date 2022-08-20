@@ -1,9 +1,9 @@
 package com.github.ones1kk.asserts.core.lang.number.flot.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
 import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.number.flot.FloatsInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
@@ -76,7 +76,7 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
     @Override
     public void assertIsBetween(Float actual, Float start, Float end) {
         if (comparable.isLessThan(actual, start)
-            || comparable.isGraterThan(actual, end)) {
+                || comparable.isGraterThan(actual, end)) {
             String description = handler.from("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();
@@ -132,30 +132,22 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
     }
 
     @Override
-    public void assertIsCloseTo(Float actual, Float expected, Offset<Float> offset) {
-        float startResult = Float.compare(actual, (float) offset.getBefore(expected));
-        float endResult = Float.compare(actual, (float) offset.getAfter(expected));
-
-        if (comparable.is(startResult, -1F)
-            || comparable.is(endResult, 1F)) {
-            setAssertClose(actual, expected, offset);
+    public void assertIsCloseTo(Float actual, Float expected, Percentage<Float> percentage) {
+        if (!percentage.isRange(actual, expected)) {
+            setAssertClose(actual, percentage);
         }
     }
 
     @Override
-    public void assertIsNotCloseTo(Float actual, Float expected, Offset<Float> offset) {
-        float startResult = Float.compare(actual, (float) offset.getBefore(expected));
-        float endResult = Float.compare(actual, (float) offset.getAfter(expected));
-
-        if (comparable.is(startResult, 1F)
-            || comparable.is(endResult, 1F)) {
-            setAssertClose(actual, expected, offset);
+    public void assertIsNotCloseTo(Float actual, Float expected, Percentage<Float> percentage) {
+        if (percentage.isRange(actual, expected)) {
+            setAssertClose(actual, percentage);
         }
     }
 
-    private void setAssertClose(Float actual, Float expected, Offset<Float> offset) {
+    private void setAssertClose(Float actual, Percentage<Float> percentage) {
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                offset.getBefore(expected) + " ~ " + offset.getAfter(expected));
+                percentage.getStartingRage() + " ~ " + percentage.getEndingRage());
         handler.setDescription(handler.from(actual, scope));
         throw handler.getException();
     }

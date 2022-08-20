@@ -4,6 +4,7 @@ import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
 import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import com.github.ones1kk.asserts.core.lang.number.shrt.ShortsInterface;
 
@@ -147,30 +148,22 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
     }
 
     @Override
-    public void assertIsCloseTo(Short actual, Short expected, Offset<Short> offset) {
-        short startResult = (short) Short.compare(actual, (short) offset.getBefore(expected));
-        short endResult = (short) Short.compare(actual, (short) offset.getAfter(expected));
-
-        if (comparable.isLessThan(startResult, (short) 0)
-            || comparable.isGraterThan(endResult, (short) 0)) {
-            setAssertClose(actual, expected, offset);
+    public void assertIsCloseTo(Short actual, Short expected, Percentage<Short> percentage) {
+        if (!percentage.isRange(actual, expected)) {
+            setAssertClose(actual, percentage);
         }
     }
 
     @Override
-    public void assertIsNotCloseTo(Short actual, Short expected, Offset<Short> offset) {
-        short startResult = (short) Short.compare(actual, (short) offset.getBefore(expected));
-        short endResult = (short) Short.compare(actual, (short) offset.getAfter(expected));
-
-        if (comparable.isGraterThanOrEqualTo(startResult, (short) 0)
-            || comparable.isGraterThanOrEqualTo(endResult, (short) 0)) {
-            setAssertClose(actual, expected, offset);
+    public void assertIsNotCloseTo(Short actual, Short expected, Percentage<Short> percentage) {
+        if (percentage.isRange(actual, expected)) {
+            setAssertClose(actual, percentage);
         }
     }
 
-    private void setAssertClose(Short actual, Short expected, Offset<Short> offset) {
+    private void setAssertClose(Short actual, Percentage<Short> percentage) {
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                offset.getBefore(expected) + " ~ " + offset.getAfter(expected));
+                percentage.getStartingRage() + " ~ " + percentage.getEndingRage());
         handler.setDescription(handler.from(actual, scope));
         throw handler.getException();
     }
