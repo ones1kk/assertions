@@ -49,7 +49,7 @@ public class Description implements Describable {
 
     @SuppressWarnings("all")
     private void throwIfOnlyArgumentsExist(String description, Object[] args) {
-        if(args.length < 0 && !(description.contains("{}"))) {
+        if (args.length < 0 && !(description.contains("{}"))) {
             throw new AssertException(ARGUMENTS_EXPRESSION_WITH_BRACE);
         }
     }

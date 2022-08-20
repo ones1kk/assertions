@@ -1,7 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.number.lng.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
 import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
@@ -21,7 +20,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
     @Override
     public void assertIsOdd(Long actual) {
         if (of(actual).isEven()
-            || comparable.isLessThan(actual, 0L)) {
+                || comparable.isLessThan(actual, 0L)) {
             handler.setDescription(handler.from(actual, "{} is not odd"));
             throw handler.getException();
         }
@@ -30,7 +29,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
     @Override
     public void assertIsNotOdd(Long actual) {
         if (of(actual).isOdd()
-            || comparable.isLessThan(actual, 0L)) {
+                || comparable.isLessThan(actual, 0L)) {
             handler.setDescription(handler.from(actual, "{} is odd"));
             throw handler.getException();
         }
@@ -39,8 +38,8 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
     @Override
     public void assertIsEven(Long actual) {
         if (of(actual).isOdd()
-            || comparable.isLessThan(actual, 0L)
-            || of(actual).isZero()) {
+                || comparable.isLessThan(actual, 0L)
+                || of(actual).isZero()) {
             handler.setDescription(handler.from(actual, "{} is not even"));
             throw handler.getException();
         }
@@ -50,7 +49,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
     public void assertIsNotEven(Long actual) {
         if (of(actual).isNotZero()) {
             if (of(actual).isEven()
-                || comparable.isLessThan(actual, 0L)) {
+                    || comparable.isLessThan(actual, 0L)) {
                 handler.setDescription(handler.from(actual, "{} is even"));
                 throw handler.getException();
             }
@@ -140,7 +139,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
     @Override
     public void assertIsBetween(Long actual, Long start, Long end) {
         if (comparable.isLessThan(actual, start)
-            || comparable.isGraterThan(actual, end)) {
+                || comparable.isGraterThan(actual, end)) {
             String description = handler.from("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();

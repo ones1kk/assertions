@@ -1,6 +1,5 @@
 package com.github.ones1kk.asserts.core.lang.number.lng;
 
-import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
