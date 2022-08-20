@@ -37,5 +37,10 @@ class PercentageTest {
         assertThat(percentage.isEndingRange(actual, 88)).isTrue();
         assertThat(percentage.isEndingRange(actual, 55)).isFalse();
         assertThat(percentage.isEndingRange(actual, 123)).isFalse();
+
+        assertThat(percentage.isRange(actual, 123)).isFalse();
+        assertThat(percentage.isRange(actual, 55)).isFalse();
+        assertThat(percentage.isRange(actual, 72)).isTrue();
+        assertThat(percentage.isRange(actual, 88)).isTrue();
     }
 }
