@@ -1,7 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.number.bte.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
 import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
@@ -21,7 +20,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
     @Override
     public void assertIsOdd(Byte actual) {
         if (of(actual).isEven()
-            || comparable.isLessThan(actual, (byte) 0)) {
+                || comparable.isLessThan(actual, (byte) 0)) {
             handler.setDescription(handler.from(actual, "{} is not odd"));
             throw handler.getException();
         }
@@ -30,7 +29,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
     @Override
     public void assertIsNotOdd(Byte actual) {
         if (of(actual).isOdd()
-            || comparable.isLessThan(actual, (byte) 0)) {
+                || comparable.isLessThan(actual, (byte) 0)) {
             handler.setDescription(handler.from(actual, "{} is odd"));
             throw handler.getException();
         }
@@ -39,8 +38,8 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
     @Override
     public void assertIsEven(Byte actual) {
         if (of(actual).isOdd()
-            || comparable.isLessThan(actual, (byte) 0)
-            || of(actual).isZero()) {
+                || comparable.isLessThan(actual, (byte) 0)
+                || of(actual).isZero()) {
             handler.setDescription(handler.from(actual, "{} is not even"));
             throw handler.getException();
         }
@@ -50,7 +49,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
     public void assertIsNotEven(Byte actual) {
         if (of(actual).isNotZero()) {
             if (of(actual).isEven()
-                || comparable.isLessThan(actual, (byte) 0)) {
+                    || comparable.isLessThan(actual, (byte) 0)) {
                 handler.setDescription(handler.from(actual, "{} is even"));
                 throw handler.getException();
             }
@@ -140,7 +139,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
     @Override
     public void assertIsBetween(Byte actual, Byte start, Byte end) {
         if (comparable.isLessThan(actual, start)
-            || comparable.isGraterThan(actual, end)) {
+                || comparable.isGraterThan(actual, end)) {
             String description = handler.from("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();

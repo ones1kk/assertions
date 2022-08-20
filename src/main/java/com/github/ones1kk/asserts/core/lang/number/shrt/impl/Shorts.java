@@ -1,12 +1,11 @@
 package com.github.ones1kk.asserts.core.lang.number.shrt.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
 import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
-import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import com.github.ones1kk.asserts.core.lang.number.shrt.ShortsInterface;
+import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
 import static com.github.ones1kk.asserts.core.feature.number.arithmetic.ShortArithmeticUnit.of;
 
@@ -21,7 +20,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
     @Override
     public void assertIsOdd(Short actual) {
         if (of(actual).isEven()
-            || comparable.isLessThan(actual, (short) 0)) {
+                || comparable.isLessThan(actual, (short) 0)) {
             handler.setDescription(handler.from(actual, "{} is not odd"));
             throw handler.getException();
         }
@@ -30,7 +29,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
     @Override
     public void assertIsNotOdd(Short actual) {
         if (of(actual).isOdd()
-            || comparable.isLessThan(actual, (short) 0)) {
+                || comparable.isLessThan(actual, (short) 0)) {
             handler.setDescription(handler.from(actual, "{} is odd"));
             throw handler.getException();
         }
@@ -39,8 +38,8 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
     @Override
     public void assertIsEven(Short actual) {
         if (of(actual).isOdd()
-            || comparable.isLessThan(actual, (short) 0)
-            || of(actual).isZero()) {
+                || comparable.isLessThan(actual, (short) 0)
+                || of(actual).isZero()) {
             handler.setDescription(handler.from(actual, "{} is not even"));
             throw handler.getException();
         }
@@ -50,7 +49,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
     public void assertIsNotEven(Short actual) {
         if (of(actual).isNotZero()) {
             if (of(actual).isEven()
-                || comparable.isLessThan(actual, (short) 0)) {
+                    || comparable.isLessThan(actual, (short) 0)) {
                 handler.setDescription(handler.from(actual, "{} is even"));
                 throw handler.getException();
             }
@@ -140,7 +139,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
     @Override
     public void assertIsBetween(Short actual, Short start, Short end) {
         if (comparable.isLessThan(actual, start)
-            || comparable.isGraterThan(actual, end)) {
+                || comparable.isGraterThan(actual, end)) {
             String description = handler.from("{} is not between {} and {}", actual, start, end);
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();
