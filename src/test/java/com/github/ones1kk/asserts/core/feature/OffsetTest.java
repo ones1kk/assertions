@@ -1,5 +1,6 @@
 package com.github.ones1kk.asserts.core.feature;
 
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

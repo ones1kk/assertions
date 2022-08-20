@@ -1,7 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.number.shrt.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.feature.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
 import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;

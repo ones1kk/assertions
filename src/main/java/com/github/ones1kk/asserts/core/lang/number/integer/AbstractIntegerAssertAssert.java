@@ -1,6 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.number.integer;
 
-import com.github.ones1kk.asserts.core.feature.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 public class AbstractIntegerAssertAssert<SELF extends AbstractIntegerAssertAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Integer> implements IntegerAssertAssertInterface<SELF> {

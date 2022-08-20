@@ -1,6 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.number.duble;
 
-import com.github.ones1kk.asserts.core.feature.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Double> implements DoubleAssertInterface<SELF> {

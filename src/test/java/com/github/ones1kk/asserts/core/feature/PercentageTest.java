@@ -1,7 +1,7 @@
 package com.github.ones1kk.asserts.core.feature;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
-import org.assertj.core.api.Assertions;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

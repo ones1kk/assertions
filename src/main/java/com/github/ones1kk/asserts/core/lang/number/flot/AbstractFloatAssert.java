@@ -1,6 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.number.flot;
 
-import com.github.ones1kk.asserts.core.feature.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 public class AbstractFloatAssert<SELF extends AbstractFloatAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Float> implements FloatAssertInterface<SELF> {
