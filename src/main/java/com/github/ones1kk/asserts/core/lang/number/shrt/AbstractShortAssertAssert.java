@@ -1,6 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.number.shrt;
 
-import com.github.ones1kk.asserts.core.feature.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 public class AbstractShortAssertAssert<SELF extends AbstractShortAssertAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Short> implements ShortAssertAssertInterface<SELF> {

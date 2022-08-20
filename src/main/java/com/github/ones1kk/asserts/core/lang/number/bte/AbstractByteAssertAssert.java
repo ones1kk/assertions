@@ -1,6 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.number.bte;
 
-import com.github.ones1kk.asserts.core.feature.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 public class AbstractByteAssertAssert<SELF extends AbstractByteAssertAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Byte> implements ByteAssertAssertInterface<SELF> {

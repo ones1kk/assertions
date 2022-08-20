@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.feature;
+package com.github.ones1kk.asserts.core.feature.data;
 
 
 import com.github.ones1kk.asserts.core.Asserts;

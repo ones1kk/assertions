@@ -1,6 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.number.lng;
 
-import com.github.ones1kk.asserts.core.feature.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 public class AbstractLongAssertAssert<SELF extends AbstractLongAssertAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Long> implements LongAssertAssertInterface<SELF> {
