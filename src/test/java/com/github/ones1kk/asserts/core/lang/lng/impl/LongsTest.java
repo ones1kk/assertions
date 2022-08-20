@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.lng.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import com.github.ones1kk.asserts.core.lang.number.lng.impl.Longs;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

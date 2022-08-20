@@ -1,6 +1,6 @@
 package com.github.ones1kk.asserts.core.lang.model;
 
-import com.github.ones1kk.asserts.core.lang.flot.AbstractFloatAssert;
+import com.github.ones1kk.asserts.core.lang.number.flot.AbstractFloatAssert;
 
 public class FloatAssert extends AbstractFloatAssert<FloatAssert, Float> {
 
