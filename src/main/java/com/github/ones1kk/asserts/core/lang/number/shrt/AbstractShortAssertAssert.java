@@ -3,11 +3,11 @@ package com.github.ones1kk.asserts.core.lang.number.shrt;
 import com.github.ones1kk.asserts.core.feature.Offset;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
-public class AbstractShortAssert<SELF extends AbstractShortAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Short> implements ShortAssertInterface<SELF> {
+public class AbstractShortAssertAssert<SELF extends AbstractShortAssertAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Short> implements ShortAssertAssertInterface<SELF> {
 
     private final ShortsInterface<Short> shorts;
 
-    public AbstractShortAssert(Class<?> self, Short actual) {
+    public AbstractShortAssertAssert(Class<?> self, Short actual) {
         super(self, actual);
         this.shorts = assertFactory.createAssert(actual, this);
     }
