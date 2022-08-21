@@ -24,7 +24,7 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
     @Override
     public void assertIsEmpty(List<? extends ACTUAL> actual) {
         if (!actual.isEmpty()) {
-            handler.setDescription(handler.from("actual is not empty"));
+            handler.setDescription(handler.from("The actual is not empty"));
             throw handler.getException();
         }
     }
@@ -32,7 +32,7 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
     @Override
     public void assertIsNotEmpty(List<? extends ACTUAL> actual) {
         if (actual.isEmpty()) {
-            handler.setDescription(handler.from("actual is empty"));
+            handler.setDescription(handler.from("The actual is empty"));
             throw handler.getException();
         }
     }
@@ -41,7 +41,7 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
     public void assertIsNullOrEmpty(List<? extends ACTUAL> actual) {
         if (actual != null) {
             if (!actual.isEmpty()) {
-                handler.setDescription(handler.from("actual is not null or not empty"));
+                handler.setDescription(handler.from("The actual is not null or not empty"));
                 throw handler.getException();
             }
         }
@@ -50,7 +50,7 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
     @Override
     public void assertContains(List<? extends ACTUAL> actual, ACTUAL expected) {
         if (containable.doesNotContain(actual, expected)) {
-            handler.setDescription(handler.from(expected, "actual does not contain of {}"));
+            handler.setDescription(handler.from(expected, "The actual does not contain of {}"));
             throw handler.getException();
         }
     }
@@ -58,7 +58,7 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
     @Override
     public void assertDoesNotContain(List<? extends ACTUAL> actual, ACTUAL expected) {
         if (containable.contains(actual, expected)) {
-            handler.setDescription(handler.from(expected, "actual contains of {}"));
+            handler.setDescription(handler.from(expected, "The actual is contains of {}"));
             throw handler.getException();
         }
     }
@@ -66,7 +66,7 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
     @Override
     public void assertContainsAll(List<? extends ACTUAL> actual, ACTUAL... expected) {
         if (containable.containsNotAll(actual, expected)) {
-            handler.setDescription(handler.from("actual doesn't contain any of expected"));
+            handler.setDescription(handler.from("The actual does not contain any of expected"));
             throw handler.getException();
         }
     }
@@ -74,7 +74,7 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
     @Override
     public void assertContainsAny(List<? extends ACTUAL> actual, ACTUAL... expected) {
         if (containable.doseNotContainAny(actual, expected)) {
-            handler.setDescription(handler.from("actual doesn't contain any of expected"));
+            handler.setDescription(handler.from("The actual does not contain any of expected"));
             throw handler.getException();
         }
     }
@@ -82,7 +82,7 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
     @Override
     public void assertContainsNull(List<? extends ACTUAL> actual) {
         if (containable.doesNotContainNull(actual)) {
-            handler.setDescription(handler.from("actual doesn't contain of null"));
+            handler.setDescription(handler.from("The actual does not contain of null"));
             throw handler.getException();
         }
     }
@@ -90,7 +90,7 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
     @Override
     public void assertDoesNotContainNull(List<? extends ACTUAL> actual) {
         if (containable.containsNull(actual)) {
-            handler.setDescription(handler.from("actual contains of null"));
+            handler.setDescription(handler.from("The actual is contains of null"));
             throw handler.getException();
         }
     }
@@ -99,7 +99,7 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
     public void assertAllMatch(List<? extends ACTUAL> actual, Predicate<ACTUAL> expected) {
         for (ACTUAL value : actual) {
             if (!expected.test(value)) {
-                handler.setDescription(handler.from("actual is not all matched"));
+                handler.setDescription(handler.from("The actual is not all matched"));
                 throw handler.getException();
             }
         }
@@ -109,7 +109,7 @@ public class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterface<ACT
     public void assertNoneMatch(List<? extends ACTUAL> actual, Predicate<ACTUAL> expected) {
         for (ACTUAL value : actual) {
             if (expected.test(value)) {
-                handler.setDescription(handler.from("actual is matched with all of expected"));
+                handler.setDescription(handler.from("The actual is matched with all of expected"));
                 throw handler.getException();
             }
         }

@@ -12,9 +12,9 @@ public final class Percentage<T extends Number> {
 
     private Percentage(Double value) {
         Asserts.that(value)
-                .as("the percentage value can not be null")
+                .as("The percentage value can not be null")
                 .isNotNull()
-                .as("the percentage value should be greater than or equal to zero")
+                .as("The percentage value should be greater than or equal to zero")
                 .isGreaterThanOrEqualTo(0.0);
         this.value = value;
     }

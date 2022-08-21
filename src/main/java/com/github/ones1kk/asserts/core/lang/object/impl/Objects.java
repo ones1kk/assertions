@@ -20,7 +20,7 @@ public class Objects<ACTUAL> extends AbstractObjects<Object> {
     @Override
     public void assertIsNotNull(Object actual) {
         if (actual == null) {
-            handler.setDescription(handler.from("actual is null"));
+            handler.setDescription(handler.from("The actual is is null"));
             throw handler.getException();
         }
     }
