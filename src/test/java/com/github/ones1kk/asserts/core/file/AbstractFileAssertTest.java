@@ -17,8 +17,38 @@ class AbstractFileAssertTest {
     private static final String HIDDEN_FILE_PATH = "~/.gitignore";
 
     @Test
-    @DisplayName("Method test")
+    @DisplayName("Object method test")
     public void test1() throws Exception {
+        // given
+        File actual1 = new File(HIDDEN_FILE_PATH);
+
+        // when
+        AbstractFileAssert<?> assert1 = new AbstractFileAssert<>(AbstractFileAssert.class, actual1);
+        AbstractFileAssert<?> assert2 = new AbstractFileAssert<>(AbstractFileAssert.class, null);
+
+        // then
+        assertThrows(AssertException.class, assert1::isNull);
+        assertThrows(AssertException.class, assert2::isNotNull);
+        assertThrows(AssertException.class, () -> assert1.isSameAs(assert1));
+        assertThrows(AssertException.class, () -> assert1.isNotSameAs(actual1));
+        assertThrows(AssertException.class, () -> assert1.isEqualTo(assert1));
+        assertThrows(AssertException.class, () -> assert1.isNotEqualTo(actual1));
+        assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractFileAssert.class));
+        assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(File.class));
+
+        assert2.isNull();
+        assert1.isNotNull();
+        assert1.isSameAs(actual1);
+        assert1.isNotSameAs(assert1);
+        assert1.isEqualTo(actual1);
+        assert1.isNotEqualTo(assert1);
+        assert1.isAssignableFrom(File.class);
+        assert1.isNotAssignableFrom(AbstractFileAssert.class);
+    }
+
+    @Test
+    @DisplayName("Method test")
+    public void test2() throws Exception {
         // given
         ClassLoader loader = AbstractFileAssertTest.class.getClassLoader();
         File actual1 = new File(Objects.requireNonNull(loader.getResource(CAN_READ_PATH)).getFile());
