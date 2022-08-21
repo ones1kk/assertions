@@ -33,4 +33,14 @@ public interface FilesInterface {
     void assertHasExtension(File actual, String extension);
 
     void assertDoesNotHaveExtension(File actual, String extension);
+
+    void assertIsSmallerThan(File actual, File expected);
+
+    void assertIsSmallerThanOrEqualTo(File actual, File expected);
+
+    void assertIsLargerThan(File actual, File expected);
+
+    void assertIsLargerThanOrEqualTo(File actual, File expected);
+
+    void assertIsBetween(File actual, File start, File end);
 }

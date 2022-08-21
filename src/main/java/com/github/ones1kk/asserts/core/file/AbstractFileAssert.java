@@ -1,25 +1,17 @@
 package com.github.ones1kk.asserts.core.file;
 
-import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.AssertFactory;
 import com.github.ones1kk.asserts.core.file.impl.Files;
+import com.github.ones1kk.asserts.core.file.impl.FilesInterface;
+import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 import java.io.File;
 
-public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends AsAssert<SELF> implements FileAssertInterface<SELF> {
+public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends AbstractObjectAssert<SELF, File> implements FileAssertInterface<SELF> {
 
-    private final SELF self;
-
-    private final File actual;
-
-    protected final AssertFactory assertFactory = new AssertFactory();
-
-    private final Files files;
+    private final FilesInterface files;
 
     public AbstractFileAssert(Class<?> self, File actual) {
-        super(self);
-        this.self = (SELF) self.cast(this);
-        this.actual = actual;
+        super(self, actual);
         this.files = assertFactory.createAssert(actual, this);
     }
 
