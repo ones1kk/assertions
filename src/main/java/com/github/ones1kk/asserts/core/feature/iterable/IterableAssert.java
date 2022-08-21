@@ -14,8 +14,10 @@ public interface IterableAssert<SELF, ELEMENT> {
 
     SELF doesNotContain(ELEMENT expected);
 
+    @SuppressWarnings("all")
     SELF containsAll(ELEMENT... expected);
 
+    @SuppressWarnings("all")
     SELF containsAny(ELEMENT... expected);
 
     SELF containsNull();
