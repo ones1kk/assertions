@@ -26,8 +26,11 @@ import com.github.ones1kk.asserts.core.lang.number.lng.AbstractLongAssertAssert;
 import com.github.ones1kk.asserts.core.lang.number.shrt.AbstractShortAssertAssert;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 import com.github.ones1kk.asserts.core.lang.string.AbstractStringAssert;
+import com.github.ones1kk.asserts.core.net.AbstractUrlAssert;
+import com.github.ones1kk.asserts.core.net.model.UrlAssert;
 
 import java.io.File;
+import java.net.URL;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -118,5 +121,8 @@ public class AssertsForType {
     public static <ACTUAL extends Map<K, V>, K, V> AbstractMapAssert<?, ACTUAL, K, V> that(ACTUAL actual) {
         return new MapAssert<>(actual);
     }
+
+    public static AbstractUrlAssert<?> that(URL actual) {
+        return new UrlAssert(actual);
     }
 }
