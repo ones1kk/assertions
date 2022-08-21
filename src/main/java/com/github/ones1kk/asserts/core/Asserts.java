@@ -18,8 +18,10 @@ import com.github.ones1kk.asserts.core.lang.number.lng.AbstractLongAssertAssert;
 import com.github.ones1kk.asserts.core.lang.number.shrt.AbstractShortAssertAssert;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 import com.github.ones1kk.asserts.core.lang.string.AbstractStringAssert;
+import com.github.ones1kk.asserts.core.net.AbstractUrlAssert;
 
 import java.io.File;
+import java.net.URL;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -114,4 +116,7 @@ public class Asserts {
         return AssertsForType.that(actual);
     }
 
+    public static AbstractUrlAssert<?> that(URL actual) {
+        return AssertsForType.that(actual);
+    }
 }

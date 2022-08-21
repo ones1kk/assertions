@@ -18,8 +18,10 @@ import com.github.ones1kk.asserts.core.lang.number.lng.impl.Longs;
 import com.github.ones1kk.asserts.core.lang.number.shrt.impl.Shorts;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import com.github.ones1kk.asserts.core.lang.string.impl.Strings;
+import com.github.ones1kk.asserts.core.net.impl.Urls;
 
 import java.io.File;
+import java.net.URL;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -115,4 +117,7 @@ public final class AssertFactory {
         return new Maps<>(asAssert);
     }
 
+    public Urls createAssert(URL actual, AsAssert<?> asAssert) {
+        return new Urls(asAssert);
+    }
 }
