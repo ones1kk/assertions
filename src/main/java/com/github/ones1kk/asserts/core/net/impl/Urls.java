@@ -32,7 +32,7 @@ public class Urls extends Objects<URL> implements UrlsInterface {
     @Override
     public void assertHasPort(URL actual, int expected) {
         int port = actual.getPort() == -1 ? actual.getDefaultPort() : actual.getPort();
-        if(port != expected) {
+        if (port != expected) {
             handler.setDescription(handler.from(actual, "{} does not have port"));
             throw handler.getException();
         }
@@ -41,7 +41,7 @@ public class Urls extends Objects<URL> implements UrlsInterface {
     @Override
     public void assertDoesNotHavePort(URL actual) {
         int port = actual.getPort() == -1 ? actual.getDefaultPort() : actual.getPort();
-        if(port == -1) {
+        if (port == -1) {
             handler.setDescription(handler.from(actual, "{} has port"));
             throw handler.getException();
         }
