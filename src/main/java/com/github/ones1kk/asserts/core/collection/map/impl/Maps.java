@@ -20,7 +20,7 @@ public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implem
     @Override
     public void assertIsEmpty(ACTUAL actual) {
         if (!actual.isEmpty()) {
-            handler.setDescription(handler.from("actual is not empty"));
+            handler.setDescription(handler.from("The actual is not empty"));
             throw handler.getException();
         }
     }
@@ -28,7 +28,7 @@ public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implem
     @Override
     public void assertIsNotEmpty(ACTUAL actual) {
         if (actual.isEmpty()) {
-            handler.setDescription(handler.from("actual is empty"));
+            handler.setDescription(handler.from("The actual is empty"));
             throw handler.getException();
         }
     }
@@ -37,7 +37,7 @@ public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implem
     public void assertIsNullOrEmpty(ACTUAL actual) {
         if (actual != null) {
             if (!actual.isEmpty()) {
-                handler.setDescription(handler.from("actual is not null or not empty"));
+                handler.setDescription(handler.from("The actual is not null or not empty"));
                 throw handler.getException();
             }
         }
@@ -46,7 +46,7 @@ public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implem
     @Override
     public void assertContainsKey(ACTUAL actual, K expected) {
         if (!actual.containsKey(expected)) {
-            handler.setDescription(handler.from("actual does not contain any of key"));
+            handler.setDescription(handler.from("The actual does not contain any of key"));
             throw handler.getException();
         }
     }
@@ -54,7 +54,7 @@ public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implem
     @Override
     public void assertContainsAllKey(ACTUAL actual, Map<? extends K, ?> expected) {
         if (containable.doesNotContainAllKey(actual, expected)) {
-            handler.setDescription(handler.from("actual does not contain all of key"));
+            handler.setDescription(handler.from("The actual does not contain all of key"));
             throw handler.getException();
         }
     }
@@ -62,7 +62,7 @@ public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implem
     @Override
     public void assertContainsValue(ACTUAL actual, V expected) {
         if (!actual.containsValue(expected)) {
-            handler.setDescription(handler.from(expected, "actual does not contain value of {}"));
+            handler.setDescription(handler.from(expected, "The actual does not contain value of {}"));
             throw handler.getException();
         }
     }
@@ -70,7 +70,7 @@ public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implem
     @Override
     public void assertContainsAllValue(ACTUAL actual, Map<?, ? extends V> expected) {
         if (containable.doesNotContainAllValue(actual, expected)) {
-            handler.setDescription(handler.from("actual does not contain all of value"));
+            handler.setDescription(handler.from("The actual does not contain all of value"));
             throw handler.getException();
         }
     }

@@ -43,7 +43,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertIsEmpty(Number[] actual) {
         if (ArrayUtils.isNotEmpty(actual)) {
-            handler.setDescription(handler.from("actual is not empty"));
+            handler.setDescription(handler.from("The actual is not empty"));
             throw handler.getException();
         }
     }
@@ -51,7 +51,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertIsNotEmpty(Number[] actual) {
         if (ArrayUtils.isEmpty(actual)) {
-            handler.setDescription(handler.from(actual, "actual is empty"));
+            handler.setDescription(handler.from(actual, "The actual is empty"));
             throw handler.getException();
         }
     }
@@ -59,7 +59,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertIsNullOrEmpty(Number[] actual) {
         if (ArrayUtils.isNotEmpty(actual)) {
-            handler.setDescription(handler.from(actual, "actual is not null or not empty"));
+            handler.setDescription(handler.from(actual, "The actual is not null or not empty"));
             throw handler.getException();
         }
     }
@@ -67,7 +67,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertContains(Number[] actual, Number expected) {
         if (containable.doesNotContain(actual, expected)) {
-            handler.setDescription(handler.from(expected, "actual does not contain of {}"));
+            handler.setDescription(handler.from(expected, "The actual does not contain of {}"));
             throw handler.getException();
         }
     }
@@ -75,7 +75,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertDoesNotContain(Number[] actual, Number expected) {
         if (containable.contains(actual, expected)) {
-            handler.setDescription(handler.from(expected, "actual contains of {}"));
+            handler.setDescription(handler.from(expected, "The actual is contains of {}"));
             throw handler.getException();
         }
     }
@@ -83,7 +83,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertContainsAll(Number[] actual, Number... expected) {
         if (containable.containsNotAll(actual, expected)) {
-            handler.setDescription(handler.from("actual doesn't contain any of expected"));
+            handler.setDescription(handler.from("The actual does not contain any of expected"));
             throw handler.getException();
         }
     }
@@ -91,7 +91,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertContainsAny(Number[] actual, Number... expected) {
         if (containable.doseNotContainAny(actual, expected)) {
-            handler.setDescription(handler.from("actual doesn't contain any of expected"));
+            handler.setDescription(handler.from("The actual does not contain any of expected"));
             throw handler.getException();
         }
     }
@@ -99,7 +99,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertContainsNull(Number[] actual) {
         if (containable.doesNotContainNull(actual)) {
-            handler.setDescription(handler.from("actual doesn't contain of null"));
+            handler.setDescription(handler.from("The actual does not contain of null"));
             throw handler.getException();
         }
     }
@@ -107,7 +107,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertDoesNotContainNull(Number[] actual) {
         if (containable.containsNull(actual)) {
-            handler.setDescription(handler.from("actual contains of null"));
+            handler.setDescription(handler.from("The actual is contains of null"));
             throw handler.getException();
         }
     }
@@ -116,7 +116,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     public void assertAllMatch(Number[] actual, Predicate<Number> expected) {
         for (Number number : actual) {
             if (!expected.test(number)) {
-                handler.setDescription(handler.from("actual is not all matched"));
+                handler.setDescription(handler.from("The actual is not all matched"));
                 throw handler.getException();
             }
         }
@@ -126,7 +126,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     public void assertNoneMatch(Number[] actual, Predicate<Number> expected) {
         for (Number number : actual) {
             if (expected.test(number)) {
-                handler.setDescription(handler.from(actual, "actual is matched with all of expected"));
+                handler.setDescription(handler.from(actual, "The actual is matched with all of expected"));
                 throw handler.getException();
             }
         }
