@@ -45,12 +45,14 @@ public class AbstractSetAssert<SELF extends AbstractSetAssert<SELF, ACTUAL>, ACT
     }
 
     @Override
+    @SuppressWarnings("all")
     public SELF containsAll(ACTUAL... expected) {
         sets.assertContainsAll(actual, expected);
         return self;
     }
 
     @Override
+    @SuppressWarnings("all")
     public SELF containsAny(ACTUAL... expected) {
         sets.assertContainsAny(actual, expected);
         return self;

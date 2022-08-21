@@ -110,7 +110,7 @@ public class Asserts {
         return AssertsForType.that(actual);
     }
 
-    public static <ACTUAL extends Map<K, V>, K, V> AbstractMapAssert<?, ACTUAL, K, V> that(Map<K, V> actual) {
+    public static <ACTUAL extends Map<K, V>, K, V> AbstractMapAssert<?, ACTUAL, K, V> that(ACTUAL actual) {
         return AssertsForType.that(actual);
     }
 
