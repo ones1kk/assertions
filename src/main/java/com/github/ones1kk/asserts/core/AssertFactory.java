@@ -19,9 +19,11 @@ import com.github.ones1kk.asserts.core.lang.number.shrt.impl.Shorts;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import com.github.ones1kk.asserts.core.lang.string.impl.Strings;
 import com.github.ones1kk.asserts.core.net.impl.Urls;
+import com.github.ones1kk.asserts.core.time.temporal.impl.TemporalAccessors;
 
 import java.io.File;
 import java.net.URL;
+import java.time.temporal.TemporalAccessor;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -119,5 +121,9 @@ public final class AssertFactory {
 
     public Urls createAssert(URL actual, AsAssert<?> asAssert) {
         return new Urls(asAssert);
+    }
+
+    public <ELEMENT extends TemporalAccessor & Comparable<ELEMENT>> TemporalAccessors<ELEMENT> createAssert(TemporalAccessor actual, AsAssert<?> asAssert) {
+        return new TemporalAccessors<>(asAssert);
     }
 }

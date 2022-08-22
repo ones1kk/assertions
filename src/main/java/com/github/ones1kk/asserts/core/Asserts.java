@@ -19,9 +19,11 @@ import com.github.ones1kk.asserts.core.lang.number.shrt.AbstractShortAssertAsser
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 import com.github.ones1kk.asserts.core.lang.string.AbstractStringAssert;
 import com.github.ones1kk.asserts.core.net.AbstractUrlAssert;
+import com.github.ones1kk.asserts.core.time.temporal.AbstractTemporalAccessorAssert;
 
 import java.io.File;
 import java.net.URL;
+import java.time.temporal.TemporalAccessor;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -117,6 +119,10 @@ public class Asserts {
     }
 
     public static AbstractUrlAssert<?> that(URL actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static <ACTUAL extends TemporalAccessor & Comparable<ACTUAL>> AbstractTemporalAccessorAssert<?, ACTUAL> that(ACTUAL actual) {
         return AssertsForType.that(actual);
     }
 }
