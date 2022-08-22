@@ -4,7 +4,7 @@ import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 import java.time.temporal.TemporalAccessor;
 
-public abstract class AbstractTemporalAccessorAssert<SELF extends AbstractTemporalAccessorAssert<SELF, ACTUAL>,  ACTUAL extends TemporalAccessor & Comparable<ACTUAL>> extends AbstractObjectAssert<SELF, ACTUAL> implements TemporalAccessorAssertInterface<SELF, ACTUAL>{
+public abstract class AbstractTemporalAccessorAssert<SELF extends AbstractTemporalAccessorAssert<SELF, ACTUAL>, ACTUAL extends TemporalAccessor & Comparable<ACTUAL>> extends AbstractObjectAssert<SELF, ACTUAL> implements TemporalAccessorAssertInterface<SELF, ACTUAL> {
 
     private final TemporalAccessorsInterface<ACTUAL> temporals;
 
