@@ -13,7 +13,7 @@ public class ComparableTemporalAccessorImpl<ACTUAL extends TemporalAccessor & Co
 
     @Override
     public boolean isNotEqualTo(ACTUAL actual, ACTUAL expected) {
-        return  actual.compareTo(expected) != 0;
+        return actual.compareTo(expected) != 0;
     }
 
     @Override
