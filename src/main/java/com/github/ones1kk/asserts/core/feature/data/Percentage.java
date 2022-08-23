@@ -33,6 +33,7 @@ public final class Percentage<T extends Number> {
 
     /**
      * After 2.0, it will be deprecated.
+     *
      * @since 1.0
      */
     @Deprecated
@@ -43,6 +44,7 @@ public final class Percentage<T extends Number> {
 
     /**
      * After 2.0, it will be deprecated.
+     *
      * @since 1.0
      */
     @Deprecated

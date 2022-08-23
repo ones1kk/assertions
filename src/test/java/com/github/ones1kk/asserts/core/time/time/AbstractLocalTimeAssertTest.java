@@ -2,13 +2,12 @@ package com.github.ones1kk.asserts.core.time.time;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
 import com.github.ones1kk.asserts.core.time.model.LocalTimeAccessorAssert;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalTime;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractLocalTimeAssertTest {
 

@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.feature.iterable.containable.impl;
+package com.github.ones1kk.asserts.core.feature.iterable.containable.collection.impl;
 
 import java.util.Collection;
 import java.util.Map;
