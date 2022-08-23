@@ -1,0 +1,39 @@
+package com.github.ones1kk.asserts.core.time.time;
+
+import com.github.ones1kk.asserts.core.exception.AssertException;
+import com.github.ones1kk.asserts.core.time.model.LocalTimeAccessorAssert;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.time.LocalTime;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class AbstractLocalTimeAssertTest {
+
+    @Test
+    @DisplayName("Method test")
+    public void test1() throws Exception {
+        // given
+        LocalTime actual1 = LocalTime.of(11, 11, 11);
+        LocalTime actual2 = LocalTime.of(13, 11, 11);
+
+        // when
+        AbstractLocalTimeAssert<?> assert1 = new LocalTimeAccessorAssert(actual1);
+        AbstractLocalTimeAssert<?> assert2 = new LocalTimeAccessorAssert(actual2);
+
+        // then
+        assertThrows(AssertException.class, assert1::isMidnight);
+        assertThrows(AssertException.class, assert1::isNoon);
+        assertThrows(AssertException.class, assert1::isAfternoon);
+        assertThrows(AssertException.class, assert2::isBeforeNoon);
+        assertThrows(AssertException.class, assert2::isBeforeOrEqualToNoon);
+
+        assert1.isBeforeNoon();
+        assert1.isBeforeOrEqualToNoon();
+        assert2.isAfterOrEqualToNoon();
+        assert2.isAfternoon();
+    }
+
+}
