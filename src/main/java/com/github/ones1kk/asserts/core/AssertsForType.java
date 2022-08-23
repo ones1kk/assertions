@@ -28,17 +28,19 @@ import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 import com.github.ones1kk.asserts.core.lang.string.AbstractStringAssert;
 import com.github.ones1kk.asserts.core.net.AbstractUrlAssert;
 import com.github.ones1kk.asserts.core.net.model.UrlAssert;
-import com.github.ones1kk.asserts.core.time.model.LocalTimeAccessorAssert;
-import com.github.ones1kk.asserts.core.time.model.MonthAssert;
-import com.github.ones1kk.asserts.core.time.model.TemporalAccessorAssert;
+import com.github.ones1kk.asserts.core.time.model.*;
 import com.github.ones1kk.asserts.core.time.month.AbstractMonthAssert;
+import com.github.ones1kk.asserts.core.time.monthday.AbstractMonthDayAssert;
 import com.github.ones1kk.asserts.core.time.temporal.AbstractTemporalAccessorAssert;
 import com.github.ones1kk.asserts.core.time.time.AbstractLocalTimeAssert;
+import com.github.ones1kk.asserts.core.time.year.AbstractYearAssert;
 
 import java.io.File;
 import java.net.URL;
 import java.time.LocalTime;
 import java.time.Month;
+import java.time.MonthDay;
+import java.time.Year;
 import java.time.temporal.TemporalAccessor;
 import java.util.Collection;
 import java.util.List;
@@ -145,5 +147,13 @@ public class AssertsForType {
 
     public static AbstractMonthAssert<?, Month> that(Month actual) {
         return new MonthAssert(actual);
+    }
+
+    public static AbstractYearAssert<?, Year> that(Year actual) {
+        return new YearAssert(actual);
+    }
+
+    public static AbstractMonthDayAssert<?, MonthDay> that(MonthDay actual) {
+        return new MonthDayAssert(actual);
     }
 }
