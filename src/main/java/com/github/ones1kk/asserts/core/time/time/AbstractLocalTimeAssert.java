@@ -12,7 +12,7 @@ public class AbstractLocalTimeAssert<SELF extends AbstractLocalTimeAssert<SELF>>
 
     @Override
     public SELF isMidnight() {
-        super.isAfterOrEqualTo(LocalTime.MIDNIGHT);
+        super.isEqualTo(LocalTime.MIDNIGHT);
         return self;
     }
 
