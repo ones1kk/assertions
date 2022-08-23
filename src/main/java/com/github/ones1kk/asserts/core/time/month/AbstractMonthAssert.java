@@ -9,5 +9,4 @@ public class AbstractMonthAssert<SELF extends AbstractMonthAssert<SELF, ACTUAL>,
     public AbstractMonthAssert(Class<?> self, Month actual) {
         super(self, actual);
     }
-
 }
