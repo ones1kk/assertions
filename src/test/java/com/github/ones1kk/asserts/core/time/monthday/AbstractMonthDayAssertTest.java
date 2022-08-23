@@ -5,7 +5,6 @@ import com.github.ones1kk.asserts.core.time.model.MonthDayAssert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.time.Month;
 import java.time.MonthDay;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;

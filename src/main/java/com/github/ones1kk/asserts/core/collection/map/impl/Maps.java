@@ -3,7 +3,7 @@ package com.github.ones1kk.asserts.core.collection.map.impl;
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.collection.map.MapsInterface;
 import com.github.ones1kk.asserts.core.feature.comparable.collection.impl.MapComparable;
-import com.github.ones1kk.asserts.core.feature.iterable.containable.impl.MapContainable;
+import com.github.ones1kk.asserts.core.feature.iterable.containable.collection.impl.MapContainable;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
 import java.util.Map;

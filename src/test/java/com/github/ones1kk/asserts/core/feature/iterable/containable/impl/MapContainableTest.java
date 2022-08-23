@@ -1,5 +1,6 @@
 package com.github.ones1kk.asserts.core.feature.iterable.containable.impl;
 
+import com.github.ones1kk.asserts.core.feature.iterable.containable.collection.impl.MapContainable;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

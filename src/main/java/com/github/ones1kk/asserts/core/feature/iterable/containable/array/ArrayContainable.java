@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.feature.iterable.containable;
+package com.github.ones1kk.asserts.core.feature.iterable.containable.array;
 
 public interface ArrayContainable<ELEMENT> {
 

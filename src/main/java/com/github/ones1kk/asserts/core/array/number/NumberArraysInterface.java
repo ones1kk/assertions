@@ -1,6 +1,6 @@
 package com.github.ones1kk.asserts.core.array.number;
 
-import com.github.ones1kk.asserts.core.feature.iterable.ArrayIterable;
+import com.github.ones1kk.asserts.core.feature.iterable.array.ArrayIterable;
 
 public interface NumberArraysInterface<ELEMENT> extends ArrayIterable<Number> {
 

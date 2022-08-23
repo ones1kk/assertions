@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.feature.iterable.containable.impl;
 
-import com.github.ones1kk.asserts.core.feature.iterable.containable.ArrayContainable;
+import com.github.ones1kk.asserts.core.feature.iterable.containable.array.ArrayContainable;
+import com.github.ones1kk.asserts.core.feature.iterable.containable.array.impl.NumberArrayContainableImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

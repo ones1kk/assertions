@@ -2,8 +2,8 @@ package com.github.ones1kk.asserts.core.array.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.array.ArraysInterface;
-import com.github.ones1kk.asserts.core.feature.iterable.containable.ArrayContainable;
-import com.github.ones1kk.asserts.core.feature.iterable.containable.impl.ArrayContainableImpl;
+import com.github.ones1kk.asserts.core.feature.iterable.containable.array.ArrayContainable;
+import com.github.ones1kk.asserts.core.feature.iterable.containable.array.impl.ArrayContainableImpl;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import org.apache.commons.lang3.ArrayUtils;
 

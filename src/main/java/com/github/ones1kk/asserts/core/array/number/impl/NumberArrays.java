@@ -2,7 +2,7 @@ package com.github.ones1kk.asserts.core.array.number.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.array.number.NumberArraysInterface;
-import com.github.ones1kk.asserts.core.feature.iterable.containable.impl.NumberArrayContainableImpl;
+import com.github.ones1kk.asserts.core.feature.iterable.containable.array.impl.NumberArrayContainableImpl;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import org.apache.commons.lang3.ArrayUtils;
 

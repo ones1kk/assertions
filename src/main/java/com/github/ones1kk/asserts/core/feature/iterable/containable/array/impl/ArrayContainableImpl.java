@@ -1,6 +1,6 @@
-package com.github.ones1kk.asserts.core.feature.iterable.containable.impl;
+package com.github.ones1kk.asserts.core.feature.iterable.containable.array.impl;
 
-import com.github.ones1kk.asserts.core.feature.iterable.containable.ArrayContainable;
+import com.github.ones1kk.asserts.core.feature.iterable.containable.array.ArrayContainable;
 
 import java.util.Arrays;
 import java.util.List;

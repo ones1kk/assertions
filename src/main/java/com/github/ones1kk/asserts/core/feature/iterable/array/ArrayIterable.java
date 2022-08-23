@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.feature.iterable;
+package com.github.ones1kk.asserts.core.feature.iterable.array;
 
 import java.util.function.Predicate;
 
