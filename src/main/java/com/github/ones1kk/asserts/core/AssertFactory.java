@@ -20,9 +20,11 @@ import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import com.github.ones1kk.asserts.core.lang.string.impl.Strings;
 import com.github.ones1kk.asserts.core.net.impl.Urls;
 import com.github.ones1kk.asserts.core.time.temporal.impl.TemporalAccessors;
+import com.github.ones1kk.asserts.core.time.year.impl.Years;
 
 import java.io.File;
 import java.net.URL;
+import java.time.Year;
 import java.time.temporal.TemporalAccessor;
 import java.util.Collection;
 import java.util.List;
@@ -125,5 +127,9 @@ public final class AssertFactory {
 
     public <ELEMENT extends TemporalAccessor & Comparable<ELEMENT>> TemporalAccessors<ELEMENT> createAssert(TemporalAccessor actual, AsAssert<?> asAssert) {
         return new TemporalAccessors<>(asAssert);
+    }
+
+    public Years createAssert(Year actual, AsAssert<?> asAssert) {
+        return new Years(asAssert);
     }
 }
