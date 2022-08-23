@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.file.impl;
+package com.github.ones1kk.asserts.core.file;
 
 import java.io.File;
 

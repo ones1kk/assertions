@@ -1,6 +1,5 @@
 package com.github.ones1kk.asserts.core.file;
 
-import com.github.ones1kk.asserts.core.file.impl.FilesInterface;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 import java.io.File;

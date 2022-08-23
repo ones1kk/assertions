@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.file;
+package com.github.ones1kk.asserts.core.feature.comparable.file;
 
 import java.io.File;
 
