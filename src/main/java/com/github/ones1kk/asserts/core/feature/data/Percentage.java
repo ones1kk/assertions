@@ -27,19 +27,27 @@ public final class Percentage<T extends Number> {
         Asserts.that(expected.doubleValue())
                 .as("Negative numbers cannot be compared")
                 .isPositive();
-        init(actual);
+        setRange(actual);
         return expected.doubleValue() >= startingRage && expected.doubleValue() <= endingRage;
     }
 
+    /**
+     * After 2.0, it will be deprecated.
+     * @since 1.0
+     */
     @Deprecated
     public boolean isStartingRange(T actual, T expected) {
-        init(actual);
+        setRange(actual);
         return expected.doubleValue() >= startingRage && expected.doubleValue() <= endingRage;
     }
 
+    /**
+     * After 2.0, it will be deprecated.
+     * @since 1.0
+     */
     @Deprecated
     public boolean isEndingRange(T actual, T expected) {
-        init(actual);
+        setRange(actual);
         return expected.doubleValue() >= startingRage && expected.doubleValue() <= endingRage;
     }
 
@@ -55,7 +63,7 @@ public final class Percentage<T extends Number> {
         return endingRage;
     }
 
-    private void init(T actual) {
+    private void setRange(T actual) {
         setStartingRage(actual);
         setEndingRage(actual);
     }
