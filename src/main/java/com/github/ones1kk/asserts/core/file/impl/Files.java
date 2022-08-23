@@ -1,7 +1,8 @@
 package com.github.ones1kk.asserts.core.file.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.file.FileSizeComparable;
+import com.github.ones1kk.asserts.core.feature.comparable.file.FileSizeComparable;
+import com.github.ones1kk.asserts.core.file.FilesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import org.apache.commons.io.FilenameUtils;
 
