@@ -149,4 +149,8 @@ public class Asserts {
     public static AbstractMonthDayAssert<?, MonthDay> that(MonthDay actual) {
         return AssertsForType.that(actual);
     }
+
+    public static AbstractLocalDateTimeAssert<?, LocalDateTime> that(LocalDateTime actual) {
+        return AssertsForType.that(actual);
+    }
 }
