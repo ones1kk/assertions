@@ -153,4 +153,8 @@ public class Asserts {
     public static AbstractLocalDateTimeAssert<?, LocalDateTime> that(LocalDateTime actual) {
         return AssertsForType.that(actual);
     }
+
+    public static AbstractLocalDateAssert<?, LocalDate> that(LocalDate actual) {
+        return AssertsForType.that(actual);
+    }
 }

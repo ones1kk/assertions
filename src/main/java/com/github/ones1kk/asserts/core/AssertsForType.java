@@ -160,4 +160,8 @@ public class AssertsForType {
     public static AbstractLocalDateTimeAssert<?, LocalDateTime> that(LocalDateTime actual) {
         return new LocalDateTimeAssert(actual);
     }
+
+    public static AbstractLocalDateAssert<?, LocalDate> that(LocalDate actual) {
+        return new LocalDateAssert(actual);
+    }
 }
