@@ -30,21 +30,25 @@ public abstract class AbstractTemporalAssert<SELF extends AbstractTemporalAssert
 
     @Override
     public SELF isBefore(ACTUAL expected) {
+        temporals.assertIsBefore(actual, expected);
         return self;
     }
 
     @Override
     public SELF isBeforeOrEqualTo(ACTUAL expected) {
+        temporals.assertIsBeforeOrEqualTo(actual, expected);
         return self;
     }
 
     @Override
     public SELF isAfter(ACTUAL expected) {
+        temporals.assertIsAfter(actual, expected);
         return self;
     }
 
     @Override
     public SELF isAfterOrEqualTo(ACTUAL expected) {
+        temporals.assertIsAfterOrEqualTo(actual, expected);
         return self;
     }
 }

@@ -142,7 +142,7 @@ public class AssertsForType {
         return new TemporalAccessorAssert<>(actual);
     }
 
-    public static <ACTUAL extends Temporal> AbstractTemporalAssert<?, ACTUAL> that(ACTUAL actual) {
+    public static <ACTUAL extends Temporal & Comparable<ACTUAL>> AbstractTemporalAssert<?, ACTUAL> that(ACTUAL actual) {
         return new TemporalAssert<>(actual);
     }
 
