@@ -1,16 +1,16 @@
-package com.github.ones1kk.asserts.core.time.temporal.impl;
+package com.github.ones1kk.asserts.core.time.temporal.accessor.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableTemporalAccessor;
 import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableTemporalAccessorImpl;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
-import com.github.ones1kk.asserts.core.time.temporal.TemporalAccessorsInterface;
+import com.github.ones1kk.asserts.core.time.temporal.accessor.TemporalAccessorsInterface;
 
 import java.time.temporal.TemporalAccessor;
 
 public class TemporalAccessors<ACTUAL extends TemporalAccessor & Comparable<ACTUAL>> extends Objects<ACTUAL> implements TemporalAccessorsInterface<ACTUAL> {
 
-    private ComparableTemporalAccessor<ACTUAL> comparable = new ComparableTemporalAccessorImpl<>();
+    private final ComparableTemporalAccessor<ACTUAL> comparable = new ComparableTemporalAccessorImpl<>();
 
     public TemporalAccessors(AsAssert<?> asAssert) {
         super(asAssert);

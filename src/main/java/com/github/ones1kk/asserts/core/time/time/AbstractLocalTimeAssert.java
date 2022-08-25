@@ -1,10 +1,10 @@
 package com.github.ones1kk.asserts.core.time.time;
 
-import com.github.ones1kk.asserts.core.time.temporal.AbstractTemporalAccessorAssert;
+import com.github.ones1kk.asserts.core.time.temporal.accessor.AbstractTemporalAccessorAssert;
 
 import java.time.LocalTime;
 
-public class AbstractLocalTimeAssert<SELF extends AbstractLocalTimeAssert<SELF>> extends AbstractTemporalAccessorAssert<SELF, LocalTime> implements LocalTimeAssertInterface<SELF> {
+public class AbstractLocalTimeAssert<SELF extends AbstractLocalTimeAssert<SELF, ACTUAL>, ACTUAL> extends AbstractTemporalAccessorAssert<SELF, LocalTime> implements LocalTimeAssertInterface<SELF> {
 
     public AbstractLocalTimeAssert(Class<?> self, LocalTime actual) {
         super(self, actual);

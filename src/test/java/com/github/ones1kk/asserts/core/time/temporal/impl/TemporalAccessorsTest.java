@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.time.temporal.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import com.github.ones1kk.asserts.core.time.temporal.accessor.impl.TemporalAccessors;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

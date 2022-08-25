@@ -1,7 +1,8 @@
 package com.github.ones1kk.asserts.core.time.temporal;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
-import com.github.ones1kk.asserts.core.time.model.LocalTimeAccessorAssert;
+import com.github.ones1kk.asserts.core.time.model.LocalTimeAssert;
+import com.github.ones1kk.asserts.core.time.temporal.accessor.AbstractTemporalAccessorAssert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +19,7 @@ class AbstractTemporalAccessorAssertTest {
         LocalTime actual1 = LocalTime.of(11, 11, 11);
 
         // when
-        AbstractTemporalAccessorAssert<?, LocalTime> assert1 = new LocalTimeAccessorAssert(actual1);
+        AbstractTemporalAccessorAssert<?, LocalTime> assert1 = new LocalTimeAssert(actual1);
 
         // then
         assertThrows(AssertException.class, () -> assert1.isEqualTo(LocalTime.of(11, 12, 12)));
