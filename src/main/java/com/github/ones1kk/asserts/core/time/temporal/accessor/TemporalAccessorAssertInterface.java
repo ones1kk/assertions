@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.time.temporal;
+package com.github.ones1kk.asserts.core.time.temporal.accessor;
 
 import java.time.temporal.TemporalAccessor;
 

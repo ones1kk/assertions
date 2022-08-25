@@ -1,6 +1,6 @@
 package com.github.ones1kk.asserts.core.time.model;
 
-import com.github.ones1kk.asserts.core.time.temporal.AbstractTemporalAccessorAssert;
+import com.github.ones1kk.asserts.core.time.temporal.accessor.AbstractTemporalAccessorAssert;
 
 import java.time.temporal.TemporalAccessor;
 

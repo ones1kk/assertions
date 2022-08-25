@@ -1,6 +1,6 @@
 package com.github.ones1kk.asserts.core.time.month;
 
-import com.github.ones1kk.asserts.core.time.temporal.AbstractTemporalAccessorAssert;
+import com.github.ones1kk.asserts.core.time.temporal.accessor.AbstractTemporalAccessorAssert;
 
 import java.time.Month;
 
