@@ -135,7 +135,7 @@ public class Asserts {
         return AssertsForType.that(actual);
     }
 
-    public static <ACTUAL extends Temporal> AbstractTemporalAssert<?, ACTUAL> that(ACTUAL actual) {
+    public static <ACTUAL extends Temporal & Comparable<ACTUAL>> AbstractTemporalAssert<?, ACTUAL> that(ACTUAL actual) {
         return AssertsForType.that(actual);
     }
 
