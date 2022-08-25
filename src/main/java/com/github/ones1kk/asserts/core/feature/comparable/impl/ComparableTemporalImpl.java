@@ -2,7 +2,6 @@ package com.github.ones1kk.asserts.core.feature.comparable.impl;
 
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableTemporal;
 
-import java.time.temporal.Temporal;
 import java.time.temporal.TemporalAccessor;
 
 public class ComparableTemporalImpl<ACTUAL extends TemporalAccessor & Comparable<ACTUAL>> implements ComparableTemporal<ACTUAL> {

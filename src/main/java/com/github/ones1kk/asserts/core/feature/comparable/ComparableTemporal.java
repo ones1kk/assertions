@@ -1,6 +1,5 @@
 package com.github.ones1kk.asserts.core.feature.comparable;
 
-import java.time.temporal.Temporal;
 import java.time.temporal.TemporalAccessor;
 
 public interface ComparableTemporal<ELEMENT extends TemporalAccessor & java.lang.Comparable<ELEMENT>> {
