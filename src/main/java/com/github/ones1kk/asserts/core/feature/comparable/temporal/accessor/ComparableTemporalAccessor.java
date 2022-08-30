@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.feature.comparable;
+package com.github.ones1kk.asserts.core.feature.comparable.temporal.accessor;
 
 import java.time.temporal.TemporalAccessor;
 

@@ -1,6 +1,6 @@
-package com.github.ones1kk.asserts.core.feature.comparable.impl;
+package com.github.ones1kk.asserts.core.feature.comparable.lang.impl;
 
-import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
+import com.github.ones1kk.asserts.core.feature.comparable.lang.ComparableLanguage;
 
 public class ComparableLanguageImpl<ELEMENT extends Comparable<ELEMENT>> implements ComparableLanguage<ELEMENT> {
 
