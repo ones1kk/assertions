@@ -14,20 +14,6 @@ public abstract class AbstractTemporalAccessorAssert<SELF extends AbstractTempor
     }
 
     @Override
-    @SuppressWarnings("all")
-    public SELF isEqualTo(Object expected) {
-        temporals.assertIsEqualTo(actual, (ACTUAL) expected);
-        return self;
-    }
-
-    @Override
-    @SuppressWarnings("all")
-    public SELF isNotEqualTo(Object expected) {
-        temporals.assertIsNotEqualTo(actual, (ACTUAL) expected);
-        return self;
-    }
-
-    @Override
     public SELF isBefore(ACTUAL expected) {
         temporals.assertIsBefore(actual, expected);
         return self;

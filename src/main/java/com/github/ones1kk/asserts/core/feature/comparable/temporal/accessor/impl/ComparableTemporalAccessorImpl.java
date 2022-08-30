@@ -7,16 +7,6 @@ import java.time.temporal.TemporalAccessor;
 public class ComparableTemporalAccessorImpl<ACTUAL extends TemporalAccessor & Comparable<ACTUAL>> implements ComparableTemporalAccessor<ACTUAL> {
 
     @Override
-    public boolean isEqualTo(ACTUAL actual, ACTUAL expected) {
-        return actual.compareTo(expected) == 0;
-    }
-
-    @Override
-    public boolean isNotEqualTo(ACTUAL actual, ACTUAL expected) {
-        return actual.compareTo(expected) != 0;
-    }
-
-    @Override
     public boolean isBefore(ACTUAL actual, ACTUAL expected) {
         return actual.compareTo(expected) < 0;
     }
