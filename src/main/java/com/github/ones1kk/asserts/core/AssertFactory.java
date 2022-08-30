@@ -19,11 +19,14 @@ import com.github.ones1kk.asserts.core.lang.number.shrt.impl.Shorts;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import com.github.ones1kk.asserts.core.lang.string.impl.Strings;
 import com.github.ones1kk.asserts.core.net.impl.Urls;
+import com.github.ones1kk.asserts.core.time.localdate.impl.LocalDates;
 import com.github.ones1kk.asserts.core.time.temporal.accessor.impl.TemporalAccessors;
 import com.github.ones1kk.asserts.core.time.year.impl.Years;
 
 import java.io.File;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Year;
 import java.time.temporal.TemporalAccessor;
 import java.util.Collection;
@@ -132,4 +135,9 @@ public final class AssertFactory {
     public Years createAssert(Year actual, AsAssert<?> asAssert) {
         return new Years(asAssert);
     }
+
+    public LocalDates<LocalDate> createAssert(LocalDate actual, AsAssert<?> asAssert) {
+        return new LocalDates<>(asAssert);
+    }
+
 }
