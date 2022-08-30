@@ -17,22 +17,6 @@ public class TemporalAccessors<ACTUAL extends TemporalAccessor & Comparable<ACTU
     }
 
     @Override
-    public void assertIsEqualTo(ACTUAL actual, ACTUAL expected) {
-        if (comparable.isNotEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not equal to {}"));
-            throw handler.getException();
-        }
-    }
-
-    @Override
-    public void assertIsNotEqualTo(ACTUAL actual, ACTUAL expected) {
-        if (comparable.isEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is equal to {}"));
-            throw handler.getException();
-        }
-    }
-
-    @Override
     public void assertIsBefore(ACTUAL actual, ACTUAL expected) {
         if (comparable.isAfterOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from(actual, expected, "{} is after or equal to {}"));
