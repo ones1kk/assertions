@@ -20,6 +20,7 @@ import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import com.github.ones1kk.asserts.core.lang.string.impl.Strings;
 import com.github.ones1kk.asserts.core.net.impl.Urls;
 import com.github.ones1kk.asserts.core.time.localdate.impl.LocalDates;
+import com.github.ones1kk.asserts.core.time.localdatetime.impl.LocalDateTimes;
 import com.github.ones1kk.asserts.core.time.temporal.accessor.impl.TemporalAccessors;
 import com.github.ones1kk.asserts.core.time.year.impl.Years;
 
@@ -140,4 +141,7 @@ public final class AssertFactory {
         return new LocalDates<>(asAssert);
     }
 
+    public LocalDateTimes<LocalDateTime> createAssert(LocalDateTime actual, AsAssert<?> asAssert) {
+        return new LocalDateTimes<>(asAssert);
+    }
 }
