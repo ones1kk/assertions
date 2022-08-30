@@ -1,7 +1,6 @@
 package com.github.ones1kk.asserts.core.time.localdate;
 
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
-import com.github.ones1kk.asserts.core.time.localdate.impl.LocalDates;
 import com.github.ones1kk.asserts.core.time.temporal.accessor.TemporalAccessorAssertInterface;
 
 import java.time.LocalDate;

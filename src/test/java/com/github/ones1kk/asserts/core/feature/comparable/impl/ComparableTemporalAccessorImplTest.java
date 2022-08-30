@@ -23,8 +23,6 @@ class ComparableTemporalAccessorImplTest {
         Year actual3 = Year.of(1994);
 
         // then
-        assertThat(comparable.isEqualTo(actual1, actual1)).isTrue();
-        assertThat(comparable.isNotEqualTo(actual1, actual2)).isTrue();
 
         assertThat(comparable.isBefore(actual1, actual2)).isTrue();
         assertThat(comparable.isBeforeOrEqualTo(actual1, actual1)).isTrue();
@@ -33,9 +31,6 @@ class ComparableTemporalAccessorImplTest {
         assertThat(comparable.isAfter(actual1, actual3)).isTrue();
         assertThat(comparable.isAfterOrEqualTo(actual1, actual1)).isTrue();
         assertThat(comparable.isAfterOrEqualTo(actual1, actual3)).isTrue();
-
-        assertThat(comparable.isEqualTo(actual1, actual2)).isFalse();
-        assertThat(comparable.isNotEqualTo(actual2, actual2)).isFalse();
 
         assertThat(comparable.isBefore(actual2, actual1)).isFalse();
         assertThat(comparable.isBeforeOrEqualTo(actual1, actual3)).isFalse();
