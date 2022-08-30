@@ -1,8 +1,8 @@
 package com.github.ones1kk.asserts.core.lang.character.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
-import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
+import com.github.ones1kk.asserts.core.feature.comparable.lang.ComparableLanguage;
+import com.github.ones1kk.asserts.core.feature.comparable.lang.impl.ComparableLanguageImpl;
 import com.github.ones1kk.asserts.core.lang.character.CharactersInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 

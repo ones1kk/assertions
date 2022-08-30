@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.feature.comparable.impl;
 
-import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
+import com.github.ones1kk.asserts.core.feature.comparable.lang.ComparableLanguage;
+import com.github.ones1kk.asserts.core.feature.comparable.lang.impl.ComparableLanguageImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

@@ -1,8 +1,8 @@
 package com.github.ones1kk.asserts.core.lang.number.lng.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.feature.comparable.ComparableLanguage;
-import com.github.ones1kk.asserts.core.feature.comparable.impl.ComparableLanguageImpl;
+import com.github.ones1kk.asserts.core.feature.comparable.lang.ComparableLanguage;
+import com.github.ones1kk.asserts.core.feature.comparable.lang.impl.ComparableLanguageImpl;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.number.lng.LongsInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;

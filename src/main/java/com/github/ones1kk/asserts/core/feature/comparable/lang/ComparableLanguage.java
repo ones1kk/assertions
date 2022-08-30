@@ -1,4 +1,4 @@
-package com.github.ones1kk.asserts.core.feature.comparable;
+package com.github.ones1kk.asserts.core.feature.comparable.lang;
 
 public interface ComparableLanguage<ELEMENT extends java.lang.Comparable<ELEMENT>> {
 
