@@ -23,7 +23,6 @@ import com.github.ones1kk.asserts.core.time.localdate.AbstractLocalDateAssert;
 import com.github.ones1kk.asserts.core.time.localdatetime.AbstractLocalDateTimeAssert;
 import com.github.ones1kk.asserts.core.time.month.AbstractMonthAssert;
 import com.github.ones1kk.asserts.core.time.monthday.AbstractMonthDayAssert;
-import com.github.ones1kk.asserts.core.time.temporal.AbstractTemporalAssert;
 import com.github.ones1kk.asserts.core.time.temporal.accessor.AbstractTemporalAccessorAssert;
 import com.github.ones1kk.asserts.core.time.time.AbstractLocalTimeAssert;
 import com.github.ones1kk.asserts.core.time.year.AbstractYearAssert;
@@ -31,7 +30,6 @@ import com.github.ones1kk.asserts.core.time.year.AbstractYearAssert;
 import java.io.File;
 import java.net.URL;
 import java.time.*;
-import java.time.temporal.Temporal;
 import java.time.temporal.TemporalAccessor;
 import java.util.Collection;
 import java.util.List;
@@ -132,10 +130,6 @@ public class Asserts {
     }
 
     public static <ACTUAL extends TemporalAccessor & Comparable<ACTUAL>> AbstractTemporalAccessorAssert<?, ACTUAL> that(ACTUAL actual) {
-        return AssertsForType.that(actual);
-    }
-
-    public static <ACTUAL extends Temporal & Comparable<ACTUAL>> AbstractTemporalAssert<?, ACTUAL> that(ACTUAL actual) {
         return AssertsForType.that(actual);
     }
 

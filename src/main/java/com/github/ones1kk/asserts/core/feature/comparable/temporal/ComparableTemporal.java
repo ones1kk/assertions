@@ -1,8 +1,10 @@
-package com.github.ones1kk.asserts.core.feature.comparable;
+package com.github.ones1kk.asserts.core.feature.comparable.temporal;
 
+import java.time.chrono.ChronoLocalDate;
+import java.time.temporal.Temporal;
 import java.time.temporal.TemporalAccessor;
 
-public interface ComparableTemporal<ELEMENT extends TemporalAccessor & java.lang.Comparable<ELEMENT>> {
+public interface ComparableTemporal<ELEMENT extends Temporal &  Comparable<? extends Temporal>> {
 
 
     boolean isEqualTo(ELEMENT actual, ELEMENT expected);
