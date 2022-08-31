@@ -62,7 +62,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * <strong> The AssertsForType class has the role of passing the values of Type type that are entered for Assertion to each Assert. </strong>
+ *
+ * <p> The role of declaration referring to the <b>SRP(Single Responsibility Principle)</b>
+ * is designed by separating the Assert class and the AbstractAssert class to perform the actual assertion.</p>
+ *
+ */
 public class AssertsForType {
+
+    /******************************* java.lang *******************************/
 
     public static AbstractObjectAssert<?, Object> that(Object actual) {
         return new ObjectAssert(actual);
@@ -128,9 +137,13 @@ public class AssertsForType {
         return new ArrayAssert<>(actual);
     }
 
+    /******************************* java.io *******************************/
+
     public static AbstractFileAssert<?> that(File actual) {
         return new FileAssert(actual);
     }
+
+    /******************************* java.collection *******************************/
 
     public static <ELEMENT> AbstractCollectionAssert<?, ELEMENT> that(Collection<ELEMENT> actual) {
         return new CollectionAssert<>(actual);
@@ -148,9 +161,13 @@ public class AssertsForType {
         return new MapAssert<>(actual);
     }
 
+    /******************************* java.net *******************************/
+
     public static AbstractUrlAssert<?> that(URL actual) {
         return new UrlAssert(actual);
     }
+
+    /******************************* java.time *******************************/
 
     public static <ACTUAL extends TemporalAccessor & Comparable<ACTUAL>> AbstractTemporalAccessorAssert<?, ACTUAL> that(ACTUAL actual) {
         return new TemporalAccessorAssert<>(actual);
