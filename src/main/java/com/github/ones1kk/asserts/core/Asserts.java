@@ -60,6 +60,7 @@ import java.util.Set;
  * <p> Each Assert class is resolved as a generic type called '{@code SELF}', and the actual Assertions value is resolved as a generic type of '{@code ACTUAL}'. </p>
  *
  * <p> The idea of this library and the structure leading to the AbstractAssert class referenced the <b>AssertJ API</b>.</p>
+ *
  * @see <a href="https://assertj.github.io/doc/">AssertJ API document</a>
  */
 public class Asserts {
