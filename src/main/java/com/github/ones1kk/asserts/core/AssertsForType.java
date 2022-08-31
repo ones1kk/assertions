@@ -67,7 +67,6 @@ import java.util.Set;
  *
  * <p> The role of declaration referring to the <b>SRP(Single Responsibility Principle)</b>
  * is designed by separating the Assert class and the AbstractAssert class to perform the actual assertion.</p>
- *
  */
 public class AssertsForType {
 
