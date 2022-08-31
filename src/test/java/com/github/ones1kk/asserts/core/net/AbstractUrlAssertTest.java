@@ -61,7 +61,7 @@ class AbstractUrlAssertTest {
         assertThat(actual1.getPath()).isEmpty();
 
         assert1.hasHost("www.google.com");
-        assert1.doesNotHavePort();
+        assert1.hasPort(443);
         assert1.doesNotHavePath();
     }
 }

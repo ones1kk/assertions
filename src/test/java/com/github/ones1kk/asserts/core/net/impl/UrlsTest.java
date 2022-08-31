@@ -34,9 +34,10 @@ class UrlsTest {
         assertThrows(Exception.class, () -> urls.assertHasPort(actual1, 8080));
         assertThrows(Exception.class, () -> urls.assertHasPath(actual1, "?page=11"));
         assertThrows(Exception.class, () -> urls.assertDoesNotHaveHost(actual1));
+        assertThrows(Exception.class, () -> urls.assertDoesNotHaveHost(actual1));
 
         urls.assertHasHost(actual1, "www.google.com");
-        urls.assertDoesNotHavePort(actual1);
+        urls.assertHasPort(actual1, 443);
         urls.assertDoesNotHavePath(actual1);
     }
 }
