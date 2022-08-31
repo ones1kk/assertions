@@ -51,7 +51,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * <strong> The AssertFactory class is responsible for declaring the corresponding
+ * Assertion implementation according to the actual value.</strong>
+ *
+ * <p> Unlike the class name, because the generic type must be specified directly,
+ * it <b>does not follow</b> the actual <b>Factory design pattern</b>.</p>
+ */
 public final class AssertFactory {
+
+    /******************************* java.lang *******************************/
 
     public Objects<Object> createAssert(Object actual, AsAssert<?> asAssert) {
         return new Objects<>(asAssert);
@@ -121,9 +130,13 @@ public final class AssertFactory {
         return new Arrays<>(asAssert);
     }
 
+    /******************************* java.io *******************************/
+
     public Files createAssert(File actual, AsAssert<?> asAssert) {
         return new Files(asAssert);
     }
+
+    /******************************* java.collection *******************************/
 
     public <ELEMENT> Collections<ELEMENT> createAssert(Collection<? extends ELEMENT> actual, AsAssert<?> asAssert) {
         return new Collections<>(asAssert);
@@ -141,9 +154,13 @@ public final class AssertFactory {
         return new Maps<>(asAssert);
     }
 
+    /******************************* java.net *******************************/
+
     public Urls createAssert(URL actual, AsAssert<?> asAssert) {
         return new Urls(asAssert);
     }
+
+    /******************************* java.time *******************************/
 
     public <ELEMENT extends TemporalAccessor & Comparable<ELEMENT>> TemporalAccessors<ELEMENT> createAssert(TemporalAccessor actual, AsAssert<?> asAssert) {
         return new TemporalAccessors<>(asAssert);
