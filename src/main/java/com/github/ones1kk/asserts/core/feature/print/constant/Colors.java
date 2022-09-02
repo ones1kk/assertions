@@ -21,7 +21,6 @@ package com.github.ones1kk.asserts.core.feature.print.constant;
  * <b>ANSI COLOR CODE</b> to be used when print the result of description.</strong>
  *
  * <p> Use it like this Colors.{@link Colors#getValue()}</p>
- *
  */
 public enum Colors {
 

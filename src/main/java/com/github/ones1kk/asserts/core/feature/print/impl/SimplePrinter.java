@@ -20,7 +20,8 @@ import com.github.ones1kk.asserts.core.feature.print.Printer;
 
 import static com.github.ones1kk.asserts.core.feature.print.constant.Colors.RED;
 
-/**<strong> The SimplePrinter class has been implemented by {@link Printer}.</strong>
+/**
+ * <strong> The SimplePrinter class has been implemented by {@link Printer}.</strong>
  *
  * <p> This class writes the final output of the description.</p>
  * <p> In the way defined as the simple printing way.</p>
@@ -34,6 +35,7 @@ public class SimplePrinter implements Printer {
      * <pre>
      *     <strong>{@code actual}</strong> is expected as <strong>{@code expected}</strong>, but it is not.
      * </pre>
+     *
      * @param actual
      * @param expected
      * @param description
@@ -49,6 +51,7 @@ public class SimplePrinter implements Printer {
      * <pre>
      *     <strong>{@code description}</strong>(actual : <strong>{@code actual}</strong>)
      * </pre>
+     *
      * @param actual
      * @param description
      * @return A formatted string
@@ -63,6 +66,7 @@ public class SimplePrinter implements Printer {
      * <pre>
      *     <strong>{@code description}</strong>
      * </pre>
+     *
      * @param description
      * @return A formatted string
      */
