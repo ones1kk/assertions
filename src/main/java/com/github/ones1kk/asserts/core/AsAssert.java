@@ -21,11 +21,12 @@ import com.github.ones1kk.asserts.core.description.DescriptionHandler;
 import java.util.function.Supplier;
 
 /**
- *<strong> The AsAssert class has been implemented by {@link AsAssertInterface} </strong>
+ * <strong> The AsAssert class has been implemented by {@link AsAssertInterface} </strong>
  *
  * <p> Also, the AsAssert class is the top-level object of the AbstractAssert classes.</p>
  *
  * <p> Receive and cast Assert class as SELF generic type, and receive {@link DescriptionHandler} <b>DI(Dependency Injection)</b></p>
+ *
  * @param <SELF>
  */
 public class AsAssert<SELF> implements AsAssertInterface<SELF> {
