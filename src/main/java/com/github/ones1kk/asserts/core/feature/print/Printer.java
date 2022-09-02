@@ -16,6 +16,10 @@
 
 package com.github.ones1kk.asserts.core.feature.print;
 
+/**
+ *<strong> The Printer class is that outputs of description
+ *  formatted by Describable in a specific form.</strong>
+ */
 public interface Printer {
 
     String writeOutput(Object actual, Object expected, String description);

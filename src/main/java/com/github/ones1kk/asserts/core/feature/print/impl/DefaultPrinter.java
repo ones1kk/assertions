@@ -16,25 +16,59 @@
 
 package com.github.ones1kk.asserts.core.feature.print.impl;
 
+import com.github.ones1kk.asserts.core.description.Describable;
 import com.github.ones1kk.asserts.core.feature.print.Printer;
 
 import static com.github.ones1kk.asserts.core.feature.print.constant.Colors.RED;
 import static com.github.ones1kk.asserts.core.feature.print.constant.Colors.WHITE;
 
+/**<strong> The DefaultPrinter class has been implemented by {@link Printer}.</strong>
+ *
+ * <p> This class writes the final output of the description.</p>
+ * <p> In the way defined as the default printing way.</p>
+ */
 public class DefaultPrinter implements Printer {
 
+    /**
+     * <p> Print expected, actual and description format like below.</p>
+     * <pre>
+     *     Expected    : expected
+     *     Actual      : actual
+     *     Description : description
+     * </pre>
+     * @param actual
+     * @param expected
+     * @param description
+     * @return A formatted string
+     */
     @Override
     public String writeOutput(Object actual, Object expected, String description) {
         return String.format("%n%sExpected    : %s %n%sActual      : %s%n%sDescription : %s",
                 WHITE.getValue(), RED.getValue() + expected, WHITE.getValue(), RED.getValue() + actual, WHITE.getValue(), RED.getValue() + description);
     }
 
+    /**<p> Print actual and description format like below.</p>
+     * <pre>
+     *     Actual      : actual
+     *     Description : description
+     * </pre>
+     * @param actual
+     * @param description
+     * @return A formatted string
+     */
     @Override
     public String writeOutput(Object actual, String description) {
         return String.format("%n%sActual      : %s%n%sDescription : %s", WHITE.getValue(), RED.getValue() + actual,
                 WHITE.getValue(), RED.getValue() + description);
     }
 
+    /**<p> Print only description format like below.</p>
+     * <pre>
+     *     Description : description
+     * </pre>
+     * @param description
+     * @return A formatted string
+     */
     @Override
     public String writeOutput(String description) {
         return String.format("%n%sDescription : %s", WHITE.getValue(), RED.getValue() + description);
