@@ -18,6 +18,14 @@ package com.github.ones1kk.asserts.core;
 
 import java.util.function.Supplier;
 
+/**
+ * <strong> The asAssertInterface is a class for the as method. <strong>
+ *
+ * <p> The as method helps to output as a user-defined phrase when the condition of the assertion being used is not met.</p>
+ *
+ * <p> The one of arguments of as method is {@link  Supplier<String>} and {@link String} for <b>description</b></p>
+ * @param <SELF>
+ */
 public interface AsAssertInterface<SELF> {
 
     SELF as(Supplier<String> description, Object... args);
