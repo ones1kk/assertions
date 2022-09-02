@@ -44,7 +44,20 @@ class DescriptionTest {
 
         assertThrows(AssertException.class, () -> describable.as(case2, "this"));
         assertThrows(AssertException.class, () -> describable.as(case3, "this"));
+    }
 
+    @Test
+    @DisplayName("%s Character test")
+    public void test3() throws Exception {
+        // given
+        Describable describable = new Description();
+
+        // when
+        String description = "description is {}, %s";
+        String description2 = "description is {}";
+
+        // then
+        assertThrows(AssertException.class, () -> describable.as(description, "describable"));
     }
 
 }
