@@ -22,19 +22,85 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.function.Supplier;
 
+
+/**
+ * <strong> The Description class has been implemented by {@link Describable}.</strong>
+ *
+ * <p> What this class does is format the description to be usable in an internal way and make validity judgments on the description and the arguments. </p>
+ */
 public class Description implements Describable {
 
-    private static final String REG_EXR = "Special characters can not be inserted between strings.";
+    private static final String REG_EXR = "Special character '%s' can not be inserted between strings.";
 
     private static final String ARGUMENT_DESCRIPTION = "Argument is missing.";
 
     private static final String ARGUMENTS_EXPRESSION_WITH_BRACE = "Arguments only can be expressed in braces.";
 
+    /**
+     * <p> The description of the assertion is defined by the user. </p>
+     *
+     * <p> Also, this method uses {@link String#format(String, Object...)}, {@link String#replace(char, char)} internally.</p>
+     *
+     * <p>How to use</p>
+     * <pre>
+     *     as(() -> "description is {}", argument);
+     *
+     *     as("description is {}", argument);
+     * </pre>
+     *
+     * <p> Below is some cases where an {@link AssertException} is thrown. </p>
+     *
+     * <pre>
+     *     Case1
+     *     Description never be allowed to contain Special character '%s'.
+     *
+     *     Case2
+     *     Description contains '{}' but arguments are empty.
+     *
+     *     Case3
+     *     Arguments are not empty but description contains braces('{}').
+     *
+     * </pre>
+     *
+     * @param supplier
+     * @param args
+     * @return A formatted string
+     */
     @Override
     public String as(Supplier<String> supplier, Object... args) {
         return getFormattingDescription(supplier.get(), args);
     }
 
+    /**
+     * <p> The description of the assertion is defined by the user. </p>
+     *
+     * <p> Also, this method uses {@link String#format(String, Object...)}, {@link String#replace(char, char)} internally.</p>
+     *
+     * <p>How to use</p>
+     * <pre>
+     *     as(() -> "description is {}", argument);
+     *
+     *     as("description is {}", argument);
+     * </pre>
+     *
+     * <p> Below is some cases where an {@link AssertException} is thrown. </p>
+     *
+     * <pre>
+     *     Case1
+     *     Description never be allowed to contain Special character '%s'.
+     *
+     *     Case2
+     *     Description contains '{}' but arguments are empty.
+     *
+     *     Case3
+     *     Arguments are not empty but description contains braces('{}').
+     *
+     * </pre>
+     *
+     * @param description
+     * @param args
+     * @return A formatted string
+     */
     @Override
     public String as(String description, Object... args) {
         return getFormattingDescription(description, args);
