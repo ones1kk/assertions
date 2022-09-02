@@ -18,6 +18,13 @@ package com.github.ones1kk.asserts.core.description;
 
 import java.util.function.Supplier;
 
+/**
+ * <strong> The Describable is made for that users can conveniently use it when using the as method.</strong>
+ *
+ * <p> The Describable class is made for {@link com.github.ones1kk.asserts.core.AsAssert} class</p>
+ *
+ * <p> This class handle description and arguments for transforming the way the user uses it to the way it behaves internally.</p>
+ */
 public interface Describable {
 
     String as(Supplier<String> description, Object... args);
