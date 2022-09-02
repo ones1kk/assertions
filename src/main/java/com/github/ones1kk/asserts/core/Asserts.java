@@ -63,7 +63,7 @@ import java.util.Set;
  *
  * @see <a href="https://assertj.github.io/doc/">AssertJ API document</a>
  */
-public class Asserts {
+public final class Asserts {
 
     /**
      * For the stable operation of the library, construct is limited to private for a certain period of time.
