@@ -14,13 +14,15 @@
  * limitations under the License.
  */
 
-package com.github.ones1kk.asserts.core.lang.model;
+package com.github.ones1kk.asserts.core.lang.number;
 
-import com.github.ones1kk.asserts.core.lang.number.bte.AbstractByteAssertAssert;
+public interface IntegerTypeAssertInterface<SELF> {
 
-public class ByteAssertAssert extends AbstractByteAssertAssert<ByteAssertAssert, Byte> {
+    SELF isOdd();
 
-    public ByteAssertAssert(Byte actual) {
-        super(ByteAssertAssert.class, actual);
-    }
+    SELF isNotOdd();
+
+    SELF isEven();
+
+    SELF isNotEven();
 }

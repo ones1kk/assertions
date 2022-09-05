@@ -16,11 +16,11 @@
 
 package com.github.ones1kk.asserts.core.lang.model;
 
-import com.github.ones1kk.asserts.core.lang.number.shrt.AbstractShortAssertAssert;
+import com.github.ones1kk.asserts.core.lang.number.lng.AbstractLongAssert;
 
-public class ShortAssertAssert extends AbstractShortAssertAssert<ShortAssertAssert, Short> {
+public class LongAssert extends AbstractLongAssert<LongAssert, Long> {
 
-    public ShortAssertAssert(Short actual) {
-        super(ShortAssertAssert.class, actual);
+    public LongAssert(Long actual) {
+        super(LongAssert.class, actual);
     }
 }

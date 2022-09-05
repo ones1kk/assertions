@@ -14,11 +14,13 @@
  * limitations under the License.
  */
 
-package com.github.ones1kk.asserts.core.lang.number.lng;
+package com.github.ones1kk.asserts.core.lang.model;
 
-import com.github.ones1kk.asserts.core.feature.comparable.ComparableAssert;
-import com.github.ones1kk.asserts.core.feature.number.NumerableAssert;
-import com.github.ones1kk.asserts.core.lang.number.IntegerTypeAssertAssertInterface;
+import com.github.ones1kk.asserts.core.lang.number.bte.AbstractByteAssert;
 
-public interface LongAssertAssertInterface<SELF> extends IntegerTypeAssertAssertInterface<SELF>, NumerableAssert<SELF, Long>, ComparableAssert<SELF, Long> {
+public class ByteAssert extends AbstractByteAssert<ByteAssert, Byte> {
+
+    public ByteAssert(Byte actual) {
+        super(ByteAssert.class, actual);
+    }
 }

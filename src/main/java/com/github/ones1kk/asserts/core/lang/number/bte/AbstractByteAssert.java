@@ -14,119 +14,119 @@
  * limitations under the License.
  */
 
-package com.github.ones1kk.asserts.core.lang.number.shrt;
+package com.github.ones1kk.asserts.core.lang.number.bte;
 
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
-public class AbstractShortAssertAssert<SELF extends AbstractShortAssertAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Short> implements ShortAssertAssertInterface<SELF> {
+public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Byte> implements ByteAssertInterface<SELF> {
 
-    private final ShortsInterface<Short> shorts;
+    private final BytesInterface<Byte> bytes;
 
-    public AbstractShortAssertAssert(Class<?> self, Short actual) {
+    public AbstractByteAssert(Class<?> self, Byte actual) {
         super(self, actual);
-        this.shorts = assertFactory.createAssert(actual, this);
+        this.bytes = assertFactory.createAssert(actual, this);
     }
 
     @Override
     public SELF isOdd() {
-        shorts.assertIsOdd(actual);
+        bytes.assertIsOdd(actual);
         return self;
     }
 
     @Override
     public SELF isNotOdd() {
-        shorts.assertIsNotOdd(actual);
+        bytes.assertIsNotOdd(actual);
         return self;
     }
 
     @Override
     public SELF isEven() {
-        shorts.assertIsEven(actual);
+        bytes.assertIsEven(actual);
         return self;
     }
 
     @Override
     public SELF isNotEven() {
-        shorts.assertIsNotEven(actual);
+        bytes.assertIsNotEven(actual);
         return self;
     }
 
     @Override
-    public SELF isLessThan(Short expected) {
-        shorts.assertIsLessThan(actual, expected);
+    public SELF isLessThan(Byte expected) {
+        bytes.assertIsLessThan(actual, expected);
         return self;
     }
 
     @Override
-    public SELF isLessThanOrEqualTo(Short expected) {
-        shorts.assertIsLessThanOrEqualTo(actual, expected);
+    public SELF isLessThanOrEqualTo(Byte expected) {
+        bytes.assertIsLessThanOrEqualTo(actual, expected);
         return self;
     }
 
     @Override
-    public SELF isGreaterThan(Short expected) {
-        shorts.assertIsGreaterThan(actual, expected);
+    public SELF isGreaterThan(Byte expected) {
+        bytes.assertIsGreaterThan(actual, expected);
         return self;
     }
 
     @Override
-    public SELF isGreaterThanOrEqualTo(Short expected) {
-        shorts.assertIsGreaterThanOrEqualTo(actual, expected);
+    public SELF isGreaterThanOrEqualTo(Byte expected) {
+        bytes.assertIsGreaterThanOrEqualTo(actual, expected);
         return self;
     }
 
     @Override
-    public SELF isBetween(Short start, Short end) {
-        shorts.assertIsBetween(actual, start, end);
+    public SELF isBetween(Byte start, Byte end) {
+        bytes.assertIsBetween(actual, start, end);
         return self;
     }
 
     @Override
     public SELF isPositive() {
-        shorts.assertIsPositive(actual);
+        bytes.assertIsPositive(actual);
         return self;
     }
 
     @Override
     public SELF isNotPositive() {
-        shorts.assertIsNotPositive(actual);
+        bytes.assertIsNotPositive(actual);
         return self;
     }
 
     @Override
     public SELF isNegative() {
-        shorts.assertIsNegative(actual);
+        bytes.assertIsNegative(actual);
         return self;
     }
 
     @Override
     public SELF isNotNegative() {
-        shorts.assertIsNotNegative(actual);
+        bytes.assertIsNotNegative(actual);
         return self;
     }
 
     @Override
     public SELF isZero() {
-        shorts.assertIsZero(actual);
+        bytes.assertIsZero(actual);
         return self;
     }
 
     @Override
     public SELF isNotZero() {
-        shorts.assertIsNotZero(actual);
+        bytes.assertIsNotZero(actual);
         return self;
     }
 
     @Override
-    public SELF isCloseTo(Short expected, Double percentage) {
-        shorts.assertIsCloseTo(actual, expected, Percentage.of(percentage));
+    public SELF isCloseTo(Byte expected, Double percentage) {
+        bytes.assertIsCloseTo(actual, expected, Percentage.of(percentage));
         return self;
     }
 
     @Override
-    public SELF isNotCloseTo(Short expected, Double percentage) {
-        shorts.assertIsNotCloseTo(actual, expected, Percentage.of(percentage));
+    public SELF isNotCloseTo(Byte expected, Double percentage) {
+        bytes.assertIsNotCloseTo(actual, expected, Percentage.of(percentage));
         return self;
     }
 }

@@ -16,8 +16,8 @@ class AbstractIntegerAssertTest {
         Integer actual2 = null;
 
         // when
-        AbstractIntegerAssertAssert<?, Integer> assert1 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual1);
-        AbstractIntegerAssertAssert<?, Integer> assert2 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual2);
+        AbstractIntegerAssert<?, Integer> assert1 = new AbstractIntegerAssert<>(AbstractIntegerAssert.class, actual1);
+        AbstractIntegerAssert<?, Integer> assert2 = new AbstractIntegerAssert<>(AbstractIntegerAssert.class, actual2);
 
         // then
         assertThrows(AssertException.class, assert1::isNull);
@@ -26,7 +26,7 @@ class AbstractIntegerAssertTest {
         assertThrows(AssertException.class, () -> assert1.isNotSameAs(actual1));
         assertThrows(AssertException.class, () -> assert1.isEqualTo(assert1));
         assertThrows(AssertException.class, () -> assert1.isNotEqualTo(actual1));
-        assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractIntegerAssertAssert.class));
+        assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractIntegerAssert.class));
         assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(Integer.class));
 
         assert2.isNull();
@@ -36,7 +36,7 @@ class AbstractIntegerAssertTest {
         assert1.isEqualTo(actual1);
         assert1.isNotEqualTo(assert1);
         assert1.isAssignableFrom(Integer.class);
-        assert1.isNotAssignableFrom(AbstractIntegerAssertAssert.class);
+        assert1.isNotAssignableFrom(AbstractIntegerAssert.class);
     }
 
     @Test
@@ -49,10 +49,10 @@ class AbstractIntegerAssertTest {
         Integer actual4 = 2;
 
         // when
-        AbstractIntegerAssertAssert<?, Integer> assert1 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual1);
-        AbstractIntegerAssertAssert<?, Integer> assert2 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual2);
-        AbstractIntegerAssertAssert<?, Integer> assert3 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual3);
-        AbstractIntegerAssertAssert<?, Integer> assert4 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual4);
+        AbstractIntegerAssert<?, Integer> assert1 = new AbstractIntegerAssert<>(AbstractIntegerAssert.class, actual1);
+        AbstractIntegerAssert<?, Integer> assert2 = new AbstractIntegerAssert<>(AbstractIntegerAssert.class, actual2);
+        AbstractIntegerAssert<?, Integer> assert3 = new AbstractIntegerAssert<>(AbstractIntegerAssert.class, actual3);
+        AbstractIntegerAssert<?, Integer> assert4 = new AbstractIntegerAssert<>(AbstractIntegerAssert.class, actual4);
 
         // then
         assertThrows(AssertException.class, assert4::isOdd);
@@ -95,9 +95,9 @@ class AbstractIntegerAssertTest {
         Integer expected3 = 3;
 
         // when
-        AbstractIntegerAssertAssert<?, Integer> assert1 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual1);
-        AbstractIntegerAssertAssert<?, Integer> assert2 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual2);
-        AbstractIntegerAssertAssert<?, Integer> assert3 = new AbstractIntegerAssertAssert<>(AbstractIntegerAssertAssert.class, actual3);
+        AbstractIntegerAssert<?, Integer> assert1 = new AbstractIntegerAssert<>(AbstractIntegerAssert.class, actual1);
+        AbstractIntegerAssert<?, Integer> assert2 = new AbstractIntegerAssert<>(AbstractIntegerAssert.class, actual2);
+        AbstractIntegerAssert<?, Integer> assert3 = new AbstractIntegerAssert<>(AbstractIntegerAssert.class, actual3);
 
         // then
         // actual > expected

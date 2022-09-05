@@ -19,11 +19,11 @@ package com.github.ones1kk.asserts.core.lang.number.integer;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
-public class AbstractIntegerAssertAssert<SELF extends AbstractIntegerAssertAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Integer> implements IntegerAssertAssertInterface<SELF> {
+public class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Integer> implements IntegerAssertInterface<SELF> {
 
     private final IntegersInterface<Integer> integers;
 
-    public AbstractIntegerAssertAssert(Class<?> self, Integer actual) {
+    public AbstractIntegerAssert(Class<?> self, Integer actual) {
         super(self, actual);
         this.integers = assertFactory.createAssert(actual, this);
     }

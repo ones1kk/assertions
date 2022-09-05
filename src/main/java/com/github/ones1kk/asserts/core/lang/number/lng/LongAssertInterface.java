@@ -14,15 +14,11 @@
  * limitations under the License.
  */
 
-package com.github.ones1kk.asserts.core.lang.number;
+package com.github.ones1kk.asserts.core.lang.number.lng;
 
-public interface IntegerTypeAssertAssertInterface<SELF> {
+import com.github.ones1kk.asserts.core.feature.comparable.ComparableAssert;
+import com.github.ones1kk.asserts.core.feature.number.NumerableAssert;
+import com.github.ones1kk.asserts.core.lang.number.IntegerTypeAssertInterface;
 
-    SELF isOdd();
-
-    SELF isNotOdd();
-
-    SELF isEven();
-
-    SELF isNotEven();
+public interface LongAssertInterface<SELF> extends IntegerTypeAssertInterface<SELF>, NumerableAssert<SELF, Long>, ComparableAssert<SELF, Long> {
 }

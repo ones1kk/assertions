@@ -19,11 +19,11 @@ package com.github.ones1kk.asserts.core.lang.number.lng;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
-public class AbstractLongAssertAssert<SELF extends AbstractLongAssertAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Long> implements LongAssertAssertInterface<SELF> {
+public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Long> implements LongAssertInterface<SELF> {
 
     private final LongsInterface<Long> longs;
 
-    public AbstractLongAssertAssert(Class<?> self, Long actual) {
+    public AbstractLongAssert(Class<?> self, Long actual) {
         super(self, actual);
         this.longs = assertFactory.createAssert(actual, this);
     }

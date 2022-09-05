@@ -16,8 +16,8 @@ class AbstractShortAssertTest {
         Short actual2 = null;
 
         // when
-        AbstractShortAssertAssert<?, Short> assert1 = new AbstractShortAssertAssert<>(AbstractShortAssertAssert.class, actual1);
-        AbstractShortAssertAssert<?, Short> assert2 = new AbstractShortAssertAssert<>(AbstractShortAssertAssert.class, actual2);
+        AbstractShortAssert<?, Short> assert1 = new AbstractShortAssert<>(AbstractShortAssert.class, actual1);
+        AbstractShortAssert<?, Short> assert2 = new AbstractShortAssert<>(AbstractShortAssert.class, actual2);
 
         // then
         assertThrows(AssertException.class, assert1::isNull);
@@ -26,7 +26,7 @@ class AbstractShortAssertTest {
         assertThrows(AssertException.class, () -> assert1.isNotSameAs(actual1));
         assertThrows(AssertException.class, () -> assert1.isEqualTo(assert1));
         assertThrows(AssertException.class, () -> assert1.isNotEqualTo(actual1));
-        assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractShortAssertAssert.class));
+        assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractShortAssert.class));
         assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(Short.class));
 
         assert2.isNull();
@@ -36,7 +36,7 @@ class AbstractShortAssertTest {
         assert1.isEqualTo(actual1);
         assert1.isNotEqualTo(assert1);
         assert1.isAssignableFrom(Short.class);
-        assert1.isNotAssignableFrom(AbstractShortAssertAssert.class);
+        assert1.isNotAssignableFrom(AbstractShortAssert.class);
     }
 
     @Test
@@ -49,10 +49,10 @@ class AbstractShortAssertTest {
         Short actual4 = 2;
 
         // when
-        AbstractShortAssertAssert<?, Short> assert1 = new AbstractShortAssertAssert<>(AbstractShortAssertAssert.class, actual1);
-        AbstractShortAssertAssert<?, Short> assert2 = new AbstractShortAssertAssert<>(AbstractShortAssertAssert.class, actual2);
-        AbstractShortAssertAssert<?, Short> assert3 = new AbstractShortAssertAssert<>(AbstractShortAssertAssert.class, actual3);
-        AbstractShortAssertAssert<?, Short> assert4 = new AbstractShortAssertAssert<>(AbstractShortAssertAssert.class, actual4);
+        AbstractShortAssert<?, Short> assert1 = new AbstractShortAssert<>(AbstractShortAssert.class, actual1);
+        AbstractShortAssert<?, Short> assert2 = new AbstractShortAssert<>(AbstractShortAssert.class, actual2);
+        AbstractShortAssert<?, Short> assert3 = new AbstractShortAssert<>(AbstractShortAssert.class, actual3);
+        AbstractShortAssert<?, Short> assert4 = new AbstractShortAssert<>(AbstractShortAssert.class, actual4);
 
         // then
         assertThrows(AssertException.class, assert4::isOdd);
@@ -96,9 +96,9 @@ class AbstractShortAssertTest {
         Short expected3 = (short) 3;
 
         // when
-        AbstractShortAssertAssert<?, Short> assert1 = new AbstractShortAssertAssert<>(AbstractShortAssertAssert.class, actual1);
-        AbstractShortAssertAssert<?, Short> assert2 = new AbstractShortAssertAssert<>(AbstractShortAssertAssert.class, actual2);
-        AbstractShortAssertAssert<?, Short> assert3 = new AbstractShortAssertAssert<>(AbstractShortAssertAssert.class, actual3);
+        AbstractShortAssert<?, Short> assert1 = new AbstractShortAssert<>(AbstractShortAssert.class, actual1);
+        AbstractShortAssert<?, Short> assert2 = new AbstractShortAssert<>(AbstractShortAssert.class, actual2);
+        AbstractShortAssert<?, Short> assert3 = new AbstractShortAssert<>(AbstractShortAssert.class, actual3);
 
         // then
         // actual > expected

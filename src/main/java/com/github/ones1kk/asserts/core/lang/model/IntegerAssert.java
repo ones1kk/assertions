@@ -16,11 +16,11 @@
 
 package com.github.ones1kk.asserts.core.lang.model;
 
-import com.github.ones1kk.asserts.core.lang.number.integer.AbstractIntegerAssertAssert;
+import com.github.ones1kk.asserts.core.lang.number.integer.AbstractIntegerAssert;
 
-public class IntegerAssertAssert extends AbstractIntegerAssertAssert<IntegerAssertAssert, Integer> {
+public class IntegerAssert extends AbstractIntegerAssert<IntegerAssert, Integer> {
 
-    public IntegerAssertAssert(Integer actual) {
-        super(IntegerAssertAssert.class, actual);
+    public IntegerAssert(Integer actual) {
+        super(IntegerAssert.class, actual);
     }
 }

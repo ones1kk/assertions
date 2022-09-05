@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.github.ones1kk.asserts.core.lang.number.shrt;
+package com.github.ones1kk.asserts.core.lang.number.integer;
 
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableAssert;
 import com.github.ones1kk.asserts.core.feature.number.NumerableAssert;
-import com.github.ones1kk.asserts.core.lang.number.IntegerTypeAssertAssertInterface;
+import com.github.ones1kk.asserts.core.lang.number.IntegerTypeAssertInterface;
 
-public interface ShortAssertAssertInterface<SELF> extends IntegerTypeAssertAssertInterface<SELF>, NumerableAssert<SELF, Short>, ComparableAssert<SELF, Short> {
+public interface IntegerAssertInterface<SELF> extends IntegerTypeAssertInterface<SELF>, NumerableAssert<SELF, Integer>, ComparableAssert<SELF, Integer> {
 }

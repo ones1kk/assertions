@@ -34,12 +34,12 @@ import com.github.ones1kk.asserts.core.lang.bolean.AbstractBooleanAssert;
 import com.github.ones1kk.asserts.core.lang.character.AbstractCharacterAssert;
 import com.github.ones1kk.asserts.core.lang.charsequence.AbstractCharSequenceAssert;
 import com.github.ones1kk.asserts.core.lang.model.*;
-import com.github.ones1kk.asserts.core.lang.number.bte.AbstractByteAssertAssert;
+import com.github.ones1kk.asserts.core.lang.number.bte.AbstractByteAssert;
 import com.github.ones1kk.asserts.core.lang.number.duble.AbstractDoubleAssert;
 import com.github.ones1kk.asserts.core.lang.number.flot.AbstractFloatAssert;
-import com.github.ones1kk.asserts.core.lang.number.integer.AbstractIntegerAssertAssert;
-import com.github.ones1kk.asserts.core.lang.number.lng.AbstractLongAssertAssert;
-import com.github.ones1kk.asserts.core.lang.number.shrt.AbstractShortAssertAssert;
+import com.github.ones1kk.asserts.core.lang.number.integer.AbstractIntegerAssert;
+import com.github.ones1kk.asserts.core.lang.number.lng.AbstractLongAssert;
+import com.github.ones1kk.asserts.core.lang.number.shrt.AbstractShortAssert;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 import com.github.ones1kk.asserts.core.lang.string.AbstractStringAssert;
 import com.github.ones1kk.asserts.core.net.AbstractUrlAssert;
@@ -88,16 +88,16 @@ public final class AssertsForType {
         return new CharacterAssert(actual);
     }
 
-    public static AbstractIntegerAssertAssert<?, Integer> that(Integer actual) {
-        return new IntegerAssertAssert(actual);
+    public static AbstractIntegerAssert<?, Integer> that(Integer actual) {
+        return new IntegerAssert(actual);
     }
 
-    public static AbstractLongAssertAssert<?, Long> that(Long actual) {
-        return new LongAssertAssert(actual);
+    public static AbstractLongAssert<?, Long> that(Long actual) {
+        return new LongAssert(actual);
     }
 
-    public static AbstractShortAssertAssert<?, Short> that(Short actual) {
-        return new ShortAssertAssert(actual);
+    public static AbstractShortAssert<?, Short> that(Short actual) {
+        return new ShortAssert(actual);
     }
 
     public static AbstractDoubleAssert<?, Double> that(Double actual) {
@@ -108,8 +108,8 @@ public final class AssertsForType {
         return new FloatAssert(actual);
     }
 
-    public static AbstractByteAssertAssert<?, Byte> that(Byte actual) {
-        return new ByteAssertAssert(actual);
+    public static AbstractByteAssert<?, Byte> that(Byte actual) {
+        return new ByteAssert(actual);
     }
 
     public static AbstractBooleanAssert<?, Boolean> that(Boolean actual) {
