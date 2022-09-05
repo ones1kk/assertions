@@ -56,7 +56,7 @@ import java.util.Set;
 /**
  * <strong> The AssertFactory class is responsible for declaring the corresponding
  * Assertion implementation according to the actual value.</strong>
- *
+ * <br><br>
  * <p> Unlike the class name, because the generic type must be specified directly,
  * it <b>does not follow</b> the actual <b>Factory design pattern</b>.</p>
  */
@@ -180,7 +180,7 @@ public final class AssertFactory {
         return new LocalDateTimes<>(asAssert);
     }
 
-    /******************************* class *******************************/
+    /******************************* java.lang.class *******************************/
 
     public Classes<Class<?>> createAssert(Class<?> actual, AsAssert<?> asAssert) {
         return new Classes<>(asAssert);

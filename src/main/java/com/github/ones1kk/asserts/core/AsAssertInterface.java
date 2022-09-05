@@ -20,9 +20,9 @@ import java.util.function.Supplier;
 
 /**
  * <strong> The asAssertInterface is a class for the as method. <strong>
- *
+ * <br><br>
  * <p> The as method helps to output as a user-defined phrase when the condition of the assertion being used is not met.</p>
- *
+ * <br>
  * <p> The one of arguments of as method is {@link  Supplier<String>} and {@link String} for <b>description</b></p>
  *
  * @param <SELF>
