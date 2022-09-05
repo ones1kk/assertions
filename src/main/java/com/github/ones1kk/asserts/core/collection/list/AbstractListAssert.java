@@ -61,14 +61,14 @@ public class AbstractListAssert<SELF extends AbstractListAssert<SELF, ACTUAL>, A
     }
 
     @Override
-    @SuppressWarnings("all")
+    @SuppressWarnings("unchecked")
     public SELF containsAll(ACTUAL... expected) {
         lists.assertContainsAll(actual, expected);
         return self;
     }
 
     @Override
-    @SuppressWarnings("all")
+    @SuppressWarnings("unchecked")
     public SELF containsAny(ACTUAL... expected) {
         lists.assertContainsAny(actual, expected);
         return self;

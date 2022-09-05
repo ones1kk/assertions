@@ -27,19 +27,17 @@ public class Booleans extends Objects<Boolean> implements BooleansInterface<Bool
     }
 
     @Override
-    @SuppressWarnings("all")
     public void assertIsFalse(Boolean actual) {
         if (actual) {
-            handler.setDescription(handler.from(actual, "{} is true"));
+            handler.setDescription(handler.from("actual is true"));
             throw handler.getException();
         }
     }
 
     @Override
-    @SuppressWarnings("all")
     public void assertIsTrue(Boolean actual) {
         if (!actual) {
-            handler.setDescription(handler.from(actual, "{} is false"));
+            handler.setDescription(handler.from("actual is false"));
             throw handler.getException();
         }
     }

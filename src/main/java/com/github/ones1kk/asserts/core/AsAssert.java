@@ -35,7 +35,7 @@ public class AsAssert<SELF> implements AsAssertInterface<SELF> {
 
     private final SELF self;
 
-    @SuppressWarnings("all")
+    @SuppressWarnings("unchecked")
     public AsAssert(Class<?> self) {
         this.self = (SELF) self.cast(this);
     }

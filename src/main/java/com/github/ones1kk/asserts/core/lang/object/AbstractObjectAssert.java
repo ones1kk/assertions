@@ -29,7 +29,7 @@ public class AbstractObjectAssert<SELF extends AbstractAssert<SELF, Object>, ACT
 
     protected final AbstractObjects<Object> objects;
 
-    @SuppressWarnings("all")
+    @SuppressWarnings("unchecked")
     public AbstractObjectAssert(Class<?> self, ACTUAL actual) {
         super(self);
         this.self = (SELF) self.cast(this);

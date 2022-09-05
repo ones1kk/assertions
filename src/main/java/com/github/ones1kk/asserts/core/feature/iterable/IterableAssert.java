@@ -30,10 +30,10 @@ public interface IterableAssert<SELF, ELEMENT> {
 
     SELF doesNotContain(ELEMENT expected);
 
-    @SuppressWarnings("all")
+    @SuppressWarnings("unchecked")
     SELF containsAll(ELEMENT... expected);
 
-    @SuppressWarnings("all")
+    @SuppressWarnings("unchecked")
     SELF containsAny(ELEMENT... expected);
 
     SELF containsNull();

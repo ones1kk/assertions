@@ -1,6 +1,5 @@
 package com.github.ones1kk.asserts.core.clazz;
 
-import com.github.ones1kk.asserts.core.Asserts;
 import com.github.ones1kk.asserts.core.lang.model.IntegerAssert;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 

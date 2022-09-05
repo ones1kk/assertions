@@ -16,7 +16,7 @@ public class Classes<ACTUAL extends Class<?>> extends Objects<ACTUAL> implements
 
     @Override
     public void assertIsTypeOf(Class<?> actual, Object expected) {
-        if(!actual.isInstance(expected)) {
+        if (!actual.isInstance(expected)) {
             handler.setDescription(handler.from("The {} is not type of {}", actual, expected));
             throw handler.getException();
         }
@@ -24,7 +24,7 @@ public class Classes<ACTUAL extends Class<?>> extends Objects<ACTUAL> implements
 
     @Override
     public void assertIsNotTypeOf(Class<?> actual, Object expected) {
-        if(actual.isInstance(expected)) {
+        if (actual.isInstance(expected)) {
             handler.setDescription(handler.from("The {} is type of {}", actual, expected));
             throw handler.getException();
         }
@@ -32,7 +32,7 @@ public class Classes<ACTUAL extends Class<?>> extends Objects<ACTUAL> implements
 
     @Override
     public void assertIsSuperclassOf(Class<?> actual, Class<?> expected) {
-        if(actual != expected.getSuperclass()) {
+        if (actual != expected.getSuperclass()) {
             handler.setDescription(handler.from("The {} is not supper class of {}", actual, expected));
             throw handler.getException();
         }
@@ -40,7 +40,7 @@ public class Classes<ACTUAL extends Class<?>> extends Objects<ACTUAL> implements
 
     @Override
     public void assertIsSubclassOf(Class<?> actual, Class<?> expected) {
-        if(actual.getSuperclass() != expected) {
+        if (actual.getSuperclass() != expected) {
             handler.setDescription(handler.from("The {} is not sub class of {}", actual, expected));
             throw handler.getException();
         }
@@ -48,7 +48,7 @@ public class Classes<ACTUAL extends Class<?>> extends Objects<ACTUAL> implements
 
     @Override
     public void assertIsPrimitive(Class<?> actual) {
-        if(!actual.isPrimitive()) {
+        if (!actual.isPrimitive()) {
             handler.setDescription(handler.from("The {} is not primitive", actual));
             throw handler.getException();
         }
@@ -56,7 +56,7 @@ public class Classes<ACTUAL extends Class<?>> extends Objects<ACTUAL> implements
 
     @Override
     public void assertIsInterface(Class<?> actual) {
-        if(!actual.isInterface()) {
+        if (!actual.isInterface()) {
             handler.setDescription(handler.from("The {} is not interface", actual));
             throw handler.getException();
         }
@@ -64,7 +64,7 @@ public class Classes<ACTUAL extends Class<?>> extends Objects<ACTUAL> implements
 
     @Override
     public void assertIsAnnotation(Class<?> actual) {
-        if(!actual.isAnnotation()) {
+        if (!actual.isAnnotation()) {
             handler.setDescription(handler.from("The {} is not annotation", actual));
             throw handler.getException();
         }
@@ -72,7 +72,7 @@ public class Classes<ACTUAL extends Class<?>> extends Objects<ACTUAL> implements
 
     @Override
     public void assertIsFinalClass(Class<?> actual) {
-        if(!Modifier.isFinal(actual.getModifiers())) {
+        if (!Modifier.isFinal(actual.getModifiers())) {
             handler.setDescription(handler.from("The {} is not final class", actual));
             throw handler.getException();
         }
@@ -80,7 +80,7 @@ public class Classes<ACTUAL extends Class<?>> extends Objects<ACTUAL> implements
 
     @Override
     public void assertIsAbstractClass(Class<?> actual) {
-        if(!Modifier.isAbstract(actual.getModifiers())) {
+        if (!Modifier.isAbstract(actual.getModifiers())) {
             handler.setDescription(handler.from("The {} is not abstract class", actual));
             throw handler.getException();
         }
@@ -88,7 +88,7 @@ public class Classes<ACTUAL extends Class<?>> extends Objects<ACTUAL> implements
 
     @Override
     public void assertIsAnonymousClass(Class<?> actual) {
-        if(!actual.isAnonymousClass()) {
+        if (!actual.isAnonymousClass()) {
             handler.setDescription(handler.from("The {} is not anonymous class", actual));
             throw handler.getException();
         }
@@ -96,7 +96,7 @@ public class Classes<ACTUAL extends Class<?>> extends Objects<ACTUAL> implements
 
     @Override
     public void assertIsEnum(Class<?> actual) {
-        if(!actual.isEnum()) {
+        if (!actual.isEnum()) {
             handler.setDescription(handler.from("The {} is not enum", actual));
             throw handler.getException();
         }
@@ -104,7 +104,7 @@ public class Classes<ACTUAL extends Class<?>> extends Objects<ACTUAL> implements
 
     @Override
     public void assertIsArray(Class<?> actual) {
-        if(!actual.isArray()) {
+        if (!actual.isArray()) {
             handler.setDescription(handler.from("The {} is not array", actual));
             throw handler.getException();
         }
@@ -112,7 +112,7 @@ public class Classes<ACTUAL extends Class<?>> extends Objects<ACTUAL> implements
 
     @Override
     public void assertIsMemberClass(Class<?> actual) {
-        if(!actual.isMemberClass()) {
+        if (!actual.isMemberClass()) {
             handler.setDescription(handler.from("The {} is not member class", actual));
             throw handler.getException();
         }
@@ -120,7 +120,7 @@ public class Classes<ACTUAL extends Class<?>> extends Objects<ACTUAL> implements
 
     @Override
     public void assertIsLocalClass(Class<?> actual) {
-        if(!actual.isLocalClass()) {
+        if (!actual.isLocalClass()) {
             handler.setDescription(handler.from("The {} is not local class", actual));
             throw handler.getException();
         }
