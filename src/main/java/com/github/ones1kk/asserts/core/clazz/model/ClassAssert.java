@@ -20,7 +20,7 @@ import com.github.ones1kk.asserts.core.clazz.AbstractClassAssert;
 
 public class ClassAssert extends AbstractClassAssert<ClassAssert> {
 
-    public ClassAssert(Class<?> aClass) {
-        super(ClassAssert.class, aClass);
+    public ClassAssert(Class<?> actual) {
+        super(ClassAssert.class, actual);
     }
 }

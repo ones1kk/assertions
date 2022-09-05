@@ -45,7 +45,7 @@ public class AbstractClassAssert<SELF extends AbstractClassAssert<SELF>> extends
 
     @Override
     public SELF isSuperclassOf(Class<?> expected) {
-        classes.assertIsSubclassOf(actual, expected);
+        classes.assertIsSuperclassOf(actual, expected);
         return self;
     }
 
