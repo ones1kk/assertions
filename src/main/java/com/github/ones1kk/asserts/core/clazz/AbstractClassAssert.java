@@ -1,5 +1,6 @@
 package com.github.ones1kk.asserts.core.clazz;
 
+import com.github.ones1kk.asserts.core.Asserts;
 import com.github.ones1kk.asserts.core.lang.model.IntegerAssert;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
@@ -100,10 +101,29 @@ public class AbstractClassAssert<SELF extends AbstractClassAssert<SELF>> extends
     }
 
     @Override
-    public SELF containsFields(Field[] expected) {
-        classes.assertContainsFields(actual, expected);
+    public SELF containsField(Field expected) {
+        classes.assertContainsField(actual, expected);
         return self;
     }
+
+    @Override
+    public SELF doesNotContainField(Field expected) {
+        classes.assertDoesNotContainField(actual, expected);
+        return self;
+    }
+
+    @Override
+    public SELF containsAllFields(Field... expected) {
+        classes.assertContainsAllFields(actual, expected);
+        return self;
+    }
+
+    @Override
+    public SELF containsAnyFields(Field... expected) {
+        classes.assertContainsAnyFields(actual, expected);
+        return self;
+    }
+
 
     @Override
     public IntegerAssert asFieldsLength() {

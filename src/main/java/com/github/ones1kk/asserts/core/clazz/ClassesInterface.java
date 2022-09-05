@@ -8,8 +8,6 @@ public interface ClassesInterface<ACTUAL extends Class<?>> {
 
     void assertIsNotTypeOf(Class<?> actual, Object expected);
 
-    void assertIsAssignableFrom(Class<?> actual, Class<?> expected);
-
     void assertIsSuperclassOf(Class<?> actual, Class<?> expected);
 
     void assertIsSubclassOf(Class<?> actual, Class<?> expected);
@@ -34,5 +32,11 @@ public interface ClassesInterface<ACTUAL extends Class<?>> {
 
     void assertIsLocalClass(Class<?> actual);
 
-    void assertContainsFields(Class<?> actual, Field[] expected);
+    void assertContainsField(Class<?> actual, Field expected);
+
+    void assertDoesNotContainField(Class<?> actual, Field expected);
+
+    void assertContainsAllFields(Class<?> actual, Field... expected);
+
+    void assertContainsAnyFields(Class<?> actual, Field... expected);
 }

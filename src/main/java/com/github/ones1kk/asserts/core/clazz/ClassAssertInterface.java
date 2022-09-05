@@ -10,8 +10,6 @@ public interface ClassAssertInterface<SELF> {
 
     SELF isNotTypeOf(Object expected);
 
-    SELF isAssignableFrom(Class<?> expected);
-
     SELF isSuperclassOf(Class<?> expected);
 
     SELF isSubclassOf(Class<?> expected);
@@ -36,7 +34,13 @@ public interface ClassAssertInterface<SELF> {
 
     SELF isLocalClass();
 
-    SELF containsFields(Field[] expected);
+    SELF containsField(Field expected);
+
+    SELF doesNotContainField(Field expected);
+
+    SELF containsAllFields(Field... expected);
+
+    SELF containsAnyFields(Field... expected);
 
     IntegerAssert asFieldsLength();
 
