@@ -52,14 +52,13 @@ public class Description implements Describable {
      *
      * <pre>
      *     Case1
-     *     Description never be allowed to contain Special character '%s'.
+     *     Description contains special character '%s'.
      *
      *     Case2
      *     Description contains '{}' but arguments are empty.
      *
      *     Case3
      *     Arguments are not empty but description contains braces('{}').
-     *
      * </pre>
      *
      * @param supplier
@@ -87,14 +86,13 @@ public class Description implements Describable {
      *
      * <pre>
      *     Case1
-     *     Description never be allowed to contain Special character '%s'.
+     *     Description contains special character '%s'.
      *
      *     Case2
      *     Description contains '{}' but arguments are empty.
      *
      *     Case3
      *     Arguments are not empty but description contains braces('{}').
-     *
      * </pre>
      *
      * @param description
