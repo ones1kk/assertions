@@ -18,6 +18,8 @@ package com.github.ones1kk.asserts.core;
 
 import com.github.ones1kk.asserts.core.array.AbstractArrayAssert;
 import com.github.ones1kk.asserts.core.array.number.AbstractNumberArrayAssert;
+import com.github.ones1kk.asserts.core.clazz.AbstractClassAssert;
+import com.github.ones1kk.asserts.core.clazz.enumtype.AbstractEnumAssert;
 import com.github.ones1kk.asserts.core.collection.AbstractCollectionAssert;
 import com.github.ones1kk.asserts.core.collection.list.AbstractListAssert;
 import com.github.ones1kk.asserts.core.collection.map.AbstractMapAssert;
