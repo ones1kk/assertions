@@ -30,8 +30,8 @@ class ArraysTest {
         Arrays<Character> arrays3 = new Arrays<>(asAssert);
 
         // when
-        CharSequence[] actual1 = {"1", "2"};
-        String[] actual2 = {"1", "2"};
+        CharSequence[] actual1 = {"1", "2" };
+        String[] actual2 = {"1", "2" };
         Character[] actual3 = {'1', '2'};
 
         // then
@@ -68,8 +68,8 @@ class ArraysTest {
         assertThrows(Exception.class, () -> arrays2.assertContainsNull(actual2));
         assertThrows(Exception.class, () -> arrays3.assertContainsNull(actual3));
 
-        assertThrows(Exception.class, () -> arrays1.assertDoesNotContainNull(new CharSequence[]{"A", "1", null, "123"}));
-        assertThrows(Exception.class, () -> arrays2.assertDoesNotContainNull(new String[]{"A", "1", null, "123"}));
+        assertThrows(Exception.class, () -> arrays1.assertDoesNotContainNull(new CharSequence[]{"A", "1", null, "123" }));
+        assertThrows(Exception.class, () -> arrays2.assertDoesNotContainNull(new String[]{"A", "1", null, "123" }));
         assertThrows(Exception.class, () -> arrays3.assertDoesNotContainNull(new Character[]{null, '1', 'a'}));
 
         assertThrows(Exception.class, () -> arrays1.assertAllMatch(actual1, Objects::isNull));
@@ -119,8 +119,8 @@ class ArraysTest {
         arrays2.assertContainsAny(actual2, "1", "2");
         arrays3.assertContainsAny(actual3, '1', '2');
 
-        arrays1.assertContainsNull(new CharSequence[]{"A", "1", null, "123"});
-        arrays2.assertContainsNull(new String[]{"A", "1", null, "123"});
+        arrays1.assertContainsNull(new CharSequence[]{"A", "1", null, "123" });
+        arrays2.assertContainsNull(new String[]{"A", "1", null, "123" });
         arrays3.assertContainsNull(new Character[]{null, '1', 'a'});
 
 

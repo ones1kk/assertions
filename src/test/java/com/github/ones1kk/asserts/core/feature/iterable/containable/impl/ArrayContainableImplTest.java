@@ -13,7 +13,7 @@ class ArrayContainableImplTest {
     @DisplayName("Method test(CharSequence)")
     public void test1() throws Exception {
         ArrayContainable<CharSequence> arrayContainable = new ArrayContainableImpl<>();
-        CharSequence[] actual = {"a", "b", "c", "d"};
+        CharSequence[] actual = {"a", "b", "c", "d" };
 
         assertThat(arrayContainable.contains(actual, "a")).isTrue();
         assertThat(arrayContainable.contains(actual, "e")).isFalse();
@@ -42,17 +42,17 @@ class ArrayContainableImplTest {
         assertThat(arrayContainable.doseNotContainAny(actual, "z", "a", "x")).isFalse();
 
         assertThat(arrayContainable.containsNull(actual)).isFalse();
-        assertThat(arrayContainable.containsNull(new CharSequence[]{"a", null, "b", "c"})).isTrue();
+        assertThat(arrayContainable.containsNull(new CharSequence[]{"a", null, "b", "c" })).isTrue();
 
         assertThat(arrayContainable.doesNotContainNull(actual)).isTrue();
-        assertThat(arrayContainable.doesNotContainNull(new CharSequence[]{"a", null, "b", "c"})).isFalse();
+        assertThat(arrayContainable.doesNotContainNull(new CharSequence[]{"a", null, "b", "c" })).isFalse();
     }
 
     @Test
     @DisplayName("Method test(String)")
     public void test2() throws Exception {
         ArrayContainable<String> arrayContainable = new ArrayContainableImpl<>();
-        String[] actual = {"a", "b", "c", "d"};
+        String[] actual = {"a", "b", "c", "d" };
 
         assertThat(arrayContainable.contains(actual, "a")).isTrue();
         assertThat(arrayContainable.contains(actual, "e")).isFalse();
@@ -81,10 +81,10 @@ class ArrayContainableImplTest {
         assertThat(arrayContainable.doseNotContainAny(actual, "z", "a", "x")).isFalse();
 
         assertThat(arrayContainable.containsNull(actual)).isFalse();
-        assertThat(arrayContainable.containsNull(new String[]{"a", null, "b", "c"})).isTrue();
+        assertThat(arrayContainable.containsNull(new String[]{"a", null, "b", "c" })).isTrue();
 
         assertThat(arrayContainable.doesNotContainNull(actual)).isTrue();
-        assertThat(arrayContainable.doesNotContainNull(new String[]{"a", null, "b", "c"})).isFalse();
+        assertThat(arrayContainable.doesNotContainNull(new String[]{"a", null, "b", "c" })).isFalse();
     }
 
     @Test
