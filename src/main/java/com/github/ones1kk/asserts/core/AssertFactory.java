@@ -18,6 +18,7 @@ package com.github.ones1kk.asserts.core;
 
 import com.github.ones1kk.asserts.core.array.impl.Arrays;
 import com.github.ones1kk.asserts.core.array.number.impl.NumberArrays;
+import com.github.ones1kk.asserts.core.clazz.impl.Classes;
 import com.github.ones1kk.asserts.core.collection.impl.Collections;
 import com.github.ones1kk.asserts.core.collection.list.impl.Lists;
 import com.github.ones1kk.asserts.core.collection.map.impl.Maps;
@@ -176,5 +177,8 @@ public final class AssertFactory {
 
     public LocalDateTimes<LocalDateTime> createAssert(LocalDateTime actual, AsAssert<?> asAssert) {
         return new LocalDateTimes<>(asAssert);
+    }
+    public <ACTUAL extends Enum<ACTUAL>> Enums<ACTUAL> createAssert(ACTUAL actual, AsAssert<?> asAssert) {
+        return new Enums<>(asAssert);
     }
 }

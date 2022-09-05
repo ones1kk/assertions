@@ -198,4 +198,11 @@ public final class Asserts {
     public static AbstractLocalDateAssert<?, LocalDate> that(LocalDate actual) {
         return AssertsForType.that(actual);
     }
+
+    public static AbstractClassAssert<?> that(Class<?> actual) {
+        return AssertForClass.that(actual);
+    }
+    public static <ACTUAL extends Enum<ACTUAL>> AbstractEnumAssert<?, ACTUAL> that(ACTUAL actual) {
+        return AssertForClass.that(actual);
+    }
 }
