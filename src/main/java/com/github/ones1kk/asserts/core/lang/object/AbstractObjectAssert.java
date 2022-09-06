@@ -64,6 +64,7 @@ public class AbstractObjectAssert<SELF extends AbstractAssert<SELF, Object>, ACT
     /**
      * <p> As in Java, the comparison operator compare value of hashCode. </p>
      * <p> Use {@link AbstractObjectAssert#isEqualTo(Object)} to compare value itself. </p>
+     *
      * @param expected
      * @return {@code self}
      */
@@ -82,6 +83,7 @@ public class AbstractObjectAssert<SELF extends AbstractAssert<SELF, Object>, ACT
     /**
      * <p> Basically as in Java, the equal() method compare value itself. </p>
      * <p> Use {@link AbstractObjectAssert#isSameAs(Object)} to compare hashCode value. </p>
+     *
      * @param expected
      * @return {@code self}
      */

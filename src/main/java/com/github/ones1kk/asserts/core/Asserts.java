@@ -59,7 +59,7 @@ import java.util.Set;
  * such as an instance variable, a first-class collection, or a primitive variable.</strong>
  *
  * <p> In each package, the Assert in the model package is written for declaration and casting, and the class receiving DI for the actual Assertion is composed of the AbstractAssert class. </p>
- * <p> Each Assert class is resolved as a generic type called '{@code SELF}', and the actual Assertions value is resolved as a generic type of '{@code ACTUAL}'. </p>
+ * <p> Each Assert class is resolved as a type parameter called '{@code SELF}', and the actual Assertions value is resolved as a type parameter of '{@code ACTUAL}'. </p>
  *
  * <p> The idea of this library and the structure leading to the AbstractAssert class referenced the <b>AssertJ API</b>.</p>
  *

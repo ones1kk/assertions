@@ -23,7 +23,7 @@ import com.github.ones1kk.asserts.core.lang.object.ObjectAssertInterface;
  * <br><br>
  * <p> This class is For Inheriting the top-level Object method interface and pass self for chaining to AsAssert.</p>
  *
- * <p> As with all AbstractAssert classes, this class receive {@code SELF} and {@code ACTUAL} by generic type.</p>
+ * <p> As with all AbstractAssert classes, this class receive {@code SELF} and {@code ACTUAL} by type parameter.</p>
  *
  * @param <SELF>
  * @param <ACTUAL>
