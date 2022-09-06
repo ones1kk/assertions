@@ -22,11 +22,10 @@ import com.github.ones1kk.asserts.core.AssertFactory;
 /**
  * <strong> The AbstractObjectAssert class is responsible for assertion of Object type.</strong>
  * <br><br>
- *
  * <p> It exists as a top-level object of all types like Object in Java language.</p>
- * <br>
+ *
  * <p> {@link AssertFactory} is injected so that implementations corresponding to each ACTUAL type parameter can be declared in each AbstractAssert class.</p>
- * <br>
+ *
  * <p> Also, this class actually casts the type parameter coming into SELF and ACTUAL.</p>
  *
  * @param <SELF>
@@ -62,6 +61,12 @@ public class AbstractObjectAssert<SELF extends AbstractAssert<SELF, Object>, ACT
         return self;
     }
 
+    /**
+     * <p> As in Java, the comparison operator compare value of hashCode. </p>
+     * <p> Use {@link AbstractObjectAssert#isEqualTo(Object)} to compare value itself. </p>
+     * @param expected
+     * @return {@code self}
+     */
     @Override
     public SELF isSameAs(Object expected) {
         objects.assertIsSameAs(actual, expected);
@@ -74,6 +79,12 @@ public class AbstractObjectAssert<SELF extends AbstractAssert<SELF, Object>, ACT
         return self;
     }
 
+    /**
+     * <p> Basically as in Java, the equal() method compare value itself. </p>
+     * <p> Use {@link AbstractObjectAssert#isSameAs(Object)} to compare hashCode value. </p>
+     * @param expected
+     * @return {@code self}
+     */
     @Override
     public SELF isEqualTo(Object expected) {
         objects.assertIsEqualTo(actual, expected);
