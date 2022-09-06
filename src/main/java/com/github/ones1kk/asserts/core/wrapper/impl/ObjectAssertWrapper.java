@@ -25,6 +25,13 @@ import com.github.ones1kk.asserts.core.wrapper.AssertWrapper;
 
 import java.util.function.Supplier;
 
+/**
+ * <strong> The ObjectAssertWrapper class has been implemented by {@link AssertWrapper} </strong>
+ *
+ * <p> This class is a wrapper class to force the definition of the corresponding assertion to be made only once.</p>
+ *
+ * <p> However, the policy has changed and will be deprecated soon.</p>
+ */
 @Deprecated
 public class ObjectAssertWrapper implements AssertWrapper<ObjectAssert> {
 

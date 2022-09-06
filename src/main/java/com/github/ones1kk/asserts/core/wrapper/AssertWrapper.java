@@ -18,6 +18,14 @@ package com.github.ones1kk.asserts.core.wrapper;
 
 import java.util.function.Supplier;
 
+/**
+ * <strong> The AssertWrapper class is a structure designed to limit the use of the as() method once in the early stage of development.</strong>
+ *
+ * <p> This class is a wrapper class to force the definition of the corresponding assertion to be made only once.</p>
+ *
+ * <p> However, the policy has changed and will be deprecated soon.</p>
+ * @param <SELF>
+ */
 @Deprecated
 public interface AssertWrapper<SELF> {
 

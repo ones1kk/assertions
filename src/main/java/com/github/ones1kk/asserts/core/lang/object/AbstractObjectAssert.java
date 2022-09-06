@@ -19,6 +19,19 @@ package com.github.ones1kk.asserts.core.lang.object;
 import com.github.ones1kk.asserts.core.AbstractAssert;
 import com.github.ones1kk.asserts.core.AssertFactory;
 
+/**
+ * <strong> The AbstractObjectAssert class is responsible for assertion of Object type.</strong>
+ * <br><br>
+ *
+ * <p> It exists as a top-level object of all types like Object in Java language.</p>
+ * <br>
+ * <p> {@link AssertFactory} is injected so that implementations corresponding to each ACTUAL type parameter can be declared in each AbstractAssert class.</p>
+ * <br>
+ * <p> Also, this class actually casts the type parameter coming into SELF and ACTUAL.</p>
+ *
+ * @param <SELF>
+ * @param <ACTUAL>
+ */
 public class AbstractObjectAssert<SELF extends AbstractAssert<SELF, Object>, ACTUAL> extends AbstractAssert<SELF, Object> {
 
     protected final SELF self;
