@@ -4,7 +4,6 @@ import com.github.ones1kk.asserts.core.AbstractAssert;
 import com.github.ones1kk.asserts.core.Asserts;
 import com.github.ones1kk.asserts.core.clazz.model.ClassAssert;
 import com.github.ones1kk.asserts.core.exception.AssertException;
-import com.sun.org.apache.xpath.internal.operations.String;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -49,7 +48,7 @@ class AbstractClassAssertTest {
         Class<AbstractClassAssert> supperClass = AbstractClassAssert.class;
         Class<ClassAssert> subClass = ClassAssert.class;
         Class<ClassAssertInterface> interfaceClass = ClassAssertInterface.class;
-        Class<TestAnnotationForTest> annotationClass = TestAnnotationForTest.class;
+        Class<AnnotationForTest> annotationClass = AnnotationForTest.class;
         Class<Asserts> finalClass = Asserts.class;
         Class<AbstractAssert> abstractClass = AbstractAssert.class;
         AnonymousClassForTest anonymousClass = new AnonymousClassForTest() {
@@ -73,10 +72,21 @@ class AbstractClassAssertTest {
         AbstractClassAssert<?> assert9 = new ClassAssert(memberClass);
 
         // then
+        assertThrows(AssertException.class, () -> assert1.isTypeOf(new String()));
+        assertThrows(AssertException.class, () -> assert1.isNotTypeOf(new ClassAssert(supperClass)));
+        assertThrows(AssertException.class, () -> assert2.isSuperclassOf(supperClass));
+        assertThrows(AssertException.class, () -> assert1.isSubclassOf(subClass));
+        assertThrows(AssertException.class, assert1::isInterface);
+        assertThrows(AssertException.class, assert1::isAnnotation);
+        assertThrows(AssertException.class, assert1::isFinalClass);
+        assertThrows(AssertException.class, assert1::isAbstractClass);
+        assertThrows(AssertException.class, assert1::isEnum);
+        assertThrows(AssertException.class, assert1::isMemberClass);
+
+
         assert1.isTypeOf(new ClassAssert(supperClass));
         assert1.isNotTypeOf(ClassAssert.class);
         assert1.isNotTypeOf(new String());
-        assert1.isSuperclassOf(ClassAssert.class);
         assert1.isSuperclassOf(ClassAssert.class);
         assert2.isSubclassOf(AbstractClassAssert.class);
         assert3.isInterface();
@@ -89,6 +99,5 @@ class AbstractClassAssertTest {
     }
 
     static class MemberClassForTest {
-
     }
 }
