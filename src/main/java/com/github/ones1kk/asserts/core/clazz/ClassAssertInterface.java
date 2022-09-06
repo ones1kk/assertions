@@ -50,14 +50,6 @@ public interface ClassAssertInterface<SELF> {
 
     SELF isLocalClass();
 
-    SELF containsField(Field expected);
-
-    SELF doesNotContainField(Field expected);
-
-    SELF containsAllFields(Field... expected);
-
-    SELF containsAnyFields(Field... expected);
-
     IntegerAssert asFieldsLength();
 
 }

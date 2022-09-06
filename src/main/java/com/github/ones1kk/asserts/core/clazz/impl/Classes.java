@@ -17,14 +17,12 @@
 package com.github.ones1kk.asserts.core.clazz.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
-import com.github.ones1kk.asserts.core.Asserts;
 import com.github.ones1kk.asserts.core.clazz.ClassesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
-public class Classes<ACTUAL extends Class<?>> extends Objects<ACTUAL> implements ClassesInterface<ACTUAL> {
+public class Classes extends Objects<Class<?>> implements ClassesInterface<Class<?>> {
 
     public Classes(AsAssert<?> asAssert) {
         super(asAssert);
@@ -141,25 +139,4 @@ public class Classes<ACTUAL extends Class<?>> extends Objects<ACTUAL> implements
             throw handler.getException();
         }
     }
-
-    @Override
-    public void assertContainsField(Class<?> actual, Field expected) {
-        Asserts.that(actual.getFields()).contains(expected);
-    }
-
-    @Override
-    public void assertDoesNotContainField(Class<?> actual, Field expected) {
-        Asserts.that(actual.getFields()).doesNotContain(expected);
-    }
-
-    @Override
-    public void assertContainsAllFields(Class<?> actual, Field... expected) {
-        Asserts.that(actual.getFields()).containsAll(expected);
-    }
-
-    @Override
-    public void assertContainsAnyFields(Class<?> actual, Field... expected) {
-        Asserts.that(actual.getFields()).containsAny(expected);
-    }
-
 }

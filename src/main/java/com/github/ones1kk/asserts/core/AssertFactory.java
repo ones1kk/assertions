@@ -182,8 +182,8 @@ public final class AssertFactory {
 
     /******************************* java.lang.class *******************************/
 
-    public Classes<Class<?>> createAssert(Class<?> actual, AsAssert<?> asAssert) {
-        return new Classes<>(asAssert);
+    public Classes createAssert(Class<?> actual, AsAssert<?> asAssert) {
+        return new Classes(asAssert);
     }
 
     public <ACTUAL extends Enum<ACTUAL>> Enums<ACTUAL> createAssert(ACTUAL actual, AsAssert<?> asAssert) {

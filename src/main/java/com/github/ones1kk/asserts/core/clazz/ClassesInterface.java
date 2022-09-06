@@ -47,12 +47,4 @@ public interface ClassesInterface<ACTUAL extends Class<?>> {
     void assertIsMemberClass(Class<?> actual);
 
     void assertIsLocalClass(Class<?> actual);
-
-    void assertContainsField(Class<?> actual, Field expected);
-
-    void assertDoesNotContainField(Class<?> actual, Field expected);
-
-    void assertContainsAllFields(Class<?> actual, Field... expected);
-
-    void assertContainsAnyFields(Class<?> actual, Field... expected);
 }

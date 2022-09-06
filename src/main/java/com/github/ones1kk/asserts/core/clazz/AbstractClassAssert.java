@@ -116,31 +116,6 @@ public class AbstractClassAssert<SELF extends AbstractClassAssert<SELF>> extends
     }
 
     @Override
-    public SELF containsField(Field expected) {
-        classes.assertContainsField(actual, expected);
-        return self;
-    }
-
-    @Override
-    public SELF doesNotContainField(Field expected) {
-        classes.assertDoesNotContainField(actual, expected);
-        return self;
-    }
-
-    @Override
-    public SELF containsAllFields(Field... expected) {
-        classes.assertContainsAllFields(actual, expected);
-        return self;
-    }
-
-    @Override
-    public SELF containsAnyFields(Field... expected) {
-        classes.assertContainsAnyFields(actual, expected);
-        return self;
-    }
-
-
-    @Override
     public IntegerAssert asFieldsLength() {
         return new IntegerAssert(actual.getFields().length);
     }
