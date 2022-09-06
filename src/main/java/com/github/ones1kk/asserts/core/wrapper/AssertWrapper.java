@@ -24,6 +24,7 @@ import java.util.function.Supplier;
  * <p> This class is a wrapper class to force the definition of the corresponding assertion to be made only once.</p>
  *
  * <p> However, the policy has changed and will be deprecated soon.</p>
+ *
  * @param <SELF>
  */
 @Deprecated

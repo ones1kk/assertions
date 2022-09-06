@@ -16,8 +16,6 @@
 
 package com.github.ones1kk.asserts.core.clazz;
 
-import java.lang.reflect.Field;
-
 public interface ClassesInterface<ACTUAL extends Class<?>> {
 
     void assertIsTypeOf(Class<?> actual, Object expected);

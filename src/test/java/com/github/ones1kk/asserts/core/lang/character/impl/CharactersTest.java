@@ -20,7 +20,7 @@ class CharactersTest {
     }
 
     @Test
-    @DisplayName("Test methods")
+    @DisplayName("Method test")
     public void test1() throws Exception {
         // given
         Characters characters = new Characters(asAssert);

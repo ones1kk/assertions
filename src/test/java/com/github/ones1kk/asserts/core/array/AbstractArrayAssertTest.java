@@ -14,10 +14,10 @@ class AbstractArrayAssertTest {
     @DisplayName("Object method test")
     public void test1() throws Exception {
         // given
-        String[] actual1 = {"A", "B", "C" };
+        String[] actual1 = {"A", "B", "C"};
         Character[] actual2 = null;
         Character[] actual3 = {'A', 'b', 'C'};
-        CharSequence[] actual4 = {"A", "b", "C" };
+        CharSequence[] actual4 = {"A", "b", "C"};
 
         // when
         AbstractArrayAssert<?, String> assert1 = new AbstractArrayAssert<>(AbstractArrayAssert.class, actual1);
@@ -76,10 +76,10 @@ class AbstractArrayAssertTest {
     @DisplayName("Array method test")
     public void test2() throws Exception {
         // given
-        String[] actual1 = {"A", "B", "C" };
+        String[] actual1 = {"A", "B", "C"};
         Character[] actual2 = {'A', null, 'n', '2', '1'};
         Character[] actual3 = {'A', 'b', 'C'};
-        CharSequence[] actual4 = {"A", "b", "C" };
+        CharSequence[] actual4 = {"A", "b", "C"};
         CharSequence[] actual5 = {};
         Character[] actual6 = null;
         ;

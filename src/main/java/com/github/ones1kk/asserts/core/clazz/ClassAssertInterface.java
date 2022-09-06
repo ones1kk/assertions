@@ -18,8 +18,6 @@ package com.github.ones1kk.asserts.core.clazz;
 
 import com.github.ones1kk.asserts.core.lang.model.IntegerAssert;
 
-import java.lang.reflect.Field;
-
 public interface ClassAssertInterface<SELF> {
 
     SELF isTypeOf(Object expected);

@@ -19,8 +19,6 @@ package com.github.ones1kk.asserts.core.clazz;
 import com.github.ones1kk.asserts.core.lang.model.IntegerAssert;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
-import java.lang.reflect.Field;
-
 public class AbstractClassAssert<SELF extends AbstractClassAssert<SELF>> extends AbstractObjectAssert<SELF, Class<?>> implements ClassAssertInterface<SELF> {
 
     private final ClassesInterface<Class<?>> classes;
