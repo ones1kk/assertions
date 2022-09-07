@@ -22,6 +22,9 @@ import com.github.ones1kk.asserts.core.feature.comparable.lang.impl.ComparableLa
 import com.github.ones1kk.asserts.core.lang.character.CharactersInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
+/**
+ * <strong> The Characters class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
+ */
 public class Characters extends Objects<Character> implements CharactersInterface<Character> {
 
     private final ComparableLanguage<Character> comparable = new ComparableLanguageImpl<>();
