@@ -19,6 +19,19 @@ package com.github.ones1kk.asserts.core.lang.object.impl;
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjects;
 
+/**
+ * <strong> The Objects class is as implementation of {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
+ * <b> Notice</b>
+ * <br>
+ * +----------------------------------------------------------------------------------------------------------+
+ * | <b> It is expressed as an implementation class, but structurally, it is not an implementation class.</b> |
+ * +----------------------------------------------------------------------------------------------------------+
+ *
+ * <br><br>
+ * <p> This is that implements the assertion method of the Object type and verify assertion.</p>
+ *
+ * @param <ACTUAL>
+ */
 public class Objects<ACTUAL> extends AbstractObjects<Object> {
 
     public Objects(AsAssert<?> asAssert) {

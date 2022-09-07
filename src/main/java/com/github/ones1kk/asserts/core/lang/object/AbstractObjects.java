@@ -27,6 +27,7 @@ import com.github.ones1kk.asserts.core.description.DescriptionHandler;
  * <p> Using {@link DescriptionHandler}, set default Description to be used when Exception is thrown and throw Exception.</p>
  *
  * <p> All of AbstractAssert class of implementation classes have to be injected {@link AsAssert}, Because {@link AbstractObjectAssert} has inherited {@link AsAssert} </p>
+ * <b> It is expressed as an implementation class, but structurally, it is not an implementation class.</b>
  *
  * @param <ACTUAL>
  */
