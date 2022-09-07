@@ -25,6 +25,9 @@ import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
 import static com.github.ones1kk.asserts.core.feature.number.arithmetic.ByteArithmeticUnit.of;
 
+/**
+ * <strong> The Bytes class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
+ */
 public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     private final ComparableLanguage<Byte> comparable = new ComparableLanguageImpl<>();
