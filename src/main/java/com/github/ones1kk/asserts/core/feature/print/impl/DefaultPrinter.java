@@ -37,9 +37,9 @@ public class DefaultPrinter implements Printer {
      *     Description : description
      * </pre>
      *
-     * @param actual
-     * @param expected
-     * @param description
+     * @param actual asserted target
+     * @param expected expected target
+     * @param description defined description
      * @return A formatted string
      */
     @Override
