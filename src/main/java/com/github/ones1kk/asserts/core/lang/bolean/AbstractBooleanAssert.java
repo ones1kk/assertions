@@ -18,6 +18,14 @@ package com.github.ones1kk.asserts.core.lang.bolean;
 
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
+/**
+ * <strong> The AbstractBooleanAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <br><br>
+ * <p> This is that implements the assertion method of the Boolean type and verify assertion.</p>
+ *
+ * @param <SELF>
+ * @param <ACTUAL>
+ */
 public class AbstractBooleanAssert<SELF extends AbstractBooleanAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Boolean> implements BooleanAssertInterface<SELF> {
 
     private final BooleansInterface<Boolean> booleans;
@@ -27,12 +35,22 @@ public class AbstractBooleanAssert<SELF extends AbstractBooleanAssert<SELF, ACTU
         this.booleans = assertFactory.createAssert(actual, this);
     }
 
+    /**
+     * Verify {@code actual} is false or not
+     *
+     * @return {@code self}
+     */
     @Override
     public SELF isFalse() {
         booleans.assertIsFalse(actual);
         return self;
     }
 
+    /**
+     * Verify {@code actual} is true or not
+     *
+     * @return {@code self}
+     */
     @Override
     public SELF isTrue() {
         booleans.assertIsTrue(actual);

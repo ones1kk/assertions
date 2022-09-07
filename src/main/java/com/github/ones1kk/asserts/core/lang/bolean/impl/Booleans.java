@@ -20,6 +20,9 @@ import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.lang.bolean.BooleansInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
+/**
+ * <strong> The Booleans class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
+ */
 public class Booleans extends Objects<Boolean> implements BooleansInterface<Boolean> {
 
     public Booleans(AsAssert<?> asAssert) {
