@@ -25,6 +25,9 @@ import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
 import static com.github.ones1kk.asserts.core.feature.number.arithmetic.DoubleArithmeticUnit.of;
 
+/**
+ * <strong> The Doubles class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
+ */
 public class Doubles extends Objects<Double> implements DoublesInterface<Double> {
 
     private final ComparableLanguage<Double> comparable = new ComparableLanguageImpl<>();
