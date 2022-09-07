@@ -125,4 +125,29 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
             }
         }
     }
+
+    @Override
+    public void assertIsLessThan(ACTUAL[] actuals, ACTUAL[] expected) {
+
+    }
+
+    @Override
+    public void assertIsLessThanOrEqualTo(ACTUAL[] actuals, ACTUAL[] expected) {
+
+    }
+
+    @Override
+    public void assertIsGreaterThan(ACTUAL[] actuals, ACTUAL[] expected) {
+
+    }
+
+    @Override
+    public void assertIsGreaterThanOrEqualTo(ACTUAL[] actuals, ACTUAL[] expected) {
+
+    }
+
+    @Override
+    public void assertIsBetween(ACTUAL[] actuals, ACTUAL[] start, ACTUAL[] end) {
+
+    }
 }

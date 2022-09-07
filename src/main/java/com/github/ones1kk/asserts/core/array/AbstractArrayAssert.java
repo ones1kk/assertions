@@ -95,4 +95,34 @@ public class AbstractArrayAssert<SELF extends AbstractArrayAssert<SELF, ACTUAL>,
         arrays.assertNoneMatch(actual, expected);
         return self;
     }
+
+    @Override
+    public SELF isLessThan(ACTUAL[] expected) {
+        arrays.assertIsLessThan(actual, expected);
+        return self;
+    }
+
+    @Override
+    public SELF isLessThanOrEqualTo(ACTUAL[] expected) {
+        arrays.assertIsLessThanOrEqualTo(actual, expected);
+        return self;
+    }
+
+    @Override
+    public SELF isGreaterThan(ACTUAL[] expected) {
+        arrays.assertIsGreaterThan(actual, expected);
+        return self;
+    }
+
+    @Override
+    public SELF isGreaterThanOrEqualTo(ACTUAL[] expected) {
+        arrays.assertIsGreaterThan(actual, expected);
+        return self;
+    }
+
+    @Override
+    public SELF isBetween(ACTUAL[] start, ACTUAL[] end) {
+        arrays.assertIsBetween(actual, start, end);
+        return self;
+    }
 }
