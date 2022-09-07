@@ -22,6 +22,7 @@ import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
  * <strong> The AbstractCharacterAssert class inherits {@link AbstractObjectAssert}</strong>
  * <br><br>
  * <p> This is that implements the assertion method of the Character type and verify assertion.</p>
+ *
  * @param <SELF>
  * @param <ACTUAL>
  */
@@ -36,6 +37,7 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
 
     /**
      * Verify {@code actual} is lower case or not
+     *
      * @return {@code self}
      */
     @Override
@@ -46,6 +48,7 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
 
     /**
      * Verify {@code actual} is not lower case or not
+     *
      * @return {@code self}
      */
     @Override
@@ -56,6 +59,7 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
 
     /**
      * Verify {@code actual} is upper case or not
+     *
      * @return {@code self}
      */
     @Override
@@ -66,6 +70,7 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
 
     /**
      * Verify {@code actual} is not upper case or not
+     *
      * @return {@code self}
      */
     @Override
@@ -76,6 +81,7 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
 
     /**
      * Verify {@code actual} is letter or not
+     *
      * @return {@code self}
      */
     @Override
@@ -86,6 +92,7 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
 
     /**
      * Verify {@code actual} is not letter or not
+     *
      * @return {@code self}
      */
     @Override
@@ -96,6 +103,7 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
 
     /**
      * Verify {@code actual} is digit or not
+     *
      * @return {@code self}
      */
     @Override
@@ -106,6 +114,7 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
 
     /**
      * Verify {@code actual} is not digit or not
+     *
      * @return {@code self}
      */
     @Override
@@ -116,6 +125,7 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
 
     /**
      * Verify {@code actual} is whitespace or not
+     *
      * @return {@code self}
      */
     @Override
@@ -126,6 +136,7 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
 
     /**
      * Verify {@code actual} is not whitespace or not
+     *
      * @return {@code self}
      */
     @Override
@@ -136,6 +147,7 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
 
     /**
      * Verify {@code actual} is less than {@code expected}
+     *
      * @param expected greater than {@code actual}
      * @return {@code self}
      */
@@ -147,6 +159,7 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
 
     /**
      * Verify {@code actual} is less than or equal to {@code expected}
+     *
      * @param expected greater than or Equal to {@code actual}
      * @return {@code self}
      */
@@ -158,6 +171,7 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
 
     /**
      * Verify {@code actual} is greater than {@code expected}
+     *
      * @param expected less than {@code actual}
      * @return {@code self}
      */
@@ -169,6 +183,7 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
 
     /**
      * Verify {@code actual} is greater than or equal to{ @code expected}
+     *
      * @param expected less than {@code actual}
      * @return {@code self}
      */
@@ -180,8 +195,9 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
 
     /**
      * Verify {@code actual} is between {@code start} and {@code end}
+     *
      * @param start less than or Equal to {@code actual}
-     * @param end greater than or Equal to {@code actual}
+     * @param end   greater than or Equal to {@code actual}
      * @return {@code self}
      */
     @Override

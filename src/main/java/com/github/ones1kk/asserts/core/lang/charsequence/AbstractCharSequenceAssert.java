@@ -37,6 +37,7 @@ public class AbstractCharSequenceAssert<SELF extends AbstractCharSequenceAssert<
 
     /**
      * Verify {@code actual} is empty or not
+     *
      * @return {@code self}
      */
     @Override
@@ -47,6 +48,7 @@ public class AbstractCharSequenceAssert<SELF extends AbstractCharSequenceAssert<
 
     /**
      * Verify {@code actual} is not empty or not
+     *
      * @return {@code self}
      */
     @Override
@@ -57,6 +59,7 @@ public class AbstractCharSequenceAssert<SELF extends AbstractCharSequenceAssert<
 
     /**
      * Verify {@code actual} is blank or not
+     *
      * @return {@code self}
      */
     @Override
@@ -67,6 +70,7 @@ public class AbstractCharSequenceAssert<SELF extends AbstractCharSequenceAssert<
 
     /**
      * Verify {@code actual} is not blank or not
+     *
      * @return {@code self}
      */
     @Override
@@ -77,6 +81,7 @@ public class AbstractCharSequenceAssert<SELF extends AbstractCharSequenceAssert<
 
     /**
      * Verify is equal to {@code expected} as ignore case
+     *
      * @param expected equal to {@code expected} includes ignore case too
      * @return {@code self}
      */

@@ -23,6 +23,7 @@ import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
  * <strong> The AbstractDoubleAssert class inherits {@link AbstractObjectAssert}</strong>
  * <br><br>
  * <p> This is that implements the assertion method of the Double type and verify assertion.</p>
+ *
  * @param <SELF>
  * @param <ACTUAL>
  */
@@ -37,6 +38,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     /**
      * Verify {@code actual} is infinity or not
+     *
      * @return {@code self}
      */
     @Override
@@ -47,6 +49,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     /**
      * Verify {@code actual} is finite or not
+     *
      * @return {@code self}
      */
     @Override
@@ -57,6 +60,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     /**
      * Verify {@code actual} is NaN or not
+     *
      * @return {@code self}
      */
     @Override
@@ -67,6 +71,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     /**
      * Verify {@code actual} is positive or not
+     *
      * @return {@code self}
      */
     @Override
@@ -77,6 +82,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     /**
      * Verify {@code actual} is not positive or not
+     *
      * @return {@code self}
      */
     @Override
@@ -87,6 +93,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     /**
      * Verify {@code actual} is negative or not
+     *
      * @return {@code self}
      */
     @Override
@@ -97,6 +104,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     /**
      * Verify {@code actual} is not negative or not
+     *
      * @return {@code self}
      */
     @Override
@@ -107,6 +115,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     /**
      * Verify {@code actual} is zero or not
+     *
      * @return {@code self}
      */
     @Override
@@ -117,6 +126,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     /**
      * Verify {@code actual} is not zero or not
+     *
      * @return {@code self}
      */
     @Override
@@ -127,6 +137,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     /**
      * Verify {@code actual} is less than {@code expected}
+     *
      * @param expected greater than {@code actual}
      * @return {@code self}
      */
@@ -138,6 +149,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     /**
      * Verify {@code actual} is less than or equal to {@code expected}
+     *
      * @param expected greater than or Equal to {@code actual}
      * @return {@code self}
      */
@@ -149,6 +161,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     /**
      * Verify {@code actual} is greater than {@code expected}
+     *
      * @param expected less than {@code actual}
      * @return {@code self}
      */
@@ -160,6 +173,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     /**
      * Verify {@code actual} is greater than or equal to{ @code expected}
+     *
      * @param expected less than {@code actual}
      * @return {@code self}
      */
@@ -171,8 +185,9 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     /**
      * Verify {@code actual} is between {@code start} and {@code end}
+     *
      * @param start less than or Equal to {@code actual}
-     * @param end greater than or Equal to {@code actual}
+     * @param end   greater than or Equal to {@code actual}
      * @return {@code self}
      */
     @Override
@@ -183,7 +198,8 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     /**
      * Verify {@code actual} is close to {@code expected} by {@code percentage}
-     * @param expected closed by difference of {@code percentage} from {@code actual}
+     *
+     * @param expected   closed by difference of {@code percentage} from {@code actual}
      * @param percentage percentage value {@link  Percentage#of(Double)}
      * @return {@code self}
      */
@@ -195,7 +211,8 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
 
     /**
      * Verify {@code actual} is not close to {@code expected} by {@code percentage}
-     * @param expected closed by difference of {@code percentage} from {@code actual}
+     *
+     * @param expected   closed by difference of {@code percentage} from {@code actual}
      * @param percentage percentage value {@link  Percentage#of(Double)}
      * @return {@code self}
      */

@@ -36,8 +36,8 @@ public class SimplePrinter implements Printer {
      *     <strong>{@code actual}</strong> is expected as <strong>{@code expected}</strong>, but it is not.
      * </pre>
      *
-     * @param actual asserted target
-     * @param expected expected target
+     * @param actual      asserted target
+     * @param expected    expected target
      * @param description defined description
      * @return A formatted string
      */
