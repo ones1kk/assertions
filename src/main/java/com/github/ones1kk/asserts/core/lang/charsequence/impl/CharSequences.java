@@ -21,6 +21,9 @@ import com.github.ones1kk.asserts.core.lang.charsequence.CharSequencesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * <strong> The CharSequences class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
+ */
 public class CharSequences extends Objects<CharSequence> implements CharSequencesInterface<CharSequence> {
 
     public CharSequences(AsAssert<?> asAssert) {
