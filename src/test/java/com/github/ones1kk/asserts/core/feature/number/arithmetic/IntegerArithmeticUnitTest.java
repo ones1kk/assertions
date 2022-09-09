@@ -35,4 +35,17 @@ class IntegerArithmeticUnitTest {
         assertThat(util.isOdd()).isFalse();
     }
 
+    @Test
+    @DisplayName("Method test(zero)")
+    public void test3() throws Exception {
+        // given
+        IntegerArithmeticUnit.ArithmeticUtil util = IntegerArithmeticUnit.of(0);
+
+        // when
+        // then
+        assertThat(util.isZero()).isTrue();
+        assertThat(util.isNotZero()).isFalse();
+        assertThat(util.isEven()).isTrue();
+        assertThat(util.isOdd()).isFalse();
+    }
 }
