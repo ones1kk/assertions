@@ -32,8 +32,8 @@ class BytesTest {
         assertThrows(Exception.class, () -> bytes.assertIsNotOdd((byte) 1));
 
         assertThrows(Exception.class, () -> bytes.assertIsEven((byte) 1));
-        assertThrows(Exception.class, () -> bytes.assertIsEven((byte) 0));
         assertThrows(Exception.class, () -> bytes.assertIsNotEven((byte) 2));
+        assertThrows(Exception.class, () -> bytes.assertIsNotEven((byte) 0));
 
         assertThrows(Exception.class, () -> bytes.assertIsPositive((byte) -1));
         assertThrows(Exception.class, () -> bytes.assertIsPositive((byte) 0));
@@ -80,9 +80,9 @@ class BytesTest {
         bytes.assertIsNotOdd((byte) 2);
 
         bytes.assertIsEven((byte) 2);
+        bytes.assertIsEven((byte) 0);
 
         bytes.assertIsNotEven((byte) 1);
-        bytes.assertIsNotEven((byte) 0);
 
         bytes.assertIsPositive((byte) 1);
 

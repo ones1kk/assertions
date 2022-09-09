@@ -20,7 +20,7 @@ class IntegersTest {
     }
 
     @Test
-    @DisplayName("Test methods")
+    @DisplayName("Method test")
     public void test1() throws Exception {
         // given
         Integers integers = new Integers(asAssert);
@@ -32,8 +32,9 @@ class IntegersTest {
         assertThrows(Exception.class, () -> integers.assertIsNotOdd(1));
 
         assertThrows(Exception.class, () -> integers.assertIsEven(1));
-        assertThrows(Exception.class, () -> integers.assertIsEven(0));
+
         assertThrows(Exception.class, () -> integers.assertIsNotEven(2));
+        assertThrows(Exception.class, () -> integers.assertIsNotEven(0));
 
         assertThrows(Exception.class, () -> integers.assertIsPositive(-1));
         assertThrows(Exception.class, () -> integers.assertIsPositive(0));
@@ -80,9 +81,9 @@ class IntegersTest {
         integers.assertIsNotOdd(2);
 
         integers.assertIsEven(2);
+        integers.assertIsEven(0);
 
         integers.assertIsNotEven(1);
-        integers.assertIsNotEven(0);
 
         integers.assertIsPositive(1);
 

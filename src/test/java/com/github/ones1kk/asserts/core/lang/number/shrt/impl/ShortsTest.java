@@ -32,8 +32,8 @@ class ShortsTest {
         assertThrows(Exception.class, () -> shorts.assertIsNotOdd((short) 1));
 
         assertThrows(Exception.class, () -> shorts.assertIsEven((short) 1));
-        assertThrows(Exception.class, () -> shorts.assertIsEven((short) 0));
         assertThrows(Exception.class, () -> shorts.assertIsNotEven((short) 2));
+        assertThrows(Exception.class, () -> shorts.assertIsNotEven((short) 0));
 
         assertThrows(Exception.class, () -> shorts.assertIsPositive((short) -1));
         assertThrows(Exception.class, () -> shorts.assertIsPositive((short) 0));
@@ -80,9 +80,9 @@ class ShortsTest {
         shorts.assertIsNotOdd((short) 2);
 
         shorts.assertIsEven((short) 2);
+        shorts.assertIsEven((short) 0);
 
         shorts.assertIsNotEven((short) 1);
-        shorts.assertIsNotEven((short) 0);
 
         shorts.assertIsPositive((short) 1);
 

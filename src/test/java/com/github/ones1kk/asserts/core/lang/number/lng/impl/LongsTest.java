@@ -32,8 +32,8 @@ class LongsTest {
         assertThrows(Exception.class, () -> longs.assertIsNotOdd(1L));
 
         assertThrows(Exception.class, () -> longs.assertIsEven(1L));
-        assertThrows(Exception.class, () -> longs.assertIsEven(0L));
         assertThrows(Exception.class, () -> longs.assertIsNotEven(2L));
+        assertThrows(Exception.class, () -> longs.assertIsNotEven(0L));
 
         assertThrows(Exception.class, () -> longs.assertIsPositive(-1L));
         assertThrows(Exception.class, () -> longs.assertIsPositive(0L));
@@ -80,9 +80,9 @@ class LongsTest {
         longs.assertIsNotOdd(2L);
 
         longs.assertIsEven(2L);
+        longs.assertIsEven(0L);
 
         longs.assertIsNotEven(1L);
-        longs.assertIsNotEven(0L);
 
         longs.assertIsPositive(1L);
 
