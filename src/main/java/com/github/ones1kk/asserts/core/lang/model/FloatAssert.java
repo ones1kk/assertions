@@ -18,6 +18,9 @@ package com.github.ones1kk.asserts.core.lang.model;
 
 import com.github.ones1kk.asserts.core.lang.number.flot.AbstractFloatAssert;
 
+/**
+ * <strong> The FloatAssert class inherits {@link AbstractFloatAssert} </strong>
+ */
 public class FloatAssert extends AbstractFloatAssert<FloatAssert, Float> {
 
     public FloatAssert(Float actual) {

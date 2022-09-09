@@ -18,6 +18,9 @@ package com.github.ones1kk.asserts.core.lang.model;
 
 import com.github.ones1kk.asserts.core.lang.string.AbstractStringAssert;
 
+/**
+ * <strong> The StringAssert class inherits {@link AbstractStringAssert} </strong>
+ */
 public class StringAssert extends AbstractStringAssert<StringAssert> {
 
     public StringAssert(String actual) {

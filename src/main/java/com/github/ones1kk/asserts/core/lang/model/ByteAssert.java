@@ -18,6 +18,9 @@ package com.github.ones1kk.asserts.core.lang.model;
 
 import com.github.ones1kk.asserts.core.lang.number.bte.AbstractByteAssert;
 
+/**
+ * <strong> The ByteAssert class inherits {@link AbstractByteAssert} </strong>
+ */
 public class ByteAssert extends AbstractByteAssert<ByteAssert, Byte> {
 
     public ByteAssert(Byte actual) {

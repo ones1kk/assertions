@@ -18,6 +18,9 @@ package com.github.ones1kk.asserts.core.lang.model;
 
 import com.github.ones1kk.asserts.core.lang.bolean.AbstractBooleanAssert;
 
+/**
+ * <strong> The BooleanAssert class inherits {@link AbstractBooleanAssert} </strong>
+ */
 public class BooleanAssert extends AbstractBooleanAssert<BooleanAssert, Boolean> {
 
     public BooleanAssert(Boolean actual) {

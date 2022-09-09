@@ -190,6 +190,8 @@ public final class AssertsForType {
         return new MonthDayAssert(actual);
     }
 
+    /******************************* java.lang.class *******************************/
+
     public static AbstractLocalDateTimeAssert<?, LocalDateTime> that(LocalDateTime actual) {
         return new LocalDateTimeAssert(actual);
     }

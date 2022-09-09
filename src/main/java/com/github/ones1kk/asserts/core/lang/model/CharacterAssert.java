@@ -18,6 +18,9 @@ package com.github.ones1kk.asserts.core.lang.model;
 
 import com.github.ones1kk.asserts.core.lang.character.AbstractCharacterAssert;
 
+/**
+ * <strong> The CharacterAssert class inherits {@link AbstractCharacterAssert} </strong>
+ */
 public class CharacterAssert extends AbstractCharacterAssert<CharacterAssert, Character> {
 
     public CharacterAssert(Character character) {

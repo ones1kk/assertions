@@ -20,11 +20,9 @@ import com.github.ones1kk.asserts.core.lang.charsequence.AbstractCharSequenceAss
 
 /**
  * /**
- *  * <strong> The AbstractFloatAssert class inherits {@link AbstractCharSequenceAssert}</strong>
- *  * <br><br>
- *  * <p> This is that implements the assertion method of the Float type and verify assertion.</p>
- *  *
- *  * @param <SELF>
+ * <strong> The AbstractFloatAssert class inherits {@link AbstractCharSequenceAssert}</strong>
+ * <br><br>
+ * <p> This is that implements the assertion method of the Float type and verify assertion.</p>
  *
  * @param <SELF>
  */

@@ -201,6 +201,8 @@ public final class Asserts {
         return AssertsForType.that(actual);
     }
 
+    /******************************* java.lang.class *******************************/
+
     public static AbstractClassAssert<?> that(Class<?> actual) {
         return AssertForClass.that(actual);
     }

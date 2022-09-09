@@ -18,6 +18,9 @@ package com.github.ones1kk.asserts.core.lang.model;
 
 import com.github.ones1kk.asserts.core.lang.number.shrt.AbstractShortAssert;
 
+/**
+ * <strong> The ShortAssert class inherits {@link AbstractShortAssert} </strong>
+ */
 public class ShortAssert extends AbstractShortAssert<ShortAssert, Short> {
 
     public ShortAssert(Short actual) {
