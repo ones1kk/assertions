@@ -16,6 +16,11 @@
 
 package com.github.ones1kk.asserts.core.feature.comparable.lang;
 
+/**
+ * <strong> The ComparableLanguage class compares comparable ELEMENT type parameter.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public interface ComparableLanguage<ELEMENT extends java.lang.Comparable<ELEMENT>> {
 
     boolean isLessThan(ELEMENT actual, ELEMENT expected);

@@ -18,6 +18,11 @@ package com.github.ones1kk.asserts.core.feature.comparable.collection.impl;
 
 import com.github.ones1kk.asserts.core.feature.comparable.collection.CollectionComparable;
 
+/**
+ * <strong> The CollectionComparableImpl is an implementation class that compares the size of Collection type.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public class CollectionComparableImpl<ELEMENT> implements CollectionComparable<ELEMENT> {
 
     @Override

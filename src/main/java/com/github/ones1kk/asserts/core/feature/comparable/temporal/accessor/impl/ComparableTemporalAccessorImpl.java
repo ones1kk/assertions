@@ -20,6 +20,11 @@ import com.github.ones1kk.asserts.core.feature.comparable.temporal.accessor.Comp
 
 import java.time.temporal.TemporalAccessor;
 
+/**
+ * <strong> The ComparableTemporalAccessorImpl is an implementation class that compares TemporalAccessor that inherits {@link Comparable} type.</strong>
+ *
+ * @param <ACTUAL>
+ */
 public class ComparableTemporalAccessorImpl<ACTUAL extends TemporalAccessor & Comparable<ACTUAL>> implements ComparableTemporalAccessor<ACTUAL> {
 
     @Override

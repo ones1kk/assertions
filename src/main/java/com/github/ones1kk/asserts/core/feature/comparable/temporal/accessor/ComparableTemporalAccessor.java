@@ -18,6 +18,11 @@ package com.github.ones1kk.asserts.core.feature.comparable.temporal.accessor;
 
 import java.time.temporal.TemporalAccessor;
 
+/**
+ * <strong> The ComparableTemporalAccessor class compares comparable ELEMENT type parameter.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public interface ComparableTemporalAccessor<ELEMENT extends TemporalAccessor & java.lang.Comparable<ELEMENT>> {
 
     boolean isBefore(ELEMENT actual, ELEMENT expected);

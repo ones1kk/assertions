@@ -18,6 +18,11 @@ package com.github.ones1kk.asserts.core.feature.comparable.temporal.localdate;
 
 import java.time.LocalDate;
 
+/**
+ * <strong> The ComparableLocalDate class compares comparable ELEMENT type parameter.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public interface ComparableLocalDate<ELEMENT extends LocalDate> {
 
     boolean isBefore(ELEMENT actual, ELEMENT expected);

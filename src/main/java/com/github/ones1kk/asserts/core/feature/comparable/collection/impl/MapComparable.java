@@ -18,6 +18,11 @@ package com.github.ones1kk.asserts.core.feature.comparable.collection.impl;
 
 import java.util.Map;
 
+/**
+ * <strong> The MapComparable is an implementation class that compares the size of Map type.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public class MapComparable<ELEMENT extends Map<K, V>, K, V> {
 
     public boolean isGraterThan(ELEMENT actual, ELEMENT expected) {

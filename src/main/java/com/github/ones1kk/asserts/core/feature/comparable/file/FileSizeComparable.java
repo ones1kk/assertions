@@ -18,6 +18,9 @@ package com.github.ones1kk.asserts.core.feature.comparable.file;
 
 import java.io.File;
 
+/**
+ * <strong> The FileSizeComparable class compares comparable ELEMENT type parameter.</strong>
+ */
 public class FileSizeComparable {
 
     public boolean isLargerThan(File actual, File expected) {

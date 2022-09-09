@@ -18,6 +18,11 @@ package com.github.ones1kk.asserts.core.feature.comparable.lang.impl;
 
 import com.github.ones1kk.asserts.core.feature.comparable.lang.ComparableLanguage;
 
+/**
+ * <strong> The ComparableLanguageImpl is an implementation class that compares the comparable java language type.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public class ComparableLanguageImpl<ELEMENT extends Comparable<ELEMENT>> implements ComparableLanguage<ELEMENT> {
 
     @Override

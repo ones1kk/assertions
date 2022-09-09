@@ -18,6 +18,11 @@ package com.github.ones1kk.asserts.core.feature.comparable.collection;
 
 import java.util.Collection;
 
+/**
+ * <strong> The CollectionComparable class compares comparable ELEMENT type parameter.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public interface CollectionComparable<ELEMENT> {
 
     boolean isGraterThan(Collection<? extends ELEMENT> actual, Collection<? extends ELEMENT> expected);
