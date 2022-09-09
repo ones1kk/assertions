@@ -25,6 +25,9 @@ import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
 import static com.github.ones1kk.asserts.core.feature.number.arithmetic.IntegerArithmeticUnit.of;
 
+/**
+ * <strong> The Integers class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
+ */
 public class Integers extends Objects<Integer> implements IntegersInterface<Integer> {
 
     private final ComparableLanguage<Integer> comparable = new ComparableLanguageImpl<>();
@@ -35,8 +38,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
 
     @Override
     public void assertIsOdd(Integer actual) {
-        if (of(actual).isEven()
-                || comparable.isLessThan(actual, 0)) {
+        if (of(actual).isEven()) {
             handler.setDescription(handler.from(actual, "{} is not odd"));
             throw handler.getException();
         }
@@ -44,8 +46,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
 
     @Override
     public void assertIsNotOdd(Integer actual) {
-        if (of(actual).isOdd()
-                || comparable.isLessThan(actual, 0)) {
+        if (of(actual).isOdd()) {
             handler.setDescription(handler.from(actual, "{} is odd"));
             throw handler.getException();
         }
@@ -53,9 +54,7 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
 
     @Override
     public void assertIsEven(Integer actual) {
-        if (of(actual).isOdd()
-                || comparable.isLessThan(actual, 0)
-                || of(actual).isZero()) {
+        if (of(actual).isOdd()) {
             handler.setDescription(handler.from(actual, "{} is not even"));
             throw handler.getException();
         }
@@ -63,12 +62,9 @@ public class Integers extends Objects<Integer> implements IntegersInterface<Inte
 
     @Override
     public void assertIsNotEven(Integer actual) {
-        if (of(actual).isNotZero()) {
-            if (of(actual).isEven()
-                    || comparable.isLessThan(actual, 0)) {
-                handler.setDescription(handler.from(actual, "{} is even"));
-                throw handler.getException();
-            }
+        if (of(actual).isEven()) {
+            handler.setDescription(handler.from(actual, "{} is even"));
+            throw handler.getException();
         }
     }
 

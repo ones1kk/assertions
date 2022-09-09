@@ -20,9 +20,9 @@ import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 /**
- * <strong> The AbstractDoubleAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <strong> The AbstractFloatAssert class inherits {@link AbstractObjectAssert}</strong>
  * <br><br>
- * <p> This is that implements the assertion method of the Double type and verify assertion.</p>
+ * <p> This is that implements the assertion method of the Float type and verify assertion.</p>
  *
  * @param <SELF>
  * @param <ACTUAL>

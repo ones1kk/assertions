@@ -38,8 +38,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsOdd(Byte actual) {
-        if (of(actual).isEven()
-                || comparable.isLessThan(actual, (byte) 0)) {
+        if (of(actual).isEven()) {
             handler.setDescription(handler.from(actual, "{} is not odd"));
             throw handler.getException();
         }
@@ -47,8 +46,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsNotOdd(Byte actual) {
-        if (of(actual).isOdd()
-                || comparable.isLessThan(actual, (byte) 0)) {
+        if (of(actual).isOdd()) {
             handler.setDescription(handler.from(actual, "{} is odd"));
             throw handler.getException();
         }
@@ -56,9 +54,7 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsEven(Byte actual) {
-        if (of(actual).isOdd()
-                || comparable.isLessThan(actual, (byte) 0)
-                || of(actual).isZero()) {
+        if (of(actual).isOdd()) {
             handler.setDescription(handler.from(actual, "{} is not even"));
             throw handler.getException();
         }
@@ -66,12 +62,9 @@ public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsNotEven(Byte actual) {
-        if (of(actual).isNotZero()) {
-            if (of(actual).isEven()
-                    || comparable.isLessThan(actual, (byte) 0)) {
-                handler.setDescription(handler.from(actual, "{} is even"));
-                throw handler.getException();
-            }
+        if (of(actual).isEven()) {
+            handler.setDescription(handler.from(actual, "{} is even"));
+            throw handler.getException();
         }
     }
 

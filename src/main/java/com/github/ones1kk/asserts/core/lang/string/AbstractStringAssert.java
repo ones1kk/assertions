@@ -18,6 +18,16 @@ package com.github.ones1kk.asserts.core.lang.string;
 
 import com.github.ones1kk.asserts.core.lang.charsequence.AbstractCharSequenceAssert;
 
+/**
+ * /**
+ *  * <strong> The AbstractFloatAssert class inherits {@link AbstractCharSequenceAssert}</strong>
+ *  * <br><br>
+ *  * <p> This is that implements the assertion method of the Float type and verify assertion.</p>
+ *  *
+ *  * @param <SELF>
+ *
+ * @param <SELF>
+ */
 public class AbstractStringAssert<SELF extends AbstractStringAssert<SELF>> extends AbstractCharSequenceAssert<SELF, String> implements StringAssertInterface<SELF, String> {
 
     private final StringsInterface<String> strings;
@@ -27,30 +37,61 @@ public class AbstractStringAssert<SELF extends AbstractStringAssert<SELF>> exten
         this.strings = assertFactory.createAssert(actual, this);
     }
 
+    /**
+     * Verify {@code actual} is less than {@code expected}
+     *
+     * @param expected greater than {@code actual}
+     * @return {@code self}
+     */
     @Override
     public SELF isLessThan(String expected) {
         strings.assertIsLessThan(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} is less than or equal to {@code expected}
+     *
+     * @param expected greater than or Equal to {@code actual}
+     * @return {@code self}
+     */
     @Override
     public SELF isLessThanOrEqualTo(String expected) {
         strings.assertIsLessThanOrEqualTo(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} is greater than {@code expected}
+     *
+     * @param expected less than {@code actual}
+     * @return {@code self}
+     */
     @Override
     public SELF isGreaterThan(String expected) {
         strings.assertIsGreaterThan(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} is greater than or equal to{ @code expected}
+     *
+     * @param expected less than {@code actual}
+     * @return {@code self}
+     */
     @Override
     public SELF isGreaterThanOrEqualTo(String expected) {
         strings.assertIsGreaterThanOrEqualTo(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} is between {@code start} and {@code end}
+     *
+     * @param start less than or Equal to {@code actual}
+     * @param end   greater than or Equal to {@code actual}
+     * @return {@code self}
+     */
     @Override
     public SELF isBetween(String start, String end) {
         strings.assertIsBetween(actual, start, end);
