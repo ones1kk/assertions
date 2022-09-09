@@ -54,7 +54,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
 
     @Override
     public void assertIsEven(Long actual) {
-        if (of(actual).isOdd()){
+        if (of(actual).isOdd()) {
             handler.setDescription(handler.from(actual, "{} is not even"));
             throw handler.getException();
         }

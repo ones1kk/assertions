@@ -39,6 +39,7 @@ public class AbstractLocalDateTimeAssert<SELF extends AbstractLocalDateTimeAsser
 
     /**
      * Verify {@code actual} is before than {@code expected}
+     *
      * @param expected after than {@code actual}
      * @return {@code self}
      */

@@ -38,6 +38,7 @@ public class AbstractUrlAssert<SELF extends AbstractUrlAssert<SELF>> extends Abs
 
     /**
      * Verify {@code actual} has host as {@code expected} or not
+     *
      * @param expected same host {@code actual}
      * @return {@code self}
      */
@@ -49,6 +50,7 @@ public class AbstractUrlAssert<SELF extends AbstractUrlAssert<SELF>> extends Abs
 
     /**
      * Verify {@code actual} does not have host or not
+     *
      * @return {@code self}
      */
     @Override
@@ -59,6 +61,7 @@ public class AbstractUrlAssert<SELF extends AbstractUrlAssert<SELF>> extends Abs
 
     /**
      * Verify {@code actual} has port as {@code expected} or not
+     *
      * @param expected same port {@code actual}
      * @return {@code self}
      */
@@ -70,6 +73,7 @@ public class AbstractUrlAssert<SELF extends AbstractUrlAssert<SELF>> extends Abs
 
     /**
      * Verify {@code actual} does not have port or not
+     *
      * @return {@code self}
      */
     @Override
@@ -80,6 +84,7 @@ public class AbstractUrlAssert<SELF extends AbstractUrlAssert<SELF>> extends Abs
 
     /**
      * Verify {@code actual} has path as {@code expected} or not
+     *
      * @param expected same path {@code actual}
      * @return {@code self}
      */
@@ -91,6 +96,7 @@ public class AbstractUrlAssert<SELF extends AbstractUrlAssert<SELF>> extends Abs
 
     /**
      * Verify {@code actual} does not have path or not
+     *
      * @return {@code self}
      */
     @Override
