@@ -16,10 +16,18 @@
 
 package com.github.ones1kk.asserts.core.time.year;
 
+import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 import com.github.ones1kk.asserts.core.time.temporal.accessor.AbstractTemporalAccessorAssert;
 
 import java.time.Year;
 
+/**
+ * <strong> The AbstractYearAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <br><br>
+ * <p> This is that implements the assertion method of the Year type and verify assertion.</p>
+ *
+ * @param <SELF>
+ */
 public class AbstractYearAssert<SELF extends AbstractYearAssert<SELF, ACTUAL>, ACTUAL> extends AbstractTemporalAccessorAssert<SELF, Year> implements YearAssertInterface<SELF> {
 
     private final YearsInterface years;
@@ -29,12 +37,22 @@ public class AbstractYearAssert<SELF extends AbstractYearAssert<SELF, ACTUAL>, A
         this.years = assertFactory.createAssert(actual, this);
     }
 
+    /**
+     * Verify {@code actual} is leap year or not
+     *
+     * @return {@code self}
+     */
     @Override
     public SELF isLeapYear() {
         years.assertIsLeapYear(actual);
         return self;
     }
 
+    /**
+     * Verify {@code actual} is not leap year or not
+     *
+     * @return {@code self}
+     */
     @Override
     public SELF isNotLeapYear() {
         years.assertIsNotLeapYear(actual);

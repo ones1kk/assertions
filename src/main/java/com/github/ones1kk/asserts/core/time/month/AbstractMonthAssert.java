@@ -16,10 +16,18 @@
 
 package com.github.ones1kk.asserts.core.time.month;
 
+import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 import com.github.ones1kk.asserts.core.time.temporal.accessor.AbstractTemporalAccessorAssert;
 
 import java.time.Month;
 
+/**
+ * <strong> The AbstractMonthAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <br><br>
+ * <p> This is that implements the assertion method of the Month type and verify assertion.</p>
+ *
+ * @param <SELF>
+ */
 public class AbstractMonthAssert<SELF extends AbstractMonthAssert<SELF, ACTUAL>, ACTUAL> extends AbstractTemporalAccessorAssert<SELF, Month> {
 
     public AbstractMonthAssert(Class<?> self, Month actual) {

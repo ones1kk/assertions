@@ -22,6 +22,9 @@ import com.github.ones1kk.asserts.core.time.year.YearsInterface;
 
 import java.time.Year;
 
+/**
+ * <strong> The Years class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
+ */
 public class Years extends Objects<Year> implements YearsInterface {
 
     public Years(AsAssert<?> asAssert) {

@@ -24,6 +24,9 @@ import com.github.ones1kk.asserts.core.time.localdatetime.LocalDateTimesInterfac
 
 import java.time.LocalDateTime;
 
+/**
+ * <strong> The LocalDateTimes class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
+ */
 public class LocalDateTimes<ACTUAL extends LocalDateTime> extends Objects<LocalDateTime> implements LocalDateTimesInterface<ACTUAL> {
 
     private final ComparableLocalDateTime<ACTUAL> comparable = new ComparableLocalDateTimeImpl<>();
