@@ -19,6 +19,7 @@ package com.github.ones1kk.asserts.core.lang.number.lng.impl;
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.comparable.lang.ComparableLanguage;
 import com.github.ones1kk.asserts.core.feature.comparable.lang.impl.ComparableLanguageImpl;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.number.lng.LongsInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
@@ -159,9 +160,22 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
     }
 
     @Override
+    public void assertIsCloseTo(Long actual, Long expected, Offset<Long> offset) {
+        if (!offset.isOffset(actual, expected)) {
+            setAssertClose(actual, offset);
+        }
+    }
+
+    @Override
     public void assertIsCloseTo(Long actual, Long expected, Percentage<Long> percentage) {
         if (!percentage.isRange(actual, expected)) {
             setAssertClose(actual, percentage);
+        }
+    }
+    @Override
+    public void assertIsNotCloseTo(Long actual, Long expected, Offset<Long> offset) {
+        if (offset.isOffset(actual, expected)) {
+            setAssertClose(actual, offset);
         }
     }
 
@@ -170,6 +184,13 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
         if (percentage.isRange(actual, expected)) {
             setAssertClose(actual, percentage);
         }
+    }
+
+    private void setAssertClose(Long actual, Offset<Long> offset) {
+        String scope = handler.getDescribable().as("{} have to close to {}", actual,
+                offset.getBefore(actual) + " ~ " + offset.getAfter(actual));
+        handler.setDescription(handler.from(actual, scope));
+        throw handler.getException();
     }
 
     private void setAssertClose(Long actual, Percentage<Long> percentage) {

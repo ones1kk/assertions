@@ -19,6 +19,7 @@ package com.github.ones1kk.asserts.core.lang.number.flot.impl;
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.comparable.lang.ComparableLanguage;
 import com.github.ones1kk.asserts.core.feature.comparable.lang.impl.ComparableLanguageImpl;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.number.flot.FloatsInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
@@ -151,9 +152,23 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
     }
 
     @Override
+    public void assertIsCloseTo(Float actual, Float expected, Offset<Float> offset) {
+        if (!offset.isOffset(actual, expected)) {
+            setAssertClose(actual, offset);
+        }
+    }
+
+    @Override
     public void assertIsCloseTo(Float actual, Float expected, Percentage<Float> percentage) {
         if (!percentage.isRange(actual, expected)) {
             setAssertClose(actual, percentage);
+        }
+    }
+
+    @Override
+    public void assertIsNotCloseTo(Float actual, Float expected, Offset<Float> offset) {
+        if (offset.isOffset(actual, expected)) {
+            setAssertClose(actual, offset);
         }
     }
 
@@ -162,6 +177,13 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
         if (percentage.isRange(actual, expected)) {
             setAssertClose(actual, percentage);
         }
+    }
+
+    private void setAssertClose(Float actual, Offset<Float> offset) {
+        String scope = handler.getDescribable().as("{} have to close to {}", actual,
+                offset.getBefore(actual) + " ~ " + offset.getAfter(actual));
+        handler.setDescription(handler.from(actual, scope));
+        throw handler.getException();
     }
 
     private void setAssertClose(Float actual, Percentage<Float> percentage) {

@@ -16,6 +16,7 @@
 
 package com.github.ones1kk.asserts.core.lang.number.lng;
 
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
@@ -208,6 +209,19 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
     }
 
     /**
+     * Verify {@code actual} is close to {@code expected} by {@code offset}
+     *
+     * @param expected closed by difference of {@code offset} from {@code actual}
+     * @param offset   offset value {@link Offset#offset(Number)}
+     * @return {@code self}
+     */
+    @Override
+    public SELF isCloseTo(Long expected, Offset<Long> offset) {
+        longs.assertIsCloseTo(actual, expected, offset);
+        return self;
+    }
+
+    /**
      * Verify {@code actual} is close to {@code expected} by {@code percentage}
      *
      * @param expected   closed by difference of {@code percentage} from {@code actual}
@@ -217,6 +231,19 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
     @Override
     public SELF isCloseTo(Long expected, Double percentage) {
         longs.assertIsCloseTo(actual, expected, Percentage.of(percentage));
+        return self;
+    }
+
+    /**
+     * Verify {@code actual} is not close to {@code expected} by {@code offset}
+     *
+     * @param expected closed by difference of {@code offset} from {@code actual}
+     * @param offset   offset value {@link Offset#offset(Number)}
+     * @return {@code self}
+     */
+    @Override
+    public SELF isNotCloseTo(Long expected, Offset<Long> offset) {
+        longs.assertIsNotCloseTo(actual, expected, offset   );
         return self;
     }
 
@@ -232,5 +259,4 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
         longs.assertIsNotCloseTo(actual, expected, Percentage.of(percentage));
         return self;
     }
-
 }

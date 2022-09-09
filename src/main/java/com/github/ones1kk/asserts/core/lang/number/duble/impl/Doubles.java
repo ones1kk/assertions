@@ -19,6 +19,7 @@ package com.github.ones1kk.asserts.core.lang.number.duble.impl;
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.comparable.lang.ComparableLanguage;
 import com.github.ones1kk.asserts.core.feature.comparable.lang.impl.ComparableLanguageImpl;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.number.duble.DoublesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
@@ -151,9 +152,23 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
     }
 
     @Override
+    public void assertIsCloseTo(Double actual, Double expected, Offset<Double> offset) {
+        if (!offset.isOffset(actual, expected)) {
+            setAssertClose(actual, offset);
+        }
+    }
+
+    @Override
     public void assertIsCloseTo(Double actual, Double expected, Percentage<Double> percentage) {
         if (!percentage.isRange(actual, expected)) {
             setAssertClose(actual, percentage);
+        }
+    }
+
+    @Override
+    public void assertIsNotCloseTo(Double actual, Double expected, Offset<Double> offset) {
+        if (offset.isOffset(actual, expected)) {
+            setAssertClose(actual, offset);
         }
     }
 
@@ -162,6 +177,13 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
         if (percentage.isRange(actual, expected)) {
             setAssertClose(actual, percentage);
         }
+    }
+
+    private void setAssertClose(Double actual, Offset<Double> offset) {
+        String scope = handler.getDescribable().as("{} have to close to {}", actual,
+                offset.getBefore(actual) + " ~ " + offset.getAfter(actual));
+        handler.setDescription(handler.from(actual, scope));
+        throw handler.getException();
     }
 
     private void setAssertClose(Double actual, Percentage<Double> percentage) {

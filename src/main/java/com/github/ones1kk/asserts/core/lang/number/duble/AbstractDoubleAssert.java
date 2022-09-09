@@ -16,6 +16,7 @@
 
 package com.github.ones1kk.asserts.core.lang.number.duble;
 
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
@@ -197,6 +198,19 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
+     * Verify {@code actual} is close to {@code expected} by {@code offset}
+     *
+     * @param expected closed by difference of {@code offset} from {@code actual}
+     * @param offset   offset value {@link Offset#offset(Number)}
+     * @return {@code self}
+     */
+    @Override
+    public SELF isCloseTo(Double expected, Offset<Double> offset) {
+        doubles.assertIsCloseTo(actual, expected, offset);
+        return self;
+    }
+
+    /**
      * Verify {@code actual} is close to {@code expected} by {@code percentage}
      *
      * @param expected   closed by difference of {@code percentage} from {@code actual}
@@ -206,6 +220,19 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     @Override
     public SELF isCloseTo(Double expected, Double percentage) {
         doubles.assertIsCloseTo(actual, expected, Percentage.of(percentage));
+        return self;
+    }
+
+    /**
+     * Verify {@code actual} is not close to {@code expected} by {@code offset}
+     *
+     * @param expected closed by difference of {@code offset} from {@code actual}
+     * @param offset   offset value {@link Offset#offset(Number)}
+     * @return {@code self}
+     */
+    @Override
+    public SELF isNotCloseTo(Double expected, Offset<Double> offset) {
+        doubles.assertIsNotCloseTo(actual, expected, offset);
         return self;
     }
 
@@ -221,5 +248,4 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
         doubles.assertIsNotCloseTo(actual, expected, Percentage.of(percentage));
         return self;
     }
-
 }
