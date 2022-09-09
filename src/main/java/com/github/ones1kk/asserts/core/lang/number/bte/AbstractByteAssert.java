@@ -38,9 +38,9 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is odd or not
+     * Verify {@code actual} is odd or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isOdd() {
@@ -49,9 +49,9 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is not odd or not
+     * Verify {@code actual} is not odd or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotOdd() {
@@ -60,9 +60,9 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is even or not
+     * Verify {@code actual} is even or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isEven() {
@@ -71,9 +71,9 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is not even or not
+     * Verify {@code actual} is not even or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotEven() {
@@ -82,10 +82,10 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is less than {@code expected}
+     * Verify {@code actual} is less than {@code expected}.
      *
-     * @param expected greater than {@code actual}
-     * @return {@code self}
+     * @param expected greater than {@code actual}.
+     * @return {@code self}.
      */
     @Override
     public SELF isLessThan(Byte expected) {
@@ -94,10 +94,10 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is less than or equal to {@code expected}
+     * Verify {@code actual} is less than or equal to {@code expected}.
      *
-     * @param expected greater than or Equal to {@code actual}
-     * @return {@code self}
+     * @param expected greater than or Equal to {@code actual}.
+     * @return {@code self}.
      */
     @Override
     public SELF isLessThanOrEqualTo(Byte expected) {
@@ -106,10 +106,10 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is greater than {@code expected}
+     * Verify {@code actual} is greater than {@code expected}.
      *
-     * @param expected less than {@code actual}
-     * @return {@code self}
+     * @param expected less than {@code actual}.
+     * @return {@code self}.
      */
     @Override
     public SELF isGreaterThan(Byte expected) {
@@ -118,10 +118,10 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is greater than or equal to {@code expected}
+     * Verify {@code actual} is greater than or equal to {@code expected}.
      *
-     * @param expected less than {@code actual}
-     * @return {@code self}
+     * @param expected less than {@code actual}.
+     * @return {@code self}.
      */
     @Override
     public SELF isGreaterThanOrEqualTo(Byte expected) {
@@ -130,11 +130,11 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is between {@code start} and {@code end}
+     * Verify {@code actual} is between {@code start} and {@code end}.
      *
-     * @param start less than or Equal to {@code actual}
-     * @param end   greater than or Equal to {@code actual}
-     * @return {@code self}
+     * @param start less than or Equal to {@code actual}.
+     * @param end   greater than or Equal to {@code actual}.
+     * @return {@code self}.
      */
     @Override
     public SELF isBetween(Byte start, Byte end) {
@@ -143,9 +143,9 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is positive or not
+     * Verify {@code actual} is positive or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isPositive() {
@@ -154,9 +154,9 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is not positive or not
+     * Verify {@code actual} is not positive or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotPositive() {
@@ -165,9 +165,9 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is negative or not
+     * Verify {@code actual} is negative or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNegative() {
@@ -176,9 +176,9 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is not negative or not
+     * Verify {@code actual} is not negative or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotNegative() {
@@ -187,9 +187,9 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is zero or not
+     * Verify {@code actual} is zero or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isZero() {
@@ -198,9 +198,9 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is not zero or not
+     * Verify {@code actual} is not zero or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotZero() {
@@ -213,7 +213,7 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
      *
      * @param expected closed by difference of {@code offset} from {@code actual}
      * @param offset   offset value {@link Offset#offset(Number)}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isCloseTo(Byte expected, Offset<Byte> offset) {
@@ -226,7 +226,7 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
      *
      * @param expected   closed by difference of {@code percentage} from {@code actual}
      * @param percentage percentage value {@link  Percentage#of(Double)}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isCloseTo(Byte expected, Double percentage) {

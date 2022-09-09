@@ -39,7 +39,7 @@ public class AbstractStringAssert<SELF extends AbstractStringAssert<SELF>> exten
      * Verify {@code actual} is less than {@code expected}
      *
      * @param expected greater than {@code actual}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isLessThan(String expected) {

@@ -37,10 +37,10 @@ public class AbstractUrlAssert<SELF extends AbstractUrlAssert<SELF>> extends Abs
     }
 
     /**
-     * Verify {@code actual} has host as {@code expected} or not
+     * Verify {@code actual} has host as {@code expected} or not.
      *
-     * @param expected same host {@code actual}
-     * @return {@code self}
+     * @param expected same host {@code actual}.
+     * @return {@code self}.
      */
     @Override
     public SELF hasHost(String expected) {
@@ -49,9 +49,9 @@ public class AbstractUrlAssert<SELF extends AbstractUrlAssert<SELF>> extends Abs
     }
 
     /**
-     * Verify {@code actual} does not have host or not
+     * Verify {@code actual} does not have host or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF doesNotHaveHost() {
@@ -60,10 +60,10 @@ public class AbstractUrlAssert<SELF extends AbstractUrlAssert<SELF>> extends Abs
     }
 
     /**
-     * Verify {@code actual} has port as {@code expected} or not
+     * Verify {@code actual} has port as {@code expected} or not.
      *
-     * @param expected same port {@code actual}
-     * @return {@code self}
+     * @param expected same port {@code actual}.
+     * @return {@code self}.
      */
     @Override
     public SELF hasPort(int expected) {
@@ -72,9 +72,9 @@ public class AbstractUrlAssert<SELF extends AbstractUrlAssert<SELF>> extends Abs
     }
 
     /**
-     * Verify {@code actual} does not have port or not
+     * Verify {@code actual} does not have port or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF doesNotHavePort() {
@@ -83,10 +83,10 @@ public class AbstractUrlAssert<SELF extends AbstractUrlAssert<SELF>> extends Abs
     }
 
     /**
-     * Verify {@code actual} has path as {@code expected} or not
+     * Verify {@code actual} has path as {@code expected} or not.
      *
-     * @param expected same path {@code actual}
-     * @return {@code self}
+     * @param expected same path {@code actual}.
+     * @return {@code self}.
      */
     @Override
     public SELF hasPath(String expected) {
@@ -95,9 +95,9 @@ public class AbstractUrlAssert<SELF extends AbstractUrlAssert<SELF>> extends Abs
     }
 
     /**
-     * Verify {@code actual} does not have path or not
+     * Verify {@code actual} does not have path or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF doesNotHavePath() {

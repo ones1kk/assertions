@@ -36,9 +36,9 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is lower case or not
+     * Verify {@code actual} is lower case or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isLowerCase() {
@@ -47,9 +47,9 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is not lower case or not
+     * Verify {@code actual} is not lower case or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotLowerCase() {
@@ -58,9 +58,9 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is upper case or not
+     * Verify {@code actual} is upper case or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isUpperCase() {
@@ -69,9 +69,9 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is not upper case or not
+     * Verify {@code actual} is not upper case or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotUpperCase() {
@@ -80,9 +80,9 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is letter or not
+     * Verify {@code actual} is letter or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isLetter() {
@@ -91,9 +91,9 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is not letter or not
+     * Verify {@code actual} is not letter or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotLetter() {
@@ -102,9 +102,9 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is digit or not
+     * Verify {@code actual} is digit or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isDigit() {
@@ -113,9 +113,9 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is not digit or not
+     * Verify {@code actual} is not digit or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotDigit() {
@@ -124,9 +124,9 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is whitespace or not
+     * Verify {@code actual} is whitespace or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isWhitespace() {
@@ -135,9 +135,9 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is not whitespace or not
+     * Verify {@code actual} is not whitespace or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotWhitespace() {
@@ -146,10 +146,10 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is less than {@code expected}
+     * Verify {@code actual} is less than {@code expected}.
      *
-     * @param expected greater than {@code actual}
-     * @return {@code self}
+     * @param expected greater than {@code actual}.
+     * @return {@code self}.
      */
     @Override
     public SELF isLessThan(Character expected) {
@@ -158,10 +158,10 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is less than or equal to {@code expected}
+     * Verify {@code actual} is less than or equal to {@code expected}.
      *
-     * @param expected greater than or Equal to {@code actual}
-     * @return {@code self}
+     * @param expected greater than or Equal to {@code actual}.
+     * @return {@code self}.
      */
     @Override
     public SELF isLessThanOrEqualTo(Character expected) {
@@ -170,10 +170,10 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is greater than {@code expected}
+     * Verify {@code actual} is greater than {@code expected}.
      *
-     * @param expected less than {@code actual}
-     * @return {@code self}
+     * @param expected less than {@code actual}.
+     * @return {@code self}.
      */
     @Override
     public SELF isGreaterThan(Character expected) {
@@ -182,10 +182,10 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is greater than or equal to {@code expected}
+     * Verify {@code actual} is greater than or equal to {@code expected}.
      *
-     * @param expected less than {@code actual}
-     * @return {@code self}
+     * @param expected less than {@code actual}.
+     * @return {@code self}.
      */
     @Override
     public SELF isGreaterThanOrEqualTo(Character expected) {
@@ -194,10 +194,10 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is between {@code start} and {@code end}
+     * Verify {@code actual} is between {@code start} and {@code end}.
      *
-     * @param start less than or Equal to {@code actual}
-     * @param end   greater than or Equal to {@code actual}
+     * @param start less than or Equal to {@code actual}.
+     * @param end   greater than or Equal to {@code actual}.
      * @return {@code self}
      */
     @Override

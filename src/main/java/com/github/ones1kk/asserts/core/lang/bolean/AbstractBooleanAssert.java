@@ -36,9 +36,9 @@ public class AbstractBooleanAssert<SELF extends AbstractBooleanAssert<SELF, ACTU
     }
 
     /**
-     * Verify {@code actual} is false or not
+     * Verify {@code actual} is false or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isFalse() {
@@ -47,9 +47,9 @@ public class AbstractBooleanAssert<SELF extends AbstractBooleanAssert<SELF, ACTU
     }
 
     /**
-     * Verify {@code actual} is true or not
+     * Verify {@code actual} is true or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isTrue() {

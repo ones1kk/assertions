@@ -38,7 +38,7 @@ public class AbstractYearAssert<SELF extends AbstractYearAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is leap year or not
+     * Verify {@code actual} is leap year or not.
      *
      * @return {@code self}
      */
@@ -49,7 +49,7 @@ public class AbstractYearAssert<SELF extends AbstractYearAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is not leap year or not
+     * Verify {@code actual} is not leap year or not.
      *
      * @return {@code self}
      */

@@ -37,9 +37,9 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} exists or not
+     * Verify {@code actual} exists or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF exists() {
@@ -48,9 +48,9 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} is file or not
+     * Verify {@code actual} is file or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isFile() {
@@ -59,9 +59,9 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} is not file or not
+     * Verify {@code actual} is not file or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotFile() {
@@ -70,9 +70,9 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} is directory or not
+     * Verify {@code actual} is directory or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isDirectory() {
@@ -81,9 +81,9 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} is not directory or not
+     * Verify {@code actual} is not directory or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotDirectory() {
@@ -92,9 +92,9 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} is hidden or not
+     * Verify {@code actual} is hidden or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isHidden() {
@@ -103,9 +103,9 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} is not hidden or not
+     * Verify {@code actual} is not hidden or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotHidden() {
@@ -114,9 +114,9 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} can read or not
+     * Verify {@code actual} can read or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF canRead() {
@@ -125,9 +125,9 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} cannot be read or not
+     * Verify {@code actual} cannot be read or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF canNotRead() {
@@ -136,9 +136,9 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} can be written or not
+     * Verify {@code actual} can be written or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF canWrite() {
@@ -147,9 +147,9 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} cannot be written or not
+     * Verify {@code actual} cannot be written or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF canNotWrite() {
@@ -158,9 +158,9 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} can be executed or not
+     * Verify {@code actual} can be executed or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF canExecute() {
@@ -169,9 +169,9 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} cannot be executed or not
+     * Verify {@code actual} cannot be executed or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF canNotExecute() {
@@ -180,9 +180,9 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} has extension or not
+     * Verify {@code actual} has extension or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF hasExtension(String extension) {
@@ -191,9 +191,9 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} does not have extension or not
+     * Verify {@code actual} does not have extension or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF doesNotHaveExtension(String extension) {
@@ -205,7 +205,7 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
      * Verify {@code actual} size is smaller than {@code expected}
      *
      * @param expected greater than {@code actual}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isSmallerThan(File expected) {
@@ -217,7 +217,7 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
      * Verify {@code actual} size is smaller than or equal to {@code expected}
      *
      * @param expected greater than or Equal to {@code actual}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isSmallerThanOrEqualTo(File expected) {
@@ -229,7 +229,7 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
      * Verify {@code actual} size is larger than {@code expected}
      *
      * @param expected less than {@code actual}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isLargerThan(File expected) {
@@ -241,7 +241,7 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
      * Verify {@code actual} size is larger than or equal to {@code expected}
      *
      * @param expected less than {@code actual}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isLargerThanOrEqualTo(File expected) {
@@ -254,7 +254,7 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
      *
      * @param start smaller than or Equal to {@code actual}
      * @param end   larger than or Equal to {@code actual}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isBetween(File start, File end) {

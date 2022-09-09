@@ -53,7 +53,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     @Override
     public void assertIsNullOrEmpty(ACTUAL[] actual) {
         if (ArrayUtils.isNotEmpty(actual)) {
-            handler.setDescription(handler.from("The actual is not null or not empty"));
+            handler.setDescription(handler.from("The actual is not null or not empty."));
             throw handler.getException();
         }
     }

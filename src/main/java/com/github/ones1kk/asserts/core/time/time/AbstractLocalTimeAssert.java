@@ -35,7 +35,7 @@ public class AbstractLocalTimeAssert<SELF extends AbstractLocalTimeAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is midnight or not
+     * Verify {@code actual} is midnight or not.
      *
      * @return {@code self}
      */
@@ -46,7 +46,7 @@ public class AbstractLocalTimeAssert<SELF extends AbstractLocalTimeAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is noon or not
+     * Verify {@code actual} is noon or not.
      *
      * @return {@code self}
      */
@@ -57,7 +57,7 @@ public class AbstractLocalTimeAssert<SELF extends AbstractLocalTimeAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is before noon or not
+     * Verify {@code actual} is before noon or not.
      *
      * @return {@code self}
      */
@@ -68,7 +68,7 @@ public class AbstractLocalTimeAssert<SELF extends AbstractLocalTimeAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is before or equal to noon or not
+     * Verify {@code actual} is before or equal to noon or not.
      *
      * @return {@code self}
      */
@@ -79,7 +79,7 @@ public class AbstractLocalTimeAssert<SELF extends AbstractLocalTimeAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is after noon or not
+     * Verify {@code actual} is after noon or not.
      *
      * @return {@code self}
      */
@@ -90,7 +90,7 @@ public class AbstractLocalTimeAssert<SELF extends AbstractLocalTimeAssert<SELF, 
     }
 
     /**
-     * Verify {@code actual} is after or equal to noon or not
+     * Verify {@code actual} is after or equal to noon or not.
      *
      * @return {@code self}
      */

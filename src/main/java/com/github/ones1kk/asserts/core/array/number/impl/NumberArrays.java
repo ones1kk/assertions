@@ -35,7 +35,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertIsMax(Number[] actual, Number expected) {
         if (!containable.isMax(actual, expected)) {
-            handler.setDescription(handler.from(expected, "max of actual is not {}"));
+            handler.setDescription(handler.from(expected, "max of actual is not {}."));
             throw handler.getException();
         }
     }
@@ -43,7 +43,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertIsMin(Number[] actual, Number expected) {
         if (!containable.isMin(actual, expected)) {
-            handler.setDescription(handler.from(expected, "minimum of actual is not {}"));
+            handler.setDescription(handler.from(expected, "minimum of actual is not {}."));
             throw handler.getException();
         }
     }
@@ -51,7 +51,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertIsSum(Number[] actual, Number expected) {
         if (!containable.isSum(actual, expected)) {
-            handler.setDescription(handler.from(expected, "sum of actual is not {}"));
+            handler.setDescription(handler.from(expected, "sum of actual is not {}."));
             throw handler.getException();
         }
     }
@@ -59,7 +59,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertIsEmpty(Number[] actual) {
         if (ArrayUtils.isNotEmpty(actual)) {
-            handler.setDescription(handler.from("The actual is not empty"));
+            handler.setDescription(handler.from("The actual is not empty."));
             throw handler.getException();
         }
     }
@@ -67,7 +67,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertIsNotEmpty(Number[] actual) {
         if (ArrayUtils.isEmpty(actual)) {
-            handler.setDescription(handler.from(actual, "The actual is empty"));
+            handler.setDescription(handler.from(actual, "The actual is empty."));
             throw handler.getException();
         }
     }
@@ -75,7 +75,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertIsNullOrEmpty(Number[] actual) {
         if (ArrayUtils.isNotEmpty(actual)) {
-            handler.setDescription(handler.from(actual, "The actual is not null or not empty"));
+            handler.setDescription(handler.from(actual, "The actual is not null or not empty."));
             throw handler.getException();
         }
     }
@@ -83,7 +83,7 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
     @Override
     public void assertContains(Number[] actual, Number expected) {
         if (containable.doesNotContain(actual, expected)) {
-            handler.setDescription(handler.from(expected, "The actual does not contain of {}"));
+            handler.setDescription(handler.from(expected, "The actual does not contain of {}."));
             throw handler.getException();
         }
     }

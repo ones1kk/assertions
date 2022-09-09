@@ -38,9 +38,9 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is odd or not
+     * Verify {@code actual} is odd or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isOdd() {
@@ -49,9 +49,9 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is not odd or not
+     * Verify {@code actual} is not odd or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotOdd() {
@@ -60,9 +60,9 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is even or not
+     * Verify {@code actual} is even or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isEven() {
@@ -71,9 +71,9 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is not even or not
+     * Verify {@code actual} is not even or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotEven() {
@@ -82,9 +82,9 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is positive or not
+     * Verify {@code actual} is positive or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isPositive() {
@@ -93,9 +93,9 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is not positive or not
+     * Verify {@code actual} is not positive or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotPositive() {
@@ -104,9 +104,9 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is negative or not
+     * Verify {@code actual} is negative or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNegative() {
@@ -115,9 +115,9 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is not negative or not
+     * Verify {@code actual} is not negative or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotNegative() {
@@ -126,9 +126,9 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is zero or not
+     * Verify {@code actual} is zero or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isZero() {
@@ -137,9 +137,9 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is not zero or not
+     * Verify {@code actual} is not zero or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotZero() {
@@ -151,7 +151,7 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
      * Verify {@code actual} is less than {@code expected}
      *
      * @param expected greater than {@code actual}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isLessThan(Long expected) {
@@ -163,7 +163,7 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
      * Verify {@code actual} is less than or equal to {@code expected}
      *
      * @param expected greater than or Equal to {@code actual}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isLessThanOrEqualTo(Long expected) {
@@ -175,7 +175,7 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
      * Verify {@code actual} is greater than {@code expected}
      *
      * @param expected less than {@code actual}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isGreaterThan(Long expected) {
@@ -187,7 +187,7 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
      * Verify {@code actual} is greater than or equal to {@code expected}
      *
      * @param expected less than {@code actual}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isGreaterThanOrEqualTo(Long expected) {

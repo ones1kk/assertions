@@ -38,9 +38,9 @@ public class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<SELF, ACTU
     }
 
     /**
-     * Verify {@code actual} is odd or not
+     * Verify {@code actual} is odd or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isOdd() {
@@ -49,9 +49,9 @@ public class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<SELF, ACTU
     }
 
     /**
-     * Verify {@code actual} is not odd or not
+     * Verify {@code actual} is not odd or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotOdd() {
@@ -60,9 +60,9 @@ public class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<SELF, ACTU
     }
 
     /**
-     * Verify {@code actual} is even or not
+     * Verify {@code actual} is even or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isEven() {
@@ -71,9 +71,9 @@ public class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<SELF, ACTU
     }
 
     /**
-     * Verify {@code actual} is not even or not
+     * Verify {@code actual} is not even or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotEven() {
@@ -82,9 +82,9 @@ public class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<SELF, ACTU
     }
 
     /**
-     * Verify {@code actual} is positive or not
+     * Verify {@code actual} is positive or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isPositive() {
@@ -93,9 +93,9 @@ public class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<SELF, ACTU
     }
 
     /**
-     * Verify {@code actual} is not positive or not
+     * Verify {@code actual} is not positive or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotPositive() {
@@ -104,9 +104,9 @@ public class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<SELF, ACTU
     }
 
     /**
-     * Verify {@code actual} is negative or not
+     * Verify {@code actual} is negative or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNegative() {
@@ -115,9 +115,9 @@ public class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<SELF, ACTU
     }
 
     /**
-     * Verify {@code actual} is not negative or not
+     * Verify {@code actual} is not negative or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotNegative() {
@@ -126,9 +126,9 @@ public class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<SELF, ACTU
     }
 
     /**
-     * Verify {@code actual} is zero or not
+     * Verify {@code actual} is zero or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isZero() {
@@ -137,9 +137,9 @@ public class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<SELF, ACTU
     }
 
     /**
-     * Verify {@code actual} is not zero or not
+     * Verify {@code actual} is not zero or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotZero() {
@@ -151,7 +151,7 @@ public class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<SELF, ACTU
      * Verify {@code actual} is less than {@code expected}
      *
      * @param expected greater than {@code actual}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isLessThan(Integer expected) {

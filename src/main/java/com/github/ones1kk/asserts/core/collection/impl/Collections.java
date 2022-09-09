@@ -56,7 +56,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
     public void assertIsNullOrEmpty(java.util.Collection<? extends ACTUAL> actual) {
         if (actual != null) {
             if (!actual.isEmpty()) {
-                handler.setDescription(handler.from("The actual is not null or not empty"));
+                handler.setDescription(handler.from("The actual is not null or not empty."));
                 throw handler.getException();
             }
         }

@@ -38,9 +38,9 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is infinity or not
+     * Verify {@code actual} is infinity or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isInfinity() {
@@ -49,9 +49,9 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is finite or not
+     * Verify {@code actual} is finite or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isFinite() {
@@ -60,9 +60,9 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is NaN or not
+     * Verify {@code actual} is NaN or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNaN() {
@@ -71,9 +71,9 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is positive or not
+     * Verify {@code actual} is positive or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isPositive() {
@@ -82,9 +82,9 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is not positive or not
+     * Verify {@code actual} is not positive or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotPositive() {
@@ -93,9 +93,9 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is negative or not
+     * Verify {@code actual} is negative or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNegative() {
@@ -104,9 +104,9 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is not negative or not
+     * Verify {@code actual} is not negative or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotNegative() {
@@ -115,9 +115,9 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is zero or not
+     * Verify {@code actual} is zero or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isZero() {
@@ -126,9 +126,9 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is not zero or not
+     * Verify {@code actual} is not zero or not.
      *
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isNotZero() {
@@ -140,7 +140,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
      * Verify {@code actual} is less than {@code expected}
      *
      * @param expected greater than {@code actual}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isLessThan(Double expected) {
@@ -152,7 +152,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
      * Verify {@code actual} is less than or equal to {@code expected}
      *
      * @param expected greater than or Equal to {@code actual}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isLessThanOrEqualTo(Double expected) {
@@ -164,7 +164,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
      * Verify {@code actual} is greater than {@code expected}
      *
      * @param expected less than {@code actual}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isGreaterThan(Double expected) {
@@ -176,7 +176,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
      * Verify {@code actual} is greater than or equal to {@code expected}
      *
      * @param expected less than {@code actual}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isGreaterThanOrEqualTo(Double expected) {
@@ -189,7 +189,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
      *
      * @param start less than or Equal to {@code actual}
      * @param end   greater than or Equal to {@code actual}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isBetween(Double start, Double end) {
@@ -202,7 +202,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
      *
      * @param expected closed by difference of {@code offset} from {@code actual}
      * @param offset   offset value {@link Offset#offset(Number)}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isCloseTo(Double expected, Offset<Double> offset) {
@@ -215,7 +215,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
      *
      * @param expected   closed by difference of {@code percentage} from {@code actual}
      * @param percentage percentage value {@link  Percentage#of(Double)}
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isCloseTo(Double expected, Double percentage) {
