@@ -20,6 +20,9 @@ import com.github.ones1kk.asserts.core.net.AbstractUrlAssert;
 
 import java.net.URL;
 
+/**
+ * <strong> The UrlAssert class inherits {@link AbstractUrlAssert} </strong>
+ */
 public class UrlAssert extends AbstractUrlAssert<UrlAssert> {
 
     public UrlAssert(URL actual) {

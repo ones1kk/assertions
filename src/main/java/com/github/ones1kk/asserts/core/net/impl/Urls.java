@@ -7,6 +7,9 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.net.URL;
 
+/**
+ * <strong> The Urls class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
+ */
 public class Urls extends Objects<URL> implements UrlsInterface {
 
     public Urls(AsAssert<?> asAssert) {

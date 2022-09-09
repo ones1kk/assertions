@@ -20,6 +20,13 @@ import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 import java.net.URL;
 
+/**
+ * <strong> The AbstractUrlAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <br><br>
+ * <p> This is that implements the assertion method of the URL type and verify assertion.</p>
+ *
+ * @param <SELF>
+ */
 public class AbstractUrlAssert<SELF extends AbstractUrlAssert<SELF>> extends AbstractObjectAssert<SELF, URL> implements UrlAssertInterface<SELF> {
 
     private final UrlsInterface urls;
@@ -29,36 +36,63 @@ public class AbstractUrlAssert<SELF extends AbstractUrlAssert<SELF>> extends Abs
         this.urls = assertFactory.createAssert(actual, this);
     }
 
+    /**
+     * Verify {@code actual} has host as {@code expected} or not
+     * @param expected same host {@code actual}
+     * @return {@code self}
+     */
     @Override
     public SELF hasHost(String expected) {
         urls.assertHasHost(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} does not have host or not
+     * @return {@code self}
+     */
     @Override
     public SELF doesNotHaveHost() {
         urls.assertDoesNotHaveHost(actual);
         return self;
     }
 
+    /**
+     * Verify {@code actual} has port as {@code expected} or not
+     * @param expected same port {@code actual}
+     * @return {@code self}
+     */
     @Override
     public SELF hasPort(int expected) {
         urls.assertHasPort(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} does not have port or not
+     * @return {@code self}
+     */
     @Override
     public SELF doesNotHavePort() {
         urls.assertDoesNotHavePort(actual);
         return self;
     }
 
+    /**
+     * Verify {@code actual} has path as {@code expected} or not
+     * @param expected same path {@code actual}
+     * @return {@code self}
+     */
     @Override
     public SELF hasPath(String expected) {
         urls.assertHasPath(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} does not have path or not
+     * @return {@code self}
+     */
     @Override
     public SELF doesNotHavePath() {
         urls.assertDoesNotHavePath(actual);
