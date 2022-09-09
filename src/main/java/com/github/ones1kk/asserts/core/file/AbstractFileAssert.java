@@ -202,7 +202,7 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} size is smaller than {@code expected}
+     * Verify {@code actual} size is smaller than {@code expected}.
      *
      * @param expected greater than {@code actual}
      * @return {@code self}.
@@ -214,7 +214,7 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} size is smaller than or equal to {@code expected}
+     * Verify {@code actual} size is smaller than or equal to {@code expected}.
      *
      * @param expected greater than or Equal to {@code actual}
      * @return {@code self}.
@@ -226,7 +226,7 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} size is larger than {@code expected}
+     * Verify {@code actual} size is larger than {@code expected}.
      *
      * @param expected less than {@code actual}
      * @return {@code self}.
@@ -238,7 +238,7 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
     }
 
     /**
-     * Verify {@code actual} size is larger than or equal to {@code expected}
+     * Verify {@code actual} size is larger than or equal to {@code expected}.
      *
      * @param expected less than {@code actual}
      * @return {@code self}.

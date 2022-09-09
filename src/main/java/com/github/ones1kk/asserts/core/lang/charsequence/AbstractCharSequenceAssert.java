@@ -80,10 +80,10 @@ public class AbstractCharSequenceAssert<SELF extends AbstractCharSequenceAssert<
     }
 
     /**
-     * Verify is equal to {@code expected} as ignore case
+     * Verify is equal to {@code expected} as ignore case.
      *
-     * @param expected equal to {@code expected} includes ignore case too
-     * @return {@code self}
+     * @param expected equal to {@code expected} includes ignore case too.
+     * @return {@code self}.
      */
     @Override
     public SELF isEqualToIgnoreCase(CharSequence expected) {

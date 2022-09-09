@@ -36,7 +36,7 @@ public class AbstractStringAssert<SELF extends AbstractStringAssert<SELF>> exten
     }
 
     /**
-     * Verify {@code actual} is less than {@code expected}
+     * Verify {@code actual} is less than {@code expected}.
      *
      * @param expected greater than {@code actual}
      * @return {@code self}.
@@ -48,7 +48,7 @@ public class AbstractStringAssert<SELF extends AbstractStringAssert<SELF>> exten
     }
 
     /**
-     * Verify {@code actual} is less than or equal to {@code expected}
+     * Verify {@code actual} is less than or equal to {@code expected}.
      *
      * @param expected greater than or Equal to {@code actual}
      * @return {@code self}
@@ -60,7 +60,7 @@ public class AbstractStringAssert<SELF extends AbstractStringAssert<SELF>> exten
     }
 
     /**
-     * Verify {@code actual} is greater than {@code expected}
+     * Verify {@code actual} is greater than {@code expected}.
      *
      * @param expected less than {@code actual}
      * @return {@code self}
@@ -72,7 +72,7 @@ public class AbstractStringAssert<SELF extends AbstractStringAssert<SELF>> exten
     }
 
     /**
-     * Verify {@code actual} is greater than or equal to {@code expected}
+     * Verify {@code actual} is greater than or equal to {@code expected}.
      *
      * @param expected less than {@code actual}
      * @return {@code self}

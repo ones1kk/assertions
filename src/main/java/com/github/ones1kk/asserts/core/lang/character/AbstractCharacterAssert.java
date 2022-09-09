@@ -198,7 +198,7 @@ public class AbstractCharacterAssert<SELF extends AbstractCharacterAssert<SELF, 
      *
      * @param start less than or Equal to {@code actual}.
      * @param end   greater than or Equal to {@code actual}.
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isBetween(Character start, Character end) {

@@ -152,7 +152,7 @@ public class AbstractFloatAssert<SELF extends AbstractFloatAssert<SELF, ACTUAL>,
      * Verify {@code actual} is less than or equal to {@code expected}.
      *
      * @param expected greater than or Equal to {@code actual}.
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isLessThanOrEqualTo(Float expected) {
@@ -164,7 +164,7 @@ public class AbstractFloatAssert<SELF extends AbstractFloatAssert<SELF, ACTUAL>,
      * Verify {@code actual} is greater than {@code expected}.
      *
      * @param expected less than {@code actual}.
-     * @return {@code self}
+     * @return {@code self}.
      */
     @Override
     public SELF isGreaterThan(Float expected) {
@@ -198,11 +198,11 @@ public class AbstractFloatAssert<SELF extends AbstractFloatAssert<SELF, ACTUAL>,
     }
 
     /**
-     * Verify {@code actual} is close to {@code expected} by {@code offset}
+     * Verify {@code actual} is close to {@code expected} by {@code offset}.
      *
-     * @param expected closed by difference of {@code offset} from {@code actual}
-     * @param offset   offset value {@link Offset#offset(Number)}
-     * @return {@code self}
+     * @param expected closed by difference of {@code offset} from {@code actual}.
+     * @param offset   offset value {@link Offset#offset(Number)}.
+     * @return {@code self}.
      */
     @Override
     public SELF isCloseTo(Float expected, Offset<Float> offset) {
@@ -211,11 +211,11 @@ public class AbstractFloatAssert<SELF extends AbstractFloatAssert<SELF, ACTUAL>,
     }
 
     /**
-     * Verify {@code actual} is close to {@code expected} by {@code percentage}
+     * Verify {@code actual} is close to {@code expected} by {@code percentage}.
      *
-     * @param expected   closed by difference of {@code percentage} from {@code actual}
-     * @param percentage percentage value {@link  Percentage#of(Double)}
-     * @return {@code self}
+     * @param expected   closed by difference of {@code percentage} from {@code actual}.
+     * @param percentage percentage value {@link  Percentage#of(Double)}.
+     * @return {@code self}.
      */
     @Override
     public SELF isCloseTo(Float expected, Double percentage) {
@@ -224,11 +224,11 @@ public class AbstractFloatAssert<SELF extends AbstractFloatAssert<SELF, ACTUAL>,
     }
 
     /**
-     * Verify {@code actual} is not close to {@code expected} by {@code offset}
+     * Verify {@code actual} is not close to {@code expected} by {@code offset}.
      *
-     * @param expected closed by difference of {@code offset} from {@code actual}
-     * @param offset   offset value {@link Offset#offset(Number)}
-     * @return {@code self}
+     * @param expected closed by difference of {@code offset} from {@code actual}.
+     * @param offset   offset value {@link Offset#offset(Number)}.
+     * @return {@code self}.
      */
     @Override
     public SELF isNotCloseTo(Float expected, Offset<Float> offset) {
@@ -237,11 +237,11 @@ public class AbstractFloatAssert<SELF extends AbstractFloatAssert<SELF, ACTUAL>,
     }
 
     /**
-     * Verify {@code actual} is not close to {@code expected} by {@code percentage}
+     * Verify {@code actual} is not close to {@code expected} by {@code percentage}.
      *
-     * @param expected   closed by difference of {@code percentage} from {@code actual}
-     * @param percentage percentage value {@link  Percentage#of(Double)}
-     * @return {@code self}
+     * @param expected   closed by difference of {@code percentage} from {@code actual}.
+     * @param percentage percentage value {@link  Percentage#of(Double)}.
+     * @return {@code self}.
      */
     @Override
     public SELF isNotCloseTo(Float expected, Double percentage) {

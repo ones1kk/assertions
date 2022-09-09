@@ -209,10 +209,10 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is close to {@code expected} by {@code offset}
+     * Verify {@code actual} is close to {@code expected} by {@code offset}.
      *
-     * @param expected closed by difference of {@code offset} from {@code actual}
-     * @param offset   offset value {@link Offset#offset(Number)}
+     * @param expected closed by difference of {@code offset} from {@code actual}.
+     * @param offset   offset value {@link Offset#offset(Number)}.
      * @return {@code self}.
      */
     @Override
@@ -222,10 +222,10 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is close to {@code expected} by {@code percentage}
+     * Verify {@code actual} is close to {@code expected} by {@code percentage}.
      *
-     * @param expected   closed by difference of {@code percentage} from {@code actual}
-     * @param percentage percentage value {@link  Percentage#of(Double)}
+     * @param expected   closed by difference of {@code percentage} from {@code actual}.
+     * @param percentage percentage value {@link  Percentage#of(Double)}.
      * @return {@code self}.
      */
     @Override
@@ -235,11 +235,11 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is not close to {@code expected} by {@code offset}
+     * Verify {@code actual} is not close to {@code expected} by {@code offset}.
      *
-     * @param expected closed by difference of {@code offset} from {@code actual}
-     * @param offset   offset value {@link Offset#offset(Number)}
-     * @return {@code self}
+     * @param expected closed by difference of {@code offset} from {@code actual}.
+     * @param offset   offset value {@link Offset#offset(Number)}.
+     * @return {@code self}.
      */
     @Override
     public SELF isNotCloseTo(Byte expected, Offset<Byte> offset) {
@@ -247,11 +247,11 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is not close to {@code expected} by {@code percentage}
+     * Verify {@code actual} is not close to {@code expected} by {@code percentage}.
      *
-     * @param expected   closed by difference of {@code percentage} from {@code actual}
-     * @param percentage percentage value {@link  Percentage#of(Double)}
-     * @return {@code self}
+     * @param expected   closed by difference of {@code percentage} from {@code actual}.
+     * @param percentage percentage value {@link  Percentage#of(Double)}.
+     * @return {@code self}.
      */
     @Override
     public SELF isNotCloseTo(Byte expected, Double percentage) {

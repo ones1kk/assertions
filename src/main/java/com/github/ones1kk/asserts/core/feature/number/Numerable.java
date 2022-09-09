@@ -39,7 +39,6 @@ public interface Numerable<ACTUAL extends Number> {
 
     void assertIsNotCloseTo(ACTUAL actual, ACTUAL expected, Offset<ACTUAL> offset);
 
-    void
-    assertIsNotCloseTo(ACTUAL actual, ACTUAL expected, Percentage<ACTUAL> percentage);
+    void assertIsNotCloseTo(ACTUAL actual, ACTUAL expected, Percentage<ACTUAL> percentage);
 
 }

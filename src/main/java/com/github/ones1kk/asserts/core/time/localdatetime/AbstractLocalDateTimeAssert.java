@@ -38,7 +38,7 @@ public class AbstractLocalDateTimeAssert<SELF extends AbstractLocalDateTimeAsser
     }
 
     /**
-     * Verify {@code actual} is before than {@code expected}
+     * Verify {@code actual} is before than {@code expected}.
      *
      * @param expected after than {@code actual}
      * @return {@code self}
@@ -50,7 +50,7 @@ public class AbstractLocalDateTimeAssert<SELF extends AbstractLocalDateTimeAsser
     }
 
     /**
-     * Verify {@code actual} is before than or equal to {@code expected}
+     * Verify {@code actual} is before than or equal to {@code expected}.
      *
      * @param expected after than or Equal to {@code actual}
      * @return {@code self}
@@ -62,7 +62,7 @@ public class AbstractLocalDateTimeAssert<SELF extends AbstractLocalDateTimeAsser
     }
 
     /**
-     * Verify {@code actual} is after than {@code expected}
+     * Verify {@code actual} is after than {@code expected}.
      *
      * @param expected before than {@code actual}
      * @return {@code self}
@@ -74,7 +74,7 @@ public class AbstractLocalDateTimeAssert<SELF extends AbstractLocalDateTimeAsser
     }
 
     /**
-     * Verify {@code actual} is after than or equal to {@code expected}
+     * Verify {@code actual} is after than or equal to {@code expected}.
      *
      * @param expected before than {@code actual}
      * @return {@code self}

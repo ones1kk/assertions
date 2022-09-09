@@ -137,7 +137,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is less than {@code expected}
+     * Verify {@code actual} is less than {@code expected}.
      *
      * @param expected greater than {@code actual}
      * @return {@code self}.
@@ -149,7 +149,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is less than or equal to {@code expected}
+     * Verify {@code actual} is less than or equal to {@code expected}.
      *
      * @param expected greater than or Equal to {@code actual}
      * @return {@code self}.
@@ -161,7 +161,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is greater than {@code expected}
+     * Verify {@code actual} is greater than {@code expected}.
      *
      * @param expected less than {@code actual}
      * @return {@code self}.
@@ -173,7 +173,7 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is greater than or equal to {@code expected}
+     * Verify {@code actual} is greater than or equal to {@code expected}.
      *
      * @param expected less than {@code actual}
      * @return {@code self}.
@@ -198,10 +198,10 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is close to {@code expected} by {@code offset}
+     * Verify {@code actual} is close to {@code expected} by {@code offset}.
      *
-     * @param expected closed by difference of {@code offset} from {@code actual}
-     * @param offset   offset value {@link Offset#offset(Number)}
+     * @param expected closed by difference of {@code offset} from {@code actual}.
+     * @param offset   offset value {@link Offset#offset(Number)}.
      * @return {@code self}.
      */
     @Override
@@ -211,10 +211,10 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is close to {@code expected} by {@code percentage}
+     * Verify {@code actual} is close to {@code expected} by {@code percentage}.
      *
-     * @param expected   closed by difference of {@code percentage} from {@code actual}
-     * @param percentage percentage value {@link  Percentage#of(Double)}
+     * @param expected   closed by difference of {@code percentage} from {@code actual}.
+     * @param percentage percentage value {@link  Percentage#of(Double)}.
      * @return {@code self}.
      */
     @Override
@@ -224,11 +224,11 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is not close to {@code expected} by {@code offset}
+     * Verify {@code actual} is not close to {@code expected} by {@code offset}.
      *
-     * @param expected closed by difference of {@code offset} from {@code actual}
-     * @param offset   offset value {@link Offset#offset(Number)}
-     * @return {@code self}
+     * @param expected closed by difference of {@code offset} from {@code actual}.
+     * @param offset   offset value {@link Offset#offset(Number)}.
+     * @return {@code self}.
      */
     @Override
     public SELF isNotCloseTo(Double expected, Offset<Double> offset) {
@@ -237,11 +237,11 @@ public class AbstractDoubleAssert<SELF extends AbstractDoubleAssert<SELF, ACTUAL
     }
 
     /**
-     * Verify {@code actual} is not close to {@code expected} by {@code percentage}
+     * Verify {@code actual} is not close to {@code expected} by {@code percentage}.
      *
-     * @param expected   closed by difference of {@code percentage} from {@code actual}
-     * @param percentage percentage value {@link  Percentage#of(Double)}
-     * @return {@code self}
+     * @param expected   closed by difference of {@code percentage} from {@code actual}.
+     * @param percentage percentage value {@link  Percentage#of(Double)}.
+     * @return {@code self}.
      */
     @Override
     public SELF isNotCloseTo(Double expected, Double percentage) {
