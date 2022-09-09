@@ -172,6 +172,7 @@ public class Longs extends Objects<Long> implements LongsInterface<Long> {
             setAssertClose(actual, percentage);
         }
     }
+
     @Override
     public void assertIsNotCloseTo(Long actual, Long expected, Offset<Long> offset) {
         if (offset.isOffset(actual, expected)) {

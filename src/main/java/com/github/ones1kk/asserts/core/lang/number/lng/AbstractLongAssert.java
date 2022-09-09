@@ -243,7 +243,7 @@ public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, A
      */
     @Override
     public SELF isNotCloseTo(Long expected, Offset<Long> offset) {
-        longs.assertIsNotCloseTo(actual, expected, offset   );
+        longs.assertIsNotCloseTo(actual, expected, offset);
         return self;
     }
 

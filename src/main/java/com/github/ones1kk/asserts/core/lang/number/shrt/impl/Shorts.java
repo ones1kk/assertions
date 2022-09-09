@@ -172,6 +172,7 @@ public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
             setAssertClose(actual, percentage);
         }
     }
+
     @Override
     public void assertIsNotCloseTo(Short actual, Short expected, Offset<Short> offset) {
         if (offset.isOffset(actual, expected)) {
