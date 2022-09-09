@@ -117,7 +117,7 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
     }
 
     /**
-     * Verify {@code actual} is greater than or equal to{ @code expected}
+     * Verify {@code actual} is greater than or equal to {@code expected}
      *
      * @param expected less than {@code actual}
      * @return {@code self}

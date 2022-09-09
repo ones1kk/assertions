@@ -74,7 +74,7 @@ public class AbstractStringAssert<SELF extends AbstractStringAssert<SELF>> exten
     }
 
     /**
-     * Verify {@code actual} is greater than or equal to{ @code expected}
+     * Verify {@code actual} is greater than or equal to {@code expected}
      *
      * @param expected less than {@code actual}
      * @return {@code self}

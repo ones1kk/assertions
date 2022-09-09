@@ -30,7 +30,7 @@ import java.util.function.Supplier;
  */
 public class Description implements Describable {
 
-    private static final String REG_EXR = "Special character '%s' can not be inserted between strings.";
+    private static final String REG_EXR = "Special character '%s' cannot be inserted between strings.";
 
     private static final String ARGUMENT_DESCRIPTION = "Argument is missing.";
 

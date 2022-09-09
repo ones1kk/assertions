@@ -25,7 +25,7 @@ public final class Offset<T extends Number> {
 
     private Offset(T value) {
         Asserts.that(value)
-                .as("Offset value can not be null")
+                .as("Offset value cannot be null")
                 .isNotNull()
                 .isInstanceOf(Number.class);
         this.value = value;
