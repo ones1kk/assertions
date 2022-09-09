@@ -20,6 +20,9 @@ import com.github.ones1kk.asserts.core.file.AbstractFileAssert;
 
 import java.io.File;
 
+/**
+ * <strong> The FileAssert class inherits {@link AbstractFileAssert} </strong>
+ */
 public class FileAssert extends AbstractFileAssert<FileAssert> {
 
     public FileAssert(File file) {

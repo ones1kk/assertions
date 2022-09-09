@@ -24,6 +24,9 @@ import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;
 
+/**
+ * <strong> The Files class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
+ */
 public class Files extends Objects<File> implements FilesInterface {
 
     private final FileSizeComparable comparable = new FileSizeComparable();
@@ -91,7 +94,7 @@ public class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertCanRead(File actual) {
         if (!actual.canRead()) {
-            handler.setDescription(handler.from(actual, "{} can not read"));
+            handler.setDescription(handler.from(actual, "{} cannot read"));
             throw handler.getException();
         }
     }
@@ -107,7 +110,7 @@ public class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertCanWrite(File actual) {
         if (!actual.canWrite()) {
-            handler.setDescription(handler.from(actual, "{} can not write"));
+            handler.setDescription(handler.from(actual, "{} cannot write"));
             throw handler.getException();
         }
     }
@@ -123,7 +126,7 @@ public class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertCanExecute(File actual) {
         if (!actual.canExecute()) {
-            handler.setDescription(handler.from(actual, "{} can not Execute"));
+            handler.setDescription(handler.from(actual, "{} cannot Execute"));
             throw handler.getException();
         }
     }
