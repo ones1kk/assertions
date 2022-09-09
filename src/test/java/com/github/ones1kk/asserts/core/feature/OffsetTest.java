@@ -18,28 +18,27 @@ class OffsetTest {
         Offset<Integer> offset = Offset.offset(value);
 
         // then
-        assertThat(offset.getValue()).isEqualTo(3)
-                .isNotNull()
-                .isInstanceOf(Integer.class);
-
         assertThat(offset)
-                .isInstanceOf(Offset.class)
-                .isNotNull();
+                .isNotNull()
+                .isInstanceOf(Offset.class);
     }
 
     @Test
     @DisplayName("Offset method test")
     public void test2() throws Exception {
         // given
-        int value = 2;
+        int actual = 5;
+        int expected1 = 4;
+        int expected2 = 2;
+        int value = 1;
 
         // when
         Offset<Integer> offset = Offset.offset(value);
 
         // then
-        assertThat(offset.getValue()).isEqualTo(2);
-        assertThat((int) offset.getBefore(1)).isEqualTo(-1);
-        assertThat((int) offset.getAfter(1)).isEqualTo(3);
+        assertThat((int) offset.getBefore(actual)).isEqualTo(4);
+        assertThat((int) offset.getAfter(actual)).isEqualTo(6);
+        assertThat(offset.isOffset(actual, expected1)).isTrue();
+        assertThat(offset.isOffset(actual, expected2)).isFalse();
     }
-
 }
