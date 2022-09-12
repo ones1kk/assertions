@@ -16,18 +16,27 @@
 
 package com.github.ones1kk.asserts.core.feature.iterable.containable.array;
 
+/**
+ * The ArrayContainable class is for classes to implement containable array calculations.
+ *
+ * @param <ELEMENT>
+ */
 public interface ArrayContainable<ELEMENT> {
 
     boolean contains(ELEMENT[] actual, ELEMENT expected);
 
     boolean doesNotContain(ELEMENT[] actual, ELEMENT expected);
 
+    @SuppressWarnings("unchecked")
     boolean containsAll(ELEMENT[] actual, ELEMENT... expected);
 
+    @SuppressWarnings("unchecked")
     boolean containsNotAll(ELEMENT[] actual, ELEMENT... expected);
 
+    @SuppressWarnings("unchecked")
     boolean containsAny(ELEMENT[] actual, ELEMENT... expected);
 
+    @SuppressWarnings("unchecked")
     boolean doseNotContainAny(ELEMENT[] actual, ELEMENT... expected);
 
     boolean containsNull(ELEMENT[] actual);

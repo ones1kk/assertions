@@ -18,18 +18,27 @@ package com.github.ones1kk.asserts.core.feature.iterable.containable.collection;
 
 import java.util.Collection;
 
+/**
+ * The CollectionContainable class is for classes to implement containable collection calculations.
+ *
+ * @param <ELEMENT>
+ */
 public interface CollectionContainable<ELEMENT> {
 
     boolean contains(Collection<? extends ELEMENT> actual, ELEMENT expected);
 
     boolean doesNotContain(Collection<? extends ELEMENT> actual, ELEMENT expected);
 
+    @SuppressWarnings("unchecked")
     boolean containsAll(Collection<? extends ELEMENT> actual, ELEMENT... expected);
 
+    @SuppressWarnings("unchecked")
     boolean containsNotAll(Collection<? extends ELEMENT> actual, ELEMENT... expected);
 
+    @SuppressWarnings("unchecked")
     boolean containsAny(Collection<? extends ELEMENT> actual, ELEMENT... expected);
 
+    @SuppressWarnings("unchecked")
     boolean doseNotContainAny(Collection<? extends ELEMENT> actual, ELEMENT... expected);
 
     boolean containsNull(Collection<? extends ELEMENT> actual);

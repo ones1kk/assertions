@@ -20,6 +20,13 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * <strong> The MapContainable class is that calculates the containable of an map.</strong>
+ *
+ * @param <ACTUAL>
+ * @param <K>
+ * @param <V>
+ */
 public class MapContainable<ACTUAL extends Map<K, V>, K, V> {
 
     public boolean containsAllKey(ACTUAL actual, Map<? extends K, ?> expected) {

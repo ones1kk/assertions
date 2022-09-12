@@ -21,6 +21,11 @@ import com.github.ones1kk.asserts.core.feature.iterable.containable.array.ArrayC
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * <strong> The ArrayContainableImpl class is Implementation class that calculates the containable of an array. </strong>
+ *
+ * @param <ELEMENT>
+ */
 public class ArrayContainableImpl<ELEMENT> implements ArrayContainable<ELEMENT> {
 
     @Override
@@ -34,6 +39,7 @@ public class ArrayContainableImpl<ELEMENT> implements ArrayContainable<ELEMENT> 
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public boolean containsAll(ELEMENT[] actual, ELEMENT... expected) {
         List<ELEMENT> actuals = Arrays.asList(actual);
         for (ELEMENT value : expected) {
@@ -45,11 +51,13 @@ public class ArrayContainableImpl<ELEMENT> implements ArrayContainable<ELEMENT> 
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public boolean containsNotAll(ELEMENT[] actual, ELEMENT... expected) {
         return !(containsAll(actual, expected));
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public boolean containsAny(ELEMENT[] actual, ELEMENT... expected) {
         for (ELEMENT value : expected) {
             if (Arrays.asList(actual).contains(value)) return true;
@@ -58,6 +66,7 @@ public class ArrayContainableImpl<ELEMENT> implements ArrayContainable<ELEMENT> 
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public boolean doseNotContainAny(ELEMENT[] actual, ELEMENT... expected) {
         List<ELEMENT> actuals = Arrays.asList(actual);
         for (ELEMENT value : expected) {

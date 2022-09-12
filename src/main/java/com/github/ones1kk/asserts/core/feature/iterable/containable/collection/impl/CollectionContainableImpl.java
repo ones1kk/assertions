@@ -20,6 +20,11 @@ import com.github.ones1kk.asserts.core.feature.iterable.containable.collection.C
 
 import java.util.Collection;
 
+/**
+ * <strong> The CollectionContainableImpl class is Implementation class that calculates the containable of an collection.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public class CollectionContainableImpl<ELEMENT> implements CollectionContainable<ELEMENT> {
 
     @Override
@@ -33,6 +38,7 @@ public class CollectionContainableImpl<ELEMENT> implements CollectionContainable
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public boolean containsAll(Collection<? extends ELEMENT> actual, ELEMENT... expected) {
         for (ELEMENT value : expected) {
             if (!actual.contains(value)) {
@@ -43,11 +49,13 @@ public class CollectionContainableImpl<ELEMENT> implements CollectionContainable
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public boolean containsNotAll(Collection<? extends ELEMENT> actual, ELEMENT... expected) {
         return !(containsAll(actual, expected));
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public boolean containsAny(Collection<? extends ELEMENT> actual, ELEMENT... expected) {
         for (ELEMENT value : expected) {
             if (actual.contains(value)) return true;
@@ -56,6 +64,7 @@ public class CollectionContainableImpl<ELEMENT> implements CollectionContainable
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public boolean doseNotContainAny(Collection<? extends ELEMENT> actual, ELEMENT... expected) {
         for (ELEMENT value : expected) {
             if (actual.contains(value)) {

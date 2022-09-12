@@ -16,13 +16,18 @@
 
 package com.github.ones1kk.asserts.core.feature.iterable.containable.array.impl;
 
-import com.github.ones1kk.asserts.core.feature.iterable.containable.array.ArrayContainable;
+import com.github.ones1kk.asserts.core.feature.iterable.containable.array.NumberArrayContainable;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
-public class NumberArrayContainableImpl<ELEMENT extends Number> implements ArrayContainable<ELEMENT> {
+/**
+ * <strong> The NumberArrayContainableImpl class is Implementation class that calculates the containable of an array of type Number.</strong>
+ *
+ * @param <ELEMENT>
+ */
+public class NumberArrayContainableImpl<ELEMENT extends Number> implements NumberArrayContainable<ELEMENT> {
 
     @Override
     public boolean contains(Number[] actual, Number expected) {
@@ -80,6 +85,15 @@ public class NumberArrayContainableImpl<ELEMENT extends Number> implements Array
         return !(Arrays.asList(actual).contains(null));
     }
 
+    /**
+     * Verify {@code expected} is max in array or not.
+     * <p> Cast to Double with the largest data size among number type.</p>
+     *
+     * @param actual   reference value.
+     * @param expected to max in array.
+     * @return {@code expected} is max or not.
+     */
+    @Override
     public boolean isMax(Number[] actual, Number expected) {
         double max = actual[0].doubleValue();
         for (Number value : actual) {
@@ -89,6 +103,15 @@ public class NumberArrayContainableImpl<ELEMENT extends Number> implements Array
         return max == expected.doubleValue();
     }
 
+    /**
+     * Verify {@code expected} is min in array or not.
+     * <p> Cast to Double with the largest data size among number type.</p>
+     *
+     * @param actual   reference value.
+     * @param expected to min in array.
+     * @return {@code expected} is min or not.
+     */
+    @Override
     public boolean isMin(Number[] actual, Number expected) {
         double min = actual[0].doubleValue();
         for (Number value : actual) {
@@ -98,7 +121,15 @@ public class NumberArrayContainableImpl<ELEMENT extends Number> implements Array
         return min == expected.doubleValue();
     }
 
-
+    /**
+     * Verify {@code expected} is sum in array or not.
+     * <p> Cast to Double with the largest data size among number type.</p>
+     *
+     * @param actual   reference value.
+     * @param expected to sum in array.
+     * @return {@code expected} is sum or not.
+     */
+    @Override
     public boolean isSum(Number[] actual, Number expected) {
         double sum = 0;
         for (Number number : actual) {
