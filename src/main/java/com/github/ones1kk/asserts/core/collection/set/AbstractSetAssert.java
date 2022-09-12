@@ -20,7 +20,6 @@ import com.github.ones1kk.asserts.core.collection.list.AbstractListAssert;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 import java.util.Set;
-import java.util.Set;
 import java.util.function.Predicate;
 
 /**

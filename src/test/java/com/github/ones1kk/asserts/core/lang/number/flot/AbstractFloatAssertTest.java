@@ -49,7 +49,7 @@ class AbstractFloatAssertTest {
         Float actual3 = 0.0F;
         Float actual4 = (float) (3 / 0.0);
         Float actual5 = (float) (5 % 0.0);
-        Float actual6 =  100F;
+        Float actual6 = 100F;
 
         // when
         AbstractFloatAssert<?, Float> assert1 = new AbstractFloatAssert<>(AbstractFloatAssert.class, actual1);

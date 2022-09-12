@@ -2,12 +2,11 @@ package com.github.ones1kk.asserts.core.feature;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
 import com.github.ones1kk.asserts.core.feature.data.Offset;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class OffsetTest {
 
