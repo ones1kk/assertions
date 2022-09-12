@@ -18,6 +18,12 @@ package com.github.ones1kk.asserts.core.feature.iterable;
 
 import java.util.function.Predicate;
 
+/**
+ * <strong> The IterableAssert class is for a iterable, assertable interface class.</strong>
+ *
+ * @param <SELF>
+ * @param <ELEMENT>
+ */
 public interface IterableAssert<SELF, ELEMENT> {
 
     SELF isEmpty();

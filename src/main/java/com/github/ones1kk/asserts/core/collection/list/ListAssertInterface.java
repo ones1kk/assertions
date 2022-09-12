@@ -21,5 +21,11 @@ import com.github.ones1kk.asserts.core.feature.iterable.IterableAssert;
 
 import java.util.List;
 
+/**
+ * <strong> The ListAssertInterface class is for a comparable, assertable, iterable interface class.</strong>
+ *
+ * @param <SELF>
+ * @param <ACTUAL>
+ */
 public interface ListAssertInterface<SELF, ACTUAL> extends IterableAssert<SELF, ACTUAL>, ComparableAssert<SELF, List<? extends ACTUAL>> {
 }

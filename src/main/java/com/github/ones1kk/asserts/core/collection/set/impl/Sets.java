@@ -27,11 +27,16 @@ import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import java.util.Set;
 import java.util.function.Predicate;
 
+/**
+ * <strong> The Sets class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
+ *
+ * @param <ACTUAL>
+ */
 public class Sets<ACTUAL> extends Objects<ACTUAL> implements SetsInterfaces<ACTUAL> {
 
     private final CollectionContainable<ACTUAL> containable = new CollectionContainableImpl<>();
 
-    private final CollectionComparable<ACTUAL> calculator = new CollectionComparableImpl<>();
+    private final CollectionComparable<ACTUAL> comparable = new CollectionComparableImpl<>();
 
     public Sets(AsAssert<?> asAssert) {
         super(asAssert);
@@ -80,6 +85,7 @@ public class Sets<ACTUAL> extends Objects<ACTUAL> implements SetsInterfaces<ACTU
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public void assertContainsAll(Set<? extends ACTUAL> actual, ACTUAL... expected) {
         if (containable.containsNotAll(actual, expected)) {
             handler.setDescription(handler.from("The actual does not contain any of expected"));
@@ -88,6 +94,7 @@ public class Sets<ACTUAL> extends Objects<ACTUAL> implements SetsInterfaces<ACTU
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public void assertContainsAny(Set<? extends ACTUAL> actual, ACTUAL... expected) {
         if (containable.doseNotContainAny(actual, expected)) {
             handler.setDescription(handler.from("The actual does not contain any of expected"));
@@ -133,7 +140,7 @@ public class Sets<ACTUAL> extends Objects<ACTUAL> implements SetsInterfaces<ACTU
 
     @Override
     public void assertIsLessThan(Set<? extends ACTUAL> actual, Set<? extends ACTUAL> expected) {
-        if (calculator.isGraterThanOrEqualTo(actual, expected)) {
+        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not less than size of expected"));
             throw handler.getException();
         }
@@ -141,7 +148,7 @@ public class Sets<ACTUAL> extends Objects<ACTUAL> implements SetsInterfaces<ACTU
 
     @Override
     public void assertIsLessThanOrEqualTo(Set<? extends ACTUAL> actual, Set<? extends ACTUAL> expected) {
-        if (calculator.isGraterThan(actual, expected)) {
+        if (comparable.isGraterThan(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not less than or equal to size of expected"));
             throw handler.getException();
         }
@@ -149,7 +156,7 @@ public class Sets<ACTUAL> extends Objects<ACTUAL> implements SetsInterfaces<ACTU
 
     @Override
     public void assertIsGreaterThan(Set<? extends ACTUAL> actual, Set<? extends ACTUAL> expected) {
-        if (calculator.isLessThanOrEqualTo(actual, expected)) {
+        if (comparable.isLessThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not greater than size of expected"));
             throw handler.getException();
         }
@@ -157,7 +164,7 @@ public class Sets<ACTUAL> extends Objects<ACTUAL> implements SetsInterfaces<ACTU
 
     @Override
     public void assertIsGreaterThanOrEqualTo(Set<? extends ACTUAL> actual, Set<? extends ACTUAL> expected) {
-        if (calculator.isLessThan(actual, expected)) {
+        if (comparable.isLessThan(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not greater than or equal to size of expected"));
             throw handler.getException();
         }
@@ -165,7 +172,7 @@ public class Sets<ACTUAL> extends Objects<ACTUAL> implements SetsInterfaces<ACTU
 
     @Override
     public void assertIsBetween(Set<? extends ACTUAL> actual, Set<? extends ACTUAL> start, Set<? extends ACTUAL> end) {
-        if (calculator.isLessThan(actual, start) || calculator.isGraterThan(actual, end)) {
+        if (comparable.isLessThan(actual, start) || comparable.isGraterThan(actual, end)) {
             String description = handler.getDescribable().as("size of actual is not between {} and {}", start.size(), end.size());
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();

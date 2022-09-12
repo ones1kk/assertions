@@ -24,10 +24,15 @@ import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
 import java.util.Map;
 
+/**
+ * <strong> The Maps class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
+ *
+ * @param <ACTUAL>
+ */
 public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implements MapsInterface<ACTUAL, K, V> {
 
     private final MapContainable<ACTUAL, K, V> containable = new MapContainable<>();
-    private final MapComparable<ACTUAL, K, V> calculator = new MapComparable<>();
+    private final MapComparable<ACTUAL, K, V> comparable = new MapComparable<>();
 
     public Maps(AsAssert<?> asAssert) {
         super(asAssert);
@@ -101,7 +106,7 @@ public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implem
 
     @Override
     public void assertHasSameSizeOf(ACTUAL actual, Map<?, ?> expected) {
-        if (calculator.doesNotHaveSameSizeOf(actual, expected)) {
+        if (comparable.doesNotHaveSameSizeOf(actual, expected)) {
             handler.setDescription(handler.from("size of actual does not have same size of expected"));
             throw handler.getException();
         }
@@ -109,7 +114,7 @@ public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implem
 
     @Override
     public void assertDoesNotHaveSameSizeOf(ACTUAL actual, Map<?, ?> expected) {
-        if (calculator.hasSameSizeOf(actual, expected)) {
+        if (comparable.hasSameSizeOf(actual, expected)) {
             handler.setDescription(handler.from("size of actual has same size of expected"));
             throw handler.getException();
         }
@@ -117,7 +122,7 @@ public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implem
 
     @Override
     public void assertIsLessThan(ACTUAL actual, ACTUAL expected) {
-        if (calculator.isGraterThanOrEqualTo(actual, expected)) {
+        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not less than size of expected"));
             throw handler.getException();
         }
@@ -125,7 +130,7 @@ public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implem
 
     @Override
     public void assertIsLessThanOrEqualTo(ACTUAL actual, ACTUAL expected) {
-        if (calculator.isGraterThan(actual, expected)) {
+        if (comparable.isGraterThan(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not less than or equal to size of expected"));
             throw handler.getException();
         }
@@ -133,7 +138,7 @@ public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implem
 
     @Override
     public void assertIsGreaterThan(ACTUAL actual, ACTUAL expected) {
-        if (calculator.isLessThanOrEqualTo(actual, expected)) {
+        if (comparable.isLessThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not greater than size of expected"));
             throw handler.getException();
         }
@@ -141,7 +146,7 @@ public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implem
 
     @Override
     public void assertIsGreaterThanOrEqualTo(ACTUAL actual, ACTUAL expected) {
-        if (calculator.isLessThan(actual, expected)) {
+        if (comparable.isLessThan(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not greater than or equal to size of expected"));
             throw handler.getException();
         }
@@ -149,7 +154,7 @@ public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implem
 
     @Override
     public void assertIsBetween(ACTUAL actual, ACTUAL start, ACTUAL end) {
-        if (calculator.isLessThan(actual, start) || calculator.isGraterThan(actual, end)) {
+        if (comparable.isLessThan(actual, start) || comparable.isGraterThan(actual, end)) {
             String description = handler.getDescribable().as("size of actual is not between {} and {}", start.size(), end.size());
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();

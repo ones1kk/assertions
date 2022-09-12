@@ -55,12 +55,14 @@ public class AbstractCollectionAssert<SELF extends AbstractCollectionAssert<SELF
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public SELF containsAll(ACTUAL... expected) {
         collections.assertContainsAll(actual, expected);
         return self;
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public SELF containsAny(ACTUAL... expected) {
         collections.assertContainsAny(actual, expected);
         return self;

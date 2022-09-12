@@ -16,10 +16,21 @@
 
 package com.github.ones1kk.asserts.core.collection.map;
 
+import com.github.ones1kk.asserts.core.collection.list.AbstractListAssert;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 import java.util.Map;
 
+/**
+ * <strong> The AbstractMapAssert class inherits {@link AbstractListAssert}</strong>
+ * <br>
+ * <p> This is that implements the assertion method of the Map type and verify assertion.</p>
+ *
+ * @param <SELF>
+ * @param <ACTUAL>
+ * @param <K>
+ * @param <V>
+ */
 public class AbstractMapAssert<SELF extends AbstractMapAssert<SELF, ACTUAL, K, V>, ACTUAL extends Map<K, V>, K, V> extends AbstractObjectAssert<SELF, ACTUAL> implements MapAssertInterface<SELF, ACTUAL, K, V> {
 
     private final MapsInterface<ACTUAL, K, V> maps;
@@ -29,24 +40,45 @@ public class AbstractMapAssert<SELF extends AbstractMapAssert<SELF, ACTUAL, K, V
         this.maps = assertFactory.createAssert(actual, this);
     }
 
+    /**
+     * Verify {@code actual} is empty or not.
+     *
+     * @return {@code self}.
+     */
     @Override
     public SELF isEmpty() {
         maps.assertIsEmpty(actual);
         return self;
     }
 
+    /**
+     * Verify {@code actual} is not empty or not.
+     *
+     * @return {@code self}.
+     */
     @Override
     public SELF isNotEmpty() {
         maps.assertIsNotEmpty(actual);
         return self;
     }
 
+    /**
+     * Verify {@code actual} is null or empty.
+     *
+     * @return {@code self}.
+     */
     @Override
     public SELF isNullOrEmpty() {
         maps.assertIsNullOrEmpty(actual);
         return self;
     }
 
+    /**
+     * Verify {@code actual} contains key of {@code expected} or not.
+     *
+     * @param expected {@code actual} contains {@code expected}.
+     * @return {@code self}.
+     */
     @Override
     public SELF containsKey(K expected) {
         maps.assertContainsKey(actual, expected);

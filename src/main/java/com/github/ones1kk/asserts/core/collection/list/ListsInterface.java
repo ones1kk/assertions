@@ -21,5 +21,10 @@ import com.github.ones1kk.asserts.core.feature.iterable.collection.ListIterable;
 
 import java.util.List;
 
+/**
+ * <strong> The ArraysInterface class is for a comparable, iterable, assertable assertion implementation class.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public interface ListsInterface<ELEMENT> extends ListIterable<ELEMENT>, Comparable<List<? extends ELEMENT>> {
 }

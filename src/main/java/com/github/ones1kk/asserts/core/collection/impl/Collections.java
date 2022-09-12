@@ -26,11 +26,16 @@ import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
 import java.util.function.Predicate;
 
+/**
+ * <strong> The Collections class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
+ *
+ * @param <ACTUAL>
+ */
 public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsInterface<ACTUAL> {
 
     private final CollectionContainable<ACTUAL> containable = new CollectionContainableImpl<>();
 
-    private final CollectionComparable<ACTUAL> calculator = new CollectionComparableImpl<>();
+    private final CollectionComparable<ACTUAL> comparable = new CollectionComparableImpl<>();
 
     public Collections(AsAssert<?> asAssert) {
         super(asAssert);
@@ -134,7 +139,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
 
     @Override
     public void assertIsLessThan(java.util.Collection<? extends ACTUAL> actual, java.util.Collection<? extends ACTUAL> expected) {
-        if (calculator.isGraterThanOrEqualTo(actual, expected)) {
+        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not less than size of expected"));
             throw handler.getException();
         }
@@ -142,7 +147,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
 
     @Override
     public void assertIsLessThanOrEqualTo(java.util.Collection<? extends ACTUAL> actual, java.util.Collection<? extends ACTUAL> expected) {
-        if (calculator.isGraterThan(actual, expected)) {
+        if (comparable.isGraterThan(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not less than or equal to size of expected"));
             throw handler.getException();
         }
@@ -150,7 +155,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
 
     @Override
     public void assertIsGreaterThan(java.util.Collection<? extends ACTUAL> actual, java.util.Collection<? extends ACTUAL> expected) {
-        if (calculator.isLessThanOrEqualTo(actual, expected)) {
+        if (comparable.isLessThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not greater than size of expected"));
             throw handler.getException();
         }
@@ -158,7 +163,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
 
     @Override
     public void assertIsGreaterThanOrEqualTo(java.util.Collection<? extends ACTUAL> actual, java.util.Collection<? extends ACTUAL> expected) {
-        if (calculator.isLessThan(actual, expected)) {
+        if (comparable.isLessThan(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not greater than or equal to size of expected"));
             throw handler.getException();
         }
@@ -166,7 +171,7 @@ public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsI
 
     @Override
     public void assertIsBetween(java.util.Collection<? extends ACTUAL> actual, java.util.Collection<? extends ACTUAL> start, java.util.Collection<? extends ACTUAL> end) {
-        if (calculator.isLessThan(actual, start) || calculator.isGraterThan(actual, end)) {
+        if (comparable.isLessThan(actual, start) || comparable.isGraterThan(actual, end)) {
             String description = handler.getDescribable().as("size of actual is not between {} and {}", start.size(), end.size());
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();

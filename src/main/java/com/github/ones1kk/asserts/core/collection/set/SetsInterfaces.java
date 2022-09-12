@@ -21,5 +21,10 @@ import com.github.ones1kk.asserts.core.feature.iterable.collection.SetIterable;
 
 import java.util.Set;
 
+/**
+ * <strong> The SetsInterfaces class is for a comparable, iterable, assertable assertion implementation class.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public interface SetsInterfaces<ELEMENT> extends SetIterable<ELEMENT>, Comparable<Set<? extends ELEMENT>> {
 }

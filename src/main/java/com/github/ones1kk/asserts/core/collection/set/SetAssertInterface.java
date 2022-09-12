@@ -21,5 +21,11 @@ import com.github.ones1kk.asserts.core.feature.iterable.IterableAssert;
 
 import java.util.Set;
 
+/**
+ * <strong> The SetAssertInterface class is for a comparable, assertable, iterable interface class.</strong>
+ *
+ * @param <SELF>
+ * @param <ACTUAL>
+ */
 public interface SetAssertInterface<SELF, ACTUAL> extends IterableAssert<SELF, ACTUAL>, ComparableAssert<SELF, Set<? extends ACTUAL>> {
 }
