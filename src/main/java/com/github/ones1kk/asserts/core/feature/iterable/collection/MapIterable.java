@@ -18,6 +18,11 @@ package com.github.ones1kk.asserts.core.feature.iterable.collection;
 
 import java.util.Map;
 
+/**
+ * <strong> The MapIterable is for {@link Map} assertion assertion to implement iterable class.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public interface MapIterable<ELEMENT extends Map<K, V>, K, V> {
 
     void assertIsEmpty(ELEMENT actual);

@@ -19,6 +19,11 @@ package com.github.ones1kk.asserts.core.feature.iterable.collection;
 import java.util.Set;
 import java.util.function.Predicate;
 
+/**
+ * <strong> The SetIterable is for {@link Set} assertion to implement iterable class.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public interface SetIterable<ELEMENT> {
 
     void assertIsEmpty(Set<? extends ELEMENT> actual);
@@ -31,8 +36,10 @@ public interface SetIterable<ELEMENT> {
 
     void assertDoesNotContain(Set<? extends ELEMENT> actual, ELEMENT expected);
 
+    @SuppressWarnings("unchecked")
     void assertContainsAll(Set<? extends ELEMENT> actual, ELEMENT... expected);
 
+    @SuppressWarnings("unchecked")
     void assertContainsAny(Set<? extends ELEMENT> actual, ELEMENT... expected);
 
     void assertContainsNull(Set<? extends ELEMENT> actual);

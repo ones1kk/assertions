@@ -19,7 +19,7 @@ package com.github.ones1kk.asserts.core.feature.iterable.array;
 import java.util.function.Predicate;
 
 /**
- * <strong> The ArrayIterable is for iterable assertion implementation class.</strong>
+ * <strong> The ArrayIterable is for iterable assertion to implement iterable class.</strong>
  *
  * @param <ELEMENT>
  */
@@ -35,8 +35,10 @@ public interface ArrayIterable<ELEMENT> {
 
     void assertDoesNotContain(ELEMENT[] actual, ELEMENT expected);
 
+    @SuppressWarnings("unchecked")
     void assertContainsAll(ELEMENT[] actual, ELEMENT... expected);
 
+    @SuppressWarnings("unchecked")
     void assertContainsAny(ELEMENT[] actual, ELEMENT... expected);
 
     void assertContainsNull(ELEMENT[] actual);

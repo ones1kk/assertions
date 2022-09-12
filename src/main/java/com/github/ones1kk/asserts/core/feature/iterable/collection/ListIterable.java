@@ -19,6 +19,11 @@ package com.github.ones1kk.asserts.core.feature.iterable.collection;
 import java.util.List;
 import java.util.function.Predicate;
 
+/**
+ * <strong> The ListIterable is for {@link List} assertion to implement iterable class.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public interface ListIterable<ELEMENT> {
 
     void assertIsEmpty(List<? extends ELEMENT> actual);
@@ -31,8 +36,10 @@ public interface ListIterable<ELEMENT> {
 
     void assertDoesNotContain(List<? extends ELEMENT> actual, ELEMENT expected);
 
+    @SuppressWarnings("unchecked")
     void assertContainsAll(List<? extends ELEMENT> actual, ELEMENT... expected);
 
+    @SuppressWarnings("unchecked")
     void assertContainsAny(List<? extends ELEMENT> actual, ELEMENT... expected);
 
     void assertContainsNull(List<? extends ELEMENT> actual);

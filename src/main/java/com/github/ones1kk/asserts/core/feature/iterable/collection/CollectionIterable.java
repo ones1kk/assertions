@@ -19,6 +19,11 @@ package com.github.ones1kk.asserts.core.feature.iterable.collection;
 import java.util.Collection;
 import java.util.function.Predicate;
 
+/**
+ * <strong> The CollectionIterable is for {@link Collection} assertion to implement iterable class.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public interface CollectionIterable<ELEMENT> {
 
     void assertIsEmpty(Collection<? extends ELEMENT> actual);
@@ -31,8 +36,10 @@ public interface CollectionIterable<ELEMENT> {
 
     void assertDoesNotContain(Collection<? extends ELEMENT> actual, ELEMENT expected);
 
+    @SuppressWarnings("unchecked")
     void assertContainsAll(Collection<? extends ELEMENT> actual, ELEMENT... expected);
 
+    @SuppressWarnings("unchecked")
     void assertContainsAny(Collection<? extends ELEMENT> actual, ELEMENT... expected);
 
     void assertContainsNull(Collection<? extends ELEMENT> actual);
