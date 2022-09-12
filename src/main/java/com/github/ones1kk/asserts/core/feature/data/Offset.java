@@ -62,7 +62,16 @@ public final class Offset<T extends Number> {
         Asserts.that(expected.doubleValue())
                 .as("Negative numbers cannot be compared.")
                 .isPositive();
-        return getBefore(actual) == expected.doubleValue() || getAfter(actual) == expected.doubleValue();
+        return isAfter(getBefore(actual), expected.doubleValue()) &&
+                isBefore(getAfter(actual), expected.doubleValue());
+    }
+
+    private boolean isBefore(Double after, Double expected) {
+        return expected <= after;
+    }
+
+    private boolean isAfter(Double before, Double expected) {
+        return expected >= before;
     }
 
     /**
