@@ -22,7 +22,7 @@ class FloatsTest {
     }
 
     @Test
-    @DisplayName("Test methods")
+    @DisplayName("Method test")
     public void test1() throws Exception {
         // given
         Floats floats = new Floats(asAssert);

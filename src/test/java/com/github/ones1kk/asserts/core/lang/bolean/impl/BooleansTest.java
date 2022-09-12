@@ -20,7 +20,7 @@ class BooleansTest {
     }
 
     @Test
-    @DisplayName("Test methods")
+    @DisplayName("Method test")
     public void test1() throws Exception {
         // given
         Booleans booleans = new Booleans(asAssert);

@@ -22,7 +22,7 @@ class ShortsTest {
     }
 
     @Test
-    @DisplayName("Test methods")
+    @DisplayName("Method test")
     public void test1() throws Exception {
         // given
         Shorts shorts = new Shorts(asAssert);

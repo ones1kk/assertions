@@ -22,7 +22,7 @@ class DoublesTest {
     }
 
     @Test
-    @DisplayName("Test methods")
+    @DisplayName("Method test")
     public void test1() throws Exception {
         // given
         Doubles doubles = new Doubles(asAssert);

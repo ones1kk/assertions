@@ -22,7 +22,7 @@ class BytesTest {
     }
 
     @Test
-    @DisplayName("Test methods")
+    @DisplayName("Method test")
     public void test1() throws Exception {
         // given
         Bytes bytes = new Bytes(asAssert);

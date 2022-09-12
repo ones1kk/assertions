@@ -22,7 +22,7 @@ class ArraysTest {
     }
 
     @Test
-    @DisplayName("Test methods")
+    @DisplayName("Method test")
     public void test1() throws Exception {
         // given
         Arrays<CharSequence> arrays1 = new Arrays<>(asAssert);

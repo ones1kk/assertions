@@ -22,7 +22,7 @@ class LongsTest {
     }
 
     @Test
-    @DisplayName("Test methods")
+    @DisplayName("Method test")
     public void test1() throws Exception {
         // given
         Longs longs = new Longs(asAssert);

@@ -20,7 +20,7 @@ class StringsTest {
     }
 
     @Test
-    @DisplayName("Test methods")
+    @DisplayName("Method test")
     public void test1() throws Exception {
         // given
         Strings strings = new Strings(asAssert);

@@ -22,7 +22,7 @@ class NumberArraysTest {
     }
 
     @Test
-    @DisplayName("Test methods")
+    @DisplayName("Method test")
     public void test1() throws Exception {
         // given
         NumberArrays numberArrays = new NumberArrays(asAssert);

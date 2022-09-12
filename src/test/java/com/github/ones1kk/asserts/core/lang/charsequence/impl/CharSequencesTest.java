@@ -21,7 +21,7 @@ class CharSequencesTest {
     }
 
     @Test
-    @DisplayName("Test methods")
+    @DisplayName("Method test")
     public void test1() throws Exception {
         // given
         CharSequencesInterface<CharSequence> charSequences = new CharSequences(asAssert);
