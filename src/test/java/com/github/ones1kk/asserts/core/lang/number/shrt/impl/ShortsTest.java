@@ -1,6 +1,8 @@
 package com.github.ones1kk.asserts.core.lang.number.shrt.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -73,6 +75,11 @@ class ShortsTest {
         assertThrows(Exception.class,
                 () -> shorts.assertIsBetween((short) 3, (short) 1, (short) 2));
 
+        assertThrows(Exception.class, () -> shorts.assertIsCloseTo((short) 10, (short) 6, Offset.offset((short) 3)));
+        assertThrows(Exception.class, () -> shorts.assertIsNotCloseTo((short) 10, (short) 6, Offset.offset((short) 8)));
+
+        assertThrows(Exception.class, () -> shorts.assertIsCloseTo((short) 10, (short) 9, Percentage.of(1.0)));
+        assertThrows(Exception.class, () -> shorts.assertIsNotCloseTo((short) 10, (short) 9, Percentage.of(20.0)));
 
         shorts.assertIsOdd((short) 1);
 
@@ -109,6 +116,12 @@ class ShortsTest {
 
         // start < actual < end
         shorts.assertIsBetween((short) 2, (short) 1, (short) 3);
+
+        shorts.assertIsCloseTo((short) 10, (short) 8, Offset.offset((short) 2));
+        shorts.assertIsNotCloseTo((short) 10, (short) 7, Offset.offset((short) 1));
+
+        shorts.assertIsCloseTo((short) 10, (short) 9, Percentage.of(15.0));
+        shorts.assertIsNotCloseTo((short) 10, (short) 9, Percentage.of(5.0));
 
     }
 

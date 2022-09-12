@@ -1,6 +1,8 @@
 package com.github.ones1kk.asserts.core.lang.number.bte.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -73,6 +75,11 @@ class BytesTest {
         assertThrows(Exception.class,
                 () -> bytes.assertIsBetween((byte) 3, (byte) 1, (byte) 2));
 
+        assertThrows(Exception.class, () -> bytes.assertIsCloseTo((byte) 10, (byte) 6, Offset.offset((byte) 3)));
+        assertThrows(Exception.class, () -> bytes.assertIsNotCloseTo((byte) 10, (byte) 6, Offset.offset((byte) 8)));
+
+        assertThrows(Exception.class, () -> bytes.assertIsCloseTo((byte) 10, (byte) 9, Percentage.of(1.0)));
+        assertThrows(Exception.class, () -> bytes.assertIsNotCloseTo((byte) 10, (byte) 9, Percentage.of(20.0)));
 
         bytes.assertIsOdd((byte) 1);
 
@@ -110,6 +117,10 @@ class BytesTest {
         // start < actual < end
         bytes.assertIsBetween((byte) 2, (byte) 1, (byte) 3);
 
-    }
+        bytes.assertIsCloseTo((byte) 10, (byte) 8, Offset.offset((byte) 2));
+        bytes.assertIsNotCloseTo((byte) 10, (byte) 7, Offset.offset((byte) 1));
 
+        bytes.assertIsCloseTo((byte) 10, (byte) 9, Percentage.of(15.0));
+        bytes.assertIsNotCloseTo((byte) 10, (byte) 9, Percentage.of(5.0));
+    }
 }

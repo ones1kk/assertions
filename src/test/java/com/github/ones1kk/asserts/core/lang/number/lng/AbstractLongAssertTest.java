@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.number.lng;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -129,6 +130,13 @@ class AbstractLongAssertTest {
         assertThrows(AssertException.class,
                 () -> assert3.isBetween(expected1, expected2));
 
+        assertThrows(AssertException.class, () -> assert3.isCloseTo(60L, Offset.offset(30L)));
+        assertThrows(AssertException.class, () -> assert3.isNotCloseTo(60L, Offset.offset(80L)));
+
+        assertThrows(AssertException.class, () -> assert3.isCloseTo(5L, 2.0));
+        assertThrows(AssertException.class, () -> assert3.isNotCloseTo(95L, 10.0));
+
+
         // actual < expected
         assert1.isLessThan(expected2);
 
@@ -147,6 +155,12 @@ class AbstractLongAssertTest {
 
         // start < actual < end
         assert2.isBetween(expected1, expected3);
+
+        assert3.isCloseTo(8L, Offset.offset(2L));
+        assert3.isNotCloseTo(70L, Offset.offset(10L));
+
+        assert1.isCloseTo(1L, 3.0);
+        assert1.isNotCloseTo(5L, 1.0);
     }
 
 }

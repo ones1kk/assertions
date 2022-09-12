@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.number.flot;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -67,6 +68,10 @@ class AbstractFloatAssertTest {
         assertThrows(AssertException.class, assert2::isNotNegative);
         assertThrows(AssertException.class, assert2::isZero);
         assertThrows(AssertException.class, assert3::isNotZero);
+
+        assertThrows(AssertException.class, () -> assert5.isCloseTo(60.0F, Offset.offset((30.0F))));
+        assertThrows(AssertException.class, () -> assert5.isNotCloseTo(60.0F, Offset.offset((80.0F))));
+
         assertThrows(AssertException.class, () -> assert3.isCloseTo(5F, 2.0));
         assertThrows(AssertException.class, () -> assert1.isNotCloseTo(1F, 80.0));
 
@@ -79,6 +84,10 @@ class AbstractFloatAssertTest {
         assert1.isNotNegative();
         assert3.isZero();
         assert1.isNotZero();
+
+        assert5.isCloseTo(8.0F, Offset.offset(2.0F));
+        assert5.isNotCloseTo(70.0F, Offset.offset(10.0F));
+
         assert1.isCloseTo(actual1, 100.0);
         assert1.isNotCloseTo(5.8F, 1.2);
     }

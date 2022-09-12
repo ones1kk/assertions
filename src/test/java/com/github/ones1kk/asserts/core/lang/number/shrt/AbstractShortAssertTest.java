@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.number.shrt;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -65,6 +66,10 @@ class AbstractShortAssertTest {
         assertThrows(AssertException.class, assert2::isNotNegative);
         assertThrows(AssertException.class, assert2::isZero);
         assertThrows(AssertException.class, assert3::isNotZero);
+
+        assertThrows(AssertException.class, () -> assert3.isCloseTo((short) 60, Offset.offset((short) 30)));
+        assertThrows(AssertException.class, () -> assert3.isNotCloseTo((short) 60, Offset.offset((short) 80)));
+
         assertThrows(AssertException.class, () -> assert3.isCloseTo((short) 5, 2.0));
         assertThrows(AssertException.class, () -> assert1.isNotCloseTo((short) 1, 100.0));
 
@@ -79,6 +84,10 @@ class AbstractShortAssertTest {
         assert3.isZero();
         assert1.isNotZero();
         assert1.isCloseTo(actual1, 50.0);
+
+        assert1.isCloseTo((short) 8, Offset.offset((short) 2));
+        assert1.isNotCloseTo((short) 70, Offset.offset((short) 10));
+
         assert1.isNotCloseTo((short) 5, 1.0);
 
     }

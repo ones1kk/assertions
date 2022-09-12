@@ -1,6 +1,8 @@
 package com.github.ones1kk.asserts.core.lang.number.duble.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -68,6 +70,12 @@ class DoublesTest {
         assertThrows(Exception.class,
                 () -> doubles.assertIsBetween(3.0, 1.0, 2.0));
 
+        assertThrows(Exception.class, () -> doubles.assertIsCloseTo(10.0, 6.0, Offset.offset(3.0)));
+        assertThrows(Exception.class, () -> doubles.assertIsNotCloseTo(10.0, 6.0, Offset.offset(8.0)));
+
+        assertThrows(Exception.class, () -> doubles.assertIsCloseTo(10.0, 9.0, Percentage.of(1.0)));
+        assertThrows(Exception.class, () -> doubles.assertIsNotCloseTo(10.0, 9.0, Percentage.of(20.0)));
+
         doubles.assertIsInfinity((3 / 0.0));
         doubles.assertIsFinite(1.0);
         doubles.assertIsNaN((5 % 0.0));
@@ -96,6 +104,12 @@ class DoublesTest {
 
         // start < actual < end
         doubles.assertIsBetween(2.0, 1.0, 3.0);
+
+        doubles.assertIsCloseTo(10.0, 8.0, Offset.offset(2.0));
+        doubles.assertIsNotCloseTo(10.0, 7.0, Offset.offset(1.0));
+
+        doubles.assertIsCloseTo(10.0, 9.0, Percentage.of(15.0));
+        doubles.assertIsNotCloseTo(10.0, 9.0, Percentage.of(5.0));
 
     }
 

@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.number.bte;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -67,6 +68,10 @@ class AbstractByteAssertTest {
         assertThrows(AssertException.class, assert2::isNotNegative);
         assertThrows(AssertException.class, assert2::isZero);
         assertThrows(AssertException.class, assert3::isNotZero);
+
+        assertThrows(AssertException.class, () -> assert5.isCloseTo((byte) 60, Offset.offset((byte) 30)));
+        assertThrows(AssertException.class, () -> assert5.isNotCloseTo((byte) 60, Offset.offset((byte) 80)));
+
         assertThrows(AssertException.class, () -> assert5.isCloseTo((byte) 5, 2.0));
         assertThrows(AssertException.class, () -> assert5.isNotCloseTo((byte) 95, 10.0));
 
@@ -80,9 +85,12 @@ class AbstractByteAssertTest {
         assert1.isNotNegative();
         assert3.isZero();
         assert1.isNotZero();
+
+        assert5.isCloseTo((byte) 8, Offset.offset((byte) 2));
+        assert5.isNotCloseTo((byte) 70, Offset.offset((byte) 10));
+
         assert1.isCloseTo((byte) 1, 3.0);
         assert1.isNotCloseTo((byte) 5, 1.0);
-
     }
 
     @Test

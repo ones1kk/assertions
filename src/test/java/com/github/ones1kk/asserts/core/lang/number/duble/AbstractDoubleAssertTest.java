@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.number.duble;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -66,6 +67,10 @@ class AbstractDoubleAssertTest {
         assertThrows(AssertException.class, assert2::isNotNegative);
         assertThrows(AssertException.class, assert2::isZero);
         assertThrows(AssertException.class, assert3::isNotZero);
+
+        assertThrows(AssertException.class, () -> assert5.isCloseTo(60.0, Offset.offset((30.0))));
+        assertThrows(AssertException.class, () -> assert5.isNotCloseTo(60.0, Offset.offset((80.0))));
+
         assertThrows(AssertException.class, () -> assert3.isCloseTo((double) 5, (double) 2));
         assertThrows(AssertException.class, () -> assert1.isNotCloseTo((double) 1, (double) 100));
 
@@ -78,6 +83,10 @@ class AbstractDoubleAssertTest {
         assert1.isNotNegative();
         assert3.isZero();
         assert1.isNotZero();
+
+        assert5.isCloseTo(8.0, Offset.offset(2.0));
+        assert5.isNotCloseTo(70.0, Offset.offset(10.0));
+
         assert1.isCloseTo(actual1, 50.4);
         assert1.isNotCloseTo(5.8, 1.2);
     }

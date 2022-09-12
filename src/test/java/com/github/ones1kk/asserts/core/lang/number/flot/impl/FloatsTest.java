@@ -1,6 +1,8 @@
 package com.github.ones1kk.asserts.core.lang.number.flot.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -68,6 +70,13 @@ class FloatsTest {
         assertThrows(Exception.class,
                 () -> floats.assertIsBetween(3.0F, 1.0F, 2.0F));
 
+        assertThrows(Exception.class, () -> floats.assertIsCloseTo(10.0F, 6.0F, Offset.offset(3.0F)));
+        assertThrows(Exception.class, () -> floats.assertIsNotCloseTo(10.0F, 6.0F, Offset.offset(8.0F)));
+
+        assertThrows(Exception.class, () -> floats.assertIsCloseTo(10.0F, 9.0F, Percentage.of(1.0)));
+        assertThrows(Exception.class, () -> floats.assertIsNotCloseTo(10.0F, 9.0F, Percentage.of(20.0)));
+
+
         floats.assertIsInfinity((float) (3 / 0.0));
         floats.assertIsFinite(1.0F);
         floats.assertIsNaN((float) (5 % 0.0));
@@ -97,6 +106,10 @@ class FloatsTest {
         // start < actual < end
         floats.assertIsBetween(2.0F, 1.0F, 3.0F);
 
-    }
+        floats.assertIsCloseTo(10.0F, 8.0F, Offset.offset(2.0F));
+        floats.assertIsNotCloseTo(10.0F, 7.0F, Offset.offset(1.0F));
 
+        floats.assertIsCloseTo(10.0F, 9.0F, Percentage.of(15.0));
+        floats.assertIsNotCloseTo(10.0F, 9.0F, Percentage.of(5.0));
+    }
 }

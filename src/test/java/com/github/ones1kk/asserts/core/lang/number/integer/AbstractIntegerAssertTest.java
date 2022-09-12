@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.lang.number.integer;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -65,6 +66,13 @@ class AbstractIntegerAssertTest {
         assertThrows(AssertException.class, assert2::isNotNegative);
         assertThrows(AssertException.class, assert2::isZero);
         assertThrows(AssertException.class, assert3::isNotZero);
+
+        assertThrows(AssertException.class, () -> assert4.isCloseTo(60, Offset.offset(30)));
+        assertThrows(AssertException.class, () -> assert4.isNotCloseTo(60, Offset.offset(80)));
+
+        assertThrows(AssertException.class, () -> assert4.isCloseTo(5, 2.0));
+        assertThrows(AssertException.class, () -> assert4.isNotCloseTo(95, 10.0));
+
         assertThrows(AssertException.class, () -> assert3.isCloseTo(5, 2.0));
         assertThrows(AssertException.class, () -> assert4.isNotCloseTo(2, 50.0));
 
@@ -79,6 +87,12 @@ class AbstractIntegerAssertTest {
         assert3.isZero();
         assert1.isNotZero();
         assert4.isCloseTo(2, 100.0);
+        assert1.isNotCloseTo(5, 1.0);
+
+        assert4.isCloseTo(8, Offset.offset(2));
+        assert4.isNotCloseTo(70, Offset.offset(10));
+
+        assert1.isCloseTo(1, 3.0);
         assert1.isNotCloseTo(5, 1.0);
     }
 

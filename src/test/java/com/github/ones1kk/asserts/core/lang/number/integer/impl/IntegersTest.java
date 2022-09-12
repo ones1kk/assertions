@@ -1,6 +1,8 @@
 package com.github.ones1kk.asserts.core.lang.number.integer.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -74,6 +76,12 @@ class IntegersTest {
         assertThrows(Exception.class,
                 () -> integers.assertIsBetween(3, 1, 2));
 
+        assertThrows(Exception.class, () -> integers.assertIsCloseTo(10, 6, Offset.offset(3)));
+        assertThrows(Exception.class, () -> integers.assertIsNotCloseTo(10, 6, Offset.offset(8)));
+
+        assertThrows(Exception.class, () -> integers.assertIsCloseTo(10, 9, Percentage.of(1.0)));
+        assertThrows(Exception.class, () -> integers.assertIsNotCloseTo(10, 9, Percentage.of(20.0)));
+
 
         integers.assertIsOdd(1);
 
@@ -111,6 +119,10 @@ class IntegersTest {
         // start < actual < end
         integers.assertIsBetween(2, 1, 3);
 
-    }
+        integers.assertIsCloseTo(10, 8, Offset.offset(2));
+        integers.assertIsNotCloseTo(10, 7, Offset.offset(1));
 
+        integers.assertIsCloseTo(10, 9, Percentage.of(15.0));
+        integers.assertIsNotCloseTo(10, 9, Percentage.of(5.0));
+    }
 }

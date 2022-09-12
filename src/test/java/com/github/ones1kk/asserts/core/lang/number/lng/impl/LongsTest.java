@@ -1,6 +1,8 @@
 package com.github.ones1kk.asserts.core.lang.number.lng.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import com.github.ones1kk.asserts.core.feature.data.Offset;
+import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -73,6 +75,11 @@ class LongsTest {
         assertThrows(Exception.class,
                 () -> longs.assertIsBetween(3L, 1L, 2L));
 
+        assertThrows(Exception.class, () -> longs.assertIsCloseTo(10L, 6L, Offset.offset(3L)));
+        assertThrows(Exception.class, () -> longs.assertIsNotCloseTo(10L, 6L, Offset.offset(8L)));
+
+        assertThrows(Exception.class, () -> longs.assertIsCloseTo(10L, 9L, Percentage.of(1.0)));
+        assertThrows(Exception.class, () -> longs.assertIsNotCloseTo(10L, 9L, Percentage.of(20.0)));
 
         longs.assertIsOdd(1L);
 
@@ -110,6 +117,10 @@ class LongsTest {
         // start < actual < end
         longs.assertIsBetween(2L, 1L, 3L);
 
-    }
+        longs.assertIsCloseTo(10L, 8L, Offset.offset(2L));
+        longs.assertIsNotCloseTo(10L, 7L, Offset.offset(1L));
 
+        longs.assertIsCloseTo(10L, 9L, Percentage.of(15.0));
+        longs.assertIsNotCloseTo(10L, 9L, Percentage.of(5.0));
+    }
 }
