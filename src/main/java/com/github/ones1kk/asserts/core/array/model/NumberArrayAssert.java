@@ -17,7 +17,11 @@
 package com.github.ones1kk.asserts.core.array.model;
 
 import com.github.ones1kk.asserts.core.array.number.AbstractNumberArrayAssert;
+import com.github.ones1kk.asserts.core.file.AbstractFileAssert;
 
+/**
+ * <strong> The NumberArrayAssert class inherits {@link AbstractFileAssert} </strong>
+ */
 public class NumberArrayAssert extends AbstractNumberArrayAssert<NumberArrayAssert, Number[]> {
 
     public NumberArrayAssert(Number[] actual) {

@@ -18,6 +18,11 @@ package com.github.ones1kk.asserts.core.array.number;
 
 import com.github.ones1kk.asserts.core.feature.iterable.IterableAssert;
 
+/**
+ * <strong> The NumberArrayAssertInterface class is for a numerable, comparable, assertable interface class.</strong>
+ *
+ * @param <SELF>
+ */
 public interface NumberArrayAssertInterface<SELF> extends IterableAssert<SELF, Number> {
 
     SELF isMax(Number expected);

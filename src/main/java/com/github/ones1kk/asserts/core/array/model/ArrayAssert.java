@@ -17,7 +17,13 @@
 package com.github.ones1kk.asserts.core.array.model;
 
 import com.github.ones1kk.asserts.core.array.AbstractArrayAssert;
+import com.github.ones1kk.asserts.core.file.AbstractFileAssert;
 
+/**
+ * <strong> The ArrayAssert class inherits {@link AbstractFileAssert} </strong>
+ *
+ * @param <ACTUAL>
+ */
 public class ArrayAssert<ACTUAL> extends AbstractArrayAssert<ArrayAssert<ACTUAL>, ACTUAL> {
 
     public ArrayAssert(ACTUAL[] actual) {

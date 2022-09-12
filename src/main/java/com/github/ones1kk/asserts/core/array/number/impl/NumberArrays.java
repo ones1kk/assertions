@@ -24,6 +24,10 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.function.Predicate;
 
+/**
+ * <strong> The NumberArrays class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
+ *
+ */
 public class NumberArrays extends Objects<Number[]> implements NumberArraysInterface<Number> {
 
     private final NumberArrayContainableImpl<Number> containable = new NumberArrayContainableImpl<>();

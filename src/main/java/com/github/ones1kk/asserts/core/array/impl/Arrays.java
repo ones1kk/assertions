@@ -25,6 +25,11 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.function.Predicate;
 
+/**
+ * <strong> The Arrays class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
+ *
+ * @param <ACTUAL>
+ */
 public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<ACTUAL> {
 
     private final ArrayContainable<ACTUAL> containable = new ArrayContainableImpl<>();

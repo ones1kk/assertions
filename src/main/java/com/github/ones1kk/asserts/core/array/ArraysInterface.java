@@ -19,5 +19,10 @@ package com.github.ones1kk.asserts.core.array;
 import com.github.ones1kk.asserts.core.feature.comparable.Comparable;
 import com.github.ones1kk.asserts.core.feature.iterable.array.ArrayIterable;
 
+/**
+ * <strong> The ArraysInterface class is for a iterable, assertable assertion implementation class.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public interface ArraysInterface<ELEMENT> extends ArrayIterable<ELEMENT>, Comparable<ELEMENT[]> {
 }
