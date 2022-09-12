@@ -19,6 +19,10 @@ package com.github.ones1kk.asserts.core.feature.number;
 import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
 
+/**
+ * <strong> The Numerable is interface for numerable implementation class. </strong>
+ * @param <ACTUAL>
+ */
 public interface Numerable<ACTUAL extends Number> {
 
     void assertIsPositive(ACTUAL actual);

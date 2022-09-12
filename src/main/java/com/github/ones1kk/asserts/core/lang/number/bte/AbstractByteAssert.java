@@ -243,6 +243,7 @@ public class AbstractByteAssert<SELF extends AbstractByteAssert<SELF, ACTUAL>, A
      */
     @Override
     public SELF isNotCloseTo(Byte expected, Offset<Byte> offset) {
+        bytes.assertIsNotCloseTo(actual, expected, offset);
         return self;
     }
 

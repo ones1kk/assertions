@@ -24,7 +24,7 @@ import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.number.bte.BytesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
-import static com.github.ones1kk.asserts.core.feature.number.arithmetic.ByteArithmeticUnit.of;
+import static com.github.ones1kk.asserts.core.feature.number.arithmetic.NumerableUnit.of;
 
 /**
  * <strong> The Bytes class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>

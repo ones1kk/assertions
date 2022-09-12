@@ -206,7 +206,7 @@ public class AbstractFloatAssert<SELF extends AbstractFloatAssert<SELF, ACTUAL>,
      */
     @Override
     public SELF isCloseTo(Float expected, Offset<Float> offset) {
-        floats.assertIsNotCloseTo(actual, expected, offset);
+        floats.assertIsCloseTo(actual, expected, offset);
         return self;
     }
 

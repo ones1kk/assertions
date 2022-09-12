@@ -16,6 +16,9 @@
 
 package com.github.ones1kk.asserts.core.exception;
 
+/**
+ * <strong> The AssertException is to handle Exceptions that occurred during runtime assertion. </strong>
+ */
 public class AssertException extends RuntimeException {
 
     public AssertException() {

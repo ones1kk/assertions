@@ -18,6 +18,12 @@ package com.github.ones1kk.asserts.core.feature.number;
 
 import com.github.ones1kk.asserts.core.feature.data.Offset;
 
+/**
+ * <strong> The NumerableAssert class is for a numerable, assertable interface class.</strong>
+ *
+ * @param <SELF>
+ * @param <ACTUAL>
+ */
 public interface NumerableAssert<SELF, ACTUAL extends Number> {
 
     SELF isPositive();
