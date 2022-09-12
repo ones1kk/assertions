@@ -70,7 +70,7 @@ class AbstractByteAssertTest {
         assertThrows(AssertException.class, assert3::isNotZero);
 
         assertThrows(AssertException.class, () -> assert5.isCloseTo((byte) 60, Offset.offset((byte) 30)));
-        assertThrows(AssertException.class, () -> assert5.isNotCloseTo((byte) 60, Offset.offset((byte) 80)));
+        assertThrows(AssertException.class, () -> assert5.isNotCloseTo((byte) 90, Offset.offset((byte) 20)));
 
         assertThrows(AssertException.class, () -> assert5.isCloseTo((byte) 5, 2.0));
         assertThrows(AssertException.class, () -> assert5.isNotCloseTo((byte) 95, 10.0));
@@ -86,7 +86,7 @@ class AbstractByteAssertTest {
         assert3.isZero();
         assert1.isNotZero();
 
-        assert5.isCloseTo((byte) 8, Offset.offset((byte) 2));
+        assert5.isCloseTo((byte) 80, Offset.offset((byte) 20));
         assert5.isNotCloseTo((byte) 70, Offset.offset((byte) 10));
 
         assert1.isCloseTo((byte) 1, 3.0);

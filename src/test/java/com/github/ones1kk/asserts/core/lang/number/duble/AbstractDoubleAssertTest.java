@@ -49,6 +49,7 @@ class AbstractDoubleAssertTest {
         Double actual3 = 0.0;
         Double actual4 = 3 / 0.0;
         Double actual5 = 5 % 0.0;
+        Double actual6 = 100.0;
 
         // when
         AbstractDoubleAssert<?, Double> assert1 = new AbstractDoubleAssert<>(AbstractDoubleAssert.class, actual1);
@@ -56,6 +57,7 @@ class AbstractDoubleAssertTest {
         AbstractDoubleAssert<?, Double> assert3 = new AbstractDoubleAssert<>(AbstractDoubleAssert.class, actual3);
         AbstractDoubleAssert<?, Double> assert4 = new AbstractDoubleAssert<>(AbstractDoubleAssert.class, actual4);
         AbstractDoubleAssert<?, Double> assert5 = new AbstractDoubleAssert<>(AbstractDoubleAssert.class, actual5);
+        AbstractDoubleAssert<?, Double> assert6 = new AbstractDoubleAssert<>(AbstractDoubleAssert.class, actual6);
 
         // then
         assertThrows(AssertException.class, assert4::isFinite);
@@ -68,8 +70,8 @@ class AbstractDoubleAssertTest {
         assertThrows(AssertException.class, assert2::isZero);
         assertThrows(AssertException.class, assert3::isNotZero);
 
-        assertThrows(AssertException.class, () -> assert5.isCloseTo(60.0, Offset.offset((30.0))));
-        assertThrows(AssertException.class, () -> assert5.isNotCloseTo(60.0, Offset.offset((80.0))));
+        assertThrows(AssertException.class, () -> assert6.isCloseTo(60.0, Offset.offset((30.0))));
+        assertThrows(AssertException.class, () -> assert6.isNotCloseTo(60.0, Offset.offset((80.0))));
 
         assertThrows(AssertException.class, () -> assert3.isCloseTo((double) 5, (double) 2));
         assertThrows(AssertException.class, () -> assert1.isNotCloseTo((double) 1, (double) 100));
@@ -84,8 +86,8 @@ class AbstractDoubleAssertTest {
         assert3.isZero();
         assert1.isNotZero();
 
-        assert5.isCloseTo(8.0, Offset.offset(2.0));
-        assert5.isNotCloseTo(70.0, Offset.offset(10.0));
+        assert6.isCloseTo(80.0, Offset.offset(20.0));
+        assert6.isNotCloseTo(70.0, Offset.offset(10.0));
 
         assert1.isCloseTo(actual1, 50.4);
         assert1.isNotCloseTo(5.8, 1.2);

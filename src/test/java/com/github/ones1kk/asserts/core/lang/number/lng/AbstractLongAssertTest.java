@@ -90,6 +90,7 @@ class AbstractLongAssertTest {
         Long actual1 = 1L;
         Long actual2 = 2L;
         Long actual3 = 3L;
+        Long actual4 = 100L;
 
         Long expected1 = 1L;
         Long expected2 = 2L;
@@ -99,6 +100,7 @@ class AbstractLongAssertTest {
         AbstractLongAssert<?, Long> assert1 = new AbstractLongAssert<>(AbstractLongAssert.class, actual1);
         AbstractLongAssert<?, Long> assert2 = new AbstractLongAssert<>(AbstractLongAssert.class, actual2);
         AbstractLongAssert<?, Long> assert3 = new AbstractLongAssert<>(AbstractLongAssert.class, actual3);
+        AbstractLongAssert<?, Long> assert4 = new AbstractLongAssert<>(AbstractLongAssert.class, actual4);
 
         // then
         // actual > expected
@@ -130,11 +132,11 @@ class AbstractLongAssertTest {
         assertThrows(AssertException.class,
                 () -> assert3.isBetween(expected1, expected2));
 
-        assertThrows(AssertException.class, () -> assert3.isCloseTo(60L, Offset.offset(30L)));
-        assertThrows(AssertException.class, () -> assert3.isNotCloseTo(60L, Offset.offset(80L)));
+//        assertThrows(AssertException.class, () -> assert3.isCloseTo(60L, Offset.offset(30L)));
+        assertThrows(AssertException.class, () -> assert4.isNotCloseTo(95L, Offset.offset(10L)));
 
         assertThrows(AssertException.class, () -> assert3.isCloseTo(5L, 2.0));
-        assertThrows(AssertException.class, () -> assert3.isNotCloseTo(95L, 10.0));
+        assertThrows(AssertException.class, () -> assert4.isNotCloseTo(95L, 10.0));
 
 
         // actual < expected
@@ -156,7 +158,7 @@ class AbstractLongAssertTest {
         // start < actual < end
         assert2.isBetween(expected1, expected3);
 
-        assert3.isCloseTo(8L, Offset.offset(2L));
+        assert4.isCloseTo(80L, Offset.offset(20L));
         assert3.isNotCloseTo(70L, Offset.offset(10L));
 
         assert1.isCloseTo(1L, 3.0);

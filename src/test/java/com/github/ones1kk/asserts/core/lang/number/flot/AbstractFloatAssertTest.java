@@ -49,6 +49,7 @@ class AbstractFloatAssertTest {
         Float actual3 = 0.0F;
         Float actual4 = (float) (3 / 0.0);
         Float actual5 = (float) (5 % 0.0);
+        Float actual6 =  100F;
 
         // when
         AbstractFloatAssert<?, Float> assert1 = new AbstractFloatAssert<>(AbstractFloatAssert.class, actual1);
@@ -56,6 +57,7 @@ class AbstractFloatAssertTest {
         AbstractFloatAssert<?, Float> assert3 = new AbstractFloatAssert<>(AbstractFloatAssert.class, actual3);
         AbstractFloatAssert<?, Float> assert4 = new AbstractFloatAssert<>(AbstractFloatAssert.class, actual4);
         AbstractFloatAssert<?, Float> assert5 = new AbstractFloatAssert<>(AbstractFloatAssert.class, actual5);
+        AbstractFloatAssert<?, Float> assert6 = new AbstractFloatAssert<>(AbstractFloatAssert.class, actual6);
 
         // then
 
@@ -69,8 +71,8 @@ class AbstractFloatAssertTest {
         assertThrows(AssertException.class, assert2::isZero);
         assertThrows(AssertException.class, assert3::isNotZero);
 
-        assertThrows(AssertException.class, () -> assert5.isCloseTo(60.0F, Offset.offset((30.0F))));
-        assertThrows(AssertException.class, () -> assert5.isNotCloseTo(60.0F, Offset.offset((80.0F))));
+        assertThrows(AssertException.class, () -> assert6.isCloseTo(60.0F, Offset.offset((30.0F))));
+        assertThrows(AssertException.class, () -> assert6.isNotCloseTo(60.0F, Offset.offset((50F))));
 
         assertThrows(AssertException.class, () -> assert3.isCloseTo(5F, 2.0));
         assertThrows(AssertException.class, () -> assert1.isNotCloseTo(1F, 80.0));
@@ -85,8 +87,8 @@ class AbstractFloatAssertTest {
         assert3.isZero();
         assert1.isNotZero();
 
-        assert5.isCloseTo(8.0F, Offset.offset(2.0F));
-        assert5.isNotCloseTo(70.0F, Offset.offset(10.0F));
+        assert6.isCloseTo(80F, Offset.offset(20F));
+        assert6.isNotCloseTo(70.0F, Offset.offset(10.0F));
 
         assert1.isCloseTo(actual1, 100.0);
         assert1.isNotCloseTo(5.8F, 1.2);

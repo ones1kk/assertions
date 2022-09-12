@@ -48,12 +48,14 @@ class AbstractIntegerAssertTest {
         Integer actual2 = -1;
         Integer actual3 = 0;
         Integer actual4 = 2;
+        Integer actual5 = 100;
 
         // when
         AbstractIntegerAssert<?, Integer> assert1 = new AbstractIntegerAssert<>(AbstractIntegerAssert.class, actual1);
         AbstractIntegerAssert<?, Integer> assert2 = new AbstractIntegerAssert<>(AbstractIntegerAssert.class, actual2);
         AbstractIntegerAssert<?, Integer> assert3 = new AbstractIntegerAssert<>(AbstractIntegerAssert.class, actual3);
         AbstractIntegerAssert<?, Integer> assert4 = new AbstractIntegerAssert<>(AbstractIntegerAssert.class, actual4);
+        AbstractIntegerAssert<?, Integer> assert5 = new AbstractIntegerAssert<>(AbstractIntegerAssert.class, actual5);
 
         // then
         assertThrows(AssertException.class, assert4::isOdd);
@@ -70,8 +72,8 @@ class AbstractIntegerAssertTest {
         assertThrows(AssertException.class, () -> assert4.isCloseTo(60, Offset.offset(30)));
         assertThrows(AssertException.class, () -> assert4.isNotCloseTo(60, Offset.offset(80)));
 
-        assertThrows(AssertException.class, () -> assert4.isCloseTo(5, 2.0));
-        assertThrows(AssertException.class, () -> assert4.isNotCloseTo(95, 10.0));
+        assertThrows(AssertException.class, () -> assert5.isCloseTo(5, 2.0));
+        assertThrows(AssertException.class, () -> assert5.isNotCloseTo(95, 10.0));
 
         assertThrows(AssertException.class, () -> assert3.isCloseTo(5, 2.0));
         assertThrows(AssertException.class, () -> assert4.isNotCloseTo(2, 50.0));
@@ -89,8 +91,8 @@ class AbstractIntegerAssertTest {
         assert4.isCloseTo(2, 100.0);
         assert1.isNotCloseTo(5, 1.0);
 
-        assert4.isCloseTo(8, Offset.offset(2));
-        assert4.isNotCloseTo(70, Offset.offset(10));
+        assert5.isCloseTo(80, Offset.offset(20));
+        assert5.isNotCloseTo(70, Offset.offset(10));
 
         assert1.isCloseTo(1, 3.0);
         assert1.isNotCloseTo(5, 1.0);

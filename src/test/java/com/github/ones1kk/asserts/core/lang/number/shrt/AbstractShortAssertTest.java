@@ -48,12 +48,14 @@ class AbstractShortAssertTest {
         Short actual2 = -1;
         Short actual3 = 0;
         Short actual4 = 2;
+        Short actual5 = 100;
 
         // when
         AbstractShortAssert<?, Short> assert1 = new AbstractShortAssert<>(AbstractShortAssert.class, actual1);
         AbstractShortAssert<?, Short> assert2 = new AbstractShortAssert<>(AbstractShortAssert.class, actual2);
         AbstractShortAssert<?, Short> assert3 = new AbstractShortAssert<>(AbstractShortAssert.class, actual3);
         AbstractShortAssert<?, Short> assert4 = new AbstractShortAssert<>(AbstractShortAssert.class, actual4);
+        AbstractShortAssert<?, Short> assert5 = new AbstractShortAssert<>(AbstractShortAssert.class, actual5);
 
         // then
         assertThrows(AssertException.class, assert4::isOdd);
@@ -85,7 +87,7 @@ class AbstractShortAssertTest {
         assert1.isNotZero();
         assert1.isCloseTo(actual1, 50.0);
 
-        assert1.isCloseTo((short) 8, Offset.offset((short) 2));
+        assert5.isCloseTo((short) 80, Offset.offset((short) 20));
         assert1.isNotCloseTo((short) 70, Offset.offset((short) 10));
 
         assert1.isNotCloseTo((short) 5, 1.0);
