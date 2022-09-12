@@ -58,11 +58,11 @@ public final class Percentage<T extends Number> {
     }
 
     /**
-     * Verify {@code expected} is in range or not.
+     * Verify {@code expected} is within range or not.
      *
      * @param actual   reference value.
-     * @param expected expected To be in range.
-     * @return expected to be in range or not.
+     * @param expected expected To be within range.
+     * @return expected to be within range or not.
      */
     public boolean isRange(T actual, T expected) {
         Asserts.that(expected.doubleValue())
@@ -95,7 +95,7 @@ public final class Percentage<T extends Number> {
     }
 
     private Double getStandard(T actual) {
-        return (actual.doubleValue() / value);
+        return (actual.doubleValue() * (value / 100));
     }
 
     /**
