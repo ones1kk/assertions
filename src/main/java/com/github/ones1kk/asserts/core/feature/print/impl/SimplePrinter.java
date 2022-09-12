@@ -29,6 +29,10 @@ import static com.github.ones1kk.asserts.core.feature.print.constant.Colors.RED;
 public class SimplePrinter implements Printer {
 
     /**
+     * +---------------------------+
+     * | <b> For internal use.</b> |
+     * +---------------------------+
+     *
      * <p> Print expected, actual and description format like below.</p>
      *
      * <b>In this case description is ignored.</b>
@@ -47,6 +51,10 @@ public class SimplePrinter implements Printer {
     }
 
     /**
+     * +---------------------------+
+     * | <b> For internal use.</b> |
+     * +---------------------------+
+     *
      * <p> Print actual and description format like below.</p>
      * <pre>
      *     <strong>{@code description}</strong>(actual : <strong>{@code actual}</strong>)
@@ -62,6 +70,10 @@ public class SimplePrinter implements Printer {
     }
 
     /**
+     * +---------------------------+
+     * | <b> For internal use.</b> |
+     * +---------------------------+
+     *
      * <p> Print only description format like below.</p>
      * <pre>
      *     <strong>{@code description}</strong>

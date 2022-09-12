@@ -30,6 +30,10 @@ import static com.github.ones1kk.asserts.core.feature.print.constant.Colors.WHIT
 public class DefaultPrinter implements Printer {
 
     /**
+     * +---------------------------+
+     * | <b> For internal use.</b> |
+     * +---------------------------+
+     *
      * <p> Print expected, actual and description format like below.</p>
      * <pre>
      *     Expected    : expected
@@ -40,39 +44,45 @@ public class DefaultPrinter implements Printer {
      * @param actual      asserted target.
      * @param expected    expected target.
      * @param description defined description.
-     * @return  formatted string.
+     * @return formatted string.
      */
     @Override
     public String writeOutput(Object actual, Object expected, String description) {
-        return String.format("%n%sExpected    : %s %n%sActual      : %s%n%sDescription : %s",
-                WHITE.getValue(), RED.getValue() + expected, WHITE.getValue(), RED.getValue() + actual, WHITE.getValue(), RED.getValue() + description);
+        return String.format("%n%sExpected    : %s %n%sActual      : %s%n%sDescription : %s", WHITE.getValue(), RED.getValue() + expected, WHITE.getValue(), RED.getValue() + actual, WHITE.getValue(), RED.getValue() + description);
     }
 
     /**
+     * +---------------------------+
+     * | <b> For internal use.</b> |
+     * +---------------------------+
+     *
      * <p> Print actual and description format like below.</p>
      * <pre>
      *     Actual      : actual
      *     Description : description
      * </pre>
      *
-     * @param actual
-     * @param description
-     * @return  formatted string.
+     * @param actual      asserted target.
+     * @param description defined description.
+     * @return formatted string.
      */
     @Override
     public String writeOutput(Object actual, String description) {
-        return String.format("%n%sActual      : %s%n%sDescription : %s", WHITE.getValue(), RED.getValue() + actual,
-                WHITE.getValue(), RED.getValue() + description);
+        return String.format("%n%sActual      : %s%n%sDescription : %s", WHITE.getValue(), RED.getValue() + actual, WHITE.getValue(), RED.getValue() + description);
     }
 
     /**
+     * +---------------------------+
+     * | <b> For internal use.</b> |
+     * +---------------------------+
+     *
      * <p> Print only description format like below.</p>
      * <pre>
      *     Description : description
      * </pre>
      *
-     * @param description
-     * @return  formatted string.
+     * @param description defined description.
+     * @return formatted string.
      */
     @Override
     public String writeOutput(String description) {

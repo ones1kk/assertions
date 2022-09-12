@@ -22,6 +22,9 @@ import com.github.ones1kk.asserts.core.feature.print.Printer;
 import com.github.ones1kk.asserts.core.feature.print.impl.DefaultPrinter;
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * <strong> The DescriptionHandler is a handler class that receives a description including Varargs and prints it to the console.</strong>
+ */
 public final class DescriptionHandler {
 
     private final Printer printer = new DefaultPrinter();
