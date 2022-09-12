@@ -21,7 +21,7 @@ import com.github.ones1kk.asserts.core.description.DescriptionHandler;
 
 /**
  * <strong> The AbstractObjects is an abstract class of implementation classes of AbstractAssert classes. </strong>
- * <br><br>
+ * <br>
  * <p> It is the place where the actual verification of the assertion is worked and at the same time it is the place where the exception is thrown.</p>
  *
  * <p> Using {@link DescriptionHandler}, set default Description to be used when Exception is thrown and throw Exception.</p>

@@ -22,7 +22,7 @@ import java.net.URL;
 
 /**
  * <strong> The AbstractUrlAssert class inherits {@link AbstractObjectAssert}</strong>
- * <br><br>
+ * <br>
  * <p> This is that implements the assertion method of the URL type and verify assertion.</p>
  *
  * @param <SELF>

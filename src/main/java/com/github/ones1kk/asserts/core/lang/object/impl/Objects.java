@@ -27,7 +27,7 @@ import com.github.ones1kk.asserts.core.lang.object.AbstractObjects;
  * | <b> It is expressed as an implementation class, but structurally, it is not an implementation class.</b> |
  * +----------------------------------------------------------------------------------------------------------+
  *
- * <br><br>
+ * <br>
  * <p> This is that implements the assertion method of the Object type and verify assertion.</p>
  *
  * @param <ACTUAL>

@@ -36,10 +36,10 @@ public class SimplePrinter implements Printer {
      *     <strong>{@code actual}</strong> is expected as <strong>{@code expected}</strong>, but it is not.
      * </pre>
      *
-     * @param actual      asserted target
-     * @param expected    expected target
-     * @param description defined description
-     * @return A formatted string
+     * @param actual      asserted target.
+     * @param expected    expected target.
+     * @param description defined description.
+     * @return A formatted string.
      */
     @Override
     public String writeOutput(Object actual, Object expected, String description) {
@@ -52,13 +52,13 @@ public class SimplePrinter implements Printer {
      *     <strong>{@code description}</strong>(actual : <strong>{@code actual}</strong>)
      * </pre>
      *
-     * @param actual
-     * @param description
-     * @return A formatted string
+     * @param actual      asserted target.
+     * @param description defined description.
+     * @return A formatted string.
      */
     @Override
     public String writeOutput(Object actual, String description) {
-        return String.format("%s%s(actual : %s)", RED.getValue(), description, actual);
+        return String.format("%s%s(actual : %s).", RED.getValue(), description, actual);
     }
 
     /**
@@ -67,8 +67,8 @@ public class SimplePrinter implements Printer {
      *     <strong>{@code description}</strong>
      * </pre>
      *
-     * @param description
-     * @return A formatted string
+     * @param description defined description.
+     * @return A formatted string.
      */
     @Override
     public String writeOutput(String description) {

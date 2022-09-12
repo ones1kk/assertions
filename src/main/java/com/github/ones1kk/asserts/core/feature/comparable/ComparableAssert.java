@@ -16,6 +16,12 @@
 
 package com.github.ones1kk.asserts.core.feature.comparable;
 
+/**
+ * <strong> The ComparableAssert class is for a comparable, assertable interface class.</strong>
+ *
+ * @param <SELF>
+ * @param <ELEMENT>
+ */
 public interface ComparableAssert<SELF, ELEMENT> {
 
     SELF isLessThan(ELEMENT expected);

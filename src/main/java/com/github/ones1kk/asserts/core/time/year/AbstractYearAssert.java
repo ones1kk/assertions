@@ -23,7 +23,7 @@ import java.time.Year;
 
 /**
  * <strong> The AbstractYearAssert class inherits {@link AbstractObjectAssert}</strong>
- * <br><br>
+ * <br>
  * <p> This is that implements the assertion method of the Year type and verify assertion.</p>
  *
  * @param <SELF>

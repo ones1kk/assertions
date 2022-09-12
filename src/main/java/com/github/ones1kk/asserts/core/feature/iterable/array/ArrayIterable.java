@@ -18,6 +18,11 @@ package com.github.ones1kk.asserts.core.feature.iterable.array;
 
 import java.util.function.Predicate;
 
+/**
+ * <strong> The ArrayIterable is for iterable assertion implementation class.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public interface ArrayIterable<ELEMENT> {
 
     void assertIsEmpty(ELEMENT[] actual);

@@ -21,7 +21,7 @@ import com.github.ones1kk.asserts.core.AssertFactory;
 
 /**
  * <strong> The AbstractObjectAssert class is responsible for assertion of Object type.</strong>
- * <br><br>
+ * <br>
  * <p> It exists as a top-level object of all types like Object in Java language.</p>
  *
  * <p> {@link AssertFactory} is injected so that implementations corresponding to each ACTUAL type parameter can be declared in each AbstractAssert class.</p>

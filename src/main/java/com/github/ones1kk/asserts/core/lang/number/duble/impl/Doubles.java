@@ -188,7 +188,7 @@ public class Doubles extends Objects<Double> implements DoublesInterface<Double>
 
     private void setAssertClose(Double actual, Percentage<Double> percentage) {
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                percentage.getStartingRage() + " ~ " + percentage.getEndingRage());
+                percentage.getStartingRange() + " ~ " + percentage.getEndingRange());
         handler.setDescription(handler.from(actual, scope));
         throw handler.getException();
     }

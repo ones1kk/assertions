@@ -22,7 +22,7 @@ import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 /**
  * <strong> The AbstractIntegerAssert class inherits {@link AbstractObjectAssert}</strong>
- * <br><br>
+ * <br>
  * <p> This is that implements the assertion method of the Integer type and verify assertion.</p>
  *
  * @param <SELF>
@@ -234,17 +234,25 @@ public class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<SELF, ACTU
         return self;
     }
 
+    /**
+     * Verify {@code actual} is not close to {@code expected} by {@code offset}.
+     *
+     * @param expected closed by difference of {@code offset} from {@code actual}.
+     * @param offset   offset value {@link Offset#offset(Number)}.
+     * @return {@code self}.
+     */
     @Override
     public SELF isNotCloseTo(Integer expected, Offset<Integer> offset) {
+        integers.assertIsNotCloseTo(actual, expected, offset);
         return self;
     }
 
     /**
-     * Verify {@code actual} is not close to {@code expected} by {@code percentage}
+     * Verify {@code actual} is not close to {@code expected} by {@code percentage}.
      *
-     * @param expected   closed by difference of {@code percentage} from {@code actual}
-     * @param percentage percentage value {@link  Percentage#of(Double)}
-     * @return {@code self}
+     * @param expected   closed by difference of {@code percentage} from {@code actual}.
+     * @param percentage percentage value {@link  Percentage#of(Double)}.
+     * @return {@code self}.
      */
     @Override
     public SELF isNotCloseTo(Integer expected, Double percentage) {

@@ -18,19 +18,37 @@ package com.github.ones1kk.asserts.core.feature.data;
 
 import com.github.ones1kk.asserts.core.Asserts;
 
+/**
+ * <strong> The Percentage class receives the figure of the Number class as input. </strong>
+ * <br>
+ * <p> After inputting the necessary values for creation, the calculation is performed by entering the standard and expected values.</p>
+ * <p> All number type variables are controlled by casting to Double type with the largest data size among Number types.</p>
+ *
+ * @param <T> inherits {@link Number}.
+ */
 public final class Percentage<T extends Number> {
 
+    /**
+     * The value of {@link Percentage} is  used as percentage
+     * to calculate whether it is close to within the range.
+     */
     private final Double value;
 
-    private Double startingRage;
+    /**
+     * The result will be always Double type.
+     */
+    private Double startingRange;
 
-    private Double endingRage;
+    /**
+     * The result will be always Double type.
+     */
+    private Double endingRange;
 
     private Percentage(Double value) {
         Asserts.that(value)
-                .as("The percentage value cannot be null")
+                .as("The percentage value cannot be null.")
                 .isNotNull()
-                .as("The percentage value should be greater than or equal to zero")
+                .as("The percentage value should be greater than or equal to zero.")
                 .isGreaterThanOrEqualTo(0.0);
         this.value = value;
     }
@@ -39,12 +57,19 @@ public final class Percentage<T extends Number> {
         return new Percentage<>(value);
     }
 
+    /**
+     * Verify {@code expected} is in range or not.
+     *
+     * @param actual   reference value.
+     * @param expected expected To be in range.
+     * @return expected to be in range or not.
+     */
     public boolean isRange(T actual, T expected) {
         Asserts.that(expected.doubleValue())
-                .as("Negative numbers cannot be compared")
+                .as("Negative numbers cannot be compared.")
                 .isPositive();
         setRange(actual);
-        return expected.doubleValue() >= startingRage && expected.doubleValue() <= endingRage;
+        return expected.doubleValue() >= startingRange && expected.doubleValue() <= endingRange;
     }
 
     /**
@@ -55,7 +80,7 @@ public final class Percentage<T extends Number> {
     @Deprecated
     public boolean isStartingRange(T actual, T expected) {
         setRange(actual);
-        return expected.doubleValue() >= startingRage && expected.doubleValue() <= endingRage;
+        return expected.doubleValue() >= startingRange && expected.doubleValue() <= endingRange;
     }
 
     /**
@@ -66,31 +91,41 @@ public final class Percentage<T extends Number> {
     @Deprecated
     public boolean isEndingRange(T actual, T expected) {
         setRange(actual);
-        return expected.doubleValue() >= startingRage && expected.doubleValue() <= endingRage;
+        return expected.doubleValue() >= startingRange && expected.doubleValue() <= endingRange;
     }
 
     private Double getStandard(T actual) {
         return (actual.doubleValue() / value);
     }
 
-    public Double getStartingRage() {
-        return startingRage;
+    /**
+     * The {@code endingRange} is {@code actual} minus {@link Percentage#value}.
+     *
+     * @return starting point value.
+     */
+    public Double getStartingRange() {
+        return startingRange;
     }
 
-    public Double getEndingRage() {
-        return endingRage;
+    /**
+     * The {@code endingRange} is {@code actual} added {@link Percentage#value}.
+     *
+     * @return ending point value.
+     */
+    public Double getEndingRange() {
+        return endingRange;
     }
 
     private void setRange(T actual) {
-        setStartingRage(actual);
-        setEndingRage(actual);
+        setStartingRange(actual);
+        setEndingRange(actual);
     }
 
-    private void setStartingRage(T actual) {
-        this.startingRage = actual.doubleValue() - getStandard(actual);
+    private void setStartingRange(T actual) {
+        this.startingRange = actual.doubleValue() - getStandard(actual);
     }
 
-    private void setEndingRage(T actual) {
-        this.endingRage = actual.doubleValue() + getStandard(actual);
+    private void setEndingRange(T actual) {
+        this.endingRange = actual.doubleValue() + getStandard(actual);
     }
 }

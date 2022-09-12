@@ -21,20 +21,21 @@ import com.github.ones1kk.asserts.core.Asserts;
 
 /**
  * <strong> The Offset class receives the offset of the Number class as input. </strong>
- * <br><br>
+ * <br>
  * <p> Various methods related to offset are provided through verification of whether the input value can be used internally.</p>
  *
- * @param <T> inherits {@link Number}
+ * @param <T> inherits {@link Number}.
  */
 public final class Offset<T extends Number> {
 
     private final T value;
 
     private Offset(T value) {
+        Asserts.that(value)
+                .as("The offset value cannot be null.")
+                .isNotNull();
         Asserts.that(value.doubleValue())
-                .as("The offset value cannot be null")
-                .isNotNull()
-                .as("The offset value should be greater than or equal to zero")
+                .as("The offset value should be greater than or equal to zero.")
                 .isGreaterThanOrEqualTo(0.0);
         this.value = value;
     }
@@ -55,10 +56,11 @@ public final class Offset<T extends Number> {
      * @return expected is in offset or not.
      */
     public boolean isOffset(T actual, T expected) {
+        Asserts.that(expected)
+                .as("expected cannot be null.")
+                .isNotNull();
         Asserts.that(expected.doubleValue())
-                .as("expected cannot be null")
-                .isNotNull()
-                .as("Negative numbers cannot be compared")
+                .as("Negative numbers cannot be compared.")
                 .isPositive();
         return getBefore(actual) == expected.doubleValue() || getAfter(actual) == expected.doubleValue();
     }

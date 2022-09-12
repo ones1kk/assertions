@@ -61,9 +61,9 @@ public class Description implements Describable {
      *     Arguments are not empty but description contains braces('{}').
      * </pre>
      *
-     * @param supplier
-     * @param args
-     * @return A formatted string
+     * @param supplier description as using assertion.
+     * @param args     variable inserted in braces.
+     * @return formatted string.
      */
     @Override
     public String as(Supplier<String> supplier, Object... args) {
@@ -95,9 +95,9 @@ public class Description implements Describable {
      *     Arguments are not empty but description contains braces('{}').
      * </pre>
      *
-     * @param description
-     * @param args
-     * @return A formatted string
+     * @param description description as using assertion.
+     * @param args        variable inserted in braces.
+     * @return formatted string.
      */
     @Override
     public String as(String description, Object... args) {

@@ -22,7 +22,7 @@ import java.io.File;
 
 /**
  * <strong> The AbstractShortAssert class inherits {@link AbstractObjectAssert}</strong>
- * <br><br>
+ * <br>
  * <p> This is that implements the assertion method of the File type and verify assertion.</p>
  *
  * @param <SELF>

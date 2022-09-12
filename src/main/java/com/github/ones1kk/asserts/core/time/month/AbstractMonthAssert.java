@@ -23,7 +23,7 @@ import java.time.Month;
 
 /**
  * <strong> The AbstractMonthAssert class inherits {@link AbstractObjectAssert}</strong>
- * <br><br>
+ * <br>
  * <p> This is that implements the assertion method of the Month type and verify assertion.</p>
  *
  * @param <SELF>

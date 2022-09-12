@@ -188,7 +188,7 @@ public class Floats extends Objects<Float> implements FloatsInterface<Float> {
 
     private void setAssertClose(Float actual, Percentage<Float> percentage) {
         String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                percentage.getStartingRage() + " ~ " + percentage.getEndingRage());
+                percentage.getStartingRange() + " ~ " + percentage.getEndingRange());
         handler.setDescription(handler.from(actual, scope));
         throw handler.getException();
     }

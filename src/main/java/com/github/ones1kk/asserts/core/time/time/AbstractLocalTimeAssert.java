@@ -23,7 +23,7 @@ import java.time.LocalTime;
 
 /**
  * <strong> The AbstractLocalTimeAssert class inherits {@link AbstractObjectAssert}</strong>
- * <br><br>
+ * <br>
  * <p> This is that implements the assertion method of the LocalTime type and verify assertion.</p>
  *
  * @param <SELF>

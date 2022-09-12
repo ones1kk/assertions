@@ -37,10 +37,10 @@ public class DefaultPrinter implements Printer {
      *     Description : description
      * </pre>
      *
-     * @param actual      asserted target
-     * @param expected    expected target
-     * @param description defined description
-     * @return A formatted string
+     * @param actual      asserted target.
+     * @param expected    expected target.
+     * @param description defined description.
+     * @return  formatted string.
      */
     @Override
     public String writeOutput(Object actual, Object expected, String description) {
@@ -57,7 +57,7 @@ public class DefaultPrinter implements Printer {
      *
      * @param actual
      * @param description
-     * @return A formatted string
+     * @return  formatted string.
      */
     @Override
     public String writeOutput(Object actual, String description) {
@@ -72,7 +72,7 @@ public class DefaultPrinter implements Printer {
      * </pre>
      *
      * @param description
-     * @return A formatted string
+     * @return  formatted string.
      */
     @Override
     public String writeOutput(String description) {

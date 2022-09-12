@@ -20,7 +20,7 @@ import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 /**
  * <strong> The AbstractCharSequenceAssert class inherits {@link AbstractObjectAssert}</strong>
- * <br><br>
+ * <br>
  * <p> This is that implements the assertion method of the CharSequence type and verify assertion.</p>
  *
  * @param <SELF>

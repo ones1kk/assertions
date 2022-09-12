@@ -20,7 +20,7 @@ import com.github.ones1kk.asserts.core.lang.object.ObjectAssertInterface;
 
 /**
  * <strong> The AbstractAssert class is an abstract class of AbstractAssert classes to inherit the AsAssert class. </strong>
- * <br><br>
+ * <br>
  * <p> This class is For Inheriting the top-level Object method interface and pass self for chaining to AsAssert.</p>
  *
  * <p> As with all AbstractAssert classes, this class receive {@code SELF} and {@code ACTUAL} by type parameter.</p>

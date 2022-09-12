@@ -22,7 +22,7 @@ import java.util.function.Supplier;
 
 /**
  * <strong> The AsAssert class has been implemented by {@link AsAssertInterface} </strong>
- * <br><br>
+ * <br>
  * <p> Also, the AsAssert class is the top-level object of the AbstractAssert classes.</p>
  *
  * <p> Receive and cast Assert class as SELF type parameter, and receive {@link DescriptionHandler} <b>DI(Dependency Injection)</b></p>

@@ -23,7 +23,7 @@ import com.github.ones1kk.asserts.core.clazz.model.EnumAssert;
 
 /**
  * <strong> The AssertForClass class has the role of passing the values of class type that are entered for Assertion to each Assert. </strong>
- * <br><br>
+ * <br>
  * <p> The role of declaration referring to the <b>SRP(Single Responsibility Principle)</b>
  * is designed by separating the Assert class and the AbstractAssert class to perform the actual assertion.</p>
  */

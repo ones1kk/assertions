@@ -22,7 +22,7 @@ import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 /**
  * <strong> The AbstractShortAssert class inherits {@link AbstractObjectAssert}</strong>
- * <br><br>
+ * <br>
  * <p> This is that implements the assertion method of the Short type and verify assertion.</p>
  *
  * @param <SELF>
@@ -226,7 +226,7 @@ public class AbstractShortAssert<SELF extends AbstractShortAssert<SELF, ACTUAL>,
      *
      * @param expected   closed by difference of {@code percentage} from {@code actual}.
      * @param percentage percentage value {@link  Percentage#of(Double)}.
-     *@return {@code self}..
+     * @return {@code self}.
      */
     @Override
     public SELF isCloseTo(Short expected, Double percentage) {

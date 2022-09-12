@@ -16,6 +16,11 @@
 
 package com.github.ones1kk.asserts.core.feature.comparable;
 
+/**
+ * <strong> The Comparable class is for a comparable, assertable assertion implementation class.</strong>
+ *
+ * @param <ACTUAL>
+ */
 public interface Comparable<ACTUAL> {
 
     void assertIsLessThan(ACTUAL actual, ACTUAL expected);

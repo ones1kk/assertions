@@ -20,7 +20,7 @@ import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 /**
  * <strong> The AbstractBooleanAssert class inherits {@link AbstractObjectAssert}</strong>
- * <br><br>
+ * <br>
  * <p> This is that implements the assertion method of the Boolean type and verify assertion.</p>
  *
  * @param <SELF>
