@@ -114,4 +114,10 @@ public class AbstractObjectAssert<SELF extends AbstractAssert<SELF, Object>, ACT
         objects.assertIsInstanceOf(actual, expected);
         return self;
     }
+
+    @Override
+    public SELF isNotInstanceOf(Class<?> expected) {
+        objects.assertIsNotInstanceOf(actual, expected);
+        return self;
+    }
 }

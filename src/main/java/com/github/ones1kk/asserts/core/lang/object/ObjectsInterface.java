@@ -36,4 +36,5 @@ public interface ObjectsInterface<ACTUAL> {
 
     void assertIsInstanceOf(ACTUAL actual, Class<?> expected);
 
+    void assertIsNotInstanceOf(ACTUAL actual, Class<?> expected);
 }
