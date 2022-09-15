@@ -16,6 +16,12 @@
 
 package com.github.ones1kk.asserts.core.lang.bolean;
 
+
+/**
+ * <strong> The BooleanAssertInterface class is for a having Boolean type, assertable interface class.</strong>
+ *
+ * @param <SELF>
+ */
 public interface BooleanAssertInterface<SELF> {
 
     SELF isFalse();

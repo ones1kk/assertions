@@ -18,13 +18,12 @@ package com.github.ones1kk.asserts.core.lang.number.duble;
 
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableAssert;
 import com.github.ones1kk.asserts.core.feature.number.NumerableAssert;
+import com.github.ones1kk.asserts.core.lang.number.DoubleTypeAssertInterface;
 
-public interface DoubleAssertInterface<SELF> extends NumerableAssert<SELF, Double>, ComparableAssert<SELF, Double> {
-
-    SELF isInfinity();
-
-    SELF isFinite();
-
-    SELF isNaN();
-
+/**
+ * <strong> The DoubleAssertInterface class is for a having Double type, assertable interface class.</strong>
+ *
+ * @param <SELF>
+ */
+public interface DoubleAssertInterface<SELF> extends NumerableAssert<SELF, Double>, DoubleTypeAssertInterface<SELF>,  ComparableAssert<SELF, Double> {
 }

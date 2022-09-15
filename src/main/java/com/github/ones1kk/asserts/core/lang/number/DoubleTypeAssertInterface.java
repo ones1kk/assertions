@@ -16,13 +16,11 @@
 
 package com.github.ones1kk.asserts.core.lang.number;
 
-public interface IntegerTypeAssertInterface<SELF> {
+public interface DoubleTypeAssertInterface<SELF> {
 
-    SELF isOdd();
+    SELF isInfinity();
 
-    SELF isNotOdd();
+    SELF isFinite();
 
-    SELF isEven();
-
-    SELF isNotEven();
+    SELF isNaN();
 }

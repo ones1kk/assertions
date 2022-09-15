@@ -21,5 +21,11 @@ import com.github.ones1kk.asserts.core.feature.iterable.IterableAssert;
 
 import java.util.Collection;
 
+/**
+ * <strong> The CollectionAssertInterface class is for a comparable, assertable, iterable interface class.</strong>
+ *
+ * @param <SELF>
+ * @param <ACTUAL>
+ */
 public interface CollectionAssertInterface<SELF, ACTUAL> extends IterableAssert<SELF, ACTUAL>, SizeComparableAssert<SELF, Collection<? extends ACTUAL>> {
 }

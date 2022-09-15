@@ -20,5 +20,10 @@ import com.github.ones1kk.asserts.core.feature.comparable.ComparableAssert;
 import com.github.ones1kk.asserts.core.feature.number.NumerableAssert;
 import com.github.ones1kk.asserts.core.lang.number.IntegerTypeAssertInterface;
 
+/**
+ * <strong> The ByteAssertInterface class is for a having Byte type, assertable interface class.</strong>
+ *
+ * @param <SELF>
+ */
 public interface ByteAssertInterface<SELF> extends IntegerTypeAssertInterface<SELF>, NumerableAssert<SELF, Byte>, ComparableAssert<SELF, Byte> {
 }

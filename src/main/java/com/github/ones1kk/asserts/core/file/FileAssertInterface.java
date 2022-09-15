@@ -20,6 +20,11 @@ import com.github.ones1kk.asserts.core.feature.comparable.SizeComparableAssert;
 
 import java.io.File;
 
+/**
+ * <strong> The FileAssertInterface class is for a comparable, having File Type, assertable interface class.</strong>
+ *
+ * @param <SELF>
+ */
 public interface FileAssertInterface<SELF> extends SizeComparableAssert<SELF, File> {
 
     SELF exists();

@@ -18,12 +18,12 @@ package com.github.ones1kk.asserts.core.lang.number.flot;
 
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableAssert;
 import com.github.ones1kk.asserts.core.feature.number.NumerableAssert;
+import com.github.ones1kk.asserts.core.lang.number.DoubleTypeAssertInterface;
 
-public interface FloatAssertInterface<SELF> extends NumerableAssert<SELF, Float>, ComparableAssert<SELF, Float> {
-
-    SELF isInfinity();
-
-    SELF isFinite();
-
-    SELF isNaN();
+/**
+ * <strong> The FloatAssertInterface class is for a having Character type, assertable interface class.</strong>
+ *
+ * @param <SELF>
+ */
+public interface FloatAssertInterface<SELF> extends NumerableAssert<SELF, Float>, DoubleTypeAssertInterface<SELF>, ComparableAssert<SELF, Float> {
 }

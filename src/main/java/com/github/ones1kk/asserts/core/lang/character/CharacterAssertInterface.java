@@ -18,6 +18,11 @@ package com.github.ones1kk.asserts.core.lang.character;
 
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableAssert;
 
+/**
+ * <strong> The CharacterAssertInterface class is for a having Character type, assertable interface class.</strong>
+ *
+ * @param <SELF>
+ */
 public interface CharacterAssertInterface<SELF> extends ComparableAssert<SELF, Character> {
 
     SELF isLowerCase();

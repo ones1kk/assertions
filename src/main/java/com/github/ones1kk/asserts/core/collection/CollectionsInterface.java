@@ -21,5 +21,10 @@ import com.github.ones1kk.asserts.core.feature.iterable.collection.CollectionIte
 
 import java.util.Collection;
 
+/**
+ * <strong> The CollectionsInterface class is for a comparable, iterable, assertable assertion implementation class.</strong>
+ *
+ * @param <ELEMENT>
+ */
 public interface CollectionsInterface<ELEMENT> extends CollectionIterable<ELEMENT>, SizeComparable<Collection<? extends ELEMENT>> {
 }

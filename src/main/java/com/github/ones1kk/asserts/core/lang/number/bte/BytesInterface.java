@@ -19,6 +19,11 @@ package com.github.ones1kk.asserts.core.lang.number.bte;
 import com.github.ones1kk.asserts.core.feature.comparable.Comparable;
 import com.github.ones1kk.asserts.core.feature.number.Numerable;
 
+/**
+ * <strong> The BytesInterface class is for a having Byte Type, assertable assertion implementation class.</strong>
+ *
+ * @param <ACTUAL>>
+ */
 public interface BytesInterface<ACTUAL> extends Comparable<ACTUAL>, Numerable<Byte> {
 
     void assertIsOdd(ACTUAL actual);
