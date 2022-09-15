@@ -199,4 +199,65 @@ public class AbstractNumberArrayAssert<SELF extends AbstractNumberArrayAssert<SE
         numberArrays.assertNoneMatch(actual, expected);
         return self;
     }
+
+    /**
+     * Verify {@code actual} size is shorter than {@code expected}.
+     *
+     * @param expected longer than {@code actual}
+     * @return {@code self}.
+     */
+    @Override
+    public SELF isShorterThan(Number[] expected) {
+        numberArrays.assertIsShorterThan(actual, expected);
+        return self;
+    }
+
+    /**
+     * Verify {@code actual} size is shorter than or equal to {@code expected}.
+     *
+     * @param expected longer than or Equal to {@code actual}
+     * @return {@code self}.
+     */
+    @Override
+    public SELF isShorterThanOrEqualTo(Number[] expected) {
+        numberArrays.assertIsShorterThanOrEqualTo(actual, expected);
+        return self;
+    }
+
+    /**
+     * Verify {@code actual} size is longer than {@code expected}.
+     *
+     * @param expected shorter than {@code actual}
+     * @return {@code self}.
+     */
+    @Override
+    public SELF isLongerThan(Number[] expected) {
+        numberArrays.assertIsLongerThan(actual, expected);
+        return self;
+    }
+
+    /**
+     * Verify {@code actual} size is longer than or equal to {@code expected}.
+     *
+     * @param expected shorter than {@code actual}
+     * @return {@code self}.
+     */
+    @Override
+    public SELF isLongerThanOrEqualTo(Number[] expected) {
+        numberArrays.assertIsLongerThanOrEqualTo(actual, expected);
+        return self;
+    }
+
+    /**
+     * Verify {@code actual} size is between {@code start} and {@code end}
+     *
+     * @param start shorter than or Equal to {@code actual}
+     * @param end   longer than or Equal to {@code actual}
+     * @return {@code self}.
+     */
+    @Override
+    public SELF isBetweenLengthOf(Number[] start, Number[] end) {
+        numberArrays.assertIsBetweenLengthOf(actual, start, end);
+        return self;
+    }
 }

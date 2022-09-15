@@ -16,6 +16,8 @@
 
 package com.github.ones1kk.asserts.core.array.number;
 
+import com.github.ones1kk.asserts.core.feature.comparable.LengthComparable;
+import com.github.ones1kk.asserts.core.feature.comparable.SizeComparable;
 import com.github.ones1kk.asserts.core.feature.iterable.array.ArrayIterable;
 
 /**
@@ -23,7 +25,7 @@ import com.github.ones1kk.asserts.core.feature.iterable.array.ArrayIterable;
  *
  * @param <ELEMENT>
  */
-public interface NumberArraysInterface<ELEMENT> extends ArrayIterable<Number> {
+public interface NumberArraysInterface<ELEMENT> extends ArrayIterable<Number>, LengthComparable<Number[]> {
 
     void assertIsMax(ELEMENT[] actual, ELEMENT expected);
 

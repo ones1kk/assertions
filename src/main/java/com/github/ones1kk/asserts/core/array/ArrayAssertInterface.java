@@ -17,6 +17,8 @@
 package com.github.ones1kk.asserts.core.array;
 
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableAssert;
+import com.github.ones1kk.asserts.core.feature.comparable.LengthComparableAssert;
+import com.github.ones1kk.asserts.core.feature.comparable.SizeComparableAssert;
 import com.github.ones1kk.asserts.core.feature.iterable.IterableAssert;
 
 /**
@@ -25,5 +27,5 @@ import com.github.ones1kk.asserts.core.feature.iterable.IterableAssert;
  * @param <SELF>
  * @param <ACTUAL>
  */
-public interface ArrayAssertInterface<SELF, ACTUAL> extends IterableAssert<SELF, ACTUAL>, ComparableAssert<SELF, ACTUAL[]> {
+public interface ArrayAssertInterface<SELF, ACTUAL> extends IterableAssert<SELF, ACTUAL>, LengthComparableAssert<SELF, ACTUAL[]> {
 }

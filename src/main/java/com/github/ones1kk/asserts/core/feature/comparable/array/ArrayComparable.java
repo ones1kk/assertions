@@ -14,15 +14,24 @@
  * limitations under the License.
  */
 
-package com.github.ones1kk.asserts.core.array;
+package com.github.ones1kk.asserts.core.feature.comparable.array;
 
-import com.github.ones1kk.asserts.core.feature.comparable.LengthComparable;
-import com.github.ones1kk.asserts.core.feature.iterable.array.ArrayIterable;
+import java.util.Collection;
 
 /**
- * <strong> The ArraysInterface class is for a iterable, assertable assertion implementation class.</strong>
+ * <strong> The ArrayComparable class compares comparable ELEMENT type parameter.</strong>
  *
  * @param <ELEMENT>
  */
-public interface ArraysInterface<ELEMENT> extends ArrayIterable<ELEMENT>, LengthComparable<ELEMENT[]> {
+public interface ArrayComparable<ELEMENT> {
+
+    boolean isLongerThan(ELEMENT[] actual, ELEMENT[] expected);
+
+    boolean isLongerThanOrEqualTo(ELEMENT[] actual, ELEMENT[] expected);
+
+    boolean isShorterThan(ELEMENT[] actual, ELEMENT[] expected);
+
+    boolean isShorterThanOrEqualTo(ELEMENT[] actual, ELEMENT[] expected);
+
+    boolean is(ELEMENT[] actual, ELEMENT[] expected);
 }

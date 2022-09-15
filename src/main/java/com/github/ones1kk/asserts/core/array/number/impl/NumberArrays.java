@@ -18,6 +18,8 @@ package com.github.ones1kk.asserts.core.array.number.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.array.number.NumberArraysInterface;
+import com.github.ones1kk.asserts.core.feature.comparable.array.ArrayComparable;
+import com.github.ones1kk.asserts.core.feature.comparable.array.impl.ArrayComparableImpl;
 import com.github.ones1kk.asserts.core.feature.iterable.containable.array.impl.NumberArrayContainableImpl;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import org.apache.commons.lang3.ArrayUtils;
@@ -30,6 +32,8 @@ import java.util.function.Predicate;
 public class NumberArrays extends Objects<Number[]> implements NumberArraysInterface<Number> {
 
     private final NumberArrayContainableImpl<Number> containable = new NumberArrayContainableImpl<>();
+
+    private final ArrayComparable<Number> comparable = new ArrayComparableImpl<>();
 
     public NumberArrays(AsAssert<?> asAssert) {
         super(asAssert);
@@ -148,6 +152,47 @@ public class NumberArrays extends Objects<Number[]> implements NumberArraysInter
                 handler.setDescription(handler.from(actual, "The actual is matched with all of expected"));
                 throw handler.getException();
             }
+        }
+    }
+
+    @Override
+    public void assertIsShorterThan(Number[] actual, Number[] expected) {
+        if (comparable.isLongerThanOrEqualTo(actual, expected)) {
+            handler.setDescription(handler.from("length of actual is not shorter than length of expected"));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsShorterThanOrEqualTo(Number[] actual, Number[] expected) {
+        if (comparable.isLongerThan(actual, expected)) {
+            handler.setDescription(handler.from("length of actual is not shorter than or equal to length of expected"));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsLongerThan(Number[] actual, Number[] expected) {
+        if (comparable.isShorterThanOrEqualTo(actual, expected)) {
+            handler.setDescription(handler.from("length of actual is not longer than length of expected"));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsLongerThanOrEqualTo(Number[] actual, Number[] expected) {
+        if (comparable.isShorterThan(actual, expected)) {
+            handler.setDescription(handler.from("length of actual is not longer than or equal to length of expected"));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsBetweenLengthOf(Number[] actual, Number[] start, Number[] end) {
+        if (comparable.isShorterThan(actual, start) || comparable.isLongerThan(actual, end)) {
+            String description = handler.getDescribable().as("length of actual is not between {} and {}", start.length, end.length);
+            handler.setDescription(handler.from(actual, description));
+            throw handler.getException();
         }
     }
 }

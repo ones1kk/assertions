@@ -168,63 +168,63 @@ public class AbstractArrayAssert<SELF extends AbstractArrayAssert<SELF, ACTUAL>,
     }
 
     /**
-     * Verify {@code actual} size is less than {@code expected}.
+     * Verify {@code actual} size is shorter than {@code expected}.
      *
-     * @param expected greater than {@code actual}
+     * @param expected longer than {@code actual}
      * @return {@code self}.
      */
     @Override
-    public SELF isLessThan(ACTUAL[] expected) {
-        arrays.assertIsLessThan(actual, expected);
+    public SELF isShorterThan(ACTUAL[] expected) {
+        arrays.assertIsShorterThan(actual, expected);
         return self;
     }
 
     /**
-     * Verify {@code actual} size is less than or equal to {@code expected}.
+     * Verify {@code actual} size is shorter than or equal to {@code expected}.
      *
-     * @param expected greater than or Equal to {@code actual}
+     * @param expected longer than or Equal to {@code actual}
      * @return {@code self}.
      */
     @Override
-    public SELF isLessThanOrEqualTo(ACTUAL[] expected) {
-        arrays.assertIsLessThanOrEqualTo(actual, expected);
+    public SELF isShorterThanOrEqualTo(ACTUAL[] expected) {
+        arrays.assertIsShorterThanOrEqualTo(actual, expected);
         return self;
     }
 
     /**
-     * Verify {@code actual} size is greater than {@code expected}.
+     * Verify {@code actual} size is longer than {@code expected}.
      *
-     * @param expected less than {@code actual}
+     * @param expected shorter than {@code actual}
      * @return {@code self}.
      */
     @Override
-    public SELF isGreaterThan(ACTUAL[] expected) {
-        arrays.assertIsGreaterThan(actual, expected);
+    public SELF isLongerThan(ACTUAL[] expected) {
+        arrays.assertIsLongerThan(actual, expected);
         return self;
     }
 
     /**
-     * Verify {@code actual} size is greater than or equal to {@code expected}.
+     * Verify {@code actual} size is longer than or equal to {@code expected}.
      *
-     * @param expected less than {@code actual}
+     * @param expected shorter than {@code actual}
      * @return {@code self}.
      */
     @Override
-    public SELF isGreaterThanOrEqualTo(ACTUAL[] expected) {
-        arrays.assertIsGreaterThan(actual, expected);
+    public SELF isLongerThanOrEqualTo(ACTUAL[] expected) {
+        arrays.assertIsLongerThanOrEqualTo(actual, expected);
         return self;
     }
 
     /**
      * Verify {@code actual} size is between {@code start} and {@code end}
      *
-     * @param start less than or Equal to {@code actual}
-     * @param end   greater than or Equal to {@code actual}
+     * @param start shorter than or Equal to {@code actual}
+     * @param end   longer than or Equal to {@code actual}
      * @return {@code self}.
      */
     @Override
-    public SELF isBetween(ACTUAL[] start, ACTUAL[] end) {
-        arrays.assertIsBetween(actual, start, end);
+    public SELF isBetweenLengthOf(ACTUAL[] start, ACTUAL[] end) {
+        arrays.assertIsBetweenLengthOf(actual, start, end);
         return self;
     }
 }

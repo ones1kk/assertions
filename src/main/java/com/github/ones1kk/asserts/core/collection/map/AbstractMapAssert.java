@@ -85,69 +85,136 @@ public class AbstractMapAssert<SELF extends AbstractMapAssert<SELF, ACTUAL, K, V
         return self;
     }
 
+    /**
+     * Verify {@code actual} contains all key of {@code expected} or not.
+     *
+     * @param expected {@code actual} contains {@code expected}.
+     * @return {@code self}.
+     */
     @Override
     public SELF containsAllKey(Map<? extends K, ?> expected) {
         maps.assertContainsAllKey(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} contains value of {@code expected} or not.
+     *
+     * @param expected {@code actual} contains {@code expected}.
+     * @return {@code self}.
+     */
     @Override
     public SELF containsValue(V expected) {
         maps.assertContainsValue(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} contains all value of {@code expected} or not.
+     *
+     * @param expected {@code actual} contains {@code expected}.
+     * @return {@code self}.
+     */
     @Override
     public SELF containsAllValue(Map<?, ? extends V> expected) {
         maps.assertContainsAllValue(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} is equal size of {@code expected} or not.
+     *
+     * @param expected equal size of {@code actual}.
+     * @return {@code self}.
+     */
     @Override
     public SELF hasSizeOf(int expected) {
         maps.assertHasSizeOf(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} is equal size of {@code expected} or not.
+     *
+     * @param expected equal size of {@code actual}.
+     * @return {@code self}.
+     */
     @Override
     public SELF hasSameSizeOf(Map<?, ?> expected) {
         maps.assertHasSameSizeOf(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} is not equal size of {@code expected} or not.
+     *
+     * @param expected different size of {@code actual}.
+     * @return {@code self}.
+     */
     @Override
     public SELF doesNotHaveSameSizeOf(Map<?, ?> expected) {
         maps.assertDoesNotHaveSameSizeOf(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} size is smaller than {@code expected}.
+     *
+     * @param expected lager than {@code actual}
+     * @return {@code self}.
+     */
     @Override
-    public SELF isLessThan(ACTUAL expected) {
-        maps.assertIsLessThan(actual, expected);
+    public SELF isSmallerThan(ACTUAL expected) {
+        maps.assertIsSmallerThan(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} size is smaller than or equal to {@code expected}.
+     *
+     * @param expected lager than or Equal to {@code actual}
+     * @return {@code self}.
+     */
     @Override
-    public SELF isLessThanOrEqualTo(ACTUAL expected) {
-        maps.assertIsLessThanOrEqualTo(actual, expected);
+    public SELF isSmallerThanOrEqualTo(ACTUAL expected) {
+        maps.assertIsSmallerThanOrEqualTo(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} size is lager than {@code expected}.
+     *
+     * @param expected smaller than {@code actual}
+     * @return {@code self}.
+     */
     @Override
-    public SELF isGreaterThan(ACTUAL expected) {
-        maps.assertIsGreaterThan(actual, expected);
+    public SELF isLagerThan(ACTUAL expected) {
+        maps.assertIsLagerThan(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} size is lager than or equal to {@code expected}.
+     *
+     * @param expected smaller than {@code actual}
+     * @return {@code self}.
+     */
     @Override
-    public SELF isGreaterThanOrEqualTo(ACTUAL expected) {
-        maps.assertIsGreaterThanOrEqualTo(actual, expected);
+    public SELF isLagerThanOrEqualTo(ACTUAL expected) {
+        maps.assertIsLagerThanOrEqualTo(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} size is between {@code start} and {@code end}
+     *
+     * @param start smaller than or Equal to {@code actual}
+     * @param end   lager than or Equal to {@code actual}
+     * @return {@code self}.
+     */
     @Override
-    public SELF isBetween(ACTUAL start, ACTUAL end) {
-        maps.assertIsBetween(actual, start, end);
+    public SELF isBetweenSizeOf(ACTUAL start, ACTUAL end) {
+        maps.assertIsBetweenSizeOf(actual, start, end);
         return self;
     }
 }

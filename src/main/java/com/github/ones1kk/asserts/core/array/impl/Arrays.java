@@ -18,6 +18,8 @@ package com.github.ones1kk.asserts.core.array.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.array.ArraysInterface;
+import com.github.ones1kk.asserts.core.feature.comparable.array.ArrayComparable;
+import com.github.ones1kk.asserts.core.feature.comparable.array.impl.ArrayComparableImpl;
 import com.github.ones1kk.asserts.core.feature.iterable.containable.array.ArrayContainable;
 import com.github.ones1kk.asserts.core.feature.iterable.containable.array.impl.ArrayContainableImpl;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
@@ -33,6 +35,8 @@ import java.util.function.Predicate;
 public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<ACTUAL> {
 
     private final ArrayContainable<ACTUAL> containable = new ArrayContainableImpl<>();
+
+    private final ArrayComparable<ACTUAL> comparable = new ArrayComparableImpl<>();
 
     public Arrays(AsAssert<?> asAssert) {
         super(asAssert);
@@ -80,6 +84,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public void assertContainsAll(ACTUAL[] actual, ACTUAL... expected) {
         if (containable.containsNotAll(actual, expected)) {
             handler.setDescription(handler.from("The actual does not contain any of expected"));
@@ -88,6 +93,7 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public void assertContainsAny(ACTUAL[] actual, ACTUAL... expected) {
         if (containable.doseNotContainAny(actual, expected)) {
             handler.setDescription(handler.from("The actual does not contain any of expected"));
@@ -132,27 +138,43 @@ public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<A
     }
 
     @Override
-    public void assertIsLessThan(ACTUAL[] actuals, ACTUAL[] expected) {
-
+    public void assertIsShorterThan(ACTUAL[] actual, ACTUAL[] expected) {
+        if (comparable.isLongerThanOrEqualTo(actual, expected)) {
+            handler.setDescription(handler.from("length of actual is not shorter than length of expected"));
+            throw handler.getException();
+        }
     }
 
     @Override
-    public void assertIsLessThanOrEqualTo(ACTUAL[] actuals, ACTUAL[] expected) {
-
+    public void assertIsShorterThanOrEqualTo(ACTUAL[] actual, ACTUAL[] expected) {
+        if (comparable.isLongerThan(actual, expected)) {
+            handler.setDescription(handler.from("length of actual is not shorter than or equal to length of expected"));
+            throw handler.getException();
+        }
     }
 
     @Override
-    public void assertIsGreaterThan(ACTUAL[] actuals, ACTUAL[] expected) {
-
+    public void assertIsLongerThan(ACTUAL[] actual, ACTUAL[] expected) {
+        if (comparable.isShorterThanOrEqualTo(actual, expected)) {
+            handler.setDescription(handler.from("length of actual is not longer than length of expected"));
+            throw handler.getException();
+        }
     }
 
     @Override
-    public void assertIsGreaterThanOrEqualTo(ACTUAL[] actuals, ACTUAL[] expected) {
-
+    public void assertIsLongerThanOrEqualTo(ACTUAL[] actual, ACTUAL[] expected) {
+        if (comparable.isShorterThan(actual, expected)) {
+            handler.setDescription(handler.from("length of actual is not longer than or equal to length of expected"));
+            throw handler.getException();
+        }
     }
 
     @Override
-    public void assertIsBetween(ACTUAL[] actuals, ACTUAL[] start, ACTUAL[] end) {
-
+    public void assertIsBetweenLengthOf(ACTUAL[] actual, ACTUAL[] start, ACTUAL[] end) {
+        if (comparable.isShorterThan(actual, start) || comparable.isLongerThan(actual, end)) {
+            String description = handler.getDescribable().as("length of actual is not between {} and {}", start.length, end.length);
+            handler.setDescription(handler.from(actual, description));
+            throw handler.getException();
+        }
     }
 }
