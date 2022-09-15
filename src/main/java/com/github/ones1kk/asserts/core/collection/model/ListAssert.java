@@ -16,10 +16,16 @@
 
 package com.github.ones1kk.asserts.core.collection.model;
 
+import com.github.ones1kk.asserts.core.collection.AbstractCollectionAssert;
 import com.github.ones1kk.asserts.core.collection.list.AbstractListAssert;
 
 import java.util.List;
 
+/**
+ * <strong> The ListAssert class inherits {@link AbstractListAssert} </strong>
+ *
+ * @param <ELEMENT>
+ */
 public class ListAssert<ELEMENT> extends AbstractListAssert<ListAssert<ELEMENT>, ELEMENT> {
 
     public ListAssert(List<? extends ELEMENT> actual) {

@@ -16,10 +16,18 @@
 
 package com.github.ones1kk.asserts.core.collection.model;
 
+import com.github.ones1kk.asserts.core.collection.list.AbstractListAssert;
 import com.github.ones1kk.asserts.core.collection.map.AbstractMapAssert;
 
 import java.util.Map;
 
+/**
+ * <strong> The MapAssert class inherits {@link AbstractMapAssert} </strong>
+ *
+ * @param <ACTUAL>
+ * @param <K>
+ * @param <V>
+ */
 public class MapAssert<ACTUAL extends Map<K, V>, K, V> extends AbstractMapAssert<MapAssert<ACTUAL, K, V>, ACTUAL, K, V> {
 
     public MapAssert(ACTUAL actual) {

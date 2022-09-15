@@ -17,9 +17,15 @@
 package com.github.ones1kk.asserts.core.collection.model;
 
 import com.github.ones1kk.asserts.core.collection.set.AbstractSetAssert;
+import com.github.ones1kk.asserts.core.file.AbstractFileAssert;
 
 import java.util.Set;
 
+/**
+ * <strong> The SetAssert class inherits {@link AbstractSetAssert} </strong>
+ *
+ * @param <ELEMENT>
+ */
 public class SetAssert<ELEMENT> extends AbstractSetAssert<SetAssert<ELEMENT>, ELEMENT> {
 
     public SetAssert(Set<? extends ELEMENT> actual) {

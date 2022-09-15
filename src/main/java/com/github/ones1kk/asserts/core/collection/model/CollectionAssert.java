@@ -17,9 +17,15 @@
 package com.github.ones1kk.asserts.core.collection.model;
 
 import com.github.ones1kk.asserts.core.collection.AbstractCollectionAssert;
+import com.github.ones1kk.asserts.core.file.AbstractFileAssert;
 
 import java.util.Collection;
 
+/**
+ * <strong> The CollectionAssert class inherits {@link AbstractCollectionAssert} </strong>
+ *
+ * @param <ELEMENT>
+ */
 public class CollectionAssert<ELEMENT> extends AbstractCollectionAssert<CollectionAssert<ELEMENT>, ELEMENT> {
 
     public CollectionAssert(Collection<ELEMENT> actual) {
