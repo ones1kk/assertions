@@ -17,7 +17,6 @@
 package com.github.ones1kk.asserts.core.array.number;
 
 import com.github.ones1kk.asserts.core.feature.comparable.LengthComparableAssert;
-import com.github.ones1kk.asserts.core.feature.comparable.SizeComparableAssert;
 import com.github.ones1kk.asserts.core.feature.iterable.IterableAssert;
 
 /**

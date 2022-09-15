@@ -24,10 +24,10 @@ import com.github.ones1kk.asserts.core.feature.comparable.array.ArrayComparable;
  * @param <ELEMENT>
  */
 public class ArrayComparableImpl<ELEMENT> implements ArrayComparable<ELEMENT> {
-    
+
     @Override
     public boolean isLongerThan(ELEMENT[] actual, ELEMENT[] expected) {
-         return actual.length > expected.length;
+        return actual.length > expected.length;
     }
 
     @Override
@@ -37,16 +37,16 @@ public class ArrayComparableImpl<ELEMENT> implements ArrayComparable<ELEMENT> {
 
     @Override
     public boolean isShorterThan(ELEMENT[] actual, ELEMENT[] expected) {
-         return actual.length < expected.length;
+        return actual.length < expected.length;
     }
 
     @Override
     public boolean isShorterThanOrEqualTo(ELEMENT[] actual, ELEMENT[] expected) {
-         return actual.length <= expected.length;
+        return actual.length <= expected.length;
     }
 
     @Override
     public boolean is(ELEMENT[] actual, ELEMENT[] expected) {
-         return actual.length == expected.length;
+        return actual.length == expected.length;
     }
 }

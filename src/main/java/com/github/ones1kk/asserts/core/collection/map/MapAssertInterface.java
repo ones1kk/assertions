@@ -16,7 +16,6 @@
 
 package com.github.ones1kk.asserts.core.collection.map;
 
-import com.github.ones1kk.asserts.core.feature.comparable.ComparableAssert;
 import com.github.ones1kk.asserts.core.feature.comparable.SizeComparableAssert;
 
 import java.util.Map;

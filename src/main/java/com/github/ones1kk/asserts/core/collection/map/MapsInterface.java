@@ -16,7 +16,6 @@
 
 package com.github.ones1kk.asserts.core.collection.map;
 
-import com.github.ones1kk.asserts.core.feature.comparable.Comparable;
 import com.github.ones1kk.asserts.core.feature.comparable.SizeComparable;
 import com.github.ones1kk.asserts.core.feature.iterable.collection.MapIterable;
 

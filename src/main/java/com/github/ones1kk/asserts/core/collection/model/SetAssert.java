@@ -17,7 +17,6 @@
 package com.github.ones1kk.asserts.core.collection.model;
 
 import com.github.ones1kk.asserts.core.collection.set.AbstractSetAssert;
-import com.github.ones1kk.asserts.core.file.AbstractFileAssert;
 
 import java.util.Set;
 

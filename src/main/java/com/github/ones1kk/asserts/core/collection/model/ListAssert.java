@@ -16,7 +16,6 @@
 
 package com.github.ones1kk.asserts.core.collection.model;
 
-import com.github.ones1kk.asserts.core.collection.AbstractCollectionAssert;
 import com.github.ones1kk.asserts.core.collection.list.AbstractListAssert;
 
 import java.util.List;

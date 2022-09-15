@@ -16,8 +16,6 @@
 
 package com.github.ones1kk.asserts.core.feature.comparable.array;
 
-import java.util.Collection;
-
 /**
  * <strong> The ArrayComparable class compares comparable ELEMENT type parameter.</strong>
  *

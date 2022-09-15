@@ -16,7 +16,6 @@
 
 package com.github.ones1kk.asserts.core.collection.model;
 
-import com.github.ones1kk.asserts.core.collection.list.AbstractListAssert;
 import com.github.ones1kk.asserts.core.collection.map.AbstractMapAssert;
 
 import java.util.Map;
