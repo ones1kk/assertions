@@ -25,7 +25,7 @@ import com.github.ones1kk.asserts.core.lang.string.StringsInterface;
 /**
  * <strong> The Strings class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
  */
-public class Strings extends CharSequences implements StringsInterface<String> {
+public final class Strings extends CharSequences implements StringsInterface<String> {
 
     private final ComparableLanguage<String> comparable = new ComparableLanguageImpl<>();
 
@@ -73,5 +73,4 @@ public class Strings extends CharSequences implements StringsInterface<String> {
             throw handler.getException();
         }
     }
-
 }

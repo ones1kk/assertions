@@ -26,7 +26,7 @@ import static com.github.ones1kk.asserts.core.feature.print.constant.Colors.RED;
  * <p> This class writes the final output of the description.</p>
  * <p> In the way defined as the simple printing way.</p>
  */
-public class SimplePrinter implements Printer {
+public final class SimplePrinter implements Printer {
 
     /**
      * +---------------------------+

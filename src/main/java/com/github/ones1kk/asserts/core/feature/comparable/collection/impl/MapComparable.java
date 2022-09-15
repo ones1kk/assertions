@@ -23,7 +23,7 @@ import java.util.Map;
  *
  * @param <ELEMENT>
  */
-public class MapComparable<ELEMENT extends Map<K, V>, K, V> {
+public final class MapComparable<ELEMENT extends Map<K, V>, K, V> {
 
     public boolean isLargerThan(ELEMENT actual, ELEMENT expected) {
         return actual.size() > expected.size();

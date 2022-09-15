@@ -25,7 +25,7 @@ import java.time.LocalDateTime;
  *
  * @param <ACTUAL>
  */
-public class ComparableLocalDateTimeImpl<ACTUAL extends LocalDateTime> implements ComparableLocalDateTime<ACTUAL> {
+public final class ComparableLocalDateTimeImpl<ACTUAL extends LocalDateTime> implements ComparableLocalDateTime<ACTUAL> {
 
     @Override
     public boolean isBefore(ACTUAL actual, ACTUAL expected) {

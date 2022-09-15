@@ -23,7 +23,7 @@ import com.github.ones1kk.asserts.core.feature.comparable.collection.CollectionC
  *
  * @param <ELEMENT>
  */
-public class CollectionComparableImpl<ELEMENT> implements CollectionComparable<ELEMENT> {
+public final class CollectionComparableImpl<ELEMENT> implements CollectionComparable<ELEMENT> {
 
     @Override
     public boolean isLargerThan(java.util.Collection<? extends ELEMENT> actual, java.util.Collection<? extends ELEMENT> expected) {

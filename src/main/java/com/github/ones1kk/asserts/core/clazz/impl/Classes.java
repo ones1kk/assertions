@@ -22,7 +22,7 @@ import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
 import java.lang.reflect.Modifier;
 
-public class Classes extends Objects<Class<?>> implements ClassesInterface<Class<?>> {
+public final class Classes extends Objects<Class<?>> implements ClassesInterface<Class<?>> {
 
     public Classes(AsAssert<?> asAssert) {
         super(asAssert);

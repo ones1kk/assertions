@@ -32,7 +32,7 @@ import java.util.function.Predicate;
  *
  * @param <ACTUAL>
  */
-public class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<ACTUAL> {
+public final class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<ACTUAL> {
 
     private final ArrayContainable<ACTUAL> containable = new ArrayContainableImpl<>();
 

@@ -25,7 +25,7 @@ import java.time.temporal.TemporalAccessor;
  *
  * @param <ACTUAL>
  */
-public class ComparableTemporalAccessorImpl<ACTUAL extends TemporalAccessor & Comparable<ACTUAL>> implements ComparableTemporalAccessor<ACTUAL> {
+public final class ComparableTemporalAccessorImpl<ACTUAL extends TemporalAccessor & Comparable<ACTUAL>> implements ComparableTemporalAccessor<ACTUAL> {
 
     @Override
     public boolean isBefore(ACTUAL actual, ACTUAL expected) {

@@ -28,7 +28,7 @@ import java.util.function.Supplier;
  *
  * <p> What this class does is format the description to be usable in an internal way and make validity judgments on the description and the arguments. </p>
  */
-public class Description implements Describable {
+public final class Description implements Describable {
 
     private static final String REG_EXR = "Special character '%s' cannot be inserted between strings.";
 

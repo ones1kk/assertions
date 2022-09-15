@@ -27,7 +27,7 @@ import java.util.Set;
  * @param <K>
  * @param <V>
  */
-public class MapContainable<ACTUAL extends Map<K, V>, K, V> {
+public final class MapContainable<ACTUAL extends Map<K, V>, K, V> {
 
     public boolean containsAllKey(ACTUAL actual, Map<? extends K, ?> expected) {
         Set<K> actualKeys = actual.keySet();

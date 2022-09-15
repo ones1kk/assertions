@@ -31,7 +31,7 @@ import java.util.function.Predicate;
  *
  * @param <ACTUAL>
  */
-public class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsInterface<ACTUAL> {
+public final class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsInterface<ACTUAL> {
 
     private final CollectionContainable<ACTUAL> containable = new CollectionContainableImpl<>();
 

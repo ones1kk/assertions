@@ -26,7 +26,7 @@ import java.util.List;
  *
  * @param <ELEMENT>
  */
-public class ArrayContainableImpl<ELEMENT> implements ArrayContainable<ELEMENT> {
+public final class ArrayContainableImpl<ELEMENT> implements ArrayContainable<ELEMENT> {
 
     @Override
     public boolean contains(ELEMENT[] actual, ELEMENT expected) {

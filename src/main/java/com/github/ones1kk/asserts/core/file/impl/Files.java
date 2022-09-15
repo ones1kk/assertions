@@ -27,7 +27,7 @@ import java.io.File;
 /**
  * <strong> The Files class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
  */
-public class Files extends Objects<File> implements FilesInterface {
+public final class Files extends Objects<File> implements FilesInterface {
 
     private final FileSizeComparable comparable = new FileSizeComparable();
 

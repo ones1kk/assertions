@@ -23,7 +23,7 @@ import com.github.ones1kk.asserts.core.feature.comparable.lang.ComparableLanguag
  *
  * @param <ELEMENT>
  */
-public class ComparableLanguageImpl<ELEMENT extends Comparable<ELEMENT>> implements ComparableLanguage<ELEMENT> {
+public final class ComparableLanguageImpl<ELEMENT extends Comparable<ELEMENT>> implements ComparableLanguage<ELEMENT> {
 
     @Override
     public boolean isLessThan(ELEMENT actual, ELEMENT expected) {

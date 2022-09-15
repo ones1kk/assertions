@@ -29,7 +29,7 @@ import static com.github.ones1kk.asserts.core.feature.number.arithmetic.Numerabl
 /**
  * <strong> The Integers class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
  */
-public class Integers extends Objects<Integer> implements IntegersInterface<Integer> {
+public final class Integers extends Objects<Integer> implements IntegersInterface<Integer> {
 
     private final ComparableLanguage<Integer> comparable = new ComparableLanguageImpl<>();
 

@@ -29,7 +29,7 @@ import java.util.Map;
  *
  * @param <ACTUAL>
  */
-public class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implements MapsInterface<ACTUAL, K, V> {
+public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implements MapsInterface<ACTUAL, K, V> {
 
     private final MapContainable<ACTUAL, K, V> containable = new MapContainable<>();
     private final MapComparable<ACTUAL, K, V> comparable = new MapComparable<>();

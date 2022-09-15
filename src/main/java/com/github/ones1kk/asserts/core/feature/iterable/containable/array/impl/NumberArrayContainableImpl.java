@@ -27,7 +27,7 @@ import java.util.List;
  *
  * @param <ELEMENT>
  */
-public class NumberArrayContainableImpl<ELEMENT extends Number> implements NumberArrayContainable<ELEMENT> {
+public final class NumberArrayContainableImpl<ELEMENT extends Number> implements NumberArrayContainable<ELEMENT> {
 
     @Override
     public boolean contains(Number[] actual, Number expected) {

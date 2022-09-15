@@ -23,7 +23,7 @@ import com.github.ones1kk.asserts.core.feature.comparable.array.ArrayComparable;
  *
  * @param <ELEMENT>
  */
-public class ArrayComparableImpl<ELEMENT> implements ArrayComparable<ELEMENT> {
+public final class ArrayComparableImpl<ELEMENT> implements ArrayComparable<ELEMENT> {
 
     @Override
     public boolean isLongerThan(ELEMENT[] actual, ELEMENT[] expected) {

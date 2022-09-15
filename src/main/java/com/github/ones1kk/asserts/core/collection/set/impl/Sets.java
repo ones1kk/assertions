@@ -32,7 +32,7 @@ import java.util.function.Predicate;
  *
  * @param <ACTUAL>
  */
-public class Sets<ACTUAL> extends Objects<ACTUAL> implements SetsInterfaces<ACTUAL> {
+public final class Sets<ACTUAL> extends Objects<ACTUAL> implements SetsInterfaces<ACTUAL> {
 
     private final CollectionContainable<ACTUAL> containable = new CollectionContainableImpl<>();
 

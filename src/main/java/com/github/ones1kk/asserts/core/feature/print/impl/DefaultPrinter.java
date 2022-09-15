@@ -27,7 +27,7 @@ import static com.github.ones1kk.asserts.core.feature.print.constant.Colors.WHIT
  * <p> This class writes the final output of the description.</p>
  * <p> In the way defined as the default printing way.</p>
  */
-public class DefaultPrinter implements Printer {
+public final class DefaultPrinter implements Printer {
 
     /**
      * +---------------------------+

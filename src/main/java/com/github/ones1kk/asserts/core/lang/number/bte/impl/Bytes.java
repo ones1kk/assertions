@@ -29,7 +29,7 @@ import static com.github.ones1kk.asserts.core.feature.number.arithmetic.Numerabl
 /**
  * <strong> The Bytes class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
  */
-public class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
+public final class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     private final ComparableLanguage<Byte> comparable = new ComparableLanguageImpl<>();
 

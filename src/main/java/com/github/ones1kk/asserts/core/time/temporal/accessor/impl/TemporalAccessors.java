@@ -24,7 +24,7 @@ import com.github.ones1kk.asserts.core.time.temporal.accessor.TemporalAccessorsI
 
 import java.time.temporal.TemporalAccessor;
 
-public class TemporalAccessors<ACTUAL extends TemporalAccessor & Comparable<ACTUAL>> extends Objects<ACTUAL> implements TemporalAccessorsInterface<ACTUAL> {
+public final class TemporalAccessors<ACTUAL extends TemporalAccessor & Comparable<ACTUAL>> extends Objects<ACTUAL> implements TemporalAccessorsInterface<ACTUAL> {
 
     private final ComparableTemporalAccessor<ACTUAL> comparable = new ComparableTemporalAccessorImpl<>();
 

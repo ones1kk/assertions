@@ -29,7 +29,7 @@ import static com.github.ones1kk.asserts.core.feature.number.arithmetic.Numerabl
 /**
  * <strong> The Shorts class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
  */
-public class Shorts extends Objects<Short> implements ShortsInterface<Short> {
+public final class Shorts extends Objects<Short> implements ShortsInterface<Short> {
 
     private final ComparableLanguage<Short> comparable = new ComparableLanguageImpl<>();
 

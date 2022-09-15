@@ -25,7 +25,7 @@ import java.util.Collection;
  *
  * @param <ELEMENT>
  */
-public class CollectionContainableImpl<ELEMENT> implements CollectionContainable<ELEMENT> {
+public final class CollectionContainableImpl<ELEMENT> implements CollectionContainable<ELEMENT> {
 
     @Override
     public boolean contains(Collection<? extends ELEMENT> actual, ELEMENT expected) {

@@ -29,7 +29,7 @@ import static com.github.ones1kk.asserts.core.feature.number.arithmetic.Numerabl
 /**
  * <strong> The Longs class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
  */
-public class Longs extends Objects<Long> implements LongsInterface<Long> {
+public final class Longs extends Objects<Long> implements LongsInterface<Long> {
 
     private final ComparableLanguage<Long> comparable = new ComparableLanguageImpl<>();
 

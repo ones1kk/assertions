@@ -27,7 +27,7 @@ import java.time.LocalDate;
 /**
  * <strong> The LocalDates class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
  */
-public class LocalDates<ACTUAL extends LocalDate> extends Objects<ACTUAL> implements LocalDatesInterface<ACTUAL> {
+public final class LocalDates<ACTUAL extends LocalDate> extends Objects<ACTUAL> implements LocalDatesInterface<ACTUAL> {
 
     private final ComparableLocalDate<ACTUAL> comparable = new ComparableLocalDateImpl<>();
 

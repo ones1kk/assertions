@@ -27,21 +27,17 @@ public class FileSizeComparable {
         return actual.length() > expected.length();
     }
 
+    public boolean isLargerThanOrEqualTo(File actual, File expected) {
+        return actual.length() >= expected.length();
+    }
 
     public boolean isSmallerThan(File actual, File expected) {
         return actual.length() < expected.length();
     }
 
-
     public boolean isSmallerThanOrEqualTo(File actual, File expected) {
         return actual.length() <= expected.length();
     }
-
-
-    public boolean isLargerThanOrEqualTo(File actual, File expected) {
-        return actual.length() >= expected.length();
-    }
-
 
     public boolean is(File actual, File expected) {
         return actual.equals(expected);
