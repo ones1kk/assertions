@@ -171,7 +171,7 @@ public class AbstractCollectionAssert<SELF extends AbstractCollectionAssert<SELF
     /**
      * Verify {@code actual} size is smaller than {@code expected}.
      *
-     * @param expected lager than {@code actual}
+     * @param expected larger than {@code actual}
      * @return {@code self}.
      */
     @Override
@@ -183,7 +183,7 @@ public class AbstractCollectionAssert<SELF extends AbstractCollectionAssert<SELF
     /**
      * Verify {@code actual} size is smaller than or equal to {@code expected}.
      *
-     * @param expected lager than or Equal to {@code actual}
+     * @param expected larger than or Equal to {@code actual}
      * @return {@code self}.
      */
     @Override
@@ -194,26 +194,26 @@ public class AbstractCollectionAssert<SELF extends AbstractCollectionAssert<SELF
 
 
     /**
-     * Verify {@code actual} size is lager than {@code expected}.
+     * Verify {@code actual} size is larger than {@code expected}.
      *
      * @param expected smaller than {@code actual}
      * @return {@code self}.
      */
     @Override
-    public SELF isLagerThan(Collection<? extends ACTUAL> expected) {
-        collections.assertIsLagerThan(actual, expected);
+    public SELF isLargerThan(Collection<? extends ACTUAL> expected) {
+        collections.assertIsLargerThan(actual, expected);
         return self;
     }
 
     /**
-     * Verify {@code actual} size is lager than or equal to {@code expected}.
+     * Verify {@code actual} size is larger than or equal to {@code expected}.
      *
      * @param expected smaller than {@code actual}
      * @return {@code self}.
      */
     @Override
-    public SELF isLagerThanOrEqualTo(Collection<? extends ACTUAL> expected) {
-        collections.assertIsLagerThanOrEqualTo(actual, expected);
+    public SELF isLargerThanOrEqualTo(Collection<? extends ACTUAL> expected) {
+        collections.assertIsLargerThanOrEqualTo(actual, expected);
         return self;
     }
 
@@ -221,7 +221,7 @@ public class AbstractCollectionAssert<SELF extends AbstractCollectionAssert<SELF
      * Verify {@code actual} size is between {@code start} and {@code end}
      *
      * @param start smaller than or Equal to {@code actual}
-     * @param end   lager than or Equal to {@code actual}
+     * @param end   larger than or Equal to {@code actual}
      * @return {@code self}.
      */
     @Override

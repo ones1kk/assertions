@@ -28,9 +28,9 @@ public interface SizeComparableAssert<SELF, ELEMENT> {
 
     SELF isSmallerThanOrEqualTo(ELEMENT expected);
 
-    SELF isLagerThan(ELEMENT expected);
+    SELF isLargerThan(ELEMENT expected);
 
-    SELF isLagerThanOrEqualTo(ELEMENT expected);
+    SELF isLargerThanOrEqualTo(ELEMENT expected);
 
     SELF isBetweenSizeOf(ELEMENT start, ELEMENT end);
 }

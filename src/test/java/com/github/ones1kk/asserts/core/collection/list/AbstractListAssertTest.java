@@ -74,17 +74,17 @@ class AbstractListAssertTest {
         assertThrows(AssertException.class, () -> assert1.allMatch(Objects::isNull));
         assertThrows(AssertException.class, () -> assert1.noneMatch(Objects::nonNull));
 
-        assertThrows(AssertException.class, () -> assert1.isLessThan(asList("1", "2")));
-        assertThrows(AssertException.class, () -> assert1.isLessThan(asList("1", "2", "3")));
+        assertThrows(AssertException.class, () -> assert1.isSmallerThan(asList("1", "2")));
+        assertThrows(AssertException.class, () -> assert1.isSmallerThan(asList("1", "2", "3")));
 
-        assertThrows(AssertException.class, () -> assert1.isLessThanOrEqualTo(asList("1", "2")));
+        assertThrows(AssertException.class, () -> assert1.isSmallerThanOrEqualTo(asList("1", "2")));
 
-        assertThrows(AssertException.class, () -> assert1.isGreaterThan(asList("1", "2", "3", "4")));
-        assertThrows(AssertException.class, () -> assert1.isGreaterThan(asList("1", "2", "3")));
+        assertThrows(AssertException.class, () -> assert1.isLargerThan(asList("1", "2", "3", "4")));
+        assertThrows(AssertException.class, () -> assert1.isLargerThan(asList("1", "2", "3")));
 
-        assertThrows(AssertException.class, () -> assert1.isGreaterThanOrEqualTo(asList("1", "2", "3", "4")));
+        assertThrows(AssertException.class, () -> assert1.isLargerThanOrEqualTo(asList("1", "2", "3", "4")));
 
-        assertThrows(AssertException.class, () -> assert1.isBetween(asList("1", "2", "3", "4"), asList("1", "2", "3", "4", "5")));
+        assertThrows(AssertException.class, () -> assert1.isBetweenSizeOf(asList("1", "2", "3", "4"), asList("1", "2", "3", "4", "5")));
 
         assert3.isEmpty();
         assert1.isNotEmpty();
@@ -99,18 +99,16 @@ class AbstractListAssertTest {
         assert1.allMatch(Objects::nonNull);
         assert1.noneMatch(Objects::isNull);
 
-        assert1.isLessThan(asList("1", "2", "3", "4"));
+        assert1.isSmallerThan(asList("1", "2", "3", "4"));
 
-        assert1.isLessThanOrEqualTo(asList("1", "2", "3", "4"));
-        assert1.isLessThanOrEqualTo(asList("1", "2", "3"));
+        assert1.isSmallerThanOrEqualTo(asList("1", "2", "3", "4"));
+        assert1.isSmallerThanOrEqualTo(asList("1", "2", "3"));
 
-        assert1.isGreaterThan(singletonList("1"));
+        assert1.isLargerThan(singletonList("1"));
 
-        assert1.isGreaterThanOrEqualTo(singletonList("1"));
-        assert1.isGreaterThanOrEqualTo(actual1);
+        assert1.isLargerThanOrEqualTo(singletonList("1"));
+        assert1.isLargerThanOrEqualTo(actual1);
 
-        assert1.isBetween(singletonList("1"), asList("1", "2", "3", "4"));
-
+        assert1.isBetweenSizeOf(singletonList("1"), asList("1", "2", "3", "4"));
     }
-
 }

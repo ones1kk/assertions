@@ -50,15 +50,15 @@ class MapsTest {
         assertThrows(Exception.class, () -> maps.assertContainsValue(actual1, "b"));
         assertThrows(Exception.class, () -> maps.assertContainsAllValue(actual1, actual4));
 
-        assertThrows(Exception.class, () -> maps.assertIsLessThan(actual4, actual1));
-        assertThrows(Exception.class, () -> maps.assertIsLessThan(actual4, actual4));
-        assertThrows(Exception.class, () -> maps.assertIsLessThanOrEqualTo(actual4, actual1));
+        assertThrows(Exception.class, () -> maps.assertIsSmallerThan(actual4, actual1));
+        assertThrows(Exception.class, () -> maps.assertIsSmallerThan(actual4, actual4));
+        assertThrows(Exception.class, () -> maps.assertIsSmallerThanOrEqualTo(actual4, actual1));
 
-        assertThrows(Exception.class, () -> maps.assertIsGreaterThan(actual1, actual4));
-        assertThrows(Exception.class, () -> maps.assertIsGreaterThan(actual1, actual3));
-        assertThrows(Exception.class, () -> maps.assertIsGreaterThanOrEqualTo(actual1, actual4));
+        assertThrows(Exception.class, () -> maps.assertIsLargerThan(actual1, actual4));
+        assertThrows(Exception.class, () -> maps.assertIsLargerThan(actual1, actual3));
+        assertThrows(Exception.class, () -> maps.assertIsLargerThanOrEqualTo(actual1, actual4));
 
-        assertThrows(Exception.class, () -> maps.assertIsBetween(actual1, actual4, actual3));
+        assertThrows(Exception.class, () -> maps.assertIsBetweenSizeOf(actual1, actual4, actual3));
 
         maps.assertIsEmpty(emptyMap());
         maps.assertIsNotEmpty(actual1);
@@ -76,14 +76,14 @@ class MapsTest {
         maps.assertHasSameSizeOf(actual1, actual3);
         maps.assertDoesNotHaveSameSizeOf(actual1, actual2);
 
-        maps.assertIsLessThan(actual1, actual4);
-        maps.assertIsLessThanOrEqualTo(actual1, actual3);
-        maps.assertIsLessThanOrEqualTo(actual1, actual4);
+        maps.assertIsSmallerThan(actual1, actual4);
+        maps.assertIsSmallerThanOrEqualTo(actual1, actual3);
+        maps.assertIsSmallerThanOrEqualTo(actual1, actual4);
 
-        maps.assertIsGreaterThan(actual4, actual1);
-        maps.assertIsGreaterThanOrEqualTo(actual4, actual1);
-        maps.assertIsGreaterThanOrEqualTo(actual4, actual4);
+        maps.assertIsLargerThan(actual4, actual1);
+        maps.assertIsLargerThanOrEqualTo(actual4, actual1);
+        maps.assertIsLargerThanOrEqualTo(actual4, actual4);
 
-        maps.assertIsBetween(actual1, actual2, actual4);
+        maps.assertIsBetweenSizeOf(actual1, actual2, actual4);
     }
 }

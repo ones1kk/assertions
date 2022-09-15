@@ -10,6 +10,7 @@ import java.util.*;
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractCollectionAssertTestComparableImpl {
@@ -59,32 +60,32 @@ class AbstractCollectionAssertTestComparableImpl {
         AbstractCollectionAssert<?, String> assert4 = new AbstractCollectionAssert<>(AbstractCollectionAssert.class, actual4);
 
         // then
-        Assertions.assertThrows(AssertException.class, assert1::isEmpty);
-        Assertions.assertThrows(AssertException.class, assert3::isNotEmpty);
-        Assertions.assertThrows(AssertException.class, assert1::isNullOrEmpty);
-        Assertions.assertThrows(AssertException.class, () -> assert1.contains("4"));
-        Assertions.assertThrows(AssertException.class, () -> assert1.doesNotContain("1"));
+        assertThrows(AssertException.class, assert1::isEmpty);
+        assertThrows(AssertException.class, assert3::isNotEmpty);
+        assertThrows(AssertException.class, assert1::isNullOrEmpty);
+        assertThrows(AssertException.class, () -> assert1.contains("4"));
+        assertThrows(AssertException.class, () -> assert1.doesNotContain("1"));
 
-        Assertions.assertThrows(AssertException.class, () -> assert1.containsAll("4", "5"));
-        Assertions.assertThrows(AssertException.class, () -> assert1.containsAll("1", "2", "4"));
+        assertThrows(AssertException.class, () -> assert1.containsAll("4", "5"));
+        assertThrows(AssertException.class, () -> assert1.containsAll("1", "2", "4"));
 
-        Assertions.assertThrows(AssertException.class, () -> assert1.containsAny("4", "5", "6"));
-        Assertions.assertThrows(AssertException.class, assert1::containsNull);
-        Assertions.assertThrows(AssertException.class, assert4::doesNotContainNull);
-        Assertions.assertThrows(AssertException.class, () -> assert1.allMatch(Objects::isNull));
-        Assertions.assertThrows(AssertException.class, () -> assert1.noneMatch(Objects::nonNull));
+        assertThrows(AssertException.class, () -> assert1.containsAny("4", "5", "6"));
+        assertThrows(AssertException.class, assert1::containsNull);
+        assertThrows(AssertException.class, assert4::doesNotContainNull);
+        assertThrows(AssertException.class, () -> assert1.allMatch(Objects::isNull));
+        assertThrows(AssertException.class, () -> assert1.noneMatch(Objects::nonNull));
 
-        Assertions.assertThrows(AssertException.class, () -> assert1.isLessThan(asList("1", "2")));
-        Assertions.assertThrows(AssertException.class, () -> assert1.isLessThan(asList("1", "2", "3")));
+        assertThrows(AssertException.class, () -> assert1.isSmallerThan(asList("1", "2")));
+        assertThrows(AssertException.class, () -> assert1.isSmallerThan(asList("1", "2", "3")));
 
-        Assertions.assertThrows(AssertException.class, () -> assert1.isLessThanOrEqualTo(asList("1", "2")));
+        assertThrows(AssertException.class, () -> assert1.isSmallerThanOrEqualTo(asList("1", "2")));
 
-        Assertions.assertThrows(AssertException.class, () -> assert1.isGreaterThan(asList("1", "2", "3", "4")));
-        Assertions.assertThrows(AssertException.class, () -> assert1.isGreaterThan(asList("1", "2", "3")));
+        assertThrows(AssertException.class, () -> assert1.isLargerThan(asList("1", "2", "3", "4")));
+        assertThrows(AssertException.class, () -> assert1.isLargerThan(asList("1", "2", "3")));
 
-        Assertions.assertThrows(AssertException.class, () -> assert1.isGreaterThanOrEqualTo(asList("1", "2", "3", "4")));
+        assertThrows(AssertException.class, () -> assert1.isLargerThanOrEqualTo(asList("1", "2", "3", "4")));
 
-        Assertions.assertThrows(AssertException.class, () -> assert1.isBetween(asList("1", "2", "3", "4"), asList("1", "2", "3", "4", "5")));
+        assertThrows(AssertException.class, () -> assert1.isBetweenSizeOf(asList("1", "2", "3", "4"), asList("1", "2", "3", "4", "5")));
 
         assert3.isEmpty();
         assert1.isNotEmpty();
@@ -99,17 +100,17 @@ class AbstractCollectionAssertTestComparableImpl {
         assert1.allMatch(Objects::nonNull);
         assert1.noneMatch(Objects::isNull);
 
-        assert1.isLessThan(asList("1", "2", "3", "4"));
+        assert1.isSmallerThan(asList("1", "2", "3", "4"));
 
-        assert1.isLessThanOrEqualTo(asList("1", "2", "3", "4"));
-        assert1.isLessThanOrEqualTo(asList("1", "2", "3"));
+        assert1.isSmallerThanOrEqualTo(asList("1", "2", "3", "4"));
+        assert1.isSmallerThanOrEqualTo(asList("1", "2", "3"));
 
-        assert1.isGreaterThan(singletonList("1"));
+        assert1.isLargerThan(singletonList("1"));
 
-        assert1.isGreaterThanOrEqualTo(singletonList("1"));
-        assert1.isGreaterThanOrEqualTo(actual1);
+        assert1.isLargerThanOrEqualTo(singletonList("1"));
+        assert1.isLargerThanOrEqualTo(actual1);
 
-        assert1.isBetween(singletonList("1"), asList("1", "2", "3", "4"));
+        assert1.isBetweenSizeOf(singletonList("1"), asList("1", "2", "3", "4"));
 
     }
 

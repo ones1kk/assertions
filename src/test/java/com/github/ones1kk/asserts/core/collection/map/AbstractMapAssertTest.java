@@ -58,17 +58,17 @@ class AbstractMapAssertTest {
         assertThrows(AssertException.class, () -> assert1.hasSameSizeOf(new HashMap<>()));
         assertThrows(AssertException.class, () -> assert1.doesNotHaveSameSizeOf(actual1));
 
-        assertThrows(AssertException.class, () -> assert1.isLessThan(actual2));
-        assertThrows(AssertException.class, () -> assert1.isLessThan(actual1));
+        assertThrows(AssertException.class, () -> assert1.isSmallerThan(actual2));
+        assertThrows(AssertException.class, () -> assert1.isSmallerThan(actual1));
 
-        assertThrows(AssertException.class, () -> assert1.isLessThanOrEqualTo(actual2));
+        assertThrows(AssertException.class, () -> assert1.isSmallerThanOrEqualTo(actual2));
 
-        assertThrows(AssertException.class, () -> assert2.isGreaterThan(actual1));
-        assertThrows(AssertException.class, () -> assert2.isGreaterThan(actual2));
+        assertThrows(AssertException.class, () -> assert2.isLargerThan(actual1));
+        assertThrows(AssertException.class, () -> assert2.isLargerThan(actual2));
 
-        assertThrows(AssertException.class, () -> assert2.isGreaterThanOrEqualTo(actual1));
+        assertThrows(AssertException.class, () -> assert2.isLargerThanOrEqualTo(actual1));
 
-        assertThrows(AssertException.class, () -> assert2.isBetween(actual2, actual3));
+        assertThrows(AssertException.class, () -> assert2.isBetweenSizeOf(actual2, actual3));
 
         assert3.isEmpty();
         assert1.isNotEmpty();
@@ -89,15 +89,15 @@ class AbstractMapAssertTest {
 
         assert1.doesNotHaveSameSizeOf(actual3);
 
-        assert2.isLessThan(actual1);
-        assert2.isLessThanOrEqualTo(actual2);
-        assert2.isLessThanOrEqualTo(actual1);
+        assert2.isSmallerThan(actual1);
+        assert2.isSmallerThanOrEqualTo(actual2);
+        assert2.isSmallerThanOrEqualTo(actual1);
 
-        assert1.isGreaterThan(actual2);
-        assert1.isGreaterThanOrEqualTo(expected1);
-        assert1.isGreaterThanOrEqualTo(actual1);
+        assert1.isLargerThan(actual2);
+        assert1.isLargerThanOrEqualTo(expected1);
+        assert1.isLargerThanOrEqualTo(actual1);
 
-        assert2.isBetween(new HashMap<>(), actual1);
+        assert2.isBetweenSizeOf(new HashMap<>(), actual1);
     }
 
 }

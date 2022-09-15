@@ -27,9 +27,9 @@ public interface SizeComparable<ACTUAL> {
 
     void assertIsSmallerThanOrEqualTo(ACTUAL actual, ACTUAL expected);
 
-    void assertIsLagerThan(ACTUAL actual, ACTUAL expected);
+    void assertIsLargerThan(ACTUAL actual, ACTUAL expected);
 
-    void assertIsLagerThanOrEqualTo(ACTUAL actual, ACTUAL expected);
+    void assertIsLargerThanOrEqualTo(ACTUAL actual, ACTUAL expected);
 
     void assertIsBetweenSizeOf(ACTUAL actual, ACTUAL start, ACTUAL end);
 }

@@ -46,18 +46,18 @@ class CollectionsTest {
         assertThrows(Exception.class, () -> collections.assertAllMatch(asList("a", "b", "c"), Objects::isNull));
         assertThrows(Exception.class, () -> collections.assertNoneMatch(asList("a", "b", "c"), Objects::nonNull));
 
-        assertThrows(Exception.class, () -> collections.assertIsLessThan(asList("a", "b"), singletonList("a")));
-        assertThrows(Exception.class, () -> collections.assertIsLessThan(asList("a", "b"), asList("a", "b")));
+        assertThrows(Exception.class, () -> collections.assertIsSmallerThan(asList("a", "b"), singletonList("a")));
+        assertThrows(Exception.class, () -> collections.assertIsSmallerThan(asList("a", "b"), asList("a", "b")));
 
-        assertThrows(Exception.class, () -> collections.assertIsLessThanOrEqualTo(asList("a", "b"), singletonList("a")));
+        assertThrows(Exception.class, () -> collections.assertIsSmallerThanOrEqualTo(asList("a", "b"), singletonList("a")));
 
 
-        assertThrows(Exception.class, () -> collections.assertIsGreaterThan(singletonList("a"), asList("a", "b")));
-        assertThrows(Exception.class, () -> collections.assertIsGreaterThan(singletonList("a"), singletonList("a")));
+        assertThrows(Exception.class, () -> collections.assertIsLargerThan(singletonList("a"), asList("a", "b")));
+        assertThrows(Exception.class, () -> collections.assertIsLargerThan(singletonList("a"), singletonList("a")));
 
-        assertThrows(Exception.class, () -> collections.assertIsGreaterThanOrEqualTo(singletonList("a"), asList("a", "b")));
+        assertThrows(Exception.class, () -> collections.assertIsLargerThanOrEqualTo(singletonList("a"), asList("a", "b")));
 
-        assertThrows(Exception.class, () -> collections.assertIsBetween(asList("a", "b"), asList("a", "b", "c"), asList("a", "b", "c", "d")));
+        assertThrows(Exception.class, () -> collections.assertIsBetweenSizeOf(asList("a", "b"), asList("a", "b", "c"), asList("a", "b", "c", "d")));
 
         collections.assertIsEmpty(emptyList());
         collections.assertIsNotEmpty(singletonList(""));
@@ -74,17 +74,17 @@ class CollectionsTest {
         collections.assertAllMatch(asList("a", "b", "c"), Objects::nonNull);
         collections.assertNoneMatch(asList("a", "b", "c"), Objects::isNull);
 
-        collections.assertIsLessThan(singletonList("a"), asList("a", "b"));
+        collections.assertIsSmallerThan(singletonList("a"), asList("a", "b"));
 
-        collections.assertIsLessThanOrEqualTo(singletonList("a"), asList("a", "b"));
-        collections.assertIsLessThanOrEqualTo(singletonList("a"), singletonList("a"));
+        collections.assertIsSmallerThanOrEqualTo(singletonList("a"), asList("a", "b"));
+        collections.assertIsSmallerThanOrEqualTo(singletonList("a"), singletonList("a"));
 
-        collections.assertIsGreaterThan(asList("a", "b"), singletonList("a"));
+        collections.assertIsLargerThan(asList("a", "b"), singletonList("a"));
 
-        collections.assertIsGreaterThanOrEqualTo(asList("a", "b"), singletonList("a"));
-        collections.assertIsGreaterThanOrEqualTo(asList("a", "b"), asList("a", "b"));
+        collections.assertIsLargerThanOrEqualTo(asList("a", "b"), singletonList("a"));
+        collections.assertIsLargerThanOrEqualTo(asList("a", "b"), asList("a", "b"));
 
-        collections.assertIsBetween(asList("a", "b"), singletonList("a"), asList("a", "b", "c"));
+        collections.assertIsBetweenSizeOf(asList("a", "b"), singletonList("a"), asList("a", "b", "c"));
     }
 
 }

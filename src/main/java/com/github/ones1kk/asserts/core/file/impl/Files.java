@@ -188,7 +188,7 @@ public class Files extends Objects<File> implements FilesInterface {
     }
 
     @Override
-    public void assertIsBetween(File actual, File start, File end) {
+    public void assertIsBetweenSizeOf(File actual, File start, File end) {
         if (comparable.isSmallerThan(actual, start)
                 || comparable.isLargerThan(actual, end)) {
             String description = handler.from("size of {} is not between size of {} and {}", actual, start, end);

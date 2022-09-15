@@ -16,9 +16,11 @@
 
 package com.github.ones1kk.asserts.core.file;
 
+import com.github.ones1kk.asserts.core.feature.comparable.SizeComparable;
+
 import java.io.File;
 
-public interface FilesInterface {
+public interface FilesInterface extends SizeComparable<File> {
 
     void assertExists(File actual);
 
@@ -49,14 +51,4 @@ public interface FilesInterface {
     void assertHasExtension(File actual, String extension);
 
     void assertDoesNotHaveExtension(File actual, String extension);
-
-    void assertIsSmallerThan(File actual, File expected);
-
-    void assertIsSmallerThanOrEqualTo(File actual, File expected);
-
-    void assertIsLargerThan(File actual, File expected);
-
-    void assertIsLargerThanOrEqualTo(File actual, File expected);
-
-    void assertIsBetween(File actual, File start, File end);
 }

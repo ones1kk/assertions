@@ -46,18 +46,18 @@ class SetsTest {
         assertThrows(Exception.class, () -> sets.assertAllMatch(unmodifiableSet(new HashSet<>(asList("a", "b", "c"))), Objects::isNull));
         assertThrows(Exception.class, () -> sets.assertNoneMatch(unmodifiableSet(new HashSet<>(asList("a", "b", "c"))), Objects::nonNull));
 
-        assertThrows(Exception.class, () -> sets.assertIsLessThan(unmodifiableSet(new HashSet<>(asList("a", "b"))), singleton("a")));
-        assertThrows(Exception.class, () -> sets.assertIsLessThan(unmodifiableSet(new HashSet<>(asList("a", "b"))), unmodifiableSet(new HashSet<>(asList("a", "b")))));
+        assertThrows(Exception.class, () -> sets.assertIsSmallerThan(unmodifiableSet(new HashSet<>(asList("a", "b"))), singleton("a")));
+        assertThrows(Exception.class, () -> sets.assertIsSmallerThan(unmodifiableSet(new HashSet<>(asList("a", "b"))), unmodifiableSet(new HashSet<>(asList("a", "b")))));
 
-        assertThrows(Exception.class, () -> sets.assertIsLessThanOrEqualTo(unmodifiableSet(new HashSet<>(asList("a", "b"))), singleton("a")));
+        assertThrows(Exception.class, () -> sets.assertIsSmallerThanOrEqualTo(unmodifiableSet(new HashSet<>(asList("a", "b"))), singleton("a")));
 
 
-        assertThrows(Exception.class, () -> sets.assertIsGreaterThan(singleton("a"), unmodifiableSet(new HashSet<>(asList("a", "b")))));
-        assertThrows(Exception.class, () -> sets.assertIsGreaterThan(singleton("a"), singleton("a")));
+        assertThrows(Exception.class, () -> sets.assertIsLargerThan(singleton("a"), unmodifiableSet(new HashSet<>(asList("a", "b")))));
+        assertThrows(Exception.class, () -> sets.assertIsLargerThan(singleton("a"), singleton("a")));
 
-        assertThrows(Exception.class, () -> sets.assertIsGreaterThanOrEqualTo(singleton("a"), unmodifiableSet(new HashSet<>(asList("a", "b")))));
+        assertThrows(Exception.class, () -> sets.assertIsLargerThanOrEqualTo(singleton("a"), unmodifiableSet(new HashSet<>(asList("a", "b")))));
 
-        assertThrows(Exception.class, () -> sets.assertIsBetween(unmodifiableSet(new HashSet<>(asList("a", "b"))), unmodifiableSet(new HashSet<>(asList("a", "b", "c"))), unmodifiableSet(new HashSet<>(asList("a", "b", "c", "d")))));
+        assertThrows(Exception.class, () -> sets.assertIsBetweenSizeOf(unmodifiableSet(new HashSet<>(asList("a", "b"))), unmodifiableSet(new HashSet<>(asList("a", "b", "c"))), unmodifiableSet(new HashSet<>(asList("a", "b", "c", "d")))));
 
         sets.assertIsEmpty(emptySet());
         sets.assertIsNotEmpty(singleton(""));
@@ -74,17 +74,17 @@ class SetsTest {
         sets.assertAllMatch(unmodifiableSet(new HashSet<>(asList("a", "b", "c"))), Objects::nonNull);
         sets.assertNoneMatch(unmodifiableSet(new HashSet<>(asList("a", "b", "c"))), Objects::isNull);
 
-        sets.assertIsLessThan(singleton("a"), unmodifiableSet(new HashSet<>(asList("a", "b"))));
+        sets.assertIsSmallerThan(singleton("a"), unmodifiableSet(new HashSet<>(asList("a", "b"))));
 
-        sets.assertIsLessThanOrEqualTo(singleton("a"), unmodifiableSet(new HashSet<>(asList("a", "b"))));
-        sets.assertIsLessThanOrEqualTo(singleton("a"), singleton("a"));
+        sets.assertIsSmallerThanOrEqualTo(singleton("a"), unmodifiableSet(new HashSet<>(asList("a", "b"))));
+        sets.assertIsSmallerThanOrEqualTo(singleton("a"), singleton("a"));
 
-        sets.assertIsGreaterThan(unmodifiableSet(new HashSet<>(asList("a", "b"))), singleton("a"));
+        sets.assertIsLargerThan(unmodifiableSet(new HashSet<>(asList("a", "b"))), singleton("a"));
 
-        sets.assertIsGreaterThanOrEqualTo(unmodifiableSet(new HashSet<>(asList("a", "b"))), singleton("a"));
-        sets.assertIsGreaterThanOrEqualTo(unmodifiableSet(new HashSet<>(asList("a", "b"))), unmodifiableSet(new HashSet<>(asList("a", "b"))));
+        sets.assertIsLargerThanOrEqualTo(unmodifiableSet(new HashSet<>(asList("a", "b"))), singleton("a"));
+        sets.assertIsLargerThanOrEqualTo(unmodifiableSet(new HashSet<>(asList("a", "b"))), unmodifiableSet(new HashSet<>(asList("a", "b"))));
 
-        sets.assertIsBetween(unmodifiableSet(new HashSet<>(asList("a", "b"))), singleton("a"), unmodifiableSet(new HashSet<>(asList("a", "b", "c"))));
+        sets.assertIsBetweenSizeOf(unmodifiableSet(new HashSet<>(asList("a", "b"))), singleton("a"), unmodifiableSet(new HashSet<>(asList("a", "b", "c"))));
     }
 
 }

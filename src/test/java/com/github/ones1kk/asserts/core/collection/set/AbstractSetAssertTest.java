@@ -75,17 +75,17 @@ class AbstractSetAssertTest {
         assertThrows(AssertException.class, () -> assert1.allMatch(Objects::isNull));
         assertThrows(AssertException.class, () -> assert1.noneMatch(Objects::nonNull));
 
-        assertThrows(AssertException.class, () -> assert1.isLessThan(unmodifiableSet(new HashSet<>(asList("1", "2")))));
-        assertThrows(AssertException.class, () -> assert1.isLessThan(unmodifiableSet(new HashSet<>(asList("1", "2", "3")))));
+        assertThrows(AssertException.class, () -> assert1.isSmallerThan(unmodifiableSet(new HashSet<>(asList("1", "2")))));
+        assertThrows(AssertException.class, () -> assert1.isSmallerThan(unmodifiableSet(new HashSet<>(asList("1", "2", "3")))));
 
-        assertThrows(AssertException.class, () -> assert1.isLessThanOrEqualTo(unmodifiableSet(new HashSet<>(asList("1", "2")))));
+        assertThrows(AssertException.class, () -> assert1.isSmallerThanOrEqualTo(unmodifiableSet(new HashSet<>(asList("1", "2")))));
 
-        assertThrows(AssertException.class, () -> assert1.isGreaterThan(unmodifiableSet(new HashSet<>(asList("1", "2", "3", "4")))));
-        assertThrows(AssertException.class, () -> assert1.isGreaterThan(unmodifiableSet(new HashSet<>(asList("1", "2", "3")))));
+        assertThrows(AssertException.class, () -> assert1.isLargerThan(unmodifiableSet(new HashSet<>(asList("1", "2", "3", "4")))));
+        assertThrows(AssertException.class, () -> assert1.isLargerThan(unmodifiableSet(new HashSet<>(asList("1", "2", "3")))));
 
-        assertThrows(AssertException.class, () -> assert1.isGreaterThanOrEqualTo(unmodifiableSet(new HashSet<>(asList("1", "2", "3", "4")))));
+        assertThrows(AssertException.class, () -> assert1.isLargerThanOrEqualTo(unmodifiableSet(new HashSet<>(asList("1", "2", "3", "4")))));
 
-        assertThrows(AssertException.class, () -> assert1.isBetween(unmodifiableSet(new HashSet<>(asList("1", "2", "3", "4"))), unmodifiableSet(new HashSet<>(asList("1", "2", "3", "4", "5")))));
+        assertThrows(AssertException.class, () -> assert1.isBetweenSizeOf(unmodifiableSet(new HashSet<>(asList("1", "2", "3", "4"))), unmodifiableSet(new HashSet<>(asList("1", "2", "3", "4", "5")))));
 
         assert3.isEmpty();
         assert1.isNotEmpty();
@@ -100,17 +100,17 @@ class AbstractSetAssertTest {
         assert1.allMatch(Objects::nonNull);
         assert1.noneMatch(Objects::isNull);
 
-        assert1.isLessThan(unmodifiableSet(new HashSet<>(asList("1", "2", "3", "4"))));
+        assert1.isSmallerThan(unmodifiableSet(new HashSet<>(asList("1", "2", "3", "4"))));
 
-        assert1.isLessThanOrEqualTo(unmodifiableSet(new HashSet<>(asList("1", "2", "3", "4"))));
-        assert1.isLessThanOrEqualTo(unmodifiableSet(new HashSet<>(asList("1", "2", "3"))));
+        assert1.isSmallerThanOrEqualTo(unmodifiableSet(new HashSet<>(asList("1", "2", "3", "4"))));
+        assert1.isSmallerThanOrEqualTo(unmodifiableSet(new HashSet<>(asList("1", "2", "3"))));
 
-        assert1.isGreaterThan(singleton("1"));
+        assert1.isLargerThan(singleton("1"));
 
-        assert1.isGreaterThanOrEqualTo(singleton("1"));
-        assert1.isGreaterThanOrEqualTo(actual1);
+        assert1.isLargerThanOrEqualTo(singleton("1"));
+        assert1.isLargerThanOrEqualTo(actual1);
 
-        assert1.isBetween(singleton("1"), unmodifiableSet(new HashSet<>(asList("1", "2", "3", "4"))));
+        assert1.isBetweenSizeOf(singleton("1"), unmodifiableSet(new HashSet<>(asList("1", "2", "3", "4"))));
 
     }
 

@@ -26,7 +26,7 @@ import com.github.ones1kk.asserts.core.feature.comparable.collection.CollectionC
 public class CollectionComparableImpl<ELEMENT> implements CollectionComparable<ELEMENT> {
 
     @Override
-    public boolean isLagerThan(java.util.Collection<? extends ELEMENT> actual, java.util.Collection<? extends ELEMENT> expected) {
+    public boolean isLargerThan(java.util.Collection<? extends ELEMENT> actual, java.util.Collection<? extends ELEMENT> expected) {
         return actual.size() > expected.size();
     }
 
@@ -41,7 +41,7 @@ public class CollectionComparableImpl<ELEMENT> implements CollectionComparable<E
     }
 
     @Override
-    public boolean isLagerThanOrEqualTo(java.util.Collection<? extends ELEMENT> actual, java.util.Collection<? extends ELEMENT> expected) {
+    public boolean isLargerThanOrEqualTo(java.util.Collection<? extends ELEMENT> actual, java.util.Collection<? extends ELEMENT> expected) {
         return actual.size() >= expected.size();
     }
 

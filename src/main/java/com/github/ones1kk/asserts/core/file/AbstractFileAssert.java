@@ -257,8 +257,8 @@ public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends A
      * @return {@code self}.
      */
     @Override
-    public SELF isBetween(File start, File end) {
-        files.assertIsBetween(actual, start, end);
+    public SELF isBetweenSizeOf(File start, File end) {
+        files.assertIsBetweenSizeOf(actual, start, end);
         return self;
     }
 }

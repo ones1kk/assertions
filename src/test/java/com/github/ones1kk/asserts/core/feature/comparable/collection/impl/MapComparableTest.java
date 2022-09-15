@@ -36,21 +36,21 @@ class MapComparableTest {
         expected3.put("b", "b");
 
         // then
-        assertThat(comparable.isGraterThan(actual, expected1)).isFalse();
-        assertThat(comparable.isGraterThan(actual, expected2)).isTrue();
-        assertThat(comparable.isGraterThan(actual, expected3)).isTrue();
+        assertThat(comparable.isLargerThan(actual, expected1)).isFalse();
+        assertThat(comparable.isLargerThan(actual, expected2)).isTrue();
+        assertThat(comparable.isLargerThan(actual, expected3)).isTrue();
 
-        assertThat(comparable.isLessThan(actual, expected1)).isFalse();
-        assertThat(comparable.isLessThan(actual, expected2)).isFalse();
-        assertThat(comparable.isLessThan(actual, expected3)).isFalse();
+        assertThat(comparable.isSmallerThan(actual, expected1)).isFalse();
+        assertThat(comparable.isSmallerThan(actual, expected2)).isFalse();
+        assertThat(comparable.isSmallerThan(actual, expected3)).isFalse();
 
-        assertThat(comparable.isLessThanOrEqualTo(actual, expected1)).isTrue();
-        assertThat(comparable.isLessThanOrEqualTo(actual, expected2)).isFalse();
-        assertThat(comparable.isLessThanOrEqualTo(actual, expected3)).isFalse();
+        assertThat(comparable.isSmallerThanOrEqualTo(actual, expected1)).isTrue();
+        assertThat(comparable.isSmallerThanOrEqualTo(actual, expected2)).isFalse();
+        assertThat(comparable.isSmallerThanOrEqualTo(actual, expected3)).isFalse();
 
-        assertThat(comparable.isGraterThanOrEqualTo(actual, expected1)).isTrue();
-        assertThat(comparable.isGraterThanOrEqualTo(actual, expected2)).isTrue();
-        assertThat(comparable.isGraterThanOrEqualTo(actual, expected3)).isTrue();
+        assertThat(comparable.isLargerThanOrEqualTo(actual, expected1)).isTrue();
+        assertThat(comparable.isLargerThanOrEqualTo(actual, expected2)).isTrue();
+        assertThat(comparable.isLargerThanOrEqualTo(actual, expected3)).isTrue();
 
         assertThat(comparable.hasSameSizeOf(actual, expected1)).isTrue();
         assertThat(comparable.hasSameSizeOf(actual, expected2)).isFalse();

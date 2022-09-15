@@ -160,7 +160,7 @@ public class AbstractMapAssert<SELF extends AbstractMapAssert<SELF, ACTUAL, K, V
     /**
      * Verify {@code actual} size is smaller than {@code expected}.
      *
-     * @param expected lager than {@code actual}
+     * @param expected larger than {@code actual}
      * @return {@code self}.
      */
     @Override
@@ -172,7 +172,7 @@ public class AbstractMapAssert<SELF extends AbstractMapAssert<SELF, ACTUAL, K, V
     /**
      * Verify {@code actual} size is smaller than or equal to {@code expected}.
      *
-     * @param expected lager than or Equal to {@code actual}
+     * @param expected larger than or Equal to {@code actual}
      * @return {@code self}.
      */
     @Override
@@ -182,26 +182,26 @@ public class AbstractMapAssert<SELF extends AbstractMapAssert<SELF, ACTUAL, K, V
     }
 
     /**
-     * Verify {@code actual} size is lager than {@code expected}.
+     * Verify {@code actual} size is larger than {@code expected}.
      *
      * @param expected smaller than {@code actual}
      * @return {@code self}.
      */
     @Override
-    public SELF isLagerThan(ACTUAL expected) {
-        maps.assertIsLagerThan(actual, expected);
+    public SELF isLargerThan(ACTUAL expected) {
+        maps.assertIsLargerThan(actual, expected);
         return self;
     }
 
     /**
-     * Verify {@code actual} size is lager than or equal to {@code expected}.
+     * Verify {@code actual} size is larger than or equal to {@code expected}.
      *
      * @param expected smaller than {@code actual}
      * @return {@code self}.
      */
     @Override
-    public SELF isLagerThanOrEqualTo(ACTUAL expected) {
-        maps.assertIsLagerThanOrEqualTo(actual, expected);
+    public SELF isLargerThanOrEqualTo(ACTUAL expected) {
+        maps.assertIsLargerThanOrEqualTo(actual, expected);
         return self;
     }
 
@@ -209,7 +209,7 @@ public class AbstractMapAssert<SELF extends AbstractMapAssert<SELF, ACTUAL, K, V
      * Verify {@code actual} size is between {@code start} and {@code end}
      *
      * @param start smaller than or Equal to {@code actual}
-     * @param end   lager than or Equal to {@code actual}
+     * @param end   larger than or Equal to {@code actual}
      * @return {@code self}.
      */
     @Override
