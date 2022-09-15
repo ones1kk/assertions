@@ -25,19 +25,19 @@ import java.util.Map;
  */
 public class MapComparable<ELEMENT extends Map<K, V>, K, V> {
 
-    public boolean isGraterThan(ELEMENT actual, ELEMENT expected) {
+    public boolean isLagerThan(ELEMENT actual, ELEMENT expected) {
         return actual.size() > expected.size();
     }
 
-    public boolean isLessThan(ELEMENT actual, ELEMENT expected) {
+    public boolean isSmallerThan(ELEMENT actual, ELEMENT expected) {
         return actual.size() < expected.size();
     }
 
-    public boolean isLessThanOrEqualTo(ELEMENT actual, ELEMENT expected) {
+    public boolean isSmallerThanOrEqualTo(ELEMENT actual, ELEMENT expected) {
         return actual.size() <= expected.size();
     }
 
-    public boolean isGraterThanOrEqualTo(ELEMENT actual, ELEMENT expected) {
+    public boolean isLagerThanOrEqualTo(ELEMENT actual, ELEMENT expected) {
         return actual.size() >= expected.size();
     }
 

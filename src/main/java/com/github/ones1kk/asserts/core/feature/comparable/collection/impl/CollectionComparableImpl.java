@@ -26,22 +26,22 @@ import com.github.ones1kk.asserts.core.feature.comparable.collection.CollectionC
 public class CollectionComparableImpl<ELEMENT> implements CollectionComparable<ELEMENT> {
 
     @Override
-    public boolean isGraterThan(java.util.Collection<? extends ELEMENT> actual, java.util.Collection<? extends ELEMENT> expected) {
+    public boolean isLagerThan(java.util.Collection<? extends ELEMENT> actual, java.util.Collection<? extends ELEMENT> expected) {
         return actual.size() > expected.size();
     }
 
     @Override
-    public boolean isLessThan(java.util.Collection<? extends ELEMENT> actual, java.util.Collection<? extends ELEMENT> expected) {
+    public boolean isSmallerThan(java.util.Collection<? extends ELEMENT> actual, java.util.Collection<? extends ELEMENT> expected) {
         return actual.size() < expected.size();
     }
 
     @Override
-    public boolean isLessThanOrEqualTo(java.util.Collection<? extends ELEMENT> actual, java.util.Collection<? extends ELEMENT> expected) {
+    public boolean isSmallerThanOrEqualTo(java.util.Collection<? extends ELEMENT> actual, java.util.Collection<? extends ELEMENT> expected) {
         return actual.size() <= expected.size();
     }
 
     @Override
-    public boolean isGraterThanOrEqualTo(java.util.Collection<? extends ELEMENT> actual, java.util.Collection<? extends ELEMENT> expected) {
+    public boolean isLagerThanOrEqualTo(java.util.Collection<? extends ELEMENT> actual, java.util.Collection<? extends ELEMENT> expected) {
         return actual.size() >= expected.size();
     }
 

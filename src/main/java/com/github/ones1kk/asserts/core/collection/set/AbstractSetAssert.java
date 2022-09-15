@@ -169,63 +169,63 @@ public class AbstractSetAssert<SELF extends AbstractSetAssert<SELF, ACTUAL>, ACT
     }
 
     /**
-     * Verify {@code actual} size is less than {@code expected}.
+     * Verify {@code actual} size is smaller than {@code expected}.
      *
-     * @param expected greater than {@code actual}
+     * @param expected lager than {@code actual}
      * @return {@code self}.
      */
     @Override
-    public SELF isLessThan(Set<? extends ACTUAL> expected) {
-        sets.assertIsLessThan(actual, expected);
+    public SELF isSmallerThan(Set<? extends ACTUAL> expected) {
+        sets.assertIsSmallerThan(actual, expected);
         return self;
     }
 
     /**
-     * Verify {@code actual} size is less than or equal to {@code expected}.
+     * Verify {@code actual} size is smaller than or equal to {@code expected}.
      *
-     * @param expected greater than or Equal to {@code actual}
+     * @param expected lager than or Equal to {@code actual}
      * @return {@code self}.
      */
     @Override
-    public SELF isLessThanOrEqualTo(Set<? extends ACTUAL> expected) {
-        sets.assertIsLessThanOrEqualTo(actual, expected);
+    public SELF isSmallerThanOrEqualTo(Set<? extends ACTUAL> expected) {
+        sets.assertIsSmallerThanOrEqualTo(actual, expected);
         return self;
     }
 
     /**
-     * Verify {@code actual} size is greater than {@code expected}.
+     * Verify {@code actual} size is lager than {@code expected}.
      *
-     * @param expected less than {@code actual}
+     * @param expected smaller than {@code actual}
      * @return {@code self}.
      */
     @Override
-    public SELF isGreaterThan(Set<? extends ACTUAL> expected) {
-        sets.assertIsGreaterThan(actual, expected);
+    public SELF isLagerThan(Set<? extends ACTUAL> expected) {
+        sets.assertIsLagerThan(actual, expected);
         return self;
     }
 
     /**
-     * Verify {@code actual} size is greater than or equal to {@code expected}.
+     * Verify {@code actual} size is lager than or equal to {@code expected}.
      *
-     * @param expected less than {@code actual}
+     * @param expected smaller than {@code actual}
      * @return {@code self}.
      */
     @Override
-    public SELF isGreaterThanOrEqualTo(Set<? extends ACTUAL> expected) {
-        sets.assertIsGreaterThanOrEqualTo(actual, expected);
+    public SELF isLagerThanOrEqualTo(Set<? extends ACTUAL> expected) {
+        sets.assertIsLagerThanOrEqualTo(actual, expected);
         return self;
     }
 
     /**
      * Verify {@code actual} size is between {@code start} and {@code end}
      *
-     * @param start less than or Equal to {@code actual}
-     * @param end   greater than or Equal to {@code actual}
+     * @param start smaller than or Equal to {@code actual}
+     * @param end   lager than or Equal to {@code actual}
      * @return {@code self}.
      */
     @Override
-    public SELF isBetween(Set<? extends ACTUAL> start, Set<? extends ACTUAL> end) {
-        sets.assertIsBetween(actual, start, end);
+    public SELF isBetweenSizeOf(Set<? extends ACTUAL> start, Set<? extends ACTUAL> end) {
+        sets.assertIsBetweenSizeOf(actual, start, end);
         return self;
     }
 }

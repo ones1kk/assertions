@@ -17,9 +17,15 @@
 package com.github.ones1kk.asserts.core.collection.map;
 
 import com.github.ones1kk.asserts.core.feature.comparable.Comparable;
+import com.github.ones1kk.asserts.core.feature.comparable.SizeComparable;
 import com.github.ones1kk.asserts.core.feature.iterable.collection.MapIterable;
 
 import java.util.Map;
 
-public interface MapsInterface<ELEMENT extends Map<K, V>, K, V> extends MapIterable<ELEMENT, K, V>, Comparable<ELEMENT> {
+/**
+ * <strong> The MapsInterface class is for a comparable, iterable, assertable assertion implementation class.</strong>
+ *
+ * @param <ELEMENT>
+ */
+public interface MapsInterface<ELEMENT extends Map<K, V>, K, V> extends MapIterable<ELEMENT, K, V>, SizeComparable<ELEMENT> {
 }

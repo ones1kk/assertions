@@ -25,13 +25,13 @@ import java.util.Collection;
  */
 public interface CollectionComparable<ELEMENT> {
 
-    boolean isGraterThan(Collection<? extends ELEMENT> actual, Collection<? extends ELEMENT> expected);
+    boolean isLagerThan(Collection<? extends ELEMENT> actual, Collection<? extends ELEMENT> expected);
 
-    boolean isLessThan(Collection<? extends ELEMENT> actual, Collection<? extends ELEMENT> expected);
+    boolean isSmallerThan(Collection<? extends ELEMENT> actual, Collection<? extends ELEMENT> expected);
 
-    boolean isLessThanOrEqualTo(Collection<? extends ELEMENT> actual, Collection<? extends ELEMENT> expected);
+    boolean isSmallerThanOrEqualTo(Collection<? extends ELEMENT> actual, Collection<? extends ELEMENT> expected);
 
-    boolean isGraterThanOrEqualTo(Collection<? extends ELEMENT> actual, Collection<? extends ELEMENT> expected);
+    boolean isLagerThanOrEqualTo(Collection<? extends ELEMENT> actual, Collection<? extends ELEMENT> expected);
 
     boolean is(Collection<? extends ELEMENT> actual, Collection<? extends ELEMENT> expected);
 }

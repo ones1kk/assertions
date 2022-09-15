@@ -139,40 +139,40 @@ public class Sets<ACTUAL> extends Objects<ACTUAL> implements SetsInterfaces<ACTU
     }
 
     @Override
-    public void assertIsLessThan(Set<? extends ACTUAL> actual, Set<? extends ACTUAL> expected) {
-        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
+    public void assertIsSmallerThan(Set<? extends ACTUAL> actual, Set<? extends ACTUAL> expected) {
+        if (comparable.isLagerThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not less than size of expected"));
             throw handler.getException();
         }
     }
 
     @Override
-    public void assertIsLessThanOrEqualTo(Set<? extends ACTUAL> actual, Set<? extends ACTUAL> expected) {
-        if (comparable.isGraterThan(actual, expected)) {
+    public void assertIsSmallerThanOrEqualTo(Set<? extends ACTUAL> actual, Set<? extends ACTUAL> expected) {
+        if (comparable.isLagerThan(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not less than or equal to size of expected"));
             throw handler.getException();
         }
     }
 
     @Override
-    public void assertIsGreaterThan(Set<? extends ACTUAL> actual, Set<? extends ACTUAL> expected) {
-        if (comparable.isLessThanOrEqualTo(actual, expected)) {
+    public void assertIsLagerThan(Set<? extends ACTUAL> actual, Set<? extends ACTUAL> expected) {
+        if (comparable.isSmallerThanOrEqualTo(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not greater than size of expected"));
             throw handler.getException();
         }
     }
 
     @Override
-    public void assertIsGreaterThanOrEqualTo(Set<? extends ACTUAL> actual, Set<? extends ACTUAL> expected) {
-        if (comparable.isLessThan(actual, expected)) {
+    public void assertIsLagerThanOrEqualTo(Set<? extends ACTUAL> actual, Set<? extends ACTUAL> expected) {
+        if (comparable.isSmallerThan(actual, expected)) {
             handler.setDescription(handler.from("size of actual is not greater than or equal to size of expected"));
             throw handler.getException();
         }
     }
 
     @Override
-    public void assertIsBetween(Set<? extends ACTUAL> actual, Set<? extends ACTUAL> start, Set<? extends ACTUAL> end) {
-        if (comparable.isLessThan(actual, start) || comparable.isGraterThan(actual, end)) {
+    public void assertIsBetweenSizeOf(Set<? extends ACTUAL> actual, Set<? extends ACTUAL> start, Set<? extends ACTUAL> end) {
+        if (comparable.isSmallerThan(actual, start) || comparable.isLagerThan(actual, end)) {
             String description = handler.getDescribable().as("size of actual is not between {} and {}", start.size(), end.size());
             handler.setDescription(handler.from(actual, description));
             throw handler.getException();

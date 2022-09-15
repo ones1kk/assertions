@@ -17,6 +17,7 @@
 package com.github.ones1kk.asserts.core.collection.set;
 
 import com.github.ones1kk.asserts.core.feature.comparable.Comparable;
+import com.github.ones1kk.asserts.core.feature.comparable.SizeComparable;
 import com.github.ones1kk.asserts.core.feature.iterable.collection.SetIterable;
 
 import java.util.Set;
@@ -26,5 +27,5 @@ import java.util.Set;
  *
  * @param <ELEMENT>
  */
-public interface SetsInterfaces<ELEMENT> extends SetIterable<ELEMENT>, Comparable<Set<? extends ELEMENT>> {
+public interface SetsInterfaces<ELEMENT> extends SetIterable<ELEMENT>, SizeComparable<Set<? extends ELEMENT>> {
 }

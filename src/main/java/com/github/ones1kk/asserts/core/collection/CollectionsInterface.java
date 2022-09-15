@@ -17,9 +17,10 @@
 package com.github.ones1kk.asserts.core.collection;
 
 import com.github.ones1kk.asserts.core.feature.comparable.Comparable;
+import com.github.ones1kk.asserts.core.feature.comparable.SizeComparable;
 import com.github.ones1kk.asserts.core.feature.iterable.collection.CollectionIterable;
 
 import java.util.Collection;
 
-public interface CollectionsInterface<ELEMENT> extends CollectionIterable<ELEMENT>, Comparable<Collection<? extends ELEMENT>> {
+public interface CollectionsInterface<ELEMENT> extends CollectionIterable<ELEMENT>, SizeComparable<Collection<? extends ELEMENT>> {
 }

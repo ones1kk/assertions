@@ -14,19 +14,23 @@
  * limitations under the License.
  */
 
-package com.github.ones1kk.asserts.core.collection.set;
-
-import com.github.ones1kk.asserts.core.feature.comparable.ComparableAssert;
-import com.github.ones1kk.asserts.core.feature.comparable.SizeComparableAssert;
-import com.github.ones1kk.asserts.core.feature.iterable.IterableAssert;
-
-import java.util.Set;
+package com.github.ones1kk.asserts.core.feature.comparable;
 
 /**
- * <strong> The SetAssertInterface class is for a comparable, assertable, iterable interface class.</strong>
+ * <strong> The ComparableAssert class is for a comparable, assertable interface class.</strong>
  *
  * @param <SELF>
- * @param <ACTUAL>
+ * @param <ELEMENT>
  */
-public interface SetAssertInterface<SELF, ACTUAL> extends IterableAssert<SELF, ACTUAL>, SizeComparableAssert<SELF, Set<? extends ACTUAL>> {
+public interface SizeComparableAssert<SELF, ELEMENT> {
+
+    SELF isSmallerThan(ELEMENT expected);
+
+    SELF isSmallerThanOrEqualTo(ELEMENT expected);
+
+    SELF isLagerThan(ELEMENT expected);
+
+    SELF isLagerThanOrEqualTo(ELEMENT expected);
+
+    SELF isBetweenSizeOf(ELEMENT start, ELEMENT end);
 }

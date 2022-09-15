@@ -17,6 +17,7 @@
 package com.github.ones1kk.asserts.core.collection.list;
 
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableAssert;
+import com.github.ones1kk.asserts.core.feature.comparable.SizeComparableAssert;
 import com.github.ones1kk.asserts.core.feature.iterable.IterableAssert;
 
 import java.util.List;
@@ -27,5 +28,5 @@ import java.util.List;
  * @param <SELF>
  * @param <ACTUAL>
  */
-public interface ListAssertInterface<SELF, ACTUAL> extends IterableAssert<SELF, ACTUAL>, ComparableAssert<SELF, List<? extends ACTUAL>> {
+public interface ListAssertInterface<SELF, ACTUAL> extends IterableAssert<SELF, ACTUAL>, SizeComparableAssert<SELF, List<? extends ACTUAL>> {
 }

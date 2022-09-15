@@ -16,11 +16,20 @@
 
 package com.github.ones1kk.asserts.core.collection;
 
+import com.github.ones1kk.asserts.core.collection.list.AbstractListAssert;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
 
 import java.util.Collection;
 import java.util.function.Predicate;
 
+/**
+ * <strong> The AbstractCollectionAssert class inherits {@link AbstractListAssert}</strong>
+ * <br>
+ * <p> This is that implements the assertion method of the Collection type and verify assertion.</p>
+ *
+ * @param <SELF>
+ * @param <ACTUAL>
+ */
 public class AbstractCollectionAssert<SELF extends AbstractCollectionAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Collection<ACTUAL>> implements CollectionAssertInterface<SELF, ACTUAL> {
 
     private final CollectionsInterface<ACTUAL> collections;
@@ -30,30 +39,69 @@ public class AbstractCollectionAssert<SELF extends AbstractCollectionAssert<SELF
         this.collections = assertFactory.createAssert(actual, this);
     }
 
+    /**
+     * Verify {@code actual} is empty or not.
+     *
+     * @return {@code self}.
+     */
     @Override
     public SELF isNotEmpty() {
         collections.assertIsNotEmpty(actual);
         return self;
     }
 
+    /**
+     * Verify {@code actual} is not empty or not.
+     *
+     * @return {@code self}.
+     */
+    @Override
+    public SELF isEmpty() {
+        collections.assertIsEmpty(actual);
+        return self;
+    }
+
+    /**
+     * Verify {@code actual} is null or empty.
+     *
+     * @return {@code self}.
+     */
     @Override
     public SELF isNullOrEmpty() {
         collections.assertIsNullOrEmpty(actual);
         return self;
     }
 
+    /**
+     * Verify {@code actual} contains {@code expected} or not.
+     *
+     * @param expected {@code actual} contains {@code expected}.
+     * @return {@code self}.
+     */
     @Override
     public SELF contains(ACTUAL expected) {
         collections.assertContains(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} does not contain {@code expected} or not.
+     *
+     * @param expected {@code actual} does not contain {@code expected}.
+     * @return {@code self}.
+     */
     @Override
     public SELF doesNotContain(ACTUAL expected) {
         collections.assertDoesNotContain(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} contains all of {@code expected} or not.
+     *
+     * @param expected {@code actual} contains all of {@code expected}.
+     * @return {@code self}.
+     */
     @Override
     @SuppressWarnings("unchecked")
     public SELF containsAll(ACTUAL... expected) {
@@ -61,6 +109,12 @@ public class AbstractCollectionAssert<SELF extends AbstractCollectionAssert<SELF
         return self;
     }
 
+    /**
+     * Verify {@code actual} contains any of {@code expected} or not.
+     *
+     * @param expected {@code actual} contains any of {@code expected}.
+     * @return {@code self}.
+     */
     @Override
     @SuppressWarnings("unchecked")
     public SELF containsAny(ACTUAL... expected) {
@@ -68,63 +122,111 @@ public class AbstractCollectionAssert<SELF extends AbstractCollectionAssert<SELF
         return self;
     }
 
+    /**
+     * Verify {@code actual} contains null.
+     *
+     * @return {@code self}.
+     */
     @Override
     public SELF containsNull() {
         collections.assertContainsNull(actual);
         return self;
     }
 
+    /**
+     * Verify {@code actual} does not contain null.
+     *
+     * @return {@code self}.
+     */
     @Override
     public SELF doesNotContainNull() {
         collections.assertDoesNotContainNull(actual);
         return self;
     }
 
+    /**
+     * Verify {@code actual} is all matched from all conditions.
+     *
+     * @param expected all the conditions for the predicate are satisfied.
+     * @return {@code self}.
+     */
     @Override
     public SELF allMatch(Predicate<ACTUAL> expected) {
         collections.assertAllMatch(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} is not matched from all conditions.
+     *
+     * @param expected all the conditions for the predicate are unsatisfied.
+     * @return {@code self}.
+     */
     @Override
     public SELF noneMatch(Predicate<ACTUAL> expected) {
         collections.assertNoneMatch(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} size is smaller than {@code expected}.
+     *
+     * @param expected lager than {@code actual}
+     * @return {@code self}.
+     */
     @Override
-    public SELF isLessThan(Collection<? extends ACTUAL> expected) {
-        collections.assertIsLessThan(actual, expected);
+    public SELF isSmallerThan(Collection<? extends ACTUAL> expected) {
+        collections.assertIsSmallerThan(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} size is smaller than or equal to {@code expected}.
+     *
+     * @param expected lager than or Equal to {@code actual}
+     * @return {@code self}.
+     */
     @Override
-    public SELF isLessThanOrEqualTo(Collection<? extends ACTUAL> expected) {
-        collections.assertIsLessThanOrEqualTo(actual, expected);
+    public SELF isSmallerThanOrEqualTo(Collection<? extends ACTUAL> expected) {
+        collections.assertIsSmallerThanOrEqualTo(actual, expected);
         return self;
     }
 
+
+    /**
+     * Verify {@code actual} size is lager than {@code expected}.
+     *
+     * @param expected smaller than {@code actual}
+     * @return {@code self}.
+     */
     @Override
-    public SELF isGreaterThan(Collection<? extends ACTUAL> expected) {
-        collections.assertIsGreaterThan(actual, expected);
+    public SELF isLagerThan(Collection<? extends ACTUAL> expected) {
+        collections.assertIsLagerThan(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} size is lager than or equal to {@code expected}.
+     *
+     * @param expected smaller than {@code actual}
+     * @return {@code self}.
+     */
     @Override
-    public SELF isGreaterThanOrEqualTo(Collection<? extends ACTUAL> expected) {
-        collections.assertIsGreaterThanOrEqualTo(actual, expected);
+    public SELF isLagerThanOrEqualTo(Collection<? extends ACTUAL> expected) {
+        collections.assertIsLagerThanOrEqualTo(actual, expected);
         return self;
     }
 
+    /**
+     * Verify {@code actual} size is between {@code start} and {@code end}
+     *
+     * @param start smaller than or Equal to {@code actual}
+     * @param end   lager than or Equal to {@code actual}
+     * @return {@code self}.
+     */
     @Override
-    public SELF isBetween(Collection<? extends ACTUAL> start, Collection<? extends ACTUAL> end) {
-        collections.assertIsBetween(actual, start, end);
-        return self;
-    }
-
-    @Override
-    public SELF isEmpty() {
-        collections.assertIsEmpty(actual);
+    public SELF isBetweenSizeOf(Collection<? extends ACTUAL> start, Collection<? extends ACTUAL> end) {
+        collections.assertIsBetweenSizeOf(actual, start, end);
         return self;
     }
 }

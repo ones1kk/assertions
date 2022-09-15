@@ -17,10 +17,17 @@
 package com.github.ones1kk.asserts.core.collection.map;
 
 import com.github.ones1kk.asserts.core.feature.comparable.ComparableAssert;
+import com.github.ones1kk.asserts.core.feature.comparable.SizeComparableAssert;
 
 import java.util.Map;
 
-public interface MapAssertInterface<SELF, ACTUAL extends Map<K, V>, K, V> extends ComparableAssert<SELF, ACTUAL> {
+/**
+ * <strong> The MapAssertInterface class is for a comparable, assertable, iterable interface class.</strong>
+ *
+ * @param <SELF>
+ * @param <ACTUAL>
+ */
+public interface MapAssertInterface<SELF, ACTUAL extends Map<K, V>, K, V> extends SizeComparableAssert<SELF, ACTUAL> {
 
     SELF isEmpty();
 

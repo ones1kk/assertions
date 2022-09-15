@@ -17,6 +17,7 @@
 package com.github.ones1kk.asserts.core.collection.list;
 
 import com.github.ones1kk.asserts.core.feature.comparable.Comparable;
+import com.github.ones1kk.asserts.core.feature.comparable.SizeComparable;
 import com.github.ones1kk.asserts.core.feature.iterable.collection.ListIterable;
 
 import java.util.List;
@@ -26,5 +27,5 @@ import java.util.List;
  *
  * @param <ELEMENT>
  */
-public interface ListsInterface<ELEMENT> extends ListIterable<ELEMENT>, Comparable<List<? extends ELEMENT>> {
+public interface ListsInterface<ELEMENT> extends ListIterable<ELEMENT>, SizeComparable<List<? extends ELEMENT>> {
 }
