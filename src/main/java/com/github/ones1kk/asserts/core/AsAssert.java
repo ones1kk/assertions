@@ -17,6 +17,7 @@
 package com.github.ones1kk.asserts.core;
 
 import com.github.ones1kk.asserts.core.description.DescriptionHandler;
+import com.github.ones1kk.asserts.core.exception.AssertException;
 
 import java.util.function.Supplier;
 
@@ -40,12 +41,70 @@ public class AsAssert<SELF> implements AsAssertInterface<SELF> {
         this.self = (SELF) self.cast(this);
     }
 
+    /**
+     * <p> The description of the assertion is defined by the user. </p>
+     *
+     * <p> Also, this method uses {@link String#format(String, Object...)}, {@link String#replace(char, char)} internally.</p>
+     *
+     * <p>How to use</p>
+     * <pre>
+     *     as(() -> "description is {}", argument);
+     *
+     *     as("description is {}", argument);
+     * </pre>
+     *
+     * <p> Below is some cases where an {@link AssertException} is thrown. </p>
+     *
+     * <pre>
+     *     Case1
+     *     Description contains special character '%s'.
+     *
+     *     Case2
+     *     Description contains '{}' but arguments are empty.
+     *
+     *     Case3
+     *     Arguments are not empty but description contains braces('{}').
+     * </pre>
+     *
+     * @param description description as using assertion.
+     * @param args        variable inserted in braces.
+     * @return {@code self}.
+     */
     @Override
     public SELF as(Supplier<String> description, Object... args) {
         handler.setAsDescription(handler.from(description.get(), args));
         return self;
     }
 
+    /**
+     * <p> The description of the assertion is defined by the user. </p>
+     *
+     * <p> Also, this method uses {@link String#format(String, Object...)}, {@link String#replace(char, char)} internally.</p>
+     *
+     * <p>How to use</p>
+     * <pre>
+     *     as(() -> "description is {}", argument);
+     *
+     *     as("description is {}", argument);
+     * </pre>
+     *
+     * <p> Below is some cases where an {@link AssertException} is thrown. </p>
+     *
+     * <pre>
+     *     Case1
+     *     Description contains special character '%s'.
+     *
+     *     Case2
+     *     Description contains '{}' but arguments are empty.
+     *
+     *     Case3
+     *     Arguments are not empty but description contains braces('{}').
+     * </pre>
+     *
+     * @param description description as using assertion.
+     * @param args        variable inserted in braces.
+     * @return {@code self}.
+     */
     @Override
     public SELF as(String description, Object... args) {
         handler.setAsDescription(handler.from(description, args));
