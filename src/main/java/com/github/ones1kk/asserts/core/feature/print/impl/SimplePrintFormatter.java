@@ -16,18 +16,17 @@
 
 package com.github.ones1kk.asserts.core.feature.print.impl;
 
-import com.github.ones1kk.asserts.core.feature.print.Printer;
+import com.github.ones1kk.asserts.core.feature.print.PrintFormatter;
 
 import static com.github.ones1kk.asserts.core.feature.print.constant.Colors.RED;
-import static com.github.ones1kk.asserts.core.feature.print.constant.Colors.WHITE;
 
 /**
- * <strong> The DefaultPrinter class has been implemented by {@link Printer}.</strong>
+ * <strong> The SimplePrintFormatter class has been implemented by {@link PrintFormatter}.</strong>
  *
  * <p> This class writes the final output of the description.</p>
- * <p> In the way defined as the default printing way.</p>
+ * <p> In the way defined as the simple printing way.</p>
  */
-public final class DefaultPrinter implements Printer {
+public final class SimplePrintFormatter implements PrintFormatter {
 
     /**
      * +---------------------------+
@@ -35,20 +34,19 @@ public final class DefaultPrinter implements Printer {
      * +---------------------------+
      *
      * <p> Print expected, actual and description format like below.</p>
+     *
      * <pre>
-     *     Expected    : expected
-     *     Actual      : actual
-     *     Description : description
+     *     <strong>{@code description}</strong>(expected:<strong>{@code expected}</strong> actual: <strong>{@code actual}</strong>)
      * </pre>
      *
      * @param actual      asserted target.
      * @param expected    expected target.
      * @param description defined description.
-     * @return formatted string.
+     * @return A formatted string.
      */
     @Override
     public String writeOutput(Object actual, Object expected, String description) {
-        return String.format("%n%sExpected    : %s %n%sActual      : %s%n%sDescription : %s", WHITE.getValue(), RED.getValue() + expected, WHITE.getValue(), RED.getValue() + actual, WHITE.getValue(), RED.getValue() + description);
+        return String.format("%s%s(expected: %s, actual: %s)", RED.getValue(), description, expected, actual);
     }
 
     /**
@@ -58,17 +56,16 @@ public final class DefaultPrinter implements Printer {
      *
      * <p> Print actual and description format like below.</p>
      * <pre>
-     *     Actual      : actual
-     *     Description : description
+     *     <strong>{@code description}</strong>(actual: <strong>{@code actual}</strong>)
      * </pre>
      *
      * @param actual      asserted target.
      * @param description defined description.
-     * @return formatted string.
+     * @return A formatted string.
      */
     @Override
     public String writeOutput(Object actual, String description) {
-        return String.format("%n%sActual      : %s%n%sDescription : %s", WHITE.getValue(), RED.getValue() + actual, WHITE.getValue(), RED.getValue() + description);
+        return String.format("%s%s(actual: %s)", RED.getValue(), description, actual);
     }
 
     /**
@@ -78,14 +75,14 @@ public final class DefaultPrinter implements Printer {
      *
      * <p> Print only description format like below.</p>
      * <pre>
-     *     Description : description
+     *     <strong>{@code description}</strong>
      * </pre>
      *
      * @param description defined description.
-     * @return formatted string.
+     * @return A formatted string.
      */
     @Override
     public String writeOutput(String description) {
-        return String.format("%n%sDescription : %s", WHITE.getValue(), RED.getValue() + description);
+        return String.format("%s%s", RED.getValue(), description);
     }
 }
