@@ -25,5 +25,5 @@ import com.github.ones1kk.asserts.core.lang.number.DoubleTypeAssertInterface;
  *
  * @param <SELF>
  */
-public interface DoubleAssertInterface<SELF> extends NumerableAssert<SELF, Double>, DoubleTypeAssertInterface<SELF>,  ComparableAssert<SELF, Double> {
+public interface DoubleAssertInterface<SELF> extends NumerableAssert<SELF, Double>, DoubleTypeAssertInterface<SELF>, ComparableAssert<SELF, Double> {
 }

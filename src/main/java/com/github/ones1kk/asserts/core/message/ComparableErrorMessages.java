@@ -23,7 +23,8 @@ public final class ComparableErrorMessages {
 
     private static final Describable DESCRIBABLE = new Description();
 
-    private ComparableErrorMessages() {}
+    private ComparableErrorMessages() {
+    }
 
     public static String shouldBeLessThan(Object actual, Object expected) {
         return DESCRIBABLE.as("The given {} should be less than {}.", actual, expected);

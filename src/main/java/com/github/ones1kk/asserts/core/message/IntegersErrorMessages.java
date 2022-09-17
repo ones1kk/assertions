@@ -23,7 +23,8 @@ public final class IntegersErrorMessages {
 
     private static final Describable DESCRIBABLE = new Description();
 
-    private IntegersErrorMessages() {}
+    private IntegersErrorMessages() {
+    }
 
     public static String shouldBeOdd(Number actual) {
         return DESCRIBABLE.as("The given {} should be odd.", actual);

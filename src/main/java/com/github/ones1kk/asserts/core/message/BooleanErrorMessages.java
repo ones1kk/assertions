@@ -23,7 +23,8 @@ public final class BooleanErrorMessages {
 
     private static final Describable DESCRIBABLE = new Description();
 
-    private BooleanErrorMessages() {}
+    private BooleanErrorMessages() {
+    }
 
     public static String shouldBeFalse(Boolean actual) {
         return DESCRIBABLE.as("The given {} should be false.", actual);

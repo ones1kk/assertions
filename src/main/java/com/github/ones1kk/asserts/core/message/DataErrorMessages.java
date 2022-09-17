@@ -23,7 +23,8 @@ public final class DataErrorMessages {
 
     private static final Describable DESCRIBABLE = new Description();
 
-    private DataErrorMessages() {}
+    private DataErrorMessages() {
+    }
 
     public static String shouldBeCloseTo(Object actual, Object expected) {
         return DESCRIBABLE.as("The given {} should be close to {}.", actual, expected);

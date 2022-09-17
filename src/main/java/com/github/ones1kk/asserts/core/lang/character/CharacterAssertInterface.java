@@ -44,5 +44,4 @@ public interface CharacterAssertInterface<SELF> extends ComparableAssert<SELF, C
     SELF isWhitespace();
 
     SELF isNotWhitespace();
-
 }
