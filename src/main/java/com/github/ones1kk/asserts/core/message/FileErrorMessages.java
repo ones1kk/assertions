@@ -80,11 +80,11 @@ public final class FileErrorMessages {
         return DESCRIBABLE.as("The given {} should be executable.", actual);
     }
 
-    public static String shouldHaveExtension(File actual) {
-        return DESCRIBABLE.as("The given {} should have extension.", actual);
+    public static String shouldHaveExtension(File actual, String extension) {
+        return DESCRIBABLE.as("The given {} should have extension as {}.", actual, extension);
     }
 
-    public static String shouldDoNotHaveExtension(File actual) {
-        return DESCRIBABLE.as("The given {} should do not have extension.", actual);
+    public static String shouldDoNotHaveExtension(File actual, String extension) {
+        return DESCRIBABLE.as("The given {} should do not have extension as {}.", actual, extension);
     }
 }

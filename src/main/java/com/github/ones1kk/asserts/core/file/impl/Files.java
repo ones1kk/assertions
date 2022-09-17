@@ -20,9 +20,13 @@ import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.comparable.file.FileSizeComparable;
 import com.github.ones1kk.asserts.core.file.FilesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
+import com.github.ones1kk.asserts.core.message.FileErrorMessages;
 import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;
+
+import static com.github.ones1kk.asserts.core.message.FileErrorMessages.*;
+import static com.github.ones1kk.asserts.core.message.SizeComparableErrorMessages.*;
 
 /**
  * <strong> The Files class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
@@ -38,7 +42,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertExists(File actual) {
         if (!actual.exists()) {
-            handler.setDescription(handler.from(actual, "{} does not exist"));
+            handler.receive(actual, shouldBeExist(actual));
             throw handler.getException();
         }
     }
@@ -46,7 +50,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertIsFile(File actual) {
         if (!actual.isFile()) {
-            handler.setDescription(handler.from(actual, "{} is not file"));
+            handler.receive(actual, shouldBeFile(actual));
             throw handler.getException();
         }
     }
@@ -54,7 +58,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertIsNotFile(File actual) {
         if (actual.isFile()) {
-            handler.setDescription(handler.from(actual, "{} is file"));
+            handler.receive(actual, shouldNotBeFile(actual));
             throw handler.getException();
         }
     }
@@ -62,7 +66,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertIsDirectory(File actual) {
         if (!actual.isDirectory()) {
-            handler.setDescription(handler.from(actual, "{} is not directory"));
+            handler.receive(actual, shouldBeDirectory(actual));
             throw handler.getException();
         }
     }
@@ -70,7 +74,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertIsNotDirectory(File actual) {
         if (actual.isDirectory()) {
-            handler.setDescription(handler.from(actual, "{} is directory"));
+            handler.receive(actual, shouldNotBeDirectory(actual));
             throw handler.getException();
         }
     }
@@ -78,7 +82,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertIsHidden(File actual) {
         if (!actual.isHidden()) {
-            handler.setDescription(handler.from(actual, "{} is not hidden"));
+            handler.receive(actual, shouldBeHidden(actual));
             throw handler.getException();
         }
     }
@@ -86,7 +90,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertIsNotHidden(File actual) {
         if (actual.isHidden()) {
-            handler.setDescription(handler.from(actual, "{} is hidden"));
+            handler.receive(actual, shouldNotBeHidden(actual));
             throw handler.getException();
         }
     }
@@ -94,7 +98,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertCanRead(File actual) {
         if (!actual.canRead()) {
-            handler.setDescription(handler.from(actual, "{} cannot read"));
+            handler.receive(actual, shouldBeReadable(actual));
             throw handler.getException();
         }
     }
@@ -102,7 +106,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertCanNotRead(File actual) {
         if (actual.canRead()) {
-            handler.setDescription(handler.from(actual, "{} can read"));
+            handler.receive(actual, shouldNotBeReadable(actual));
             throw handler.getException();
         }
     }
@@ -110,7 +114,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertCanWrite(File actual) {
         if (!actual.canWrite()) {
-            handler.setDescription(handler.from(actual, "{} cannot write"));
+            handler.receive(actual, shouldBeWritable(actual));
             throw handler.getException();
         }
     }
@@ -118,7 +122,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertCanNotWrite(File actual) {
         if (actual.canWrite()) {
-            handler.setDescription(handler.from(actual, "{} can write"));
+            handler.receive(actual, shouldNotBeWritable(actual));
             throw handler.getException();
         }
     }
@@ -126,7 +130,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertCanExecute(File actual) {
         if (!actual.canExecute()) {
-            handler.setDescription(handler.from(actual, "{} cannot Execute"));
+            handler.receive(actual, shouldBeExecutable(actual));
             throw handler.getException();
         }
     }
@@ -134,7 +138,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertCanNotExecute(File actual) {
         if (actual.canExecute()) {
-            handler.setDescription(handler.from(actual, "{} can Execute"));
+            handler.receive(actual, shouldNotBeExecutable(actual));
             throw handler.getException();
         }
     }
@@ -142,6 +146,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertHasExtension(File actual, String extension) {
         if (!FilenameUtils.getExtension(actual.getName()).equals(extension)) {
+            handler.receive(actual, extension, shouldHaveExtension(actual, extension));
             handler.setDescription(handler.from(actual, extension, "{} does not have {} as extension"));
             throw handler.getException();
         }
@@ -150,7 +155,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertDoesNotHaveExtension(File actual, String extension) {
         if (FilenameUtils.getExtension(actual.getName()).equals(extension)) {
-            handler.setDescription(handler.from(actual, extension, "{} has {} as extension"));
+            handler.receive(actual, extension, shouldDoNotHaveExtension(actual, extension));
             throw handler.getException();
         }
     }
@@ -158,7 +163,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertIsSmallerThan(File actual, File expected) {
         if (comparable.isLargerThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "size of {} is not less than {} size of "));
+            handler.receive(actual, expected, shouldBeSmallerThan(actual, expected));
             throw handler.getException();
         }
     }
@@ -166,7 +171,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertIsSmallerThanOrEqualTo(File actual, File expected) {
         if (comparable.isLargerThan(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "size of {} is not less than or equal to size of {}"));
+            handler.receive(actual, expected, shouldBeSmallerThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
     }
@@ -174,7 +179,7 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertIsLargerThan(File actual, File expected) {
         if (comparable.isSmallerThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "size of {} is not greater than size of {}"));
+            handler.receive(actual, expected, shouldBeLargerThan(actual, expected));
             throw handler.getException();
         }
     }
@@ -182,17 +187,15 @@ public final class Files extends Objects<File> implements FilesInterface {
     @Override
     public void assertIsLargerThanOrEqualTo(File actual, File expected) {
         if (comparable.isSmallerThan(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "size of {} is not greater than or equal to size of {}"));
+            handler.receive(actual, expected, shouldBeLargerThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
     }
 
     @Override
     public void assertIsBetweenSizeOf(File actual, File start, File end) {
-        if (comparable.isSmallerThan(actual, start)
-                || comparable.isLargerThan(actual, end)) {
-            String description = handler.from("size of {} is not between size of {} and {}", actual, start, end);
-            handler.setDescription(handler.from(actual, description));
+        if (comparable.isSmallerThan(actual, start) || comparable.isLargerThan(actual, end)) {
+            handler.receive(actual, shouldBeBetween(actual, start, end));
             throw handler.getException();
         }
     }

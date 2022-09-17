@@ -7,6 +7,8 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.net.URL;
 
+import static com.github.ones1kk.asserts.core.message.URLErrorMessages.*;
+
 /**
  * <strong> The Urls class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
  */
@@ -19,7 +21,7 @@ public final class Urls extends Objects<URL> implements UrlsInterface {
     @Override
     public void assertHasHost(URL actual, String expected) {
         if (StringUtils.isEmpty(actual.getHost()) || !actual.getHost().equals(expected)) {
-            handler.setDescription(handler.from(actual, "{} does not have host"));
+            handler.receive(actual, expected, shouldHaveHost(actual, expected));
             throw handler.getException();
         }
     }
@@ -27,7 +29,7 @@ public final class Urls extends Objects<URL> implements UrlsInterface {
     @Override
     public void assertDoesNotHaveHost(URL actual) {
         if (!StringUtils.isEmpty(actual.getHost())) {
-            handler.setDescription(handler.from(actual, "{} has host"));
+            handler.receive(actual, shouldDoNotHaveHost(actual));
             throw handler.getException();
         }
     }
@@ -36,7 +38,7 @@ public final class Urls extends Objects<URL> implements UrlsInterface {
     public void assertHasPort(URL actual, int expected) {
         int port = actual.getPort() == -1 ? actual.getDefaultPort() : actual.getPort();
         if (port != expected) {
-            handler.setDescription(handler.from(actual, "{} does not have port"));
+            handler.receive(actual, expected, shouldDoNotHavePort(actual));
             throw handler.getException();
         }
     }
@@ -45,7 +47,7 @@ public final class Urls extends Objects<URL> implements UrlsInterface {
     public void assertDoesNotHavePort(URL actual) {
         int port = actual.getPort() == -1 ? actual.getDefaultPort() : actual.getPort();
         if (port != -1) {
-            handler.setDescription(handler.from(actual, "{} has port"));
+            handler.receive(actual, shouldDoNotHavePort(actual));
             throw handler.getException();
         }
     }
@@ -53,7 +55,7 @@ public final class Urls extends Objects<URL> implements UrlsInterface {
     @Override
     public void assertHasPath(URL actual, String expected) {
         if (StringUtils.isEmpty(actual.getPath()) || !actual.getPath().equals(expected)) {
-            handler.setDescription(handler.from(actual, "{} does not have path"));
+            handler.receive(actual, shouldHavePath(actual, expected));
             throw handler.getException();
         }
     }
@@ -61,7 +63,7 @@ public final class Urls extends Objects<URL> implements UrlsInterface {
     @Override
     public void assertDoesNotHavePath(URL actual) {
         if (!StringUtils.isEmpty(actual.getPath())) {
-            handler.setDescription(handler.from(actual, "{} has path"));
+            handler.receive(actual, shouldDoNotHavePath(actual));
             throw handler.getException();
         }
     }
