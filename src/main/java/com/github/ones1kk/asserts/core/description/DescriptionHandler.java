@@ -18,8 +18,8 @@ package com.github.ones1kk.asserts.core.description;
 
 import com.github.ones1kk.asserts.core.description.impl.Description;
 import com.github.ones1kk.asserts.core.exception.AssertException;
-import com.github.ones1kk.asserts.core.feature.print.Printer;
-import com.github.ones1kk.asserts.core.feature.print.impl.DefaultPrinter;
+import com.github.ones1kk.asserts.core.feature.print.PrintFormatter;
+import com.github.ones1kk.asserts.core.feature.print.impl.SimplePrintFormatter;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -27,7 +27,7 @@ import org.apache.commons.lang3.StringUtils;
  */
 public final class DescriptionHandler {
 
-    private final Printer printer = new DefaultPrinter();
+    private final PrintFormatter formatter = new SimplePrintFormatter();
 
     private final Describable describable = new Description();
 
@@ -35,16 +35,28 @@ public final class DescriptionHandler {
 
     private String asDescription;
 
+    public void receive(String description) {
+        setDescription(formatter.writeOutput(description));
+    }
+
+    public void receive(Object actual, String description) {
+        setDescription(formatter.writeOutput(actual, description));
+    }
+
+    public void receive( Object actual, Object expected, String description) {
+         setDescription(formatter.writeOutput(actual, expected, description));
+    }
+
     public String from(String description, Object... args) {
-        return printer.writeOutput(describable.as(description, args));
+        return formatter.writeOutput(describable.as(description, args));
     }
 
     public String from(Object actual, String description) {
-        return printer.writeOutput(actual, describable.as(description, actual));
+        return formatter.writeOutput(actual, describable.as(description, actual));
     }
 
     public String from(Object actual, Object expected, String description) {
-        return printer.writeOutput(actual, expected, describable.as(description, actual, expected));
+        return formatter.writeOutput(actual, expected, describable.as(description, actual, expected));
     }
 
     public AssertException getException() {
