@@ -22,6 +22,8 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.function.Supplier;
 
+import static com.github.ones1kk.asserts.core.message.DescriptionErrorMessages.*;
+
 
 /**
  * <strong> The Description class has been implemented by {@link Describable}.</strong>
@@ -29,12 +31,6 @@ import java.util.function.Supplier;
  * <p> What this class does is format the description to be usable in an internal way and make validity judgments on the description and the arguments. </p>
  */
 public final class Description implements Describable {
-
-    private static final String REG_EXR = "Special character '%s' cannot be inserted between strings.";
-
-    private static final String ARGUMENT_DESCRIPTION = "Argument is missing.";
-
-    private static final String ARGUMENTS_EXPRESSION_WITH_BRACE = "Arguments only can be expressed in braces.";
 
     /**
      * <p> The description of the assertion is defined by the user. </p>
@@ -117,20 +113,20 @@ public final class Description implements Describable {
 
     private void throwIfNull(Object[] args) {
         if (ArrayUtils.isEmpty(args) || args == null) {
-            throw new AssertException(ARGUMENT_DESCRIPTION);
+            throw new AssertException(ShouldBeEnteredArguments());
         }
     }
 
     private void throwIfHavingSpecialChar(String formatted) {
         if (formatted.contains("%s")) {
-            throw new AssertException(REG_EXR);
+            throw new AssertException(shouldDoNotEnterPercentSign());
         }
     }
 
     @SuppressWarnings("all")
     private void throwIfOnlyArgumentsExist(String description, Object[] args) {
         if (args.length < 0 && !(description.contains("{}"))) {
-            throw new AssertException(ARGUMENTS_EXPRESSION_WITH_BRACE);
+            throw new AssertException(ShouldBeExpressedInBraces());
         }
     }
 

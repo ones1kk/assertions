@@ -24,19 +24,19 @@ public final class SizeComparableErrorMessages {
     private static final Describable DESCRIBABLE = new Description();
 
     public static String shouldBeSmallerThan(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should be smaller than {}.", actual, expected);
+        return DESCRIBABLE.as("The given size of {} should be smaller than size of {}.", actual, expected);
     }
 
     public static String shouldBeSmallerThanOrEqualTo(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should be smaller than or equal to {}.", actual, expected);
+        return DESCRIBABLE.as("The given size of {} should be smaller than or equal to size of {}.", actual, expected);
     }
 
     public static String shouldBeLargerThan(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should be larger than {}.", actual, expected);
+        return DESCRIBABLE.as("The given size of {} should be larger than size of {}.", actual, expected);
     }
 
     public static String shouldBeLargerThanOrEqualTo(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should be larger than or equal to {}.", actual, expected);
+        return DESCRIBABLE.as("The given size of {} should be larger than or equal to size of {}.", actual, expected);
     }
 
     public static String shouldBeBetween(Object actual, Object start, Object end) {

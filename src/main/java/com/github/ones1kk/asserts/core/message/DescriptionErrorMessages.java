@@ -16,25 +16,20 @@
 
 package com.github.ones1kk.asserts.core.message;
 
-import com.github.ones1kk.asserts.core.description.Describable;
-import com.github.ones1kk.asserts.core.description.impl.Description;
-
 public final class DescriptionErrorMessages {
-
-    private static final Describable DESCRIBABLE = new Description();
 
     private DescriptionErrorMessages() {
     }
 
-    public static String shouldDoNotInsertPercentSign() {
-        return DESCRIBABLE.as("The special character '%s' should don't be entered in description.");
+    public static String shouldDoNotEnterPercentSign() {
+        return "The special character '%s' should don't be entered in description.";
     }
 
     public static String ShouldBeEnteredArguments() {
-        return DESCRIBABLE.as("The arguments should be entered.");
+        return "The arguments should be entered.";
     }
 
     public static String ShouldBeExpressedInBraces() {
-        return DESCRIBABLE.as("The arguments should be expressed in only braces.");
+        return "The arguments should be expressed in only braces.";
     }
 }

@@ -76,12 +76,4 @@ public final class CommonErrorMessages {
     public static String shouldBeNotInstanceOf(Object actual, Object expected) {
         return DESCRIBABLE.as("The given {} should not be instance of {}.", actual, expected);
     }
-
-    public static String isEmpty(Object actual) {
-        return DESCRIBABLE.as("The given {} should be empty.", actual);
-    }
-
-    public static String isNotEmpty(Object actual) {
-        return DESCRIBABLE.as("The given {} should not be empty.", actual);
-    }
 }

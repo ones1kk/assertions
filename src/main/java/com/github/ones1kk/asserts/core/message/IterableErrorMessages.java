@@ -27,16 +27,16 @@ public final class IterableErrorMessages {
 
     }
 
-    public static String shouldBeEmpty(Object actual, String placeholder) {
-        return DESCRIBABLE.as(placeholder, actual);
+    public static String shouldBeEmpty(Object actual) {
+        return DESCRIBABLE.as("The given {} should be empty.", actual);
     }
 
-    public static String shouldNotBeEmpty(Object actual, String placeholder) {
-        return DESCRIBABLE.as(placeholder, actual);
+    public static String shouldNotBeEmpty(Object actual) {
+        return DESCRIBABLE.as("The given {} should not be empty.", actual);
     }
 
-    public static String shouldBeNullOrEmpty(Object actual) {
-        return DESCRIBABLE.as("The given {} should be null or empty.", actual);
+    public static String shouldNotBeNullOrEmpty(Object actual) {
+        return DESCRIBABLE.as("The given {} should not be null or empty.", actual);
     }
 
     public static String shouldContain(Object actual, Object expected) {
