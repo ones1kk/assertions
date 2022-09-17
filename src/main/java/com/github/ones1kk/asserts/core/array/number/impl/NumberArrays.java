@@ -22,9 +22,16 @@ import com.github.ones1kk.asserts.core.feature.comparable.array.ArrayComparable;
 import com.github.ones1kk.asserts.core.feature.comparable.array.impl.ArrayComparableImpl;
 import com.github.ones1kk.asserts.core.feature.iterable.containable.array.impl.NumberArrayContainableImpl;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
+import com.github.ones1kk.asserts.core.message.NumberArrayErrorMessages;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.function.Predicate;
+
+import static com.github.ones1kk.asserts.core.message.IterableErrorMessages.*;
+import static com.github.ones1kk.asserts.core.message.LengthComparableErrorMessages.*;
+import static com.github.ones1kk.asserts.core.message.NumberArrayErrorMessages.*;
+import static org.apache.commons.lang3.ArrayUtils.isEmpty;
+import static org.apache.commons.lang3.ArrayUtils.isNotEmpty;
 
 /**
  * <strong> The NumberArrays class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
@@ -42,7 +49,7 @@ public final class NumberArrays extends Objects<Number[]> implements NumberArray
     @Override
     public void assertIsMax(Number[] actual, Number expected) {
         if (!containable.isMax(actual, expected)) {
-            handler.setDescription(handler.from(expected, "max of actual is not {}."));
+            handler.receive(actual, expected, shouldBeMax(actual, expected));
             throw handler.getException();
         }
     }
@@ -50,7 +57,7 @@ public final class NumberArrays extends Objects<Number[]> implements NumberArray
     @Override
     public void assertIsMin(Number[] actual, Number expected) {
         if (!containable.isMin(actual, expected)) {
-            handler.setDescription(handler.from(expected, "minimum of actual is not {}."));
+            handler.receive(actual, expected, shouldBeMin(actual, expected));
             throw handler.getException();
         }
     }
@@ -58,31 +65,31 @@ public final class NumberArrays extends Objects<Number[]> implements NumberArray
     @Override
     public void assertIsSum(Number[] actual, Number expected) {
         if (!containable.isSum(actual, expected)) {
-            handler.setDescription(handler.from(expected, "sum of actual is not {}."));
+            handler.receive(actual, expected, shouldBeSum(actual, expected));
             throw handler.getException();
         }
     }
 
     @Override
     public void assertIsEmpty(Number[] actual) {
-        if (ArrayUtils.isNotEmpty(actual)) {
-            handler.setDescription(handler.from("The actual is not empty."));
+        if (isNotEmpty(actual)) {
+            handler.receive(actual, shouldBeEmpty(actual));
             throw handler.getException();
         }
     }
 
     @Override
     public void assertIsNotEmpty(Number[] actual) {
-        if (ArrayUtils.isEmpty(actual)) {
-            handler.setDescription(handler.from(actual, "The actual is empty."));
+        if (isEmpty(actual)) {
+            handler.receive(actual, shouldNotBeEmpty(actual));
             throw handler.getException();
         }
     }
 
     @Override
     public void assertIsNullOrEmpty(Number[] actual) {
-        if (ArrayUtils.isNotEmpty(actual)) {
-            handler.setDescription(handler.from(actual, "The actual is not null or not empty."));
+        if (isNotEmpty(actual)) {
+            handler.receive(actual, shouldNotBeNullOrEmpty(actual));
             throw handler.getException();
         }
     }
@@ -90,7 +97,7 @@ public final class NumberArrays extends Objects<Number[]> implements NumberArray
     @Override
     public void assertContains(Number[] actual, Number expected) {
         if (containable.doesNotContain(actual, expected)) {
-            handler.setDescription(handler.from(expected, "The actual does not contain of {}."));
+            handler.receive(actual, expected, shouldContain(actual, expected));
             throw handler.getException();
         }
     }
@@ -98,23 +105,25 @@ public final class NumberArrays extends Objects<Number[]> implements NumberArray
     @Override
     public void assertDoesNotContain(Number[] actual, Number expected) {
         if (containable.contains(actual, expected)) {
-            handler.setDescription(handler.from(expected, "The actual is contains of {}"));
+            handler.receive(actual, expected, shouldDoNotContain(actual, expected));
             throw handler.getException();
         }
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public void assertContainsAll(Number[] actual, Number... expected) {
         if (containable.containsNotAll(actual, expected)) {
-            handler.setDescription(handler.from("The actual does not contain any of expected"));
+            handler.receive(actual, expected, shouldContainAll(actual, expected));
             throw handler.getException();
         }
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public void assertContainsAny(Number[] actual, Number... expected) {
         if (containable.doseNotContainAny(actual, expected)) {
-            handler.setDescription(handler.from("The actual does not contain any of expected"));
+            handler.receive(actual, expected, shouldContainAny(actual, expected));
             throw handler.getException();
         }
     }
@@ -122,7 +131,7 @@ public final class NumberArrays extends Objects<Number[]> implements NumberArray
     @Override
     public void assertContainsNull(Number[] actual) {
         if (containable.doesNotContainNull(actual)) {
-            handler.setDescription(handler.from("The actual does not contain of null"));
+            handler.receive(actual, shouldContainNull(actual));
             throw handler.getException();
         }
     }
@@ -130,16 +139,16 @@ public final class NumberArrays extends Objects<Number[]> implements NumberArray
     @Override
     public void assertDoesNotContainNull(Number[] actual) {
         if (containable.containsNull(actual)) {
-            handler.setDescription(handler.from("The actual is contains of null"));
+            handler.receive(actual, shouldDoNotContainNull(actual));
             throw handler.getException();
         }
     }
 
     @Override
     public void assertAllMatch(Number[] actual, Predicate<Number> expected) {
-        for (Number number : actual) {
-            if (!expected.test(number)) {
-                handler.setDescription(handler.from("The actual is not all matched"));
+        for (Number value : actual) {
+            if (!expected.test(value)) {
+                handler.receive(actual, shouldBeAllMatch(actual));
                 throw handler.getException();
             }
         }
@@ -147,9 +156,9 @@ public final class NumberArrays extends Objects<Number[]> implements NumberArray
 
     @Override
     public void assertNoneMatch(Number[] actual, Predicate<Number> expected) {
-        for (Number number : actual) {
-            if (expected.test(number)) {
-                handler.setDescription(handler.from(actual, "The actual is matched with all of expected"));
+        for (Number value : actual) {
+            if (expected.test(value)) {
+                handler.receive(actual, shouldDoNotMatch(actual));
                 throw handler.getException();
             }
         }
@@ -158,7 +167,7 @@ public final class NumberArrays extends Objects<Number[]> implements NumberArray
     @Override
     public void assertIsShorterThan(Number[] actual, Number[] expected) {
         if (comparable.isLongerThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from("length of actual is not shorter than length of expected"));
+            handler.receive(actual, expected, shouldBeShorterThan(actual, expected));
             throw handler.getException();
         }
     }
@@ -166,7 +175,7 @@ public final class NumberArrays extends Objects<Number[]> implements NumberArray
     @Override
     public void assertIsShorterThanOrEqualTo(Number[] actual, Number[] expected) {
         if (comparable.isLongerThan(actual, expected)) {
-            handler.setDescription(handler.from("length of actual is not shorter than or equal to length of expected"));
+            handler.receive(actual, expected, shouldBeShorterThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
     }
@@ -174,7 +183,7 @@ public final class NumberArrays extends Objects<Number[]> implements NumberArray
     @Override
     public void assertIsLongerThan(Number[] actual, Number[] expected) {
         if (comparable.isShorterThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from("length of actual is not longer than length of expected"));
+            handler.receive(actual, expected, shouldBeLongerThan(actual, expected));
             throw handler.getException();
         }
     }
@@ -182,7 +191,7 @@ public final class NumberArrays extends Objects<Number[]> implements NumberArray
     @Override
     public void assertIsLongerThanOrEqualTo(Number[] actual, Number[] expected) {
         if (comparable.isShorterThan(actual, expected)) {
-            handler.setDescription(handler.from("length of actual is not longer than or equal to length of expected"));
+            handler.receive(actual, expected, shouldBeLongerThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
     }
@@ -190,8 +199,7 @@ public final class NumberArrays extends Objects<Number[]> implements NumberArray
     @Override
     public void assertIsBetweenLengthOf(Number[] actual, Number[] start, Number[] end) {
         if (comparable.isShorterThan(actual, start) || comparable.isLongerThan(actual, end)) {
-            String description = handler.getDescribable().as("length of actual is not between {} and {}", start.length, end.length);
-            handler.setDescription(handler.from(actual, description));
+            handler.receive(shouldBeBetween(actual, start, end));
             throw handler.getException();
         }
     }

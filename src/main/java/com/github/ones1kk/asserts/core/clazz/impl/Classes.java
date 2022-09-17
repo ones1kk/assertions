@@ -19,8 +19,11 @@ package com.github.ones1kk.asserts.core.clazz.impl;
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.clazz.ClassesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
+import com.github.ones1kk.asserts.core.message.ClassErrorMessages;
 
 import java.lang.reflect.Modifier;
+
+import static com.github.ones1kk.asserts.core.message.ClassErrorMessages.*;
 
 public final class Classes extends Objects<Class<?>> implements ClassesInterface<Class<?>> {
 
@@ -31,7 +34,7 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     @Override
     public void assertIsTypeOf(Class<?> actual, Object expected) {
         if (!actual.isInstance(expected)) {
-            handler.setDescription(handler.from("The {} is not type of {}", actual, expected));
+            handler.receive(actual, expected, shouldBeTypeOf(actual, expected));
             throw handler.getException();
         }
     }
@@ -39,7 +42,7 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     @Override
     public void assertIsNotTypeOf(Class<?> actual, Object expected) {
         if (actual.isInstance(expected)) {
-            handler.setDescription(handler.from("The {} is type of {}", actual, expected));
+            handler.receive(actual, expected, shouldNotBeTypeOf(actual ,expected));
             throw handler.getException();
         }
     }
@@ -47,6 +50,7 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     @Override
     public void assertIsSuperclassOf(Class<?> actual, Class<?> expected) {
         if (actual != expected.getSuperclass()) {
+            handler.receive(actual, expected, shouldBeSuperClassOf(actual, expected));
             handler.setDescription(handler.from("The {} is not supper class of {}", actual, expected));
             throw handler.getException();
         }
@@ -55,6 +59,7 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     @Override
     public void assertIsSubclassOf(Class<?> actual, Class<?> expected) {
         if (actual.getSuperclass() != expected) {
+            handler.receive(actual, expected, shouldBeSubClassOf(actual, expected));
             handler.setDescription(handler.from("The {} is not sub class of {}", actual, expected));
             throw handler.getException();
         }
@@ -63,7 +68,7 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     @Override
     public void assertIsPrimitive(Class<?> actual) {
         if (!actual.isPrimitive()) {
-            handler.setDescription(handler.from("The {} is not primitive", actual));
+            handler.receive(actual, shouldBePrimitive(actual));
             throw handler.getException();
         }
     }
@@ -71,7 +76,7 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     @Override
     public void assertIsInterface(Class<?> actual) {
         if (!actual.isInterface()) {
-            handler.setDescription(handler.from("The {} is not interface", actual));
+            handler.receive(actual, shouldBeInterface(actual));
             throw handler.getException();
         }
     }
@@ -79,7 +84,7 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     @Override
     public void assertIsAnnotation(Class<?> actual) {
         if (!actual.isAnnotation()) {
-            handler.setDescription(handler.from("The {} is not annotation", actual));
+            handler.receive(actual, shouldBeAnnotation(actual));
             throw handler.getException();
         }
     }
@@ -87,7 +92,7 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     @Override
     public void assertIsFinalClass(Class<?> actual) {
         if (!Modifier.isFinal(actual.getModifiers())) {
-            handler.setDescription(handler.from("The {} is not final class", actual));
+            handler.receive(actual, shouldBeFinalClass(actual));
             throw handler.getException();
         }
     }
@@ -95,7 +100,7 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     @Override
     public void assertIsAbstractClass(Class<?> actual) {
         if (!Modifier.isAbstract(actual.getModifiers())) {
-            handler.setDescription(handler.from("The {} is not abstract class", actual));
+            handler.receive(actual, shouldBeAbstractClass(actual));
             throw handler.getException();
         }
     }
@@ -103,7 +108,7 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     @Override
     public void assertIsAnonymousClass(Class<?> actual) {
         if (!actual.isAnonymousClass()) {
-            handler.setDescription(handler.from("The {} is not anonymous class", actual));
+            handler.receive(actual, shouldBeAnonymousClass(actual));
             throw handler.getException();
         }
     }
@@ -111,7 +116,7 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     @Override
     public void assertIsEnum(Class<?> actual) {
         if (!actual.isEnum()) {
-            handler.setDescription(handler.from("The {} is not enum", actual));
+            handler.receive(actual, shouldBeEnum(actual));
             throw handler.getException();
         }
     }
@@ -119,7 +124,7 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     @Override
     public void assertIsArray(Class<?> actual) {
         if (!actual.isArray()) {
-            handler.setDescription(handler.from("The {} is not array", actual));
+            handler.receive(actual, shouldBeArray(actual));
             throw handler.getException();
         }
     }
@@ -127,7 +132,7 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     @Override
     public void assertIsMemberClass(Class<?> actual) {
         if (!actual.isMemberClass()) {
-            handler.setDescription(handler.from("The {} is not member class", actual));
+            handler.receive(actual , shouldBeMemberClass(actual));
             throw handler.getException();
         }
     }
@@ -135,7 +140,7 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     @Override
     public void assertIsLocalClass(Class<?> actual) {
         if (!actual.isLocalClass()) {
-            handler.setDescription(handler.from("The {} is not local class", actual));
+            handler.receive(actual, shouldBeLocalClass(actual));
             throw handler.getException();
         }
     }

@@ -27,6 +27,9 @@ import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import java.util.List;
 import java.util.function.Predicate;
 
+import static com.github.ones1kk.asserts.core.message.IterableErrorMessages.*;
+import static com.github.ones1kk.asserts.core.message.SizeComparableErrorMessages.*;
+
 /**
  * <strong> The Lists class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
  *
@@ -45,7 +48,7 @@ public final class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterfa
     @Override
     public void assertIsEmpty(List<? extends ACTUAL> actual) {
         if (!actual.isEmpty()) {
-            handler.setDescription(handler.from("The actual is not empty"));
+            handler.receive(actual, shouldBeEmpty(actual));
             throw handler.getException();
         }
     }
@@ -53,7 +56,7 @@ public final class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterfa
     @Override
     public void assertIsNotEmpty(List<? extends ACTUAL> actual) {
         if (actual.isEmpty()) {
-            handler.setDescription(handler.from("The actual is empty"));
+            handler.receive(actual, shouldNotBeEmpty(actual));
             throw handler.getException();
         }
     }
@@ -62,7 +65,7 @@ public final class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterfa
     public void assertIsNullOrEmpty(List<? extends ACTUAL> actual) {
         if (actual != null) {
             if (!actual.isEmpty()) {
-                handler.setDescription(handler.from("The actual is not null or not empty"));
+                handler.receive(actual, shouldNotBeNullOrEmpty(actual));
                 throw handler.getException();
             }
         }
@@ -71,7 +74,7 @@ public final class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterfa
     @Override
     public void assertContains(List<? extends ACTUAL> actual, ACTUAL expected) {
         if (containable.doesNotContain(actual, expected)) {
-            handler.setDescription(handler.from(expected, "The actual does not contain of {}"));
+            handler.receive(actual, expected, shouldContain(actual, expected));
             throw handler.getException();
         }
     }
@@ -79,7 +82,7 @@ public final class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterfa
     @Override
     public void assertDoesNotContain(List<? extends ACTUAL> actual, ACTUAL expected) {
         if (containable.contains(actual, expected)) {
-            handler.setDescription(handler.from(expected, "The actual is contains of {}"));
+            handler.receive(actual, expected, shouldDoNotContain(actual, expected));
             throw handler.getException();
         }
     }
@@ -88,7 +91,7 @@ public final class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterfa
     @SuppressWarnings("unchecked")
     public void assertContainsAll(List<? extends ACTUAL> actual, ACTUAL... expected) {
         if (containable.containsNotAll(actual, expected)) {
-            handler.setDescription(handler.from("The actual does not contain any of expected"));
+            handler.receive(actual, expected, shouldContainAll(actual, expected));
             throw handler.getException();
         }
     }
@@ -97,7 +100,7 @@ public final class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterfa
     @SuppressWarnings("unchecked")
     public void assertContainsAny(List<? extends ACTUAL> actual, ACTUAL... expected) {
         if (containable.doseNotContainAny(actual, expected)) {
-            handler.setDescription(handler.from("The actual does not contain any of expected"));
+            handler.receive(actual, expected, shouldContainAny(actual, expected));
             throw handler.getException();
         }
     }
@@ -105,7 +108,7 @@ public final class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterfa
     @Override
     public void assertContainsNull(List<? extends ACTUAL> actual) {
         if (containable.doesNotContainNull(actual)) {
-            handler.setDescription(handler.from("The actual does not contain of null"));
+            handler.receive(actual, shouldContainNull(actual));
             throw handler.getException();
         }
     }
@@ -113,7 +116,7 @@ public final class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterfa
     @Override
     public void assertDoesNotContainNull(List<? extends ACTUAL> actual) {
         if (containable.containsNull(actual)) {
-            handler.setDescription(handler.from("The actual is contains of null"));
+            handler.receive(actual, shouldDoNotContainNull(actual));
             throw handler.getException();
         }
     }
@@ -122,7 +125,7 @@ public final class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterfa
     public void assertAllMatch(List<? extends ACTUAL> actual, Predicate<ACTUAL> expected) {
         for (ACTUAL value : actual) {
             if (!expected.test(value)) {
-                handler.setDescription(handler.from("The actual is not all matched"));
+                handler.receive(actual, shouldBeAllMatch(actual));
                 throw handler.getException();
             }
         }
@@ -132,7 +135,7 @@ public final class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterfa
     public void assertNoneMatch(List<? extends ACTUAL> actual, Predicate<ACTUAL> expected) {
         for (ACTUAL value : actual) {
             if (expected.test(value)) {
-                handler.setDescription(handler.from("The actual is matched with all of expected"));
+                handler.receive(actual, shouldDoNotMatch(actual));
                 throw handler.getException();
             }
         }
@@ -141,7 +144,7 @@ public final class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterfa
     @Override
     public void assertIsSmallerThan(List<? extends ACTUAL> actual, List<? extends ACTUAL> expected) {
         if (comparable.isLargerThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from("size of actual is not less than size of expected"));
+            handler.receive(actual, expected, shouldBeSmallerThan(actual, expected));
             throw handler.getException();
         }
     }
@@ -149,7 +152,7 @@ public final class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterfa
     @Override
     public void assertIsSmallerThanOrEqualTo(List<? extends ACTUAL> actual, List<? extends ACTUAL> expected) {
         if (comparable.isLargerThan(actual, expected)) {
-            handler.setDescription(handler.from("size of actual is not less than or equal to size of expected"));
+            handler.receive(actual, expected, shouldBeSmallerThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
     }
@@ -157,7 +160,7 @@ public final class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterfa
     @Override
     public void assertIsLargerThan(List<? extends ACTUAL> actual, List<? extends ACTUAL> expected) {
         if (comparable.isSmallerThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from("size of actual is not greater than size of expected"));
+            handler.receive(actual, expected, shouldBeLargerThan(actual, expected));
             throw handler.getException();
         }
     }
@@ -165,7 +168,7 @@ public final class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterfa
     @Override
     public void assertIsLargerThanOrEqualTo(List<? extends ACTUAL> actual, List<? extends ACTUAL> expected) {
         if (comparable.isSmallerThan(actual, expected)) {
-            handler.setDescription(handler.from("size of actual is not greater than or equal to size of expected"));
+            handler.receive(actual, expected, shouldBeLargerThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
     }
@@ -173,8 +176,7 @@ public final class Lists<ACTUAL> extends Objects<ACTUAL> implements ListsInterfa
     @Override
     public void assertIsBetweenSizeOf(List<? extends ACTUAL> actual, List<? extends ACTUAL> start, List<? extends ACTUAL> end) {
         if (comparable.isSmallerThan(actual, start) || comparable.isLargerThan(actual, end)) {
-            String description = handler.getDescribable().as("size of actual is not between {} and {}", start.size(), end.size());
-            handler.setDescription(handler.from(actual, description));
+            handler.receive(actual, shouldBeBetween(actual, start, end));
             throw handler.getException();
         }
     }

@@ -21,8 +21,13 @@ import com.github.ones1kk.asserts.core.collection.map.MapsInterface;
 import com.github.ones1kk.asserts.core.feature.comparable.collection.impl.MapComparable;
 import com.github.ones1kk.asserts.core.feature.iterable.containable.collection.impl.MapContainable;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
+import com.github.ones1kk.asserts.core.message.MapErrorMessages;
 
+import java.util.List;
 import java.util.Map;
+
+import static com.github.ones1kk.asserts.core.message.IterableErrorMessages.*;
+import static com.github.ones1kk.asserts.core.message.SizeComparableErrorMessages.*;
 
 /**
  * <strong> The Maps class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
@@ -41,7 +46,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     @Override
     public void assertIsEmpty(ACTUAL actual) {
         if (!actual.isEmpty()) {
-            handler.setDescription(handler.from("The actual is not empty"));
+            handler.receive(actual, shouldBeEmpty(actual));
             throw handler.getException();
         }
     }
@@ -49,7 +54,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     @Override
     public void assertIsNotEmpty(ACTUAL actual) {
         if (actual.isEmpty()) {
-            handler.setDescription(handler.from("The actual is empty"));
+            handler.receive(actual, shouldNotBeEmpty(actual));
             throw handler.getException();
         }
     }
@@ -58,7 +63,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     public void assertIsNullOrEmpty(ACTUAL actual) {
         if (actual != null) {
             if (!actual.isEmpty()) {
-                handler.setDescription(handler.from("The actual is not null or not empty"));
+                handler.receive(actual, shouldNotBeNullOrEmpty(actual));
                 throw handler.getException();
             }
         }
@@ -67,7 +72,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     @Override
     public void assertContainsKey(ACTUAL actual, K expected) {
         if (!actual.containsKey(expected)) {
-            handler.setDescription(handler.from("The actual does not contain any of key"));
+            handler.receive(actual, expected, MapErrorMessages.shouldContainKey(actual, expected));
             throw handler.getException();
         }
     }
@@ -75,7 +80,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     @Override
     public void assertContainsAllKey(ACTUAL actual, Map<? extends K, ?> expected) {
         if (containable.doesNotContainAllKey(actual, expected)) {
-            handler.setDescription(handler.from("The actual does not contain all of key"));
+            handler.receive(actual, expected, MapErrorMessages.shouldContainAllKey(actual, expected));
             throw handler.getException();
         }
     }
@@ -83,7 +88,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     @Override
     public void assertContainsValue(ACTUAL actual, V expected) {
         if (!actual.containsValue(expected)) {
-            handler.setDescription(handler.from(expected, "The actual does not contain value of {}"));
+            handler.receive(actual, expected, MapErrorMessages.shouldContainValue(actual, expected));
             throw handler.getException();
         }
     }
@@ -91,7 +96,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     @Override
     public void assertContainsAllValue(ACTUAL actual, Map<?, ? extends V> expected) {
         if (containable.doesNotContainAllValue(actual, expected)) {
-            handler.setDescription(handler.from("The actual does not contain all of value"));
+            handler.receive(actual, expected, MapErrorMessages.shouldContainAllValue(actual, expected));
             throw handler.getException();
         }
     }
@@ -99,7 +104,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     @Override
     public void assertHasSizeOf(ACTUAL actual, int expected) {
         if (actual.size() != expected) {
-            handler.setDescription(handler.from(expected, "size of actual is not {}"));
+            handler.receive(actual, expected, MapErrorMessages.shouldHasSameSizeOf(actual, expected));
             throw handler.getException();
         }
     }
@@ -107,7 +112,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     @Override
     public void assertHasSameSizeOf(ACTUAL actual, Map<?, ?> expected) {
         if (comparable.doesNotHaveSameSizeOf(actual, expected)) {
-            handler.setDescription(handler.from("size of actual does not have same size of expected"));
+            handler.receive(actual, expected.size(), MapErrorMessages.shouldHasSameSizeOf(actual, expected.size()));
             throw handler.getException();
         }
     }
@@ -115,6 +120,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     @Override
     public void assertDoesNotHaveSameSizeOf(ACTUAL actual, Map<?, ?> expected) {
         if (comparable.hasSameSizeOf(actual, expected)) {
+            handler.receive(actual, expected, MapErrorMessages.shouldDoNotHaveSizeOf(actual, expected.size()));
             handler.setDescription(handler.from("size of actual has same size of expected"));
             throw handler.getException();
         }
@@ -123,7 +129,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     @Override
     public void assertIsSmallerThan(ACTUAL actual, ACTUAL expected) {
         if (comparable.isLargerThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from("size of actual is not less than size of expected"));
+            handler.receive(actual, expected, shouldBeSmallerThan(actual, expected));
             throw handler.getException();
         }
     }
@@ -131,7 +137,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     @Override
     public void assertIsSmallerThanOrEqualTo(ACTUAL actual, ACTUAL expected) {
         if (comparable.isLargerThan(actual, expected)) {
-            handler.setDescription(handler.from("size of actual is not less than or equal to size of expected"));
+            handler.receive(actual, expected, shouldBeSmallerThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
     }
@@ -139,7 +145,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     @Override
     public void assertIsLargerThan(ACTUAL actual, ACTUAL expected) {
         if (comparable.isSmallerThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from("size of actual is not greater than size of expected"));
+            handler.receive(actual, expected, shouldBeLargerThan(actual, expected));
             throw handler.getException();
         }
     }
@@ -147,7 +153,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     @Override
     public void assertIsLargerThanOrEqualTo(ACTUAL actual, ACTUAL expected) {
         if (comparable.isSmallerThan(actual, expected)) {
-            handler.setDescription(handler.from("size of actual is not greater than or equal to size of expected"));
+            handler.receive(actual, expected, shouldBeLargerThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
     }
@@ -155,8 +161,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     @Override
     public void assertIsBetweenSizeOf(ACTUAL actual, ACTUAL start, ACTUAL end) {
         if (comparable.isSmallerThan(actual, start) || comparable.isLargerThan(actual, end)) {
-            String description = handler.getDescribable().as("size of actual is not between {} and {}", start.size(), end.size());
-            handler.setDescription(handler.from(actual, description));
+            handler.receive(actual, shouldBeBetween(actual, start, end));
             throw handler.getException();
         }
     }
