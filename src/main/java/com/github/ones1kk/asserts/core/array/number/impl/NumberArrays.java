@@ -22,8 +22,6 @@ import com.github.ones1kk.asserts.core.feature.comparable.array.ArrayComparable;
 import com.github.ones1kk.asserts.core.feature.comparable.array.impl.ArrayComparableImpl;
 import com.github.ones1kk.asserts.core.feature.iterable.containable.array.impl.NumberArrayContainableImpl;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
-import com.github.ones1kk.asserts.core.message.NumberArrayErrorMessages;
-import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.function.Predicate;
 

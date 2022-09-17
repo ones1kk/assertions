@@ -23,7 +23,6 @@ import com.github.ones1kk.asserts.core.feature.iterable.containable.collection.i
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 import com.github.ones1kk.asserts.core.message.MapErrorMessages;
 
-import java.util.List;
 import java.util.Map;
 
 import static com.github.ones1kk.asserts.core.message.IterableErrorMessages.*;

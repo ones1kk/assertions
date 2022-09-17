@@ -7,7 +7,8 @@ public final class NumberArrayErrorMessages {
 
     private static final Describable DESCRIBABLE = new Description();
 
-    private NumberArrayErrorMessages() {}
+    private NumberArrayErrorMessages() {
+    }
 
     public static String shouldBeMax(Number[] actual, Number expected) {
         return DESCRIBABLE.as("The given {} should be max of {}", expected, actual);

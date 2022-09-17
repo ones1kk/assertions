@@ -43,8 +43,8 @@ public final class DescriptionHandler {
         setDescription(formatter.writeOutput(actual, description));
     }
 
-    public void receive( Object actual, Object expected, String description) {
-         setDescription(formatter.writeOutput(actual, expected, description));
+    public void receive(Object actual, Object expected, String description) {
+        setDescription(formatter.writeOutput(actual, expected, description));
     }
 
     public String from(String description, Object... args) {

@@ -20,7 +20,6 @@ import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.comparable.file.FileSizeComparable;
 import com.github.ones1kk.asserts.core.file.FilesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
-import com.github.ones1kk.asserts.core.message.FileErrorMessages;
 import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;

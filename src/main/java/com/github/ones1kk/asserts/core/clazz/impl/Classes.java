@@ -19,7 +19,6 @@ package com.github.ones1kk.asserts.core.clazz.impl;
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.clazz.ClassesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
-import com.github.ones1kk.asserts.core.message.ClassErrorMessages;
 
 import java.lang.reflect.Modifier;
 
@@ -42,7 +41,7 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     @Override
     public void assertIsNotTypeOf(Class<?> actual, Object expected) {
         if (actual.isInstance(expected)) {
-            handler.receive(actual, expected, shouldNotBeTypeOf(actual ,expected));
+            handler.receive(actual, expected, shouldNotBeTypeOf(actual, expected));
             throw handler.getException();
         }
     }
@@ -132,7 +131,7 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     @Override
     public void assertIsMemberClass(Class<?> actual) {
         if (!actual.isMemberClass()) {
-            handler.receive(actual , shouldBeMemberClass(actual));
+            handler.receive(actual, shouldBeMemberClass(actual));
             throw handler.getException();
         }
     }
