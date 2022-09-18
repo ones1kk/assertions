@@ -157,7 +157,44 @@ class AbstractArrayAssertTest {
         assert1.noneMatch(Objects::isNull);
         assert3.noneMatch(Objects::isNull);
         assert4.noneMatch(Objects::isNull);
-
     }
 
+    @Test
+    @DisplayName("Comparable method test")
+    public void test3() throws Exception {
+        // given
+        CharSequence[] actual1 = {"A", "B", "C"};
+        CharSequence[] actual2 = {"A", null, "n", "2", "1"};
+        CharSequence[] actual3 = {"A", "b", "C"};
+        CharSequence[] actual4 = {"A", "b", "C", "D"};
+        CharSequence[] actual5 = {};
+
+        // when
+        AbstractArrayAssert<?, CharSequence> assert1 = new AbstractArrayAssert<>(AbstractArrayAssert.class, actual1);
+        AbstractArrayAssert<?, CharSequence> assert2 = new AbstractArrayAssert<>(AbstractArrayAssert.class, actual2);
+        AbstractArrayAssert<?, CharSequence> assert3 = new AbstractArrayAssert<>(AbstractArrayAssert.class, actual3);
+        AbstractArrayAssert<?, CharSequence> assert4 = new AbstractArrayAssert<>(AbstractArrayAssert.class, actual4);
+        AbstractArrayAssert<?, CharSequence> assert5 = new AbstractArrayAssert<>(AbstractArrayAssert.class, actual5);
+
+        // then
+        assertThrows(AssertException.class, () -> assert4.isShorterThan(actual4));
+        assertThrows(AssertException.class, () -> assert4.isShorterThan(actual1));
+        assertThrows(AssertException.class, () -> assert4.isShorterThanOrEqualTo(actual1));
+
+        assertThrows(AssertException.class, () -> assert3.isLongerThan(actual4));
+        assertThrows(AssertException.class, () -> assert3.isLongerThan(actual1));
+        assertThrows(AssertException.class, () -> assert1.isLongerThanOrEqualTo(actual4));
+
+        assertThrows(AssertException.class, () -> assert2.isBetweenLengthOf(actual4, actual1));
+
+        assert5.isShorterThan(actual1);
+        assert5.isShorterThanOrEqualTo(actual1);
+        assert5.isShorterThanOrEqualTo(actual4);
+
+        assert4.isLongerThan(actual1);
+        assert4.isLongerThanOrEqualTo(actual1);
+        assert4.isLongerThanOrEqualTo(actual4);
+
+        assert1.isBetweenLengthOf(actual5, actual4);
+    }
 }

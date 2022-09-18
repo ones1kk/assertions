@@ -3,6 +3,7 @@ package com.github.ones1kk.asserts.core.array.number;
 import com.github.ones1kk.asserts.core.exception.AssertException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.util.Objects;
 
@@ -104,8 +105,40 @@ class AbstractNumberArrayAssertTest {
 
         assert1.allMatch(Objects::nonNull);
         assert1.noneMatch(Objects::isNull);
-
     }
 
+    @Test
+    @DisplayName("Comparable method test")
+    public void test3() throws Exception {
+        // given
+        Number[] actual1 = {1, 5, 23F, 12436L, 0.567};
+        Number[] actual2 = {};
+        Number[] actual4 = {1, (short) 23, (byte) 123, null};
 
+        // when
+        AbstractNumberArrayAssert<?, Number[]> assert1 = new AbstractNumberArrayAssert<>(AbstractNumberArrayAssert.class, actual1);
+        AbstractNumberArrayAssert<?, Number[]> assert2 = new AbstractNumberArrayAssert<>(AbstractNumberArrayAssert.class, actual2);
+        AbstractNumberArrayAssert<?, Number[]> assert3 = new AbstractNumberArrayAssert<>(AbstractNumberArrayAssert.class, actual4);
+
+        // then
+        assertThrows(AssertException.class, () -> assert1.isShorterThan(actual4));
+        assertThrows(AssertException.class, () -> assert1.isShorterThan(actual1));
+        assertThrows(AssertException.class, () -> assert1.isShorterThanOrEqualTo(actual4));
+
+        assertThrows(AssertException.class, () -> assert3.isLongerThan(actual4));
+        assertThrows(AssertException.class, () -> assert3.isLongerThan(actual1));
+        assertThrows(AssertException.class, () -> assert3.isLongerThanOrEqualTo(actual1));
+
+        assertThrows(AssertException.class, () -> assert2.isBetweenLengthOf(actual4, actual1));
+
+        assert3.isShorterThan(actual1);
+        assert3.isShorterThanOrEqualTo(actual1);
+        assert3.isShorterThanOrEqualTo(actual4);
+
+        assert1.isLongerThan(actual4);
+        assert1.isLongerThanOrEqualTo(actual1);
+        assert1.isLongerThanOrEqualTo(actual4);
+
+        assert3.isBetweenLengthOf(actual2, actual1);
+    }
 }
