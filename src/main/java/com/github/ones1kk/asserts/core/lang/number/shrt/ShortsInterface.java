@@ -19,6 +19,11 @@ package com.github.ones1kk.asserts.core.lang.number.shrt;
 import com.github.ones1kk.asserts.core.feature.comparable.Comparable;
 import com.github.ones1kk.asserts.core.feature.number.Numerable;
 
+/**
+ * <strong> The ShortsInterface class is for a having Short Type, assertable assertion implementation class.</strong>
+ *
+ * @param <ACTUAL>
+ */
 public interface ShortsInterface<ACTUAL> extends Comparable<ACTUAL>, Numerable<Short> {
 
     void assertIsOdd(ACTUAL actual);

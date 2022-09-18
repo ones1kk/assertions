@@ -16,6 +16,11 @@
 
 package com.github.ones1kk.asserts.core.lang.object;
 
+/**
+ * <strong> The ObjectsInterface class is for a having Object Type, assertable assertion implementation class.</strong>
+ *
+ * @param <ACTUAL>
+ */
 public interface ObjectsInterface<ACTUAL> {
 
     void assertIsNull(ACTUAL actual);

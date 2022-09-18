@@ -16,6 +16,12 @@
 
 package com.github.ones1kk.asserts.core.lang.object;
 
+/**
+ * <strong> The ObjectAssertInterface class is for a having Object type, assertable interface class.</strong>
+ *
+ * @param <SELF>
+ * @param <ACTUAL>
+ */
 public interface ObjectAssertInterface<SELF, ACTUAL> {
 
     SELF isNull();

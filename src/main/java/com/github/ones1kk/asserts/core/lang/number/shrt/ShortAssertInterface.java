@@ -20,5 +20,10 @@ import com.github.ones1kk.asserts.core.feature.comparable.ComparableAssert;
 import com.github.ones1kk.asserts.core.feature.number.NumerableAssert;
 import com.github.ones1kk.asserts.core.lang.number.IntegerTypeAssertInterface;
 
+/**
+ * <strong> The ShortAssertInterface class is for a having Short type, assertable interface class.</strong>
+ *
+ * @param <SELF>
+ */
 public interface ShortAssertInterface<SELF> extends IntegerTypeAssertInterface<SELF>, NumerableAssert<SELF, Short>, ComparableAssert<SELF, Short> {
 }
