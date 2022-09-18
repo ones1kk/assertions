@@ -19,11 +19,10 @@ package com.github.ones1kk.asserts.core.lang.bolean.impl;
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.lang.bolean.BooleansInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
-import com.github.ones1kk.asserts.core.message.BooleanErrorMessages;
-import com.github.ones1kk.asserts.core.message.CommonErrorMessages;
 
-import static com.github.ones1kk.asserts.core.message.BooleanErrorMessages.*;
-import static com.github.ones1kk.asserts.core.message.CommonErrorMessages.*;
+import static com.github.ones1kk.asserts.core.message.BooleanErrorMessages.shouldBeFalse;
+import static com.github.ones1kk.asserts.core.message.BooleanErrorMessages.shouldBeTrue;
+import static com.github.ones1kk.asserts.core.message.CommonErrorMessages.getActualAsPlain;
 
 /**
  * <strong> The Booleans class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>

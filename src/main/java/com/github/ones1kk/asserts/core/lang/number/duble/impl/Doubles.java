@@ -23,7 +23,6 @@ import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.number.duble.DoublesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
-import com.github.ones1kk.asserts.core.message.DoublesErrorMessages;
 import com.github.ones1kk.asserts.core.message.NumerableErrorMessages;
 
 import static com.github.ones1kk.asserts.core.feature.number.arithmetic.NumerableUnit.of;

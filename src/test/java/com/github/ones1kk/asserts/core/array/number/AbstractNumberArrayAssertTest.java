@@ -3,7 +3,6 @@ package com.github.ones1kk.asserts.core.array.number;
 import com.github.ones1kk.asserts.core.exception.AssertException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.util.Objects;
 

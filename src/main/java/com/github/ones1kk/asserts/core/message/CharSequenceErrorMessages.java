@@ -27,7 +27,7 @@ public final class CharSequenceErrorMessages {
         return DESCRIBABLE.as("The given {} should be empty.", actual);
     }
 
-    public static String shouldNotBeEmpty(CharSequence actual ) {
+    public static String shouldNotBeEmpty(CharSequence actual) {
         return DESCRIBABLE.as("The given {} should not be empty.", actual);
     }
 

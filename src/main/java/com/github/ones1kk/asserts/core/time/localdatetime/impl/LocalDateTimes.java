@@ -25,7 +25,6 @@ import com.github.ones1kk.asserts.core.time.localdatetime.LocalDateTimesInterfac
 import java.time.LocalDateTime;
 
 import static com.github.ones1kk.asserts.core.message.TemporalErrorMessages.*;
-import static com.github.ones1kk.asserts.core.message.TemporalErrorMessages.shouldBeAfterOrEqualTo;
 
 /**
  * <strong> The LocalDateTimes class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>

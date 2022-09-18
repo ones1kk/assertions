@@ -21,7 +21,6 @@ import com.github.ones1kk.asserts.core.feature.comparable.lang.ComparableLanguag
 import com.github.ones1kk.asserts.core.feature.comparable.lang.impl.ComparableLanguageImpl;
 import com.github.ones1kk.asserts.core.lang.charsequence.impl.CharSequences;
 import com.github.ones1kk.asserts.core.lang.string.StringsInterface;
-import com.github.ones1kk.asserts.core.message.ComparableErrorMessages;
 
 import static com.github.ones1kk.asserts.core.message.ComparableErrorMessages.*;
 
@@ -47,7 +46,7 @@ public final class Strings extends CharSequences implements StringsInterface<Str
     @Override
     public void assertIsLessThanOrEqualTo(String actual, String expected) {
         if (comparable.isGraterThan(actual, expected)) {
-            handler.receive(actual, expected, shouldBeLessThanOrEqualTo(actual ,expected));
+            handler.receive(actual, expected, shouldBeLessThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
     }
@@ -55,7 +54,7 @@ public final class Strings extends CharSequences implements StringsInterface<Str
     @Override
     public void assertIsGreaterThan(String actual, String expected) {
         if (comparable.isLessThanOrEqualTo(actual, expected)) {
-            handler.receive(actual, expected, shouldBeGreaterThan(actual ,expected));
+            handler.receive(actual, expected, shouldBeGreaterThan(actual, expected));
             throw handler.getException();
         }
     }
@@ -63,7 +62,7 @@ public final class Strings extends CharSequences implements StringsInterface<Str
     @Override
     public void assertIsGreaterThanOrEqualTo(String actual, String expected) {
         if (comparable.isLessThan(actual, expected)) {
-            handler.receive(actual, expected, shouldBeGreaterThanOrEqualTo(actual ,expected));
+            handler.receive(actual, expected, shouldBeGreaterThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
     }

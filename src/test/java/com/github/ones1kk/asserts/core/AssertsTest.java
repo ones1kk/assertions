@@ -74,10 +74,10 @@ class AssertsTest {
 
         AbstractObjectAssert<?, Object> actual21 = Asserts.that(mock(TemporalAccessor.class));
         AbstractLocalDateAssert<?, LocalDate> actual22 = Asserts.that(LocalDate.of(1995, 2, 1));
-        AbstractLocalDateTimeAssert<?, LocalDateTime> actual23 = Asserts.that(LocalDateTime.of(1995,2,1 , 1,1,1));
+        AbstractLocalDateTimeAssert<?, LocalDateTime> actual23 = Asserts.that(LocalDateTime.of(1995, 2, 1, 1, 1, 1));
         AbstractMonthAssert<?, Month> actual24 = Asserts.that(Month.of(2));
-        AbstractMonthDayAssert<?, MonthDay> actual25 = Asserts.that(MonthDay.of(2,1));
-        AbstractLocalTimeAssert<?, LocalTime> actual26 = Asserts.that(LocalTime.of(1,1));
+        AbstractMonthDayAssert<?, MonthDay> actual25 = Asserts.that(MonthDay.of(2, 1));
+        AbstractLocalTimeAssert<?, LocalTime> actual26 = Asserts.that(LocalTime.of(1, 1));
         AbstractYearAssert<?, Year> actual27 = Asserts.that(Year.of(1995));
 
         //then

@@ -23,14 +23,11 @@ import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.number.bte.BytesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
-import com.github.ones1kk.asserts.core.message.ComparableErrorMessages;
-import com.github.ones1kk.asserts.core.message.DataErrorMessages;
-import com.github.ones1kk.asserts.core.message.IntegersErrorMessages;
 import com.github.ones1kk.asserts.core.message.NumerableErrorMessages;
 
 import static com.github.ones1kk.asserts.core.feature.number.arithmetic.NumerableUnit.of;
 import static com.github.ones1kk.asserts.core.message.ComparableErrorMessages.*;
-import static com.github.ones1kk.asserts.core.message.DataErrorMessages.*;
+import static com.github.ones1kk.asserts.core.message.DataErrorMessages.shouldBeCloseTo;
 import static com.github.ones1kk.asserts.core.message.IntegersErrorMessages.*;
 
 /**
@@ -136,7 +133,7 @@ public final class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
     @Override
     public void assertIsLessThanOrEqualTo(Byte actual, Byte expected) {
         if (comparable.isGraterThan(actual, expected)) {
-            handler.receive(actual, expected, shouldBeLessThanOrEqualTo(actual ,expected));
+            handler.receive(actual, expected, shouldBeLessThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
     }
@@ -144,7 +141,7 @@ public final class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
     @Override
     public void assertIsGreaterThan(Byte actual, Byte expected) {
         if (comparable.isLessThanOrEqualTo(actual, expected)) {
-            handler.receive(actual, expected, shouldBeGreaterThan(actual ,expected));
+            handler.receive(actual, expected, shouldBeGreaterThan(actual, expected));
             throw handler.getException();
         }
     }
@@ -152,7 +149,7 @@ public final class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
     @Override
     public void assertIsGreaterThanOrEqualTo(Byte actual, Byte expected) {
         if (comparable.isLessThan(actual, expected)) {
-            handler.receive(actual, expected, shouldBeGreaterThanOrEqualTo(actual ,expected));
+            handler.receive(actual, expected, shouldBeGreaterThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
     }

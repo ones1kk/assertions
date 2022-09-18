@@ -19,7 +19,6 @@ package com.github.ones1kk.asserts.core.message;
 import com.github.ones1kk.asserts.core.description.Describable;
 import com.github.ones1kk.asserts.core.description.impl.Description;
 
-import java.time.temporal.Temporal;
 import java.time.temporal.TemporalAccessor;
 
 public final class TemporalErrorMessages {

@@ -18,12 +18,12 @@ package com.github.ones1kk.asserts.core.time.year.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
-import com.github.ones1kk.asserts.core.message.YearErrorMessages;
 import com.github.ones1kk.asserts.core.time.year.YearsInterface;
 
 import java.time.Year;
 
-import static com.github.ones1kk.asserts.core.message.YearErrorMessages.*;
+import static com.github.ones1kk.asserts.core.message.YearErrorMessages.shouldBeLeapYear;
+import static com.github.ones1kk.asserts.core.message.YearErrorMessages.shouldNotBeLeapYear;
 
 /**
  * <strong> The Years class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>

@@ -25,7 +25,6 @@ import com.github.ones1kk.asserts.core.time.temporal.accessor.TemporalAccessorsI
 import java.time.temporal.TemporalAccessor;
 
 import static com.github.ones1kk.asserts.core.message.TemporalErrorMessages.*;
-import static com.github.ones1kk.asserts.core.message.TemporalErrorMessages.shouldBeAfterOrEqualTo;
 
 public final class TemporalAccessors<ACTUAL extends TemporalAccessor & Comparable<ACTUAL>> extends Objects<ACTUAL> implements TemporalAccessorsInterface<ACTUAL> {
 
