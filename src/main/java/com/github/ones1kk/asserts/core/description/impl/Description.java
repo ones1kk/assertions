@@ -104,15 +104,20 @@ public final class Description implements Describable {
         throwIfHavingSpecialChar(description);
         throwIfOnlyArgumentsExist(description, args);
 
-        if (description.contains("{}")) {
-            throwIfNull(args);
-            return String.format(description.replace("{}", "%s"), args);
-        }
+        if (containsBrace(description, args)) return String.format(description.replace("{}", "%s"), args);
         return description;
     }
 
-    private void throwIfNull(Object[] args) {
-        if (ArrayUtils.isEmpty(args) || args == null) {
+    private boolean containsBrace(String description, Object[] args) {
+        if (description.contains("{}")) {
+            throwIfNullOrEmpty(args);
+            return true;
+        }
+        return false;
+    }
+
+    private void throwIfNullOrEmpty(Object[] args) {
+        if (isEmpty(args) || args == null) {
             throw new AssertException(ShouldBeEnteredArguments());
         }
     }
@@ -123,11 +128,9 @@ public final class Description implements Describable {
         }
     }
 
-    @SuppressWarnings("all")
     private void throwIfOnlyArgumentsExist(String description, Object[] args) {
-        if (args.length < 0 && !(description.contains("{}"))) {
-            throw new AssertException(ShouldBeExpressedInBraces());
+        if (isNotEmpty(args) && !(description.contains("{}"))) {
+            throw new AssertException(ShouldBeExpressedInBrace());
         }
     }
-
 }
