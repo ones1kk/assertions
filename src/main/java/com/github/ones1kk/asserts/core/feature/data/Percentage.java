@@ -72,22 +72,12 @@ public final class Percentage<T extends Number> {
         return expected.doubleValue() >= startingRange && expected.doubleValue() <= endingRange;
     }
 
-    /**
-     * After 2.0, it will be deprecated.
-     *
-     * @since 1.0
-     */
     @Deprecated
     public boolean isStartingRange(T actual, T expected) {
         setRange(actual);
         return expected.doubleValue() >= startingRange && expected.doubleValue() <= endingRange;
     }
 
-    /**
-     * After 2.0, it will be deprecated.
-     *
-     * @since 1.0
-     */
     @Deprecated
     public boolean isEndingRange(T actual, T expected) {
         setRange(actual);

@@ -19,7 +19,7 @@ package com.github.ones1kk.asserts.core.lang.charsequence;
 /**
  * <strong> The CharSequencesInterface class is for a having CharSequence Type, assertable assertion implementation class.</strong>
  *
- * @param <ACTUAL>>
+ * @param <ACTUAL>
  */
 public interface CharSequencesInterface<ACTUAL> {
 

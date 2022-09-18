@@ -22,7 +22,7 @@ import com.github.ones1kk.asserts.core.feature.number.Numerable;
 /**
  * <strong> The BytesInterface class is for a having Byte Type, assertable assertion implementation class.</strong>
  *
- * @param <ACTUAL>>
+ * @param <ACTUAL>
  */
 public interface BytesInterface<ACTUAL> extends Comparable<ACTUAL>, Numerable<Byte> {
 

@@ -19,7 +19,7 @@ package com.github.ones1kk.asserts.core.lang.bolean;
 /**
  * <strong> The BooleansInterface class is for a having Boolean Type, assertable assertion implementation class.</strong>
  *
- * @param <ACTUAL>>
+ * @param <ACTUAL>
  */
 public interface BooleansInterface<ACTUAL> {
 

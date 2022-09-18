@@ -21,7 +21,7 @@ import com.github.ones1kk.asserts.core.feature.comparable.Comparable;
 /**
  * <strong> The CharactersInterface class is for a having Character Type, assertable assertion implementation class.</strong>
  *
- * @param <ACTUAL>>
+ * @param <ACTUAL>
  */
 public interface CharactersInterface<ACTUAL> extends Comparable<ACTUAL> {
 

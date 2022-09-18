@@ -50,7 +50,6 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     public void assertIsSuperclassOf(Class<?> actual, Class<?> expected) {
         if (actual != expected.getSuperclass()) {
             handler.receive(actual, expected, shouldBeSuperClassOf(actual, expected));
-            handler.setDescription(handler.from("The {} is not supper class of {}", actual, expected));
             throw handler.getException();
         }
     }
@@ -59,7 +58,6 @@ public final class Classes extends Objects<Class<?>> implements ClassesInterface
     public void assertIsSubclassOf(Class<?> actual, Class<?> expected) {
         if (actual.getSuperclass() != expected) {
             handler.receive(actual, expected, shouldBeSubClassOf(actual, expected));
-            handler.setDescription(handler.from("The {} is not sub class of {}", actual, expected));
             throw handler.getException();
         }
     }
