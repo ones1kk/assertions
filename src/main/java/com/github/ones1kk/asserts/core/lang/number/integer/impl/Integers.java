@@ -23,8 +23,12 @@ import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.number.integer.IntegersInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
+import com.github.ones1kk.asserts.core.message.NumerableErrorMessages;
 
 import static com.github.ones1kk.asserts.core.feature.number.arithmetic.NumerableUnit.of;
+import static com.github.ones1kk.asserts.core.message.ComparableErrorMessages.*;
+import static com.github.ones1kk.asserts.core.message.DataErrorMessages.shouldBeCloseTo;
+import static com.github.ones1kk.asserts.core.message.IntegersErrorMessages.*;
 
 /**
  * <strong> The Integers class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
@@ -40,7 +44,7 @@ public final class Integers extends Objects<Integer> implements IntegersInterfac
     @Override
     public void assertIsOdd(Integer actual) {
         if (of(actual).isEven()) {
-            handler.setDescription(handler.from(actual, "{} is not odd"));
+            handler.receive(actual, shouldBeOdd(actual));
             throw handler.getException();
         }
     }
@@ -48,7 +52,7 @@ public final class Integers extends Objects<Integer> implements IntegersInterfac
     @Override
     public void assertIsNotOdd(Integer actual) {
         if (of(actual).isOdd()) {
-            handler.setDescription(handler.from(actual, "{} is odd"));
+            handler.receive(actual, shouldNotBeOdd(actual));
             throw handler.getException();
         }
     }
@@ -56,7 +60,7 @@ public final class Integers extends Objects<Integer> implements IntegersInterfac
     @Override
     public void assertIsEven(Integer actual) {
         if (of(actual).isOdd()) {
-            handler.setDescription(handler.from(actual, "{} is not even"));
+            handler.receive(actual, shouldBeEven(actual));
             throw handler.getException();
         }
     }
@@ -64,49 +68,7 @@ public final class Integers extends Objects<Integer> implements IntegersInterfac
     @Override
     public void assertIsNotEven(Integer actual) {
         if (of(actual).isEven()) {
-            handler.setDescription(handler.from(actual, "{} is even"));
-            throw handler.getException();
-        }
-    }
-
-    @Override
-    public void assertIsLessThan(Integer actual, Integer expected) {
-        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not less than {}"));
-            throw handler.getException();
-        }
-    }
-
-    @Override
-    public void assertIsLessThanOrEqualTo(Integer actual, Integer expected) {
-        if (comparable.isGraterThan(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not less than or equal to {}"));
-            throw handler.getException();
-        }
-    }
-
-    @Override
-    public void assertIsGreaterThan(Integer actual, Integer expected) {
-        if (comparable.isLessThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not greater than {}"));
-            throw handler.getException();
-        }
-    }
-
-    @Override
-    public void assertIsGreaterThanOrEqualTo(Integer actual, Integer expected) {
-        if (comparable.isLessThan(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not greater than or equal to {}"));
-            throw handler.getException();
-        }
-    }
-
-    @Override
-    public void assertIsBetween(Integer actual, Integer start, Integer end) {
-        if (comparable.isLessThan(actual, start)
-                || comparable.isGraterThan(actual, end)) {
-            String description = handler.from("{} is not between {} and {}", actual, start, end);
-            handler.setDescription(handler.from(actual, description));
+            handler.receive(actual, shouldNotBeEven(actual));
             throw handler.getException();
         }
     }
@@ -114,7 +76,7 @@ public final class Integers extends Objects<Integer> implements IntegersInterfac
     @Override
     public void assertIsPositive(Integer actual) {
         if (comparable.isLessThanOrEqualTo(actual, 0)) {
-            handler.setDescription(handler.from(actual, "{} is not positive"));
+            handler.receive(actual, NumerableErrorMessages.shouldNotBePositive(actual));
             throw handler.getException();
         }
     }
@@ -122,7 +84,7 @@ public final class Integers extends Objects<Integer> implements IntegersInterfac
     @Override
     public void assertIsNotPositive(Integer actual) {
         if (comparable.isGraterThan(actual, 0)) {
-            handler.setDescription(handler.from(actual, "{} is positive"));
+            handler.receive(actual, NumerableErrorMessages.shouldNotBePositive(actual));
             throw handler.getException();
         }
     }
@@ -130,7 +92,7 @@ public final class Integers extends Objects<Integer> implements IntegersInterfac
     @Override
     public void assertIsNegative(Integer actual) {
         if (comparable.isGraterThanOrEqualTo(actual, 0)) {
-            handler.setDescription(handler.from(actual, "{} is not negative"));
+            handler.receive(actual, NumerableErrorMessages.shouldBeNegative(actual));
             throw handler.getException();
         }
     }
@@ -138,7 +100,7 @@ public final class Integers extends Objects<Integer> implements IntegersInterfac
     @Override
     public void assertIsNotNegative(Integer actual) {
         if (comparable.isLessThan(actual, 0)) {
-            handler.setDescription(handler.from(actual, "{} is negative"));
+            handler.receive(actual, NumerableErrorMessages.shouldNotBeNegative(actual));
             throw handler.getException();
         }
     }
@@ -146,7 +108,7 @@ public final class Integers extends Objects<Integer> implements IntegersInterfac
     @Override
     public void assertIsZero(Integer actual) {
         if (of(actual).isNotZero()) {
-            handler.setDescription(handler.from(actual, "{} is not zero"));
+            handler.receive(actual, NumerableErrorMessages.shouldBeZero(actual));
             throw handler.getException();
         }
     }
@@ -154,7 +116,47 @@ public final class Integers extends Objects<Integer> implements IntegersInterfac
     @Override
     public void assertIsNotZero(Integer actual) {
         if (of(actual).isZero()) {
-            handler.setDescription(handler.from(actual, "{} is zero"));
+            handler.receive(actual, NumerableErrorMessages.shouldNotBeZero(actual));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsLessThan(Integer actual, Integer expected) {
+        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
+            handler.receive(actual, shouldBeLessThan(actual, expected));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsLessThanOrEqualTo(Integer actual, Integer expected) {
+        if (comparable.isGraterThan(actual, expected)) {
+            handler.receive(actual, expected, shouldBeLessThanOrEqualTo(actual, expected));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsGreaterThan(Integer actual, Integer expected) {
+        if (comparable.isLessThanOrEqualTo(actual, expected)) {
+            handler.receive(actual, expected, shouldBeGreaterThan(actual, expected));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsGreaterThanOrEqualTo(Integer actual, Integer expected) {
+        if (comparable.isLessThan(actual, expected)) {
+            handler.receive(actual, expected, shouldBeGreaterThanOrEqualTo(actual, expected));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsBetween(Integer actual, Integer start, Integer end) {
+        if (comparable.isLessThan(actual, start) || comparable.isGraterThan(actual, end)) {
+            handler.receive(actual, shouldBeBetween(actual, start, end));
             throw handler.getException();
         }
     }
@@ -188,16 +190,12 @@ public final class Integers extends Objects<Integer> implements IntegersInterfac
     }
 
     private void setAssertClose(Integer actual, Offset<Integer> offset) {
-        String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                offset.getBefore(actual) + " ~ " + offset.getAfter(actual));
-        handler.setDescription(handler.from(actual, scope));
+        handler.receive(actual, shouldBeCloseTo(actual, offset.getBefore(actual), offset.getAfter(actual)));
         throw handler.getException();
     }
 
     private void setAssertClose(Integer actual, Percentage<Integer> percentage) {
-        String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                percentage.getStartingRange() + " ~ " + percentage.getEndingRange());
-        handler.setDescription(handler.from(actual, scope));
+        handler.receive(actual, shouldBeCloseTo(actual, percentage.getStartingRange(), percentage.getEndingRange()));
         throw handler.getException();
     }
 }

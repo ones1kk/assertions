@@ -23,12 +23,12 @@ public final class CharSequenceErrorMessages {
 
     private static final Describable DESCRIBABLE = new Description();
 
-    public static String shouldBeEmpty(CharSequence actual, String placeholder) {
-        return DESCRIBABLE.as(placeholder, actual);
+    public static String shouldBeEmpty(CharSequence actual) {
+        return DESCRIBABLE.as("The given {} should be empty.", actual);
     }
 
-    public static String shouldNotBeEmpty(CharSequence actual, String placeholder) {
-        return DESCRIBABLE.as(placeholder, actual);
+    public static String shouldNotBeEmpty(CharSequence actual ) {
+        return DESCRIBABLE.as("The given {} should not be empty.", actual);
     }
 
     public static String shouldBeBlank(CharSequence actual) {

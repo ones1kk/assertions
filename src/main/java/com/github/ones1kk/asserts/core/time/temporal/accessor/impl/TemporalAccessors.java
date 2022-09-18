@@ -24,6 +24,9 @@ import com.github.ones1kk.asserts.core.time.temporal.accessor.TemporalAccessorsI
 
 import java.time.temporal.TemporalAccessor;
 
+import static com.github.ones1kk.asserts.core.message.TemporalErrorMessages.*;
+import static com.github.ones1kk.asserts.core.message.TemporalErrorMessages.shouldBeAfterOrEqualTo;
+
 public final class TemporalAccessors<ACTUAL extends TemporalAccessor & Comparable<ACTUAL>> extends Objects<ACTUAL> implements TemporalAccessorsInterface<ACTUAL> {
 
     private final ComparableTemporalAccessor<ACTUAL> comparable = new ComparableTemporalAccessorImpl<>();
@@ -35,7 +38,7 @@ public final class TemporalAccessors<ACTUAL extends TemporalAccessor & Comparabl
     @Override
     public void assertIsBefore(ACTUAL actual, ACTUAL expected) {
         if (comparable.isAfterOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is after or equal to {}"));
+            handler.receive(actual, expected, shouldBeBefore(actual, expected));
             throw handler.getException();
         }
     }
@@ -43,7 +46,7 @@ public final class TemporalAccessors<ACTUAL extends TemporalAccessor & Comparabl
     @Override
     public void assertIsBeforeOrEqualTo(ACTUAL actual, ACTUAL expected) {
         if (comparable.isAfter(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is after {}"));
+            handler.receive(actual, expected, shouldBeBeforeOrEqualTo(actual, expected));
             throw handler.getException();
         }
     }
@@ -51,7 +54,7 @@ public final class TemporalAccessors<ACTUAL extends TemporalAccessor & Comparabl
     @Override
     public void assertIsAfter(ACTUAL actual, ACTUAL expected) {
         if (comparable.isBeforeOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is before or equal to {}"));
+            handler.receive(actual, expected, shouldBeAfter(actual, expected));
             throw handler.getException();
         }
     }
@@ -59,6 +62,7 @@ public final class TemporalAccessors<ACTUAL extends TemporalAccessor & Comparabl
     @Override
     public void assertIsAfterOrEqualTo(ACTUAL actual, ACTUAL expected) {
         if (comparable.isBefore(actual, expected)) {
+            handler.receive(actual, expected, shouldBeAfterOrEqualTo(actual, expected));
             handler.setDescription(handler.from(actual, expected, "{} is before {}"));
             throw handler.getException();
         }

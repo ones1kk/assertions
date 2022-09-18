@@ -19,6 +19,7 @@ package com.github.ones1kk.asserts.core.lang.charsequence.impl;
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.lang.charsequence.CharSequencesInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
+import com.github.ones1kk.asserts.core.message.CharSequenceErrorMessages;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -33,7 +34,7 @@ public class CharSequences extends Objects<CharSequence> implements CharSequence
     @Override
     public void assertIsEmpty(CharSequence actual) {
         if (!StringUtils.isEmpty(actual)) {
-            handler.setDescription(handler.from(actual, "{} is not empty"));
+            handler.receive(actual, CharSequenceErrorMessages.shouldBeEmpty(actual));
             throw handler.getException();
         }
     }
@@ -41,7 +42,7 @@ public class CharSequences extends Objects<CharSequence> implements CharSequence
     @Override
     public void assertIsNotEmpty(CharSequence actual) {
         if (StringUtils.isEmpty(actual)) {
-            handler.setDescription(handler.from(actual, "{} is empty"));
+            handler.receive(actual, CharSequenceErrorMessages.shouldNotBeEmpty(actual));
             throw handler.getException();
         }
     }
@@ -49,7 +50,7 @@ public class CharSequences extends Objects<CharSequence> implements CharSequence
     @Override
     public void assertIsBlank(CharSequence actual) {
         if (StringUtils.isNotBlank(actual)) {
-            handler.setDescription(handler.from(actual, "{} is not blank"));
+            handler.receive(actual, CharSequenceErrorMessages.shouldBeBlank(actual));
             throw handler.getException();
         }
     }
@@ -57,7 +58,7 @@ public class CharSequences extends Objects<CharSequence> implements CharSequence
     @Override
     public void assertIsNotBlank(CharSequence actual) {
         if (StringUtils.isBlank(actual)) {
-            handler.setDescription(handler.from(actual, "{} is blank"));
+            handler.receive(actual, CharSequenceErrorMessages.shouldNotBeBlank(actual));
             throw handler.getException();
         }
     }
@@ -65,6 +66,7 @@ public class CharSequences extends Objects<CharSequence> implements CharSequence
     @Override
     public void assertIsEqualToIgnoreCase(CharSequence actual, CharSequence expected) {
         if (!StringUtils.equalsIgnoreCase(actual, expected)) {
+            handler.receive(actual, expected, CharSequenceErrorMessages.shouldBeEqualToIgnoreCase(actual, expected));
             handler.setDescription(handler.from(actual, expected, "{} is not equal as ignore case with {}"));
             throw handler.getException();
         }

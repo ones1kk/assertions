@@ -24,6 +24,9 @@ import com.github.ones1kk.asserts.core.time.localdatetime.LocalDateTimesInterfac
 
 import java.time.LocalDateTime;
 
+import static com.github.ones1kk.asserts.core.message.TemporalErrorMessages.*;
+import static com.github.ones1kk.asserts.core.message.TemporalErrorMessages.shouldBeAfterOrEqualTo;
+
 /**
  * <strong> The LocalDateTimes class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
  */
@@ -38,7 +41,7 @@ public final class LocalDateTimes<ACTUAL extends LocalDateTime> extends Objects<
     @Override
     public void assertIsBefore(ACTUAL actual, ACTUAL expected) {
         if (comparable.isAfterOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is after or equal to {}"));
+            handler.receive(actual, expected, shouldBeBefore(actual, expected));
             throw handler.getException();
         }
     }
@@ -46,7 +49,7 @@ public final class LocalDateTimes<ACTUAL extends LocalDateTime> extends Objects<
     @Override
     public void assertIsBeforeOrEqualTo(ACTUAL actual, ACTUAL expected) {
         if (comparable.isAfter(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is after {}"));
+            handler.receive(actual, expected, shouldBeBeforeOrEqualTo(actual, expected));
             throw handler.getException();
         }
     }
@@ -54,7 +57,7 @@ public final class LocalDateTimes<ACTUAL extends LocalDateTime> extends Objects<
     @Override
     public void assertIsAfter(ACTUAL actual, ACTUAL expected) {
         if (comparable.isBeforeOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is before or equal to {}"));
+            handler.receive(actual, expected, shouldBeAfter(actual, expected));
             throw handler.getException();
         }
     }
@@ -62,6 +65,7 @@ public final class LocalDateTimes<ACTUAL extends LocalDateTime> extends Objects<
     @Override
     public void assertIsAfterOrEqualTo(ACTUAL actual, ACTUAL expected) {
         if (comparable.isBefore(actual, expected)) {
+            handler.receive(actual, expected, shouldBeAfterOrEqualTo(actual, expected));
             handler.setDescription(handler.from(actual, expected, "{} is before {}"));
             throw handler.getException();
         }

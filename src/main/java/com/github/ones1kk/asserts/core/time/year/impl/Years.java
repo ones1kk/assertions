@@ -18,9 +18,12 @@ package com.github.ones1kk.asserts.core.time.year.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
+import com.github.ones1kk.asserts.core.message.YearErrorMessages;
 import com.github.ones1kk.asserts.core.time.year.YearsInterface;
 
 import java.time.Year;
+
+import static com.github.ones1kk.asserts.core.message.YearErrorMessages.*;
 
 /**
  * <strong> The Years class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
@@ -34,7 +37,7 @@ public final class Years extends Objects<Year> implements YearsInterface {
     @Override
     public void assertIsLeapYear(Year actual) {
         if (!actual.isLeap()) {
-            handler.setDescription(handler.from(actual, "{} is not leap year"));
+            handler.receive(actual, shouldBeLeapYear(actual));
             throw handler.getException();
         }
     }
@@ -42,7 +45,7 @@ public final class Years extends Objects<Year> implements YearsInterface {
     @Override
     public void assertIsNotLeapYear(Year actual) {
         if (actual.isLeap()) {
-            handler.setDescription(handler.from(actual, "{} is leap year"));
+            handler.receive(actual, shouldNotBeLeapYear(actual));
             throw handler.getException();
         }
     }

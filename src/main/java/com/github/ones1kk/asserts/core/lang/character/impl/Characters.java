@@ -22,6 +22,9 @@ import com.github.ones1kk.asserts.core.feature.comparable.lang.impl.ComparableLa
 import com.github.ones1kk.asserts.core.lang.character.CharactersInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
 
+import static com.github.ones1kk.asserts.core.message.CharacterErrorMessages.*;
+import static com.github.ones1kk.asserts.core.message.ComparableErrorMessages.*;
+
 /**
  * <strong> The Characters class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
  */
@@ -36,7 +39,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
     @Override
     public void assertIsLowerCase(Character actual) {
         if (!Character.isLowerCase(actual)) {
-            handler.setDescription(handler.from(actual, "{} is not lower case"));
+            handler.receive(actual, shouldBeLowerCase(actual));
             throw handler.getException();
         }
 
@@ -45,7 +48,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
     @Override
     public void assertIsNotLowerCase(Character actual) {
         if (Character.isLowerCase(actual)) {
-            handler.setDescription(handler.from(actual, "{} is lower case"));
+            handler.receive(actual, shouldNotBeLowerCase(actual));
             throw handler.getException();
         }
     }
@@ -53,7 +56,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
     @Override
     public void assertIsUpperCase(Character actual) {
         if (!Character.isUpperCase(actual)) {
-            handler.setDescription(handler.from(actual, "{} is not upper case"));
+            handler.receive(actual, shouldBeUpperCase(actual));
             throw handler.getException();
         }
     }
@@ -61,7 +64,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
     @Override
     public void assertIsNotUpperCase(Character actual) {
         if (Character.isUpperCase(actual)) {
-            handler.setDescription(handler.from(actual, "{} is upper case"));
+            handler.receive(actual, shouldNotBeUpperCase(actual));
             throw handler.getException();
         }
     }
@@ -69,7 +72,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
     @Override
     public void assertIsLetter(Character actual) {
         if (!Character.isLetter(actual)) {
-            handler.setDescription(handler.from(actual, "{} is not letter"));
+            handler.receive(actual, shouldBeLetter(actual));
             throw handler.getException();
         }
     }
@@ -77,7 +80,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
     @Override
     public void assertIsNotLetter(Character actual) {
         if (Character.isLetter(actual)) {
-            handler.setDescription(handler.from(actual, "{} is letter"));
+            handler.receive(actual, shouldNotBeLetter(actual));
             throw handler.getException();
         }
     }
@@ -85,7 +88,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
     @Override
     public void assertIsDigit(Character actual) {
         if (!Character.isDigit(actual)) {
-            handler.setDescription(handler.from(actual, "{} is not digit"));
+            handler.receive(actual, shouldBeDigit(actual));
             throw handler.getException();
         }
     }
@@ -93,7 +96,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
     @Override
     public void assertIsNotDigit(Character actual) {
         if (Character.isDigit(actual)) {
-            handler.setDescription(handler.from(actual, "{} is digit"));
+            handler.receive(actual, shouldNotBeDigit(actual));
             throw handler.getException();
         }
     }
@@ -101,7 +104,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
     @Override
     public void assertIsWhitespace(Character actual) {
         if (!Character.isWhitespace(actual)) {
-            handler.setDescription(handler.from(actual, "{} is not whitespace"));
+            handler.receive(actual, shouldBeWhitespace(actual));
             throw handler.getException();
         }
     }
@@ -109,7 +112,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
     @Override
     public void assertIsNotWhitespace(Character actual) {
         if (Character.isWhitespace(actual)) {
-            handler.setDescription(handler.from(actual, "{} is whitespace"));
+            handler.receive(actual, shouldNotBeWhitespace(actual));
             throw handler.getException();
         }
     }
@@ -117,7 +120,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
     @Override
     public void assertIsLessThan(Character actual, Character expected) {
         if (comparable.isGraterThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not less than {}"));
+            handler.receive(actual, expected, shouldBeLessThan(actual, expected));
             throw handler.getException();
         }
     }
@@ -125,7 +128,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
     @Override
     public void assertIsLessThanOrEqualTo(Character actual, Character expected) {
         if (comparable.isGraterThan(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not less than or equal to {}"));
+            handler.receive(actual, expected, shouldBeLessThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
     }
@@ -133,7 +136,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
     @Override
     public void assertIsGreaterThan(Character actual, Character expected) {
         if (comparable.isLessThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not greater than {}"));
+            handler.receive(actual, expected, shouldBeGreaterThan(actual, expected));
             throw handler.getException();
         }
     }
@@ -141,7 +144,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
     @Override
     public void assertIsGreaterThanOrEqualTo(Character actual, Character expected) {
         if (comparable.isLessThan(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not greater than or equal to {}"));
+            handler.receive(actual, expected, shouldBeGreaterThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
     }
@@ -149,8 +152,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
     @Override
     public void assertIsBetween(Character actual, Character start, Character end) {
         if (comparable.isLessThan(actual, start) || comparable.isGraterThan(actual, end)) {
-            String description = handler.getDescribable().as("{} is not between {} and {}", actual, start, end);
-            handler.setDescription(handler.from(actual, description));
+            handler.receive(actual, shouldBeBetween(actual, start, end));
             throw handler.getException();
         }
     }

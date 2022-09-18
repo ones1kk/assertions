@@ -23,8 +23,12 @@ import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
 import com.github.ones1kk.asserts.core.lang.number.flot.FloatsInterface;
 import com.github.ones1kk.asserts.core.lang.object.impl.Objects;
+import com.github.ones1kk.asserts.core.message.NumerableErrorMessages;
 
 import static com.github.ones1kk.asserts.core.feature.number.arithmetic.NumerableUnit.of;
+import static com.github.ones1kk.asserts.core.message.ComparableErrorMessages.*;
+import static com.github.ones1kk.asserts.core.message.DataErrorMessages.shouldBeCloseTo;
+import static com.github.ones1kk.asserts.core.message.DoublesErrorMessages.*;
 
 /**
  * <strong> The Floats class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
@@ -40,7 +44,7 @@ public final class Floats extends Objects<Float> implements FloatsInterface<Floa
     @Override
     public void assertIsInfinity(Float actual) {
         if (!Float.isInfinite(actual)) {
-            handler.setDescription(handler.from(actual, "{} is not infinity"));
+            handler.receive(actual, shouldBeInfinity(actual));
             throw handler.getException();
         }
     }
@@ -48,7 +52,7 @@ public final class Floats extends Objects<Float> implements FloatsInterface<Floa
     @Override
     public void assertIsFinite(Float actual) {
         if (!Float.isFinite(actual)) {
-            handler.setDescription(handler.from(actual, "{} is not finite"));
+            handler.receive(actual, shouldBeFinite(actual));
             throw handler.getException();
         }
     }
@@ -56,49 +60,7 @@ public final class Floats extends Objects<Float> implements FloatsInterface<Floa
     @Override
     public void assertIsNaN(Float actual) {
         if (!Float.isNaN(actual)) {
-            handler.setDescription(handler.from(actual, "{} is not NaN"));
-            throw handler.getException();
-        }
-    }
-
-    @Override
-    public void assertIsLessThan(Float actual, Float expected) {
-        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not less than {}"));
-            throw handler.getException();
-        }
-    }
-
-    @Override
-    public void assertIsLessThanOrEqualTo(Float actual, Float expected) {
-        if (comparable.isGraterThan(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not less than or equal to {}"));
-            throw handler.getException();
-        }
-    }
-
-    @Override
-    public void assertIsGreaterThan(Float actual, Float expected) {
-        if (comparable.isLessThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not greater than {}"));
-            throw handler.getException();
-        }
-    }
-
-    @Override
-    public void assertIsGreaterThanOrEqualTo(Float actual, Float expected) {
-        if (comparable.isLessThan(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not greater than or equal to {}"));
-            throw handler.getException();
-        }
-    }
-
-    @Override
-    public void assertIsBetween(Float actual, Float start, Float end) {
-        if (comparable.isLessThan(actual, start)
-                || comparable.isGraterThan(actual, end)) {
-            String description = handler.from("{} is not between {} and {}", actual, start, end);
-            handler.setDescription(handler.from(actual, description));
+            handler.receive(actual, shouldBeNaN(actual));
             throw handler.getException();
         }
     }
@@ -106,7 +68,7 @@ public final class Floats extends Objects<Float> implements FloatsInterface<Floa
     @Override
     public void assertIsPositive(Float actual) {
         if (comparable.isLessThanOrEqualTo(actual, 0F)) {
-            handler.setDescription(handler.from(actual, "{} is not positive"));
+            handler.receive(actual, NumerableErrorMessages.shouldNotBePositive(actual));
             throw handler.getException();
         }
     }
@@ -114,7 +76,7 @@ public final class Floats extends Objects<Float> implements FloatsInterface<Floa
     @Override
     public void assertIsNotPositive(Float actual) {
         if (comparable.isGraterThan(actual, 0F)) {
-            handler.setDescription(handler.from(actual, "{} is positive"));
+            handler.receive(actual, NumerableErrorMessages.shouldNotBePositive(actual));
             throw handler.getException();
         }
     }
@@ -122,7 +84,7 @@ public final class Floats extends Objects<Float> implements FloatsInterface<Floa
     @Override
     public void assertIsNegative(Float actual) {
         if (comparable.isGraterThanOrEqualTo(actual, 0F)) {
-            handler.setDescription(handler.from(actual, "{} is not negative"));
+            handler.receive(actual, NumerableErrorMessages.shouldBeNegative(actual));
             throw handler.getException();
         }
     }
@@ -130,7 +92,7 @@ public final class Floats extends Objects<Float> implements FloatsInterface<Floa
     @Override
     public void assertIsNotNegative(Float actual) {
         if (comparable.isLessThan(actual, 0F)) {
-            handler.setDescription(handler.from(actual, "{} is negative"));
+            handler.receive(actual, NumerableErrorMessages.shouldNotBeNegative(actual));
             throw handler.getException();
         }
     }
@@ -138,7 +100,7 @@ public final class Floats extends Objects<Float> implements FloatsInterface<Floa
     @Override
     public void assertIsZero(Float actual) {
         if (of(actual).isNotZero()) {
-            handler.setDescription(handler.from(actual, "{} is not zero"));
+            handler.receive(actual, NumerableErrorMessages.shouldBeZero(actual));
             throw handler.getException();
         }
     }
@@ -146,7 +108,47 @@ public final class Floats extends Objects<Float> implements FloatsInterface<Floa
     @Override
     public void assertIsNotZero(Float actual) {
         if (of(actual).isZero()) {
-            handler.setDescription(handler.from(actual, "{} is zero"));
+            handler.receive(actual, NumerableErrorMessages.shouldNotBeZero(actual));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsLessThan(Float actual, Float expected) {
+        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
+            handler.receive(actual, shouldBeLessThan(actual, expected));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsLessThanOrEqualTo(Float actual, Float expected) {
+        if (comparable.isGraterThan(actual, expected)) {
+            handler.receive(actual, expected, shouldBeLessThanOrEqualTo(actual, expected));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsGreaterThan(Float actual, Float expected) {
+        if (comparable.isLessThanOrEqualTo(actual, expected)) {
+            handler.receive(actual, expected, shouldBeGreaterThan(actual, expected));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsGreaterThanOrEqualTo(Float actual, Float expected) {
+        if (comparable.isLessThan(actual, expected)) {
+            handler.receive(actual, expected, shouldBeGreaterThanOrEqualTo(actual, expected));
+            throw handler.getException();
+        }
+    }
+
+    @Override
+    public void assertIsBetween(Float actual, Float start, Float end) {
+        if (comparable.isLessThan(actual, start) || comparable.isGraterThan(actual, end)) {
+            handler.receive(actual, shouldBeBetween(actual, start, end));
             throw handler.getException();
         }
     }
@@ -180,16 +182,12 @@ public final class Floats extends Objects<Float> implements FloatsInterface<Floa
     }
 
     private void setAssertClose(Float actual, Offset<Float> offset) {
-        String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                offset.getBefore(actual) + " ~ " + offset.getAfter(actual));
-        handler.setDescription(handler.from(actual, scope));
+        handler.receive(actual, shouldBeCloseTo(actual, offset.getBefore(actual), offset.getAfter(actual)));
         throw handler.getException();
     }
 
     private void setAssertClose(Float actual, Percentage<Float> percentage) {
-        String scope = handler.getDescribable().as("{} have to close to {}", actual,
-                percentage.getStartingRange() + " ~ " + percentage.getEndingRange());
-        handler.setDescription(handler.from(actual, scope));
+        handler.receive(actual, shouldBeCloseTo(actual, percentage.getStartingRange(), percentage.getEndingRange()));
         throw handler.getException();
     }
 }

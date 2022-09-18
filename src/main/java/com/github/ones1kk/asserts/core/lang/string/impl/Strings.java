@@ -21,6 +21,9 @@ import com.github.ones1kk.asserts.core.feature.comparable.lang.ComparableLanguag
 import com.github.ones1kk.asserts.core.feature.comparable.lang.impl.ComparableLanguageImpl;
 import com.github.ones1kk.asserts.core.lang.charsequence.impl.CharSequences;
 import com.github.ones1kk.asserts.core.lang.string.StringsInterface;
+import com.github.ones1kk.asserts.core.message.ComparableErrorMessages;
+
+import static com.github.ones1kk.asserts.core.message.ComparableErrorMessages.*;
 
 /**
  * <strong> The Strings class inherits {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
@@ -36,7 +39,7 @@ public final class Strings extends CharSequences implements StringsInterface<Str
     @Override
     public void assertIsLessThan(String actual, String expected) {
         if (comparable.isGraterThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not less than {}"));
+            handler.receive(actual, shouldBeLessThan(actual, expected));
             throw handler.getException();
         }
     }
@@ -44,7 +47,7 @@ public final class Strings extends CharSequences implements StringsInterface<Str
     @Override
     public void assertIsLessThanOrEqualTo(String actual, String expected) {
         if (comparable.isGraterThan(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not less than or equal to {}"));
+            handler.receive(actual, expected, shouldBeLessThanOrEqualTo(actual ,expected));
             throw handler.getException();
         }
     }
@@ -52,7 +55,7 @@ public final class Strings extends CharSequences implements StringsInterface<Str
     @Override
     public void assertIsGreaterThan(String actual, String expected) {
         if (comparable.isLessThanOrEqualTo(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not greater than {}"));
+            handler.receive(actual, expected, shouldBeGreaterThan(actual ,expected));
             throw handler.getException();
         }
     }
@@ -60,7 +63,7 @@ public final class Strings extends CharSequences implements StringsInterface<Str
     @Override
     public void assertIsGreaterThanOrEqualTo(String actual, String expected) {
         if (comparable.isLessThan(actual, expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not greater than or equal to {}"));
+            handler.receive(actual, expected, shouldBeGreaterThanOrEqualTo(actual ,expected));
             throw handler.getException();
         }
     }
@@ -68,8 +71,7 @@ public final class Strings extends CharSequences implements StringsInterface<Str
     @Override
     public void assertIsBetween(String actual, String start, String end) {
         if (comparable.isLessThan(actual, start) || comparable.isGraterThan(actual, end)) {
-            String description = handler.getDescribable().as("{} is not between {} and {}", actual, start, end);
-            handler.setDescription(handler.from(actual, description));
+            handler.receive(actual, shouldBeBetween(actual, start, end));
             throw handler.getException();
         }
     }

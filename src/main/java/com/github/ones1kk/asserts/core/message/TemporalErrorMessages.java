@@ -20,6 +20,7 @@ import com.github.ones1kk.asserts.core.description.Describable;
 import com.github.ones1kk.asserts.core.description.impl.Description;
 
 import java.time.temporal.Temporal;
+import java.time.temporal.TemporalAccessor;
 
 public final class TemporalErrorMessages {
 
@@ -28,19 +29,19 @@ public final class TemporalErrorMessages {
     private TemporalErrorMessages() {
     }
 
-    public static String shouldBeBefore(Temporal actual, Temporal expected) {
+    public static String shouldBeBefore(TemporalAccessor actual, TemporalAccessor expected) {
         return DESCRIBABLE.as("The given {} should be before than {}.", actual, expected);
     }
 
-    public static String shouldBeBeforeOrEqualTo(Temporal actual, Temporal expected) {
+    public static String shouldBeBeforeOrEqualTo(TemporalAccessor actual, TemporalAccessor expected) {
         return DESCRIBABLE.as("The given {} should be before than or equal to {}.", actual, expected);
     }
 
-    public static String shouldBeAfter(Temporal actual, Temporal expected) {
+    public static String shouldBeAfter(TemporalAccessor actual, TemporalAccessor expected) {
         return DESCRIBABLE.as("The given {} should be after than {}.", actual, expected);
     }
 
-    public static String shouldBeAfterOrEqualTo(Temporal actual, Temporal expected) {
+    public static String shouldBeAfterOrEqualTo(TemporalAccessor actual, TemporalAccessor expected) {
         return DESCRIBABLE.as("The given {} should be after than or equal to {}.", actual, expected);
     }
 }
