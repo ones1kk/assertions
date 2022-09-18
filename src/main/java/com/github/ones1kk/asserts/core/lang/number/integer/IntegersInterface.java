@@ -19,6 +19,11 @@ package com.github.ones1kk.asserts.core.lang.number.integer;
 import com.github.ones1kk.asserts.core.feature.comparable.Comparable;
 import com.github.ones1kk.asserts.core.feature.number.Numerable;
 
+/**
+ * <strong> The IntegersInterface class is for a having Integer Type, assertable assertion implementation class.</strong>
+ *
+ * @param <ACTUAL>
+ */
 public interface IntegersInterface<ACTUAL> extends Comparable<ACTUAL>, Numerable<Integer> {
 
     void assertIsOdd(ACTUAL actual);

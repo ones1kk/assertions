@@ -21,7 +21,7 @@ import com.github.ones1kk.asserts.core.feature.number.NumerableAssert;
 import com.github.ones1kk.asserts.core.lang.number.DoubleTypeAssertInterface;
 
 /**
- * <strong> The FloatAssertInterface class is for a having Character type, assertable interface class.</strong>
+ * <strong> The FloatAssertInterface class is for a having Float type, assertable interface class.</strong>
  *
  * @param <SELF>
  */
