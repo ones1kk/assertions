@@ -2,9 +2,11 @@ package com.github.ones1kk.asserts.core.lang.number.bte;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
 import com.github.ones1kk.asserts.core.feature.data.Offset;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractByteAssertTest {
@@ -30,14 +32,16 @@ class AbstractByteAssertTest {
         assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractByteAssert.class));
         assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(Byte.class));
 
-        assert2.isNull();
-        assert1.isNotNull();
-        assert1.isSameAs(actual1);
-        assert1.isNotSameAs(assert1);
-        assert1.isEqualTo(actual1);
-        assert1.isNotEqualTo(assert1);
-        assert1.isAssignableFrom(Byte.class);
-        assert1.isNotAssignableFrom(AbstractByteAssert.class);
+        assertThatNoException().isThrownBy(() -> {
+            assert2.isNull();
+            assert1.isNotNull();
+            assert1.isSameAs(actual1);
+            assert1.isNotSameAs(assert1);
+            assert1.isEqualTo(actual1);
+            assert1.isNotEqualTo(assert1);
+            assert1.isAssignableFrom(Byte.class);
+            assert1.isNotAssignableFrom(AbstractByteAssert.class);
+        });
     }
 
     @Test
@@ -75,22 +79,25 @@ class AbstractByteAssertTest {
         assertThrows(AssertException.class, () -> assert5.isCloseTo((byte) 5, 2.0));
         assertThrows(AssertException.class, () -> assert5.isNotCloseTo((byte) 95, 10.0));
 
-        assert1.isOdd();
-        assert4.isNotOdd();
-        assert4.isEven();
-        assert1.isNotEven();
-        assert1.isPositive();
-        assert2.isNotPositive();
-        assert2.isNegative();
-        assert1.isNotNegative();
-        assert3.isZero();
-        assert1.isNotZero();
 
-        assert5.isCloseTo((byte) 80, Offset.offset((byte) 20));
-        assert5.isNotCloseTo((byte) 70, Offset.offset((byte) 10));
+        assertThatNoException().isThrownBy(() -> {
+            assert1.isOdd();
+            assert4.isNotOdd();
+            assert4.isEven();
+            assert1.isNotEven();
+            assert1.isPositive();
+            assert2.isNotPositive();
+            assert2.isNegative();
+            assert1.isNotNegative();
+            assert3.isZero();
+            assert1.isNotZero();
 
-        assert1.isCloseTo((byte) 1, 3.0);
-        assert1.isNotCloseTo((byte) 5, 1.0);
+            assert5.isCloseTo((byte) 80, Offset.offset((byte) 20));
+            assert5.isNotCloseTo((byte) 70, Offset.offset((byte) 10));
+
+            assert1.isCloseTo((byte) 1, 3.0);
+            assert1.isNotCloseTo((byte) 5, 1.0);
+        });
     }
 
     @Test
@@ -140,24 +147,26 @@ class AbstractByteAssertTest {
         assertThrows(AssertException.class,
                 () -> assert3.isBetween(expected1, expected2));
 
-        // actual < expected
-        assert1.isLessThan(expected2);
 
-        // actual > expected
-        assert2.isGreaterThan(expected1);
+        assertThatNoException().isThrownBy(() -> {
+            // actual < expected
+            assert1.isLessThan(expected2);
 
-        // actual == expected
-        assert1.isLessThanOrEqualTo(expected1);
-        // actual < expected
-        assert1.isLessThanOrEqualTo(expected2);
+            // actual > expected
+            assert2.isGreaterThan(expected1);
 
-        // actual == expected
-        assert3.isGreaterThanOrEqualTo(expected3);
-        // actual >= expected
-        assert3.isGreaterThanOrEqualTo(expected2);
+            // actual == expected
+            assert1.isLessThanOrEqualTo(expected1);
+            // actual < expected
+            assert1.isLessThanOrEqualTo(expected2);
 
-        // start < actual < end
-        assert2.isBetween(expected1, expected3);
+            // actual == expected
+            assert3.isGreaterThanOrEqualTo(expected3);
+            // actual >= expected
+            assert3.isGreaterThanOrEqualTo(expected2);
+
+            // start < actual < end
+            assert2.isBetween(expected1, expected3);
+        });
     }
-
 }

@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.collection.map.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,6 +13,7 @@ import java.util.Map;
 
 import static java.util.Collections.emptyMap;
 import static java.util.Collections.singletonMap;
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class MapsTest {
@@ -60,30 +62,32 @@ class MapsTest {
 
         assertThrows(Exception.class, () -> maps.assertIsBetweenSizeOf(actual1, actual4, actual3));
 
-        maps.assertIsEmpty(emptyMap());
-        maps.assertIsNotEmpty(actual1);
+        assertThatNoException().isThrownBy(() -> {
+            maps.assertIsEmpty(emptyMap());
+            maps.assertIsNotEmpty(actual1);
 
-        maps.assertIsNullOrEmpty(null);
-        maps.assertIsNullOrEmpty(actual2);
+            maps.assertIsNullOrEmpty(null);
+            maps.assertIsNullOrEmpty(actual2);
 
-        maps.assertContainsKey(actual1, "a");
-        maps.assertContainsAllKey(actual1, actual3);
+            maps.assertContainsKey(actual1, "a");
+            maps.assertContainsAllKey(actual1, actual3);
 
-        maps.assertContainsValue(actual1, "a");
-        maps.assertContainsAllValue(actual1, actual3);
+            maps.assertContainsValue(actual1, "a");
+            maps.assertContainsAllValue(actual1, actual3);
 
-        maps.assertHasSizeOf(actual1, 1);
-        maps.assertHasSameSizeOf(actual1, actual3);
-        maps.assertDoesNotHaveSameSizeOf(actual1, actual2);
+            maps.assertHasSizeOf(actual1, 1);
+            maps.assertHasSameSizeOf(actual1, actual3);
+            maps.assertDoesNotHaveSameSizeOf(actual1, actual2);
 
-        maps.assertIsSmallerThan(actual1, actual4);
-        maps.assertIsSmallerThanOrEqualTo(actual1, actual3);
-        maps.assertIsSmallerThanOrEqualTo(actual1, actual4);
+            maps.assertIsSmallerThan(actual1, actual4);
+            maps.assertIsSmallerThanOrEqualTo(actual1, actual3);
+            maps.assertIsSmallerThanOrEqualTo(actual1, actual4);
 
-        maps.assertIsLargerThan(actual4, actual1);
-        maps.assertIsLargerThanOrEqualTo(actual4, actual1);
-        maps.assertIsLargerThanOrEqualTo(actual4, actual4);
+            maps.assertIsLargerThan(actual4, actual1);
+            maps.assertIsLargerThanOrEqualTo(actual4, actual1);
+            maps.assertIsLargerThanOrEqualTo(actual4, actual4);
 
-        maps.assertIsBetweenSizeOf(actual1, actual2, actual4);
+            maps.assertIsBetweenSizeOf(actual1, actual2, actual4);
+        });
     }
 }

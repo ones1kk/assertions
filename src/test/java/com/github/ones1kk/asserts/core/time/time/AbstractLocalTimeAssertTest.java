@@ -2,11 +2,13 @@ package com.github.ones1kk.asserts.core.time.time;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
 import com.github.ones1kk.asserts.core.time.model.LocalTimeAssert;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalTime;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractLocalTimeAssertTest {
@@ -29,10 +31,12 @@ class AbstractLocalTimeAssertTest {
         assertThrows(AssertException.class, assert2::isBeforeNoon);
         assertThrows(AssertException.class, assert2::isBeforeOrEqualToNoon);
 
-        assert1.isBeforeNoon();
-        assert1.isBeforeOrEqualToNoon();
-        assert2.isAfterOrEqualToNoon();
-        assert2.isAfternoon();
-    }
 
+        assertThatNoException().isThrownBy(() -> {
+            assert1.isBeforeNoon();
+            assert1.isBeforeOrEqualToNoon();
+            assert2.isAfterOrEqualToNoon();
+            assert2.isAfternoon();
+        });
+    }
 }

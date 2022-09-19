@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.collection.list;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -10,6 +11,7 @@ import java.util.Objects;
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractListAssertTest {
@@ -34,13 +36,15 @@ class AbstractListAssertTest {
         assertThrows(AssertException.class, () -> assert1.isNotEqualTo(actual1));
         assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractListAssert.class));
 
-        assert2.isNull();
-        assert1.isNotNull();
-        assert1.isSameAs(actual1);
-        assert1.isNotSameAs(assert1);
-        assert1.isEqualTo(actual1);
-        assert1.isNotEqualTo(assert1);
-        assert1.isNotAssignableFrom(AbstractListAssert.class);
+        assertThatNoException().isThrownBy(() -> {
+            assert2.isNull();
+            assert1.isNotNull();
+            assert1.isSameAs(actual1);
+            assert1.isNotSameAs(assert1);
+            assert1.isEqualTo(actual1);
+            assert1.isNotEqualTo(assert1);
+            assert1.isNotAssignableFrom(AbstractListAssert.class);
+        });
     }
 
     @Test
@@ -86,29 +90,31 @@ class AbstractListAssertTest {
 
         assertThrows(AssertException.class, () -> assert1.isBetweenSizeOf(asList("1", "2", "3", "4"), asList("1", "2", "3", "4", "5")));
 
-        assert3.isEmpty();
-        assert1.isNotEmpty();
-        assert2.isNullOrEmpty();
-        assert3.isNullOrEmpty();
-        assert1.contains("2");
-        assert1.doesNotContain("4");
-        assert1.containsAll("1", "2");
-        assert1.containsAny("3", "4", "5");
-        assert4.containsNull();
-        assert1.doesNotContainNull();
-        assert1.allMatch(Objects::nonNull);
-        assert1.noneMatch(Objects::isNull);
+        assertThatNoException().isThrownBy(() -> {
+            assert3.isEmpty();
+            assert1.isNotEmpty();
+            assert2.isNullOrEmpty();
+            assert3.isNullOrEmpty();
+            assert1.contains("2");
+            assert1.doesNotContain("4");
+            assert1.containsAll("1", "2");
+            assert1.containsAny("3", "4", "5");
+            assert4.containsNull();
+            assert1.doesNotContainNull();
+            assert1.allMatch(Objects::nonNull);
+            assert1.noneMatch(Objects::isNull);
 
-        assert1.isSmallerThan(asList("1", "2", "3", "4"));
+            assert1.isSmallerThan(asList("1", "2", "3", "4"));
 
-        assert1.isSmallerThanOrEqualTo(asList("1", "2", "3", "4"));
-        assert1.isSmallerThanOrEqualTo(asList("1", "2", "3"));
+            assert1.isSmallerThanOrEqualTo(asList("1", "2", "3", "4"));
+            assert1.isSmallerThanOrEqualTo(asList("1", "2", "3"));
 
-        assert1.isLargerThan(singletonList("1"));
+            assert1.isLargerThan(singletonList("1"));
 
-        assert1.isLargerThanOrEqualTo(singletonList("1"));
-        assert1.isLargerThanOrEqualTo(actual1);
+            assert1.isLargerThanOrEqualTo(singletonList("1"));
+            assert1.isLargerThanOrEqualTo(actual1);
 
-        assert1.isBetweenSizeOf(singletonList("1"), asList("1", "2", "3", "4"));
+            assert1.isBetweenSizeOf(singletonList("1"), asList("1", "2", "3", "4"));
+        });
     }
 }

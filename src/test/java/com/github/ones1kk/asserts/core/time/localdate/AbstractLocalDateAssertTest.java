@@ -2,11 +2,13 @@ package com.github.ones1kk.asserts.core.time.localdate;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
 import com.github.ones1kk.asserts.core.time.model.LocalDateAssert;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractLocalDateAssertTest {
@@ -32,16 +34,17 @@ class AbstractLocalDateAssertTest {
         assertThrows(AssertException.class, () -> assert1.isAfter(actual1));
         assertThrows(AssertException.class, () -> assert1.isAfterOrEqualTo(LocalDate.of(1995, 3, 1)));
 
-        assert1.isEqualTo(actual1);
-        assert1.isNotEqualTo(LocalDate.of(1995, 1, 1));
+        assertThatNoException().isThrownBy(() -> {
+            assert1.isEqualTo(actual1);
+            assert1.isNotEqualTo(LocalDate.of(1995, 1, 1));
 
-        assert1.isBefore(LocalDate.of(1995, 3, 1));
-        assert1.isBeforeOrEqualTo(actual1);
-        assert1.isBeforeOrEqualTo(LocalDate.of(1995, 3, 1));
+            assert1.isBefore(LocalDate.of(1995, 3, 1));
+            assert1.isBeforeOrEqualTo(actual1);
+            assert1.isBeforeOrEqualTo(LocalDate.of(1995, 3, 1));
 
-        assert1.isAfter(LocalDate.of(1995, 1, 1));
-        assert1.isAfterOrEqualTo(actual1);
-        assert1.isAfterOrEqualTo(LocalDate.of(1995, 1, 1));
+            assert1.isAfter(LocalDate.of(1995, 1, 1));
+            assert1.isAfterOrEqualTo(actual1);
+            assert1.isAfterOrEqualTo(LocalDate.of(1995, 1, 1));
+        });
     }
-
 }

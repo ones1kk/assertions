@@ -1,12 +1,14 @@
 package com.github.ones1kk.asserts.core.lang.string.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class StringsTest {
@@ -63,25 +65,24 @@ class StringsTest {
         assertThrows(Exception.class,
                 () -> strings.assertIsBetween("C", "A", "B"));
 
+        assertThatNoException().isThrownBy(() -> {
+            strings.assertIsBlank(actual2);
+            strings.assertIsNotBlank(actual1);
+            strings.assertIsEmpty("");
+            strings.assertIsNotEmpty(actual1);
+            strings.assertIsEqualToIgnoreCase(actual1, "ACTUAL");
+            strings.assertIsEqualToIgnoreCase(actual1, "actual");
 
-        strings.assertIsBlank(actual2);
-        strings.assertIsNotBlank(actual1);
-        strings.assertIsEmpty("");
-        strings.assertIsNotEmpty(actual1);
-        strings.assertIsEqualToIgnoreCase(actual1, "ACTUAL");
-        strings.assertIsEqualToIgnoreCase(actual1, "actual");
+            strings.assertIsLessThan("4", "7");
+            strings.assertIsLessThanOrEqualTo("4", "7");
+            strings.assertIsLessThanOrEqualTo("4", "4");
 
-        strings.assertIsLessThan("4", "7");
-        strings.assertIsLessThanOrEqualTo("4", "7");
-        strings.assertIsLessThanOrEqualTo("4", "4");
+            strings.assertIsGreaterThan("7", "4");
+            strings.assertIsGreaterThanOrEqualTo("7", "4");
+            strings.assertIsGreaterThanOrEqualTo("4", "4");
 
-        strings.assertIsGreaterThan("7", "4");
-        strings.assertIsGreaterThanOrEqualTo("7", "4");
-        strings.assertIsGreaterThanOrEqualTo("4", "4");
-
-        // start < actual < end
-        strings.assertIsBetween("B", "A", "C");
-
+            // start < actual < end
+            strings.assertIsBetween("B", "A", "C");
+        });
     }
-
 }

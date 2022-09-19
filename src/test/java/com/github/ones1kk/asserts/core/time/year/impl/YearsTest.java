@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.time.year.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.time.Year;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class YearsTest {
@@ -37,8 +39,9 @@ class YearsTest {
         assertThrows(Exception.class, () -> years.assertIsLeapYear(actual1));
         assertThrows(Exception.class, () -> years.assertIsNotLeapYear(actual2));
 
-        years.assertIsLeapYear(actual2);
-        years.assertIsNotLeapYear(actual1);
+        assertThatNoException().isThrownBy(() -> {
+            years.assertIsLeapYear(actual2);
+            years.assertIsNotLeapYear(actual1);
+        });
     }
-
 }

@@ -1,9 +1,11 @@
 package com.github.ones1kk.asserts.core.lang.bolean;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractBooleanAssertTest {
@@ -34,16 +36,18 @@ class AbstractBooleanAssertTest {
         assertThrows(AssertException.class, assert1::isFalse);
         assertThrows(AssertException.class, assert3::isTrue);
 
-        assert2.isNull();
-        assert1.isNotNull();
-        assert1.isSameAs(actual1);
-        assert1.isNotSameAs(assert1);
-        assert1.isEqualTo(actual1);
-        assert1.isNotEqualTo(assert1);
-        assert1.isAssignableFrom(Boolean.class);
-        assert1.isNotAssignableFrom(AbstractBooleanAssert.class);
-        assert1.isTrue();
-        assert3.isFalse();
+        assertThatNoException().isThrownBy(() -> {
+            assert2.isNull();
+            assert1.isNotNull();
+            assert1.isSameAs(actual1);
+            assert1.isNotSameAs(assert1);
+            assert1.isEqualTo(actual1);
+            assert1.isNotEqualTo(assert1);
+            assert1.isAssignableFrom(Boolean.class);
+            assert1.isNotAssignableFrom(AbstractBooleanAssert.class);
+            assert1.isTrue();
+            assert3.isFalse();
+        });
     }
 
 }

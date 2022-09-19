@@ -1,9 +1,11 @@
 package com.github.ones1kk.asserts.core.lang.character;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractCharacterAssertTest {
@@ -28,14 +30,16 @@ class AbstractCharacterAssertTest {
         assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractCharacterAssert.class));
         assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(Character.class));
 
-        assert2.isNull();
-        assert1.isNotNull();
-        assert1.isSameAs(actual1);
-        assert1.isNotSameAs(assert1);
-        assert1.isEqualTo(actual1);
-        assert1.isNotEqualTo(assert1);
-        assert1.isAssignableFrom(Character.class);
-        assert1.isNotAssignableFrom(AbstractCharacterAssert.class);
+        assertThatNoException().isThrownBy(() -> {
+            assert2.isNull();
+            assert1.isNotNull();
+            assert1.isSameAs(actual1);
+            assert1.isNotSameAs(assert1);
+            assert1.isEqualTo(actual1);
+            assert1.isNotEqualTo(assert1);
+            assert1.isAssignableFrom(Character.class);
+            assert1.isNotAssignableFrom(AbstractCharacterAssert.class);
+        });
     }
 
     @Test
@@ -67,17 +71,18 @@ class AbstractCharacterAssertTest {
         assertThrows(AssertException.class, assert1::isWhitespace);
         assertThrows(AssertException.class, assert3::isNotWhitespace);
 
-        assert5.isUpperCase();
-        assert1.isNotUpperCase();
-        assert1.isLowerCase();
-        assert5.isNotLowerCase();
-        assert1.isLetter();
-        assert4.isNotLetter();
-        assert4.isDigit();
-        assert5.isNotDigit();
-        assert3.isWhitespace();
-        assert1.isNotWhitespace();
-
+        assertThatNoException().isThrownBy(() -> {
+            assert5.isUpperCase();
+            assert1.isNotUpperCase();
+            assert1.isLowerCase();
+            assert5.isNotLowerCase();
+            assert1.isLetter();
+            assert4.isNotLetter();
+            assert4.isDigit();
+            assert5.isNotDigit();
+            assert3.isWhitespace();
+            assert1.isNotWhitespace();
+        });
     }
 
     @Test
@@ -127,25 +132,26 @@ class AbstractCharacterAssertTest {
         assertThrows(AssertException.class,
                 () -> assert3.isBetween(expected1, expected2));
 
-        // actual < expected
-        assert1.isLessThan(expected2);
 
-        // actual > expected
-        assert2.isGreaterThan(expected1);
+        assertThatNoException().isThrownBy(() -> {
+            // actual < expected
+            assert1.isLessThan(expected2);
 
-        // actual == expected
-        assert1.isLessThanOrEqualTo(expected1);
-        // actual < expected
-        assert1.isLessThanOrEqualTo(expected2);
+            // actual > expected
+            assert2.isGreaterThan(expected1);
 
-        // actual == expected
-        assert3.isGreaterThanOrEqualTo(expected3);
-        // actual >= expected
-        assert3.isGreaterThanOrEqualTo(expected2);
+            // actual == expected
+            assert1.isLessThanOrEqualTo(expected1);
+            // actual < expected
+            assert1.isLessThanOrEqualTo(expected2);
 
-        // start < actual < end
-        assert2.isBetween(expected1, expected3);
+            // actual == expected
+            assert3.isGreaterThanOrEqualTo(expected3);
+            // actual >= expected
+            assert3.isGreaterThanOrEqualTo(expected2);
+
+            // start < actual < end
+            assert2.isBetween(expected1, expected3);
+        });
     }
-
-
 }

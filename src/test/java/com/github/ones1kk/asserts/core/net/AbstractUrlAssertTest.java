@@ -1,11 +1,13 @@
 package com.github.ones1kk.asserts.core.net;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.net.URL;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -33,14 +35,16 @@ class AbstractUrlAssertTest {
         assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractUrlAssert.class));
         assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(URL.class));
 
-        assert2.isNull();
-        assert1.isNotNull();
-        assert1.isSameAs(actual1);
-        assert1.isNotSameAs(assert1);
-        assert1.isEqualTo(actual1);
-        assert1.isNotEqualTo(assert1);
-        assert1.isAssignableFrom(URL.class);
-        assert1.isNotAssignableFrom(AbstractUrlAssert.class);
+        assertThatNoException().isThrownBy(() -> {
+            assert2.isNull();
+            assert1.isNotNull();
+            assert1.isSameAs(actual1);
+            assert1.isNotSameAs(assert1);
+            assert1.isEqualTo(actual1);
+            assert1.isNotEqualTo(assert1);
+            assert1.isAssignableFrom(URL.class);
+            assert1.isNotAssignableFrom(AbstractUrlAssert.class);
+        });
     }
 
     @Test
@@ -60,8 +64,10 @@ class AbstractUrlAssertTest {
         assertThat(actual1.getPort()).isEqualTo(-1);
         assertThat(actual1.getPath()).isEmpty();
 
-        assert1.hasHost("www.google.com");
-        assert1.hasPort(443);
-        assert1.doesNotHavePath();
+        assertThatNoException().isThrownBy(() -> {
+            assert1.hasHost("www.google.com");
+            assert1.hasPort(443);
+            assert1.doesNotHavePath();
+        });
     }
 }

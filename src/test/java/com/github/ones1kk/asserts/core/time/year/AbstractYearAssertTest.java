@@ -2,11 +2,13 @@ package com.github.ones1kk.asserts.core.time.year;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
 import com.github.ones1kk.asserts.core.time.model.YearAssert;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.Year;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractYearAssertTest {
@@ -36,17 +38,18 @@ class AbstractYearAssertTest {
         assertThrows(AssertException.class, () -> assert1.isAfter(actual2));
         assertThrows(AssertException.class, () -> assert1.isAfterOrEqualTo(actual2));
 
-        assert2.isLeapYear();
-        assert1.isNotLeapYear();
+        assertThatNoException().isThrownBy(() -> {
+            assert2.isLeapYear();
+            assert1.isNotLeapYear();
 
-        assert1.isEqualTo(actual1);
-        assert1.isNotEqualTo(Year.of(1994));
-        assert1.isBefore(actual2);
-        assert1.isBeforeOrEqualTo(actual2);
-        assert1.isBeforeOrEqualTo(actual1);
-        assert1.isAfter(Year.of(1994));
-        assert1.isAfterOrEqualTo(actual1);
-        assert1.isAfterOrEqualTo(Year.of(1994));
+            assert1.isEqualTo(actual1);
+            assert1.isNotEqualTo(Year.of(1994));
+            assert1.isBefore(actual2);
+            assert1.isBeforeOrEqualTo(actual2);
+            assert1.isBeforeOrEqualTo(actual1);
+            assert1.isAfter(Year.of(1994));
+            assert1.isAfterOrEqualTo(actual1);
+            assert1.isAfterOrEqualTo(Year.of(1994));
+        });
     }
-
 }

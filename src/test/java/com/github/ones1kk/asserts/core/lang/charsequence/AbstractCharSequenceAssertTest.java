@@ -1,9 +1,11 @@
 package com.github.ones1kk.asserts.core.lang.charsequence;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractCharSequenceAssertTest {
@@ -29,15 +31,16 @@ class AbstractCharSequenceAssertTest {
         assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractCharSequenceAssert.class));
         assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(String.class));
 
-        assert2.isNull();
-        assert1.isNotNull();
-        assert1.isSameAs(actual1);
-        assert1.isNotSameAs(assert1);
-        assert1.isEqualTo(actual1);
-        assert1.isNotEqualTo(assert1);
-        assert1.isAssignableFrom(String.class);
-        assert1.isNotAssignableFrom(AbstractCharSequenceAssert.class);
-
+        assertThatNoException().isThrownBy(() -> {
+            assert2.isNull();
+            assert1.isNotNull();
+            assert1.isSameAs(actual1);
+            assert1.isNotSameAs(assert1);
+            assert1.isEqualTo(actual1);
+            assert1.isNotEqualTo(assert1);
+            assert1.isAssignableFrom(String.class);
+            assert1.isNotAssignableFrom(AbstractCharSequenceAssert.class);
+        });
     }
 
     @Test
@@ -60,11 +63,12 @@ class AbstractCharSequenceAssertTest {
         assertThrows(AssertException.class, assert3::isNotBlank);
         assertThrows(AssertException.class, () -> assert3.isEqualToIgnoreCase(actual1));
 
-        assert2.isEmpty();
-        assert1.isNotEmpty();
-        assert3.isBlank();
-        assert1.isNotBlank();
-        assert1.isEqualToIgnoreCase("ACTUAL");
+        assertThatNoException().isThrownBy(() -> {
+            assert2.isEmpty();
+            assert1.isNotEmpty();
+            assert3.isBlank();
+            assert1.isNotBlank();
+            assert1.isEqualToIgnoreCase("ACTUAL");
+        });
     }
-
 }

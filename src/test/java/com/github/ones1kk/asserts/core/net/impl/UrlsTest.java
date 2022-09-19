@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.net.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.net.URL;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class UrlsTest {
@@ -36,8 +38,12 @@ class UrlsTest {
         assertThrows(Exception.class, () -> urls.assertDoesNotHaveHost(actual1));
         assertThrows(Exception.class, () -> urls.assertDoesNotHaveHost(actual1));
 
-        urls.assertHasHost(actual1, "www.google.com");
-        urls.assertHasPort(actual1, 443);
-        urls.assertDoesNotHavePath(actual1);
+
+        assertThatNoException().isThrownBy(() -> {
+            urls.assertHasHost(actual1, "www.google.com");
+            urls.assertHasPort(actual1, 443);
+            urls.assertDoesNotHavePath(actual1);
+        });
+
     }
 }

@@ -1,11 +1,13 @@
 package com.github.ones1kk.asserts.core.array.number;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractNumberArrayAssertTest {
@@ -30,13 +32,16 @@ class AbstractNumberArrayAssertTest {
         assertThrows(AssertException.class, () -> assert1.isNotEqualTo(actual1));
         assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractNumberArrayAssert.class));
 
-        assert2.isNull();
-        assert1.isNotNull();
-        assert1.isSameAs(actual1);
-        assert1.isNotSameAs(assert1);
-        assert1.isEqualTo(actual1);
-        assert1.isNotEqualTo(assert1);
-        assert1.isNotAssignableFrom(AbstractNumberArrayAssert.class);
+        assertThatNoException().isThrownBy(() -> {
+            assert2.isNull();
+            assert1.isNotNull();
+            assert1.isSameAs(actual1);
+            assert1.isNotSameAs(assert1);
+            assert1.isEqualTo(actual1);
+            assert1.isNotEqualTo(assert1);
+            assert1.isNotAssignableFrom(AbstractNumberArrayAssert.class);
+        });
+
     }
 
     @Test
@@ -79,31 +84,33 @@ class AbstractNumberArrayAssertTest {
         assertThrows(AssertException.class, () -> assert1.allMatch(Objects::isNull));
         assertThrows(AssertException.class, () -> assert1.noneMatch(Objects::nonNull));
 
-        assert1.isMax(12436L);
-        assert1.isMin(0.567);
-        assert1.isSum(12465.567);
-        assert2.isEmpty();
-        assert1.isNotEmpty();
+        assertThatNoException().isThrownBy(() -> {
+            assert1.isMax(12436L);
+            assert1.isMin(0.567);
+            assert1.isSum(12465.567);
+            assert2.isEmpty();
+            assert1.isNotEmpty();
 
-        // Null check
-        assert3.isNullOrEmpty();
-        // Empty check
-        assert2.isNullOrEmpty();
+            // Null check
+            assert3.isNullOrEmpty();
+            // Empty check
+            assert2.isNullOrEmpty();
 
-        assert1.contains(12436L);
-        assert1.doesNotContain(999);
-        // When array is empty
-        assert2.doesNotContain(23F);
+            assert1.contains(12436L);
+            assert1.doesNotContain(999);
+            // When array is empty
+            assert2.doesNotContain(23F);
 
-        assert1.containsAll(1, 23F, 5);
+            assert1.containsAll(1, 23F, 5);
 
-        assert1.containsAny(999, 888, 0.567);
+            assert1.containsAny(999, 888, 0.567);
 
-        assert4.containsNull();
-        assert1.doesNotContainNull();
+            assert4.containsNull();
+            assert1.doesNotContainNull();
 
-        assert1.allMatch(Objects::nonNull);
-        assert1.noneMatch(Objects::isNull);
+            assert1.allMatch(Objects::nonNull);
+            assert1.noneMatch(Objects::isNull);
+        });
     }
 
     @Test
@@ -130,14 +137,16 @@ class AbstractNumberArrayAssertTest {
 
         assertThrows(AssertException.class, () -> assert2.isBetweenLengthOf(actual4, actual1));
 
-        assert3.isShorterThan(actual1);
-        assert3.isShorterThanOrEqualTo(actual1);
-        assert3.isShorterThanOrEqualTo(actual4);
+        assertThatNoException().isThrownBy(() -> {
+            assert3.isShorterThan(actual1);
+            assert3.isShorterThanOrEqualTo(actual1);
+            assert3.isShorterThanOrEqualTo(actual4);
 
-        assert1.isLongerThan(actual4);
-        assert1.isLongerThanOrEqualTo(actual1);
-        assert1.isLongerThanOrEqualTo(actual4);
+            assert1.isLongerThan(actual4);
+            assert1.isLongerThanOrEqualTo(actual1);
+            assert1.isLongerThanOrEqualTo(actual4);
 
-        assert3.isBetweenLengthOf(actual2, actual1);
+            assert3.isBetweenLengthOf(actual2, actual1);
+        });
     }
 }

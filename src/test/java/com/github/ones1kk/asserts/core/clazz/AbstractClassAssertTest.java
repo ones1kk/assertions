@@ -4,9 +4,11 @@ import com.github.ones1kk.asserts.core.AbstractAssert;
 import com.github.ones1kk.asserts.core.Asserts;
 import com.github.ones1kk.asserts.core.clazz.model.ClassAssert;
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractClassAssertTest {
@@ -31,14 +33,16 @@ class AbstractClassAssertTest {
         assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractClassAssert.class));
         assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(Class.class));
 
-        assert2.isNull();
-        assert1.isNotNull();
-        assert1.isSameAs(actual1);
-        assert1.isNotSameAs(assert1);
-        assert1.isEqualTo(actual1);
-        assert1.isNotEqualTo(assert1);
-        assert1.isAssignableFrom(Class.class);
-        assert1.isNotAssignableFrom(AbstractClassAssert.class);
+        assertThatNoException().isThrownBy(() -> {
+            assert2.isNull();
+            assert1.isNotNull();
+            assert1.isSameAs(actual1);
+            assert1.isNotSameAs(assert1);
+            assert1.isEqualTo(actual1);
+            assert1.isNotEqualTo(assert1);
+            assert1.isAssignableFrom(Class.class);
+            assert1.isNotAssignableFrom(AbstractClassAssert.class);
+        });
     }
 
     @Test
@@ -83,19 +87,20 @@ class AbstractClassAssertTest {
         assertThrows(AssertException.class, assert1::isEnum);
         assertThrows(AssertException.class, assert1::isMemberClass);
 
-
-        assert1.isTypeOf(new ClassAssert(supperClass));
-        assert1.isNotTypeOf(ClassAssert.class);
-        assert1.isNotTypeOf(new String());
-        assert1.isSuperclassOf(ClassAssert.class);
-        assert2.isSubclassOf(AbstractClassAssert.class);
-        assert3.isInterface();
-        assert4.isAnnotation();
-        assert5.isFinalClass();
-        assert6.isAbstractClass();
-        assert7.isAnonymousClass();
-        assert8.isEnum();
-        assert9.isMemberClass();
+        assertThatNoException().isThrownBy(() -> {
+            assert1.isTypeOf(new ClassAssert(supperClass));
+            assert1.isNotTypeOf(ClassAssert.class);
+            assert1.isNotTypeOf(new String());
+            assert1.isSuperclassOf(ClassAssert.class);
+            assert2.isSubclassOf(AbstractClassAssert.class);
+            assert3.isInterface();
+            assert4.isAnnotation();
+            assert5.isFinalClass();
+            assert6.isAbstractClass();
+            assert7.isAnonymousClass();
+            assert8.isEnum();
+            assert9.isMemberClass();
+        });
     }
 
     static class MemberClassForTest {

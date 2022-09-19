@@ -2,12 +2,14 @@ package com.github.ones1kk.asserts.core.lang.charsequence.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.lang.charsequence.CharSequencesInterface;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CharSequencesTest {
@@ -37,12 +39,13 @@ class CharSequencesTest {
         assertThrows(Exception.class, () -> charSequences.assertIsNotEmpty(""));
         assertThrows(Exception.class, () -> charSequences.assertIsEqualToIgnoreCase(actual1, "Expected"));
 
-        charSequences.assertIsBlank(actual2);
-        charSequences.assertIsNotBlank(actual1);
-        charSequences.assertIsEmpty("");
-        charSequences.assertIsNotEmpty(actual1);
-        charSequences.assertIsEqualToIgnoreCase(actual1, "ACTUAL");
-        charSequences.assertIsEqualToIgnoreCase(actual1, "actual");
+        assertThatNoException().isThrownBy(() -> {
+            charSequences.assertIsBlank(actual2);
+            charSequences.assertIsNotBlank(actual1);
+            charSequences.assertIsEmpty("");
+            charSequences.assertIsNotEmpty(actual1);
+            charSequences.assertIsEqualToIgnoreCase(actual1, "ACTUAL");
+            charSequences.assertIsEqualToIgnoreCase(actual1, "actual");
+        });
     }
-
 }

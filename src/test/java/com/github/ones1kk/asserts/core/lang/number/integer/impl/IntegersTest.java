@@ -3,12 +3,14 @@ package com.github.ones1kk.asserts.core.lang.number.integer.impl;
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class IntegersTest {
@@ -82,47 +84,48 @@ class IntegersTest {
         assertThrows(Exception.class, () -> integers.assertIsCloseTo(10, 9, Percentage.of(1.0)));
         assertThrows(Exception.class, () -> integers.assertIsNotCloseTo(10, 9, Percentage.of(20.0)));
 
+        assertThatNoException().isThrownBy(() -> {
+            integers.assertIsOdd(1);
 
-        integers.assertIsOdd(1);
+            integers.assertIsNotOdd(0);
+            integers.assertIsNotOdd(2);
 
-        integers.assertIsNotOdd(0);
-        integers.assertIsNotOdd(2);
+            integers.assertIsEven(2);
+            integers.assertIsEven(0);
 
-        integers.assertIsEven(2);
-        integers.assertIsEven(0);
+            integers.assertIsNotEven(1);
 
-        integers.assertIsNotEven(1);
+            integers.assertIsPositive(1);
 
-        integers.assertIsPositive(1);
+            integers.assertIsNotPositive(0);
+            integers.assertIsNotPositive(-1);
 
-        integers.assertIsNotPositive(0);
-        integers.assertIsNotPositive(-1);
+            integers.assertIsNegative(-1);
 
-        integers.assertIsNegative(-1);
+            integers.assertIsNotNegative(1);
+            integers.assertIsNotNegative(0);
 
-        integers.assertIsNotNegative(1);
-        integers.assertIsNotNegative(0);
+            integers.assertIsZero(0);
 
-        integers.assertIsZero(0);
+            integers.assertIsNotZero(1);
+            integers.assertIsNotZero(-1);
 
-        integers.assertIsNotZero(1);
-        integers.assertIsNotZero(-1);
+            integers.assertIsLessThan(4, 7);
+            integers.assertIsLessThanOrEqualTo(4, 7);
+            integers.assertIsLessThanOrEqualTo(4, 4);
 
-        integers.assertIsLessThan(4, 7);
-        integers.assertIsLessThanOrEqualTo(4, 7);
-        integers.assertIsLessThanOrEqualTo(4, 4);
+            integers.assertIsGreaterThan(7, 4);
+            integers.assertIsGreaterThanOrEqualTo(7, 4);
+            integers.assertIsGreaterThanOrEqualTo(4, 4);
 
-        integers.assertIsGreaterThan(7, 4);
-        integers.assertIsGreaterThanOrEqualTo(7, 4);
-        integers.assertIsGreaterThanOrEqualTo(4, 4);
+            // start < actual < end
+            integers.assertIsBetween(2, 1, 3);
 
-        // start < actual < end
-        integers.assertIsBetween(2, 1, 3);
+            integers.assertIsCloseTo(10, 8, Offset.offset(2));
+            integers.assertIsNotCloseTo(10, 7, Offset.offset(1));
 
-        integers.assertIsCloseTo(10, 8, Offset.offset(2));
-        integers.assertIsNotCloseTo(10, 7, Offset.offset(1));
-
-        integers.assertIsCloseTo(10, 9, Percentage.of(15.0));
-        integers.assertIsNotCloseTo(10, 9, Percentage.of(5.0));
+            integers.assertIsCloseTo(10, 9, Percentage.of(15.0));
+            integers.assertIsNotCloseTo(10, 9, Percentage.of(5.0));
+        });
     }
 }

@@ -5,12 +5,14 @@ import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.Asserts;
 import com.github.ones1kk.asserts.core.clazz.*;
 import com.github.ones1kk.asserts.core.clazz.model.ClassAssert;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ClassesTest {
@@ -57,18 +59,21 @@ class ClassesTest {
         assertThrows(Exception.class, () -> classes.assertIsEnum(supperClass));
         assertThrows(Exception.class, () -> classes.assertIsMemberClass(supperClass));
 
-        classes.assertIsTypeOf(supperClass, new ClassAssert(supperClass));
-        classes.assertIsNotTypeOf(supperClass, ClassAssert.class);
-        classes.assertIsNotTypeOf(subClass, new String());
-        classes.assertIsSuperclassOf(supperClass, ClassAssert.class);
-        classes.assertIsSubclassOf(subClass, AbstractClassAssert.class);
-        classes.assertIsInterface(interfaceClass);
-        classes.assertIsAnnotation(annotationClass);
-        classes.assertIsFinalClass(finalClass);
-        classes.assertIsAbstractClass(abstractClass);
-        classes.assertIsAnonymousClass(anonymousClass.getClass());
-        classes.assertIsEnum(enumClass);
-        classes.assertIsMemberClass(memberClass);
+        assertThatNoException().isThrownBy(() -> {
+            classes.assertIsTypeOf(supperClass, new ClassAssert(supperClass));
+            classes.assertIsNotTypeOf(supperClass, ClassAssert.class);
+            classes.assertIsNotTypeOf(subClass, new String());
+            classes.assertIsSuperclassOf(supperClass, ClassAssert.class);
+            classes.assertIsSubclassOf(subClass, AbstractClassAssert.class);
+            classes.assertIsInterface(interfaceClass);
+            classes.assertIsAnnotation(annotationClass);
+            classes.assertIsFinalClass(finalClass);
+            classes.assertIsAbstractClass(abstractClass);
+            classes.assertIsAnonymousClass(anonymousClass.getClass());
+            classes.assertIsEnum(enumClass);
+            classes.assertIsMemberClass(memberClass);
+        });
+
     }
 
     static class MemberClassForTest {

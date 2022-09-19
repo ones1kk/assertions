@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.collection.map;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -8,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static java.util.Collections.emptyMap;
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractMapAssertTest {
@@ -70,34 +72,36 @@ class AbstractMapAssertTest {
 
         assertThrows(AssertException.class, () -> assert2.isBetweenSizeOf(actual2, actual3));
 
-        assert3.isEmpty();
-        assert1.isNotEmpty();
+        assertThatNoException().isThrownBy(() -> {
+            assert3.isEmpty();
+            assert1.isNotEmpty();
 
-        // empty
-        assert3.isNullOrEmpty();
-        // null
-        assert4.isNullOrEmpty();
+            // empty
+            assert3.isNullOrEmpty();
+            // null
+            assert4.isNullOrEmpty();
 
-        assert1.containsKey("1");
-        assert1.containsAllKey(expected1);
+            assert1.containsKey("1");
+            assert1.containsAllKey(expected1);
 
-        assert2.containsValue("a");
-        assert2.containsAllValue(expected1);
+            assert2.containsValue("a");
+            assert2.containsAllValue(expected1);
 
-        assert1.hasSizeOf(3);
-        assert1.hasSameSizeOf(expected2);
+            assert1.hasSizeOf(3);
+            assert1.hasSameSizeOf(expected2);
 
-        assert1.doesNotHaveSameSizeOf(actual3);
+            assert1.doesNotHaveSameSizeOf(actual3);
 
-        assert2.isSmallerThan(actual1);
-        assert2.isSmallerThanOrEqualTo(actual2);
-        assert2.isSmallerThanOrEqualTo(actual1);
+            assert2.isSmallerThan(actual1);
+            assert2.isSmallerThanOrEqualTo(actual2);
+            assert2.isSmallerThanOrEqualTo(actual1);
 
-        assert1.isLargerThan(actual2);
-        assert1.isLargerThanOrEqualTo(expected1);
-        assert1.isLargerThanOrEqualTo(actual1);
+            assert1.isLargerThan(actual2);
+            assert1.isLargerThanOrEqualTo(expected1);
+            assert1.isLargerThanOrEqualTo(actual1);
 
-        assert2.isBetweenSizeOf(new HashMap<>(), actual1);
+            assert2.isBetweenSizeOf(new HashMap<>(), actual1);
+        });
     }
 
 }

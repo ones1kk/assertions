@@ -1,11 +1,13 @@
 package com.github.ones1kk.asserts.core.array;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractArrayAssertTest {
@@ -115,48 +117,50 @@ class AbstractArrayAssertTest {
         assertThrows(AssertException.class, () -> assert1.allMatch(Objects::isNull));
         assertThrows(AssertException.class, () -> assert1.noneMatch(Objects::nonNull));
 
-        assert5.isEmpty();
-        assert1.isNotEmpty();
-        assert3.isNotEmpty();
-        assert4.isNotEmpty();
+        assertThatNoException().isThrownBy(() -> {
+            assert5.isEmpty();
+            assert1.isNotEmpty();
+            assert3.isNotEmpty();
+            assert4.isNotEmpty();
 
-        // Null check
-        assert6.isNullOrEmpty();
-        // Empty check
-        assert5.isNullOrEmpty();
+            // Null check
+            assert6.isNullOrEmpty();
+            // Empty check
+            assert5.isNullOrEmpty();
 
-        assert1.contains("A");
-        assert1.doesNotContain("Z");
+            assert1.contains("A");
+            assert1.doesNotContain("Z");
 
-        assert3.contains('A');
-        assert3.doesNotContain('Z');
+            assert3.contains('A');
+            assert3.doesNotContain('Z');
 
-        assert4.contains("A");
-        assert4.doesNotContain("Z");
+            assert4.contains("A");
+            assert4.doesNotContain("Z");
 
-        // When array is empty
-        assert2.doesNotContain('a');
+            // When array is empty
+            assert2.doesNotContain('a');
 
-        assert1.containsAll("A", "B");
-        assert3.containsAll('A', 'b');
-        assert4.containsAll("A", "b");
+            assert1.containsAll("A", "B");
+            assert3.containsAll('A', 'b');
+            assert4.containsAll("A", "b");
 
-        assert1.containsAny("X", "Y", "A");
-        assert3.containsAny('X', 'Y', 'A');
-        assert4.containsAny("X", "Y", "A");
+            assert1.containsAny("X", "Y", "A");
+            assert3.containsAny('X', 'Y', 'A');
+            assert4.containsAny("X", "Y", "A");
 
-        assert2.containsNull();
-        assert1.doesNotContainNull();
-        assert3.doesNotContainNull();
-        assert4.doesNotContainNull();
+            assert2.containsNull();
+            assert1.doesNotContainNull();
+            assert3.doesNotContainNull();
+            assert4.doesNotContainNull();
 
-        assert1.allMatch(Objects::nonNull);
-        assert3.allMatch(Objects::nonNull);
-        assert4.allMatch(Objects::nonNull);
+            assert1.allMatch(Objects::nonNull);
+            assert3.allMatch(Objects::nonNull);
+            assert4.allMatch(Objects::nonNull);
 
-        assert1.noneMatch(Objects::isNull);
-        assert3.noneMatch(Objects::isNull);
-        assert4.noneMatch(Objects::isNull);
+            assert1.noneMatch(Objects::isNull);
+            assert3.noneMatch(Objects::isNull);
+            assert4.noneMatch(Objects::isNull);
+        });
     }
 
     @Test
@@ -187,14 +191,16 @@ class AbstractArrayAssertTest {
 
         assertThrows(AssertException.class, () -> assert2.isBetweenLengthOf(actual4, actual1));
 
-        assert5.isShorterThan(actual1);
-        assert5.isShorterThanOrEqualTo(actual1);
-        assert5.isShorterThanOrEqualTo(actual4);
+        assertThatNoException().isThrownBy(() -> {
+            assert5.isShorterThan(actual1);
+            assert5.isShorterThanOrEqualTo(actual1);
+            assert5.isShorterThanOrEqualTo(actual4);
 
-        assert4.isLongerThan(actual1);
-        assert4.isLongerThanOrEqualTo(actual1);
-        assert4.isLongerThanOrEqualTo(actual4);
+            assert4.isLongerThan(actual1);
+            assert4.isLongerThanOrEqualTo(actual1);
+            assert4.isLongerThanOrEqualTo(actual4);
 
-        assert1.isBetweenLengthOf(actual5, actual4);
+            assert1.isBetweenLengthOf(actual5, actual4);
+        });
     }
 }

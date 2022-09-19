@@ -2,6 +2,7 @@ package com.github.ones1kk.asserts.core.time.month;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
 import com.github.ones1kk.asserts.core.time.model.MonthAssert;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -30,14 +31,15 @@ class AbstractMonthAssertTest {
         assertThrows(AssertException.class, () -> assert1.isAfter(Month.MARCH));
         assertThrows(AssertException.class, () -> assert1.isAfterOrEqualTo(Month.MARCH));
 
-        assert1.isEqualTo(actual1);
-        assert1.isNotEqualTo(Month.MARCH);
-        assert1.isBefore(Month.MARCH);
-        assert1.isBeforeOrEqualTo(Month.MARCH);
-        assert1.isBeforeOrEqualTo(actual1);
-        assert1.isAfter(Month.JANUARY);
-        assert1.isAfterOrEqualTo(actual1);
-        assert1.isAfterOrEqualTo(Month.JANUARY);
+        Assertions.assertThatNoException().isThrownBy(() -> {
+            assert1.isEqualTo(actual1);
+            assert1.isNotEqualTo(Month.MARCH);
+            assert1.isBefore(Month.MARCH);
+            assert1.isBeforeOrEqualTo(Month.MARCH);
+            assert1.isBeforeOrEqualTo(actual1);
+            assert1.isAfter(Month.JANUARY);
+            assert1.isAfterOrEqualTo(actual1);
+            assert1.isAfterOrEqualTo(Month.JANUARY);
+        });
     }
-
 }

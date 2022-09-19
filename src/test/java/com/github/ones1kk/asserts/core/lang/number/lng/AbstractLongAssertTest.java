@@ -2,9 +2,11 @@ package com.github.ones1kk.asserts.core.lang.number.lng;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
 import com.github.ones1kk.asserts.core.feature.data.Offset;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractLongAssertTest {
@@ -30,14 +32,17 @@ class AbstractLongAssertTest {
         assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractLongAssert.class));
         assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(Long.class));
 
-        assert2.isNull();
-        assert1.isNotNull();
-        assert1.isSameAs(actual1);
-        assert1.isNotSameAs(assert1);
-        assert1.isEqualTo(actual1);
-        assert1.isNotEqualTo(assert1);
-        assert1.isAssignableFrom(Long.class);
-        assert1.isNotAssignableFrom(AbstractLongAssert.class);
+
+        assertThatNoException().isThrownBy(() -> {
+            assert2.isNull();
+            assert1.isNotNull();
+            assert1.isSameAs(actual1);
+            assert1.isNotSameAs(assert1);
+            assert1.isEqualTo(actual1);
+            assert1.isNotEqualTo(assert1);
+            assert1.isAssignableFrom(Long.class);
+            assert1.isNotAssignableFrom(AbstractLongAssert.class);
+        });
     }
 
     @Test
@@ -69,18 +74,20 @@ class AbstractLongAssertTest {
         assertThrows(AssertException.class, () -> assert3.isCloseTo(5L, 2.0));
         assertThrows(AssertException.class, () -> assert4.isNotCloseTo(2L, 6.0));
 
-        assert1.isOdd();
-        assert4.isNotOdd();
-        assert4.isEven();
-        assert1.isNotEven();
-        assert1.isPositive();
-        assert2.isNotPositive();
-        assert2.isNegative();
-        assert1.isNotNegative();
-        assert3.isZero();
-        assert1.isNotZero();
-        assert4.isCloseTo(actual4, 100.0);
-        assert1.isNotCloseTo(5L, 1.0);
+        assertThatNoException().isThrownBy(() -> {
+            assert1.isOdd();
+            assert4.isNotOdd();
+            assert4.isEven();
+            assert1.isNotEven();
+            assert1.isPositive();
+            assert2.isNotPositive();
+            assert2.isNegative();
+            assert1.isNotNegative();
+            assert3.isZero();
+            assert1.isNotZero();
+            assert4.isCloseTo(actual4, 100.0);
+            assert1.isNotCloseTo(5L, 1.0);
+        });
     }
 
     @Test
@@ -138,31 +145,32 @@ class AbstractLongAssertTest {
         assertThrows(AssertException.class, () -> assert3.isCloseTo(5L, 2.0));
         assertThrows(AssertException.class, () -> assert4.isNotCloseTo(95L, 10.0));
 
+        assertThatNoException().isThrownBy(() -> {
+            // actual < expected
+            assert1.isLessThan(expected2);
 
-        // actual < expected
-        assert1.isLessThan(expected2);
+            // actual > expected
+            assert2.isGreaterThan(expected1);
 
-        // actual > expected
-        assert2.isGreaterThan(expected1);
+            // actual == expected
+            assert1.isLessThanOrEqualTo(expected1);
+            // actual < expected
+            assert1.isLessThanOrEqualTo(expected2);
 
-        // actual == expected
-        assert1.isLessThanOrEqualTo(expected1);
-        // actual < expected
-        assert1.isLessThanOrEqualTo(expected2);
+            // actual == expected
+            assert3.isGreaterThanOrEqualTo(expected3);
+            // actual >= expected
+            assert3.isGreaterThanOrEqualTo(expected2);
 
-        // actual == expected
-        assert3.isGreaterThanOrEqualTo(expected3);
-        // actual >= expected
-        assert3.isGreaterThanOrEqualTo(expected2);
+            // start < actual < end
+            assert2.isBetween(expected1, expected3);
 
-        // start < actual < end
-        assert2.isBetween(expected1, expected3);
+            assert4.isCloseTo(80L, Offset.offset(20L));
+            assert3.isNotCloseTo(70L, Offset.offset(10L));
 
-        assert4.isCloseTo(80L, Offset.offset(20L));
-        assert3.isNotCloseTo(70L, Offset.offset(10L));
-
-        assert1.isCloseTo(1L, 3.0);
-        assert1.isNotCloseTo(5L, 1.0);
+            assert1.isCloseTo(1L, 3.0);
+            assert1.isNotCloseTo(5L, 1.0);
+        });
     }
 
 }

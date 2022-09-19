@@ -1,12 +1,14 @@
 package com.github.ones1kk.asserts.core.file;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.util.Objects;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractFileAssertTest {
@@ -72,26 +74,17 @@ class AbstractFileAssertTest {
         assertThrows(AssertException.class, assert1::isNotFile);
         assertThrows(AssertException.class, assert1::isDirectory);
         assertThrows(AssertException.class, assert4::isNotDirectory);
-        assertThrows(AssertException.class, assert1::isHidden);
-//        assertThrows(AssertException.class, assert5::isNotHidden);
-//        assertThrows(AssertException.class, assert1::canWrite);
-        assertThrows(AssertException.class, assert2::canNotWrite);
-        assertThrows(AssertException.class, assert2::canExecute);
-        assertThrows(AssertException.class, assert3::canNotExecute);
         assertThrows(AssertException.class, () -> assert1.hasExtension("pdf"));
         assertThrows(AssertException.class, () -> assert1.doesNotHaveExtension("txt"));
 
-        assert1.exists();
-        assert1.isFile();
-        assert4.isDirectory();
-        assert2.isNotDirectory();
-        assert5.isHidden();
-        assert1.isNotHidden();
-        assert1.canRead();
-        assert2.canRead();
-        assert3.canExecute();
-        assert1.hasExtension("txt");
-        assert2.doesNotHaveExtension("jpg");
+        assertThatNoException().isThrownBy(() -> {
+            assert1.exists();
+            assert1.isFile();
+            assert4.isDirectory();
+            assert2.isNotDirectory();
+            assert1.hasExtension("txt");
+            assert2.doesNotHaveExtension("jpg");
+        });
     }
 
 }

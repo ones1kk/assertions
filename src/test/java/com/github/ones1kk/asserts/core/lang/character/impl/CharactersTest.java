@@ -1,12 +1,14 @@
 package com.github.ones1kk.asserts.core.lang.character.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CharactersTest {
@@ -68,29 +70,28 @@ class CharactersTest {
         assertThrows(Exception.class,
                 () -> characters.assertIsBetween('C', 'A', 'B'));
 
+        assertThatNoException().isThrownBy(() -> {
+            characters.assertIsUpperCase('A');
+            characters.assertIsNotUpperCase(actual1);
+            characters.assertIsLowerCase(actual1);
+            characters.assertIsNotLowerCase('A');
+            characters.assertIsLetter(actual1);
+            characters.assertIsNotLetter('1');
+            characters.assertIsDigit('1');
+            characters.assertIsNotDigit(actual1);
+            characters.assertIsWhitespace(actual2);
+            characters.assertIsNotWhitespace(actual1);
 
-        characters.assertIsUpperCase('A');
-        characters.assertIsNotUpperCase(actual1);
-        characters.assertIsLowerCase(actual1);
-        characters.assertIsNotLowerCase('A');
-        characters.assertIsLetter(actual1);
-        characters.assertIsNotLetter('1');
-        characters.assertIsDigit('1');
-        characters.assertIsNotDigit(actual1);
-        characters.assertIsWhitespace(actual2);
-        characters.assertIsNotWhitespace(actual1);
+            characters.assertIsLessThan('4', '7');
+            characters.assertIsLessThanOrEqualTo('4', '7');
+            characters.assertIsLessThanOrEqualTo('4', '4');
 
-        characters.assertIsLessThan('4', '7');
-        characters.assertIsLessThanOrEqualTo('4', '7');
-        characters.assertIsLessThanOrEqualTo('4', '4');
+            characters.assertIsGreaterThan('7', '4');
+            characters.assertIsGreaterThanOrEqualTo('7', '4');
+            characters.assertIsGreaterThanOrEqualTo('4', '4');
 
-        characters.assertIsGreaterThan('7', '4');
-        characters.assertIsGreaterThanOrEqualTo('7', '4');
-        characters.assertIsGreaterThanOrEqualTo('4', '4');
-
-        // start < actual < end
-        characters.assertIsBetween('B', 'A', 'C');
-
+            // start < actual < end
+            characters.assertIsBetween('B', 'A', 'C');
+        });
     }
-
 }

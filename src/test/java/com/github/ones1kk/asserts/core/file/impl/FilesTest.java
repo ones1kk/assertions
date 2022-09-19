@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.file.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,6 +11,7 @@ import org.mockito.MockitoAnnotations;
 import java.io.File;
 import java.util.Objects;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class FilesTest {
@@ -44,27 +46,17 @@ class FilesTest {
         assertThrows(Exception.class, () -> files.assertIsFile(new File("/user")));
         assertThrows(Exception.class, () -> files.assertIsNotFile(actual1));
         assertThrows(Exception.class, () -> files.assertIsDirectory(actual1));
-        assertThrows(Exception.class, () -> files.assertIsHidden(actual1));
-//        assertThrows(Exception.class, () -> files.assertIsNotHidden(new File(HIDDEN_FILE_PATH)));
-//        assertThrows(Exception.class, () -> files.assertCanWrite(actual1));
-        assertThrows(Exception.class, () -> files.assertCanNotWrite(actual2));
-        assertThrows(Exception.class, () -> files.assertCanExecute(actual2));
-        assertThrows(Exception.class, () -> files.assertCanNotExecute(actual3));
         assertThrows(Exception.class, () -> files.assertHasExtension(actual1, "pdf"));
         assertThrows(Exception.class, () -> files.assertDoesNotHaveExtension(actual1, "txt"));
 
-        files.assertExists(actual1);
-        files.assertIsFile(actual1);
-        files.assertIsNotFile(new File(HIDDEN_FILE_PATH));
-        files.assertIsDirectory(new File("."));
-        files.assertIsNotDirectory(actual1);
-        files.assertIsHidden(new File(HIDDEN_FILE_PATH));
-        files.assertIsNotHidden(actual1);
-        files.assertCanRead(actual1);
-        files.assertCanWrite(actual2);
-        files.assertCanExecute(actual3);
-        files.assertHasExtension(actual1, "txt");
-        files.assertDoesNotHaveExtension(actual1, "pdf");
+        assertThatNoException().isThrownBy(() -> {
+            files.assertExists(actual1);
+            files.assertIsFile(actual1);
+            files.assertIsNotFile(new File(HIDDEN_FILE_PATH));
+            files.assertIsDirectory(new File("."));
+            files.assertIsNotDirectory(actual1);
+            files.assertHasExtension(actual1, "txt");
+            files.assertDoesNotHaveExtension(actual1, "pdf");
+        });
     }
-
 }

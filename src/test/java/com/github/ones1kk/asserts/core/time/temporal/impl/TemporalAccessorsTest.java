@@ -2,6 +2,7 @@ package com.github.ones1kk.asserts.core.time.temporal.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.time.temporal.accessor.impl.TemporalAccessors;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,6 +11,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.time.LocalTime;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class TemporalAccessorsTest {
@@ -43,17 +45,17 @@ class TemporalAccessorsTest {
         assertThrows(Exception.class, () -> temporals.assertIsAfter(actual1, LocalTime.of(12, 12, 12)));
         assertThrows(Exception.class, () -> temporals.assertIsAfterOrEqualTo(actual1, LocalTime.of(12, 12, 10)));
 
+        assertThatNoException().isThrownBy(() -> {
+            temporals.assertIsEqualTo(actual1, LocalTime.of(11, 11, 11));
+            temporals.assertIsNotEqualTo(actual1, LocalTime.of(12, 11, 11));
 
-        temporals.assertIsEqualTo(actual1, LocalTime.of(11, 11, 11));
-        temporals.assertIsNotEqualTo(actual1, LocalTime.of(12, 11, 11));
+            temporals.assertIsBefore(actual1, LocalTime.of(12, 11, 11));
+            temporals.assertIsBeforeOrEqualTo(actual1, actual1);
+            temporals.assertIsBeforeOrEqualTo(actual1, LocalTime.of(12, 11, 11));
 
-        temporals.assertIsBefore(actual1, LocalTime.of(12, 11, 11));
-        temporals.assertIsBeforeOrEqualTo(actual1, actual1);
-        temporals.assertIsBeforeOrEqualTo(actual1, LocalTime.of(12, 11, 11));
-
-        temporals.assertIsAfter(actual1, LocalTime.of(10, 10, 10));
-        temporals.assertIsAfterOrEqualTo(actual1, actual1);
-        temporals.assertIsAfterOrEqualTo(actual1, LocalTime.of(10, 10, 10));
+            temporals.assertIsAfter(actual1, LocalTime.of(10, 10, 10));
+            temporals.assertIsAfterOrEqualTo(actual1, actual1);
+            temporals.assertIsAfterOrEqualTo(actual1, LocalTime.of(10, 10, 10));
+        });
     }
-
 }

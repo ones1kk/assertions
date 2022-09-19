@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.time.localdate.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.time.LocalDate;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class LocalDatesTest {
@@ -41,16 +43,18 @@ class LocalDatesTest {
         assertThrows(Exception.class, () -> localDateTimes.assertIsAfter(actual1, LocalDate.of(1995, 3, 1)));
         assertThrows(Exception.class, () -> localDateTimes.assertIsAfterOrEqualTo(actual1, LocalDate.of(1995, 3, 1)));
 
-        localDateTimes.assertIsEqualTo(actual1, LocalDate.of(1995, 2, 1));
-        localDateTimes.assertIsNotEqualTo(actual1, LocalDate.of(1995, 1, 1));
+        assertThatNoException().isThrownBy(() -> {
+            localDateTimes.assertIsEqualTo(actual1, LocalDate.of(1995, 2, 1));
+            localDateTimes.assertIsNotEqualTo(actual1, LocalDate.of(1995, 1, 1));
 
-        localDateTimes.assertIsBefore(actual1, LocalDate.of(1995, 3, 1));
-        localDateTimes.assertIsBeforeOrEqualTo(actual1, actual1);
-        localDateTimes.assertIsBeforeOrEqualTo(actual1, LocalDate.of(1995, 3, 1));
+            localDateTimes.assertIsBefore(actual1, LocalDate.of(1995, 3, 1));
+            localDateTimes.assertIsBeforeOrEqualTo(actual1, actual1);
+            localDateTimes.assertIsBeforeOrEqualTo(actual1, LocalDate.of(1995, 3, 1));
 
-        localDateTimes.assertIsAfter(actual1, LocalDate.of(1995, 1, 1));
-        localDateTimes.assertIsAfterOrEqualTo(actual1, actual1);
-        localDateTimes.assertIsAfterOrEqualTo(actual1, LocalDate.of(1995, 1, 1));
+            localDateTimes.assertIsAfter(actual1, LocalDate.of(1995, 1, 1));
+            localDateTimes.assertIsAfterOrEqualTo(actual1, actual1);
+            localDateTimes.assertIsAfterOrEqualTo(actual1, LocalDate.of(1995, 1, 1));
+        });
     }
 
 }

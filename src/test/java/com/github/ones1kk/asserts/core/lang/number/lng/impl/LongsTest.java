@@ -3,12 +3,14 @@ package com.github.ones1kk.asserts.core.lang.number.lng.impl;
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class LongsTest {
@@ -81,46 +83,48 @@ class LongsTest {
         assertThrows(Exception.class, () -> longs.assertIsCloseTo(10L, 9L, Percentage.of(1.0)));
         assertThrows(Exception.class, () -> longs.assertIsNotCloseTo(10L, 9L, Percentage.of(20.0)));
 
-        longs.assertIsOdd(1L);
+        assertThatNoException().isThrownBy(() -> {
+            longs.assertIsOdd(1L);
 
-        longs.assertIsNotOdd(0L);
-        longs.assertIsNotOdd(2L);
+            longs.assertIsNotOdd(0L);
+            longs.assertIsNotOdd(2L);
 
-        longs.assertIsEven(2L);
-        longs.assertIsEven(0L);
+            longs.assertIsEven(2L);
+            longs.assertIsEven(0L);
 
-        longs.assertIsNotEven(1L);
+            longs.assertIsNotEven(1L);
 
-        longs.assertIsPositive(1L);
+            longs.assertIsPositive(1L);
 
-        longs.assertIsNotPositive(0L);
-        longs.assertIsNotPositive(-1L);
+            longs.assertIsNotPositive(0L);
+            longs.assertIsNotPositive(-1L);
 
-        longs.assertIsNegative(-1L);
+            longs.assertIsNegative(-1L);
 
-        longs.assertIsNotNegative(1L);
-        longs.assertIsNotNegative(0L);
+            longs.assertIsNotNegative(1L);
+            longs.assertIsNotNegative(0L);
 
-        longs.assertIsZero(0L);
+            longs.assertIsZero(0L);
 
-        longs.assertIsNotZero(1L);
-        longs.assertIsNotZero(-1L);
+            longs.assertIsNotZero(1L);
+            longs.assertIsNotZero(-1L);
 
-        longs.assertIsLessThan(4L, 7L);
-        longs.assertIsLessThanOrEqualTo(4L, 7L);
-        longs.assertIsLessThanOrEqualTo(4L, 4L);
+            longs.assertIsLessThan(4L, 7L);
+            longs.assertIsLessThanOrEqualTo(4L, 7L);
+            longs.assertIsLessThanOrEqualTo(4L, 4L);
 
-        longs.assertIsGreaterThan(7L, 4L);
-        longs.assertIsGreaterThanOrEqualTo(7L, 4L);
-        longs.assertIsGreaterThanOrEqualTo(4L, 4L);
+            longs.assertIsGreaterThan(7L, 4L);
+            longs.assertIsGreaterThanOrEqualTo(7L, 4L);
+            longs.assertIsGreaterThanOrEqualTo(4L, 4L);
 
-        // start < actual < end
-        longs.assertIsBetween(2L, 1L, 3L);
+            // start < actual < end
+            longs.assertIsBetween(2L, 1L, 3L);
 
-        longs.assertIsCloseTo(10L, 8L, Offset.offset(2L));
-        longs.assertIsNotCloseTo(10L, 7L, Offset.offset(1L));
+            longs.assertIsCloseTo(10L, 8L, Offset.offset(2L));
+            longs.assertIsNotCloseTo(10L, 7L, Offset.offset(1L));
 
-        longs.assertIsCloseTo(10L, 9L, Percentage.of(15.0));
-        longs.assertIsNotCloseTo(10L, 9L, Percentage.of(5.0));
+            longs.assertIsCloseTo(10L, 9L, Percentage.of(15.0));
+            longs.assertIsNotCloseTo(10L, 9L, Percentage.of(5.0));
+        });
     }
 }

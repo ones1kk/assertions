@@ -3,12 +3,14 @@ package com.github.ones1kk.asserts.core.lang.number.flot.impl;
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.feature.data.Offset;
 import com.github.ones1kk.asserts.core.feature.data.Percentage;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class FloatsTest {
@@ -76,40 +78,41 @@ class FloatsTest {
         assertThrows(Exception.class, () -> floats.assertIsCloseTo(10.0F, 9.0F, Percentage.of(1.0)));
         assertThrows(Exception.class, () -> floats.assertIsNotCloseTo(10.0F, 9.0F, Percentage.of(20.0)));
 
+        assertThatNoException().isThrownBy(() -> {
+            floats.assertIsInfinity((float) (3 / 0.0));
+            floats.assertIsFinite(1.0F);
+            floats.assertIsNaN((float) (5 % 0.0));
+            floats.assertIsPositive(1.0F);
 
-        floats.assertIsInfinity((float) (3 / 0.0));
-        floats.assertIsFinite(1.0F);
-        floats.assertIsNaN((float) (5 % 0.0));
-        floats.assertIsPositive(1.0F);
+            floats.assertIsNotPositive(0.0F);
+            floats.assertIsNotPositive(-1.0F);
 
-        floats.assertIsNotPositive(0.0F);
-        floats.assertIsNotPositive(-1.0F);
+            floats.assertIsNegative(-1.0F);
 
-        floats.assertIsNegative(-1.0F);
+            floats.assertIsNotNegative(1.0F);
+            floats.assertIsNotNegative(0.0F);
 
-        floats.assertIsNotNegative(1.0F);
-        floats.assertIsNotNegative(0.0F);
+            floats.assertIsZero(0.0F);
 
-        floats.assertIsZero(0.0F);
+            floats.assertIsNotZero(1.0F);
+            floats.assertIsNotZero(-1.0F);
 
-        floats.assertIsNotZero(1.0F);
-        floats.assertIsNotZero(-1.0F);
+            floats.assertIsLessThan(4.0F, 7.0F);
+            floats.assertIsLessThanOrEqualTo(4.0F, 7.0F);
+            floats.assertIsLessThanOrEqualTo(4.0F, 4.0F);
 
-        floats.assertIsLessThan(4.0F, 7.0F);
-        floats.assertIsLessThanOrEqualTo(4.0F, 7.0F);
-        floats.assertIsLessThanOrEqualTo(4.0F, 4.0F);
+            floats.assertIsGreaterThan(7.0F, 4.0F);
+            floats.assertIsGreaterThanOrEqualTo(7.0F, 4.0F);
+            floats.assertIsGreaterThanOrEqualTo(4.0F, 4.0F);
 
-        floats.assertIsGreaterThan(7.0F, 4.0F);
-        floats.assertIsGreaterThanOrEqualTo(7.0F, 4.0F);
-        floats.assertIsGreaterThanOrEqualTo(4.0F, 4.0F);
+            // start < actual < end
+            floats.assertIsBetween(2.0F, 1.0F, 3.0F);
 
-        // start < actual < end
-        floats.assertIsBetween(2.0F, 1.0F, 3.0F);
+            floats.assertIsCloseTo(10.0F, 8.0F, Offset.offset(2.0F));
+            floats.assertIsNotCloseTo(10.0F, 7.0F, Offset.offset(1.0F));
 
-        floats.assertIsCloseTo(10.0F, 8.0F, Offset.offset(2.0F));
-        floats.assertIsNotCloseTo(10.0F, 7.0F, Offset.offset(1.0F));
-
-        floats.assertIsCloseTo(10.0F, 9.0F, Percentage.of(15.0));
-        floats.assertIsNotCloseTo(10.0F, 9.0F, Percentage.of(5.0));
+            floats.assertIsCloseTo(10.0F, 9.0F, Percentage.of(15.0));
+            floats.assertIsNotCloseTo(10.0F, 9.0F, Percentage.of(5.0));
+        });
     }
 }

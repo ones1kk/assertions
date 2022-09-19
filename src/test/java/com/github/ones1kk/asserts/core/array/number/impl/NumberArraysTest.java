@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.array.number.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.Objects;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class NumberArraysTest {
@@ -52,34 +54,36 @@ class NumberArraysTest {
         assertThrows(Exception.class, () -> numberArrays.assertAllMatch(actual, Objects::isNull));
         assertThrows(Exception.class, () -> numberArrays.assertNoneMatch(actual, Objects::nonNull));
 
-        numberArrays.assertIsMax(actual, 2352F);
-        numberArrays.assertIsMin(actual, 1);
-        numberArrays.assertIsSum(actual, 2481.6);
-        numberArrays.assertIsEmpty(new Number[]{});
-        numberArrays.assertIsNotEmpty(actual);
 
-        // Null check
-        numberArrays.assertIsNullOrEmpty(null);
-        // Empty check
-        numberArrays.assertIsNullOrEmpty(new Number[]{});
+        assertThatNoException().isThrownBy(() -> {
+            numberArrays.assertIsMax(actual, 2352F);
+            numberArrays.assertIsMin(actual, 1);
+            numberArrays.assertIsSum(actual, 2481.6);
+            numberArrays.assertIsEmpty(new Number[]{});
+            numberArrays.assertIsNotEmpty(actual);
 
-        numberArrays.assertContains(actual, 3.6);
-        numberArrays.assertDoesNotContain(actual, 5);
+            // Null check
+            numberArrays.assertIsNullOrEmpty(null);
+            // Empty check
+            numberArrays.assertIsNullOrEmpty(new Number[]{});
 
-        numberArrays.assertContainsAll(actual, 1, 123L, 2352F);
+            numberArrays.assertContains(actual, 3.6);
+            numberArrays.assertDoesNotContain(actual, 5);
 
-        // One
-        numberArrays.assertContainsAny(actual, 0, 3.6, 100);
-        // Every
-        numberArrays.assertContainsAny(actual, 1, 2, 3.6);
+            numberArrays.assertContainsAll(actual, 1, 123L, 2352F);
 
-        numberArrays.assertContainsNull(new Number[]{1, 6F, null, (short) 23, (byte) 12});
-        numberArrays.assertDoesNotContainNull(actual);
+            // One
+            numberArrays.assertContainsAny(actual, 0, 3.6, 100);
+            // Every
+            numberArrays.assertContainsAny(actual, 1, 2, 3.6);
 
-        numberArrays.assertAllMatch(actual, it -> it.doubleValue() > 0);
-        numberArrays.assertAllMatch(actual, Objects::nonNull);
+            numberArrays.assertContainsNull(new Number[]{1, 6F, null, (short) 23, (byte) 12});
+            numberArrays.assertDoesNotContainNull(actual);
 
-        numberArrays.assertNoneMatch(actual, Objects::isNull);
+            numberArrays.assertAllMatch(actual, it -> it.doubleValue() > 0);
+            numberArrays.assertAllMatch(actual, Objects::nonNull);
+
+            numberArrays.assertNoneMatch(actual, Objects::isNull);
+        });
     }
-
 }

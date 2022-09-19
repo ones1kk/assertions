@@ -2,9 +2,11 @@ package com.github.ones1kk.asserts.core.lang.number.duble;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
 import com.github.ones1kk.asserts.core.feature.data.Offset;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractDoubleAssertTest {
@@ -30,14 +32,16 @@ class AbstractDoubleAssertTest {
         assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractDoubleAssert.class));
         assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(Double.class));
 
-        assert2.isNull();
-        assert1.isNotNull();
-        assert1.isSameAs(actual1);
-        assert1.isNotSameAs(assert1);
-        assert1.isEqualTo(actual1);
-        assert1.isNotEqualTo(assert1);
-        assert1.isAssignableFrom(Double.class);
-        assert1.isNotAssignableFrom(AbstractDoubleAssert.class);
+        assertThatNoException().isThrownBy(() -> {
+            assert2.isNull();
+            assert1.isNotNull();
+            assert1.isSameAs(actual1);
+            assert1.isNotSameAs(assert1);
+            assert1.isEqualTo(actual1);
+            assert1.isNotEqualTo(assert1);
+            assert1.isAssignableFrom(Double.class);
+            assert1.isNotAssignableFrom(AbstractDoubleAssert.class);
+        });
     }
 
     @Test
@@ -76,21 +80,23 @@ class AbstractDoubleAssertTest {
         assertThrows(AssertException.class, () -> assert3.isCloseTo((double) 5, (double) 2));
         assertThrows(AssertException.class, () -> assert1.isNotCloseTo((double) 1, (double) 100));
 
-        assert1.isFinite();
-        assert4.isInfinity();
-        assert5.isNaN();
-        assert1.isPositive();
-        assert2.isNotPositive();
-        assert2.isNegative();
-        assert1.isNotNegative();
-        assert3.isZero();
-        assert1.isNotZero();
+        assertThatNoException().isThrownBy(() -> {
+            assert1.isFinite();
+            assert4.isInfinity();
+            assert5.isNaN();
+            assert1.isPositive();
+            assert2.isNotPositive();
+            assert2.isNegative();
+            assert1.isNotNegative();
+            assert3.isZero();
+            assert1.isNotZero();
 
-        assert6.isCloseTo(80.0, Offset.offset(20.0));
-        assert6.isNotCloseTo(70.0, Offset.offset(10.0));
+            assert6.isCloseTo(80.0, Offset.offset(20.0));
+            assert6.isNotCloseTo(70.0, Offset.offset(10.0));
 
-        assert1.isCloseTo(actual1, 50.4);
-        assert1.isNotCloseTo(5.8, 1.2);
+            assert1.isCloseTo(actual1, 50.4);
+            assert1.isNotCloseTo(5.8, 1.2);
+        });
     }
 
     @Test
@@ -140,24 +146,25 @@ class AbstractDoubleAssertTest {
         assertThrows(AssertException.class,
                 () -> assert3.isBetween(expected1, expected2));
 
-        // actual < expected
-        assert1.isLessThan(expected2);
+        assertThatNoException().isThrownBy(() -> {
+            // actual < expected
+            assert1.isLessThan(expected2);
 
-        // actual > expected
-        assert2.isGreaterThan(expected1);
+            // actual > expected
+            assert2.isGreaterThan(expected1);
 
-        // actual == expected
-        assert1.isLessThanOrEqualTo(expected1);
-        // actual < expected
-        assert1.isLessThanOrEqualTo(expected2);
+            // actual == expected
+            assert1.isLessThanOrEqualTo(expected1);
+            // actual < expected
+            assert1.isLessThanOrEqualTo(expected2);
 
-        // actual == expected
-        assert3.isGreaterThanOrEqualTo(expected3);
-        // actual >= expected
-        assert3.isGreaterThanOrEqualTo(expected2);
+            // actual == expected
+            assert3.isGreaterThanOrEqualTo(expected3);
+            // actual >= expected
+            assert3.isGreaterThanOrEqualTo(expected2);
 
-        // start < actual < end
-        assert2.isBetween(expected1, expected3);
+            // start < actual < end
+            assert2.isBetween(expected1, expected3);
+        });
     }
-
 }

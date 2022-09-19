@@ -2,9 +2,11 @@ package com.github.ones1kk.asserts.core.lang.number.flot;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
 import com.github.ones1kk.asserts.core.feature.data.Offset;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractFloatAssertTest {
@@ -30,14 +32,16 @@ class AbstractFloatAssertTest {
         assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractFloatAssert.class));
         assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(Float.class));
 
-        assert2.isNull();
-        assert1.isNotNull();
-        assert1.isSameAs(actual1);
-        assert1.isNotSameAs(assert1);
-        assert1.isEqualTo(actual1);
-        assert1.isNotEqualTo(assert1);
-        assert1.isAssignableFrom(Float.class);
-        assert1.isNotAssignableFrom(AbstractFloatAssert.class);
+        assertThatNoException().isThrownBy(() -> {
+            assert2.isNull();
+            assert1.isNotNull();
+            assert1.isSameAs(actual1);
+            assert1.isNotSameAs(assert1);
+            assert1.isEqualTo(actual1);
+            assert1.isNotEqualTo(assert1);
+            assert1.isAssignableFrom(Float.class);
+            assert1.isNotAssignableFrom(AbstractFloatAssert.class);
+        });
     }
 
     @Test
@@ -77,21 +81,24 @@ class AbstractFloatAssertTest {
         assertThrows(AssertException.class, () -> assert3.isCloseTo(5F, 2.0));
         assertThrows(AssertException.class, () -> assert1.isNotCloseTo(1F, 80.0));
 
-        assert1.isFinite();
-        assert4.isInfinity();
-        assert5.isNaN();
-        assert1.isPositive();
-        assert2.isNotPositive();
-        assert2.isNegative();
-        assert1.isNotNegative();
-        assert3.isZero();
-        assert1.isNotZero();
 
-        assert6.isCloseTo(80F, Offset.offset(20F));
-        assert6.isNotCloseTo(70.0F, Offset.offset(10.0F));
+        assertThatNoException().isThrownBy(() -> {
+            assert1.isFinite();
+            assert4.isInfinity();
+            assert5.isNaN();
+            assert1.isPositive();
+            assert2.isNotPositive();
+            assert2.isNegative();
+            assert1.isNotNegative();
+            assert3.isZero();
+            assert1.isNotZero();
 
-        assert1.isCloseTo(actual1, 100.0);
-        assert1.isNotCloseTo(5.8F, 1.2);
+            assert6.isCloseTo(80F, Offset.offset(20F));
+            assert6.isNotCloseTo(70.0F, Offset.offset(10.0F));
+
+            assert1.isCloseTo(actual1, 100.0);
+            assert1.isNotCloseTo(5.8F, 1.2);
+        });
     }
 
     @Test
@@ -141,24 +148,25 @@ class AbstractFloatAssertTest {
         assertThrows(AssertException.class,
                 () -> assert3.isBetween(expected1, expected2));
 
-        // actual < expected
-        assert1.isLessThan(expected2);
+        assertThatNoException().isThrownBy(() -> {
+            // actual < expected
+            assert1.isLessThan(expected2);
 
-        // actual > expected
-        assert2.isGreaterThan(expected1);
+            // actual > expected
+            assert2.isGreaterThan(expected1);
 
-        // actual == expected
-        assert1.isLessThanOrEqualTo(expected1);
-        // actual < expected
-        assert1.isLessThanOrEqualTo(expected2);
+            // actual == expected
+            assert1.isLessThanOrEqualTo(expected1);
+            // actual < expected
+            assert1.isLessThanOrEqualTo(expected2);
 
-        // actual == expected
-        assert3.isGreaterThanOrEqualTo(expected3);
-        // actual >= expected
-        assert3.isGreaterThanOrEqualTo(expected2);
+            // actual == expected
+            assert3.isGreaterThanOrEqualTo(expected3);
+            // actual >= expected
+            assert3.isGreaterThanOrEqualTo(expected2);
 
-        // start < actual < end
-        assert2.isBetween(expected1, expected3);
+            // start < actual < end
+            assert2.isBetween(expected1, expected3);
+        });
     }
-
 }

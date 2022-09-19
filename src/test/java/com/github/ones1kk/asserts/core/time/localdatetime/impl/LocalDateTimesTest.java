@@ -1,6 +1,7 @@
 package com.github.ones1kk.asserts.core.time.localdatetime.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.time.LocalDateTime;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class LocalDateTimesTest {
@@ -42,16 +44,18 @@ class LocalDateTimesTest {
         assertThrows(Exception.class, () -> localDateTimes.assertIsAfter(actual1, LocalDateTime.of(1995, 2, 1, 12, 10, 10)));
         assertThrows(Exception.class, () -> localDateTimes.assertIsAfterOrEqualTo(actual1, LocalDateTime.of(1995, 2, 1, 12, 10, 10)));
 
-        localDateTimes.assertIsEqualTo(actual1, LocalDateTime.of(1995, 2, 1, 11, 11, 11));
-        localDateTimes.assertIsNotEqualTo(actual1, LocalDateTime.of(1995, 2, 1, 12, 11, 11));
+        assertThatNoException().isThrownBy(() -> {
+            localDateTimes.assertIsEqualTo(actual1, LocalDateTime.of(1995, 2, 1, 11, 11, 11));
+            localDateTimes.assertIsNotEqualTo(actual1, LocalDateTime.of(1995, 2, 1, 12, 11, 11));
 
-        localDateTimes.assertIsBefore(actual1, LocalDateTime.of(1995, 2, 1, 12, 10, 10));
-        localDateTimes.assertIsBeforeOrEqualTo(actual1, actual1);
-        localDateTimes.assertIsBeforeOrEqualTo(actual1, LocalDateTime.of(1995, 2, 1, 12, 10, 10));
+            localDateTimes.assertIsBefore(actual1, LocalDateTime.of(1995, 2, 1, 12, 10, 10));
+            localDateTimes.assertIsBeforeOrEqualTo(actual1, actual1);
+            localDateTimes.assertIsBeforeOrEqualTo(actual1, LocalDateTime.of(1995, 2, 1, 12, 10, 10));
 
-        localDateTimes.assertIsAfter(actual1, LocalDateTime.of(1995, 2, 1, 10, 12, 12));
-        localDateTimes.assertIsAfterOrEqualTo(actual1, actual1);
-        localDateTimes.assertIsAfterOrEqualTo(actual1, LocalDateTime.of(1995, 2, 1, 10, 12, 12));
+            localDateTimes.assertIsAfter(actual1, LocalDateTime.of(1995, 2, 1, 10, 12, 12));
+            localDateTimes.assertIsAfterOrEqualTo(actual1, actual1);
+            localDateTimes.assertIsAfterOrEqualTo(actual1, LocalDateTime.of(1995, 2, 1, 10, 12, 12));
+        });
     }
 
 }

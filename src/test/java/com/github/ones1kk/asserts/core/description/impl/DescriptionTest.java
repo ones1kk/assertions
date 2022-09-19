@@ -56,7 +56,6 @@ class DescriptionTest {
 
         // when
         String description = "description is {}, %s";
-        String description2 = "description is {}";
 
         // then
         assertThrows(AssertException.class, () -> describable.as(description, "describable"));
