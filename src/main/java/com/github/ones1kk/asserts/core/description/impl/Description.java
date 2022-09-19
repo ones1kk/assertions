@@ -18,11 +18,11 @@ package com.github.ones1kk.asserts.core.description.impl;
 
 import com.github.ones1kk.asserts.core.description.Describable;
 import com.github.ones1kk.asserts.core.exception.AssertException;
-import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.function.Supplier;
 
 import static com.github.ones1kk.asserts.core.message.DescriptionErrorMessages.*;
+import static org.apache.commons.lang3.ArrayUtils.*;
 
 
 /**
@@ -54,11 +54,11 @@ public final class Description implements Describable {
      *     Description contains '{}' but arguments are empty.
      *
      *     Case3
-     *     Arguments are not empty but description contains braces('{}').
+     *     Arguments are not empty but description contains brace('{}').
      * </pre>
      *
      * @param supplier description as using assertion.
-     * @param args     variable inserted in braces.
+     * @param args     variable inserted in brace.
      * @return formatted string.
      */
     @Override
@@ -88,11 +88,11 @@ public final class Description implements Describable {
      *     Description contains '{}' but arguments are empty.
      *
      *     Case3
-     *     Arguments are not empty but description contains braces('{}').
+     *     Arguments are not empty but description contains brace('{}').
      * </pre>
      *
      * @param description description as using assertion.
-     * @param args        variable inserted in braces.
+     * @param args        variable inserted in brace.
      * @return formatted string.
      */
     @Override

@@ -29,7 +29,7 @@ public final class DescriptionErrorMessages {
         return "The arguments should be entered.";
     }
 
-    public static String ShouldBeExpressedInBraces() {
-        return "The arguments should be expressed in only braces.";
+    public static String ShouldBeExpressedInBrace() {
+        return "The arguments should be expressed in only brace.";
     }
 }

@@ -63,11 +63,11 @@ public class AsAssert<SELF> implements AsAssertInterface<SELF> {
      *     Description contains '{}' but arguments are empty.
      *
      *     Case3
-     *     Arguments are not empty but description contains braces('{}').
+     *     Arguments are not empty but description contains brace('{}').
      * </pre>
      *
      * @param description description as using assertion.
-     * @param args        variable inserted in braces.
+     * @param args        variable inserted in brace.
      * @return {@code self}.
      */
     @Override
@@ -98,11 +98,11 @@ public class AsAssert<SELF> implements AsAssertInterface<SELF> {
      *     Description contains '{}' but arguments are empty.
      *
      *     Case3
-     *     Arguments are not empty but description contains braces('{}').
+     *     Arguments are not empty but description contains brace('{}').
      * </pre>
      *
      * @param description description as using assertion.
-     * @param args        variable inserted in braces.
+     * @param args        variable inserted in brace.
      * @return {@code self}.
      */
     @Override
