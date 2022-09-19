@@ -22,7 +22,8 @@ import com.github.ones1kk.asserts.core.exception.AssertException;
 import java.util.function.Supplier;
 
 import static com.github.ones1kk.asserts.core.message.DescriptionErrorMessages.*;
-import static org.apache.commons.lang3.ArrayUtils.*;
+import static org.apache.commons.lang3.ArrayUtils.isEmpty;
+import static org.apache.commons.lang3.ArrayUtils.isNotEmpty;
 
 
 /**

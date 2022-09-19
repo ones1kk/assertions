@@ -1,11 +1,10 @@
 package com.github.ones1kk.asserts.core.lang.character;
 
 import com.github.ones1kk.asserts.core.exception.AssertException;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThatNoException;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractCharacterAssertTest {

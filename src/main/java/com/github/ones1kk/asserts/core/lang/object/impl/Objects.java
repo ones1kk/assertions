@@ -18,7 +18,6 @@ package com.github.ones1kk.asserts.core.lang.object.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjects;
-import com.github.ones1kk.asserts.core.message.CommonErrorMessages;
 
 import static com.github.ones1kk.asserts.core.message.CommonErrorMessages.*;
 

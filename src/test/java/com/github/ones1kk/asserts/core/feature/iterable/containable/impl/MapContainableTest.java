@@ -44,7 +44,5 @@ class MapContainableTest {
         assertThat(containable.containsAllValue(actual, expected2)).isFalse();
         assertThat(containable.doesNotContainAllValue(actual, expected1)).isFalse();
         assertThat(containable.doesNotContainAllValue(actual, expected2)).isTrue();
-
-
     }
 }
