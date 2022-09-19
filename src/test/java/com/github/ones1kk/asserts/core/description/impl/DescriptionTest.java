@@ -24,6 +24,8 @@ class DescriptionTest {
         assertThat(description1).isEqualTo("Description test");
         assertThat(description2).isEqualTo("Description test");
         assertThrows(AssertException.class, () -> describable.as("Description {}"));
+        assertThrows(AssertException.class, () -> describable.as("Description", "test"));
+        assertThrows(AssertException.class, () -> describable.as("Description", "test"));
     }
 
     @Test
@@ -59,5 +61,4 @@ class DescriptionTest {
         // then
         assertThrows(AssertException.class, () -> describable.as(description, "describable"));
     }
-
 }
