@@ -120,7 +120,6 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     public void assertDoesNotHaveSameSizeOf(ACTUAL actual, Map<?, ?> expected) {
         if (comparable.hasSameSizeOf(actual, expected)) {
             handler.receive(actual, expected, MapErrorMessages.shouldDoNotHaveSizeOf(actual, expected.size()));
-            handler.setDescription(handler.from("size of actual has same size of expected"));
             throw handler.getException();
         }
     }

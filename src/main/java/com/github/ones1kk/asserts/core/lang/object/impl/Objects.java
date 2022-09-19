@@ -18,6 +18,9 @@ package com.github.ones1kk.asserts.core.lang.object.impl;
 
 import com.github.ones1kk.asserts.core.AsAssert;
 import com.github.ones1kk.asserts.core.lang.object.AbstractObjects;
+import com.github.ones1kk.asserts.core.message.CommonErrorMessages;
+
+import static com.github.ones1kk.asserts.core.message.CommonErrorMessages.*;
 
 /**
  * <strong> The Objects class is as implementation of {@link com.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert} </strong>
@@ -41,7 +44,7 @@ public class Objects<ACTUAL> extends AbstractObjects<Object> {
     @Override
     public void assertIsNull(Object actual) {
         if (actual != null) {
-            handler.setDescription(handler.from(actual, "{} is not null"));
+            handler.receive(actual, shouldBeNull(actual));
             throw handler.getException();
         }
     }
@@ -49,7 +52,7 @@ public class Objects<ACTUAL> extends AbstractObjects<Object> {
     @Override
     public void assertIsNotNull(Object actual) {
         if (actual == null) {
-            handler.setDescription(handler.from("The actual is is null"));
+            handler.receive(shouldNotBeNull(getActualAsPlain()));
             throw handler.getException();
         }
     }
@@ -57,7 +60,7 @@ public class Objects<ACTUAL> extends AbstractObjects<Object> {
     @Override
     public void assertIsSameAs(Object actual, Object expected) {
         if (actual != expected) {
-            handler.setDescription(handler.from(actual, expected, "{} is not same as {}"));
+            handler.receive(actual, expected, shouldBeSameAS(actual, expected));
             throw handler.getException();
         }
     }
@@ -65,7 +68,7 @@ public class Objects<ACTUAL> extends AbstractObjects<Object> {
     @Override
     public void assertIsNotSameAs(Object actual, Object expected) {
         if (actual == expected) {
-            handler.setDescription(handler.from(actual, expected, "{} is same as {}"));
+            handler.receive(actual, expected, shouldNotBeSameAS(actual, expected));
             throw handler.getException();
         }
     }
@@ -73,7 +76,7 @@ public class Objects<ACTUAL> extends AbstractObjects<Object> {
     @Override
     public void assertIsEqualTo(Object actual, Object expected) {
         if (!actual.equals(expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not equal to {}"));
+            handler.receive(actual, expected, shouldBeEqualTo(actual, expected));
             throw handler.getException();
         }
     }
@@ -81,7 +84,7 @@ public class Objects<ACTUAL> extends AbstractObjects<Object> {
     @Override
     public void assertIsNotEqualTo(Object actual, Object expected) {
         if (actual.equals(expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is equal to {}"));
+            handler.receive(actual, expected, shouldNotBeEqualTo(actual, expected));
             throw handler.getException();
         }
     }
@@ -89,7 +92,7 @@ public class Objects<ACTUAL> extends AbstractObjects<Object> {
     @Override
     public void assertIsAssignableFrom(Object actual, Class<?> expected) {
         if (!actual.getClass().isAssignableFrom(expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not assignable from {}"));
+            handler.receive(actual, expected, shouldBeAssignableFrom(actual, expected));
             throw handler.getException();
         }
     }
@@ -97,7 +100,7 @@ public class Objects<ACTUAL> extends AbstractObjects<Object> {
     @Override
     public void assertIsNotAssignableFrom(Object actual, Class<?> expected) {
         if (actual.getClass().isAssignableFrom(expected)) {
-            handler.setDescription(handler.from(actual, expected, "{} is assignable from {}"));
+            handler.receive(actual, expected, shouldNotBeAssignableFrom(actual, expected));
             throw handler.getException();
         }
     }
@@ -105,7 +108,7 @@ public class Objects<ACTUAL> extends AbstractObjects<Object> {
     @Override
     public void assertIsInstanceOf(Object actual, Class<?> expected) {
         if (!expected.isInstance(actual)) {
-            handler.setDescription(handler.from(actual, expected, "{} is not instance of {}"));
+            handler.receive(actual, expected, shouldBeInstanceOf(actual, expected));
             throw handler.getException();
         }
     }
@@ -113,7 +116,7 @@ public class Objects<ACTUAL> extends AbstractObjects<Object> {
     @Override
     public void assertIsNotInstanceOf(Object actual, Class<?> expected) {
         if (expected.isInstance(actual)) {
-            handler.setDescription(handler.from(actual, expected, "{} is instance of {}"));
+            handler.receive(actual, expected, shouldBeNotInstanceOf(actual, expected));
             throw handler.getException();
         }
     }

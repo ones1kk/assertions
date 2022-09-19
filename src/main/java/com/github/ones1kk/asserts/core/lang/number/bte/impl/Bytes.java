@@ -45,7 +45,6 @@ public final class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
     public void assertIsOdd(Byte actual) {
         if (of(actual).isEven()) {
             handler.receive(actual, shouldBeOdd(actual));
-            handler.setDescription(handler.from(actual, "{} is not odd"));
             throw handler.getException();
         }
     }

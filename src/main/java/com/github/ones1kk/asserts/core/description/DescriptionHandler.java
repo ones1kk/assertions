@@ -47,16 +47,8 @@ public final class DescriptionHandler {
         setDescription(formatter.writeOutput(actual, expected, description));
     }
 
-    public String from(String description, Object... args) {
-        return formatter.writeOutput(describable.as(description, args));
-    }
-
-    public String from(Object actual, String description) {
-        return formatter.writeOutput(actual, describable.as(description, actual));
-    }
-
-    public String from(Object actual, Object expected, String description) {
-        return formatter.writeOutput(actual, expected, describable.as(description, actual, expected));
+    public void receiveAsDescription(String description, Object... args) {
+        setAsDescription(formatter.writeOutput(describable.as(description, args)));
     }
 
     public AssertException getException() {
@@ -70,15 +62,11 @@ public final class DescriptionHandler {
         return StringUtils.isEmpty(asDescription);
     }
 
-    public void setAsDescription(String asDescription) {
+    private void setAsDescription(String asDescription) {
         this.asDescription = asDescription;
     }
 
-    public void setDescription(String description) {
+    private void setDescription(String description) {
         this.description = description;
-    }
-
-    public Describable getDescribable() {
-        return describable;
     }
 }

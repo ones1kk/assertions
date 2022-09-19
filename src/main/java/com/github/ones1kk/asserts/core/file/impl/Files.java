@@ -146,7 +146,6 @@ public final class Files extends Objects<File> implements FilesInterface {
     public void assertHasExtension(File actual, String extension) {
         if (!FilenameUtils.getExtension(actual.getName()).equals(extension)) {
             handler.receive(actual, extension, shouldHaveExtension(actual, extension));
-            handler.setDescription(handler.from(actual, extension, "{} does not have {} as extension"));
             throw handler.getException();
         }
     }

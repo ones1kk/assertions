@@ -32,7 +32,7 @@ import java.util.function.Supplier;
  */
 public class AsAssert<SELF> implements AsAssertInterface<SELF> {
 
-    public final DescriptionHandler handler = new DescriptionHandler();
+    public DescriptionHandler handler = new DescriptionHandler();
 
     private final SELF self;
 
@@ -72,7 +72,7 @@ public class AsAssert<SELF> implements AsAssertInterface<SELF> {
      */
     @Override
     public SELF as(Supplier<String> description, Object... args) {
-        handler.setAsDescription(handler.from(description.get(), args));
+        handler.receiveAsDescription(description.get(), args);
         return self;
     }
 
@@ -107,7 +107,7 @@ public class AsAssert<SELF> implements AsAssertInterface<SELF> {
      */
     @Override
     public SELF as(String description, Object... args) {
-        handler.setAsDescription(handler.from(description, args));
+        handler.receiveAsDescription(description, args);
         return self;
     }
 

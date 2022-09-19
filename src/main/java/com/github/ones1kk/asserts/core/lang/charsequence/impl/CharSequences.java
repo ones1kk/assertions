@@ -67,7 +67,6 @@ public class CharSequences extends Objects<CharSequence> implements CharSequence
     public void assertIsEqualToIgnoreCase(CharSequence actual, CharSequence expected) {
         if (!StringUtils.equalsIgnoreCase(actual, expected)) {
             handler.receive(actual, expected, CharSequenceErrorMessages.shouldBeEqualToIgnoreCase(actual, expected));
-            handler.setDescription(handler.from(actual, expected, "{} is not equal as ignore case with {}"));
             throw handler.getException();
         }
     }

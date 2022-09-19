@@ -45,7 +45,6 @@ public final class Shorts extends Objects<Short> implements ShortsInterface<Shor
     public void assertIsOdd(Short actual) {
         if (of(actual).isEven()) {
             handler.receive(actual, shouldBeOdd(actual));
-            handler.setDescription(handler.from(actual, "{} is not odd"));
             throw handler.getException();
         }
     }
