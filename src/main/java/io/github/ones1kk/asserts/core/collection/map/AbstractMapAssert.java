@@ -28,8 +28,8 @@ import java.util.Map;
  *
  * @param <SELF>   {@code self}.
  * @param <ACTUAL> {@code actual}.
- * @param <K> {@code k}.
- * @param <V> {@code v}.
+ * @param <K>      {@code k}.
+ * @param <V>      {@code v}.
  */
 public class AbstractMapAssert<SELF extends AbstractMapAssert<SELF, ACTUAL, K, V>, ACTUAL extends Map<K, V>, K, V> extends AbstractObjectAssert<SELF, ACTUAL> implements MapAssertInterface<SELF, ACTUAL, K, V> {
 
