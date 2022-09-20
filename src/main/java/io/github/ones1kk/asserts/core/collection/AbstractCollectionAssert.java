@@ -27,8 +27,8 @@ import java.util.function.Predicate;
  * <br>
  * <p> This is that implements the assertion method of the Collection type and verify assertion.</p>
  *
- * @param <SELF>
- * @param <ACTUAL>
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
  */
 public class AbstractCollectionAssert<SELF extends AbstractCollectionAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Collection<ACTUAL>> implements CollectionAssertInterface<SELF, ACTUAL> {
 

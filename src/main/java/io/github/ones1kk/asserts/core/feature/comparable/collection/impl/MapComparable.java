@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * <strong> The MapComparable is an implementation class that compares the size of Map type.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public final class MapComparable<ELEMENT extends Map<K, V>, K, V> {
 

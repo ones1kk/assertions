@@ -20,7 +20,7 @@ package io.github.ones1kk.asserts.core.lang.bolean;
 /**
  * <strong> The BooleanAssertInterface class is for a having Boolean type, assertable interface class.</strong>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public interface BooleanAssertInterface<SELF> {
 

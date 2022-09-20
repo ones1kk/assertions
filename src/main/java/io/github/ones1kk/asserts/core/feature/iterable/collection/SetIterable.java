@@ -22,7 +22,7 @@ import java.util.function.Predicate;
 /**
  * <strong> The SetIterable is for {@link Set} assertion to implement iterable class.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface SetIterable<ELEMENT> {
 

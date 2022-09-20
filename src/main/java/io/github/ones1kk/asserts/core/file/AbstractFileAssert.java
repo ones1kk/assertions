@@ -25,7 +25,7 @@ import java.io.File;
  * <br>
  * <p> This is that implements the assertion method of the File type and verify assertion.</p>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public class AbstractFileAssert<SELF extends AbstractFileAssert<SELF>> extends AbstractObjectAssert<SELF, File> implements FileAssertInterface<SELF> {
 

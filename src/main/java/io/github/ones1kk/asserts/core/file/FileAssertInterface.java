@@ -23,7 +23,7 @@ import java.io.File;
 /**
  * <strong> The FileAssertInterface class is for a comparable, having File Type, assertable interface class.</strong>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public interface FileAssertInterface<SELF> extends SizeComparableAssert<SELF, File> {
 

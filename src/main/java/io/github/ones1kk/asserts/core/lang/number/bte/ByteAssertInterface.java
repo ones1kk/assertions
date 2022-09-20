@@ -23,7 +23,7 @@ import io.github.ones1kk.asserts.core.lang.number.IntegerTypeAssertInterface;
 /**
  * <strong> The ByteAssertInterface class is for a having Byte type, assertable interface class.</strong>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public interface ByteAssertInterface<SELF> extends IntegerTypeAssertInterface<SELF>, NumerableAssert<SELF, Byte>, ComparableAssert<SELF, Byte> {
 }

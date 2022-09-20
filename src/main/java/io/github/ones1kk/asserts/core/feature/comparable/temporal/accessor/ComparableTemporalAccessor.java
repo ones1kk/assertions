@@ -21,7 +21,7 @@ import java.time.temporal.TemporalAccessor;
 /**
  * <strong> The ComparableTemporalAccessor class compares comparable ELEMENT type parameter.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface ComparableTemporalAccessor<ELEMENT extends TemporalAccessor & java.lang.Comparable<ELEMENT>> {
 

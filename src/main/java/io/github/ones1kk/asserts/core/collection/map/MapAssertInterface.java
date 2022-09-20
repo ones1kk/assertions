@@ -23,8 +23,8 @@ import java.util.Map;
 /**
  * <strong> The MapAssertInterface class is for a comparable, assertable, iterable interface class.</strong>
  *
- * @param <SELF>
- * @param <ACTUAL>
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
  */
 public interface MapAssertInterface<SELF, ACTUAL extends Map<K, V>, K, V> extends SizeComparableAssert<SELF, ACTUAL> {
 

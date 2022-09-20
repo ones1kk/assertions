@@ -28,8 +28,8 @@ import io.github.ones1kk.asserts.core.AssertFactory;
  *
  * <p> Also, this class actually casts the type parameter coming into SELF and ACTUAL.</p>
  *
- * @param <SELF>
- * @param <ACTUAL>
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
  */
 public class AbstractObjectAssert<SELF extends AbstractAssert<SELF, Object>, ACTUAL> extends AbstractAssert<SELF, Object> {
 

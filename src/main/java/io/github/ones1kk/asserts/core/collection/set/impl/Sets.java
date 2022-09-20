@@ -33,7 +33,7 @@ import java.util.function.Predicate;
 /**
  * <strong> The Sets class inherits {@link AbstractObjectAssert} </strong>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public final class Sets<ACTUAL> extends Objects<ACTUAL> implements SetsInterfaces<ACTUAL> {
 

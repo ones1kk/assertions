@@ -21,7 +21,7 @@ import io.github.ones1kk.asserts.core.feature.comparable.ComparableAssert;
 /**
  * <strong> The CharacterAssertInterface class is for a having Character type, assertable interface class.</strong>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public interface CharacterAssertInterface<SELF> extends ComparableAssert<SELF, Character> {
 

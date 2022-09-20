@@ -22,7 +22,7 @@ import io.github.ones1kk.asserts.core.file.AbstractFileAssert;
 /**
  * <strong> The ArrayAssert class inherits {@link AbstractFileAssert} </strong>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public class ArrayAssert<ACTUAL> extends AbstractArrayAssert<ArrayAssert<ACTUAL>, ACTUAL> {
 

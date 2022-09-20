@@ -40,7 +40,7 @@ public final class Description implements Describable {
      *
      * <p>How to use</p>
      * <pre>
-     *     as(() -> "description is {}", argument);
+     *     as({@link Supplier}, argument);
      *
      *     as("description is {}", argument);
      * </pre>
@@ -74,7 +74,7 @@ public final class Description implements Describable {
      *
      * <p>How to use</p>
      * <pre>
-     *     as(() -> "description is {}", argument);
+     *     as({@link Supplier}, argument);
      *
      *     as("description is {}", argument);
      * </pre>

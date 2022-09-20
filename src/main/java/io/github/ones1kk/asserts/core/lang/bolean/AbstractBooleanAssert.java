@@ -23,8 +23,8 @@ import io.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
  * <br>
  * <p> This is that implements the assertion method of the Boolean type and verify assertion.</p>
  *
- * @param <SELF>
- * @param <ACTUAL>
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
  */
 public class AbstractBooleanAssert<SELF extends AbstractBooleanAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Boolean> implements BooleanAssertInterface<SELF> {
 

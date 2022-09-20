@@ -23,7 +23,7 @@ import io.github.ones1kk.asserts.core.lang.number.IntegerTypeAssertInterface;
 /**
  * <strong> The LongAssertInterface class is for a having Integer type, assertable interface class.</strong>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public interface LongAssertInterface<SELF> extends IntegerTypeAssertInterface<SELF>, NumerableAssert<SELF, Long>, ComparableAssert<SELF, Long> {
 }

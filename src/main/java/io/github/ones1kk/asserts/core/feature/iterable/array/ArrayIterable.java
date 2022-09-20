@@ -21,7 +21,7 @@ import java.util.function.Predicate;
 /**
  * <strong> The ArrayIterable is for iterable assertion to implement iterable class.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface ArrayIterable<ELEMENT> {
 

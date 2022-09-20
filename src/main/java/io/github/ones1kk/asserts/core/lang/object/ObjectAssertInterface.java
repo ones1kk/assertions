@@ -19,8 +19,8 @@ package io.github.ones1kk.asserts.core.lang.object;
 /**
  * <strong> The ObjectAssertInterface class is for a having Object type, assertable interface class.</strong>
  *
- * @param <SELF>
- * @param <ACTUAL>
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
  */
 public interface ObjectAssertInterface<SELF, ACTUAL> {
 

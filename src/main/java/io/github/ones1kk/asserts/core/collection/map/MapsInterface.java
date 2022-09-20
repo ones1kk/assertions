@@ -24,7 +24,7 @@ import java.util.Map;
 /**
  * <strong> The MapsInterface class is for a comparable, iterable, assertable assertion implementation class.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface MapsInterface<ELEMENT extends Map<K, V>, K, V> extends MapIterable<ELEMENT, K, V>, SizeComparable<ELEMENT> {
 }

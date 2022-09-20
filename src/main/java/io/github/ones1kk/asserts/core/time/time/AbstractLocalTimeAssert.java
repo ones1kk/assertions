@@ -26,7 +26,7 @@ import java.time.LocalTime;
  * <br>
  * <p> This is that implements the assertion method of the LocalTime type and verify assertion.</p>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public class AbstractLocalTimeAssert<SELF extends AbstractLocalTimeAssert<SELF, ACTUAL>, ACTUAL> extends AbstractTemporalAccessorAssert<SELF, LocalTime> implements LocalTimeAssertInterface<SELF> {
 

@@ -21,7 +21,7 @@ import io.github.ones1kk.asserts.core.feature.comparable.Comparable;
 /**
  * <strong> The StringsInterface class is for a having String Type, assertable assertion implementation class.</strong>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public interface StringsInterface<ACTUAL> extends Comparable<ACTUAL> {
 

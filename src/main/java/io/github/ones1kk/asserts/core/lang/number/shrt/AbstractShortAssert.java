@@ -25,8 +25,8 @@ import io.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
  * <br>
  * <p> This is that implements the assertion method of the Short type and verify assertion.</p>
  *
- * @param <SELF>
- * @param <ACTUAL>
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
  */
 public class AbstractShortAssert<SELF extends AbstractShortAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Short> implements ShortAssertInterface<SELF> {
 

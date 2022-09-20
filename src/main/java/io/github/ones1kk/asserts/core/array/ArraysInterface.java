@@ -22,7 +22,7 @@ import io.github.ones1kk.asserts.core.feature.iterable.array.ArrayIterable;
 /**
  * <strong> The ArraysInterface class is for a iterable, assertable assertion implementation class.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface ArraysInterface<ELEMENT> extends ArrayIterable<ELEMENT>, LengthComparable<ELEMENT[]> {
 }

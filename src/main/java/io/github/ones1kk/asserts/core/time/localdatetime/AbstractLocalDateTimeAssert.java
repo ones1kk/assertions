@@ -26,7 +26,7 @@ import java.time.LocalDateTime;
  * <br>
  * <p> This is that implements the assertion method of the LocalDateTime type and verify assertion.</p>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public class AbstractLocalDateTimeAssert<SELF extends AbstractLocalDateTimeAssert<SELF, ACTUAL>, ACTUAL extends LocalDateTime> extends AbstractObjectAssert<SELF, ACTUAL> implements TemporalAccessorAssertInterface<SELF, ACTUAL> {
 

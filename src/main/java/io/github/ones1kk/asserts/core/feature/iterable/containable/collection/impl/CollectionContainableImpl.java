@@ -23,7 +23,7 @@ import java.util.Collection;
 /**
  * <strong> The CollectionContainableImpl class is Implementation class that calculates the containable of an collection.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public final class CollectionContainableImpl<ELEMENT> implements CollectionContainable<ELEMENT> {
 

@@ -22,7 +22,7 @@ import java.util.function.Predicate;
 /**
  * <strong> The ListIterable is for {@link List} assertion to implement iterable class.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface ListIterable<ELEMENT> {
 

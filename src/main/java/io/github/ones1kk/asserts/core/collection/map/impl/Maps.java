@@ -32,7 +32,7 @@ import static io.github.ones1kk.asserts.core.message.SizeComparableErrorMessages
 /**
  * <strong> The Maps class inherits {@link AbstractObjectAssert} </strong>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> implements MapsInterface<ACTUAL, K, V> {
 

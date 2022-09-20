@@ -25,8 +25,8 @@ import io.github.ones1kk.asserts.core.lang.object.ObjectAssertInterface;
  *
  * <p> As with all AbstractAssert classes, this class receive {@code SELF} and {@code ACTUAL} by type parameter.</p>
  *
- * @param <SELF>
- * @param <ACTUAL>
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
  */
 public abstract class AbstractAssert<SELF, ACTUAL> extends AsAssert<SELF> implements ObjectAssertInterface<SELF, ACTUAL> {
 

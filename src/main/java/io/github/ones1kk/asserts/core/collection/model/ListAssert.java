@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * <strong> The ListAssert class inherits {@link AbstractListAssert} </strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public class ListAssert<ELEMENT> extends AbstractListAssert<ListAssert<ELEMENT>, ELEMENT> {
 

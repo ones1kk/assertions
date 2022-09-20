@@ -23,7 +23,7 @@ import io.github.ones1kk.asserts.core.lang.number.IntegerTypeAssertInterface;
 /**
  * <strong> The IntegerAssertInterface class is for a having Intger type, assertable interface class.</strong>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public interface IntegerAssertInterface<SELF> extends IntegerTypeAssertInterface<SELF>, NumerableAssert<SELF, Integer>, ComparableAssert<SELF, Integer> {
 }

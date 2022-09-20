@@ -22,7 +22,7 @@ import io.github.ones1kk.asserts.core.feature.data.Percentage;
 /**
  * <strong> The Numerable is interface for numerable implementation class. </strong>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public interface Numerable<ACTUAL extends Number> {
 

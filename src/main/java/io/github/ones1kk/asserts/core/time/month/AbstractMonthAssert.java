@@ -26,7 +26,7 @@ import java.time.Month;
  * <br>
  * <p> This is that implements the assertion method of the Month type and verify assertion.</p>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public class AbstractMonthAssert<SELF extends AbstractMonthAssert<SELF, ACTUAL>, ACTUAL> extends AbstractTemporalAccessorAssert<SELF, Month> {
 

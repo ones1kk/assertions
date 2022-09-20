@@ -22,7 +22,7 @@ import io.github.ones1kk.asserts.core.feature.number.Numerable;
 /**
  * <strong> The FloatsInterface class is for a having Float Type, assertable assertion implementation class.</strong>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public interface FloatsInterface<ACTUAL> extends Comparable<ACTUAL>, Numerable<Float> {
 

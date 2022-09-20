@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * <strong> The ArraysInterface class is for a comparable, iterable, assertable assertion implementation class.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface ListsInterface<ELEMENT> extends ListIterable<ELEMENT>, SizeComparable<List<? extends ELEMENT>> {
 }

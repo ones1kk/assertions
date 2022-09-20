@@ -21,8 +21,8 @@ import java.util.function.Predicate;
 /**
  * <strong> The IterableAssert class is for a iterable, assertable interface class.</strong>
  *
- * @param <SELF>
- * @param <ELEMENT>
+ * @param <SELF>    {@code self}.
+ * @param <ELEMENT> {@code element}.
  */
 public interface IterableAssert<SELF, ELEMENT> {
 

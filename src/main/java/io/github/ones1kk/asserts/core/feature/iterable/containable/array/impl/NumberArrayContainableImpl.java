@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * <strong> The NumberArrayContainableImpl class is Implementation class that calculates the containable of an array of type Number.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public final class NumberArrayContainableImpl<ELEMENT extends Number> implements NumberArrayContainable<ELEMENT> {
 

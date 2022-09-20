@@ -28,7 +28,7 @@ import java.util.function.Supplier;
  *
  * <p> Receive and cast Assert class as SELF type parameter, and receive {@link DescriptionHandler} <b>DI(Dependency Injection)</b></p>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public class AsAssert<SELF> implements AsAssertInterface<SELF> {
 
@@ -48,7 +48,7 @@ public class AsAssert<SELF> implements AsAssertInterface<SELF> {
      *
      * <p>How to use</p>
      * <pre>
-     *     as(() -> "description is {}", argument);
+     *     as({@link Supplier}, argument);
      *
      *     as("description is {}", argument);
      * </pre>
@@ -83,7 +83,7 @@ public class AsAssert<SELF> implements AsAssertInterface<SELF> {
      *
      * <p>How to use</p>
      * <pre>
-     *     as(() -> "description is {}", argument);
+     *     as({@link Supplier}, argument);
      *
      *     as("description is {}", argument);
      * </pre>

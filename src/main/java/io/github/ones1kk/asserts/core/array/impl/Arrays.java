@@ -35,7 +35,7 @@ import static org.apache.commons.lang3.ArrayUtils.isNotEmpty;
 /**
  * <strong> The Arrays class inherits {@link AbstractObjectAssert} </strong>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public final class Arrays<ACTUAL> extends Objects<ACTUAL> implements ArraysInterface<ACTUAL> {
 

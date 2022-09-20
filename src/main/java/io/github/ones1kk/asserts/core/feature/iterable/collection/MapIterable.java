@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * <strong> The MapIterable is for {@link Map} assertion assertion to implement iterable class.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface MapIterable<ELEMENT extends Map<K, V>, K, V> {
 

@@ -24,7 +24,7 @@ import java.util.Set;
 /**
  * <strong> The SetsInterfaces class is for a comparable, iterable, assertable assertion implementation class.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface SetsInterfaces<ELEMENT> extends SetIterable<ELEMENT>, SizeComparable<Set<? extends ELEMENT>> {
 }

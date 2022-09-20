@@ -22,7 +22,7 @@ import io.github.ones1kk.asserts.core.feature.number.Numerable;
 /**
  * <strong> The ShortsInterface class is for a having Short Type, assertable assertion implementation class.</strong>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public interface ShortsInterface<ACTUAL> extends Comparable<ACTUAL>, Numerable<Short> {
 

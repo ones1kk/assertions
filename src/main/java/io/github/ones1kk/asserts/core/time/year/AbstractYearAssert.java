@@ -26,7 +26,7 @@ import java.time.Year;
  * <br>
  * <p> This is that implements the assertion method of the Year type and verify assertion.</p>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public class AbstractYearAssert<SELF extends AbstractYearAssert<SELF, ACTUAL>, ACTUAL> extends AbstractTemporalAccessorAssert<SELF, Year> implements YearAssertInterface<SELF> {
 

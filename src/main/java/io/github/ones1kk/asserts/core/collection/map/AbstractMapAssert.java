@@ -26,10 +26,10 @@ import java.util.Map;
  * <br>
  * <p> This is that implements the assertion method of the Map type and verify assertion.</p>
  *
- * @param <SELF>
- * @param <ACTUAL>
- * @param <K>
- * @param <V>
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
+ * @param <K> {@code k}.
+ * @param <V> {@code v}.
  */
 public class AbstractMapAssert<SELF extends AbstractMapAssert<SELF, ACTUAL, K, V>, ACTUAL extends Map<K, V>, K, V> extends AbstractObjectAssert<SELF, ACTUAL> implements MapAssertInterface<SELF, ACTUAL, K, V> {
 

@@ -22,8 +22,8 @@ import io.github.ones1kk.asserts.core.feature.iterable.IterableAssert;
 /**
  * <strong> The ArrayAssertInterface class is for a comparable, assertable interface class.</strong>
  *
- * @param <SELF>
- * @param <ACTUAL>
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
  */
 public interface ArrayAssertInterface<SELF, ACTUAL> extends IterableAssert<SELF, ACTUAL>, LengthComparableAssert<SELF, ACTUAL[]> {
 }

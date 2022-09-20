@@ -23,7 +23,7 @@ import java.time.LocalDateTime;
 /**
  * <strong> The ComparableLocalDateTimeImpl is an implementation class that compares LocalDateTime type.</strong>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public final class ComparableLocalDateTimeImpl<ACTUAL extends LocalDateTime> implements ComparableLocalDateTime<ACTUAL> {
 

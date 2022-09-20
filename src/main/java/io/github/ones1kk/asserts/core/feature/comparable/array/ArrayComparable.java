@@ -19,7 +19,7 @@ package io.github.ones1kk.asserts.core.feature.comparable.array;
 /**
  * <strong> The ArrayComparable class compares comparable ELEMENT type parameter.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface ArrayComparable<ELEMENT> {
 

@@ -19,13 +19,13 @@ package io.github.ones1kk.asserts.core;
 import java.util.function.Supplier;
 
 /**
- * <strong> The asAssertInterface is a class for the as method. <strong>
+ * <strong> The asAssertInterface is a class for the as method. </strong>
  * <br>
  * <p> The as method helps to output as a user-defined phrase when the condition of the assertion being used is not met.</p>
  *
- * <p> The one of arguments of as method is {@link  Supplier<String>} and {@link String} for <b>description</b></p>
+ * <p> The one of arguments of as method is {@link Supplier} and {@link String} for <b>description</b></p>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public interface AsAssertInterface<SELF> {
 

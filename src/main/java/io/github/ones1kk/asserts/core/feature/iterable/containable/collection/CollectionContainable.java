@@ -21,7 +21,7 @@ import java.util.Collection;
 /**
  * The CollectionContainable class is for classes to implement containable collection calculations.
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface CollectionContainable<ELEMENT> {
 

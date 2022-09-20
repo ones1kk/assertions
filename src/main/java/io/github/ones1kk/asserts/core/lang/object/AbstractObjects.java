@@ -29,7 +29,7 @@ import io.github.ones1kk.asserts.core.description.DescriptionHandler;
  * <p> All of AbstractAssert class of implementation classes have to be injected {@link AsAssert}, Because {@link AbstractObjectAssert} has inherited {@link AsAssert} </p>
  * <b> It is expressed as an implementation class, but structurally, it is not an implementation class.</b>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public abstract class AbstractObjects<ACTUAL> implements ObjectsInterface<ACTUAL> {
 

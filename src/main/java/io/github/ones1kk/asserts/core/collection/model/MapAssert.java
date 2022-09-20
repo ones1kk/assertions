@@ -23,9 +23,9 @@ import java.util.Map;
 /**
  * <strong> The MapAssert class inherits {@link AbstractMapAssert} </strong>
  *
- * @param <ACTUAL>
- * @param <K>
- * @param <V>
+ * @param <ACTUAL> {@code actual}.
+ * @param <K> {@code k}.
+ * @param <V> {@code v}.
  */
 public class MapAssert<ACTUAL extends Map<K, V>, K, V> extends AbstractMapAssert<MapAssert<ACTUAL, K, V>, ACTUAL, K, V> {
 

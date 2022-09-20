@@ -19,7 +19,7 @@ package io.github.ones1kk.asserts.core.feature.iterable.containable.array;
 /**
  * <strong> The NumberArrayContainable class is for classes to implement containable number array calculations.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface NumberArrayContainable<ELEMENT extends Number> extends ArrayContainable<ELEMENT> {
 

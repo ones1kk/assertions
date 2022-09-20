@@ -21,7 +21,7 @@ import io.github.ones1kk.asserts.core.feature.comparable.array.ArrayComparable;
 /**
  * <strong> The ArrayComparableImpl is an implementation class that compares the length of Array type.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public final class ArrayComparableImpl<ELEMENT> implements ArrayComparable<ELEMENT> {
 

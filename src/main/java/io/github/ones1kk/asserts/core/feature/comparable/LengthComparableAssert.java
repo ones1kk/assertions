@@ -19,8 +19,8 @@ package io.github.ones1kk.asserts.core.feature.comparable;
 /**
  * <strong> The LengthComparableAssert class is for a comparable, assertable interface class.</strong>
  *
- * @param <SELF>
- * @param <ACTUAL>
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
  */
 public interface LengthComparableAssert<SELF, ACTUAL> {
 

@@ -22,7 +22,7 @@ import io.github.ones1kk.asserts.core.feature.number.Numerable;
 /**
  * <strong> The DoublesInterface class is for a having Double Type, assertable assertion implementation class.</strong>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public interface DoublesInterface<ACTUAL> extends Comparable<ACTUAL>, Numerable<Double> {
 

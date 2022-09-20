@@ -26,8 +26,8 @@ import java.util.function.Predicate;
  * <br>
  * <p> This is that implements the assertion method of the List type and verify assertion.</p>
  *
- * @param <SELF>
- * @param <ACTUAL>
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
  */
 public class AbstractListAssert<SELF extends AbstractListAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, List<? extends ACTUAL>> implements ListAssertInterface<SELF, ACTUAL> {
 

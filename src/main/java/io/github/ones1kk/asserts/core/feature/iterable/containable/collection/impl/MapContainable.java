@@ -23,9 +23,9 @@ import java.util.Set;
 /**
  * <strong> The MapContainable class is that calculates the containable of an map.</strong>
  *
- * @param <ACTUAL>
- * @param <K>
- * @param <V>
+ * @param <ACTUAL> {@code actual}.
+ * @param <K> {@code k}.
+ * @param <V> {@code v}.
  */
 public final class MapContainable<ACTUAL extends Map<K, V>, K, V> {
 

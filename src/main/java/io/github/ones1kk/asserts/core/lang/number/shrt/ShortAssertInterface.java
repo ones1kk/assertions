@@ -23,7 +23,7 @@ import io.github.ones1kk.asserts.core.lang.number.IntegerTypeAssertInterface;
 /**
  * <strong> The ShortAssertInterface class is for a having Short type, assertable interface class.</strong>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public interface ShortAssertInterface<SELF> extends IntegerTypeAssertInterface<SELF>, NumerableAssert<SELF, Short>, ComparableAssert<SELF, Short> {
 }

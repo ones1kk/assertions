@@ -23,7 +23,7 @@ import io.github.ones1kk.asserts.core.lang.number.DoubleTypeAssertInterface;
 /**
  * <strong> The DoubleAssertInterface class is for a having Double type, assertable interface class.</strong>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public interface DoubleAssertInterface<SELF> extends NumerableAssert<SELF, Double>, DoubleTypeAssertInterface<SELF>, ComparableAssert<SELF, Double> {
 }

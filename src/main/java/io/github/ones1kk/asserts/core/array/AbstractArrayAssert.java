@@ -25,8 +25,8 @@ import java.util.function.Predicate;
  * <br>
  * <p> This is that implements the assertion method of the Array type and verify assertion.</p>
  *
- * @param <SELF>
- * @param <ACTUAL>
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
  */
 public class AbstractArrayAssert<SELF extends AbstractArrayAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, ACTUAL[]> implements ArrayAssertInterface<SELF, ACTUAL> {
 

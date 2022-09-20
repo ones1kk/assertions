@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * <strong> The ArrayContainableImpl class is Implementation class that calculates the containable of an array. </strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public final class ArrayContainableImpl<ELEMENT> implements ArrayContainable<ELEMENT> {
 

@@ -23,7 +23,7 @@ import java.util.Collection;
 /**
  * <strong> The CollectionAssert class inherits {@link AbstractCollectionAssert} </strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public class CollectionAssert<ELEMENT> extends AbstractCollectionAssert<CollectionAssert<ELEMENT>, ELEMENT> {
 

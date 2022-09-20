@@ -22,7 +22,7 @@ import io.github.ones1kk.asserts.core.feature.number.Numerable;
 /**
  * <strong> The IntegersInterface class is for a having Integer Type, assertable assertion implementation class.</strong>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public interface IntegersInterface<ACTUAL> extends Comparable<ACTUAL>, Numerable<Integer> {
 

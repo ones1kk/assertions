@@ -19,7 +19,7 @@ package io.github.ones1kk.asserts.core.feature.comparable.lang;
 /**
  * <strong> The ComparableLanguage class compares comparable ELEMENT type parameter.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface ComparableLanguage<ELEMENT extends java.lang.Comparable<ELEMENT>> {
 

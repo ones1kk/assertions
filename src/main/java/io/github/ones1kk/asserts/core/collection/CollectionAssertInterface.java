@@ -24,8 +24,8 @@ import java.util.Collection;
 /**
  * <strong> The CollectionAssertInterface class is for a comparable, assertable, iterable interface class.</strong>
  *
- * @param <SELF>
- * @param <ACTUAL>
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
  */
 public interface CollectionAssertInterface<SELF, ACTUAL> extends IterableAssert<SELF, ACTUAL>, SizeComparableAssert<SELF, Collection<? extends ACTUAL>> {
 }

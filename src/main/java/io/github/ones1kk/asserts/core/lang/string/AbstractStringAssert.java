@@ -24,7 +24,7 @@ import io.github.ones1kk.asserts.core.lang.charsequence.AbstractCharSequenceAsse
  * <br>
  * <p> This is that implements the assertion method of the Float type and verify assertion.</p>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public class AbstractStringAssert<SELF extends AbstractStringAssert<SELF>> extends AbstractCharSequenceAssert<SELF, String> implements StringAssertInterface<SELF, String> {
 

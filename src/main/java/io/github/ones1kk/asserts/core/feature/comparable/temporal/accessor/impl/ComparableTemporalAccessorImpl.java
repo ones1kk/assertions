@@ -23,7 +23,7 @@ import java.time.temporal.TemporalAccessor;
 /**
  * <strong> The ComparableTemporalAccessorImpl is an implementation class that compares TemporalAccessor that inherits {@link Comparable} type.</strong>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public final class ComparableTemporalAccessorImpl<ACTUAL extends TemporalAccessor & Comparable<ACTUAL>> implements ComparableTemporalAccessor<ACTUAL> {
 

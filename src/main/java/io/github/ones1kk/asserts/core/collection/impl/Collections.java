@@ -34,7 +34,7 @@ import static io.github.ones1kk.asserts.core.message.SizeComparableErrorMessages
 /**
  * <strong> The Collections class inherits {@link AbstractObjectAssert} </strong>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public final class Collections<ACTUAL> extends Objects<ACTUAL> implements CollectionsInterface<ACTUAL> {
 

@@ -32,7 +32,7 @@ import io.github.ones1kk.asserts.core.message.CommonErrorMessages;
  * <br>
  * <p> This is that implements the assertion method of the Object type and verify assertion.</p>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public class Objects<ACTUAL> extends AbstractObjects<Object> {
 

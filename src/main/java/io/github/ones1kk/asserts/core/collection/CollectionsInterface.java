@@ -24,7 +24,7 @@ import java.util.Collection;
 /**
  * <strong> The CollectionsInterface class is for a comparable, iterable, assertable assertion implementation class.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface CollectionsInterface<ELEMENT> extends CollectionIterable<ELEMENT>, SizeComparable<Collection<? extends ELEMENT>> {
 }

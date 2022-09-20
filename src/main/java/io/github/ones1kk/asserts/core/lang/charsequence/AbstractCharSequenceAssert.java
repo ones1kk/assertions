@@ -23,8 +23,8 @@ import io.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
  * <br>
  * <p> This is that implements the assertion method of the CharSequence type and verify assertion.</p>
  *
- * @param <SELF>
- * @param <ACTUAL>
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
  */
 public class AbstractCharSequenceAssert<SELF extends AbstractCharSequenceAssert<SELF, ACTUAL>, ACTUAL extends CharSequence> extends AbstractObjectAssert<SELF, ACTUAL> implements CharSequenceAssertInterface<SELF, CharSequence> {
 

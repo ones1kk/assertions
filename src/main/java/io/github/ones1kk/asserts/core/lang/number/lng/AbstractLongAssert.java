@@ -25,8 +25,8 @@ import io.github.ones1kk.asserts.core.lang.object.AbstractObjectAssert;
  * <br>
  * <p> This is that implements the assertion method of the Long type and verify assertion.</p>
  *
- * @param <SELF>
- * @param <ACTUAL>
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
  */
 public class AbstractLongAssert<SELF extends AbstractLongAssert<SELF, ACTUAL>, ACTUAL> extends AbstractObjectAssert<SELF, Long> implements LongAssertInterface<SELF> {
 

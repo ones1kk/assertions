@@ -25,7 +25,7 @@ import java.net.URL;
  * <br>
  * <p> This is that implements the assertion method of the URL type and verify assertion.</p>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public class AbstractUrlAssert<SELF extends AbstractUrlAssert<SELF>> extends AbstractObjectAssert<SELF, URL> implements UrlAssertInterface<SELF> {
 

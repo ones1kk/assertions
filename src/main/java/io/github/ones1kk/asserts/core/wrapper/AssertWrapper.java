@@ -25,7 +25,7 @@ import java.util.function.Supplier;
  *
  * <p> However, the policy has changed and will be deprecated soon.</p>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 @Deprecated
 public interface AssertWrapper<SELF> {

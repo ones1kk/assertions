@@ -22,7 +22,7 @@ import java.util.function.Predicate;
 /**
  * <strong> The CollectionIterable is for {@link Collection} assertion to implement iterable class.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface CollectionIterable<ELEMENT> {
 

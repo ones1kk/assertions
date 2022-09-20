@@ -21,7 +21,7 @@ import java.time.LocalDateTime;
 /**
  * <strong> The ComparableLocalDateTime class compares comparable ELEMENT type parameter.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface ComparableLocalDateTime<ELEMENT extends LocalDateTime> {
 

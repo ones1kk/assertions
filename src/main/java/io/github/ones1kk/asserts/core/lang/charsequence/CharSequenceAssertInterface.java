@@ -19,8 +19,8 @@ package io.github.ones1kk.asserts.core.lang.charsequence;
 /**
  * <strong> The CharSequenceAssertInterface class is for a having CharSequence type, assertable interface class.</strong>
  *
- * @param <SELF>
- * @param <ACTUAL>
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
  */
 public interface CharSequenceAssertInterface<SELF, ACTUAL> {
 

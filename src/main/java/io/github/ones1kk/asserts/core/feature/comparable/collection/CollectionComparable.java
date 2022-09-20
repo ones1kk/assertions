@@ -21,7 +21,7 @@ import java.util.Collection;
 /**
  * <strong> The CollectionComparable class compares comparable ELEMENT type parameter.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface CollectionComparable<ELEMENT> {
 

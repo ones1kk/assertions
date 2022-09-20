@@ -23,7 +23,7 @@ import java.util.Set;
 /**
  * <strong> The SetAssert class inherits {@link AbstractSetAssert} </strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public class SetAssert<ELEMENT> extends AbstractSetAssert<SetAssert<ELEMENT>, ELEMENT> {
 

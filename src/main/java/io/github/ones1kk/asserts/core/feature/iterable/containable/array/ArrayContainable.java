@@ -19,7 +19,7 @@ package io.github.ones1kk.asserts.core.feature.iterable.containable.array;
 /**
  * The ArrayContainable class is for classes to implement containable array calculations.
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public interface ArrayContainable<ELEMENT> {
 

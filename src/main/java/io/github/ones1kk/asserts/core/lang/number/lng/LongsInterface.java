@@ -22,7 +22,7 @@ import io.github.ones1kk.asserts.core.feature.number.Numerable;
 /**
  * <strong> The LongsInterface class is for a having Long Type, assertable assertion implementation class.</strong>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public interface LongsInterface<ACTUAL> extends Comparable<ACTUAL>, Numerable<Long> {
 

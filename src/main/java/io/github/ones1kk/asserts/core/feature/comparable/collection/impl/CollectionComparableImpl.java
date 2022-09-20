@@ -21,7 +21,7 @@ import io.github.ones1kk.asserts.core.feature.comparable.collection.CollectionCo
 /**
  * <strong> The CollectionComparableImpl is an implementation class that compares the size of Collection type.</strong>
  *
- * @param <ELEMENT>
+ * @param <ELEMENT> {@code element}.
  */
 public final class CollectionComparableImpl<ELEMENT> implements CollectionComparable<ELEMENT> {
 

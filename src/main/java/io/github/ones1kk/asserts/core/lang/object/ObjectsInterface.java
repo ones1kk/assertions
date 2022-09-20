@@ -19,7 +19,7 @@ package io.github.ones1kk.asserts.core.lang.object;
 /**
  * <strong> The ObjectsInterface class is for a having Object Type, assertable assertion implementation class.</strong>
  *
- * @param <ACTUAL>
+ * @param <ACTUAL> {@code actual}.
  */
 public interface ObjectsInterface<ACTUAL> {
 

@@ -23,7 +23,7 @@ import io.github.ones1kk.asserts.core.lang.number.DoubleTypeAssertInterface;
 /**
  * <strong> The FloatAssertInterface class is for a having Float type, assertable interface class.</strong>
  *
- * @param <SELF>
+ * @param <SELF> {@code self}.
  */
 public interface FloatAssertInterface<SELF> extends NumerableAssert<SELF, Float>, DoubleTypeAssertInterface<SELF>, ComparableAssert<SELF, Float> {
 }
