@@ -34,17 +34,9 @@ dependencies {
 }
 
 group = 'io.github.ones1kk'
-version = '0.0.0'
+version = '0.0.1'
 description = 'Assertion for java programming'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            from(components.java)
-        }
-    }
-}
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'

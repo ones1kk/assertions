@@ -1,0 +1,15 @@
+ext {
+    PUBLISH_GROUP_ID = 'io.github.ones1kk'
+    PUBLISH_VERSION = '0.0.1'
+    PUBLISH_ARTIFACT_ID = 'assertions'
+    PUBLISH_DESCRIPTION = 'Assertion for java programming'
+    PUBLISH_URL = 'https://github.com/ones1kk/assertions'
+    PUBLISH_LICENSE_NAME = 'The Apache Software License, Version 2.0'
+    PUBLISH_LICENSE_URL = 'https://www.apache.org/licenses/LICENSE-2.0.txt'
+    PUBLISH_DEVELOPER_ID = 'ones1kk'
+    PUBLISH_DEVELOPER_NAME = 'Wonsik Kim'
+    PUBLISH_DEVELOPER_EMAIL = 'ones1k95@gmail.com'
+    PUBLISH_SCM_CONNECTION = 'scm:git:github.com/ones1kk/assertions.git'
+    PUBLISH_SCM_DEVELOPER_CONNECTION = 'scm:git:ssh://github.com:ones1kk/assertions.git'
+    PUBLISH_SCM_URL = 'https://github.com/ones1kk/assertions/tree/master'
+}
