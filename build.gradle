@@ -1,9 +1,17 @@
-plugins {
-    id 'java'
-    id 'maven-publish'
-    id 'jacoco'
-    id 'signing'
+buildscript {
+    dependencies {
+        classpath "io.github.gradle-nexus:publish-plugin:1.1.0"
+    }
 }
+
+plugins {
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.github.gradle-nexus.publish-plugin'
+apply from: "${rootDir}/script/publish-maven.gradle"
+apply from: 'publish.gradle'
 
 java {
     withJavadocJar()
@@ -26,7 +34,7 @@ dependencies {
 
 group = 'io.github.ones1kk'
 version = '0.0.0'
-description = 'asserts'
+description = 'Assertion for java programming'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 publishing {
