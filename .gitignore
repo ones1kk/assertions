@@ -6,7 +6,7 @@ subprojects/**/build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 script/*
-publish.gradle
+local.properties
 
 ### STS ###
 .apt_generated
