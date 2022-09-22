@@ -5,11 +5,12 @@ buildscript {
 }
 
 plugins {
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
 apply plugin: 'io.github.gradle-nexus.publish-plugin'
+apply plugin: 'jacoco'
 apply from: "${rootDir}/script/publish-maven.gradle"
 apply from: 'publish.gradle'
 
