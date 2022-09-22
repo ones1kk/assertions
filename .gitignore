@@ -6,6 +6,7 @@ subprojects/**/build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 script/*
+publish.gradle
 
 ### STS ###
 .apt_generated
