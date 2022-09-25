@@ -54,10 +54,12 @@ class AbstractUrlAssertTest {
 
         // when
         AbstractUrlAssert<?> assert1 = new AbstractUrlAssert<>(AbstractUrlAssert.class, actual1);
+        AbstractUrlAssert<?> assert2 = new AbstractUrlAssert<>(AbstractUrlAssert.class, new URL("https://www.google.com/search?q=test"));
 
         // then
         assertThrows(AssertException.class, () -> assert1.hasPort(8080));
         assertThrows(AssertException.class, () -> assert1.hasPath("?page=11"));
+        assertThrows(AssertException.class, () -> assert1.hasPath("search?q=aaa"));
         assertThrows(AssertException.class, assert1::doesNotHaveHost);
 
         assertThat(actual1.getPort()).isEqualTo(-1);
@@ -67,6 +69,7 @@ class AbstractUrlAssertTest {
             assert1.hasHost("www.google.com");
             assert1.hasPort(443);
             assert1.doesNotHavePath();
+            assert2.hasPath("/search");
         });
     }
 }
