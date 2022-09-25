@@ -37,14 +37,16 @@ class AbstractFileAssertTest {
         assertThrows(AssertException.class, () -> assert1.isAssignableFrom(AbstractFileAssert.class));
         assertThrows(AssertException.class, () -> assert1.isNotAssignableFrom(File.class));
 
-        assert2.isNull();
-        assert1.isNotNull();
-        assert1.isSameAs(actual1);
-        assert1.isNotSameAs(assert1);
-        assert1.isEqualTo(actual1);
-        assert1.isNotEqualTo(assert1);
-        assert1.isAssignableFrom(File.class);
-        assert1.isNotAssignableFrom(AbstractFileAssert.class);
+        assertThatNoException().isThrownBy(() -> {
+            assert2.isNull();
+            assert1.isNotNull();
+            assert1.isSameAs(actual1);
+            assert1.isNotSameAs(assert1);
+            assert1.isEqualTo(actual1);
+            assert1.isNotEqualTo(assert1);
+            assert1.isAssignableFrom(File.class);
+            assert1.isNotAssignableFrom(AbstractFileAssert.class);
+        });
     }
 
     @Test
