@@ -42,10 +42,10 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 test {
+    useJUnitPlatform()
     jacoco {
         destinationFile = file("$buildDir/jacoco/jacoco.exec")
     }
-    useJUnitPlatform()
     finalizedBy 'jacocoTestReport'
 }
 
@@ -66,7 +66,7 @@ jacocoTestCoverageVerification {
     violationRules {
         rule {
             limit {
-                minimum = 0.30
+                minimum = 0.90
             }
         }
         rule {
