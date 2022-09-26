@@ -14,8 +14,6 @@
     </a>
 </div>
 
-[![Coverage](.github/badges/jacoco.svg)](https://github.com/ones1kk/assertions/actions/workflows/build.yml)
-
 ## Getting started
 
 ### Maven
@@ -54,30 +52,31 @@ List<String> lists = Arrays.asList("A", "a", "B", "b", "C", "2");
 
 List<String> expected = singletonList("a");
 
-    Asserts.that(lists)
-        // First off, it can be described as combining 2 step assertion.
-        .as("The given lists should not be empty and not be null.")
-        // The given 'lists' should not be empty, assertion will verify it's empty or not.
-        .isNotEmpty()
-        // The given 'lists' should not be null, assertion will verify it's null or not.
-        .isNotNull()
-        // If the verification of the above assertion is passed, define the new description for the new step.
-        // Also can put parameters into description with braces.
-        .as("The given lists should contain one of '{}'.", "1, 2, or 3")
-        // The given 'list' should contain any of the arguments.
-        .containsAny("1", "2", "3")
-        // Also, all of the arguments should be contained in given 'lists'.
-        .containsAll("a", "b")
-        // Write description again.
-        .as("The given 'lists' shouldn't contain null.")
-        // The given 'lists' shouldn't contain null.
-        .doesNotContainNull()
-        // The all of elements in 'lists' should all match the provided predicate.
-        .allMatch(str -> str.length() > 0)
-        // Write description again.
-        .as("The size of given lists should be larger than 'expected'.")
-        // The size of given 'lists' should be larger than the size of given 'expected'.
-        .isLargerThan(expected);         
+Asserts.that(lists)
+    // First off, it can be described as combining 2 step assertion.
+    .as("The given lists should not be empty and not be null.")
+    // The given 'lists' should not be empty, assertion will verify it's empty or not.
+    .isNotEmpty()
+    // The given 'lists' should not be null, assertion will verify it's null or not.
+    .isNotNull()
+    // If the verification of the above assertion is passed,
+    // user can define new description for new step.
+    // Also can put parameters into description with braces.
+    .as("The given lists should contain one of '{}'.", "1, 2, or 3")
+    // The given 'list' should contain any of the arguments.
+    .containsAny("1", "2", "3")
+    // Also, all of the arguments should be contained in given 'lists'.
+    .containsAll("a", "b")
+    // Write description again.
+    .as("The given 'lists' shouldn't contain null.")
+    // The given 'lists' shouldn't contain null.
+    .doesNotContainNull()
+    // The all of elements in 'lists' should all match the provided predicate.
+    .allMatch(str -> str.length() > 0)
+    // Write description again.
+    .as("The size of given lists should be larger than 'expected'.")
+    // The size of given 'lists' should be larger than the size of given 'expected'.
+    .isLargerThan(expected);         
 ```
 
 ## Inspired
