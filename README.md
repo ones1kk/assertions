@@ -1,6 +1,10 @@
-# <center> ⚡️ Assertions </center>
+<div align="center"> 
+    <h1>⚡️ Assertions</h1> 
+</div>
 
-### <center> Assertions for java programming. </center>
+<div align="center">
+ <h3>Assertions for java programming.</h3>
+</div>
 
 <div align="center">
     <a href="https://www.azul.com/downloads/?version=java-8-lts&package=jdk">
