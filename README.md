@@ -61,7 +61,8 @@ List<String> expected = singletonList("a");
         .isNotEmpty()
         // The given 'lists' should not be null, assertion will verify it's null or not.
         .isNotNull()
-        // If the verification of the above assertion is passed, define the new description for the new step. Also can put parameter into description with braces.
+        // If the verification of the above assertion is passed, define the new description for the new step.
+        // Also can put parameters into description with braces.
         .as("The given lists should contain one of '{}'.", "1, 2, or 3")
         // The given 'list' should contain any of the arguments.
         .containsAny("1", "2", "3")
