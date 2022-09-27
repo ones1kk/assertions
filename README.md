@@ -52,34 +52,34 @@ implementation 'io.github.ones1kk:assertions:0.0.1'
 ## Example
 
 ```java
-List<String> lists = Arrays.asList("A", "a", "B", "b", "C", "2");
+List<String> list = Arrays.asList("A", "a", "B", "b", "C", "2");
 
 List<String> expected = singletonList("a");
 
-Asserts.that(lists)
+Asserts.that(list)
     // First off, it can be described as combining 2 step assertion.
-    .as("The given lists should not be empty and not be null.")
-    // The given 'lists' should not be empty, assertion will verify it's empty or not.
+    .as("The given 'list' should not be empty and not be null.")
+    // The given 'list' should not be empty, assertion will verify it's empty or not.
     .isNotEmpty()
-    // The given 'lists' should not be null, assertion will verify it's null or not.
+    // The given 'list' should not be null, assertion will verify it's null or not.
     .isNotNull()
     // If the verification of the above assertion is passed,
-    // user can define new description for new step.
+    // User can define new description for new step.
     // Also can put parameters into description with braces.
-    .as("The given lists should contain one of '{}'.", "1, 2, or 3")
+    .as("The given list should contain one of '{}'.", "1, 2, or 3")
     // The given 'list' should contain any of the arguments.
     .containsAny("1", "2", "3")
-    // Also, all of the arguments should be contained in given 'lists'.
+    // Also, all of the arguments should be contained in given 'list'.
     .containsAll("a", "b")
     // Write description again.
-    .as("The given 'lists' shouldn't contain null.")
-    // The given 'lists' shouldn't contain null.
+    .as("The given 'list' shouldn't contain null.")
+    // The given 'list' shouldn't contain null.
     .doesNotContainNull()
-    // The all of elements in 'lists' should all match the provided predicate.
+    // The all of elements in 'list' should match all the provided predicate.
     .allMatch(str -> str.length() > 0)
     // Write description again.
-    .as("The size of given lists should be larger than 'expected'.")
-    // The size of given 'lists' should be larger than the size of given 'expected'.
+    .as("The size of given 'list' should be larger than 'expected'.")
+    // The size of given 'list' should be larger than the size of given 'expected'.
     .isLargerThan(expected);         
 ```
 
