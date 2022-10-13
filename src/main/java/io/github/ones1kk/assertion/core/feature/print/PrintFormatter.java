@@ -22,10 +22,10 @@ package io.github.ones1kk.assertion.core.feature.print;
  */
 public interface PrintFormatter {
 
-    String writeOutput(Object actual, Object expected, String description);
+    String print(Object actual, Object expected, String description);
 
-    String writeOutput(Object actual, String description);
+    String print(Object actual, String description);
 
-    String writeOutput(String description);
+    String print(String description);
 
 }

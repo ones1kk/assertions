@@ -10,9 +10,9 @@ class SimplePrintFormatterTest {
     @DisplayName("Check format of output")
     public void test1() throws Exception {
         PrintFormatter printFormatter = new SimplePrintFormatter();
-        String result1 = printFormatter.writeOutput("test", "test", "test is equal to test");
-        String result2 = printFormatter.writeOutput("printer test");
-        String result3 = printFormatter.writeOutput("test", "test");
+        String result1 = printFormatter.print("test", "test", "test is equal to test");
+        String result2 = printFormatter.print("printer test");
+        String result3 = printFormatter.print("test", "test");
 
         System.out.println(result1);
         System.out.println(result2);

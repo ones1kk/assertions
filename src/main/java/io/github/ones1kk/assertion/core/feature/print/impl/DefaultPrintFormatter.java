@@ -45,7 +45,7 @@ public final class DefaultPrintFormatter implements PrintFormatter {
      * @return formatted string.
      */
     @Override
-    public String writeOutput(Object actual, Object expected, String description) {
+    public String print(Object actual, Object expected, String description) {
         return String.format("%n%sExpected    : %s %n%sActual      : %s%n%sDescription : %s", Colors.WHITE.getValue(), Colors.RED.getValue() + expected, Colors.WHITE.getValue(), Colors.RED.getValue() + actual, Colors.WHITE.getValue(), Colors.RED.getValue() + description);
     }
 
@@ -65,7 +65,7 @@ public final class DefaultPrintFormatter implements PrintFormatter {
      * @return formatted string.
      */
     @Override
-    public String writeOutput(Object actual, String description) {
+    public String print(Object actual, String description) {
         return String.format("%n%sActual      : %s%n%sDescription : %s", Colors.WHITE.getValue(), Colors.RED.getValue() + actual, Colors.WHITE.getValue(), Colors.RED.getValue() + description);
     }
 
@@ -83,7 +83,7 @@ public final class DefaultPrintFormatter implements PrintFormatter {
      * @return formatted string.
      */
     @Override
-    public String writeOutput(String description) {
+    public String print(String description) {
         return String.format("%n%sDescription : %s", Colors.WHITE.getValue(), Colors.RED.getValue() + description);
     }
 }

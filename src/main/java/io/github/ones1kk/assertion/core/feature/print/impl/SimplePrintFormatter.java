@@ -44,7 +44,7 @@ public final class SimplePrintFormatter implements PrintFormatter {
      * @return A formatted string.
      */
     @Override
-    public String writeOutput(Object actual, Object expected, String description) {
+    public String print(Object actual, Object expected, String description) {
         return String.format("%s%s(expected: %s, actual: %s)", Colors.RED.getValue(), description, expected, actual);
     }
 
@@ -63,7 +63,7 @@ public final class SimplePrintFormatter implements PrintFormatter {
      * @return A formatted string.
      */
     @Override
-    public String writeOutput(Object actual, String description) {
+    public String print(Object actual, String description) {
         return String.format("%s%s(actual: %s)", Colors.RED.getValue(), description, actual);
     }
 
@@ -81,7 +81,7 @@ public final class SimplePrintFormatter implements PrintFormatter {
      * @return A formatted string.
      */
     @Override
-    public String writeOutput(String description) {
+    public String print(String description) {
         return String.format("%s%s", Colors.RED.getValue(), description);
     }
 }
