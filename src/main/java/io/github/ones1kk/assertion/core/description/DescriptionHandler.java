@@ -27,7 +27,7 @@ import org.apache.commons.lang3.StringUtils;
  */
 public final class DescriptionHandler {
 
-    private final PrintFormatter formatter = new SimplePrintFormatter();
+    private final PrintFormatter formatter;
 
     private final Describable describable = new Description();
 
@@ -35,20 +35,28 @@ public final class DescriptionHandler {
 
     private String asDescription;
 
+    public DescriptionHandler() {
+        this.formatter = new SimplePrintFormatter();
+    }
+
+    public DescriptionHandler(PrintFormatter formatter) {
+        this.formatter = formatter;
+    }
+
     public void receive(String description) {
-        setDescription(formatter.writeOutput(description));
+        setDescription(formatter.print(description));
     }
 
     public void receive(Object actual, String description) {
-        setDescription(formatter.writeOutput(actual, description));
+        setDescription(formatter.print(actual, description));
     }
 
     public void receive(Object actual, Object expected, String description) {
-        setDescription(formatter.writeOutput(actual, expected, description));
+        setDescription(formatter.print(actual, expected, description));
     }
 
     public void receiveAsDescription(String description, Object... args) {
-        setAsDescription(formatter.writeOutput(describable.as(description, args)));
+        setAsDescription(formatter.print(describable.as(description, args)));
     }
 
     public AssertException getException() {

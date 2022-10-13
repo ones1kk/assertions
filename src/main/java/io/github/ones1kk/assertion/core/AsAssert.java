@@ -18,6 +18,7 @@ package io.github.ones1kk.assertion.core;
 
 import io.github.ones1kk.assertion.core.description.DescriptionHandler;
 import io.github.ones1kk.assertion.core.exception.AssertException;
+import io.github.ones1kk.assertion.core.feature.print.impl.SimplePrintFormatter;
 
 import java.util.function.Supplier;
 
@@ -32,13 +33,14 @@ import java.util.function.Supplier;
  */
 public class AsAssert<SELF> implements AsAssertInterface<SELF> {
 
-    public DescriptionHandler handler = new DescriptionHandler();
+    public DescriptionHandler handler;
 
     private final SELF self;
 
     @SuppressWarnings("unchecked")
     public AsAssert(Class<?> self) {
         this.self = (SELF) self.cast(this);
+        this.handler = new DescriptionHandler(new SimplePrintFormatter());
     }
 
     /**

@@ -35,7 +35,7 @@ public abstract class AbstractObjects<ACTUAL> implements ObjectsInterface<ACTUAL
 
     protected final AsAssert<?> asAssert;
 
-    protected final DescriptionHandler handler;
+    public final DescriptionHandler handler;
 
     protected AbstractObjects(AsAssert<?> asAssert) {
         this.asAssert = asAssert;
