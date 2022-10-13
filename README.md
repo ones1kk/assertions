@@ -43,7 +43,7 @@ implementation 'io.github.ones1kk:assertions:0.0.1'
 ```
 ## Overview
 
-* Verifies assertions for JDK types.(Class, String, Array, Collection, File, URL ...)
+* Verifies assertions for JDK types.(Class, Lang type of Java, Collection, Array(1D), File, URL ...)
 * Provides assertions in the form of method chaining.
 * Overrides error message by writing custom description.(For using 'as()' method)
 
@@ -79,7 +79,7 @@ Asserts.that(list)
     .allMatch(str -> str.length() > 0)
     // Write description again.
     .as("The size of given 'list' should be larger than 'expected'.")
-    // The size of given 'list' should be larger than the size of given 'expected'.
+    // The size of given 'list' should be larger than the size of given the size of 'expected'.
     .isLargerThan(expected);         
 ```
 
