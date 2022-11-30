@@ -1,7 +1,6 @@
 apply plugin: 'maven-publish'
 apply plugin: 'signing'
 apply from: 'publish.gradle'
-apply from: 'script/publish-maven-info.gradle'
 
 task sourcesJar(type: Jar) {
     archiveClassifier.set("sources")
@@ -16,8 +15,16 @@ artifacts {
     archives javadocJar
 }
 
+
 group = PUBLISH_GROUP_ID
 version = PUBLISH_VERSION
+
+ext["signing.keyId"] = ''
+ext["signing.password"] = ''
+ext["signing.secretKeyRingFile"] = ''
+ext["ossrhUsername"] = ''
+ext["ossrhPassword"] = ''
+ext["sonatypeStagingProfileId"] = ''
 
 File secretPropsFile = project.rootProject.file('local.properties')
 if (secretPropsFile.exists()) {
@@ -62,6 +69,7 @@ publishing {
                         name = PUBLISH_DEVELOPER_NAME
                         email = PUBLISH_DEVELOPER_EMAIL
                     }
+                    // Other devs...
                 }
                 scm {
                     connection = PUBLISH_SCM_CONNECTION
