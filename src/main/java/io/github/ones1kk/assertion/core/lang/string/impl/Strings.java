@@ -17,61 +17,16 @@
 package io.github.ones1kk.assertion.core.lang.string.impl;
 
 import io.github.ones1kk.assertion.core.AsAssert;
-import io.github.ones1kk.assertion.core.feature.comparable.lang.ComparableLanguage;
-import io.github.ones1kk.assertion.core.feature.comparable.lang.impl.ComparableLanguageImpl;
 import io.github.ones1kk.assertion.core.lang.charsequence.impl.CharSequences;
 import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 import io.github.ones1kk.assertion.core.lang.string.StringsInterface;
-import io.github.ones1kk.assertion.core.message.ComparableErrorMessages;
 
 /**
  * <strong> The Strings class inherits {@link AbstractObjectAssert} </strong>
  */
 public final class Strings extends CharSequences implements StringsInterface<String> {
 
-    private final ComparableLanguage<String> comparable = new ComparableLanguageImpl<>();
-
     public Strings(AsAssert<?> asAssert) {
         super(asAssert);
-    }
-
-    @Override
-    public void assertIsLessThan(String actual, String expected) {
-        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
-            handler.receive(actual, ComparableErrorMessages.shouldBeLessThan(actual, expected));
-            throw handler.getException();
-        }
-    }
-
-    @Override
-    public void assertIsLessThanOrEqualTo(String actual, String expected) {
-        if (comparable.isGraterThan(actual, expected)) {
-            handler.receive(actual, expected, ComparableErrorMessages.shouldBeLessThanOrEqualTo(actual, expected));
-            throw handler.getException();
-        }
-    }
-
-    @Override
-    public void assertIsGreaterThan(String actual, String expected) {
-        if (comparable.isLessThanOrEqualTo(actual, expected)) {
-            handler.receive(actual, expected, ComparableErrorMessages.shouldBeGreaterThan(actual, expected));
-            throw handler.getException();
-        }
-    }
-
-    @Override
-    public void assertIsGreaterThanOrEqualTo(String actual, String expected) {
-        if (comparable.isLessThan(actual, expected)) {
-            handler.receive(actual, expected, ComparableErrorMessages.shouldBeGreaterThanOrEqualTo(actual, expected));
-            throw handler.getException();
-        }
-    }
-
-    @Override
-    public void assertIsBetween(String actual, String start, String end) {
-        if (comparable.isLessThan(actual, start) || comparable.isGraterThan(actual, end)) {
-            handler.receive(actual, ComparableErrorMessages.shouldBeBetween(actual, start, end));
-            throw handler.getException();
-        }
     }
 }

@@ -83,7 +83,7 @@ public final class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsNotPositive(Byte actual) {
-        if (comparable.isGraterThan(actual, (byte) 0)) {
+        if (comparable.isGreaterThan(actual, (byte) 0)) {
             handler.receive(actual, NumerableErrorMessages.shouldNotBePositive(actual));
             throw handler.getException();
         }
@@ -91,7 +91,7 @@ public final class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsNegative(Byte actual) {
-        if (comparable.isGraterThanOrEqualTo(actual, (byte) 0)) {
+        if (comparable.isGreaterThanOrEqualTo(actual, (byte) 0)) {
             handler.receive(actual, NumerableErrorMessages.shouldBeNegative(actual));
             throw handler.getException();
         }
@@ -123,7 +123,7 @@ public final class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsLessThan(Byte actual, Byte expected) {
-        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
+        if (comparable.isGreaterThanOrEqualTo(actual, expected)) {
             handler.receive(actual, ComparableErrorMessages.shouldBeLessThan(actual, expected));
             throw handler.getException();
         }
@@ -131,7 +131,7 @@ public final class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsLessThanOrEqualTo(Byte actual, Byte expected) {
-        if (comparable.isGraterThan(actual, expected)) {
+        if (comparable.isGreaterThan(actual, expected)) {
             handler.receive(actual, expected, ComparableErrorMessages.shouldBeLessThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
@@ -155,7 +155,7 @@ public final class Bytes extends Objects<Byte> implements BytesInterface<Byte> {
 
     @Override
     public void assertIsBetween(Byte actual, Byte start, Byte end) {
-        if (comparable.isLessThan(actual, start) || comparable.isGraterThan(actual, end)) {
+        if (comparable.isLessThan(actual, start) || comparable.isGreaterThan(actual, end)) {
             handler.receive(actual, ComparableErrorMessages.shouldBeBetween(actual, start, end));
             throw handler.getException();
         }

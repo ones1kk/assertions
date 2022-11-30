@@ -27,9 +27,9 @@ public interface ComparableLanguage<ELEMENT extends java.lang.Comparable<ELEMENT
 
     boolean isLessThanOrEqualTo(ELEMENT actual, ELEMENT expected);
 
-    boolean isGraterThan(ELEMENT actual, ELEMENT expected);
+    boolean isGreaterThan(ELEMENT actual, ELEMENT expected);
 
-    boolean isGraterThanOrEqualTo(ELEMENT actual, ELEMENT expected);
+    boolean isGreaterThanOrEqualTo(ELEMENT actual, ELEMENT expected);
 
     boolean is(ELEMENT actual, ELEMENT expected);
 

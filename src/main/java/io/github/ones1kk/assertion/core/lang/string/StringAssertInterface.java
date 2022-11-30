@@ -16,13 +16,11 @@
 
 package io.github.ones1kk.assertion.core.lang.string;
 
-import io.github.ones1kk.assertion.core.feature.comparable.ComparableAssert;
-
 /**
  * <strong> The StringAssertInterface class is for a having String type, assertable interface class.</strong>
  *
  * @param <SELF>   {@code self}.
  * @param <ACTUAL> {@code actual}.
  */
-public interface StringAssertInterface<SELF, ACTUAL> extends ComparableAssert<SELF, String> {
+public interface StringAssertInterface<SELF, ACTUAL> {
 }

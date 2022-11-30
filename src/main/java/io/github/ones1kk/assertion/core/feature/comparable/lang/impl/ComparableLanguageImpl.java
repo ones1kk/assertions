@@ -36,12 +36,12 @@ public final class ComparableLanguageImpl<ELEMENT extends Comparable<ELEMENT>> i
     }
 
     @Override
-    public boolean isGraterThan(ELEMENT actual, ELEMENT expected) {
+    public boolean isGreaterThan(ELEMENT actual, ELEMENT expected) {
         return actual.compareTo(expected) > 0;
     }
 
     @Override
-    public boolean isGraterThanOrEqualTo(ELEMENT actual, ELEMENT expected) {
+    public boolean isGreaterThanOrEqualTo(ELEMENT actual, ELEMENT expected) {
         return actual.compareTo(expected) >= 0;
     }
 

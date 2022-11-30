@@ -119,7 +119,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
 
     @Override
     public void assertIsLessThan(Character actual, Character expected) {
-        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
+        if (comparable.isGreaterThanOrEqualTo(actual, expected)) {
             handler.receive(actual, expected, ComparableErrorMessages.shouldBeLessThan(actual, expected));
             throw handler.getException();
         }
@@ -127,7 +127,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
 
     @Override
     public void assertIsLessThanOrEqualTo(Character actual, Character expected) {
-        if (comparable.isGraterThan(actual, expected)) {
+        if (comparable.isGreaterThan(actual, expected)) {
             handler.receive(actual, expected, ComparableErrorMessages.shouldBeLessThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
@@ -151,7 +151,7 @@ public final class Characters extends Objects<Character> implements CharactersIn
 
     @Override
     public void assertIsBetween(Character actual, Character start, Character end) {
-        if (comparable.isLessThan(actual, start) || comparable.isGraterThan(actual, end)) {
+        if (comparable.isLessThan(actual, start) || comparable.isGreaterThan(actual, end)) {
             handler.receive(actual, ComparableErrorMessages.shouldBeBetween(actual, start, end));
             throw handler.getException();
         }

@@ -23,7 +23,7 @@ import io.github.ones1kk.assertion.core.feature.comparable.Comparable;
  *
  * @param <ACTUAL> {@code actual}.
  */
-public interface StringsInterface<ACTUAL> extends Comparable<ACTUAL> {
+public interface StringsInterface<ACTUAL> {
 
 }
 

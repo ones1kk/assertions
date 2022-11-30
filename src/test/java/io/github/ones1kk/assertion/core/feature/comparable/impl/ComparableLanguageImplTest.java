@@ -21,10 +21,10 @@ class ComparableLanguageImplTest {
         assertThat(comparable.isLessThanOrEqualTo(actual, 1.45)).isTrue(); // true
         assertThat(comparable.isLessThanOrEqualTo(actual, 0.45)).isFalse(); // false
 
-        assertThat(comparable.isGraterThan(actual, 0.45)).isTrue(); // true
-        assertThat(comparable.isGraterThan(actual, 4.45)).isFalse(); // false
-        assertThat(comparable.isGraterThanOrEqualTo(actual, 4.45)).isFalse(); // false
-        assertThat(comparable.isGraterThanOrEqualTo(actual, 1.45)).isTrue(); // true
+        assertThat(comparable.isGreaterThan(actual, 0.45)).isTrue(); // true
+        assertThat(comparable.isGreaterThan(actual, 4.45)).isFalse(); // false
+        assertThat(comparable.isGreaterThanOrEqualTo(actual, 4.45)).isFalse(); // false
+        assertThat(comparable.isGreaterThanOrEqualTo(actual, 1.45)).isTrue(); // true
     }
 
     @Test
@@ -39,10 +39,10 @@ class ComparableLanguageImplTest {
         assertThat(comparable.isLessThanOrEqualTo(actual, 1L)).isTrue(); // true
         assertThat(comparable.isLessThanOrEqualTo(actual, 0L)).isFalse(); // false
 
-        assertThat(comparable.isGraterThan(actual, 0L)).isTrue(); // true
-        assertThat(comparable.isGraterThan(actual, 4L)).isFalse(); // false
-        assertThat(comparable.isGraterThanOrEqualTo(actual, 4L)).isFalse(); // false
-        assertThat(comparable.isGraterThanOrEqualTo(actual, 1L)).isTrue(); // true
+        assertThat(comparable.isGreaterThan(actual, 0L)).isTrue(); // true
+        assertThat(comparable.isGreaterThan(actual, 4L)).isFalse(); // false
+        assertThat(comparable.isGreaterThanOrEqualTo(actual, 4L)).isFalse(); // false
+        assertThat(comparable.isGreaterThanOrEqualTo(actual, 1L)).isTrue(); // true
     }
 
     @Test
@@ -57,10 +57,10 @@ class ComparableLanguageImplTest {
         assertThat(comparable.isLessThanOrEqualTo(actual, 1)).isTrue(); // true
         assertThat(comparable.isLessThanOrEqualTo(actual, 0)).isFalse(); // false
 
-        assertThat(comparable.isGraterThan(actual, 0)).isTrue(); // true
-        assertThat(comparable.isGraterThan(actual, 4)).isFalse(); // false
-        assertThat(comparable.isGraterThanOrEqualTo(actual, 4)).isFalse(); // false
-        assertThat(comparable.isGraterThanOrEqualTo(actual, 1)).isTrue(); // true
+        assertThat(comparable.isGreaterThan(actual, 0)).isTrue(); // true
+        assertThat(comparable.isGreaterThan(actual, 4)).isFalse(); // false
+        assertThat(comparable.isGreaterThanOrEqualTo(actual, 4)).isFalse(); // false
+        assertThat(comparable.isGreaterThanOrEqualTo(actual, 1)).isTrue(); // true
     }
 
     @Test
@@ -75,10 +75,10 @@ class ComparableLanguageImplTest {
         assertThat(comparable.isLessThanOrEqualTo(actual, 1F)).isTrue(); // true
         assertThat(comparable.isLessThanOrEqualTo(actual, 0F)).isFalse(); // false
 
-        assertThat(comparable.isGraterThan(actual, 0F)).isTrue(); // true
-        assertThat(comparable.isGraterThan(actual, 4F)).isFalse(); // false
-        assertThat(comparable.isGraterThanOrEqualTo(actual, 4F)).isFalse(); // false
-        assertThat(comparable.isGraterThanOrEqualTo(actual, 1F)).isTrue(); // true
+        assertThat(comparable.isGreaterThan(actual, 0F)).isTrue(); // true
+        assertThat(comparable.isGreaterThan(actual, 4F)).isFalse(); // false
+        assertThat(comparable.isGreaterThanOrEqualTo(actual, 4F)).isFalse(); // false
+        assertThat(comparable.isGreaterThanOrEqualTo(actual, 1F)).isTrue(); // true
     }
 
     @Test
@@ -93,10 +93,10 @@ class ComparableLanguageImplTest {
         assertThat(comparable.isLessThanOrEqualTo(actual, (short) 1)).isTrue(); // true
         assertThat(comparable.isLessThanOrEqualTo(actual, (short) 0)).isFalse(); // false
 
-        assertThat(comparable.isGraterThan(actual, (short) 0)).isTrue(); // true
-        assertThat(comparable.isGraterThan(actual, (short) 4)).isFalse(); // false
-        assertThat(comparable.isGraterThanOrEqualTo(actual, (short) 4)).isFalse(); // false
-        assertThat(comparable.isGraterThanOrEqualTo(actual, (short) 1)).isTrue(); // true
+        assertThat(comparable.isGreaterThan(actual, (short) 0)).isTrue(); // true
+        assertThat(comparable.isGreaterThan(actual, (short) 4)).isFalse(); // false
+        assertThat(comparable.isGreaterThanOrEqualTo(actual, (short) 4)).isFalse(); // false
+        assertThat(comparable.isGreaterThanOrEqualTo(actual, (short) 1)).isTrue(); // true
     }
 
     @Test
@@ -111,10 +111,10 @@ class ComparableLanguageImplTest {
         assertThat(comparable.isLessThanOrEqualTo(actual, (byte) 1)).isTrue(); // true
         assertThat(comparable.isLessThanOrEqualTo(actual, (byte) 0)).isFalse(); // false
 
-        assertThat(comparable.isGraterThan(actual, (byte) 0)).isTrue(); // true
-        assertThat(comparable.isGraterThan(actual, (byte) 4)).isFalse(); // false
-        assertThat(comparable.isGraterThanOrEqualTo(actual, (byte) 4)).isFalse(); // false
-        assertThat(comparable.isGraterThanOrEqualTo(actual, (byte) 1)).isTrue(); // true
+        assertThat(comparable.isGreaterThan(actual, (byte) 0)).isTrue(); // true
+        assertThat(comparable.isGreaterThan(actual, (byte) 4)).isFalse(); // false
+        assertThat(comparable.isGreaterThanOrEqualTo(actual, (byte) 4)).isFalse(); // false
+        assertThat(comparable.isGreaterThanOrEqualTo(actual, (byte) 1)).isTrue(); // true
     }
 
     @Test
@@ -129,10 +129,10 @@ class ComparableLanguageImplTest {
         assertThat(comparable.isLessThanOrEqualTo(actual, "1")).isTrue(); // true
         assertThat(comparable.isLessThanOrEqualTo(actual, "0")).isFalse(); // false
 
-        assertThat(comparable.isGraterThan(actual, "0")).isTrue(); // true
-        assertThat(comparable.isGraterThan(actual, "4")).isFalse(); // false
-        assertThat(comparable.isGraterThanOrEqualTo(actual, "4")).isFalse(); // false
-        assertThat(comparable.isGraterThanOrEqualTo(actual, "1")).isTrue(); // true
+        assertThat(comparable.isGreaterThan(actual, "0")).isTrue(); // true
+        assertThat(comparable.isGreaterThan(actual, "4")).isFalse(); // false
+        assertThat(comparable.isGreaterThanOrEqualTo(actual, "4")).isFalse(); // false
+        assertThat(comparable.isGreaterThanOrEqualTo(actual, "1")).isTrue(); // true
     }
 
     @Test
@@ -147,10 +147,10 @@ class ComparableLanguageImplTest {
         assertThat(comparable.isLessThanOrEqualTo(actual, '1')).isTrue(); // true
         assertThat(comparable.isLessThanOrEqualTo(actual, '0')).isFalse(); // false
 
-        assertThat(comparable.isGraterThan(actual, '0')).isTrue(); // true
-        assertThat(comparable.isGraterThan(actual, '4')).isFalse(); // false
-        assertThat(comparable.isGraterThanOrEqualTo(actual, '4')).isFalse(); // false
-        assertThat(comparable.isGraterThanOrEqualTo(actual, '1')).isTrue(); // true
+        assertThat(comparable.isGreaterThan(actual, '0')).isTrue(); // true
+        assertThat(comparable.isGreaterThan(actual, '4')).isFalse(); // false
+        assertThat(comparable.isGreaterThanOrEqualTo(actual, '4')).isFalse(); // false
+        assertThat(comparable.isGreaterThanOrEqualTo(actual, '1')).isTrue(); // true
     }
 
 }

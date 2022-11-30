@@ -37,32 +37,6 @@ class StringsTest {
         assertThrows(Exception.class, () -> strings.assertIsNotEmpty(""));
         assertThrows(Exception.class, () -> strings.assertIsEqualToIgnoreCase(actual1, "Expected"));
 
-        // actual > expected
-        assertThrows(Exception.class, () -> strings.assertIsLessThan("5", "3"));
-        // actual == expected
-        assertThrows(Exception.class, () -> strings.assertIsLessThan("5", "5"));
-        // actual > expected
-        assertThrows(Exception.class, () -> strings.assertIsLessThan("C", "B"));
-
-        // actual > expected
-        assertThrows(Exception.class, () -> strings.assertIsLessThanOrEqualTo("C", "B"));
-
-        // actual < expected
-        assertThrows(Exception.class, () -> strings.assertIsGreaterThan("3", "5"));
-        // actual == expected
-        assertThrows(Exception.class, () -> strings.assertIsGreaterThan("5", "5"));
-        // actual < expected
-        assertThrows(Exception.class, () -> strings.assertIsGreaterThan("B", "C"));
-
-        // actual < expected
-        assertThrows(Exception.class, () -> strings.assertIsGreaterThanOrEqualTo("B", "C"));
-
-        // actual < start
-        assertThrows(Exception.class,
-                () -> strings.assertIsBetween("A", "B", "C"));
-        // actual > end
-        assertThrows(Exception.class,
-                () -> strings.assertIsBetween("C", "A", "B"));
 
         assertThatNoException().isThrownBy(() -> {
             strings.assertIsBlank(actual2);
@@ -71,17 +45,6 @@ class StringsTest {
             strings.assertIsNotEmpty(actual1);
             strings.assertIsEqualToIgnoreCase(actual1, "ACTUAL");
             strings.assertIsEqualToIgnoreCase(actual1, "actual");
-
-            strings.assertIsLessThan("4", "7");
-            strings.assertIsLessThanOrEqualTo("4", "7");
-            strings.assertIsLessThanOrEqualTo("4", "4");
-
-            strings.assertIsGreaterThan("7", "4");
-            strings.assertIsGreaterThanOrEqualTo("7", "4");
-            strings.assertIsGreaterThanOrEqualTo("4", "4");
-
-            // start < actual < end
-            strings.assertIsBetween("B", "A", "C");
         });
     }
 }

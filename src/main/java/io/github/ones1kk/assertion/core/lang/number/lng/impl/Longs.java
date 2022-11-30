@@ -84,7 +84,7 @@ public final class Longs extends Objects<Long> implements LongsInterface<Long> {
 
     @Override
     public void assertIsNotPositive(Long actual) {
-        if (comparable.isGraterThan(actual, 0L)) {
+        if (comparable.isGreaterThan(actual, 0L)) {
             handler.receive(actual, NumerableErrorMessages.shouldNotBePositive(actual));
             throw handler.getException();
         }
@@ -92,7 +92,7 @@ public final class Longs extends Objects<Long> implements LongsInterface<Long> {
 
     @Override
     public void assertIsNegative(Long actual) {
-        if (comparable.isGraterThanOrEqualTo(actual, 0L)) {
+        if (comparable.isGreaterThanOrEqualTo(actual, 0L)) {
             handler.receive(actual, NumerableErrorMessages.shouldBeNegative(actual));
             throw handler.getException();
         }
@@ -124,7 +124,7 @@ public final class Longs extends Objects<Long> implements LongsInterface<Long> {
 
     @Override
     public void assertIsLessThan(Long actual, Long expected) {
-        if (comparable.isGraterThanOrEqualTo(actual, expected)) {
+        if (comparable.isGreaterThanOrEqualTo(actual, expected)) {
             handler.receive(actual, shouldBeLessThan(actual, expected));
             throw handler.getException();
         }
@@ -132,7 +132,7 @@ public final class Longs extends Objects<Long> implements LongsInterface<Long> {
 
     @Override
     public void assertIsLessThanOrEqualTo(Long actual, Long expected) {
-        if (comparable.isGraterThan(actual, expected)) {
+        if (comparable.isGreaterThan(actual, expected)) {
             handler.receive(actual, expected, shouldBeLessThanOrEqualTo(actual, expected));
             throw handler.getException();
         }
@@ -156,7 +156,7 @@ public final class Longs extends Objects<Long> implements LongsInterface<Long> {
 
     @Override
     public void assertIsBetween(Long actual, Long start, Long end) {
-        if (comparable.isLessThan(actual, start) || comparable.isGraterThan(actual, end)) {
+        if (comparable.isLessThan(actual, start) || comparable.isGreaterThan(actual, end)) {
             handler.receive(actual, shouldBeBetween(actual, start, end));
             throw handler.getException();
         }
