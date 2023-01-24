@@ -33,17 +33,17 @@ public class CharSequences extends Objects<CharSequence> implements CharSequence
     }
 
     @Override
-    public void assertIsEmpty(CharSequence actual) {
-        if (!StringUtils.isEmpty(actual)) {
-            handler.receive(actual, CharSequenceErrorMessages.shouldBeEmpty(actual));
+    public void assertHasText(CharSequence actual) {
+        if (StringUtils.isEmpty(actual)) {
+            handler.receive(actual, CharSequenceErrorMessages.shouldHasText(actual));
             throw handler.getException();
         }
     }
 
     @Override
-    public void assertIsNotEmpty(CharSequence actual) {
-        if (StringUtils.isEmpty(actual)) {
-            handler.receive(actual, CharSequenceErrorMessages.shouldNotBeEmpty(actual));
+    public void assertHasNotText(CharSequence actual) {
+        if (!StringUtils.isEmpty(actual)) {
+            handler.receive(actual, CharSequenceErrorMessages.shouldHasNotText(actual));
             throw handler.getException();
         }
     }

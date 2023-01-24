@@ -42,7 +42,7 @@ public class AbstractCharSequenceAssert<SELF extends AbstractCharSequenceAssert<
      */
     @Override
     public SELF hasText() {
-        charSequences.assertIsEmpty(actual);
+        charSequences.assertHasText(actual);
         return self;
     }
 
@@ -53,7 +53,7 @@ public class AbstractCharSequenceAssert<SELF extends AbstractCharSequenceAssert<
      */
     @Override
     public SELF hasNotText() {
-        charSequences.assertIsNotEmpty(actual);
+        charSequences.assertHasNotText(actual);
         return self;
     }
 

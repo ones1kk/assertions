@@ -38,16 +38,16 @@ class StringsTest {
 
             assertThrows(Exception.class, () -> strings.assertIsBlank(actual1));
             assertThrows(Exception.class, () -> strings.assertIsNotBlank(actual2));
-            assertThrows(Exception.class, () -> strings.assertIsEmpty(actual1));
-            assertThrows(Exception.class, () -> strings.assertIsNotEmpty(""));
+            assertThrows(Exception.class, () -> strings.assertHasText(""));
+            assertThrows(Exception.class, () -> strings.assertHasNotText(actual1));
             assertThrows(Exception.class, () -> strings.assertIsEqualToIgnoreCase(actual1, "Expected"));
 
 
             assertThatNoException().isThrownBy(() -> {
                 strings.assertIsBlank(actual2);
                 strings.assertIsNotBlank(actual1);
-                strings.assertIsEmpty("");
-                strings.assertIsNotEmpty(actual1);
+                strings.assertHasText(actual1);
+                strings.assertHasNotText("");
                 strings.assertIsEqualToIgnoreCase(actual1, "ACTUAL");
                 strings.assertIsEqualToIgnoreCase(actual1, "actual");
             });
