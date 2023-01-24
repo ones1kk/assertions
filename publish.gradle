@@ -1,6 +1,6 @@
 ext {
     PUBLISH_GROUP_ID = 'io.github.ones1kk'
-    PUBLISH_VERSION = '0.0.2'
+    PUBLISH_VERSION = '0.0.3'
     PUBLISH_ARTIFACT_ID = 'assertions'
     PUBLISH_DESCRIPTION = 'Assertion for java programming'
     PUBLISH_URL = 'https://github.com/ones1kk/assertions'
