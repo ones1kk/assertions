@@ -34,15 +34,15 @@ class CharSequencesTest {
         // then
         assertThrows(Exception.class, () -> charSequences.assertIsBlank(actual1));
         assertThrows(Exception.class, () -> charSequences.assertIsNotBlank(actual2));
-        assertThrows(Exception.class, () -> charSequences.assertHasText(""));
-        assertThrows(Exception.class, () -> charSequences.assertHasNotText(actual1));
+        assertThrows(Exception.class, () -> charSequences.assertIsEmpty(actual1));
+        assertThrows(Exception.class, () -> charSequences.assertIsNotEmpty(""));
         assertThrows(Exception.class, () -> charSequences.assertIsEqualToIgnoreCase(actual1, "Expected"));
 
         assertThatNoException().isThrownBy(() -> {
             charSequences.assertIsBlank(actual2);
             charSequences.assertIsNotBlank(actual1);
-            charSequences.assertHasText(actual1);
-            charSequences.assertHasNotText("");
+            charSequences.assertIsEmpty("");
+            charSequences.assertIsNotEmpty(actual1);
             charSequences.assertIsEqualToIgnoreCase(actual1, "ACTUAL");
             charSequences.assertIsEqualToIgnoreCase(actual1, "actual");
         });

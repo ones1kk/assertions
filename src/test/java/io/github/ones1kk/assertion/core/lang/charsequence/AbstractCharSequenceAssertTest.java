@@ -56,15 +56,15 @@ class AbstractCharSequenceAssertTest {
         AbstractCharSequenceAssert<?, CharSequence> assert3 = new AbstractCharSequenceAssert<>(AbstractCharSequenceAssert.class, actual3);
 
         // then
-        assertThrows(AssertException.class, assert2::hasText);
-        assertThrows(AssertException.class, assert1::hasNotText);
+        assertThrows(AssertException.class, assert1::isEmpty);
+        assertThrows(AssertException.class, assert2::isNotEmpty);
         assertThrows(AssertException.class, assert1::isBlank);
         assertThrows(AssertException.class, assert3::isNotBlank);
         assertThrows(AssertException.class, () -> assert3.isEqualToIgnoreCase(actual1));
 
         assertThatNoException().isThrownBy(() -> {
-            assert1.hasText();
-            assert2.hasNotText();
+            assert2.isEmpty();
+            assert1.isNotEmpty();
             assert3.isBlank();
             assert1.isNotBlank();
             assert1.isEqualToIgnoreCase("ACTUAL");
