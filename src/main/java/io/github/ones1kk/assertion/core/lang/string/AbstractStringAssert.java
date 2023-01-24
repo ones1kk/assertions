@@ -16,7 +16,11 @@
 
 package io.github.ones1kk.assertion.core.lang.string;
 
+import io.github.ones1kk.assertion.core.Asserts;
 import io.github.ones1kk.assertion.core.lang.charsequence.AbstractCharSequenceAssert;
+import io.github.ones1kk.assertion.core.lang.number.integer.AbstractIntegerAssert;
+
+import java.util.regex.Pattern;
 
 /**
  * /**
@@ -33,5 +37,34 @@ public class AbstractStringAssert<SELF extends AbstractStringAssert<SELF>> exten
     public AbstractStringAssert(Class<?> self, String actual) {
         super(self, actual);
         this.strings = assertFactory.createAssert(actual, this);
+    }
+
+    /**
+     * Verify {@code actual} is matched to {@code expected} or not.
+     *
+     * @return {@code self}.
+     */
+    public SELF matches(String expected) {
+        strings.assertMatches(actual, expected);
+        return self;
+    }
+
+    /**
+     * Verify {@code actual} is matched to {@code expected} or not.
+     *
+     * @return {@code self}.
+     */
+    public SELF matches(Pattern expected) {
+        strings.assertMatches(actual, expected);
+        return self;
+    }
+
+    /**
+     * Convert length of {@code actual}
+     *
+     * @return {@link AbstractIntegerAssert}
+     */
+    public AbstractIntegerAssert<?, ?> asLength() {
+        return Asserts.that(actual.length());
     }
 }

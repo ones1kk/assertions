@@ -18,6 +18,8 @@ package io.github.ones1kk.assertion.core.lang.string;
 
 import io.github.ones1kk.assertion.core.feature.comparable.Comparable;
 
+import java.util.regex.Pattern;
+
 /**
  * <strong> The StringsInterface class is for a having String Type, assertable assertion implementation class.</strong>
  *
@@ -25,5 +27,8 @@ import io.github.ones1kk.assertion.core.feature.comparable.Comparable;
  */
 public interface StringsInterface<ACTUAL> {
 
+    void assertMatches(ACTUAL actual, ACTUAL expected);
+
+    void assertMatches(ACTUAL actual, Pattern expected);
 }
 
