@@ -36,23 +36,23 @@ public class AbstractCharSequenceAssert<SELF extends AbstractCharSequenceAssert<
     }
 
     /**
-     * Verify {@code actual} is empty or not
+     * Verify {@code actual} has text or not
      *
      * @return {@code self}
      */
     @Override
-    public SELF isEmpty() {
+    public SELF hasText() {
         charSequences.assertIsEmpty(actual);
         return self;
     }
 
     /**
-     * Verify {@code actual} is not empty or not
+     * Verify {@code actual} does not has text or not
      *
      * @return {@code self}
      */
     @Override
-    public SELF isNotEmpty() {
+    public SELF hasNotText() {
         charSequences.assertIsNotEmpty(actual);
         return self;
     }
