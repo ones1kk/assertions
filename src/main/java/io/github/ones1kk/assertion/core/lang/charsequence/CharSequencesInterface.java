@@ -23,9 +23,9 @@ package io.github.ones1kk.assertion.core.lang.charsequence;
  */
 public interface CharSequencesInterface<ACTUAL> {
 
-    void assertHasText(ACTUAL actual);
+    void assertIsEmpty(ACTUAL actual);
 
-    void assertHasNotText(ACTUAL actual);
+    void assertIsNotEmpty(ACTUAL actual);
 
     void assertIsBlank(ACTUAL actual);
 
