@@ -26,20 +26,20 @@
 <dependency>
     <groupId>io.github.ones1kk</groupId>
     <artifactId>assertions</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
 </dependency>
 ```
 
 ### Gradle
 
 ```groovy
-implementation group: 'io.github', name: 'assertions', version: '0.0.3'
+implementation group: 'io.github', name: 'assertions', version: '0.0.4'
 ```
 
 ### Gradle(short)
 
 ```groovy(short)
-implementation 'io.github.ones1kk:assertions:0.0.3'
+implementation 'io.github.ones1kk:assertions:0.0.4'
 ```
 ## Overview
 
