@@ -28,31 +28,31 @@ public final class IterableErrorMessages {
     }
 
     public static String shouldBeEmpty(Object actual) {
-        return DESCRIBABLE.as("The given {} should be empty.", actual);
+        return DESCRIBABLE.as("The given '{}' should be empty.", actual);
     }
 
     public static String shouldNotBeEmpty(Object actual) {
-        return DESCRIBABLE.as("The given {} should not be empty.", actual);
+        return DESCRIBABLE.as("The given '{}' should not be empty.", actual);
     }
 
     public static String shouldNotBeNullOrEmpty(Object actual) {
-        return DESCRIBABLE.as("The given {} should not be null or empty.", actual);
+        return DESCRIBABLE.as("The given '{}' should not be null or empty.", actual);
     }
 
     public static String shouldContain(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should contain {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should contain '{}'.", actual, expected);
     }
 
     public static String shouldDoNotContain(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should do not contain {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should do not contain '{}'.", actual, expected);
     }
 
     public static String shouldContainAll(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should contain all of {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should contain all of '{}'.", actual, expected);
     }
 
     public static String shouldContainAny(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should contain any of {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should contain any of '{}'.", actual, expected);
     }
 
     public static String shouldContainNull(Object actual) {

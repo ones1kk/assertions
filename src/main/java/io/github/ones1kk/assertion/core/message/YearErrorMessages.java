@@ -30,10 +30,10 @@ public final class YearErrorMessages {
     }
 
     public static String shouldBeLeapYear(Year actual) {
-        return DESCRIBABLE.as("The given {} should be leap year.", actual);
+        return DESCRIBABLE.as("The given '{}' should be leap year.", actual);
     }
 
     public static String shouldNotBeLeapYear(Year actual) {
-        return DESCRIBABLE.as("The given {} should not be leap year.", actual);
+        return DESCRIBABLE.as("The given '{}' should not be leap year.", actual);
     }
 }

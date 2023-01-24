@@ -29,26 +29,26 @@ public final class URLErrorMessages {
     }
 
     public static String shouldHaveHost(URL actual, String expected) {
-        return DESCRIBABLE.as("The given {} should have host as {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should have host as '{}'.", actual, expected);
     }
 
     public static String shouldDoNotHaveHost(URL actual) {
-        return DESCRIBABLE.as("The given {} should do not have host.", actual);
+        return DESCRIBABLE.as("The given '{}' should do not have host.", actual);
     }
 
     public static String shouldHavePort(URL actual, int expected) {
-        return DESCRIBABLE.as("The given {} should have port as {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should have port as '{}'.", actual, expected);
     }
 
     public static String shouldDoNotHavePort(URL actual) {
-        return DESCRIBABLE.as("The given {} should do not have port.", actual);
+        return DESCRIBABLE.as("The given '{}' should do not have port.", actual);
     }
 
     public static String shouldHavePath(URL actual, String expected) {
-        return DESCRIBABLE.as("The given {} should have path as {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should have path as '{}'.", actual, expected);
     }
 
     public static String shouldDoNotHavePath(URL actual) {
-        return DESCRIBABLE.as("The given {} should do not have path.", actual);
+        return DESCRIBABLE.as("The given '{}' should do not have path.", actual);
     }
 }

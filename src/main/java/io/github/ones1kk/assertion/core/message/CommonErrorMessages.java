@@ -38,39 +38,39 @@ public final class CommonErrorMessages {
     }
 
     public static String shouldBeNull(Object actual) {
-        return DESCRIBABLE.as("The given {} should be null.", actual);
+        return DESCRIBABLE.as("The given '{}' should be null.", actual);
     }
 
     public static String shouldNotBeNull(Object actual) {
-        return DESCRIBABLE.as("The given {} should not be null.", actual);
+        return DESCRIBABLE.as("The given '{}' should not be null.", actual);
     }
 
     public static String shouldBeEqualTo(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should be equal to {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should be equal to '{}'.", actual, expected);
     }
 
     public static String shouldNotBeEqualTo(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should not be equal to {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should not be equal to '{}'.", actual, expected);
     }
 
     public static String shouldBeSameAS(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should be same as {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should be same as '{}'.", actual, expected);
     }
 
     public static String shouldNotBeSameAS(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should not be same as {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should not be same as '{}'.", actual, expected);
     }
 
     public static String shouldBeAssignableFrom(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should be assignable from {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should be assignable from '{}'.", actual, expected);
     }
 
     public static String shouldNotBeAssignableFrom(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should not be assignable from {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should not be assignable from '{}'.", actual, expected);
     }
 
     public static String shouldBeInstanceOf(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should be instance of {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should be instance of {}.", actual, expected);
     }
 
     public static String shouldBeNotInstanceOf(Object actual, Object expected) {

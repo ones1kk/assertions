@@ -29,62 +29,62 @@ public final class FileErrorMessages {
     }
 
     public static String shouldBeExist(File actual) {
-        return DESCRIBABLE.as("The {} should be exist.", actual);
+        return DESCRIBABLE.as("The '{}' should be exist.", actual);
     }
 
     public static String shouldBeFile(File actual) {
-        return DESCRIBABLE.as("The {} should be file.", actual);
+        return DESCRIBABLE.as("The '{}' should be file.", actual);
     }
 
     public static String shouldNotBeFile(File actual) {
-        return DESCRIBABLE.as("The given {} should not be file.", actual);
+        return DESCRIBABLE.as("The given '{}' should not be file.", actual);
     }
 
     public static String shouldBeDirectory(File actual) {
-        return DESCRIBABLE.as("The given {} should be directory.", actual);
+        return DESCRIBABLE.as("The given '{}' should be directory.", actual);
     }
 
     public static String shouldNotBeDirectory(File actual) {
-        return DESCRIBABLE.as("The given {} should not be directory.", actual);
+        return DESCRIBABLE.as("The given '{}' should not be directory.", actual);
     }
 
     public static String shouldBeHidden(File actual) {
-        return DESCRIBABLE.as("The given {} should be hidden.", actual);
+        return DESCRIBABLE.as("The given '{}' should be hidden.", actual);
     }
 
     public static String shouldNotBeHidden(File actual) {
-        return DESCRIBABLE.as("The given {} should not be hidden.", actual);
+        return DESCRIBABLE.as("The given '{}' should not be hidden.", actual);
     }
 
     public static String shouldBeReadable(File actual) {
-        return DESCRIBABLE.as("The given {} should be readable.", actual);
+        return DESCRIBABLE.as("The given '{}' should be readable.", actual);
     }
 
     public static String shouldNotBeReadable(File actual) {
-        return DESCRIBABLE.as("The given {} should be readable.", actual);
+        return DESCRIBABLE.as("The given '{}' should be readable.", actual);
     }
 
     public static String shouldBeWritable(File actual) {
-        return DESCRIBABLE.as("The given {} should be writable.", actual);
+        return DESCRIBABLE.as("The given '{}' should be writable.", actual);
     }
 
     public static String shouldNotBeWritable(File actual) {
-        return DESCRIBABLE.as("The given {} should be writable.", actual);
+        return DESCRIBABLE.as("The given '{}' should be writable.", actual);
     }
 
     public static String shouldBeExecutable(File actual) {
-        return DESCRIBABLE.as("The given {} should be executable.", actual);
+        return DESCRIBABLE.as("The given '{}' should be executable.", actual);
     }
 
     public static String shouldNotBeExecutable(File actual) {
-        return DESCRIBABLE.as("The given {} should be executable.", actual);
+        return DESCRIBABLE.as("The given '{}' should be executable.", actual);
     }
 
     public static String shouldHaveExtension(File actual, String extension) {
-        return DESCRIBABLE.as("The given {} should have extension as {}.", actual, extension);
+        return DESCRIBABLE.as("The given '{}' should have extension as '{}'.", actual, extension);
     }
 
     public static String shouldDoNotHaveExtension(File actual, String extension) {
-        return DESCRIBABLE.as("The given {} should do not have extension as {}.", actual, extension);
+        return DESCRIBABLE.as("The given '{}' should do not have extension as {}.", actual, extension);
     }
 }

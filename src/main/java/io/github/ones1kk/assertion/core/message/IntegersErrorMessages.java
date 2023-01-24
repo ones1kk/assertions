@@ -27,18 +27,18 @@ public final class IntegersErrorMessages {
     }
 
     public static String shouldBeOdd(Number actual) {
-        return DESCRIBABLE.as("The given {} should be odd.", actual);
+        return DESCRIBABLE.as("The given '{}' should be odd.", actual);
     }
 
     public static String shouldNotBeOdd(Number actual) {
-        return DESCRIBABLE.as("The given {} should not be odd.", actual);
+        return DESCRIBABLE.as("The given '{}' should not be odd.", actual);
     }
 
     public static String shouldBeEven(Number actual) {
-        return DESCRIBABLE.as("The given {} should be even.", actual);
+        return DESCRIBABLE.as("The given '{}' should be even.", actual);
     }
 
     public static String shouldNotBeEven(Number actual) {
-        return DESCRIBABLE.as("The given {} should not be even.", actual);
+        return DESCRIBABLE.as("The given '{}' should not be even.", actual);
     }
 }

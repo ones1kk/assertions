@@ -27,7 +27,7 @@ public final class CharacterErrorMessages {
     }
 
     public static String shouldBeLowerCase(Character actual) {
-        return DESCRIBABLE.as("The given {} should be lower case.", actual);
+        return DESCRIBABLE.as("The given '{}' should be lower case.", actual);
     }
 
     public static String shouldNotBeLowerCase(Character actual) {

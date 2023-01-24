@@ -24,23 +24,23 @@ public final class NumerableErrorMessages {
     private static final Describable DESCRIBABLE = new Description();
 
     public static String shouldBePositive(Number actual) {
-        return DESCRIBABLE.as("The given {} should be positive.", actual);
+        return DESCRIBABLE.as("The given '{}' should be positive.", actual);
     }
 
     public static String shouldNotBePositive(Number actual) {
-        return DESCRIBABLE.as("The given {} should not be positive.", actual);
+        return DESCRIBABLE.as("The given '{}' should not be positive.", actual);
     }
 
     public static String shouldBeNegative(Number actual) {
-        return DESCRIBABLE.as("The given {} should be negative.", actual);
+        return DESCRIBABLE.as("The given '{}' should be negative.", actual);
     }
 
     public static String shouldNotBeNegative(Number actual) {
-        return DESCRIBABLE.as("The given {} should not be negative.", actual);
+        return DESCRIBABLE.as("The given '{}' should not be negative.", actual);
     }
 
     public static String shouldBeZero(Number actual) {
-        return DESCRIBABLE.as("The given {} should be zero.", actual);
+        return DESCRIBABLE.as("The given '{}' should be zero.", actual);
     }
 
     public static String shouldNotBeZero(Number actual) {

@@ -23,12 +23,12 @@ public final class CharSequenceErrorMessages {
 
     private static final Describable DESCRIBABLE = new Description();
 
-    public static String shouldHasText(CharSequence actual) {
-        return DESCRIBABLE.as("The given {} should has text.", actual);
+    public static String shouldBeEmpty(CharSequence actual) {
+        return DESCRIBABLE.as("The given '{}' should be empty.", actual);
     }
 
-    public static String shouldHasNotText(CharSequence actual) {
-        return DESCRIBABLE.as("The given {} should not has text.", actual);
+    public static String shouldNotBeEmpty(CharSequence actual) {
+        return DESCRIBABLE.as("The given {} should be not empty.", actual);
     }
 
     public static String shouldBeBlank(CharSequence actual) {

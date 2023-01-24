@@ -27,6 +27,6 @@ public final class DataErrorMessages {
     }
 
     public static String shouldBeCloseTo(Object actual, Object before, Object after) {
-        return DESCRIBABLE.as("The given {} should be close to {} ~ {}.", actual, before, after);
+        return DESCRIBABLE.as("The given '{}' should be close to '{}' ~ '{}'.", actual, before, after);
     }
 }

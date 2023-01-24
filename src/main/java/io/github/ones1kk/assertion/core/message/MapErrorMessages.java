@@ -27,26 +27,26 @@ public final class MapErrorMessages {
     }
 
     public static String shouldContainKey(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should contain {} as key.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should contain '{}' as key.", actual, expected);
     }
 
     public static String shouldContainAllKey(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should contain all keys of {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should contain all keys of '{}'.", actual, expected);
     }
 
     public static String shouldContainValue(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should contain {}. as value.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should contain '{}'. as value.", actual, expected);
     }
 
     public static String shouldContainAllValue(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should contain all values of {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should contain all values of '{}'.", actual, expected);
     }
 
     public static String shouldHasSameSizeOf(Object actual, int expected) {
-        return DESCRIBABLE.as("The given {} should have {} size.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should have '{}' size.", actual, expected);
     }
 
     public static String shouldDoNotHaveSizeOf(Object actual, int expected) {
-        return DESCRIBABLE.as("The given {} should have {} size.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should have '{}' size.", actual, expected);
     }
 }

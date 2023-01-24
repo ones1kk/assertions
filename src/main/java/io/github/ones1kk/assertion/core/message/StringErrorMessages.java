@@ -11,6 +11,14 @@ public final class StringErrorMessages {
     }
 
     public static String shouldMatches(String actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should be matched {}", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should be matched '{}'", actual, expected);
+    }
+
+    public static String shouldHasText(CharSequence actual) {
+        return DESCRIBABLE.as("The given '{}' should has text.", actual);
+    }
+
+    public static String shouldHasNotText(CharSequence actual) {
+        return DESCRIBABLE.as("The given {} should not has text.", actual);
     }
 }

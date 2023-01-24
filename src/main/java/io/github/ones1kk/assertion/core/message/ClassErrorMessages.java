@@ -11,11 +11,11 @@ public final class ClassErrorMessages {
     }
 
     public static String shouldBeTypeOf(Class<?> actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should be type of {}.", expected, actual);
+        return DESCRIBABLE.as("The given '{}' should be type of '{}'.", expected, actual);
     }
 
     public static String shouldNotBeTypeOf(Class<?> actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should not be type of {}.", expected, actual);
+        return DESCRIBABLE.as("The given '{}' should not be type of '{}'.", expected, actual);
     }
 
     public static String shouldBeSuperClassOf(Class<?> actual, Class<?> expected) {

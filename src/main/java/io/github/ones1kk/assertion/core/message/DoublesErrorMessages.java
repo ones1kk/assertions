@@ -24,14 +24,14 @@ public final class DoublesErrorMessages {
     private static final Describable DESCRIBABLE = new Description();
 
     public static String shouldBeInfinity(Object actual) {
-        return DESCRIBABLE.as("The given {} should be infinity.", actual);
+        return DESCRIBABLE.as("The given '{}' should be infinity.", actual);
     }
 
     public static String shouldBeFinite(Object actual) {
-        return DESCRIBABLE.as("The given {} should be finite.", actual);
+        return DESCRIBABLE.as("The given '{}' should be finite.", actual);
     }
 
     public static String shouldBeNaN(Object actual) {
-        return DESCRIBABLE.as("The given {} should be NaN.", actual);
+        return DESCRIBABLE.as("The given '{}' should be NaN.", actual);
     }
 }
