@@ -1,10 +1,14 @@
 package io.github.ones1kk.assertion.core.lang.string;
 
 import io.github.ones1kk.assertion.core.exception.AssertException;
+import io.github.ones1kk.assertion.core.lang.number.integer.AbstractIntegerAssert;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThatNoException;
+import java.util.regex.Pattern;
+
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AbstractStringAssertTest {
@@ -56,16 +60,99 @@ class AbstractStringAssertTest {
         AbstractStringAssert<?> assert3 = new AbstractStringAssert<>(AbstractStringAssert.class, actual3);
 
         // then
-        assertThrows(AssertException.class, assert1::isEmpty);
-        assertThrows(AssertException.class, assert2::isNotEmpty);
+        assertThrows(AssertException.class, assert1::hasText);
+        assertThrows(AssertException.class, assert2::hasNotText);
         assertThrows(AssertException.class, assert1::isBlank);
         assertThrows(AssertException.class, assert3::isNotBlank);
         assertThrows(AssertException.class, () -> assert3.isEqualToIgnoreCase(actual1));
 
-        assert2.isEmpty();
-        assert1.isNotEmpty();
-        assert3.isBlank();
-        assert1.isNotBlank();
-        assert1.isEqualToIgnoreCase("ACTUAL");
+        assertThatNoException().isThrownBy(() -> {
+            assert2.hasText();
+            assert1.hasNotText();
+            assert3.isBlank();
+            assert1.isNotBlank();
+            assert1.isEqualToIgnoreCase("ACTUAL");
+        });
+    }
+
+    @Nested
+    @DisplayName("matches() test")
+    class MatchesTest {
+
+        @Test
+        @DisplayName("matches() String argument success test")
+        void matches_string_success() throws Exception {
+            // given
+            String actual = "ones1k95@gmail.com";
+            String expected = "^.+?@.{2,}?\\..{2,}$";
+
+            // when
+            AbstractStringAssert<?> stringAssert = new AbstractStringAssert<>(AbstractStringAssert.class, actual);
+
+            // then
+            assertThatNoException().isThrownBy(() -> stringAssert.matches(expected));
+        }
+
+        @Test
+        @DisplayName("matches() String argument success test")
+        void matches_string_fail() throws Exception {
+            // given
+            String actual = "ones1k95";
+            String expected = "^.+?@.{2,}?\\..{2,}$";
+
+            // when
+            AbstractStringAssert<?> stringAssert = new AbstractStringAssert<>(AbstractStringAssert.class, actual);
+
+            // then
+            assertThatThrownBy(() -> stringAssert.matches(expected));
+        }
+
+        @Test
+        @DisplayName("matches() pattern argument success test")
+        void matches_pattern_success() throws Exception {
+            // given
+            String actual = "ones1k95@gmail.com";
+            Pattern expected = Pattern.compile("^.+?@.{2,}?\\..{2,}$");
+
+            // when
+            AbstractStringAssert<?> stringAssert = new AbstractStringAssert<>(AbstractStringAssert.class, actual);
+
+            // then
+            assertThatNoException().isThrownBy(() -> stringAssert.matches(expected));
+        }
+
+        @Test
+        @DisplayName("matches() pattern argument success test")
+        void matches_pattern_fail() throws Exception {
+            // given
+            String actual = "ones1k95";
+            Pattern expected = Pattern.compile("^.+?@.{2,}?\\..{2,}$");
+
+            // when
+            AbstractStringAssert<?> stringAssert = new AbstractStringAssert<>(AbstractStringAssert.class, actual);
+
+            // then
+            assertThatThrownBy(() -> stringAssert.matches(expected));
+        }
+    }
+
+    @Nested
+    @DisplayName("asLength() test")
+    class AsLengthTest {
+
+        @Test
+        @DisplayName("asLength test")
+        void asLength() throws Exception{
+            // given
+            String actual = "ones1k95";
+
+            // when
+            AbstractStringAssert<?> stringAssert = new AbstractStringAssert<>(AbstractStringAssert.class, actual);
+
+            // then
+            assertThat(stringAssert.asLength()).isNotNull()
+                    .isInstanceOf(AbstractIntegerAssert.class);
+            assertThatNoException().isThrownBy(() -> stringAssert.asLength().isEqualTo(8));
+        }
     }
 }
