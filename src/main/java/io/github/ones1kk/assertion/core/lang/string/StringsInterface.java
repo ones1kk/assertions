@@ -30,5 +30,8 @@ public interface StringsInterface<ACTUAL> {
     void assertMatches(ACTUAL actual, ACTUAL expected);
 
     void assertMatches(ACTUAL actual, Pattern expected);
+
+    void assertHasText(ACTUAL actual);
+
 }
 

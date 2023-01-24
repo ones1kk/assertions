@@ -40,6 +40,16 @@ public class AbstractStringAssert<SELF extends AbstractStringAssert<SELF>> exten
     }
 
     /**
+     * Verify {@code actual} has text or not.
+     *
+     * @return {@code self}.
+     */
+    public SELF hasText() {
+        strings.assertHasText(actual);
+        return self;
+    }
+
+    /**
      * Verify {@code actual} is matched to {@code expected} or not.
      *
      * @return {@code self}.

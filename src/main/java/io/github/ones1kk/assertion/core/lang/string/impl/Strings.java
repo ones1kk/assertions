@@ -48,4 +48,16 @@ public final class Strings extends CharSequences implements StringsInterface<Str
             throw handler.getException();
         }
     }
+
+    @Override
+    public void assertHasText(String actual) {
+        for (char c : actual.toCharArray()) {
+            if(!Character.isWhitespace(c)) {
+                return;
+            }
+        }
+        handler.receive(actual, StringErrorMessages.shouldHasText(actual));
+        throw handler.getException();
+    }
+
 }
