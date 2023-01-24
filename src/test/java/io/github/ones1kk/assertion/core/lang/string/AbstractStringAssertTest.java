@@ -60,15 +60,15 @@ class AbstractStringAssertTest {
         AbstractStringAssert<?> assert3 = new AbstractStringAssert<>(AbstractStringAssert.class, actual3);
 
         // then
-        assertThrows(AssertException.class, assert2::hasText);
-        assertThrows(AssertException.class, assert1::hasNotText);
+        assertThrows(AssertException.class, assert1::isEmpty);
+        assertThrows(AssertException.class, assert2::isNotEmpty);
         assertThrows(AssertException.class, assert1::isBlank);
         assertThrows(AssertException.class, assert3::isNotBlank);
         assertThrows(AssertException.class, () -> assert3.isEqualToIgnoreCase(actual1));
 
         assertThatNoException().isThrownBy(() -> {
-            assert1.hasText();
-            assert2.hasNotText();
+            assert2.isEmpty();
+            assert1.isNotEmpty();
             assert3.isBlank();
             assert1.isNotBlank();
             assert1.isEqualToIgnoreCase("ACTUAL");
@@ -155,4 +155,36 @@ class AbstractStringAssertTest {
             assertThatNoException().isThrownBy(() -> stringAssert.asLength().isEqualTo(8));
         }
     }
+
+    @Nested
+    @DisplayName("hasText() test")
+    class HasTextTest {
+
+        @Test
+        @DisplayName("hasText() success test")
+        void hasText_success() throws Exception {
+            // given
+            String actual = "actual";
+
+            // when
+            AbstractStringAssert<?> stringAssert = new AbstractStringAssert<>(AbstractStringAssert.class, actual);
+
+            // then
+            assertThatNoException().isThrownBy(stringAssert::hasText);
+        }
+
+        @Test
+        @DisplayName("hasText() fail test")
+        void hasText_fail() throws Exception {
+            // given
+            String actual = " ";
+
+            // when
+            AbstractStringAssert<?> stringAssert = new AbstractStringAssert<>(AbstractStringAssert.class, actual);
+
+            // then
+            assertThatThrownBy(stringAssert::hasText);
+        }
+    }
+
 }

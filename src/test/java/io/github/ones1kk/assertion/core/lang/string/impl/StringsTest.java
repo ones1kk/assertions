@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -38,16 +40,16 @@ class StringsTest {
 
             assertThrows(Exception.class, () -> strings.assertIsBlank(actual1));
             assertThrows(Exception.class, () -> strings.assertIsNotBlank(actual2));
-            assertThrows(Exception.class, () -> strings.assertHasText(""));
-            assertThrows(Exception.class, () -> strings.assertHasNotText(actual1));
+            assertThrows(Exception.class, () -> strings.assertIsEmpty(actual1));
+            assertThrows(Exception.class, () -> strings.assertIsNotEmpty(""));
             assertThrows(Exception.class, () -> strings.assertIsEqualToIgnoreCase(actual1, "Expected"));
 
 
             assertThatNoException().isThrownBy(() -> {
                 strings.assertIsBlank(actual2);
                 strings.assertIsNotBlank(actual1);
-                strings.assertHasText(actual1);
-                strings.assertHasNotText("");
+                strings.assertIsEmpty("");
+                strings.assertIsNotEmpty(actual1);
                 strings.assertIsEqualToIgnoreCase(actual1, "ACTUAL");
                 strings.assertIsEqualToIgnoreCase(actual1, "actual");
             });
@@ -95,6 +97,25 @@ class StringsTest {
             assertThatThrownBy(() -> strings.assertMatches(actual, expected));
         }
 
+    }
+
+    @Nested
+    @DisplayName("assertHasText() test")
+    class HasTextTest {
+        @Test
+        @DisplayName("assertHasText() success test")
+        void assertHasText_success() throws Exception {
+            String actual = "actual";
+
+            assertThatNoException().isThrownBy(() -> strings.assertHasText(actual));
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {"", " "})
+        @DisplayName("assertHasText() fail test")
+        void assertHasText_fail(String actual) throws Exception {
+            assertThatThrownBy(() -> strings.assertHasText(actual));
+        }
     }
 
 }
