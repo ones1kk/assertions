@@ -7,6 +7,7 @@ buildscript {
 plugins {
     id 'java'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'jacoco'
 }
 
 apply plugin: 'io.github.gradle-nexus.publish-plugin'
@@ -42,5 +43,52 @@ tasks.withType(JavaCompile) {
 }
 
 test {
+    jacoco {
+        destinationFile = file("$buildDir/jacoco/jacoco.exec")
+    }
     useJUnitPlatform()
+    finalizedBy 'jacocoTestReport'
+}
+
+jacoco {
+    toolVersion = '0.8.7'
+}
+
+jacocoTestReport {
+    reports {
+        html.enabled true
+        xml.enabled true
+        html.destination file("$buildDir/jacoco/report/index.html")
+        xml.destination file("$buildDir/jacoco/report/index.xml")
+    }
+
+    finalizedBy 'jacocoTestCoverageVerification'
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.30
+            }
+        }
+
+        rule {
+            enabled = true
+            element = 'CLASS'
+
+        }
+    }
+}
+
+task testCoverage(type: Test) {
+    group 'verification'
+    description 'Runs the unit tests with coverage'
+
+    dependsOn(':test',
+            ':jacocoTestReport',
+            ':jacocoTestCoverageVerification')
+
+    tasks['jacocoTestReport'].mustRunAfter(tasks['test'])
+    tasks['jacocoTestCoverageVerification'].mustRunAfter(tasks['jacocoTestReport'])
 }
