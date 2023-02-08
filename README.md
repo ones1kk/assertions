@@ -6,7 +6,7 @@
  <h3>Assertions for java programming.</h3>
 </div>
 
-![build](https://github.com/ones1kk/assertions/actions/workflows/coverage.yml/badge.svg)
+![build](https://github.com/ones1kk/assertions/actions/workflows/build.yml/badge.svg)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f78d2672bc9e4c9cb77eadfa4bd4f59f)](https://www.codacy.com/gh/ones1kk/assertions/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ones1kk/assertions&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/ones1kk/assertions/branch/main/graph/badge.svg?token=IL6PDN0HUS)](https://codecov.io/gh/ones1kk/assertions)
 
