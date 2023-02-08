@@ -6,17 +6,9 @@
  <h3>Assertions for java programming.</h3>
 </div>
 
-<div align="center">
-    <a href="https://www.azul.com/downloads/?version=java-8-lts&package=jdk">
-    <img alt="jdk11" src="https://img.shields.io/badge/jdk-8-orange?style=flat-square">
-    </a>
-    <a href="https://lgtm.com/projects/g/ones1kk/assertions/alerts/">
-        <img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/ones1kk/assertions.svg?logo=lgtm&logoWidth=18"/>
-    </a>
-    <a href="https://lgtm.com/projects/g/ones1kk/assertions/context:java">
-        <img alt="Language grade: Java" src="https://img.shields.io/lgtm/grade/java/g/ones1kk/assertions.svg?logo=lgtm&logoWidth=18"/>
-    </a>
-</div>
+![build](https://github.com/ones1kk/assertions/actions/workflows/coverage.yml/badge.svg)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f78d2672bc9e4c9cb77eadfa4bd4f59f)](https://www.codacy.com/gh/ones1kk/assertions/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ones1kk/assertions&amp;utm_campaign=Badge_Grade)
+[![codecov](https://codecov.io/gh/ones1kk/assertions/branch/main/graph/badge.svg?token=IL6PDN0HUS)](https://codecov.io/gh/ones1kk/assertions)
 
 ## Getting started
 
@@ -66,7 +58,7 @@ Asserts.that(list)
     // If the verification of the above assertion is passed,
     // User can define new description for new step.
     // Also can put parameters into description with braces.
-    .as("The given list should contain one of '{}'.", "1, 2, or 3")
+    .as("The given 'list' should contain one of '{}'.", "1, 2, or 3")
     // The given 'list' should contain any of the arguments.
     .containsAny("1", "2", "3")
     // Also, all of the arguments should be contained in given 'list'.
