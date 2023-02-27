@@ -19,50 +19,50 @@ public final class ClassErrorMessages {
     }
 
     public static String shouldBeSuperClassOf(Class<?> actual, Class<?> expected) {
-        return DESCRIBABLE.as("The given {} should be super class of {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should be super class of '{}'.", actual, expected);
     }
 
     public static String shouldBeSubClassOf(Class<?> actual, Class<?> expected) {
-        return DESCRIBABLE.as("The given {} should be sub class of {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should be sub class of '{}'.", actual, expected);
     }
 
     public static String shouldBePrimitive(Class<?> actual) {
-        return DESCRIBABLE.as("The given {} should be primitive.", actual);
+        return DESCRIBABLE.as("The given '{}' should be primitive.", actual);
     }
 
     public static String shouldBeInterface(Class<?> actual) {
-        return DESCRIBABLE.as("The given {} should be interface.", actual);
+        return DESCRIBABLE.as("The given '{}' should be interface.", actual);
     }
 
     public static String shouldBeAnnotation(Class<?> actual) {
-        return DESCRIBABLE.as("The given {} should be annotation.", actual);
+        return DESCRIBABLE.as("The given '{}' should be annotation.", actual);
     }
 
     public static String shouldBeFinalClass(Class<?> actual) {
-        return DESCRIBABLE.as("The given {} should be final class.", actual);
+        return DESCRIBABLE.as("The given '{}' should be final class.", actual);
     }
 
     public static String shouldBeAbstractClass(Class<?> actual) {
-        return DESCRIBABLE.as("The given {} should be abstract class.", actual);
+        return DESCRIBABLE.as("The given '{}' should be abstract class.", actual);
     }
 
     public static String shouldBeAnonymousClass(Class<?> actual) {
-        return DESCRIBABLE.as("The given {} should be anonymous class.", actual);
+        return DESCRIBABLE.as("The given '{}' should be anonymous class.", actual);
     }
 
     public static String shouldBeEnum(Class<?> actual) {
-        return DESCRIBABLE.as("The given {} should be enum.", actual);
+        return DESCRIBABLE.as("The given '{}' should be enum.", actual);
     }
 
     public static String shouldBeArray(Class<?> actual) {
-        return DESCRIBABLE.as("The given {} should be array.", actual);
+        return DESCRIBABLE.as("The given '{}' should be array.", actual);
     }
 
     public static String shouldBeMemberClass(Class<?> actual) {
-        return DESCRIBABLE.as("The given {} should be member class.", actual);
+        return DESCRIBABLE.as("The given '{}' should be member class.", actual);
     }
 
     public static String shouldBeLocalClass(Class<?> actual) {
-        return DESCRIBABLE.as("The given {} should be local class.", actual);
+        return DESCRIBABLE.as("The given '{}' should be local class.", actual);
     }
 }

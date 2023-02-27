@@ -31,38 +31,38 @@ public final class CharacterErrorMessages {
     }
 
     public static String shouldNotBeLowerCase(Character actual) {
-        return DESCRIBABLE.as("The given {} should not be lower case.", actual);
+        return DESCRIBABLE.as("The given '{}' should not be lower case.", actual);
     }
 
     public static String shouldBeUpperCase(Character actual) {
-        return DESCRIBABLE.as("The given {} should be upper case.", actual);
+        return DESCRIBABLE.as("The given '{}' should be upper case.", actual);
     }
 
     public static String shouldNotBeUpperCase(Character actual) {
-        return DESCRIBABLE.as("The given {} should not be upper case.", actual);
+        return DESCRIBABLE.as("The given '{}' should not be upper case.", actual);
     }
 
     public static String shouldBeLetter(Character actual) {
-        return DESCRIBABLE.as("The given {} should be letter.", actual);
+        return DESCRIBABLE.as("The given '{}' should be letter.", actual);
     }
 
     public static String shouldNotBeLetter(Character actual) {
-        return DESCRIBABLE.as("The given {} should not be letter.", actual);
+        return DESCRIBABLE.as("The given '{}' should not be letter.", actual);
     }
 
     public static String shouldBeDigit(Character actual) {
-        return DESCRIBABLE.as("The given {} should be digit.", actual);
+        return DESCRIBABLE.as("The given '{}' should be digit.", actual);
     }
 
     public static String shouldNotBeDigit(Character actual) {
-        return DESCRIBABLE.as("The give {} should not be digit.", actual);
+        return DESCRIBABLE.as("The give '{}' should not be digit.", actual);
     }
 
     public static String shouldBeWhitespace(Character actual) {
-        return DESCRIBABLE.as("The give {} should be whitespace.", actual);
+        return DESCRIBABLE.as("The give '{}' should be whitespace.", actual);
     }
 
     public static String shouldNotBeWhitespace(Character actual) {
-        return DESCRIBABLE.as("The give {} should not be whitespace.", actual);
+        return DESCRIBABLE.as("The give '{}' should not be whitespace.", actual);
     }
 }

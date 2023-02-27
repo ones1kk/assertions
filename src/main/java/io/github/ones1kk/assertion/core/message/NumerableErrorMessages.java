@@ -44,6 +44,6 @@ public final class NumerableErrorMessages {
     }
 
     public static String shouldNotBeZero(Number actual) {
-        return DESCRIBABLE.as("The given {} should not be zero.", actual);
+        return DESCRIBABLE.as("The given '{}' should not be zero.", actual);
     }
 }

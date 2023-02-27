@@ -56,18 +56,18 @@ public final class IterableErrorMessages {
     }
 
     public static String shouldContainNull(Object actual) {
-        return DESCRIBABLE.as("The given {} should contain null.", actual);
+        return DESCRIBABLE.as("The given '{}' should contain null.", actual);
     }
 
     public static String shouldDoNotContainNull(Object actual) {
-        return DESCRIBABLE.as("The given {} should do not contain null.", actual);
+        return DESCRIBABLE.as("The given '{}' should do not contain null.", actual);
     }
 
     public static String shouldBeAllMatch(Object actual) {
-        return DESCRIBABLE.as("The given {} should match all.", actual);
+        return DESCRIBABLE.as("The given '{}' should match all.", actual);
     }
 
     public static String shouldDoNotMatch(Object actual) {
-        return DESCRIBABLE.as("The given {} should do not match.", actual);
+        return DESCRIBABLE.as("The given '{}' should do not match.", actual);
     }
 }

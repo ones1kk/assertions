@@ -27,10 +27,10 @@ public final class BooleanErrorMessages {
     }
 
     public static String shouldBeFalse() {
-        return DESCRIBABLE.as("The given actual should be false.");
+        return DESCRIBABLE.as("The given 'actual' should be false.");
     }
 
     public static String shouldBeTrue() {
-        return DESCRIBABLE.as("The given actual should be true.");
+        return DESCRIBABLE.as("The given 'actual' should be true.");
     }
 }

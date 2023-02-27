@@ -74,6 +74,6 @@ public final class CommonErrorMessages {
     }
 
     public static String shouldBeNotInstanceOf(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should not be instance of {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should not be instance of '{}'.", actual, expected);
     }
 }

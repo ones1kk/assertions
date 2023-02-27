@@ -28,22 +28,22 @@ public final class CharSequenceErrorMessages {
     }
 
     public static String shouldNotBeEmpty(CharSequence actual) {
-        return DESCRIBABLE.as("The given {} should be not empty.", actual);
+        return DESCRIBABLE.as("The given '{}' should be not empty.", actual);
     }
 
     public static String shouldBeBlank(CharSequence actual) {
-        return DESCRIBABLE.as("The given {} should be blank.", actual);
+        return DESCRIBABLE.as("The given '{}' should be blank.", actual);
     }
 
     public static String shouldNotBeBlank(CharSequence actual) {
-        return DESCRIBABLE.as("The given {} should not be blank.", actual);
+        return DESCRIBABLE.as("The given '{}' should not be blank.", actual);
     }
 
     public static String shouldBeEqualToIgnoreCase(CharSequence actual, CharSequence expected) {
-        return DESCRIBABLE.as("The given {} should be equal to {}, case insensitively.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should be equal to '{}', case insensitively.", actual, expected);
     }
 
     public static String shouldBeNotEqualToIgnoreCase(CharSequence actual, CharSequence expected) {
-        return DESCRIBABLE.as("The given {} should not be equal to {}, case insensitively.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should not be equal to '{}', case insensitively.", actual, expected);
     }
 }

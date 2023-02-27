@@ -19,6 +19,10 @@ public final class StringErrorMessages {
     }
 
     public static String shouldHasNotText(CharSequence actual) {
-        return DESCRIBABLE.as("The given {} should not has text.", actual);
+        return DESCRIBABLE.as("The given '{}' should not has text.", actual);
+    }
+
+    public static String shouldHasLength(CharSequence actual) {
+        return DESCRIBABLE.as("The given '{}' should be length of '{}'.", actual, actual.length());
     }
 }

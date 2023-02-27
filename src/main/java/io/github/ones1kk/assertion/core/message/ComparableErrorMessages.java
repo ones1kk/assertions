@@ -31,18 +31,18 @@ public final class ComparableErrorMessages {
     }
 
     public static String shouldBeLessThanOrEqualTo(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given '{}' should be less than or equal to {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should be less than or equal to '{}'.", actual, expected);
     }
 
     public static String shouldBeGreaterThan(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should be greater than {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should be greater than '{}'.", actual, expected);
     }
 
     public static String shouldBeGreaterThanOrEqualTo(Object actual, Object expected) {
-        return DESCRIBABLE.as("The given {} should be greater than or equal to {}.", actual, expected);
+        return DESCRIBABLE.as("The given '{}' should be greater than or equal to '{}'.", actual, expected);
     }
 
     public static String shouldBeBetween(Object actual, Object start, Object end) {
-        return DESCRIBABLE.as("The given {} should be between {} and {}.", actual, start, end);
+        return DESCRIBABLE.as("The given '{}' should be between '{}' and '{}'.", actual, start, end);
     }
 }
