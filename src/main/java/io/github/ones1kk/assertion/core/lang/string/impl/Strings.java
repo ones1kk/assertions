@@ -60,4 +60,12 @@ public final class Strings extends CharSequences implements StringsInterface<Str
         throw handler.getException();
     }
 
+    @Override
+    public void assertHasLength(String actual, int expected) {
+        if(actual.length() != expected) {
+            handler.receive(actual, StringErrorMessages.shouldHasLength(actual));
+            throw handler.getException();
+        }
+    }
+
 }

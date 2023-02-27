@@ -70,6 +70,17 @@ public class AbstractStringAssert<SELF extends AbstractStringAssert<SELF>> exten
     }
 
     /**
+     * Verify {@code actual} has {@code expected} length.
+     *
+     * @param expected expected length of actual.
+     * @return {@code self}.
+     */
+    public SELF hasLength(int expected) {
+        strings.assertHasLength(actual, expected);
+        return self;
+    }
+
+    /**
      * Convert length of {@code actual}
      *
      * @return {@link AbstractIntegerAssert}

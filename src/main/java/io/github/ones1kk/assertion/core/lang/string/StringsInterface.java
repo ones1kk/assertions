@@ -33,5 +33,6 @@ public interface StringsInterface<ACTUAL> {
 
     void assertHasText(ACTUAL actual);
 
+    void assertHasLength(ACTUAL actual, int expected);
 }
 
