@@ -76,7 +76,7 @@ class StringsTest {
             String actual = "ones1k95";
             String expected = "^.+?@.{2,}?\\..{2,}$";
 
-            assertThatThrownBy(() -> strings.assertMatches(actual, expected));
+            assertThatThrownBy(() -> strings.assertMatches(actual, expected)).isInstanceOf(Exception.class);
         }
 
         @Test
@@ -94,7 +94,7 @@ class StringsTest {
             String actual = "ones1k95";
             Pattern expected = Pattern.compile("^.+?@.{2,}?\\..{2,}$");
 
-            assertThatThrownBy(() -> strings.assertMatches(actual, expected));
+            assertThatThrownBy(() -> strings.assertMatches(actual, expected)).isInstanceOf(Exception.class);
         }
 
     }
@@ -114,8 +114,28 @@ class StringsTest {
         @ValueSource(strings = {"", " "})
         @DisplayName("assertHasText() fail test")
         void assertHasText_fail(String actual) throws Exception {
-            assertThatThrownBy(() -> strings.assertHasText(actual));
+            assertThatThrownBy(() -> strings.assertHasText(actual)).isInstanceOf(Exception.class);
         }
+    }
+
+    @Nested
+    @DisplayName("hasLength() test")
+    class HasLengthTest {
+
+        @ParameterizedTest
+        @ValueSource(strings = {"actual", "expected", "assertions"})
+        @DisplayName("assertHasLength() success test")
+        void assertHasLength_success(String value) throws Exception {
+            assertThatNoException().isThrownBy(() -> strings.assertHasLength(value, value.length()));
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {"actual", "expected", "assertions"})
+        @DisplayName("assertHasLength() fail test")
+        void assertHasLength_fail(String value) throws Exception {
+            assertThatThrownBy(() -> strings.assertHasLength(value, 1)).isInstanceOf(Exception.class);
+        }
+
     }
 
 }

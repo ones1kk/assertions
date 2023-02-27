@@ -187,4 +187,36 @@ class AbstractStringAssertTest {
         }
     }
 
+    @Nested
+    @DisplayName("hasLength test")
+    class HasLengthTest {
+
+        @Test
+        @DisplayName("hasLength() success test")
+        void hasLength_success() throws Exception {
+            // given
+            String actual = "actual";
+
+            // when
+            AbstractStringAssert<?> stringAssert = new AbstractStringAssert<>(AbstractStringAssert.class, actual);
+
+            // then
+            assertThatNoException().isThrownBy(() -> stringAssert.hasLength(actual.length()));
+        }
+
+        @Test
+        @DisplayName("hasLength() fail test")
+        void hasLength_fail() throws Exception {
+            // given
+            String actual = "actual";
+
+            // when
+            AbstractStringAssert<?> stringAssert = new AbstractStringAssert<>(AbstractStringAssert.class, actual);
+
+            // then
+            assertThatThrownBy(() -> stringAssert.hasLength(1)).isInstanceOf(AssertException.class);
+        }
+
+    }
+
 }
