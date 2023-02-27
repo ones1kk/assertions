@@ -34,7 +34,7 @@ dependencies {
 }
 
 group = 'io.github.ones1kk'
-version = '0.0.5'
+version = '0.0.6'
 description = 'Assertion for java programming'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
