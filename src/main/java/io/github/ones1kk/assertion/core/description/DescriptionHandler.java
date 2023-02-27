@@ -31,9 +31,9 @@ public final class DescriptionHandler {
 
     private final Describable describable = new Description();
 
-    private String description;
+    private static final ThreadLocal<DescriptionHolder> HOLDER = new ThreadLocal<>();
 
-    private String asDescription;
+    private static final String EMPTY_STRING = "";
 
     public DescriptionHandler() {
         this.formatter = new SimplePrintFormatter();
@@ -61,20 +61,27 @@ public final class DescriptionHandler {
 
     public AssertException getException() {
         if (isEmptyAsDescription()) {
-            return new AssertException(description);
+            return new AssertException(HOLDER.get().getDescription());
         }
-        return new AssertException(asDescription);
+        return new AssertException(HOLDER.get().getAsDescription());
     }
 
     private boolean isEmptyAsDescription() {
-        return StringUtils.isEmpty(asDescription);
+        return StringUtils.isEmpty(HOLDER.get().getAsDescription());
     }
 
     private void setAsDescription(String asDescription) {
-        this.asDescription = asDescription;
+        HOLDER.set(new DescriptionHolder(asDescription, EMPTY_STRING));
     }
 
     private void setDescription(String description) {
-        this.description = description;
+        HOLDER.set(new DescriptionHolder(EMPTY_STRING, description));
     }
+
+    @Override
+    protected void finalize() throws Throwable {
+        HOLDER.remove();
+        super.finalize();
+    }
+
 }
