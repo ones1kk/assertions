@@ -28,9 +28,6 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
     testImplementation 'org.assertj:assertj-core:3.23.1'
     testImplementation 'org.mockito:mockito-core:4.7.0'
-
-    testCompileOnly 'org.projectlombok:lombok:1.18.24'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
 group = 'io.github.ones1kk'
@@ -38,7 +35,7 @@ version = '0.0.6'
 description = 'Assertion for java programming'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
 
@@ -79,7 +76,7 @@ jacocoTestCoverageVerification {
     }
 }
 
-task testCoverage(type: Test) {
+tasks.register('testCoverage', Test) {
     group 'verification'
     description 'Runs the unit tests with coverage'
 
