@@ -13,18 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core;
+package io.github.ones1kk.assertion.core.lang.object;
 
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+public class ObjectAssert extends AbstractObjectAssert<ObjectAssert, Object> {
 
-public class Asserts {
-
-    private Asserts() {
+    public ObjectAssert(Object actual) {
+        super(ObjectAssert.class, actual);
     }
-
-    public static AbstractObjectAssert<?, Object> that(Object actual) {
-        return AssertsForType.that(actual);
-    }
-
 
 }

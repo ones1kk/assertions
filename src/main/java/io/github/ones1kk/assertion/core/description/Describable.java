@@ -13,18 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core;
+package io.github.ones1kk.assertion.core.description;
 
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+import java.util.function.Supplier;
 
-public class Asserts {
+public interface Describable {
 
-    private Asserts() {
-    }
+    String describe(String description, Object... args);
 
-    public static AbstractObjectAssert<?, Object> that(Object actual) {
-        return AssertsForType.that(actual);
-    }
-
+    String describe(Description description);
 
 }

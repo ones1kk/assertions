@@ -13,18 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core;
+package io.github.ones1kk.assertion.core.info;
 
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+import io.github.ones1kk.assertion.core.description.Description;
 
-public class Asserts {
+public class ErrorMessageInfo implements AssertionsInfo {
 
-    private Asserts() {
+    private Description description;
+
+    @Override
+    public void overrideErrorMessage(Description description) {
+        this.description = description;
     }
 
-    public static AbstractObjectAssert<?, Object> that(Object actual) {
-        return AssertsForType.that(actual);
+    @Override
+    public boolean hasOverrideErrorMessage() {
+        return description != null;
     }
 
+    @Override
+    public Description getErrorMessage() {
+        if (hasOverrideErrorMessage()) {
+            return this.description;
+        }
+        return null;
+    }
 
 }

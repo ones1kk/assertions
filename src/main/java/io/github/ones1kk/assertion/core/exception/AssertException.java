@@ -13,18 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core;
 
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+package io.github.ones1kk.assertion.core.exception;
 
-public class Asserts {
 
-    private Asserts() {
+/**
+ * <strong> The AssertException is to handle Exceptions that occurred during runtime assertion. </strong>
+ */
+public class AssertException extends RuntimeException {
+
+    public AssertException(String message) {
+        super(message);
     }
-
-    public static AbstractObjectAssert<?, Object> that(Object actual) {
-        return AssertsForType.that(actual);
-    }
-
 
 }

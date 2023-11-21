@@ -13,18 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core;
+package io.github.ones1kk.assertion.core.lang.object;
 
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+public interface ObjectAssertion<SELF, ACTUAL> {
 
-public class Asserts {
+    SELF isNull();
 
-    private Asserts() {
-    }
+    SELF isNotNull();
 
-    public static AbstractObjectAssert<?, Object> that(Object actual) {
-        return AssertsForType.that(actual);
-    }
+    SELF isSameAs(ACTUAL expected);
 
+    SELF isNotSameAs(ACTUAL expected);
+
+    SELF isEqualTo(ACTUAL expected);
+
+    SELF isNotEqualTo(ACTUAL expected);
+
+    SELF isAssignableFrom(Class<?> expected);
+
+    SELF isNotAssignableFrom(Class<?> expected);
+
+    SELF isInstanceOf(Class<?> expected);
+
+    SELF isNotInstanceOf(Class<?> expected);
 
 }

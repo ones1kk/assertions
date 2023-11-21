@@ -13,18 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core;
+package io.github.ones1kk.assertion.core.description.formatter;
 
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+import io.github.ones1kk.assertion.core.description.Description;
 
-public class Asserts {
+public interface Formattable {
 
-    private Asserts() {
-    }
+    String format(String description, Object... args);
 
-    public static AbstractObjectAssert<?, Object> that(Object actual) {
-        return AssertsForType.that(actual);
-    }
-
+    String format(Description description);
 
 }

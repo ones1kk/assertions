@@ -13,18 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core;
+package io.github.ones1kk.assertion.core.description.formatter;
 
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+import io.github.ones1kk.assertion.core.description.Description;
 
-public class Asserts {
+public class TextFormatter implements Formattable {
 
-    private Asserts() {
+    @Override
+    public String format(String description, Object... args) {
+        return null;
     }
 
-    public static AbstractObjectAssert<?, Object> that(Object actual) {
-        return AssertsForType.that(actual);
+    @Override
+    public String format(Description description) {
+        return null;
     }
-
-
 }

@@ -13,18 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core;
 
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+package io.github.ones1kk.assertion.core.message;
 
-public class Asserts {
+public final class DescriptionErrorMessages {
 
-    private Asserts() {
+    private DescriptionErrorMessages() {
     }
 
-    public static AbstractObjectAssert<?, Object> that(Object actual) {
-        return AssertsForType.that(actual);
+    public static String shouldDoNotEnterPercentSign() {
+        return "The special symbols '%s' should don't be entered in description.";
     }
 
+    public static String ShouldBeEnteredArguments() {
+        return "The arguments should be entered.";
+    }
 
+    public static String ShouldBeExpressedInBrace() {
+        return "The arguments should be expressed in only brace.";
+    }
 }
