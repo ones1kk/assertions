@@ -17,69 +17,66 @@ package io.github.ones1kk.assertion.core.lang.object;
 
 import io.github.ones1kk.assertion.core.AsAsserts;
 
-public class AbstractObjectAssert<SELF extends AbstractObjectAssert<SELF, Object>, ACTUAL> extends AsAsserts<SELF> implements ObjectAssertion<SELF, Object> {
-
-    protected final SELF self;
+public class AbstractObjectAssert<ACTUAL> extends AsAsserts<AbstractObjectAssert> implements ObjectAssertion<AbstractObjectAssert<ACTUAL>, Object> {
 
     protected final ACTUAL actual;
 
     protected final ObjectsAssertion<Object> objects;
 
-    public AbstractObjectAssert(Class<SELF> self, ACTUAL actual) {
-        super(self);
-        this.self = self.cast(this);
+    public AbstractObjectAssert(ACTUAL actual) {
+        super(AbstractObjectAssert.class);
         this.actual = actual;
         this.objects = new Objects();
     }
 
     @Override
-    public SELF isNull() {
+    public AbstractObjectAssert<ACTUAL> isNull() {
         objects.assertNull(info, actual);
-        return self;
+        return this;
     }
 
     @Override
-    public SELF isNotNull() {
-        return self;
+    public AbstractObjectAssert<ACTUAL> isNotNull() {
+        return this;
     }
 
     @Override
-    public SELF isSameAs(Object expected) {
-        return self;
+    public AbstractObjectAssert<ACTUAL> isSameAs(Object expected) {
+        return this;
     }
 
     @Override
-    public SELF isNotSameAs(Object expected) {
-        return self;
+    public AbstractObjectAssert<ACTUAL> isNotSameAs(Object expected) {
+        return this;
     }
 
     @Override
-    public SELF isEqualTo(Object expected) {
-        return self;
+    public AbstractObjectAssert<ACTUAL> isEqualTo(Object expected) {
+        return this;
     }
 
     @Override
-    public SELF isNotEqualTo(Object expected) {
-        return self;
+    public AbstractObjectAssert<ACTUAL> isNotEqualTo(Object expected) {
+        return this;
     }
 
     @Override
-    public SELF isAssignableFrom(Class<?> expected) {
-        return self;
+    public AbstractObjectAssert<ACTUAL> isAssignableFrom(Class<?> expected) {
+        return this;
     }
 
     @Override
-    public SELF isNotAssignableFrom(Class<?> expected) {
-        return self;
+    public AbstractObjectAssert<ACTUAL> isNotAssignableFrom(Class<?> expected) {
+        return this;
     }
 
     @Override
-    public SELF isInstanceOf(Class<?> expected) {
-        return self;
+    public AbstractObjectAssert<ACTUAL> isInstanceOf(Class<?> expected) {
+        return this;
     }
 
     @Override
-    public SELF isNotInstanceOf(Class<?> expected) {
-        return self;
+    public AbstractObjectAssert<ACTUAL> isNotInstanceOf(Class<?> expected) {
+        return this;
     }
 }

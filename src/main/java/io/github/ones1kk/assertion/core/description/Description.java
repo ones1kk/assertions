@@ -27,10 +27,17 @@ public class Description {
 
     private final Object[] args;
 
-    public Description(String description, Object[] args) {
+    public Description(String description, Object... args) {
         validate(description, args);
         this.description = description;
         this.args = args;
+    }
+
+    public Description(String description) {
+        Object[] emptyArray = {};
+        validate(description, emptyArray);
+        this.description = description;
+        this.args = emptyArray;
     }
 
     private void validate(String description, Object[] args) {

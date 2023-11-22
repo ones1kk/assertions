@@ -16,13 +16,20 @@
 package io.github.ones1kk.assertion.core.info;
 
 import io.github.ones1kk.assertion.core.description.Description;
+import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 
-public interface AssertionsInfo {
+public interface AssertionsInfo extends Configurable<Formattable> {
 
     void overrideErrorMessage(Description description);
 
     boolean hasOverrideErrorMessage();
 
     Description getErrorMessage();
+
+    default boolean hasConfiguration() {
+        return getConfiguration() != null;
+    }
+
+    Formattable getConfiguration();
 
 }

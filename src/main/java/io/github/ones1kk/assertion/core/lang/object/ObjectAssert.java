@@ -15,10 +15,19 @@
  */
 package io.github.ones1kk.assertion.core.lang.object;
 
-public class ObjectAssert extends AbstractObjectAssert<ObjectAssert, Object> {
+import io.github.ones1kk.assertion.core.ConfigurationAsserts;
+import io.github.ones1kk.assertion.core.description.formatter.Formattable;
+
+public class ObjectAssert extends AbstractObjectAssert<Object> implements ConfigurationAsserts<AbstractObjectAssert<Object>, Formattable> {
 
     public ObjectAssert(Object actual) {
-        super(ObjectAssert.class, actual);
+        super(actual);
+    }
+
+    @Override
+    public AbstractObjectAssert<Object> configure(Formattable formattable) {
+        info.configure(formattable);
+        return this;
     }
 
 }

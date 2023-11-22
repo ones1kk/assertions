@@ -16,10 +16,13 @@
 package io.github.ones1kk.assertion.core.info;
 
 import io.github.ones1kk.assertion.core.description.Description;
+import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 
 public class ErrorMessageInfo implements AssertionsInfo {
 
     private Description description;
+
+    private Formattable formattable;
 
     @Override
     public void overrideErrorMessage(Description description) {
@@ -37,6 +40,16 @@ public class ErrorMessageInfo implements AssertionsInfo {
             return this.description;
         }
         return null;
+    }
+
+    @Override
+    public void configure(Formattable formattable) {
+        this.formattable = formattable;
+    }
+
+    @Override
+    public Formattable getConfiguration() {
+        return this.formattable;
     }
 
 }

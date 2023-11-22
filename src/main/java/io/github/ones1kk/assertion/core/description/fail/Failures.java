@@ -23,14 +23,18 @@ import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 
 public class Failures {
 
-    private final Formattable formattable = new TextFormatter();
+    private Formattable formattable = new TextFormatter();
 
     public AssertException failure(AssertionsInfo info, String errorMessage) {
         if (info.hasOverrideErrorMessage()) {
             Description description = info.getErrorMessage();
+            if (info.hasConfiguration()) {
+                formattable = info.getConfiguration();
+            }
             return new AssertException(formattable.format(description));
         }
 
         return new AssertException(errorMessage);
     }
+
 }
