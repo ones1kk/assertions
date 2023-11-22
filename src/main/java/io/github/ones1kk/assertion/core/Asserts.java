@@ -15,16 +15,15 @@
  */
 package io.github.ones1kk.assertion.core;
 
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+import io.github.ones1kk.assertion.core.lang.object.ObjectAssert;
 
 public class Asserts {
 
     private Asserts() {
     }
 
-    public static AbstractObjectAssert<?, Object> that(Object actual) {
+    public static ObjectAssert that(Object actual) {
         return AssertsForType.that(actual);
     }
-
 
 }

@@ -23,7 +23,7 @@ public class AssertsForType {
     private AssertsForType() {
     }
 
-    public static AbstractObjectAssert<?, Object> that(Object actual) {
+    public static ObjectAssert that(Object actual) {
         return new ObjectAssert(actual);
     }
 }
