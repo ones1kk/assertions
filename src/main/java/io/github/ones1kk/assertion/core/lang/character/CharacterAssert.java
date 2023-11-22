@@ -13,12 +13,5 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.description;
-
-public interface Describable {
-
-    String describe(String description, Object... args);
-
-    String describe(Description description);
-
+package io.github.ones1kk.assertion.core.lang.character;public class CharacterAssert {
 }

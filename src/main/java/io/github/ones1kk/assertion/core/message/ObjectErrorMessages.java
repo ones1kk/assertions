@@ -16,6 +16,8 @@
 
 package io.github.ones1kk.assertion.core.message;
 
+import io.github.ones1kk.assertion.core.description.Description;
+
 public final class ObjectErrorMessages {
 
     private static final String ACTUAL = "actual";
@@ -33,52 +35,54 @@ public final class ObjectErrorMessages {
     }
 
     public static String shouldBeNull(Object actual) {
-        return "";
-//        return DESCRIBABLE.as("The given '{}' should be null.", actual);
+        return new Description("The given '{}' should be null.", actual).toString();
     }
 
     public static String shouldNotBeNull(Object actual) {
-        return "";
-//        return DESCRIBABLE.as("The given '{}' should not be null.", actual);
+        return new Description("The given '{}' should not be null.", actual).toString();
     }
 
     public static String shouldBeEqualTo(Object actual, Object expected) {
-        return "";
-//        return DESCRIBABLE.as("The given '{}' should be equal to '{}'.", actual, expected);
+        return new Description("The given '{}' should be equal to '{}'.", actual, expected).toString();
     }
 
     public static String shouldNotBeEqualTo(Object actual, Object expected) {
-        return "";
-//        return DESCRIBABLE.as("The given '{}' should not be equal to '{}'.", actual, expected);
+        return new Description("The given '{}' should not be equal to '{}'.", actual, expected).toString();
     }
 
     public static String shouldBeSameAS(Object actual, Object expected) {
-        return "";
-//        return DESCRIBABLE.as("The given '{}' should be same as '{}'.", actual, expected);
+        return new Description("The given '{}' should be same as '{}'.", actual, expected).toString();
     }
 
     public static String shouldNotBeSameAS(Object actual, Object expected) {
-        return "";
-//        return DESCRIBABLE.as("The given '{}' should not be same as '{}'.", actual, expected);
+        return new Description("The given '{}' should not be same as '{}'.", actual, expected).toString();
     }
 
     public static String shouldBeAssignableFrom(Object actual, Object expected) {
-        return "";
-//        return DESCRIBABLE.as("The given '{}' should be assignable from '{}'.", actual, expected);
+        return new Description("The given '{}' should be assignable from '{}'.", actual, expected).toString();
     }
 
     public static String shouldNotBeAssignableFrom(Object actual, Object expected) {
-        return "";
-//        return DESCRIBABLE.as("The given '{}' should not be assignable from '{}'.", actual, expected);
+        return new Description("The given '{}' should not be assignable from '{}'.", actual, expected).toString();
     }
 
     public static String shouldBeInstanceOf(Object actual, Object expected) {
-        return "";
-//        return DESCRIBABLE.as("The given '{}' should be instance of {}.", actual, expected);
+        return new Description("The given '{}' should be instance of {}.", actual, expected).toString();
     }
 
     public static String shouldBeNotInstanceOf(Object actual, Object expected) {
-        return "";
-//        return DESCRIBABLE.as("The given '{}' should not be instance of '{}'.", actual, expected);
+        return new Description("The given '{}' should not be instance of '{}'.", actual, expected).toString();
+    }
+
+    public static String shouldSatisfyGivenCondition(Object actual) {
+        return new Description("The given '{}' should be satisfied of given condition.", actual).toString();
+    }
+
+    public static String shouldNotSatisfyGivenCondition(Object actual) {
+        return new Description("The given '{}' should not be satisfied of given condition.", actual).toString();
+    }
+
+    public static String shouldReturnGivenValue(Object actual) {
+        return new Description("The given '{}' should be returned of given value.", actual).toString();
     }
 }
