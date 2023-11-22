@@ -17,10 +17,11 @@ package io.github.ones1kk.assertion.core.lang.object;
 
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 
+import java.util.function.Function;
+import java.util.function.Predicate;
+
 /**
  * <strong> The ObjectsAssertion class is for a having Object Type, assertable assertion implementation class.</strong>
- *
- * @param <ACTUAL> {@code actual}.
  */
 public interface ObjectsAssertion<ACTUAL> {
 
@@ -36,12 +37,14 @@ public interface ObjectsAssertion<ACTUAL> {
 
     void assertNotEqualTo(AssertionsInfo info, ACTUAL actual, ACTUAL expected);
 
-    void assertAssignableFrom(AssertionsInfo info, ACTUAL actual, Class<?> expected);
-
-    void assertNotAssignableFrom(AssertionsInfo info, ACTUAL actual, Class<?> expected);
-
     void assertInstanceOf(AssertionsInfo info, ACTUAL actual, Class<?> expected);
 
     void assertNotInstanceOf(AssertionsInfo info, ACTUAL actual, Class<?> expected);
+
+    void assertIs(AssertionsInfo info, ACTUAL actual, Predicate<ACTUAL> predicate);
+
+    void assertIsNot(AssertionsInfo info, ACTUAL actual, Predicate<ACTUAL> predicate);
+
+    <T> void assertReturns(AssertionsInfo info, ACTUAL actual, T expected, Function<ACTUAL, T> function);
 
 }

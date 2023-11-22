@@ -13,5 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.string;public class StringAssert {
+package io.github.ones1kk.assertion.core.lang.string;
+
+import io.github.ones1kk.assertion.core.ConfigurationAsserts;
+import io.github.ones1kk.assertion.core.description.formatter.Formattable;
+
+public class StringAssert extends AbstractStringAssert implements ConfigurationAsserts<AbstractStringAssert, Formattable> {
+
+    public StringAssert(String actual) {
+        super(actual);
+    }
+
+    @Override
+    public AbstractStringAssert configure(Formattable formattable) {
+        info.configure(formattable);
+        return this;
+    }
 }

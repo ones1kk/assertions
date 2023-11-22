@@ -15,6 +15,15 @@
  */
 package io.github.ones1kk.assertion.core.lang.object;
 
+import java.util.function.Function;
+import java.util.function.Predicate;
+
+/**
+ * <strong> The ObjectAssertion class is for a having Object type, assertable interface class.</strong>
+ *
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
+ */
 public interface ObjectAssertion<SELF, ACTUAL> {
 
     SELF isNull();
@@ -29,12 +38,14 @@ public interface ObjectAssertion<SELF, ACTUAL> {
 
     SELF isNotEqualTo(ACTUAL expected);
 
-    SELF isAssignableFrom(Class<?> expected);
-
-    SELF isNotAssignableFrom(Class<?> expected);
-
     SELF isInstanceOf(Class<?> expected);
 
     SELF isNotInstanceOf(Class<?> expected);
+
+    SELF is(Predicate<ACTUAL> predicate);
+
+    SELF isNot(Predicate<ACTUAL> predicate);
+
+    <T> SELF returns(T expected, Function<ACTUAL, T> function);
 
 }

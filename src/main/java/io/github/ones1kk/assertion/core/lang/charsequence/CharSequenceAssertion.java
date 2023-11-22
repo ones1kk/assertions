@@ -13,32 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.character;
+package io.github.ones1kk.assertion.core.lang.charsequence;
 
 /**
- * <strong> The CharacterAssertions class is for a having Character type, assertable interface class.</strong>
+ * <strong> The CharSequenceAssertion class is for a having CharSequence type, assertable interface class.</strong>
  *
- * @param <SELF> {@code self}.
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
  */
-public interface CharacterAssertion<SELF> {
+public interface CharSequenceAssertion<SELF, ACTUAL> {
 
-    SELF isLowerCase();
+    SELF isEmpty();
 
-    SELF isNotLowerCase();
+    SELF isNotEmpty();
 
-    SELF isUpperCase();
+    SELF isBlank();
 
-    SELF isNotUpperCase();
+    SELF isNotBlank();
 
-    SELF isLetter();
-
-    SELF isNotLetter();
-
-    SELF isDigit();
-
-    SELF isNotDigit();
-
-    SELF isWhitespace();
-
-    SELF isNotWhitespace();
+    SELF isEqualToIgnoreCase(ACTUAL actual);
 }

@@ -13,5 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.character;public interface CharacterAssertion {
+package io.github.ones1kk.assertion.core.lang.character;
+
+import io.github.ones1kk.assertion.core.info.AssertionsInfo;
+
+public interface CharactersAssertion {
+
+    void assertLowerCase(AssertionsInfo info, Character actual);
+
+    void assertNotLowerCase(AssertionsInfo info, Character actual);
+
+    void assertUpperCase(AssertionsInfo info, Character actual);
+
+    void assertNotUpperCase(AssertionsInfo info, Character actual);
+
+    void assertLetter(AssertionsInfo info, Character actual);
+
+    void assertNotLetter(AssertionsInfo info, Character actual);
+
+    void assertDigit(AssertionsInfo info, Character actual);
+
+    void assertNotDigit(AssertionsInfo info, Character actual);
+
+    void assertWhitespace(AssertionsInfo info, Character actual);
+
+    void assertNotWhitespace(AssertionsInfo info, Character actual);
+
 }

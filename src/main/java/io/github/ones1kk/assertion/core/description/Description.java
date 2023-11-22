@@ -46,10 +46,12 @@ public class Description {
         throwIfOnlyArgumentsExist(description, args);
     }
 
-    private void containsBrace(String description, Object[] args) {
+    private boolean containsBrace(String description, Object[] args) {
         if (description.contains("{}")) {
             throwIfNullOrEmpty(args);
+            return true;
         }
+        return false;
     }
 
     private void throwIfNullOrEmpty(Object[] args) {
@@ -68,6 +70,14 @@ public class Description {
         if (isNotEmpty(args) && !(description.contains("{}"))) {
             throw new AssertException(DescriptionErrorMessages.ShouldBeExpressedInBrace());
         }
+    }
+
+    @Override
+    public String toString() {
+        if (containsBrace(description, args)) {
+            return String.format(description.replace("{}", "%s"), args);
+        }
+        return description;
     }
 
 }

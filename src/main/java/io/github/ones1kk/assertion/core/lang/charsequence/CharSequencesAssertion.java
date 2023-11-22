@@ -13,22 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.string;
+package io.github.ones1kk.assertion.core.lang.charsequence;
 
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 
-import java.util.regex.Pattern;
+/**
+ * <strong> The CharSequencesAssertion class is for a having CharSequence Type, assertable assertion implementation class.</strong>
+ */
+public interface CharSequencesAssertion<ACTUAL> {
 
-public interface StringsAssertion<ACTUAL> {
+    void assertEmpty(AssertionsInfo info, ACTUAL actual);
 
-    void assertHasText(AssertionsInfo info, ACTUAL actual);
+    void assertNotEmpty(AssertionsInfo info, ACTUAL actual);
 
-    void assertHasLength(AssertionsInfo info, ACTUAL actual, int expected);
+    void assertBlank(AssertionsInfo info, ACTUAL actual);
 
-    void assertHasSameLength(AssertionsInfo info, ACTUAL actual, ACTUAL expected);
+    void assertNotBlank(AssertionsInfo info, ACTUAL actual);
 
-    void assertMatches(AssertionsInfo info, ACTUAL actual, String regex);
-
-    void assertMatches(AssertionsInfo info, ACTUAL actual, Pattern expected);
+    void assertEqualToIgnoreCase(AssertionsInfo info, ACTUAL actual, ACTUAL expected);
 
 }

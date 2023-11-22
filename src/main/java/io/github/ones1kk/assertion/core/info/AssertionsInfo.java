@@ -26,10 +26,10 @@ public interface AssertionsInfo extends Configurable<Formattable> {
 
     Description getErrorMessage();
 
+    Formattable getConfiguration();
+
     default boolean hasConfiguration() {
         return getConfiguration() != null;
     }
-
-    Formattable getConfiguration();
 
 }

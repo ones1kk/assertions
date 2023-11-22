@@ -13,5 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.character;public class CharacterAssert {
+package io.github.ones1kk.assertion.core.lang.character;
+
+import io.github.ones1kk.assertion.core.ConfigurationAsserts;
+import io.github.ones1kk.assertion.core.description.formatter.Formattable;
+
+public class CharacterAssert extends AbstractCharacterAssert implements ConfigurationAsserts<AbstractCharacterAssert, Formattable> {
+
+    public CharacterAssert(Character character) {
+        super(character);
+    }
+
+    @Override
+    public AbstractCharacterAssert configure(Formattable formattable) {
+        info.configure(formattable);
+        return this;
+    }
 }

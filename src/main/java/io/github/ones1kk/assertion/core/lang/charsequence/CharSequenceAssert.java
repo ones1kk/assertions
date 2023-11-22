@@ -13,19 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.description.formatter;
+package io.github.ones1kk.assertion.core.lang.charsequence;
 
-import io.github.ones1kk.assertion.core.description.Description;
+import io.github.ones1kk.assertion.core.ConfigurationAsserts;
+import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 
-public class TextFormatter implements Formattable {
+public class CharSequenceAssert extends AbstractCharSequenceAssert<CharSequence> implements ConfigurationAsserts<AbstractCharSequenceAssert<CharSequence>, Formattable> {
 
-    @Override
-    public String format(String description, Object... args) {
-        return null;
+    public CharSequenceAssert(CharSequence charSequence) {
+        super(charSequence);
     }
 
     @Override
-    public String format(Description description) {
-        return null;
+    public AbstractCharSequenceAssert<CharSequence> configure(Formattable formattable) {
+        info.configure(formattable);
+        return this;
     }
 }

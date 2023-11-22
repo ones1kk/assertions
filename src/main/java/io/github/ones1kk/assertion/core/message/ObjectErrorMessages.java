@@ -58,14 +58,6 @@ public final class ObjectErrorMessages {
         return new Description("The given '{}' should not be same as '{}'.", actual, expected).toString();
     }
 
-    public static String shouldBeAssignableFrom(Object actual, Object expected) {
-        return new Description("The given '{}' should be assignable from '{}'.", actual, expected).toString();
-    }
-
-    public static String shouldNotBeAssignableFrom(Object actual, Object expected) {
-        return new Description("The given '{}' should not be assignable from '{}'.", actual, expected).toString();
-    }
-
     public static String shouldBeInstanceOf(Object actual, Object expected) {
         return new Description("The given '{}' should be instance of {}.", actual, expected).toString();
     }

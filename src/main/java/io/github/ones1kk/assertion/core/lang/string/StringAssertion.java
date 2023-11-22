@@ -13,5 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.string;public interface StringAssertion {
+package io.github.ones1kk.assertion.core.lang.string;
+
+import java.util.regex.Pattern;
+
+/**
+ * <strong> The StringAssertion class is for a having String type, assertable interface class.</strong>
+ *
+ * @param <SELF>   {@code self}.
+ * @param <ACTUAL> {@code actual}.
+ */
+public interface StringAssertion<SELF, ACTUAL> {
+
+    SELF hasText();
+
+    SELF hasLength(int expected);
+
+    SELF hasSameLength(ACTUAL expected);
+
+    SELF matches(ACTUAL expected);
+
+    SELF matches(Pattern expected);
 }

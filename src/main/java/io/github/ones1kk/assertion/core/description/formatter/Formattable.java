@@ -19,7 +19,15 @@ import io.github.ones1kk.assertion.core.description.Description;
 
 public interface Formattable {
 
-    String format(String description, Object... args);
+    String format(String description, Object actual, Object expected);
+
+    String format(String description, Object actual);
+
+    String format(String description);
+
+    String format(Description description, Object actual, Object expected);
+
+    String format(Description description, Object actual);
 
     String format(Description description);
 

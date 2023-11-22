@@ -20,12 +20,15 @@ import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 import io.github.ones1kk.assertion.core.info.ErrorMessageInfo;
 import io.github.ones1kk.assertion.core.message.ObjectErrorMessages;
 
+import java.util.function.Function;
+import java.util.function.Predicate;
+
 /**
  * <p> This Objects class verify {@code actual} of Object type.</p>
  */
-public class Objects implements ObjectsAssertion<Object> {
+public class Objects<ACTUAL> implements ObjectsAssertion<ACTUAL> {
 
-    Failures failures = new Failures();
+    protected final Failures failures = new Failures();
 
     /**
      * assert actual is null.
@@ -77,7 +80,7 @@ public class Objects implements ObjectsAssertion<Object> {
     @Override
     public void assertNotSameAs(AssertionsInfo info, Object actual, Object expected) {
         if (actual == expected) {
-            throw failures.failure(info, ObjectErrorMessages.shouldBeSameAS(actual, expected));
+            throw failures.failure(info, ObjectErrorMessages.shouldNotBeSameAS(actual, expected));
         }
     }
 
@@ -110,34 +113,6 @@ public class Objects implements ObjectsAssertion<Object> {
     }
 
     /**
-     * assert actual is assignable from expected.
-     *
-     * @param info     {@link ErrorMessageInfo}
-     * @param actual   actual
-     * @param expected expected
-     */
-    @Override
-    public void assertAssignableFrom(AssertionsInfo info, Object actual, Class<?> expected) {
-        if (!actual.getClass().isAssignableFrom(expected)) {
-            throw failures.failure(info, ObjectErrorMessages.shouldBeAssignableFrom(actual, expected));
-        }
-    }
-
-    /**
-     * assert actual is not assignable from expected.
-     *
-     * @param info     {@link ErrorMessageInfo}
-     * @param actual   actual
-     * @param expected expected
-     */
-    @Override
-    public void assertNotAssignableFrom(AssertionsInfo info, Object actual, Class<?> expected) {
-        if (actual.getClass().isAssignableFrom(expected)) {
-            throw failures.failure(info, ObjectErrorMessages.shouldNotBeAssignableFrom(actual, expected));
-        }
-    }
-
-    /**
      * assert actual is instance of expected.
      *
      * @param info     {@link ErrorMessageInfo}
@@ -145,7 +120,7 @@ public class Objects implements ObjectsAssertion<Object> {
      * @param expected expected
      */
     @Override
-    public void assertInstanceOf(AssertionsInfo info, Object actual, Class<?> expected) {
+    public void assertInstanceOf(AssertionsInfo info, ACTUAL actual, Class<?> expected) {
         if (!expected.isInstance(actual)) {
             throw failures.failure(info, ObjectErrorMessages.shouldBeInstanceOf(actual, expected));
         }
@@ -159,9 +134,58 @@ public class Objects implements ObjectsAssertion<Object> {
      * @param expected expected
      */
     @Override
-    public void assertNotInstanceOf(AssertionsInfo info, Object actual, Class<?> expected) {
+    public void assertNotInstanceOf(AssertionsInfo info, ACTUAL actual, Class<?> expected) {
         if (expected.isInstance(actual)) {
             throw failures.failure(info, ObjectErrorMessages.shouldBeNotInstanceOf(actual, expected));
+        }
+    }
+
+    /**
+     * assert actual is predicated
+     *
+     * @param info      {@link ErrorMessageInfo}
+     * @param actual    actual
+     * @param predicate predicate
+     */
+    @Override
+    public void assertIs(AssertionsInfo info, ACTUAL actual, Predicate<ACTUAL> predicate) {
+        assertNotNull(info, predicate);
+        if (!predicate.test(actual)) {
+            throw failures.failure(info, ObjectErrorMessages.shouldSatisfyGivenCondition(actual));
+        }
+    }
+
+    /**
+     * assert actual is not predicated
+     *
+     * @param info      {@link ErrorMessageInfo}
+     * @param actual    actual
+     * @param predicate predicate
+     */
+    @Override
+    public void assertIsNot(AssertionsInfo info, ACTUAL actual, Predicate<ACTUAL> predicate) {
+        assertNotNull(info, predicate);
+        if (predicate.test(actual)) {
+            throw failures.failure(info, ObjectErrorMessages.shouldNotSatisfyGivenCondition(actual));
+        }
+    }
+
+    /**
+     * assert actual return as expected
+     *
+     * @param info     {@link ErrorMessageInfo}
+     * @param actual   actual
+     * @param expected expected
+     * @param function function
+     * @param <T>      return type
+     */
+    @Override
+    public <T> void assertReturns(AssertionsInfo info, ACTUAL actual, T expected, Function<ACTUAL, T> function) {
+        assertNotNull(info, actual);
+        assertNotNull(info, function);
+        T returned = function.apply(actual);
+        if (!java.util.Objects.deepEquals(expected, returned)) {
+            throw failures.failure(info, ObjectErrorMessages.shouldReturnGivenValue(actual));
         }
     }
 

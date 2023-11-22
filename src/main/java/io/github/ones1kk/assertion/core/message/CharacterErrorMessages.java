@@ -16,53 +16,50 @@
 
 package io.github.ones1kk.assertion.core.message;
 
-import io.github.ones1kk.assertion.core.description.Describable;
-import io.github.ones1kk.assertion.core.description.impl.Description;
+import io.github.ones1kk.assertion.core.description.Description;
 
 public final class CharacterErrorMessages {
-
-    private static final Describable DESCRIBABLE = new Description();
 
     private CharacterErrorMessages() {
     }
 
     public static String shouldBeLowerCase(Character actual) {
-        return DESCRIBABLE.as("The given '{}' should be lower case.", actual);
+        return new Description("The given '{}' should be lower case.", actual).toString();
     }
 
     public static String shouldNotBeLowerCase(Character actual) {
-        return DESCRIBABLE.as("The given '{}' should not be lower case.", actual);
+        return new Description("The given '{}' should not be lower case.", actual).toString();
     }
 
     public static String shouldBeUpperCase(Character actual) {
-        return DESCRIBABLE.as("The given '{}' should be upper case.", actual);
+        return new Description("The given '{}' should be upper case.", actual).toString();
     }
 
     public static String shouldNotBeUpperCase(Character actual) {
-        return DESCRIBABLE.as("The given '{}' should not be upper case.", actual);
+        return new Description("The given '{}' should not be upper case.", actual).toString();
     }
 
     public static String shouldBeLetter(Character actual) {
-        return DESCRIBABLE.as("The given '{}' should be letter.", actual);
+        return new Description("The given '{}' should be letter.", actual).toString();
     }
 
     public static String shouldNotBeLetter(Character actual) {
-        return DESCRIBABLE.as("The given '{}' should not be letter.", actual);
+        return new Description("The given '{}' should not be letter.", actual).toString();
     }
 
     public static String shouldBeDigit(Character actual) {
-        return DESCRIBABLE.as("The given '{}' should be digit.", actual);
+        return new Description("The given '{}' should be digit.", actual).toString();
     }
 
     public static String shouldNotBeDigit(Character actual) {
-        return DESCRIBABLE.as("The give '{}' should not be digit.", actual);
+        return new Description("The give '{}' should not be digit.", actual).toString();
     }
 
     public static String shouldBeWhitespace(Character actual) {
-        return DESCRIBABLE.as("The give '{}' should be whitespace.", actual);
+        return new Description("The give '{}' should be whitespace.", actual).toString();
     }
 
     public static String shouldNotBeWhitespace(Character actual) {
-        return DESCRIBABLE.as("The give '{}' should not be whitespace.", actual);
+        return new Description("The give '{}' should not be whitespace.", actual).toString();
     }
 }

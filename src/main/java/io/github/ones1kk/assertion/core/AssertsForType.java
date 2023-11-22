@@ -15,8 +15,9 @@
  */
 package io.github.ones1kk.assertion.core;
 
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+import io.github.ones1kk.assertion.core.lang.charsequence.CharSequenceAssert;
 import io.github.ones1kk.assertion.core.lang.object.ObjectAssert;
+import io.github.ones1kk.assertion.core.lang.string.StringAssert;
 
 /**
  * The AssertsForType Class is for Assertions of JDK Type.
@@ -29,4 +30,13 @@ public class AssertsForType {
     public static ObjectAssert that(Object actual) {
         return new ObjectAssert(actual);
     }
+
+    public static CharSequenceAssert that(CharSequence actual) {
+        return new CharSequenceAssert(actual);
+    }
+
+    public static StringAssert that(String actual) {
+        return new StringAssert(actual);
+    }
+
 }
