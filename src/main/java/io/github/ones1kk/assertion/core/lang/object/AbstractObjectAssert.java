@@ -16,8 +16,6 @@
 package io.github.ones1kk.assertion.core.lang.object;
 
 import io.github.ones1kk.assertion.core.AsAsserts;
-import io.github.ones1kk.assertion.core.info.AssertionsInfo;
-import io.github.ones1kk.assertion.core.info.ErrorMessageInfo;
 
 public class AbstractObjectAssert<SELF extends AbstractObjectAssert<SELF, Object>, ACTUAL> extends AsAsserts<SELF> implements ObjectAssertion<SELF, Object> {
 
@@ -25,7 +23,7 @@ public class AbstractObjectAssert<SELF extends AbstractObjectAssert<SELF, Object
 
     protected final ACTUAL actual;
 
-    protected final Objects objects;
+    protected final ObjectsAssertion<Object> objects;
 
     public AbstractObjectAssert(Class<SELF> self, ACTUAL actual) {
         super(self);

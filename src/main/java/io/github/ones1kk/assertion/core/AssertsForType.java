@@ -18,6 +18,9 @@ package io.github.ones1kk.assertion.core;
 import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 import io.github.ones1kk.assertion.core.lang.object.ObjectAssert;
 
+/**
+ * The AssertsForType Class is for Assertions of JDK Type.
+ */
 public class AssertsForType {
 
     private AssertsForType() {

@@ -15,8 +15,6 @@
  */
 package io.github.ones1kk.assertion.core.description;
 
-import java.util.function.Supplier;
-
 public interface Describable {
 
     String describe(String description, Object... args);
