@@ -3,7 +3,8 @@ apply plugin: 'signing'
 apply from: 'publish.gradle'
 
 javadoc {
-    options.encoding = "UTF-8"}
+    options.encoding = "UTF-8"
+}
 
 task sourcesJar(type: Jar, dependsOn: classes) {
     archiveClassifier.set("sources")
@@ -19,7 +20,6 @@ artifacts {
     archives sourcesJar
     archives javadocJar
 }
-
 
 group = PUBLISH_GROUP_ID
 version = PUBLISH_VERSION
