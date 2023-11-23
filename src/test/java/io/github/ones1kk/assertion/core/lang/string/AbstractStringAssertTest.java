@@ -40,7 +40,7 @@ class AbstractStringAssertTest {
             String actual = "15";
 
             // when
-            AbstractStringAssert asserts = new AbstractStringAssert(actual);
+            AbstractStringAssert asserts = new StringAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::hasText);
@@ -53,7 +53,7 @@ class AbstractStringAssertTest {
             String actual = " ";
 
             // when
-            AbstractStringAssert asserts = new AbstractStringAssert(actual);
+            AbstractStringAssert asserts = new StringAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::hasText)
@@ -73,7 +73,7 @@ class AbstractStringAssertTest {
             String actual = "15";
 
             // when
-            AbstractStringAssert asserts = new AbstractStringAssert(actual);
+            AbstractStringAssert asserts = new StringAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.hasLength(2));
@@ -86,7 +86,7 @@ class AbstractStringAssertTest {
             String actual = "15";
 
             // when
-            AbstractStringAssert asserts = new AbstractStringAssert(actual);
+            AbstractStringAssert asserts = new StringAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.hasLength(1))
@@ -107,7 +107,7 @@ class AbstractStringAssertTest {
             String expected = "15";
 
             // when
-            AbstractStringAssert asserts = new AbstractStringAssert(actual);
+            AbstractStringAssert asserts = new StringAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.hasSameLength(expected));
@@ -121,7 +121,7 @@ class AbstractStringAssertTest {
             String expected = "151";
 
             // when
-            AbstractStringAssert asserts = new AbstractStringAssert(actual);
+            AbstractStringAssert asserts = new StringAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.hasSameLength(expected))
@@ -146,7 +146,7 @@ class AbstractStringAssertTest {
                 String expected = "[0-9]{2}";
 
                 // when
-                AbstractStringAssert asserts = new AbstractStringAssert(actual);
+                AbstractStringAssert asserts = new StringAssert(actual);
 
                 // then
                 assertThatNoException().isThrownBy(() -> asserts.matches(expected));
@@ -160,7 +160,7 @@ class AbstractStringAssertTest {
                 String expected = "[a-z]";
 
                 // when
-                AbstractStringAssert asserts = new AbstractStringAssert(actual);
+                AbstractStringAssert asserts = new StringAssert(actual);
 
                 // then
                 assertThatException().isThrownBy(() -> asserts.matches(expected))
@@ -181,7 +181,7 @@ class AbstractStringAssertTest {
                 Pattern expected = Pattern.compile("[0-9]{2}");
 
                 // when
-                AbstractStringAssert asserts = new AbstractStringAssert(actual);
+                AbstractStringAssert asserts = new StringAssert(actual);
 
                 // then
                 assertThatNoException().isThrownBy(() -> asserts.matches(expected));
@@ -195,7 +195,7 @@ class AbstractStringAssertTest {
                 Pattern expected = Pattern.compile("[a-z]");
 
                 // when
-                AbstractStringAssert asserts = new AbstractStringAssert(actual);
+                AbstractStringAssert asserts = new StringAssert(actual);
 
                 // then
                 assertThatException().isThrownBy(() -> asserts.matches(expected))

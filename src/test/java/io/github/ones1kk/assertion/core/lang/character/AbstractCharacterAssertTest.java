@@ -37,7 +37,7 @@ class AbstractCharacterAssertTest {
             Character actual = 'a';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isLowerCase);
@@ -50,7 +50,7 @@ class AbstractCharacterAssertTest {
             Character actual = 'A';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isLowerCase)
@@ -70,7 +70,7 @@ class AbstractCharacterAssertTest {
             Character actual = 'A';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isNotLowerCase);
@@ -83,7 +83,7 @@ class AbstractCharacterAssertTest {
             Character actual = 'a';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isNotLowerCase)
@@ -103,7 +103,7 @@ class AbstractCharacterAssertTest {
             Character actual = 'A';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isUpperCase);
@@ -116,7 +116,7 @@ class AbstractCharacterAssertTest {
             Character actual = 'a';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isUpperCase)
@@ -136,7 +136,7 @@ class AbstractCharacterAssertTest {
             Character actual = 'a';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isNotUpperCase);
@@ -149,7 +149,7 @@ class AbstractCharacterAssertTest {
             Character actual = 'A';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isNotUpperCase)
@@ -169,7 +169,7 @@ class AbstractCharacterAssertTest {
             Character actual = 'a';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isLetter);
@@ -182,7 +182,7 @@ class AbstractCharacterAssertTest {
             Character actual = '5';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isLetter)
@@ -202,7 +202,7 @@ class AbstractCharacterAssertTest {
             Character actual = '5';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isNotLetter);
@@ -215,7 +215,7 @@ class AbstractCharacterAssertTest {
             Character actual = 'a';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isNotLetter)
@@ -235,7 +235,7 @@ class AbstractCharacterAssertTest {
             Character actual = '5';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isDigit);
@@ -248,7 +248,7 @@ class AbstractCharacterAssertTest {
             Character actual = 'a';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isDigit)
@@ -268,7 +268,7 @@ class AbstractCharacterAssertTest {
             Character actual = 'a';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isNotDigit);
@@ -281,7 +281,7 @@ class AbstractCharacterAssertTest {
             Character actual = '5';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isNotDigit)
@@ -301,7 +301,7 @@ class AbstractCharacterAssertTest {
             Character actual = ' ';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isWhitespace);
@@ -314,7 +314,7 @@ class AbstractCharacterAssertTest {
             Character actual = '5';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isWhitespace)
@@ -334,7 +334,7 @@ class AbstractCharacterAssertTest {
             Character actual = 'a';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isNotWhitespace);
@@ -347,7 +347,7 @@ class AbstractCharacterAssertTest {
             Character actual = ' ';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isNotWhitespace)
@@ -368,7 +368,7 @@ class AbstractCharacterAssertTest {
             Character expected = 'b';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isLessThan(expected));
@@ -382,7 +382,7 @@ class AbstractCharacterAssertTest {
             Character expected = 'a';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.isLessThan(expected))
@@ -403,7 +403,7 @@ class AbstractCharacterAssertTest {
             Character expected = 'b';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isLessThanOrEqualTo(expected));
@@ -417,7 +417,7 @@ class AbstractCharacterAssertTest {
             Character expected = 'a';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.isLessThanOrEqualTo(expected))
@@ -438,7 +438,7 @@ class AbstractCharacterAssertTest {
             Character expected = 'a';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isGreaterThan(expected));
@@ -452,7 +452,7 @@ class AbstractCharacterAssertTest {
             Character expected = 'b';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.isGreaterThan(expected))
@@ -473,7 +473,7 @@ class AbstractCharacterAssertTest {
             Character expected = 'a';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isGreaterThanOrEqualTo(expected));
@@ -487,7 +487,7 @@ class AbstractCharacterAssertTest {
             Character expected = 'b';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.isGreaterThanOrEqualTo(expected))
@@ -509,7 +509,7 @@ class AbstractCharacterAssertTest {
             Character end = 'c';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isBetween(start, end));
@@ -524,7 +524,7 @@ class AbstractCharacterAssertTest {
             Character end = 'c';
 
             // when
-            AbstractCharacterAssert asserts = new AbstractCharacterAssert(actual);
+            AbstractCharacterAssert asserts = new CharacterAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.isBetween(start, end))

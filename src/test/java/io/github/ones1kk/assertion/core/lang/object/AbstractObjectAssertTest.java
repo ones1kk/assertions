@@ -39,7 +39,7 @@ class AbstractObjectAssertTest {
             Object actual = null;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isNull);
@@ -52,7 +52,7 @@ class AbstractObjectAssertTest {
             String actual = "actual";
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isNull)
@@ -71,7 +71,7 @@ class AbstractObjectAssertTest {
             String actual = "actual";
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isNotNull);
@@ -84,7 +84,7 @@ class AbstractObjectAssertTest {
             Object actual = null;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isNotNull)
@@ -104,7 +104,7 @@ class AbstractObjectAssertTest {
             Integer expected = 15;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isSameAs(expected));
@@ -118,7 +118,7 @@ class AbstractObjectAssertTest {
             Integer expected = 150;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.isSameAs(expected))
@@ -138,7 +138,7 @@ class AbstractObjectAssertTest {
             Integer expected = 150;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isNotSameAs(expected));
@@ -152,7 +152,7 @@ class AbstractObjectAssertTest {
             Integer expected = 15;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.isNotSameAs(expected))
@@ -172,7 +172,7 @@ class AbstractObjectAssertTest {
             Integer expected = 15;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isEqualTo(expected));
@@ -186,7 +186,7 @@ class AbstractObjectAssertTest {
             Integer expected = 150;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.isEqualTo(expected))
@@ -206,7 +206,7 @@ class AbstractObjectAssertTest {
             Integer expected = 150;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isNotEqualTo(expected));
@@ -220,7 +220,7 @@ class AbstractObjectAssertTest {
             Integer expected = 15;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.isNotEqualTo(expected))
@@ -239,7 +239,7 @@ class AbstractObjectAssertTest {
             Integer actual = 15;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isInstanceOf(Object.class));
@@ -252,7 +252,7 @@ class AbstractObjectAssertTest {
             Integer actual = null;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.isInstanceOf(Object.class))
@@ -271,7 +271,7 @@ class AbstractObjectAssertTest {
             Integer actual = null;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isNotInstanceOf(Object.class));
@@ -284,7 +284,7 @@ class AbstractObjectAssertTest {
             Integer actual = 15;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.isNotInstanceOf(Object.class))
@@ -303,7 +303,7 @@ class AbstractObjectAssertTest {
             Integer actual = 15;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.is(it -> it.equals(15)));
@@ -316,7 +316,7 @@ class AbstractObjectAssertTest {
             Integer actual = 15;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.is(Objects::isNull))
@@ -335,7 +335,7 @@ class AbstractObjectAssertTest {
             Integer actual = 150;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isNot(it -> it.equals(15)));
@@ -348,7 +348,7 @@ class AbstractObjectAssertTest {
             Integer actual = 15;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.isNot(it -> it.equals(15)))
@@ -367,7 +367,7 @@ class AbstractObjectAssertTest {
             Integer actual = 15;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.returns(15, it -> it));
@@ -380,7 +380,7 @@ class AbstractObjectAssertTest {
             Integer actual = 15;
 
             // when
-            AbstractObjectAssert<Object> asserts = new AbstractObjectAssert<>(actual);
+            AbstractObjectAssert<Object> asserts = new ObjectAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.returns(15, Object::toString))

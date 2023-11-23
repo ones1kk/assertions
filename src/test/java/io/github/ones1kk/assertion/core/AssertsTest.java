@@ -16,10 +16,16 @@
 
 package io.github.ones1kk.assertion.core;
 
+import io.github.ones1kk.assertion.core.lang.character.AbstractCharacterAssert;
+import io.github.ones1kk.assertion.core.lang.character.CharacterAssert;
 import io.github.ones1kk.assertion.core.lang.charsequence.AbstractCharSequenceAssert;
 import io.github.ones1kk.assertion.core.lang.charsequence.CharSequenceAssert;
+import io.github.ones1kk.assertion.core.lang.number.bytes.AbstractByteAssert;
+import io.github.ones1kk.assertion.core.lang.number.bytes.ByteAssert;
 import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 import io.github.ones1kk.assertion.core.lang.object.ObjectAssert;
+import io.github.ones1kk.assertion.core.lang.string.AbstractStringAssert;
+import io.github.ones1kk.assertion.core.lang.string.StringAssert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -60,7 +66,48 @@ class AssertsTest {
                     .isInstanceOf(AbstractCharSequenceAssert.class);
         }
 
-    }
+        @Test
+        @DisplayName("assert actual of character type")
+        void testCreateCharacterAsserts() {
+            // given
+            Character actual = 'a';
 
+            // when
+            CharacterAssert result = Asserts.that(actual);
+
+            // then
+            assertThat(result).isNotNull()
+                    .isInstanceOf(AbstractCharacterAssert.class);
+        }
+
+        @Test
+        @DisplayName("assert actual of string type")
+        void testCreateStringAsserts() {
+            // given
+            String actual = "actual";
+
+            // when
+            StringAssert result = Asserts.that(actual);
+
+            // then
+            assertThat(result).isNotNull()
+                    .isInstanceOf(AbstractStringAssert.class);
+        }
+
+        @Test
+        @DisplayName("assert actual of byte type")
+        void testCreateByteAsserts() {
+            // given
+            Byte actual = 1;
+
+            // when
+            ByteAssert result = Asserts.that(actual);
+
+            // then
+            assertThat(result).isNotNull()
+                    .isInstanceOf(AbstractByteAssert.class);
+        }
+
+    }
 
 }
