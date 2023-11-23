@@ -2,13 +2,12 @@ package io.github.ones1kk.assertion.core.lang.number.integers;
 
 import io.github.ones1kk.assertion.core.exception.AssertException;
 import io.github.ones1kk.assertion.core.feature.Offset;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThatException;
+import static org.assertj.core.api.Assertions.assertThatNoException;
 
 class AbstractIntegerAssertionTest {
 
