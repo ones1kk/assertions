@@ -40,9 +40,20 @@ public class Description {
         this.args = emptyArray;
     }
 
+    /**
+     * validate for creating instance of description.
+     * <pre>
+     * 1. if description contains braces, args should not be empty.
+     * 2. description should not contain '%s'.
+     * 3. if description does not contain braces, args should be empty.
+     * </pre>
+     *
+     * @param description description
+     * @param args        args
+     */
     private void validate(String description, Object[] args) {
         containsBrace(description, args);
-        throwIfHavingSpecialChar(description);
+        throwIfHavingSpecialSymbol(description);
         throwIfOnlyArgumentsExist(description, args);
     }
 
@@ -60,7 +71,7 @@ public class Description {
         }
     }
 
-    private void throwIfHavingSpecialChar(String description) {
+    private void throwIfHavingSpecialSymbol(String description) {
         if (description.contains("%s")) {
             throw new AssertException(DescriptionErrorMessages.shouldDoNotEnterPercentSign());
         }
