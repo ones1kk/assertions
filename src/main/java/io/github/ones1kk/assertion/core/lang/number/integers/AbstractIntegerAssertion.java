@@ -257,6 +257,12 @@ public class AbstractIntegerAssertion extends AbstractObjectAssert<Integer> impl
     }
 
 
+    /**
+     * verify actual is greater that or equal to expected
+     *
+     * @param expected expected
+     * @return {@link AbstractIntegerAssertion}.
+     */
     @Override
     public AbstractIntegerAssertion isGreaterThanOrEqualTo(Integer expected) {
         objects.assertNotNull(info, actual);
