@@ -14,18 +14,17 @@
  * limitations under the License.
  */
 
-package io.github.ones1kk.assertion.core.feature.compare;
+package io.github.ones1kk.assertion.core.message;
 
-public interface Comparable<SELF, ACTUAL> {
+import io.github.ones1kk.assertion.core.description.Description;
 
-    SELF isLessThan(ACTUAL expected);
+public class DataErrorMessage {
 
-    SELF isLessThanOrEqualTo(ACTUAL expected);
 
-    SELF isGreaterThan(ACTUAL expected);
+    private DataErrorMessage() {
+    }
 
-    SELF isGreaterThanOrEqualTo(ACTUAL expected);
-
-    SELF isBetween(ACTUAL start, ACTUAL end);
-
+    public static String shouldBeCloseTo(Object actual, Object before, Object after) {
+        return new Description("The given '{}' should be close to '{}' ~ '{}'.", actual, before, after).toString();
+    }
 }

@@ -18,7 +18,7 @@ package io.github.ones1kk.assertion.core.lang.charsequence;
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 import io.github.ones1kk.assertion.core.info.ErrorMessageInfo;
 import io.github.ones1kk.assertion.core.lang.object.Objects;
-import io.github.ones1kk.assertion.core.message.CharSequenceErrorMessages;
+import io.github.ones1kk.assertion.core.message.CharSequenceErrorMessage;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -35,7 +35,7 @@ public class CharSequences<ACTUAL extends CharSequence> extends Objects<ACTUAL> 
     @Override
     public void assertEmpty(AssertionsInfo info, CharSequence actual) {
         if (!StringUtils.isEmpty(actual)) {
-            throw failures.failure(info, CharSequenceErrorMessages.shouldBeEmpty(actual));
+            throw failures.failure(info, CharSequenceErrorMessage.shouldBeEmpty(actual));
         }
     }
 
@@ -48,7 +48,7 @@ public class CharSequences<ACTUAL extends CharSequence> extends Objects<ACTUAL> 
     @Override
     public void assertNotEmpty(AssertionsInfo info, CharSequence actual) {
         if (StringUtils.isEmpty(actual)) {
-            throw failures.failure(info, CharSequenceErrorMessages.shouldNotBeEmpty(actual));
+            throw failures.failure(info, CharSequenceErrorMessage.shouldNotBeEmpty(actual));
         }
     }
 
@@ -61,7 +61,7 @@ public class CharSequences<ACTUAL extends CharSequence> extends Objects<ACTUAL> 
     @Override
     public void assertBlank(AssertionsInfo info, CharSequence actual) {
         if (StringUtils.isNotBlank(actual)) {
-            throw failures.failure(info, CharSequenceErrorMessages.shouldBeBlank(actual));
+            throw failures.failure(info, CharSequenceErrorMessage.shouldBeBlank(actual));
         }
     }
 
@@ -74,7 +74,7 @@ public class CharSequences<ACTUAL extends CharSequence> extends Objects<ACTUAL> 
     @Override
     public void assertNotBlank(AssertionsInfo info, CharSequence actual) {
         if (StringUtils.isBlank(actual)) {
-            throw failures.failure(info, CharSequenceErrorMessages.shouldNotBeBlank(actual));
+            throw failures.failure(info, CharSequenceErrorMessage.shouldNotBeBlank(actual));
         }
     }
 
@@ -88,7 +88,7 @@ public class CharSequences<ACTUAL extends CharSequence> extends Objects<ACTUAL> 
     @Override
     public void assertEqualToIgnoreCase(AssertionsInfo info, CharSequence actual, CharSequence expected) {
         if (!StringUtils.equalsIgnoreCase(actual, expected)) {
-            throw failures.failure(info, CharSequenceErrorMessages.shouldBeEqualToIgnoreCase(actual, expected));
+            throw failures.failure(info, CharSequenceErrorMessage.shouldBeEqualToIgnoreCase(actual, expected));
         }
     }
 

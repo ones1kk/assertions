@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-package io.github.ones1kk.assertion.core.feature.compare;
+package io.github.ones1kk.assertion.core.lang.number;
 
-public interface Comparable<SELF, ACTUAL> {
+import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 
-    SELF isLessThan(ACTUAL expected);
+public interface DivisiblesAssertion<ACTUAL extends Number> extends NumerablesAssertion<ACTUAL> {
 
-    SELF isLessThanOrEqualTo(ACTUAL expected);
+    void assertOdd(AssertionsInfo info, ACTUAL actual);
 
-    SELF isGreaterThan(ACTUAL expected);
+    void assertNotOdd(AssertionsInfo info, ACTUAL actual);
 
-    SELF isGreaterThanOrEqualTo(ACTUAL expected);
+    void assertEven(AssertionsInfo info, ACTUAL actual);
 
-    SELF isBetween(ACTUAL start, ACTUAL end);
+    void assertNotEven(AssertionsInfo info, ACTUAL actual);
 
 }

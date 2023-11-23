@@ -18,9 +18,9 @@ package io.github.ones1kk.assertion.core.message;
 
 import io.github.ones1kk.assertion.core.description.Description;
 
-public final class CharSequenceErrorMessages {
+public final class CharSequenceErrorMessage {
 
-    private CharSequenceErrorMessages() {
+    private CharSequenceErrorMessage() {
     }
 
     public static String shouldBeEmpty(CharSequence actual) {

@@ -14,18 +14,30 @@
  * limitations under the License.
  */
 
-package io.github.ones1kk.assertion.core.feature.compare;
+package io.github.ones1kk.assertion.core.lang.number;
 
-public interface Comparable<SELF, ACTUAL> {
+import io.github.ones1kk.assertion.core.feature.Offset;
 
-    SELF isLessThan(ACTUAL expected);
+public interface NumerableAssertion<SELF, ACTUAL extends Number> {
 
-    SELF isLessThanOrEqualTo(ACTUAL expected);
+    SELF isPositive();
 
-    SELF isGreaterThan(ACTUAL expected);
+    SELF isNotPositive();
 
-    SELF isGreaterThanOrEqualTo(ACTUAL expected);
+    SELF isNegative();
 
-    SELF isBetween(ACTUAL start, ACTUAL end);
+    SELF isNotNegative();
+
+    SELF isZero();
+
+    SELF isNotZero();
+
+    SELF isCloseTo(ACTUAL expected, Offset<ACTUAL> offset);
+
+    SELF isCloseTo(ACTUAL expected, Double percentage);
+
+    SELF isNotCloseTo(ACTUAL expected, Offset<ACTUAL> offset);
+
+    SELF isNotCloseTo(ACTUAL expected, Double percentage);
 
 }

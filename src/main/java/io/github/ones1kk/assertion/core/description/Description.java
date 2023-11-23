@@ -16,7 +16,7 @@
 package io.github.ones1kk.assertion.core.description;
 
 import io.github.ones1kk.assertion.core.exception.AssertException;
-import io.github.ones1kk.assertion.core.message.DescriptionErrorMessages;
+import io.github.ones1kk.assertion.core.message.DescriptionErrorMessage;
 
 import static org.apache.commons.lang3.ArrayUtils.isEmpty;
 import static org.apache.commons.lang3.ArrayUtils.isNotEmpty;
@@ -56,19 +56,19 @@ public class Description {
 
     private void throwIfNullOrEmpty(Object[] args) {
         if (isEmpty(args) || args == null) {
-            throw new AssertException(DescriptionErrorMessages.ShouldBeEnteredArguments());
+            throw new AssertException(DescriptionErrorMessage.ShouldBeEnteredArguments());
         }
     }
 
     private void throwIfHavingSpecialChar(String description) {
         if (description.contains("%s")) {
-            throw new AssertException(DescriptionErrorMessages.shouldDoNotEnterPercentSign());
+            throw new AssertException(DescriptionErrorMessage.shouldDoNotEnterPercentSign());
         }
     }
 
     private void throwIfOnlyArgumentsExist(String description, Object[] args) {
         if (isNotEmpty(args) && !(description.contains("{}"))) {
-            throw new AssertException(DescriptionErrorMessages.ShouldBeExpressedInBrace());
+            throw new AssertException(DescriptionErrorMessage.ShouldBeExpressedInBrace());
         }
     }
 

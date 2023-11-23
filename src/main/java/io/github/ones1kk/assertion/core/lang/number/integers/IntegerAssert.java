@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-package io.github.ones1kk.assertion.core.message;
+package io.github.ones1kk.assertion.core.lang.number.integers;
 
-public final class DescriptionErrorMessages {
+import io.github.ones1kk.assertion.core.ConfigurationAsserts;
+import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 
-    private DescriptionErrorMessages() {
+public class IntegerAssert extends AbstractIntegerAssertion implements ConfigurationAsserts<AbstractIntegerAssertion, Formattable> {
+
+    public IntegerAssert(Integer integer) {
+        super(integer);
     }
 
-    public static String shouldDoNotEnterPercentSign() {
-        return "The special symbols '%s' should don't be entered in description.";
+    @Override
+    public AbstractIntegerAssertion configure(Formattable formattable) {
+        info.configure(formattable);
+        return this;
     }
 
-    public static String ShouldBeEnteredArguments() {
-        return "The arguments should be entered.";
-    }
-
-    public static String ShouldBeExpressedInBrace() {
-        return "The arguments should be expressed in only brace.";
-    }
 }

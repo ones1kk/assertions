@@ -21,8 +21,7 @@ import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 import io.github.ones1kk.assertion.core.info.ErrorMessageInfo;
 import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 import io.github.ones1kk.assertion.core.lang.object.Objects;
-import io.github.ones1kk.assertion.core.message.CharacterErrorMessages;
-import io.github.ones1kk.assertion.core.message.ComparableErrorMessages;
+import io.github.ones1kk.assertion.core.message.CharacterErrorMessage;
 
 /**
  * <strong> The Characters class inherits {@link AbstractObjectAssert} </strong>
@@ -40,7 +39,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertLowerCase(AssertionsInfo info, Character actual) {
         if (!Character.isLowerCase(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldBeLowerCase(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldBeLowerCase(actual));
         }
     }
 
@@ -53,7 +52,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertNotLowerCase(AssertionsInfo info, Character actual) {
         if (Character.isLowerCase(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldNotBeLowerCase(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldNotBeLowerCase(actual));
         }
     }
 
@@ -66,7 +65,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertUpperCase(AssertionsInfo info, Character actual) {
         if (!Character.isUpperCase(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldBeUpperCase(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldBeUpperCase(actual));
         }
     }
 
@@ -79,7 +78,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertNotUpperCase(AssertionsInfo info, Character actual) {
         if (Character.isUpperCase(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldNotBeUpperCase(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldNotBeUpperCase(actual));
         }
     }
 
@@ -92,7 +91,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertLetter(AssertionsInfo info, Character actual) {
         if (!Character.isLetter(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldBeLetter(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldBeLetter(actual));
         }
     }
 
@@ -105,7 +104,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertNotLetter(AssertionsInfo info, Character actual) {
         if (Character.isLetter(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldNotBeLetter(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldNotBeLetter(actual));
         }
     }
 
@@ -118,7 +117,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertDigit(AssertionsInfo info, Character actual) {
         if (!Character.isDigit(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldBeDigit(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldBeDigit(actual));
         }
     }
 
@@ -131,7 +130,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertNotDigit(AssertionsInfo info, Character actual) {
         if (Character.isDigit(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldNotBeDigit(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldNotBeDigit(actual));
         }
     }
 
@@ -144,7 +143,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertWhitespace(AssertionsInfo info, Character actual) {
         if (!Character.isWhitespace(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldBeWhitespace(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldBeWhitespace(actual));
         }
     }
 
@@ -157,7 +156,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertNotWhitespace(AssertionsInfo info, Character actual) {
         if (Character.isWhitespace(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldNotBeWhitespace(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldNotBeWhitespace(actual));
         }
     }
 
