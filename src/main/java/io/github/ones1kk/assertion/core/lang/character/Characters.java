@@ -15,16 +15,21 @@
  */
 package io.github.ones1kk.assertion.core.lang.character;
 
+import io.github.ones1kk.assertion.core.feature.compare.lang.ComparableLanguage;
+import io.github.ones1kk.assertion.core.feature.compare.lang.impl.ComparableLanguageImpl;
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 import io.github.ones1kk.assertion.core.info.ErrorMessageInfo;
 import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 import io.github.ones1kk.assertion.core.lang.object.Objects;
 import io.github.ones1kk.assertion.core.message.CharacterErrorMessages;
+import io.github.ones1kk.assertion.core.message.ComparableErrorMessages;
 
 /**
  * <strong> The Characters class inherits {@link AbstractObjectAssert} </strong>
  */
 public class Characters extends Objects<Character> implements CharactersAssertion {
+
+    private final ComparableLanguage<Character> comparable = new ComparableLanguageImpl<>();
 
     /**
      * assert actual is lower case.
@@ -156,4 +161,75 @@ public class Characters extends Objects<Character> implements CharactersAssertio
         }
     }
 
+    /**
+     * assert actual is less than expected.
+     *
+     * @param info     {@link ErrorMessageInfo}
+     * @param actual   actual
+     * @param expected expected
+     */
+    @Override
+    public void assertLessThan(AssertionsInfo info, Character actual, Character expected) {
+        if (comparable.isGreaterThanOrEqualTo(actual, expected)) {
+            throw failures.failure(info, ComparableErrorMessages.shouldBeLessThan(actual, expected));
+        }
+
+    }
+
+    /**
+     * assert actual is less than or equal to expected.
+     *
+     * @param info     {@link ErrorMessageInfo}
+     * @param actual   actual
+     * @param expected expected
+     */
+    @Override
+    public void assertLessThanOrEqualTo(AssertionsInfo info, Character actual, Character expected) {
+        if (comparable.isGreaterThan(actual, expected)) {
+            throw failures.failure(info, ComparableErrorMessages.shouldBeLessThanOrEqualTo(actual, expected));
+        }
+    }
+
+    /**
+     * assert actual is greater than expected.
+     *
+     * @param info     {@link ErrorMessageInfo}
+     * @param actual   actual
+     * @param expected expected
+     */
+    @Override
+    public void assertGreaterThan(AssertionsInfo info, Character actual, Character expected) {
+        if (comparable.isLessThanOrEqualTo(actual, expected)) {
+            throw failures.failure(info, ComparableErrorMessages.shouldBeGreaterThan(actual, expected));
+        }
+    }
+
+    /**
+     * assert actual is greater than or equal to expected.
+     *
+     * @param info     {@link ErrorMessageInfo}
+     * @param actual   actual
+     * @param expected expected
+     */
+    @Override
+    public void assertGreaterThanOrEqualTo(AssertionsInfo info, Character actual, Character expected) {
+        if (comparable.isLessThan(actual, expected)) {
+            throw failures.failure(info, ComparableErrorMessages.shouldBeGreaterThanOrEqualTo(actual, expected));
+        }
+    }
+
+    /**
+     * assert actual is between start and end.
+     *
+     * @param info   {@link ErrorMessageInfo}
+     * @param actual actual
+     * @param start  start
+     * @param end    end
+     */
+    @Override
+    public void assertBetween(AssertionsInfo info, Character actual, Character start, Character end) {
+        if (comparable.isLessThan(actual, start) || comparable.isGreaterThan(actual, end)) {
+            throw failures.failure(info, ComparableErrorMessages.shouldBeBetween(actual, start, end));
+        }
+    }
 }

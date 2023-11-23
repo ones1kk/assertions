@@ -15,6 +15,7 @@
  */
 package io.github.ones1kk.assertion.core.lang.character;
 
+import io.github.ones1kk.assertion.core.feature.compare.Comparable;
 import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 
 /**
@@ -22,7 +23,7 @@ import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
  * <br>
  * <p> This is that implements the assertion method of the Character type and verify assertion.</p>
  */
-public class AbstractCharacterAssert extends AbstractObjectAssert<Character> implements CharacterAssertion<AbstractCharacterAssert> {
+public class AbstractCharacterAssert extends AbstractObjectAssert<Character> implements CharacterAssertion<AbstractCharacterAssert>, Comparable<AbstractCharacterAssert, Character> {
 
     private final CharactersAssertion characters;
 
@@ -148,6 +149,78 @@ public class AbstractCharacterAssert extends AbstractObjectAssert<Character> imp
     public AbstractCharacterAssert isNotWhitespace() {
         objects.assertNotNull(info, actual);
         characters.assertNotWhitespace(info, actual);
+        return this;
+    }
+
+    /**
+     * verify actual is less than expected.
+     *
+     * @param expected expected
+     * @return {@link AbstractCharacterAssert}.
+     */
+    @Override
+    public AbstractCharacterAssert isLessThan(Character expected) {
+        objects.assertNotNull(info, actual);
+        objects.assertNotNull(info, expected);
+        characters.assertLessThan(info, actual, expected);
+        return this;
+    }
+
+    /**
+     * verify actual is less than or equal to expected.
+     *
+     * @param expected expected
+     * @return {@link AbstractCharacterAssert}.
+     */
+    @Override
+    public AbstractCharacterAssert isLessThanOrEqualTo(Character expected) {
+        objects.assertNotNull(info, actual);
+        objects.assertNotNull(info, expected);
+        characters.assertLessThanOrEqualTo(info, actual, expected);
+        return this;
+    }
+
+    /**
+     * verify actual is greater than expected.
+     *
+     * @param expected expected
+     * @return {@link AbstractCharacterAssert}.
+     */
+    @Override
+    public AbstractCharacterAssert isGreaterThan(Character expected) {
+        objects.assertNotNull(info, actual);
+        objects.assertNotNull(info, expected);
+        characters.assertGreaterThan(info, actual, expected);
+        return this;
+    }
+
+    /**
+     * verify actual is greater than or equal to expected.
+     *
+     * @param expected expected
+     * @return {@link AbstractCharacterAssert}.
+     */
+    @Override
+    public AbstractCharacterAssert isGreaterThanOrEqualTo(Character expected) {
+        objects.assertNotNull(info, actual);
+        objects.assertNotNull(info, expected);
+        characters.assertGreaterThanOrEqualTo(info, actual, expected);
+        return this;
+    }
+
+    /**
+     * verify actual is between start and end.
+     *
+     * @param start start
+     * @param end   end
+     * @return {@link AbstractCharacterAssert}.
+     */
+    @Override
+    public AbstractCharacterAssert isBetween(Character start, Character end) {
+        objects.assertNotNull(info, actual);
+        objects.assertNotNull(info, start);
+        objects.assertNotNull(info, end);
+        characters.assertBetween(info, actual, start, end);
         return this;
     }
 }
