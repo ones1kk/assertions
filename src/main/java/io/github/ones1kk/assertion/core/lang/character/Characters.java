@@ -15,16 +15,21 @@
  */
 package io.github.ones1kk.assertion.core.lang.character;
 
+import io.github.ones1kk.assertion.core.feature.compare.lang.ComparableLanguage;
+import io.github.ones1kk.assertion.core.feature.compare.lang.impl.ComparableLanguageImpl;
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 import io.github.ones1kk.assertion.core.info.ErrorMessageInfo;
 import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 import io.github.ones1kk.assertion.core.lang.object.Objects;
-import io.github.ones1kk.assertion.core.message.CharacterErrorMessages;
+import io.github.ones1kk.assertion.core.message.CharacterErrorMessage;
+import io.github.ones1kk.assertion.core.message.ComparableErrorMessage;
 
 /**
  * <strong> The Characters class inherits {@link AbstractObjectAssert} </strong>
  */
 public class Characters extends Objects<Character> implements CharactersAssertion {
+
+    private final ComparableLanguage<Character> comparable = new ComparableLanguageImpl<>();
 
     /**
      * assert actual is lower case.
@@ -35,7 +40,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertLowerCase(AssertionsInfo info, Character actual) {
         if (!Character.isLowerCase(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldBeLowerCase(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldBeLowerCase(actual));
         }
     }
 
@@ -48,7 +53,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertNotLowerCase(AssertionsInfo info, Character actual) {
         if (Character.isLowerCase(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldNotBeLowerCase(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldNotBeLowerCase(actual));
         }
     }
 
@@ -61,7 +66,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertUpperCase(AssertionsInfo info, Character actual) {
         if (!Character.isUpperCase(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldBeUpperCase(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldBeUpperCase(actual));
         }
     }
 
@@ -74,7 +79,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertNotUpperCase(AssertionsInfo info, Character actual) {
         if (Character.isUpperCase(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldNotBeUpperCase(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldNotBeUpperCase(actual));
         }
     }
 
@@ -87,7 +92,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertLetter(AssertionsInfo info, Character actual) {
         if (!Character.isLetter(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldBeLetter(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldBeLetter(actual));
         }
     }
 
@@ -100,7 +105,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertNotLetter(AssertionsInfo info, Character actual) {
         if (Character.isLetter(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldNotBeLetter(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldNotBeLetter(actual));
         }
     }
 
@@ -113,7 +118,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertDigit(AssertionsInfo info, Character actual) {
         if (!Character.isDigit(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldBeDigit(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldBeDigit(actual));
         }
     }
 
@@ -126,7 +131,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertNotDigit(AssertionsInfo info, Character actual) {
         if (Character.isDigit(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldNotBeDigit(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldNotBeDigit(actual));
         }
     }
 
@@ -139,7 +144,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertWhitespace(AssertionsInfo info, Character actual) {
         if (!Character.isWhitespace(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldBeWhitespace(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldBeWhitespace(actual));
         }
     }
 
@@ -152,8 +157,79 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertNotWhitespace(AssertionsInfo info, Character actual) {
         if (Character.isWhitespace(actual)) {
-            throw failures.failure(info, CharacterErrorMessages.shouldNotBeWhitespace(actual));
+            throw failures.failure(info, CharacterErrorMessage.shouldNotBeWhitespace(actual));
         }
     }
 
+    /**
+     * assert actual is less than expected.
+     *
+     * @param info     {@link ErrorMessageInfo}
+     * @param actual   actual
+     * @param expected expected
+     */
+    @Override
+    public void assertLessThan(AssertionsInfo info, Character actual, Character expected) {
+        if (comparable.isGreaterThanOrEqualTo(actual, expected)) {
+            throw failures.failure(info, ComparableErrorMessage.shouldBeLessThan(actual, expected));
+        }
+
+    }
+
+    /**
+     * assert actual is less than or equal to expected.
+     *
+     * @param info     {@link ErrorMessageInfo}
+     * @param actual   actual
+     * @param expected expected
+     */
+    @Override
+    public void assertLessThanOrEqualTo(AssertionsInfo info, Character actual, Character expected) {
+        if (comparable.isGreaterThan(actual, expected)) {
+            throw failures.failure(info, ComparableErrorMessage.shouldBeLessThanOrEqualTo(actual, expected));
+        }
+    }
+
+    /**
+     * assert actual is greater than expected.
+     *
+     * @param info     {@link ErrorMessageInfo}
+     * @param actual   actual
+     * @param expected expected
+     */
+    @Override
+    public void assertGreaterThan(AssertionsInfo info, Character actual, Character expected) {
+        if (comparable.isLessThanOrEqualTo(actual, expected)) {
+            throw failures.failure(info, ComparableErrorMessage.shouldBeGreaterThan(actual, expected));
+        }
+    }
+
+    /**
+     * assert actual is greater than or equal to expected.
+     *
+     * @param info     {@link ErrorMessageInfo}
+     * @param actual   actual
+     * @param expected expected
+     */
+    @Override
+    public void assertGreaterThanOrEqualTo(AssertionsInfo info, Character actual, Character expected) {
+        if (comparable.isLessThan(actual, expected)) {
+            throw failures.failure(info, ComparableErrorMessage.shouldBeGreaterThanOrEqualTo(actual, expected));
+        }
+    }
+
+    /**
+     * assert actual is between start and end.
+     *
+     * @param info   {@link ErrorMessageInfo}
+     * @param actual actual
+     * @param start  start
+     * @param end    end
+     */
+    @Override
+    public void assertBetween(AssertionsInfo info, Character actual, Character start, Character end) {
+        if (comparable.isLessThan(actual, start) || comparable.isGreaterThan(actual, end)) {
+            throw failures.failure(info, ComparableErrorMessage.shouldBeBetween(actual, start, end));
+        }
+    }
 }

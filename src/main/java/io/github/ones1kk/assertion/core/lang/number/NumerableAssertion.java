@@ -14,10 +14,30 @@
  * limitations under the License.
  */
 
-package io.github.ones1kk.assertion.core;
+package io.github.ones1kk.assertion.core.lang.number;
 
-public interface ConfigurationAsserts<SELF, TYPE> {
+import io.github.ones1kk.assertion.core.feature.Offset;
 
-    SELF configure(TYPE type);
+public interface NumerableAssertion<SELF, ACTUAL extends Number> {
+
+    SELF isPositive();
+
+    SELF isNotPositive();
+
+    SELF isNegative();
+
+    SELF isNotNegative();
+
+    SELF isZero();
+
+    SELF isNotZero();
+
+    SELF isCloseTo(ACTUAL expected, Offset<ACTUAL> offset);
+
+    SELF isCloseTo(ACTUAL expected, Double percentage);
+
+    SELF isNotCloseTo(ACTUAL expected, Offset<ACTUAL> offset);
+
+    SELF isNotCloseTo(ACTUAL expected, Double percentage);
 
 }

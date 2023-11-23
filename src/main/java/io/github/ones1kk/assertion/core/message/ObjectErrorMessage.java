@@ -18,12 +18,12 @@ package io.github.ones1kk.assertion.core.message;
 
 import io.github.ones1kk.assertion.core.description.Description;
 
-public final class ObjectErrorMessages {
+public final class ObjectErrorMessage {
 
     private static final String ACTUAL = "actual";
     private static final String EXPECTED = "expected";
 
-    private ObjectErrorMessages() {
+    private ObjectErrorMessage() {
     }
 
     public static String getActualAsPlain() {

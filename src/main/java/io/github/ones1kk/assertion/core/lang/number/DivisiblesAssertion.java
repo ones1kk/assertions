@@ -14,10 +14,18 @@
  * limitations under the License.
  */
 
-package io.github.ones1kk.assertion.core;
+package io.github.ones1kk.assertion.core.lang.number;
 
-public interface ConfigurationAsserts<SELF, TYPE> {
+import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 
-    SELF configure(TYPE type);
+public interface DivisiblesAssertion<ACTUAL extends Number> extends NumerablesAssertion<ACTUAL> {
+
+    void assertOdd(AssertionsInfo info, ACTUAL actual);
+
+    void assertNotOdd(AssertionsInfo info, ACTUAL actual);
+
+    void assertEven(AssertionsInfo info, ACTUAL actual);
+
+    void assertNotEven(AssertionsInfo info, ACTUAL actual);
 
 }

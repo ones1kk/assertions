@@ -14,10 +14,21 @@
  * limitations under the License.
  */
 
-package io.github.ones1kk.assertion.core;
+package io.github.ones1kk.assertion.core.lang.number.integers;
 
-public interface ConfigurationAsserts<SELF, TYPE> {
+import io.github.ones1kk.assertion.core.ConfigurationAsserts;
+import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 
-    SELF configure(TYPE type);
+public class IntegerAssert extends AbstractIntegerAssertion implements ConfigurationAsserts<AbstractIntegerAssertion, Formattable> {
+
+    public IntegerAssert(Integer integer) {
+        super(integer);
+    }
+
+    @Override
+    public AbstractIntegerAssertion configure(Formattable formattable) {
+        info.configure(formattable);
+        return this;
+    }
 
 }

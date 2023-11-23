@@ -14,10 +14,17 @@
  * limitations under the License.
  */
 
-package io.github.ones1kk.assertion.core;
+package io.github.ones1kk.assertion.core.message;
 
-public interface ConfigurationAsserts<SELF, TYPE> {
+import io.github.ones1kk.assertion.core.description.Description;
 
-    SELF configure(TYPE type);
+public class DataErrorMessage {
 
+
+    private DataErrorMessage() {
+    }
+
+    public static String shouldBeCloseTo(Object actual, Object before, Object after) {
+        return new Description("The given '{}' should be close to '{}' ~ '{}'.", actual, before, after).toString();
+    }
 }

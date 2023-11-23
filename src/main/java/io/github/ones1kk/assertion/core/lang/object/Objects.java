@@ -18,7 +18,7 @@ package io.github.ones1kk.assertion.core.lang.object;
 import io.github.ones1kk.assertion.core.description.fail.Failures;
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 import io.github.ones1kk.assertion.core.info.ErrorMessageInfo;
-import io.github.ones1kk.assertion.core.message.ObjectErrorMessages;
+import io.github.ones1kk.assertion.core.message.ObjectErrorMessage;
 
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -39,7 +39,7 @@ public class Objects<ACTUAL> implements ObjectsAssertion<ACTUAL> {
     @Override
     public void assertNull(AssertionsInfo info, Object actual) {
         if (actual != null) {
-            throw failures.failure(info, ObjectErrorMessages.shouldBeNull(actual));
+            throw failures.failure(info, ObjectErrorMessage.shouldBeNull(actual));
         }
     }
 
@@ -52,7 +52,7 @@ public class Objects<ACTUAL> implements ObjectsAssertion<ACTUAL> {
     @Override
     public void assertNotNull(AssertionsInfo info, Object actual) {
         if (actual == null) {
-            throw failures.failure(info, ObjectErrorMessages.shouldNotBeNull(ObjectErrorMessages.getActualAsPlain()));
+            throw failures.failure(info, ObjectErrorMessage.shouldNotBeNull(ObjectErrorMessage.getActualAsPlain()));
         }
     }
 
@@ -66,7 +66,7 @@ public class Objects<ACTUAL> implements ObjectsAssertion<ACTUAL> {
     @Override
     public void assertSameAs(AssertionsInfo info, Object actual, Object expected) {
         if (actual != expected) {
-            throw failures.failure(info, ObjectErrorMessages.shouldBeSameAS(actual, expected));
+            throw failures.failure(info, ObjectErrorMessage.shouldBeSameAS(actual, expected));
         }
     }
 
@@ -80,7 +80,7 @@ public class Objects<ACTUAL> implements ObjectsAssertion<ACTUAL> {
     @Override
     public void assertNotSameAs(AssertionsInfo info, Object actual, Object expected) {
         if (actual == expected) {
-            throw failures.failure(info, ObjectErrorMessages.shouldNotBeSameAS(actual, expected));
+            throw failures.failure(info, ObjectErrorMessage.shouldNotBeSameAS(actual, expected));
         }
     }
 
@@ -94,7 +94,7 @@ public class Objects<ACTUAL> implements ObjectsAssertion<ACTUAL> {
     @Override
     public void assertEqualTo(AssertionsInfo info, Object actual, Object expected) {
         if (!actual.equals(expected)) {
-            throw failures.failure(info, ObjectErrorMessages.shouldBeEqualTo(actual, expected));
+            throw failures.failure(info, ObjectErrorMessage.shouldBeEqualTo(actual, expected));
         }
     }
 
@@ -108,7 +108,7 @@ public class Objects<ACTUAL> implements ObjectsAssertion<ACTUAL> {
     @Override
     public void assertNotEqualTo(AssertionsInfo info, Object actual, Object expected) {
         if (actual.equals(expected)) {
-            throw failures.failure(info, ObjectErrorMessages.shouldNotBeEqualTo(actual, expected));
+            throw failures.failure(info, ObjectErrorMessage.shouldNotBeEqualTo(actual, expected));
         }
     }
 
@@ -122,7 +122,7 @@ public class Objects<ACTUAL> implements ObjectsAssertion<ACTUAL> {
     @Override
     public void assertInstanceOf(AssertionsInfo info, ACTUAL actual, Class<?> expected) {
         if (!expected.isInstance(actual)) {
-            throw failures.failure(info, ObjectErrorMessages.shouldBeInstanceOf(actual, expected));
+            throw failures.failure(info, ObjectErrorMessage.shouldBeInstanceOf(actual, expected));
         }
     }
 
@@ -136,7 +136,7 @@ public class Objects<ACTUAL> implements ObjectsAssertion<ACTUAL> {
     @Override
     public void assertNotInstanceOf(AssertionsInfo info, ACTUAL actual, Class<?> expected) {
         if (expected.isInstance(actual)) {
-            throw failures.failure(info, ObjectErrorMessages.shouldBeNotInstanceOf(actual, expected));
+            throw failures.failure(info, ObjectErrorMessage.shouldBeNotInstanceOf(actual, expected));
         }
     }
 
@@ -151,7 +151,7 @@ public class Objects<ACTUAL> implements ObjectsAssertion<ACTUAL> {
     public void assertIs(AssertionsInfo info, ACTUAL actual, Predicate<ACTUAL> predicate) {
         assertNotNull(info, predicate);
         if (!predicate.test(actual)) {
-            throw failures.failure(info, ObjectErrorMessages.shouldSatisfyGivenCondition(actual));
+            throw failures.failure(info, ObjectErrorMessage.shouldSatisfyGivenCondition(actual));
         }
     }
 
@@ -166,7 +166,7 @@ public class Objects<ACTUAL> implements ObjectsAssertion<ACTUAL> {
     public void assertIsNot(AssertionsInfo info, ACTUAL actual, Predicate<ACTUAL> predicate) {
         assertNotNull(info, predicate);
         if (predicate.test(actual)) {
-            throw failures.failure(info, ObjectErrorMessages.shouldNotSatisfyGivenCondition(actual));
+            throw failures.failure(info, ObjectErrorMessage.shouldNotSatisfyGivenCondition(actual));
         }
     }
 
@@ -185,7 +185,7 @@ public class Objects<ACTUAL> implements ObjectsAssertion<ACTUAL> {
         assertNotNull(info, function);
         T returned = function.apply(actual);
         if (!java.util.Objects.deepEquals(expected, returned)) {
-            throw failures.failure(info, ObjectErrorMessages.shouldReturnGivenValue(actual));
+            throw failures.failure(info, ObjectErrorMessage.shouldReturnGivenValue(actual));
         }
     }
 

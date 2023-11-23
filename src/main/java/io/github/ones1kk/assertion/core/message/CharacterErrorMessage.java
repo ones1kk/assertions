@@ -18,9 +18,9 @@ package io.github.ones1kk.assertion.core.message;
 
 import io.github.ones1kk.assertion.core.description.Description;
 
-public final class CharacterErrorMessages {
+public final class CharacterErrorMessage {
 
-    private CharacterErrorMessages() {
+    private CharacterErrorMessage() {
     }
 
     public static String shouldBeLowerCase(Character actual) {

@@ -15,9 +15,10 @@
  */
 package io.github.ones1kk.assertion.core.lang.character;
 
+import io.github.ones1kk.assertion.core.feature.compare.ComparableAssertion;
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 
-public interface CharactersAssertion {
+public interface CharactersAssertion extends ComparableAssertion<Character> {
 
     void assertLowerCase(AssertionsInfo info, Character actual);
 

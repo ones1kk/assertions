@@ -18,7 +18,7 @@ package io.github.ones1kk.assertion.core.lang.string;
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 import io.github.ones1kk.assertion.core.info.ErrorMessageInfo;
 import io.github.ones1kk.assertion.core.lang.charsequence.CharSequences;
-import io.github.ones1kk.assertion.core.message.StringErrorMessages;
+import io.github.ones1kk.assertion.core.message.StringErrorMessage;
 
 import java.util.regex.Pattern;
 
@@ -40,7 +40,7 @@ public class Strings extends CharSequences<String> implements StringsAssertion<S
                 return;
             }
         }
-        throw failures.failure(info, StringErrorMessages.shouldHasText(actual));
+        throw failures.failure(info, StringErrorMessage.shouldHasText(actual));
     }
 
     /**
@@ -53,7 +53,7 @@ public class Strings extends CharSequences<String> implements StringsAssertion<S
     @Override
     public void assertHasLength(AssertionsInfo info, String actual, int expected) {
         if (actual.length() != expected) {
-            throw failures.failure(info, StringErrorMessages.shouldHasLength(actual));
+            throw failures.failure(info, StringErrorMessage.shouldHasLength(actual));
         }
     }
 
@@ -67,7 +67,7 @@ public class Strings extends CharSequences<String> implements StringsAssertion<S
     @Override
     public void assertHasSameLength(AssertionsInfo info, String actual, String expected) {
         if (actual.length() != expected.length()) {
-            throw failures.failure(info, StringErrorMessages.shouldHasSameLength(actual, expected));
+            throw failures.failure(info, StringErrorMessage.shouldHasSameLength(actual, expected));
         }
     }
 
@@ -81,7 +81,7 @@ public class Strings extends CharSequences<String> implements StringsAssertion<S
     @Override
     public void assertMatches(AssertionsInfo info, String actual, String regex) {
         if (!actual.matches(regex)) {
-            throw failures.failure(info, StringErrorMessages.shouldMatches(actual, regex));
+            throw failures.failure(info, StringErrorMessage.shouldMatches(actual, regex));
         }
     }
 
@@ -95,7 +95,7 @@ public class Strings extends CharSequences<String> implements StringsAssertion<S
     @Override
     public void assertMatches(AssertionsInfo info, String actual, Pattern expected) {
         if (!expected.matcher(actual).matches()) {
-            throw failures.failure(info, StringErrorMessages.shouldMatches(actual, expected));
+            throw failures.failure(info, StringErrorMessage.shouldMatches(actual, expected));
         }
     }
 }

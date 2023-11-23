@@ -14,10 +14,22 @@
  * limitations under the License.
  */
 
-package io.github.ones1kk.assertion.core;
+package io.github.ones1kk.assertion.core.message;
 
-public interface ConfigurationAsserts<SELF, TYPE> {
+public final class DescriptionErrorMessage {
 
-    SELF configure(TYPE type);
+    private DescriptionErrorMessage() {
+    }
 
+    public static String shouldDoNotEnterPercentSign() {
+        return "The special symbols '%s' should don't be entered in description.";
+    }
+
+    public static String ShouldBeEnteredArguments() {
+        return "The arguments should be entered.";
+    }
+
+    public static String ShouldBeExpressedInBrace() {
+        return "The arguments should be expressed in only brace.";
+    }
 }

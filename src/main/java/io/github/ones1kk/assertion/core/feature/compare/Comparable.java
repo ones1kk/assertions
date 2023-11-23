@@ -14,22 +14,18 @@
  * limitations under the License.
  */
 
-package io.github.ones1kk.assertion.core.message;
+package io.github.ones1kk.assertion.core.feature.compare;
 
-public final class DescriptionErrorMessages {
+public interface Comparable<SELF, ACTUAL> {
 
-    private DescriptionErrorMessages() {
-    }
+    SELF isLessThan(ACTUAL expected);
 
-    public static String shouldDoNotEnterPercentSign() {
-        return "The special symbols '%s' should don't be entered in description.";
-    }
+    SELF isLessThanOrEqualTo(ACTUAL expected);
 
-    public static String ShouldBeEnteredArguments() {
-        return "The arguments should be entered.";
-    }
+    SELF isGreaterThan(ACTUAL expected);
 
-    public static String ShouldBeExpressedInBrace() {
-        return "The arguments should be expressed in only brace.";
-    }
+    SELF isGreaterThanOrEqualTo(ACTUAL expected);
+
+    SELF isBetween(ACTUAL start, ACTUAL end);
+
 }
