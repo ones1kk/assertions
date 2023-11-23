@@ -13,9 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.number.shorts;
+package io.github.ones1kk.assertion.core.message;
 
-import io.github.ones1kk.assertion.core.lang.number.DivisibleAssertion;
+import io.github.ones1kk.assertion.core.description.Description;
 
-public interface ShortAssertion<SELF, ACTUAL extends Number> extends DivisibleAssertion<SELF, ACTUAL> {
+public class BooleanErrorMessage {
+
+    private BooleanErrorMessage() {
+    }
+
+    public static String shouldBeFalse() {
+        return new Description("The given 'actual' should be false.").toString();
+    }
+
+    public static String shouldBeTrue() {
+        return new Description("The given 'actual' should be true.").toString();
+    }
 }

@@ -15,9 +15,12 @@
  */
 package io.github.ones1kk.assertion.core;
 
+import io.github.ones1kk.assertion.core.lang.booleans.BooleanAssert;
 import io.github.ones1kk.assertion.core.lang.character.CharacterAssert;
 import io.github.ones1kk.assertion.core.lang.charsequence.CharSequenceAssert;
 import io.github.ones1kk.assertion.core.lang.number.bytes.ByteAssert;
+import io.github.ones1kk.assertion.core.lang.number.doubles.DoubleAssert;
+import io.github.ones1kk.assertion.core.lang.number.floats.FloatAssert;
 import io.github.ones1kk.assertion.core.lang.number.integers.IntegerAssert;
 import io.github.ones1kk.assertion.core.lang.number.longs.LongAssert;
 import io.github.ones1kk.assertion.core.lang.object.ObjectAssert;
@@ -63,6 +66,18 @@ public class Asserts {
     }
 
     public static ByteAssert that(Byte actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static DoubleAssert that(Double actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static FloatAssert that(Float actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static BooleanAssert that(Boolean actual) {
         return AssertsForType.that(actual);
     }
 

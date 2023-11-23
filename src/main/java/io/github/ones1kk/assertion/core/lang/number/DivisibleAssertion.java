@@ -17,7 +17,6 @@
 package io.github.ones1kk.assertion.core.lang.number;
 
 public interface DivisibleAssertion<SELF, ACTUAL extends Number> extends NumerableAssertion<SELF, ACTUAL> {
-
     SELF isOdd();
 
     SELF isNotOdd();

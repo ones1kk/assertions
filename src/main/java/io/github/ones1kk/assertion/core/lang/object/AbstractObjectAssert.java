@@ -27,7 +27,7 @@ import java.util.function.Predicate;
  *
  * @param <ACTUAL> {@code actual}.
  */
-public class AbstractObjectAssert<ACTUAL> extends AsAsserts<AbstractObjectAssert> implements ObjectAssertion<AbstractObjectAssert<ACTUAL>, ACTUAL> {
+public abstract class AbstractObjectAssert<ACTUAL> extends AsAsserts<AbstractObjectAssert> implements ObjectAssertion<AbstractObjectAssert<ACTUAL>, ACTUAL> {
 
     protected final ACTUAL actual;
 

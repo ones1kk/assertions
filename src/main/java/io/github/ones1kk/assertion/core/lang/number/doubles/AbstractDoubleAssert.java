@@ -13,145 +13,132 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.number.longs;
+package io.github.ones1kk.assertion.core.lang.number.doubles;
 
 import io.github.ones1kk.assertion.core.feature.Offset;
 import io.github.ones1kk.assertion.core.feature.Percentage;
 import io.github.ones1kk.assertion.core.feature.compare.Comparable;
-import io.github.ones1kk.assertion.core.lang.number.DivisiblesAssertion;
 import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 
 /**
- * <strong> The AbstractLongAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <strong> The AbstractDoubleAssert class inherits {@link AbstractObjectAssert}</strong>
  * <br>
- * <p> This is that implements the assertion method of the Long type and verify assertion.</p>
+ * <p> This is that implements the assertion method of the Double type and verify assertion.</p>
  */
-public abstract class AbstractLongAssert extends AbstractObjectAssert<Long> implements LongAssertion<AbstractLongAssert, Long>, Comparable<AbstractLongAssert, Long> {
+public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Double> implements DoubleAssertion<AbstractDoubleAssert, Double>, Comparable<AbstractDoubleAssert, Double> {
 
-    private final DivisiblesAssertion<Long> longs;
+    DoublesAssertion<Double> doubles;
 
-    public AbstractLongAssert(Long actual) {
+    public AbstractDoubleAssert(Double actual) {
         super(actual);
-        this.longs = new Longs();
+        this.doubles = new Doubles();
     }
 
     /**
-     * verify actual is odd.
+     * verify actual is infinite.
      *
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isOdd() {
+    public AbstractDoubleAssert isInfinite() {
         objects.assertNotNull(info, actual);
-        longs.assertOdd(info, actual);
+        doubles.assertInfinite(info, actual);
         return this;
     }
 
     /**
-     * verify actual is not odd.
+     * verify actual is finite.
      *
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isNotOdd() {
+    public AbstractDoubleAssert isFinite() {
         objects.assertNotNull(info, actual);
-        longs.assertNotOdd(info, actual);
+        doubles.assertFinite(info, actual);
         return this;
     }
 
     /**
-     * verify actual is even.
+     * verify actual is NaN.
      *
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isEven() {
+    public AbstractDoubleAssert isNaN() {
         objects.assertNotNull(info, actual);
-        longs.assertEven(info, actual);
-        return this;
-    }
-
-    /**
-     * verify actual is not even.
-     *
-     * @return {@link AbstractLongAssert}.
-     */
-    @Override
-    public AbstractLongAssert isNotEven() {
-        objects.assertNotNull(info, actual);
-        longs.assertNotEven(info, actual);
+        doubles.assertNaN(info, actual);
         return this;
     }
 
     /**
      * verify actual is positive.
      *
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isPositive() {
+    public AbstractDoubleAssert isPositive() {
         objects.assertNotNull(info, actual);
-        longs.assertPositive(info, actual);
+        doubles.assertPositive(info, actual);
         return this;
     }
 
     /**
      * verify actual is not positive.
      *
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isNotPositive() {
+    public AbstractDoubleAssert isNotPositive() {
         objects.assertNotNull(info, actual);
-        longs.assertNotPositive(info, actual);
+        doubles.assertNotPositive(info, actual);
         return this;
     }
 
     /**
      * verify actual is negative.
      *
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isNegative() {
+    public AbstractDoubleAssert isNegative() {
         objects.assertNotNull(info, actual);
-        longs.assertNegative(info, actual);
+        doubles.assertNegative(info, actual);
         return this;
     }
 
     /**
      * verify actual is not negative.
      *
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isNotNegative() {
+    public AbstractDoubleAssert isNotNegative() {
         objects.assertNotNull(info, actual);
-        longs.assertNotNegative(info, actual);
+        doubles.assertNotNegative(info, actual);
         return this;
     }
 
     /**
      * verify actual is zero.
      *
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isZero() {
+    public AbstractDoubleAssert isZero() {
         objects.assertNotNull(info, actual);
-        longs.assertZero(info, actual);
+        doubles.assertZero(info, actual);
         return this;
     }
 
     /**
      * verify actual is not zero.
      *
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isNotZero() {
+    public AbstractDoubleAssert isNotZero() {
         objects.assertNotNull(info, actual);
-        longs.assertNotZero(info, actual);
+        doubles.assertNotZero(info, actual);
         return this;
     }
 
@@ -160,12 +147,12 @@ public abstract class AbstractLongAssert extends AbstractObjectAssert<Long> impl
      *
      * @param expected expected
      * @param offset   offset
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isCloseTo(Long expected, Offset<Long> offset) {
+    public AbstractDoubleAssert isCloseTo(Double expected, Offset<Double> offset) {
         objects.assertNotNull(info, actual);
-        longs.assertCloseTo(info, actual, expected, offset);
+        doubles.assertCloseTo(info, actual, expected, offset);
         return this;
     }
 
@@ -174,13 +161,13 @@ public abstract class AbstractLongAssert extends AbstractObjectAssert<Long> impl
      *
      * @param expected   expected
      * @param percentage percentage
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isCloseTo(Long expected, Double percentage) {
+    public AbstractDoubleAssert isCloseTo(Double expected, Double percentage) {
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
-        longs.assertCloseTo(info, actual, expected, Percentage.of(percentage));
+        doubles.assertCloseTo(info, actual, expected, Percentage.of(percentage));
         return this;
     }
 
@@ -189,13 +176,13 @@ public abstract class AbstractLongAssert extends AbstractObjectAssert<Long> impl
      *
      * @param expected expected
      * @param offset   offset
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isNotCloseTo(Long expected, Offset<Long> offset) {
+    public AbstractDoubleAssert isNotCloseTo(Double expected, Offset<Double> offset) {
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
-        longs.assertNotCloseTo(info, actual, expected, offset);
+        doubles.assertNotCloseTo(info, actual, expected, offset);
         return this;
     }
 
@@ -204,13 +191,13 @@ public abstract class AbstractLongAssert extends AbstractObjectAssert<Long> impl
      *
      * @param expected   expected
      * @param percentage percentage
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isNotCloseTo(Long expected, Double percentage) {
+    public AbstractDoubleAssert isNotCloseTo(Double expected, Double percentage) {
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
-        longs.assertNotCloseTo(info, actual, expected, Percentage.of(percentage));
+        doubles.assertNotCloseTo(info, actual, expected, Percentage.of(percentage));
         return this;
     }
 
@@ -218,13 +205,13 @@ public abstract class AbstractLongAssert extends AbstractObjectAssert<Long> impl
      * verify actual is less than expected.
      *
      * @param expected expected
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isLessThan(Long expected) {
+    public AbstractDoubleAssert isLessThan(Double expected) {
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
-        longs.assertLessThan(info, actual, expected);
+        doubles.assertLessThan(info, actual, expected);
         return this;
     }
 
@@ -232,13 +219,13 @@ public abstract class AbstractLongAssert extends AbstractObjectAssert<Long> impl
      * verify actual is less than or equal to expected.
      *
      * @param expected expected
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isLessThanOrEqualTo(Long expected) {
+    public AbstractDoubleAssert isLessThanOrEqualTo(Double expected) {
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
-        longs.assertLessThanOrEqualTo(info, actual, expected);
+        doubles.assertLessThanOrEqualTo(info, actual, expected);
         return this;
     }
 
@@ -246,13 +233,13 @@ public abstract class AbstractLongAssert extends AbstractObjectAssert<Long> impl
      * verify actual is greater than expected.
      *
      * @param expected expected
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isGreaterThan(Long expected) {
+    public AbstractDoubleAssert isGreaterThan(Double expected) {
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
-        longs.assertGreaterThan(info, actual, expected);
+        doubles.assertGreaterThan(info, actual, expected);
         return this;
     }
 
@@ -261,13 +248,13 @@ public abstract class AbstractLongAssert extends AbstractObjectAssert<Long> impl
      * verify actual is greater that or equal to expected
      *
      * @param expected expected
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isGreaterThanOrEqualTo(Long expected) {
+    public AbstractDoubleAssert isGreaterThanOrEqualTo(Double expected) {
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
-        longs.assertGreaterThanOrEqualTo(info, actual, expected);
+        doubles.assertGreaterThanOrEqualTo(info, actual, expected);
         return this;
     }
 
@@ -276,14 +263,15 @@ public abstract class AbstractLongAssert extends AbstractObjectAssert<Long> impl
      *
      * @param start start
      * @param end   end
-     * @return {@link AbstractLongAssert}.
+     * @return {@link AbstractDoubleAssert}.
      */
     @Override
-    public AbstractLongAssert isBetween(Long start, Long end) {
+    public AbstractDoubleAssert isBetween(Double start, Double end) {
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, start);
         objects.assertNotNull(info, end);
-        longs.assertBetween(info, actual, start, end);
+        doubles.assertBetween(info, actual, start, end);
         return this;
     }
+
 }

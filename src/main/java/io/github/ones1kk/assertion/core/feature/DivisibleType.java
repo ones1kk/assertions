@@ -27,23 +27,7 @@ public class DivisibleType {
         this.value = value.doubleValue();
     }
 
-    public static DivisibleType of(Byte value) {
-        return new DivisibleType(value);
-    }
-
-    public static DivisibleType of(Short value) {
-        return new DivisibleType(value);
-    }
-
-    public static DivisibleType of(Integer value) {
-        return new DivisibleType(value);
-    }
-
-    public static DivisibleType of(Long value) {
-        return new DivisibleType(value);
-    }
-
-    public static DivisibleType of(Double value) {
+    public static DivisibleType of(Number value) {
         return new DivisibleType(value);
     }
 

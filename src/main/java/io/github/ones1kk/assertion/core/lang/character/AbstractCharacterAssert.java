@@ -23,7 +23,7 @@ import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
  * <br>
  * <p> This is that implements the assertion method of the Character type and verify assertion.</p>
  */
-public class AbstractCharacterAssert extends AbstractObjectAssert<Character> implements CharacterAssertion<AbstractCharacterAssert>, Comparable<AbstractCharacterAssert, Character> {
+public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Character> implements CharacterAssertion<AbstractCharacterAssert>, Comparable<AbstractCharacterAssert, Character> {
 
     private final CharactersAssertion characters;
 
@@ -33,7 +33,7 @@ public class AbstractCharacterAssert extends AbstractObjectAssert<Character> imp
     }
 
     /**
-     * verify actual is lower case or not.
+     * verify actual is lower case.
      *
      * @return {@link AbstractCharacterAssert}.
      */
@@ -45,7 +45,7 @@ public class AbstractCharacterAssert extends AbstractObjectAssert<Character> imp
     }
 
     /**
-     * verify actual is not lower case or not.
+     * verify actual is not lower case.
      *
      * @return {@link AbstractCharacterAssert}.
      */
@@ -57,7 +57,7 @@ public class AbstractCharacterAssert extends AbstractObjectAssert<Character> imp
     }
 
     /**
-     * verify actual is upper case or not.
+     * verify actual is upper case.
      *
      * @return {@link AbstractCharacterAssert}.
      */
@@ -69,7 +69,7 @@ public class AbstractCharacterAssert extends AbstractObjectAssert<Character> imp
     }
 
     /**
-     * verify actual is not upper case or not.
+     * verify actual is not upper case.
      *
      * @return {@link AbstractCharacterAssert}.
      */
@@ -81,7 +81,7 @@ public class AbstractCharacterAssert extends AbstractObjectAssert<Character> imp
     }
 
     /**
-     * verify actual is letter or not.
+     * verify actual is letter.
      *
      * @return {@link AbstractCharacterAssert}.
      */
@@ -93,7 +93,7 @@ public class AbstractCharacterAssert extends AbstractObjectAssert<Character> imp
     }
 
     /**
-     * verify actual is not letter or not.
+     * verify actual is not letter.
      *
      * @return {@link AbstractCharacterAssert}.
      */
@@ -105,7 +105,7 @@ public class AbstractCharacterAssert extends AbstractObjectAssert<Character> imp
     }
 
     /**
-     * verify actual is digit or not.
+     * verify actual is digit.
      *
      * @return {@link AbstractCharacterAssert}.
      */
@@ -117,7 +117,7 @@ public class AbstractCharacterAssert extends AbstractObjectAssert<Character> imp
     }
 
     /**
-     * verify actual is not digit or not.
+     * verify actual is not digit.
      *
      * @return {@link AbstractCharacterAssert}.
      */
@@ -129,7 +129,7 @@ public class AbstractCharacterAssert extends AbstractObjectAssert<Character> imp
     }
 
     /**
-     * verify actual is white space or not.
+     * verify actual is white space.
      *
      * @return {@link AbstractCharacterAssert}.
      */
@@ -141,7 +141,7 @@ public class AbstractCharacterAssert extends AbstractObjectAssert<Character> imp
     }
 
     /**
-     * verify actual is not white space or not.
+     * verify actual is not white space.
      *
      * @return {@link AbstractCharacterAssert}.
      */

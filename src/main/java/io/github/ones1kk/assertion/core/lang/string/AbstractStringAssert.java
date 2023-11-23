@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
  * <br>
  * <p> This is that implements the assertion method of the Float type and verify assertion.</p>
  */
-public class AbstractStringAssert extends AbstractCharSequenceAssert<String> implements StringAssertion<AbstractStringAssert, String> {
+public abstract class AbstractStringAssert extends AbstractCharSequenceAssert<String> implements StringAssertion<AbstractStringAssert, String> {
 
     private final StringsAssertion<String> strings;
 
@@ -36,7 +36,7 @@ public class AbstractStringAssert extends AbstractCharSequenceAssert<String> imp
     }
 
     /**
-     * verify actual has text or not.
+     * verify actual has text.
      *
      * @return {@link AbstractStringAssert}.
      */
@@ -59,7 +59,7 @@ public class AbstractStringAssert extends AbstractCharSequenceAssert<String> imp
     }
 
     /**
-     * verify actual has same length of expected or not.
+     * verify actual has same length of expected.
      *
      * @param expected expected.
      * @return {@link AbstractStringAssert}.
@@ -71,7 +71,7 @@ public class AbstractStringAssert extends AbstractCharSequenceAssert<String> imp
     }
 
     /**
-     * verify actual matches to regex or not.
+     * verify actual matches to regex.
      *
      * @param regex regex
      * @return {@link AbstractStringAssert}.
@@ -85,7 +85,7 @@ public class AbstractStringAssert extends AbstractCharSequenceAssert<String> imp
     }
 
     /**
-     * verify actual matches expected pattern or not.
+     * verify actual matches expected pattern.
      *
      * @param expected expected.
      * @return {@link AbstractStringAssert}.

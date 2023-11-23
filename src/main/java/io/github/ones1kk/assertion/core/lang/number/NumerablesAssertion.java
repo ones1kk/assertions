@@ -22,7 +22,6 @@ import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 
 public interface NumerablesAssertion<ACTUAL extends Number> extends ComparableAssertion<ACTUAL> {
 
-
     void assertPositive(AssertionsInfo info, ACTUAL actual);
 
     void assertNotPositive(AssertionsInfo info, ACTUAL actual);

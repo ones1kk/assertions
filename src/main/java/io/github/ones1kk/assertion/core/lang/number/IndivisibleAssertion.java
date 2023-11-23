@@ -13,9 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.number.shorts;
+package io.github.ones1kk.assertion.core.lang.number;
 
-import io.github.ones1kk.assertion.core.lang.number.DivisibleAssertion;
+public interface IndivisibleAssertion<SELF, ACTUAL extends Number> extends NumerableAssertion<SELF, ACTUAL> {
 
-public interface ShortAssertion<SELF, ACTUAL extends Number> extends DivisibleAssertion<SELF, ACTUAL> {
+    SELF isInfinite();
+
+    SELF isFinite();
+
+    SELF isNaN();
 }

@@ -24,7 +24,7 @@ import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
  *
  * @param <ACTUAL> {@code actual}.
  */
-public class AbstractCharSequenceAssert<ACTUAL extends CharSequence> extends AbstractObjectAssert<ACTUAL> implements CharSequenceAssertion<AbstractCharSequenceAssert<ACTUAL>, ACTUAL> {
+public abstract class AbstractCharSequenceAssert<ACTUAL extends CharSequence> extends AbstractObjectAssert<ACTUAL> implements CharSequenceAssertion<AbstractCharSequenceAssert<ACTUAL>, ACTUAL> {
 
     private final CharSequencesAssertion<ACTUAL> charSequences;
 
@@ -34,7 +34,7 @@ public class AbstractCharSequenceAssert<ACTUAL extends CharSequence> extends Abs
     }
 
     /**
-     * verify {@code actual} is empty or not.
+     * verify {@code actual} is empty.
      *
      * @return {@link AbstractCharSequenceAssert}.
      */
@@ -45,7 +45,7 @@ public class AbstractCharSequenceAssert<ACTUAL extends CharSequence> extends Abs
     }
 
     /**
-     * verify {@code actual} is not empty or not.
+     * verify {@code actual} is not empty.
      *
      * @return {@link AbstractCharSequenceAssert}.
      */
@@ -56,7 +56,7 @@ public class AbstractCharSequenceAssert<ACTUAL extends CharSequence> extends Abs
     }
 
     /**
-     * verify {@code actual} is blank or not.
+     * verify {@code actual} is blank.
      *
      * @return {@link AbstractCharSequenceAssert}.
      */
@@ -67,7 +67,7 @@ public class AbstractCharSequenceAssert<ACTUAL extends CharSequence> extends Abs
     }
 
     /**
-     * verify {@code actual} is not blank or not.
+     * verify {@code actual} is not blank.
      *
      * @return {@link AbstractCharSequenceAssert}.
      */

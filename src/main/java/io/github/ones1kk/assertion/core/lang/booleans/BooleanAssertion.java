@@ -13,9 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.number.shorts;
+package io.github.ones1kk.assertion.core.lang.booleans;
 
-import io.github.ones1kk.assertion.core.lang.number.DivisibleAssertion;
+public interface BooleanAssertion<SELF> {
 
-public interface ShortAssertion<SELF, ACTUAL extends Number> extends DivisibleAssertion<SELF, ACTUAL> {
+    SELF isFalse();
+
+    SELF isTrue();
+
 }

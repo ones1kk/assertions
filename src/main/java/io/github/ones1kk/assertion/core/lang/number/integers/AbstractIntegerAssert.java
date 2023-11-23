@@ -26,7 +26,7 @@ import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
  * <br>
  * <p> This is that implements the assertion method of the Integer type and verify assertion.</p>
  */
-public class AbstractIntegerAssert extends AbstractObjectAssert<Integer> implements IntegerAssertion<AbstractIntegerAssert, Integer>, Comparable<AbstractIntegerAssert, Integer> {
+public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer> implements IntegerAssertion<AbstractIntegerAssert, Integer>, Comparable<AbstractIntegerAssert, Integer> {
 
     private final DivisiblesAssertion<Integer> integers;
 

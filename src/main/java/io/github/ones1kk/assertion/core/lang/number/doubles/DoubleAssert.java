@@ -13,9 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.number.shorts;
+package io.github.ones1kk.assertion.core.lang.number.doubles;
 
-import io.github.ones1kk.assertion.core.lang.number.DivisibleAssertion;
+import io.github.ones1kk.assertion.core.ConfigurationAsserts;
+import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 
-public interface ShortAssertion<SELF, ACTUAL extends Number> extends DivisibleAssertion<SELF, ACTUAL> {
+public class DoubleAssert extends AbstractDoubleAssert implements ConfigurationAsserts<AbstractDoubleAssert, Formattable> {
+
+    public DoubleAssert(Double actual) {
+        super(actual);
+    }
+
+    @Override
+    public AbstractDoubleAssert configure(Formattable formattable) {
+        info.configure(formattable);
+        return this;
+    }
 }

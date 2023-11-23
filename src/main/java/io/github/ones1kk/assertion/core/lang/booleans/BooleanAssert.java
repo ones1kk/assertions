@@ -13,9 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.number.shorts;
+package io.github.ones1kk.assertion.core.lang.booleans;
 
-import io.github.ones1kk.assertion.core.lang.number.DivisibleAssertion;
+import io.github.ones1kk.assertion.core.ConfigurationAsserts;
+import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 
-public interface ShortAssertion<SELF, ACTUAL extends Number> extends DivisibleAssertion<SELF, ACTUAL> {
+public class BooleanAssert extends AbstractBooleanAssert implements ConfigurationAsserts<AbstractBooleanAssert, Formattable> {
+
+    public BooleanAssert(Boolean actual) {
+        super(actual);
+    }
+
+    @Override
+    public AbstractBooleanAssert configure(Formattable formattable) {
+        info.configure(formattable);
+        return this;
+    }
 }

@@ -26,7 +26,7 @@ import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
  * <br>
  * <p> This is that implements the assertion method of the Short type and verify assertion.</p>
  */
-public class AbstractShortAssert extends AbstractObjectAssert<Short> implements ShortAssertion<AbstractShortAssert, Short>, Comparable<AbstractShortAssert, Short> {
+public abstract class AbstractShortAssert extends AbstractObjectAssert<Short> implements ShortAssertion<AbstractShortAssert, Short>, Comparable<AbstractShortAssert, Short> {
 
     private final DivisiblesAssertion<Short> shorts;
 

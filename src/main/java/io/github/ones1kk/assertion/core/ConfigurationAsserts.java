@@ -16,7 +16,9 @@
 
 package io.github.ones1kk.assertion.core;
 
-public interface ConfigurationAsserts<SELF, TYPE> {
+import io.github.ones1kk.assertion.core.description.formatter.Formattable;
+
+public interface ConfigurationAsserts<SELF, TYPE extends Formattable> {
 
     SELF configure(TYPE type);
 
