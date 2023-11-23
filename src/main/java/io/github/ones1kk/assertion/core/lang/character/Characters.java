@@ -22,6 +22,7 @@ import io.github.ones1kk.assertion.core.info.ErrorMessageInfo;
 import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 import io.github.ones1kk.assertion.core.lang.object.Objects;
 import io.github.ones1kk.assertion.core.message.CharacterErrorMessage;
+import io.github.ones1kk.assertion.core.message.ComparableErrorMessage;
 
 /**
  * <strong> The Characters class inherits {@link AbstractObjectAssert} </strong>
@@ -170,7 +171,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertLessThan(AssertionsInfo info, Character actual, Character expected) {
         if (comparable.isGreaterThanOrEqualTo(actual, expected)) {
-            throw failures.failure(info, ComparableErrorMessages.shouldBeLessThan(actual, expected));
+            throw failures.failure(info, ComparableErrorMessage.shouldBeLessThan(actual, expected));
         }
 
     }
@@ -185,7 +186,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertLessThanOrEqualTo(AssertionsInfo info, Character actual, Character expected) {
         if (comparable.isGreaterThan(actual, expected)) {
-            throw failures.failure(info, ComparableErrorMessages.shouldBeLessThanOrEqualTo(actual, expected));
+            throw failures.failure(info, ComparableErrorMessage.shouldBeLessThanOrEqualTo(actual, expected));
         }
     }
 
@@ -199,7 +200,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertGreaterThan(AssertionsInfo info, Character actual, Character expected) {
         if (comparable.isLessThanOrEqualTo(actual, expected)) {
-            throw failures.failure(info, ComparableErrorMessages.shouldBeGreaterThan(actual, expected));
+            throw failures.failure(info, ComparableErrorMessage.shouldBeGreaterThan(actual, expected));
         }
     }
 
@@ -213,7 +214,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertGreaterThanOrEqualTo(AssertionsInfo info, Character actual, Character expected) {
         if (comparable.isLessThan(actual, expected)) {
-            throw failures.failure(info, ComparableErrorMessages.shouldBeGreaterThanOrEqualTo(actual, expected));
+            throw failures.failure(info, ComparableErrorMessage.shouldBeGreaterThanOrEqualTo(actual, expected));
         }
     }
 
@@ -228,7 +229,7 @@ public class Characters extends Objects<Character> implements CharactersAssertio
     @Override
     public void assertBetween(AssertionsInfo info, Character actual, Character start, Character end) {
         if (comparable.isLessThan(actual, start) || comparable.isGreaterThan(actual, end)) {
-            throw failures.failure(info, ComparableErrorMessages.shouldBeBetween(actual, start, end));
+            throw failures.failure(info, ComparableErrorMessage.shouldBeBetween(actual, start, end));
         }
     }
 }

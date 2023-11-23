@@ -95,7 +95,7 @@ public class Integers extends Objects<Integer> implements DivisiblesAssertion<In
     @Override
     public void assertPositive(AssertionsInfo info, Integer actual) {
         if (comparable.isLessThanOrEqualTo(actual, 0)) {
-            throw failures.failure(info, NumerableErrorMessage.shouldNotBePositive(actual));
+            throw failures.failure(info, NumerableErrorMessage.shouldBePositive(actual));
         }
     }
 
