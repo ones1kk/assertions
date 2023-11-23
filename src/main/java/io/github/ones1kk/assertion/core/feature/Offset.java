@@ -16,8 +16,6 @@
 
 package io.github.ones1kk.assertion.core.feature;
 
-import io.github.ones1kk.assertion.core.Asserts;
-
 /**
  * <strong> The Offset class receives the offset of the Number class as input. </strong>
  * <br>
