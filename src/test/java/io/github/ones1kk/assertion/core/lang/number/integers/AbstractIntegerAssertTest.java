@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThatException;
 import static org.assertj.core.api.Assertions.assertThatNoException;
 
-class AbstractIntegerAssertionTest {
+class AbstractIntegerAssertTest {
 
     @Nested
     @DisplayName("test isOdd()")
@@ -22,7 +22,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = 1;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isOdd);
@@ -35,7 +35,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = 2;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isOdd)
@@ -55,7 +55,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = 2;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isNotOdd);
@@ -68,7 +68,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = 1;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isNotOdd)
@@ -88,7 +88,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = 2;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isEven);
@@ -101,7 +101,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = 1;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isEven)
@@ -121,7 +121,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = 1;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isNotEven);
@@ -134,7 +134,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = 2;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isNotEven)
@@ -154,7 +154,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = 1;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isPositive);
@@ -167,7 +167,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = -2;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isPositive)
@@ -187,7 +187,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = -1;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isNotPositive);
@@ -200,7 +200,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = 2;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isNotPositive)
@@ -220,7 +220,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = -1;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isNegative);
@@ -233,7 +233,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = 2;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isNegative)
@@ -253,7 +253,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = 1;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isNotNegative);
@@ -266,7 +266,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = -2;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isNotNegative)
@@ -286,7 +286,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = 0;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isZero);
@@ -299,7 +299,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = -2;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isZero)
@@ -319,7 +319,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = 1;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isNotZero);
@@ -332,7 +332,7 @@ class AbstractIntegerAssertionTest {
             Integer actual = 0;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isNotZero)
@@ -353,7 +353,7 @@ class AbstractIntegerAssertionTest {
             Integer expected = 2;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isCloseTo(expected, Offset.offset(1)));
@@ -368,7 +368,7 @@ class AbstractIntegerAssertionTest {
             Integer offset = 5;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
             // then
             assertThatException().isThrownBy(() -> asserts.isCloseTo(expected, Offset.offset(offset)))
                     .isInstanceOf(AssertException.class)
@@ -388,7 +388,7 @@ class AbstractIntegerAssertionTest {
             Integer expected = 2;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isLessThan(expected));
@@ -402,7 +402,7 @@ class AbstractIntegerAssertionTest {
             Integer expected = 1;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
             // then
             assertThatException().isThrownBy(() -> asserts.isLessThan(expected))
                     .isInstanceOf(AssertException.class)
@@ -422,7 +422,7 @@ class AbstractIntegerAssertionTest {
             Integer expected = 2;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isLessThanOrEqualTo(expected));
@@ -436,7 +436,7 @@ class AbstractIntegerAssertionTest {
             Integer expected = 1;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
             // then
             assertThatException().isThrownBy(() -> asserts.isLessThanOrEqualTo(expected))
                     .isInstanceOf(AssertException.class)
@@ -456,7 +456,7 @@ class AbstractIntegerAssertionTest {
             Integer expected = 1;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isGreaterThan(expected));
@@ -470,7 +470,7 @@ class AbstractIntegerAssertionTest {
             Integer expected = 10;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
             // then
             assertThatException().isThrownBy(() -> asserts.isGreaterThan(expected))
                     .isInstanceOf(AssertException.class)
@@ -490,7 +490,7 @@ class AbstractIntegerAssertionTest {
             Integer expected = 1;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isGreaterThanOrEqualTo(expected));
@@ -504,7 +504,7 @@ class AbstractIntegerAssertionTest {
             Integer expected = 10;
 
             // when
-            AbstractIntegerAssertion asserts = new IntegerAssert(actual);
+            AbstractIntegerAssert asserts = new IntegerAssert(actual);
             // then
             assertThatException().isThrownBy(() -> asserts.isGreaterThanOrEqualTo(expected))
                     .isInstanceOf(AssertException.class)

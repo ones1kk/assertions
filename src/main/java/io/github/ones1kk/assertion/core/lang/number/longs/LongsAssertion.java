@@ -13,22 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package io.github.ones1kk.assertion.core.lang.number.longs;
 
-package io.github.ones1kk.assertion.core.lang.number.integers;
+import io.github.ones1kk.assertion.core.lang.number.DivisibleAssertion;
 
-import io.github.ones1kk.assertion.core.ConfigurationAsserts;
-import io.github.ones1kk.assertion.core.description.formatter.Formattable;
-
-public class IntegerAssert extends AbstractIntegerAssert implements ConfigurationAsserts<AbstractIntegerAssert, Formattable> {
-
-    public IntegerAssert(Integer integer) {
-        super(integer);
-    }
-
-    @Override
-    public AbstractIntegerAssert configure(Formattable formattable) {
-        info.configure(formattable);
-        return this;
-    }
-
+public interface LongsAssertion<SELF, ACTUAL extends Number> extends DivisibleAssertion<SELF, ACTUAL> {
 }

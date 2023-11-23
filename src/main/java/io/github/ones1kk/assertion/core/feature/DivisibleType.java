@@ -43,6 +43,10 @@ public class DivisibleType {
         return new DivisibleType(value);
     }
 
+    public static DivisibleType of(Double value) {
+        return new DivisibleType(value);
+    }
+
     public boolean isZero() {
         return value == 0;
     }

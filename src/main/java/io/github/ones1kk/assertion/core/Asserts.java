@@ -18,6 +18,7 @@ package io.github.ones1kk.assertion.core;
 import io.github.ones1kk.assertion.core.lang.character.CharacterAssert;
 import io.github.ones1kk.assertion.core.lang.charsequence.CharSequenceAssert;
 import io.github.ones1kk.assertion.core.lang.number.integers.IntegerAssert;
+import io.github.ones1kk.assertion.core.lang.number.longs.LongAssert;
 import io.github.ones1kk.assertion.core.lang.object.ObjectAssert;
 import io.github.ones1kk.assertion.core.lang.string.StringAssert;
 
@@ -53,6 +54,10 @@ public class Asserts {
     }
 
     public static IntegerAssert that(Integer actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static LongAssert that(Long actual) {
         return AssertsForType.that(actual);
     }
 
