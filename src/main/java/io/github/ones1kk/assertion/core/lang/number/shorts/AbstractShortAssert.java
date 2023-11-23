@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.number.integers;
+package io.github.ones1kk.assertion.core.lang.number.shorts;
 
 import io.github.ones1kk.assertion.core.feature.Offset;
 import io.github.ones1kk.assertion.core.feature.Percentage;
@@ -22,136 +22,136 @@ import io.github.ones1kk.assertion.core.lang.number.DivisiblesAssertion;
 import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 
 /**
- * <strong> The AbstractIntegerAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <strong> The AbstractShortAssert class inherits {@link AbstractObjectAssert}</strong>
  * <br>
- * <p> This is that implements the assertion method of the Integer type and verify assertion.</p>
+ * <p> This is that implements the assertion method of the Short type and verify assertion.</p>
  */
-public class AbstractIntegerAssert extends AbstractObjectAssert<Integer> implements IntegerAssertion<AbstractIntegerAssert, Integer>, Comparable<AbstractIntegerAssert, Integer> {
+public class AbstractShortAssert extends AbstractObjectAssert<Short> implements ShortAssertion<AbstractShortAssert, Short>, Comparable<AbstractShortAssert, Short> {
 
-    private final DivisiblesAssertion<Integer> integers;
+    private final DivisiblesAssertion<Short> shorts;
 
-    public AbstractIntegerAssert(Integer actual) {
+    public AbstractShortAssert(Short actual) {
         super(actual);
-        this.integers = new Integers();
+        this.shorts = new Shorts();
     }
 
     /**
      * verify actual is odd.
      *
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isOdd() {
+    public AbstractShortAssert isOdd() {
         objects.assertNotNull(info, actual);
-        integers.assertOdd(info, actual);
+        shorts.assertOdd(info, actual);
         return this;
     }
 
     /**
      * verify actual is not odd.
      *
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isNotOdd() {
+    public AbstractShortAssert isNotOdd() {
         objects.assertNotNull(info, actual);
-        integers.assertNotOdd(info, actual);
+        shorts.assertNotOdd(info, actual);
         return this;
     }
 
     /**
      * verify actual is even.
      *
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isEven() {
+    public AbstractShortAssert isEven() {
         objects.assertNotNull(info, actual);
-        integers.assertEven(info, actual);
+        shorts.assertEven(info, actual);
         return this;
     }
 
     /**
      * verify actual is not even.
      *
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isNotEven() {
+    public AbstractShortAssert isNotEven() {
         objects.assertNotNull(info, actual);
-        integers.assertNotEven(info, actual);
+        shorts.assertNotEven(info, actual);
         return this;
     }
 
     /**
      * verify actual is positive.
      *
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isPositive() {
+    public AbstractShortAssert isPositive() {
         objects.assertNotNull(info, actual);
-        integers.assertPositive(info, actual);
+        shorts.assertPositive(info, actual);
         return this;
     }
 
     /**
      * verify actual is not positive.
      *
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isNotPositive() {
+    public AbstractShortAssert isNotPositive() {
         objects.assertNotNull(info, actual);
-        integers.assertNotPositive(info, actual);
+        shorts.assertNotPositive(info, actual);
         return this;
     }
 
     /**
      * verify actual is negative.
      *
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isNegative() {
+    public AbstractShortAssert isNegative() {
         objects.assertNotNull(info, actual);
-        integers.assertNegative(info, actual);
+        shorts.assertNegative(info, actual);
         return this;
     }
 
     /**
      * verify actual is not negative.
      *
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isNotNegative() {
+    public AbstractShortAssert isNotNegative() {
         objects.assertNotNull(info, actual);
-        integers.assertNotNegative(info, actual);
+        shorts.assertNotNegative(info, actual);
         return this;
     }
 
     /**
      * verify actual is zero.
      *
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isZero() {
+    public AbstractShortAssert isZero() {
         objects.assertNotNull(info, actual);
-        integers.assertZero(info, actual);
+        shorts.assertZero(info, actual);
         return this;
     }
 
     /**
      * verify actual is not zero.
      *
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isNotZero() {
+    public AbstractShortAssert isNotZero() {
         objects.assertNotNull(info, actual);
-        integers.assertNotZero(info, actual);
+        shorts.assertNotZero(info, actual);
         return this;
     }
 
@@ -160,12 +160,12 @@ public class AbstractIntegerAssert extends AbstractObjectAssert<Integer> impleme
      *
      * @param expected expected
      * @param offset   offset
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isCloseTo(Integer expected, Offset<Integer> offset) {
+    public AbstractShortAssert isCloseTo(Short expected, Offset<Short> offset) {
         objects.assertNotNull(info, actual);
-        integers.assertCloseTo(info, actual, expected, offset);
+        shorts.assertCloseTo(info, actual, expected, offset);
         return this;
     }
 
@@ -174,13 +174,13 @@ public class AbstractIntegerAssert extends AbstractObjectAssert<Integer> impleme
      *
      * @param expected   expected
      * @param percentage percentage
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isCloseTo(Integer expected, Double percentage) {
+    public AbstractShortAssert isCloseTo(Short expected, Double percentage) {
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
-        integers.assertCloseTo(info, actual, expected, Percentage.of(percentage));
+        shorts.assertCloseTo(info, actual, expected, Percentage.of(percentage));
         return this;
     }
 
@@ -189,13 +189,13 @@ public class AbstractIntegerAssert extends AbstractObjectAssert<Integer> impleme
      *
      * @param expected expected
      * @param offset   offset
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isNotCloseTo(Integer expected, Offset<Integer> offset) {
+    public AbstractShortAssert isNotCloseTo(Short expected, Offset<Short> offset) {
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
-        integers.assertNotCloseTo(info, actual, expected, offset);
+        shorts.assertNotCloseTo(info, actual, expected, offset);
         return this;
     }
 
@@ -204,13 +204,13 @@ public class AbstractIntegerAssert extends AbstractObjectAssert<Integer> impleme
      *
      * @param expected   expected
      * @param percentage percentage
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isNotCloseTo(Integer expected, Double percentage) {
+    public AbstractShortAssert isNotCloseTo(Short expected, Double percentage) {
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
-        integers.assertNotCloseTo(info, actual, expected, Percentage.of(percentage));
+        shorts.assertNotCloseTo(info, actual, expected, Percentage.of(percentage));
         return this;
     }
 
@@ -218,13 +218,13 @@ public class AbstractIntegerAssert extends AbstractObjectAssert<Integer> impleme
      * verify actual is less than expected.
      *
      * @param expected expected
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isLessThan(Integer expected) {
+    public AbstractShortAssert isLessThan(Short expected) {
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
-        integers.assertLessThan(info, actual, expected);
+        shorts.assertLessThan(info, actual, expected);
         return this;
     }
 
@@ -232,13 +232,13 @@ public class AbstractIntegerAssert extends AbstractObjectAssert<Integer> impleme
      * verify actual is less than or equal to expected.
      *
      * @param expected expected
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isLessThanOrEqualTo(Integer expected) {
+    public AbstractShortAssert isLessThanOrEqualTo(Short expected) {
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
-        integers.assertLessThanOrEqualTo(info, actual, expected);
+        shorts.assertLessThanOrEqualTo(info, actual, expected);
         return this;
     }
 
@@ -246,13 +246,13 @@ public class AbstractIntegerAssert extends AbstractObjectAssert<Integer> impleme
      * verify actual is greater than expected.
      *
      * @param expected expected
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isGreaterThan(Integer expected) {
+    public AbstractShortAssert isGreaterThan(Short expected) {
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
-        integers.assertGreaterThan(info, actual, expected);
+        shorts.assertGreaterThan(info, actual, expected);
         return this;
     }
 
@@ -261,13 +261,13 @@ public class AbstractIntegerAssert extends AbstractObjectAssert<Integer> impleme
      * verify actual is greater that or equal to expected
      *
      * @param expected expected
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isGreaterThanOrEqualTo(Integer expected) {
+    public AbstractShortAssert isGreaterThanOrEqualTo(Short expected) {
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
-        integers.assertGreaterThanOrEqualTo(info, actual, expected);
+        shorts.assertGreaterThanOrEqualTo(info, actual, expected);
         return this;
     }
 
@@ -276,15 +276,14 @@ public class AbstractIntegerAssert extends AbstractObjectAssert<Integer> impleme
      *
      * @param start start
      * @param end   end
-     * @return {@link AbstractIntegerAssert}.
+     * @return {@link AbstractShortAssert}.
      */
     @Override
-    public AbstractIntegerAssert isBetween(Integer start, Integer end) {
+    public AbstractShortAssert isBetween(Short start, Short end) {
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, start);
         objects.assertNotNull(info, end);
-        integers.assertBetween(info, actual, start, end);
+        shorts.assertBetween(info, actual, start, end);
         return this;
     }
-
 }

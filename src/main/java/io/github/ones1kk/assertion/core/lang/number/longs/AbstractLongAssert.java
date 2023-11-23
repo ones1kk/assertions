@@ -21,6 +21,12 @@ import io.github.ones1kk.assertion.core.feature.compare.Comparable;
 import io.github.ones1kk.assertion.core.lang.number.DivisiblesAssertion;
 import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 
+/**
+ * <strong> The AbstractLongAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <br>
+ * <p> This is that implements the assertion method of the Long type and verify assertion.</p>
+ *
+ */
 public class AbstractLongAssert extends AbstractObjectAssert<Long> implements LongAssertion<AbstractLongAssert, Long>, Comparable<AbstractLongAssert, Long> {
 
     private final DivisiblesAssertion<Long> longs;
