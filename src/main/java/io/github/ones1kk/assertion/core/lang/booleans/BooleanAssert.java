@@ -21,7 +21,7 @@ import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 public class BooleanAssert extends AbstractBooleanAssert implements ConfigurationAsserts<AbstractBooleanAssert, Formattable> {
 
     public BooleanAssert(Boolean actual) {
-        super(actual);
+        super(AbstractBooleanAssert.class, actual);
     }
 
     @Override

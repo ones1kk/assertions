@@ -22,7 +22,7 @@ import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 public class IntegerAssert extends AbstractIntegerAssert implements ConfigurationAsserts<AbstractIntegerAssert, Formattable> {
 
     public IntegerAssert(Integer integer) {
-        super(integer);
+        super(AbstractIntegerAssert.class, integer);
     }
 
     @Override

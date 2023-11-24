@@ -21,7 +21,7 @@ import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 public class CharacterAssert extends AbstractCharacterAssert implements ConfigurationAsserts<AbstractCharacterAssert, Formattable> {
 
     public CharacterAssert(Character character) {
-        super(character);
+        super(CharacterAssert.class, character);
     }
 
     @Override

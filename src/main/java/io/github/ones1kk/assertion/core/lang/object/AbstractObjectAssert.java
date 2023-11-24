@@ -27,28 +27,32 @@ import java.util.function.Predicate;
  *
  * @param <ACTUAL> {@code actual}.
  */
-public abstract class AbstractObjectAssert<ACTUAL> extends AsAsserts<AbstractObjectAssert> implements ObjectAssertion<AbstractObjectAssert<ACTUAL>, ACTUAL> {
+public abstract class AbstractObjectAssert<SELF extends AbstractObjectAssert<SELF, ACTUAL>, ACTUAL> extends AsAsserts<SELF> implements ObjectAssertion<SELF, ACTUAL> {
 
     protected final ACTUAL actual;
+    
+    protected final SELF self;
 
     protected final ObjectsAssertion<ACTUAL> objects;
 
-    public AbstractObjectAssert(ACTUAL actual) {
-        super(AbstractObjectAssert.class);
+    @SuppressWarnings("unchecked")
+    public AbstractObjectAssert(Class<?> self, ACTUAL actual) {
+        super(self);
+        this.self = (SELF) self.cast(this);
         this.actual = actual;
         this.objects = new Objects<>();
     }
 
     @Override
-    public AbstractObjectAssert<ACTUAL> isNull() {
+    public SELF isNull() {
         objects.assertNull(info, actual);
-        return this;
+        return self;
     }
 
     @Override
-    public AbstractObjectAssert<ACTUAL> isNotNull() {
+    public SELF isNotNull() {
         objects.assertNotNull(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -58,15 +62,15 @@ public abstract class AbstractObjectAssert<ACTUAL> extends AsAsserts<AbstractObj
      * @return {@code self}.
      */
     @Override
-    public AbstractObjectAssert<ACTUAL> isSameAs(ACTUAL expected) {
+    public SELF isSameAs(ACTUAL expected) {
         objects.assertSameAs(info, actual, expected);
-        return this;
+        return self;
     }
 
     @Override
-    public AbstractObjectAssert<ACTUAL> isNotSameAs(ACTUAL expected) {
+    public SELF isNotSameAs(ACTUAL expected) {
         objects.assertNotSameAs(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -76,44 +80,44 @@ public abstract class AbstractObjectAssert<ACTUAL> extends AsAsserts<AbstractObj
      * @return {@code self}.
      */
     @Override
-    public AbstractObjectAssert<ACTUAL> isEqualTo(ACTUAL expected) {
+    public SELF isEqualTo(ACTUAL expected) {
         objects.assertEqualTo(info, actual, expected);
-        return this;
+        return self;
     }
 
     @Override
-    public AbstractObjectAssert<ACTUAL> isNotEqualTo(ACTUAL expected) {
+    public SELF isNotEqualTo(ACTUAL expected) {
         objects.assertNotEqualTo(info, actual, expected);
-        return this;
+        return self;
     }
 
     @Override
-    public AbstractObjectAssert<ACTUAL> isInstanceOf(Class<?> expected) {
+    public SELF isInstanceOf(Class<?> expected) {
         objects.assertInstanceOf(info, actual, expected);
-        return this;
+        return self;
     }
 
     @Override
-    public AbstractObjectAssert<ACTUAL> isNotInstanceOf(Class<?> expected) {
+    public SELF isNotInstanceOf(Class<?> expected) {
         objects.assertNotInstanceOf(info, actual, expected);
-        return this;
+        return self;
     }
 
     @Override
-    public AbstractObjectAssert<ACTUAL> is(Predicate<ACTUAL> predicate) {
+    public SELF is(Predicate<ACTUAL> predicate) {
         objects.assertIs(info, actual, predicate);
-        return this;
+        return self;
     }
 
     @Override
-    public AbstractObjectAssert<ACTUAL> isNot(Predicate<ACTUAL> predicate) {
+    public SELF isNot(Predicate<ACTUAL> predicate) {
         objects.assertIsNot(info, actual, predicate);
-        return this;
+        return self;
     }
 
     @Override
-    public <T> AbstractObjectAssert<ACTUAL> returns(T expected, Function<ACTUAL, T> function) {
+    public <T> SELF returns(T expected, Function<ACTUAL, T> function) {
         objects.assertReturns(info, actual, expected, function);
-        return this;
+        return self;
     }
 }

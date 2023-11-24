@@ -24,12 +24,12 @@ import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
  *
  * @param <ACTUAL> {@code actual}.
  */
-public abstract class AbstractCharSequenceAssert<ACTUAL extends CharSequence> extends AbstractObjectAssert<ACTUAL> implements CharSequenceAssertion<AbstractCharSequenceAssert<ACTUAL>, ACTUAL> {
+public abstract class AbstractCharSequenceAssert<SELF extends AbstractCharSequenceAssert<SELF, ACTUAL>, ACTUAL extends CharSequence> extends AbstractObjectAssert<SELF, ACTUAL> implements CharSequenceAssertion<AbstractCharSequenceAssert<SELF, ACTUAL>, ACTUAL> {
 
     private final CharSequencesAssertion<ACTUAL> charSequences;
 
-    public AbstractCharSequenceAssert(ACTUAL actual) {
-        super(actual);
+    public AbstractCharSequenceAssert(Class<?> self, ACTUAL actual) {
+        super(self, actual);
         this.charSequences = new CharSequences<>();
     }
 
@@ -39,7 +39,7 @@ public abstract class AbstractCharSequenceAssert<ACTUAL extends CharSequence> ex
      * @return {@link AbstractCharSequenceAssert}.
      */
     @Override
-    public AbstractCharSequenceAssert<ACTUAL> isEmpty() {
+    public AbstractCharSequenceAssert<SELF, ACTUAL> isEmpty() {
         charSequences.assertEmpty(info, actual);
         return this;
     }
@@ -50,7 +50,7 @@ public abstract class AbstractCharSequenceAssert<ACTUAL extends CharSequence> ex
      * @return {@link AbstractCharSequenceAssert}.
      */
     @Override
-    public AbstractCharSequenceAssert<ACTUAL> isNotEmpty() {
+    public AbstractCharSequenceAssert<SELF, ACTUAL> isNotEmpty() {
         charSequences.assertNotEmpty(info, actual);
         return this;
     }
@@ -61,7 +61,7 @@ public abstract class AbstractCharSequenceAssert<ACTUAL extends CharSequence> ex
      * @return {@link AbstractCharSequenceAssert}.
      */
     @Override
-    public AbstractCharSequenceAssert<ACTUAL> isBlank() {
+    public AbstractCharSequenceAssert<SELF, ACTUAL> isBlank() {
         charSequences.assertBlank(info, actual);
         return this;
     }
@@ -72,7 +72,7 @@ public abstract class AbstractCharSequenceAssert<ACTUAL extends CharSequence> ex
      * @return {@link AbstractCharSequenceAssert}.
      */
     @Override
-    public AbstractCharSequenceAssert<ACTUAL> isNotBlank() {
+    public AbstractCharSequenceAssert<SELF, ACTUAL> isNotBlank() {
         charSequences.assertNotBlank(info, actual);
         return this;
     }
@@ -84,7 +84,7 @@ public abstract class AbstractCharSequenceAssert<ACTUAL extends CharSequence> ex
      * @return {@link AbstractCharSequenceAssert}.
      */
     @Override
-    public AbstractCharSequenceAssert<ACTUAL> isEqualToIgnoreCase(ACTUAL expected) {
+    public AbstractCharSequenceAssert<SELF, ACTUAL> isEqualToIgnoreCase(ACTUAL expected) {
         objects.assertNotNull(info, actual);
         charSequences.assertEqualToIgnoreCase(info, actual, expected);
         return this;

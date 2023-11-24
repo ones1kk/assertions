@@ -22,12 +22,12 @@ import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
  * <br>
  * <p> This is that implements the assertion method of the Boolean type and verify assertion.</p>
  */
-public abstract class AbstractBooleanAssert extends AbstractObjectAssert<Boolean> implements BooleanAssertion<AbstractBooleanAssert> {
+public abstract class AbstractBooleanAssert extends AbstractObjectAssert<AbstractBooleanAssert, Boolean> implements BooleanAssertion<AbstractBooleanAssert> {
 
     private final BooleansAssertion booleans;
 
-    public AbstractBooleanAssert(Boolean actual) {
-        super(actual);
+    public AbstractBooleanAssert(Class<?> self, Boolean actual) {
+        super(self, actual);
         this.booleans = new Booleans();
     }
 
@@ -39,7 +39,7 @@ public abstract class AbstractBooleanAssert extends AbstractObjectAssert<Boolean
     @Override
     public AbstractBooleanAssert isFalse() {
         booleans.assertFalse(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -50,7 +50,7 @@ public abstract class AbstractBooleanAssert extends AbstractObjectAssert<Boolean
     @Override
     public AbstractBooleanAssert isTrue() {
         booleans.assertTrue(info, actual);
-        return this;
+        return self;
     }
 
 }

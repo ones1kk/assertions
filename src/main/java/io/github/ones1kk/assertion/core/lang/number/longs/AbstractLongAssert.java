@@ -26,12 +26,12 @@ import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
  * <br>
  * <p> This is that implements the assertion method of the Long type and verify assertion.</p>
  */
-public abstract class AbstractLongAssert extends AbstractObjectAssert<Long> implements LongAssertion<AbstractLongAssert, Long>, Comparable<AbstractLongAssert, Long> {
+public abstract class AbstractLongAssert extends AbstractObjectAssert<AbstractLongAssert, Long> implements LongAssertion<AbstractLongAssert, Long>, Comparable<AbstractLongAssert, Long> {
 
     private final DivisiblesAssertion<Long> longs;
 
-    public AbstractLongAssert(Long actual) {
-        super(actual);
+    public AbstractLongAssert(Class<?> self, Long actual) {
+        super(self, actual);
         this.longs = new Longs();
     }
 

@@ -26,12 +26,12 @@ import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
  * <br>
  * <p> This is that implements the assertion method of the Byte type and verify assertion.</p>
  */
-public abstract class AbstractByteAssert extends AbstractObjectAssert<Byte> implements ByteAssertion<AbstractByteAssert, Byte>, Comparable<AbstractByteAssert, Byte> {
+public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractByteAssert, Byte> implements ByteAssertion<AbstractByteAssert, Byte>, Comparable<AbstractByteAssert, Byte> {
 
     private final DivisiblesAssertion<Byte> bytes;
 
-    public AbstractByteAssert(Byte actual) {
-        super(actual);
+    public AbstractByteAssert(Class<?> self, Byte actual) {
+        super(self, actual);
         this.bytes = new Bytes();
     }
 

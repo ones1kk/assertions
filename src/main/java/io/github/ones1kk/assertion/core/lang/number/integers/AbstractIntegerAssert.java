@@ -26,12 +26,12 @@ import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
  * <br>
  * <p> This is that implements the assertion method of the Integer type and verify assertion.</p>
  */
-public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer> implements IntegerAssertion<AbstractIntegerAssert, Integer>, Comparable<AbstractIntegerAssert, Integer> {
+public abstract class AbstractIntegerAssert extends AbstractObjectAssert<AbstractIntegerAssert, Integer> implements IntegerAssertion<AbstractIntegerAssert, Integer>, Comparable<AbstractIntegerAssert, Integer> {
 
     private final DivisiblesAssertion<Integer> integers;
 
-    public AbstractIntegerAssert(Integer actual) {
-        super(actual);
+    public AbstractIntegerAssert(Class<?> self, Integer actual) {
+        super(self, actual);
         this.integers = new Integers();
     }
 
@@ -44,7 +44,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
     public AbstractIntegerAssert isOdd() {
         objects.assertNotNull(info, actual);
         integers.assertOdd(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -56,7 +56,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
     public AbstractIntegerAssert isNotOdd() {
         objects.assertNotNull(info, actual);
         integers.assertNotOdd(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -68,7 +68,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
     public AbstractIntegerAssert isEven() {
         objects.assertNotNull(info, actual);
         integers.assertEven(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -80,7 +80,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
     public AbstractIntegerAssert isNotEven() {
         objects.assertNotNull(info, actual);
         integers.assertNotEven(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -92,7 +92,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
     public AbstractIntegerAssert isPositive() {
         objects.assertNotNull(info, actual);
         integers.assertPositive(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -104,7 +104,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
     public AbstractIntegerAssert isNotPositive() {
         objects.assertNotNull(info, actual);
         integers.assertNotPositive(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -116,7 +116,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
     public AbstractIntegerAssert isNegative() {
         objects.assertNotNull(info, actual);
         integers.assertNegative(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -128,7 +128,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
     public AbstractIntegerAssert isNotNegative() {
         objects.assertNotNull(info, actual);
         integers.assertNotNegative(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -140,7 +140,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
     public AbstractIntegerAssert isZero() {
         objects.assertNotNull(info, actual);
         integers.assertZero(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -152,7 +152,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
     public AbstractIntegerAssert isNotZero() {
         objects.assertNotNull(info, actual);
         integers.assertNotZero(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -166,7 +166,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
     public AbstractIntegerAssert isCloseTo(Integer expected, Offset<Integer> offset) {
         objects.assertNotNull(info, actual);
         integers.assertCloseTo(info, actual, expected, offset);
-        return this;
+        return self;
     }
 
     /**
@@ -181,7 +181,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         integers.assertCloseTo(info, actual, expected, Percentage.of(percentage));
-        return this;
+        return self;
     }
 
     /**
@@ -196,7 +196,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         integers.assertNotCloseTo(info, actual, expected, offset);
-        return this;
+        return self;
     }
 
     /**
@@ -211,7 +211,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         integers.assertNotCloseTo(info, actual, expected, Percentage.of(percentage));
-        return this;
+        return self;
     }
 
     /**
@@ -225,7 +225,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         integers.assertLessThan(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -239,7 +239,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         integers.assertLessThanOrEqualTo(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -253,7 +253,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         integers.assertGreaterThan(info, actual, expected);
-        return this;
+        return self;
     }
 
 
@@ -268,7 +268,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         integers.assertGreaterThanOrEqualTo(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -284,7 +284,7 @@ public abstract class AbstractIntegerAssert extends AbstractObjectAssert<Integer
         objects.assertNotNull(info, start);
         objects.assertNotNull(info, end);
         integers.assertBetween(info, actual, start, end);
-        return this;
+        return self;
     }
 
 }

@@ -40,7 +40,7 @@ class AbstractCharSequenceAssertTest {
             CharSequence actual = "";
 
             // when
-            AbstractCharSequenceAssert<CharSequence> asserts = new CharSequenceAssert(actual);
+            AbstractCharSequenceAssert<CharSequenceAssert, CharSequence> asserts = new CharSequenceAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isEmpty);
@@ -53,7 +53,7 @@ class AbstractCharSequenceAssertTest {
             CharSequence actual = "15";
 
             // when
-            AbstractCharSequenceAssert<CharSequence> asserts = new CharSequenceAssert(actual);
+            AbstractCharSequenceAssert<CharSequenceAssert, CharSequence> asserts = new CharSequenceAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isEmpty)
@@ -73,7 +73,7 @@ class AbstractCharSequenceAssertTest {
             CharSequence actual = "15";
 
             // when
-            AbstractCharSequenceAssert<CharSequence> asserts = new CharSequenceAssert(actual);
+            AbstractCharSequenceAssert<CharSequenceAssert, CharSequence> asserts = new CharSequenceAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isNotEmpty);
@@ -86,7 +86,7 @@ class AbstractCharSequenceAssertTest {
             CharSequence actual = "";
 
             // when
-            AbstractCharSequenceAssert<CharSequence> asserts = new CharSequenceAssert(actual);
+            AbstractCharSequenceAssert<CharSequenceAssert, CharSequence> asserts = new CharSequenceAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isNotEmpty)
@@ -107,7 +107,7 @@ class AbstractCharSequenceAssertTest {
             CharSequence actual = " ";
 
             // when
-            AbstractCharSequenceAssert<CharSequence> asserts = new CharSequenceAssert(actual);
+            AbstractCharSequenceAssert<CharSequenceAssert, CharSequence> asserts = new CharSequenceAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isBlank);
@@ -120,7 +120,7 @@ class AbstractCharSequenceAssertTest {
             CharSequence actual = "15";
 
             // when
-            AbstractCharSequenceAssert<CharSequence> asserts = new CharSequenceAssert(actual);
+            AbstractCharSequenceAssert<CharSequenceAssert, CharSequence> asserts = new CharSequenceAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isBlank)
@@ -140,7 +140,7 @@ class AbstractCharSequenceAssertTest {
             CharSequence actual = "15";
 
             // when
-            AbstractCharSequenceAssert<CharSequence> asserts = new CharSequenceAssert(actual);
+            AbstractCharSequenceAssert<CharSequenceAssert, CharSequence> asserts = new CharSequenceAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(asserts::isNotBlank);
@@ -153,7 +153,7 @@ class AbstractCharSequenceAssertTest {
             CharSequence actual = " ";
 
             // when
-            AbstractCharSequenceAssert<CharSequence> asserts = new CharSequenceAssert(actual);
+            AbstractCharSequenceAssert<CharSequenceAssert, CharSequence> asserts = new CharSequenceAssert(actual);
 
             // then
             assertThatException().isThrownBy(asserts::isNotBlank)
@@ -171,7 +171,7 @@ class AbstractCharSequenceAssertTest {
         @DisplayName("test isEmpty() success case")
         void testSuccess(String actual, String expected) throws Exception {
             // when
-            AbstractCharSequenceAssert<CharSequence> asserts = new CharSequenceAssert(actual);
+            AbstractCharSequenceAssert<CharSequenceAssert, CharSequence> asserts = new CharSequenceAssert(actual);
 
             // then
             assertThatNoException().isThrownBy(() -> asserts.isEqualToIgnoreCase(expected));
@@ -182,7 +182,7 @@ class AbstractCharSequenceAssertTest {
         @DisplayName("test isEqualToIgnoreCase() fail case")
         void testFail(String actual, String expected) throws Exception {
             // when
-            AbstractCharSequenceAssert<CharSequence> asserts = new CharSequenceAssert(actual);
+            AbstractCharSequenceAssert<CharSequenceAssert, CharSequence> asserts = new CharSequenceAssert(actual);
 
             // then
             assertThatException().isThrownBy(() -> asserts.isEqualToIgnoreCase(expected))

@@ -21,7 +21,7 @@ import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 public class LongAssert extends AbstractLongAssert implements ConfigurationAsserts<AbstractLongAssert, Formattable> {
 
     public LongAssert(Long actual) {
-        super(actual);
+        super(AbstractLongAssert.class, actual);
     }
 
     @Override

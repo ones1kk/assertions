@@ -23,12 +23,12 @@ import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
  * <br>
  * <p> This is that implements the assertion method of the Character type and verify assertion.</p>
  */
-public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Character> implements CharacterAssertion<AbstractCharacterAssert>, Comparable<AbstractCharacterAssert, Character> {
+public abstract class AbstractCharacterAssert extends AbstractObjectAssert<AbstractCharacterAssert, Character> implements CharacterAssertion<AbstractCharacterAssert>, Comparable<AbstractCharacterAssert, Character> {
 
     private final CharactersAssertion characters;
 
-    public AbstractCharacterAssert(Character character) {
-        super(character);
+    public AbstractCharacterAssert(Class<?> self, Character actual) {
+        super(self, actual);
         this.characters = new Characters();
     }
 
@@ -41,7 +41,7 @@ public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Chara
     public AbstractCharacterAssert isLowerCase() {
         objects.assertNotNull(info, actual);
         characters.assertLowerCase(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -53,7 +53,7 @@ public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Chara
     public AbstractCharacterAssert isNotLowerCase() {
         objects.assertNotNull(info, actual);
         characters.assertNotLowerCase(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -65,7 +65,7 @@ public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Chara
     public AbstractCharacterAssert isUpperCase() {
         objects.assertNotNull(info, actual);
         characters.assertUpperCase(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -77,7 +77,7 @@ public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Chara
     public AbstractCharacterAssert isNotUpperCase() {
         objects.assertNotNull(info, actual);
         characters.assertNotUpperCase(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -89,7 +89,7 @@ public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Chara
     public AbstractCharacterAssert isLetter() {
         objects.assertNotNull(info, actual);
         characters.assertLetter(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -101,7 +101,7 @@ public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Chara
     public AbstractCharacterAssert isNotLetter() {
         objects.assertNotNull(info, actual);
         characters.assertNotLetter(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -113,7 +113,7 @@ public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Chara
     public AbstractCharacterAssert isDigit() {
         objects.assertNotNull(info, actual);
         characters.assertDigit(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -125,7 +125,7 @@ public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Chara
     public AbstractCharacterAssert isNotDigit() {
         objects.assertNotNull(info, actual);
         characters.assertNotDigit(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -137,7 +137,7 @@ public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Chara
     public AbstractCharacterAssert isWhitespace() {
         objects.assertNotNull(info, actual);
         characters.assertWhitespace(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -149,7 +149,7 @@ public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Chara
     public AbstractCharacterAssert isNotWhitespace() {
         objects.assertNotNull(info, actual);
         characters.assertNotWhitespace(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -163,7 +163,7 @@ public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Chara
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         characters.assertLessThan(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -177,7 +177,7 @@ public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Chara
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         characters.assertLessThanOrEqualTo(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -191,7 +191,7 @@ public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Chara
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         characters.assertGreaterThan(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -205,7 +205,7 @@ public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Chara
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         characters.assertGreaterThanOrEqualTo(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -221,6 +221,6 @@ public abstract class AbstractCharacterAssert extends AbstractObjectAssert<Chara
         objects.assertNotNull(info, start);
         objects.assertNotNull(info, end);
         characters.assertBetween(info, actual, start, end);
-        return this;
+        return self;
     }
 }

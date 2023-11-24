@@ -21,7 +21,7 @@ import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 public class ClassAssert extends AbstractClassAssert implements ConfigurationAsserts<AbstractClassAssert, Formattable> {
 
     public ClassAssert(Class<?> actual) {
-        super(actual);
+        super(AbstractClassAssert.class, actual);
     }
 
     @Override

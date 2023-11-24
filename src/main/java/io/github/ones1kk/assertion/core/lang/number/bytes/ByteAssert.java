@@ -21,7 +21,7 @@ import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 public class ByteAssert extends AbstractByteAssert implements ConfigurationAsserts<AbstractByteAssert, Formattable> {
 
     public ByteAssert(Byte actual) {
-        super(actual);
+        super(AbstractByteAssert.class, actual);
     }
 
     @Override

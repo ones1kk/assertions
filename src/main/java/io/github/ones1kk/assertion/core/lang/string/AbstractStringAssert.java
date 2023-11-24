@@ -15,6 +15,7 @@
  */
 package io.github.ones1kk.assertion.core.lang.string;
 
+import io.github.ones1kk.assertion.core.Asserts;
 import io.github.ones1kk.assertion.core.lang.charsequence.AbstractCharSequenceAssert;
 
 import java.util.regex.Pattern;
@@ -26,12 +27,12 @@ import java.util.regex.Pattern;
  * <br>
  * <p> This is that implements the assertion method of the Float type and verify assertion.</p>
  */
-public abstract class AbstractStringAssert extends AbstractCharSequenceAssert<String> implements StringAssertion<AbstractStringAssert, String> {
+public abstract class AbstractStringAssert extends AbstractCharSequenceAssert<AbstractStringAssert, String> implements StringAssertion<AbstractStringAssert, String> {
 
     private final StringsAssertion<String> strings;
 
     public AbstractStringAssert(String actual) {
-        super(actual);
+        super(AbstractStringAssert.class, actual);
         this.strings = new Strings();
     }
 

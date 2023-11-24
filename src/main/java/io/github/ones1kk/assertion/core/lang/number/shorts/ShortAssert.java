@@ -21,7 +21,7 @@ import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 public class ShortAssert extends AbstractShortAssert implements ConfigurationAsserts<AbstractShortAssert, Formattable> {
 
     public ShortAssert(Short actual) {
-        super(actual);
+        super(AbstractShortAssert.class, actual);
     }
 
     @Override

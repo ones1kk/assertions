@@ -21,7 +21,7 @@ import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 public class DoubleAssert extends AbstractDoubleAssert implements ConfigurationAsserts<AbstractDoubleAssert, Formattable> {
 
     public DoubleAssert(Double actual) {
-        super(actual);
+        super(AbstractDoubleAssert.class, actual);
     }
 
     @Override

@@ -25,8 +25,9 @@ public abstract class AsAsserts<SELF> implements AsAssertion<SELF> {
 
     protected final AssertionsInfo info;
 
-    public AsAsserts(Class<SELF> self) {
-        this.self = self.cast(this);
+    @SuppressWarnings("unchecked")
+    public AsAsserts(Class<?> self) {
+        this.self = (SELF) self.cast(this);
         this.info = new ErrorMessageInfo();
     }
 

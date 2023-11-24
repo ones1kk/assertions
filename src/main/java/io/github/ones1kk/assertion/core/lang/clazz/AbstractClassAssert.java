@@ -22,12 +22,12 @@ import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
  * <br>
  * <p> This is that implements the assertion method of the class type and verify assertion.</p>
  */
-public abstract class AbstractClassAssert extends AbstractObjectAssert<Class<?>> implements ClassAssertion<AbstractClassAssert> {
+public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractClassAssert, Class<?>> implements ClassAssertion<AbstractClassAssert> {
 
     private final ClassesAssertion classes;
 
-    public AbstractClassAssert(Class<?> actual) {
-        super(actual);
+    public AbstractClassAssert(Class<?> self, Class<?> actual) {
+        super(self, actual);
         this.classes = new Classes();
     }
 

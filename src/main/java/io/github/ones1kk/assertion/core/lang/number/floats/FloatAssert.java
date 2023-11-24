@@ -21,7 +21,7 @@ import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 public class FloatAssert extends AbstractFloatAssert implements ConfigurationAsserts<AbstractFloatAssert, Formattable> {
 
     public FloatAssert(Float actual) {
-        super(actual);
+        super(AbstractFloatAssert.class, actual);
     }
 
     @Override

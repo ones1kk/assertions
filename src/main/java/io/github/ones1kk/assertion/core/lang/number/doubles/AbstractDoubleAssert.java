@@ -25,12 +25,12 @@ import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
  * <br>
  * <p> This is that implements the assertion method of the Double type and verify assertion.</p>
  */
-public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Double> implements DoubleAssertion<AbstractDoubleAssert, Double>, Comparable<AbstractDoubleAssert, Double> {
+public abstract class AbstractDoubleAssert extends AbstractObjectAssert<AbstractDoubleAssert, Double> implements DoubleAssertion<AbstractDoubleAssert, Double>, Comparable<AbstractDoubleAssert, Double> {
 
     DoublesAssertion<Double> doubles;
 
-    public AbstractDoubleAssert(Double actual) {
-        super(actual);
+    public AbstractDoubleAssert(Class<?> self, Double actual) {
+        super(self, actual);
         this.doubles = new Doubles();
     }
 

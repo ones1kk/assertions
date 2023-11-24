@@ -18,14 +18,14 @@ package io.github.ones1kk.assertion.core.lang.charsequence;
 import io.github.ones1kk.assertion.core.ConfigurationAsserts;
 import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 
-public class CharSequenceAssert extends AbstractCharSequenceAssert<CharSequence> implements ConfigurationAsserts<AbstractCharSequenceAssert<CharSequence>, Formattable> {
+public class CharSequenceAssert extends AbstractCharSequenceAssert<CharSequenceAssert, CharSequence> implements ConfigurationAsserts<CharSequenceAssert, Formattable> {
 
     public CharSequenceAssert(CharSequence charSequence) {
-        super(charSequence);
+        super(AbstractCharSequenceAssert.class, charSequence);
     }
 
     @Override
-    public AbstractCharSequenceAssert<CharSequence> configure(Formattable formattable) {
+    public CharSequenceAssert configure(Formattable formattable) {
         info.configure(formattable);
         return this;
     }

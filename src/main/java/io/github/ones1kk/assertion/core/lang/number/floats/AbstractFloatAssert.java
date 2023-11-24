@@ -25,12 +25,12 @@ import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
  * <br>
  * <p> This is that implements the assertion method of the Float type and verify assertion.</p>
  */
-public abstract class AbstractFloatAssert extends AbstractObjectAssert<Float> implements FloatAssertion<AbstractFloatAssert, Float>, Comparable<AbstractFloatAssert, Float> {
+public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractFloatAssert, Float> implements FloatAssertion<AbstractFloatAssert, Float>, Comparable<AbstractFloatAssert, Float> {
 
     FloatsAssertion<Float> floats;
 
-    public AbstractFloatAssert(Float actual) {
-        super(actual);
+    public AbstractFloatAssert(Class<?> self, Float actual) {
+        super(self, actual);
         this.floats = new Floats();
     }
 
