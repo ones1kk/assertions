@@ -30,7 +30,7 @@ import java.util.function.Predicate;
 public abstract class AbstractObjectAssert<SELF extends AbstractObjectAssert<SELF, ACTUAL>, ACTUAL> extends AsAsserts<SELF> implements ObjectAssertion<SELF, ACTUAL> {
 
     protected final ACTUAL actual;
-    
+
     protected final SELF self;
 
     protected final ObjectsAssertion<ACTUAL> objects;

@@ -19,7 +19,6 @@ import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 import io.github.ones1kk.assertion.core.lang.object.ObjectsAssertion;
 
 import java.net.URL;
-import java.net.URL;
 
 public interface UrlsAssertion extends ObjectsAssertion<URL> {
 

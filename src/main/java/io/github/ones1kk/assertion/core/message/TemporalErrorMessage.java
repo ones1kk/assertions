@@ -16,9 +16,7 @@
 
 package io.github.ones1kk.assertion.core.message;
 
-import io.github.ones1kk.assertion.core.description.Describable;
 import io.github.ones1kk.assertion.core.description.Description;
-import io.github.ones1kk.assertion.core.description.impl.Description;
 
 import java.time.temporal.TemporalAccessor;
 

@@ -15,7 +15,6 @@
  */
 package io.github.ones1kk.assertion.core.lang.string;
 
-import io.github.ones1kk.assertion.core.Asserts;
 import io.github.ones1kk.assertion.core.lang.charsequence.AbstractCharSequenceAssert;
 
 import java.util.regex.Pattern;

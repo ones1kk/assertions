@@ -16,7 +16,6 @@
 package io.github.ones1kk.assertion.core.feature.compare.temporal;
 
 import java.time.temporal.Temporal;
-import java.time.temporal.TemporalAccessor;
 
 public interface ComparableTemporal<ELEMENT extends Temporal> {
 

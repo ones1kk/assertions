@@ -16,7 +16,7 @@
 
 package io.github.ones1kk.assertion.core.feature.compare;
 
-public interface Measurable<SELF, ELEMENT extends java.lang.Comparable<ELEMENT>>{
+public interface Measurable<SELF, ELEMENT extends java.lang.Comparable<ELEMENT>> {
 
     SELF isSmallerThan(ELEMENT expected);
 
