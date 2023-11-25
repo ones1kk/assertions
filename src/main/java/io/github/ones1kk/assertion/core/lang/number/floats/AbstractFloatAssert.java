@@ -43,7 +43,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
     public AbstractFloatAssert isInfinite() {
         objects.assertNotNull(info, actual);
         floats.assertInfinite(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -55,7 +55,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
     public AbstractFloatAssert isFinite() {
         objects.assertNotNull(info, actual);
         floats.assertFinite(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -67,7 +67,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
     public AbstractFloatAssert isNaN() {
         objects.assertNotNull(info, actual);
         floats.assertNaN(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -79,7 +79,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
     public AbstractFloatAssert isPositive() {
         objects.assertNotNull(info, actual);
         floats.assertPositive(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -91,7 +91,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
     public AbstractFloatAssert isNotPositive() {
         objects.assertNotNull(info, actual);
         floats.assertNotPositive(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -103,7 +103,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
     public AbstractFloatAssert isNegative() {
         objects.assertNotNull(info, actual);
         floats.assertNegative(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -115,7 +115,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
     public AbstractFloatAssert isNotNegative() {
         objects.assertNotNull(info, actual);
         floats.assertNotNegative(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -127,7 +127,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
     public AbstractFloatAssert isZero() {
         objects.assertNotNull(info, actual);
         floats.assertZero(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -139,7 +139,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
     public AbstractFloatAssert isNotZero() {
         objects.assertNotNull(info, actual);
         floats.assertNotZero(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -153,7 +153,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
     public AbstractFloatAssert isCloseTo(Float expected, Offset<Float> offset) {
         objects.assertNotNull(info, actual);
         floats.assertCloseTo(info, actual, expected, offset);
-        return this;
+        return self;
     }
 
     /**
@@ -168,7 +168,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         floats.assertCloseTo(info, actual, expected, Percentage.of(percentage));
-        return this;
+        return self;
     }
 
     /**
@@ -183,7 +183,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         floats.assertNotCloseTo(info, actual, expected, offset);
-        return this;
+        return self;
     }
 
     /**
@@ -198,7 +198,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         floats.assertNotCloseTo(info, actual, expected, Percentage.of(percentage));
-        return this;
+        return self;
     }
 
     /**
@@ -212,7 +212,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         floats.assertLessThan(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -226,7 +226,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         floats.assertLessThanOrEqualTo(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -240,7 +240,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         floats.assertGreaterThan(info, actual, expected);
-        return this;
+        return self;
     }
 
 
@@ -255,7 +255,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         floats.assertGreaterThanOrEqualTo(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -271,7 +271,7 @@ public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractF
         objects.assertNotNull(info, start);
         objects.assertNotNull(info, end);
         floats.assertBetween(info, actual, start, end);
-        return this;
+        return self;
     }
 
 }

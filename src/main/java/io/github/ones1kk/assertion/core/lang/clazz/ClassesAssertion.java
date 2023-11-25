@@ -16,8 +16,9 @@
 package io.github.ones1kk.assertion.core.lang.clazz;
 
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
+import io.github.ones1kk.assertion.core.lang.object.ObjectsAssertion;
 
-public interface ClassesAssertion {
+public interface ClassesAssertion extends ObjectsAssertion<Class<?>> {
 
     void assertTypeOf(AssertionsInfo info, Class<?> actual, Object expected);
 

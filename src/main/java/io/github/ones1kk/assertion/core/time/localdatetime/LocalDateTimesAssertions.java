@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.number.floats;
 
-import io.github.ones1kk.assertion.core.ConfigurationAsserts;
-import io.github.ones1kk.assertion.core.description.formatter.Formattable;
+package io.github.ones1kk.assertion.core.time.localdatetime;
 
-public class FloatAssert extends AbstractFloatAssert implements ConfigurationAsserts<AbstractFloatAssert, Formattable> {
+import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 
-    public FloatAssert(Float actual) {
-        super(AbstractFloatAssert.class, actual);
-    }
+import java.time.LocalDateTime;
 
-    @Override
-    public AbstractFloatAssert configure(Formattable formattable) {
-        info.configure(formattable);
-        return self;
-    }
+public interface LocalDateTimesAssertions {
+
+    void assertBefore(AssertionsInfo info, LocalDateTime actual, LocalDateTime expected);
+
+    void assertBeforeOrEqualTo(AssertionsInfo info, LocalDateTime actual, LocalDateTime expected);
+
+    void assertIsAfter(AssertionsInfo info, LocalDateTime actual, LocalDateTime expected);
+
+    void assertIsAfterOrEqualTo(AssertionsInfo info, LocalDateTime actual, LocalDateTime expected);
 }

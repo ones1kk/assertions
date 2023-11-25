@@ -44,7 +44,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
     public AbstractShortAssert isOdd() {
         objects.assertNotNull(info, actual);
         shorts.assertOdd(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -56,7 +56,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
     public AbstractShortAssert isNotOdd() {
         objects.assertNotNull(info, actual);
         shorts.assertNotOdd(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -68,7 +68,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
     public AbstractShortAssert isEven() {
         objects.assertNotNull(info, actual);
         shorts.assertEven(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -80,7 +80,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
     public AbstractShortAssert isNotEven() {
         objects.assertNotNull(info, actual);
         shorts.assertNotEven(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -92,7 +92,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
     public AbstractShortAssert isPositive() {
         objects.assertNotNull(info, actual);
         shorts.assertPositive(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -104,7 +104,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
     public AbstractShortAssert isNotPositive() {
         objects.assertNotNull(info, actual);
         shorts.assertNotPositive(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -116,7 +116,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
     public AbstractShortAssert isNegative() {
         objects.assertNotNull(info, actual);
         shorts.assertNegative(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -128,7 +128,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
     public AbstractShortAssert isNotNegative() {
         objects.assertNotNull(info, actual);
         shorts.assertNotNegative(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -140,7 +140,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
     public AbstractShortAssert isZero() {
         objects.assertNotNull(info, actual);
         shorts.assertZero(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -152,7 +152,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
     public AbstractShortAssert isNotZero() {
         objects.assertNotNull(info, actual);
         shorts.assertNotZero(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -166,7 +166,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
     public AbstractShortAssert isCloseTo(Short expected, Offset<Short> offset) {
         objects.assertNotNull(info, actual);
         shorts.assertCloseTo(info, actual, expected, offset);
-        return this;
+        return self;
     }
 
     /**
@@ -181,7 +181,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         shorts.assertCloseTo(info, actual, expected, Percentage.of(percentage));
-        return this;
+        return self;
     }
 
     /**
@@ -196,7 +196,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         shorts.assertNotCloseTo(info, actual, expected, offset);
-        return this;
+        return self;
     }
 
     /**
@@ -211,7 +211,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         shorts.assertNotCloseTo(info, actual, expected, Percentage.of(percentage));
-        return this;
+        return self;
     }
 
     /**
@@ -225,7 +225,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         shorts.assertLessThan(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -239,7 +239,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         shorts.assertLessThanOrEqualTo(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -253,7 +253,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         shorts.assertGreaterThan(info, actual, expected);
-        return this;
+        return self;
     }
 
 
@@ -268,7 +268,7 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         shorts.assertGreaterThanOrEqualTo(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -284,6 +284,6 @@ public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractS
         objects.assertNotNull(info, start);
         objects.assertNotNull(info, end);
         shorts.assertBetween(info, actual, start, end);
-        return this;
+        return self;
     }
 }

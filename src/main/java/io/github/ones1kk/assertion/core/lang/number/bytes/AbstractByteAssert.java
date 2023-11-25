@@ -44,7 +44,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
     public AbstractByteAssert isOdd() {
         objects.assertNotNull(info, actual);
         bytes.assertOdd(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -56,7 +56,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
     public AbstractByteAssert isNotOdd() {
         objects.assertNotNull(info, actual);
         bytes.assertNotOdd(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -68,7 +68,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
     public AbstractByteAssert isEven() {
         objects.assertNotNull(info, actual);
         bytes.assertEven(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -80,7 +80,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
     public AbstractByteAssert isNotEven() {
         objects.assertNotNull(info, actual);
         bytes.assertNotEven(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -92,7 +92,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
     public AbstractByteAssert isPositive() {
         objects.assertNotNull(info, actual);
         bytes.assertPositive(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -104,7 +104,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
     public AbstractByteAssert isNotPositive() {
         objects.assertNotNull(info, actual);
         bytes.assertNotPositive(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -116,7 +116,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
     public AbstractByteAssert isNegative() {
         objects.assertNotNull(info, actual);
         bytes.assertNegative(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -128,7 +128,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
     public AbstractByteAssert isNotNegative() {
         objects.assertNotNull(info, actual);
         bytes.assertNotNegative(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -140,7 +140,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
     public AbstractByteAssert isZero() {
         objects.assertNotNull(info, actual);
         bytes.assertZero(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -152,7 +152,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
     public AbstractByteAssert isNotZero() {
         objects.assertNotNull(info, actual);
         bytes.assertNotZero(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -166,7 +166,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
     public AbstractByteAssert isCloseTo(Byte expected, Offset<Byte> offset) {
         objects.assertNotNull(info, actual);
         bytes.assertCloseTo(info, actual, expected, offset);
-        return this;
+        return self;
     }
 
     /**
@@ -181,7 +181,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         bytes.assertCloseTo(info, actual, expected, Percentage.of(percentage));
-        return this;
+        return self;
     }
 
     /**
@@ -196,7 +196,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         bytes.assertNotCloseTo(info, actual, expected, offset);
-        return this;
+        return self;
     }
 
     /**
@@ -211,7 +211,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         bytes.assertNotCloseTo(info, actual, expected, Percentage.of(percentage));
-        return this;
+        return self;
     }
 
     /**
@@ -225,7 +225,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         bytes.assertLessThan(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -239,7 +239,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         bytes.assertLessThanOrEqualTo(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -253,7 +253,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         bytes.assertGreaterThan(info, actual, expected);
-        return this;
+        return self;
     }
 
 
@@ -268,7 +268,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         bytes.assertGreaterThanOrEqualTo(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -284,7 +284,7 @@ public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractBy
         objects.assertNotNull(info, start);
         objects.assertNotNull(info, end);
         bytes.assertBetween(info, actual, start, end);
-        return this;
+        return self;
     }
 
 }

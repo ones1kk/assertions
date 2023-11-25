@@ -27,6 +27,6 @@ public class StringAssert extends AbstractStringAssert implements ConfigurationA
     @Override
     public AbstractStringAssert configure(Formattable formattable) {
         info.configure(formattable);
-        return this;
+        return self;
     }
 }

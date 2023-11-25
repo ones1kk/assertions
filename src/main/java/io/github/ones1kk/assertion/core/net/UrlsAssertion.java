@@ -13,24 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.charsequence;
+package io.github.ones1kk.assertion.core.net;
 
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 import io.github.ones1kk.assertion.core.lang.object.ObjectsAssertion;
 
-/**
- * <strong> The CharSequencesAssertion class is for a having CharSequence Type, assertable assertion implementation class.</strong>
- */
-public interface CharSequencesAssertion<ACTUAL> extends ObjectsAssertion<ACTUAL> {
+import java.net.URL;
+import java.net.URL;
 
-    void assertEmpty(AssertionsInfo info, ACTUAL actual);
+public interface UrlsAssertion extends ObjectsAssertion<URL> {
 
-    void assertNotEmpty(AssertionsInfo info, ACTUAL actual);
+    void assertHasHost(AssertionsInfo info, URL actual, String expected);
 
-    void assertBlank(AssertionsInfo info, ACTUAL actual);
+    void assertDoesNotHaveHost(AssertionsInfo info, URL actual);
 
-    void assertNotBlank(AssertionsInfo info, ACTUAL actual);
+    void assertHasPort(AssertionsInfo info, URL actual, int expected);
 
-    void assertEqualToIgnoreCase(AssertionsInfo info, ACTUAL actual, ACTUAL expected);
+    void assertDoesNotHavePort(AssertionsInfo info, URL actual);
+
+    void assertHasPath(AssertionsInfo info, URL actual, String expected);
+
+    void assertDoesNotHavePath(AssertionsInfo info, URL actual);
+
 
 }

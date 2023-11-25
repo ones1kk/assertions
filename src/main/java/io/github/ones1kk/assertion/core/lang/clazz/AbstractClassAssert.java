@@ -40,7 +40,7 @@ public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractC
     @Override
     public AbstractClassAssert isTypeOf(Object expected) {
         classes.assertTypeOf(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -52,7 +52,7 @@ public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractC
     @Override
     public AbstractClassAssert isNotTypeOf(Object expected) {
         classes.assertNotTypeOf(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -64,7 +64,7 @@ public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractC
     @Override
     public AbstractClassAssert isSuperclassOf(Class<?> expected) {
         classes.assertSuperclassOf(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -76,7 +76,7 @@ public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractC
     @Override
     public AbstractClassAssert isSubclassOf(Class<?> expected) {
         classes.assertSubclassOf(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -87,7 +87,7 @@ public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractC
     @Override
     public AbstractClassAssert isPrimitive() {
         classes.assertPrimitive(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -98,7 +98,7 @@ public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractC
     @Override
     public AbstractClassAssert isInterface() {
         classes.assertInterface(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -109,7 +109,7 @@ public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractC
     @Override
     public AbstractClassAssert isAnnotation() {
         classes.assertAnnotation(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -120,7 +120,7 @@ public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractC
     @Override
     public AbstractClassAssert isFinalClass() {
         classes.assertFinalClass(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -131,7 +131,7 @@ public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractC
     @Override
     public AbstractClassAssert isAbstractClass() {
         classes.assertAbstractClass(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -142,7 +142,7 @@ public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractC
     @Override
     public AbstractClassAssert isAnonymousClass() {
         classes.assertAnonymousClass(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -153,7 +153,7 @@ public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractC
     @Override
     public AbstractClassAssert isEnum() {
         classes.assertEnum(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -164,7 +164,7 @@ public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractC
     @Override
     public AbstractClassAssert isArray() {
         classes.assertArray(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -175,7 +175,7 @@ public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractC
     @Override
     public AbstractClassAssert isMemberClass() {
         classes.assertMemberClass(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -186,7 +186,7 @@ public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractC
     @Override
     public AbstractClassAssert isLocalClass() {
         classes.assertLocalClass(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -198,7 +198,7 @@ public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractC
     @Override
     public AbstractClassAssert isAssignableFrom(Class<?> expected) {
         classes.assertAssignableFrom(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -210,6 +210,6 @@ public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractC
     @Override
     public AbstractClassAssert isNotAssignableFrom(Class<?> expected) {
         classes.assertNotAssignableFrom(info, actual, expected);
-        return this;
+        return self;
     }
 }

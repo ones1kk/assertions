@@ -27,6 +27,6 @@ public class ShortAssert extends AbstractShortAssert implements ConfigurationAss
     @Override
     public AbstractShortAssert configure(Formattable formattable) {
         info.configure(formattable);
-        return this;
+        return self;
     }
 }

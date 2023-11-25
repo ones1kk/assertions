@@ -27,6 +27,6 @@ public class ByteAssert extends AbstractByteAssert implements ConfigurationAsser
     @Override
     public AbstractByteAssert configure(Formattable formattable) {
         info.configure(formattable);
-        return this;
+        return self;
     }
 }

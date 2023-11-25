@@ -27,6 +27,6 @@ public class BooleanAssert extends AbstractBooleanAssert implements Configuratio
     @Override
     public AbstractBooleanAssert configure(Formattable formattable) {
         info.configure(formattable);
-        return this;
+        return self;
     }
 }

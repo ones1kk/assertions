@@ -16,10 +16,12 @@
 package io.github.ones1kk.assertion.core.lang.string;
 
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
+import io.github.ones1kk.assertion.core.lang.charsequence.CharSequencesAssertion;
+import io.github.ones1kk.assertion.core.lang.object.ObjectsAssertion;
 
 import java.util.regex.Pattern;
 
-public interface StringsAssertion<ACTUAL> {
+public interface StringsAssertion<ACTUAL extends CharSequence> extends ObjectsAssertion<ACTUAL>, CharSequencesAssertion<ACTUAL> {
 
     void assertHasText(AssertionsInfo info, ACTUAL actual);
 

@@ -19,8 +19,9 @@ import io.github.ones1kk.assertion.core.feature.Offset;
 import io.github.ones1kk.assertion.core.feature.Percentage;
 import io.github.ones1kk.assertion.core.feature.compare.ComparableAssertion;
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
+import io.github.ones1kk.assertion.core.lang.object.ObjectsAssertion;
 
-public interface NumerablesAssertion<ACTUAL extends Number> extends ComparableAssertion<ACTUAL> {
+public interface NumerablesAssertion<ACTUAL extends Number> extends ComparableAssertion<ACTUAL>, ObjectsAssertion<ACTUAL> {
 
     void assertPositive(AssertionsInfo info, ACTUAL actual);
 

@@ -13,20 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.number.floats;
+package io.github.ones1kk.assertion.core.io;
 
 import io.github.ones1kk.assertion.core.ConfigurationAsserts;
 import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 
-public class FloatAssert extends AbstractFloatAssert implements ConfigurationAsserts<AbstractFloatAssert, Formattable> {
+import java.io.File;
 
-    public FloatAssert(Float actual) {
-        super(AbstractFloatAssert.class, actual);
+public class FileAssert extends AbstractFileAssert implements ConfigurationAsserts<AbstractFileAssert, Formattable> {
+
+    public FileAssert(File actual) {
+        super(AbstractFileAssert.class, actual);
     }
 
     @Override
-    public AbstractFloatAssert configure(Formattable formattable) {
+    public AbstractFileAssert configure(Formattable formattable) {
         info.configure(formattable);
-        return self;
+        return this;
     }
 }

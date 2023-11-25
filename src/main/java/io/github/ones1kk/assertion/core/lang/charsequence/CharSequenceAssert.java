@@ -27,6 +27,6 @@ public class CharSequenceAssert extends AbstractCharSequenceAssert<CharSequenceA
     @Override
     public CharSequenceAssert configure(Formattable formattable) {
         info.configure(formattable);
-        return this;
+        return self;
     }
 }

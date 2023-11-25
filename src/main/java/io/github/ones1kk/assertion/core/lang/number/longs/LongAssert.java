@@ -27,6 +27,6 @@ public class LongAssert extends AbstractLongAssert implements ConfigurationAsser
     @Override
     public AbstractLongAssert configure(Formattable formattable) {
         info.configure(formattable);
-        return this;
+        return self;
     }
 }

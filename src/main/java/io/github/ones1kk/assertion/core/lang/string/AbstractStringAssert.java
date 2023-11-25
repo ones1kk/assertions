@@ -44,7 +44,7 @@ public abstract class AbstractStringAssert extends AbstractCharSequenceAssert<Ab
     @Override
     public AbstractStringAssert hasText() {
         strings.assertHasText(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -56,7 +56,7 @@ public abstract class AbstractStringAssert extends AbstractCharSequenceAssert<Ab
     @Override
     public AbstractStringAssert hasLength(int expected) {
         strings.assertHasLength(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -68,7 +68,7 @@ public abstract class AbstractStringAssert extends AbstractCharSequenceAssert<Ab
     @Override
     public AbstractStringAssert hasSameLength(String expected) {
         strings.assertHasSameLength(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -79,10 +79,10 @@ public abstract class AbstractStringAssert extends AbstractCharSequenceAssert<Ab
      */
     @Override
     public AbstractStringAssert matches(String regex) {
-        objects.assertNotNull(info, regex);
+        strings.assertNotNull(info, regex);
         strings.assertHasText(info, regex);
         strings.assertMatches(info, actual, regex);
-        return this;
+        return self;
     }
 
     /**
@@ -94,6 +94,6 @@ public abstract class AbstractStringAssert extends AbstractCharSequenceAssert<Ab
     @Override
     public AbstractStringAssert matches(Pattern expected) {
         strings.assertMatches(info, actual, expected);
-        return this;
+        return self;
     }
 }

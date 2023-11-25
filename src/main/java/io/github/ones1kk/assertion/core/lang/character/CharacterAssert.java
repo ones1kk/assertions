@@ -27,6 +27,6 @@ public class CharacterAssert extends AbstractCharacterAssert implements Configur
     @Override
     public AbstractCharacterAssert configure(Formattable formattable) {
         info.configure(formattable);
-        return this;
+        return self;
     }
 }

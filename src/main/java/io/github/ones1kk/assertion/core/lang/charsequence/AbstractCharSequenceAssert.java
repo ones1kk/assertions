@@ -41,7 +41,7 @@ public abstract class AbstractCharSequenceAssert<SELF extends AbstractCharSequen
     @Override
     public AbstractCharSequenceAssert<SELF, ACTUAL> isEmpty() {
         charSequences.assertEmpty(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -52,7 +52,7 @@ public abstract class AbstractCharSequenceAssert<SELF extends AbstractCharSequen
     @Override
     public AbstractCharSequenceAssert<SELF, ACTUAL> isNotEmpty() {
         charSequences.assertNotEmpty(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -63,7 +63,7 @@ public abstract class AbstractCharSequenceAssert<SELF extends AbstractCharSequen
     @Override
     public AbstractCharSequenceAssert<SELF, ACTUAL> isBlank() {
         charSequences.assertBlank(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -74,7 +74,7 @@ public abstract class AbstractCharSequenceAssert<SELF extends AbstractCharSequen
     @Override
     public AbstractCharSequenceAssert<SELF, ACTUAL> isNotBlank() {
         charSequences.assertNotBlank(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -87,7 +87,7 @@ public abstract class AbstractCharSequenceAssert<SELF extends AbstractCharSequen
     public AbstractCharSequenceAssert<SELF, ACTUAL> isEqualToIgnoreCase(ACTUAL expected) {
         objects.assertNotNull(info, actual);
         charSequences.assertEqualToIgnoreCase(info, actual, expected);
-        return this;
+        return self;
     }
 
 }

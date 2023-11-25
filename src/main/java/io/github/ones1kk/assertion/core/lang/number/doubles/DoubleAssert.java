@@ -27,6 +27,6 @@ public class DoubleAssert extends AbstractDoubleAssert implements ConfigurationA
     @Override
     public AbstractDoubleAssert configure(Formattable formattable) {
         info.configure(formattable);
-        return this;
+        return self;
     }
 }

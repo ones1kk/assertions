@@ -28,7 +28,7 @@ public class IntegerAssert extends AbstractIntegerAssert implements Configuratio
     @Override
     public AbstractIntegerAssert configure(Formattable formattable) {
         info.configure(formattable);
-        return this;
+        return self;
     }
 
 }

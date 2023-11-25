@@ -13,24 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.charsequence;
+
+package io.github.ones1kk.assertion.core.time.localdate;
 
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 import io.github.ones1kk.assertion.core.lang.object.ObjectsAssertion;
 
-/**
- * <strong> The CharSequencesAssertion class is for a having CharSequence Type, assertable assertion implementation class.</strong>
- */
-public interface CharSequencesAssertion<ACTUAL> extends ObjectsAssertion<ACTUAL> {
+import java.time.LocalDate;
 
-    void assertEmpty(AssertionsInfo info, ACTUAL actual);
+public interface LocalDatesAssertion extends ObjectsAssertion<LocalDate> {
 
-    void assertNotEmpty(AssertionsInfo info, ACTUAL actual);
+    void assertBefore(AssertionsInfo info, LocalDate actual, LocalDate expected);
 
-    void assertBlank(AssertionsInfo info, ACTUAL actual);
+    void assertBeforeOrEqualTo(AssertionsInfo info, LocalDate actual, LocalDate expected);
 
-    void assertNotBlank(AssertionsInfo info, ACTUAL actual);
+    void assertAfter(AssertionsInfo info, LocalDate actual, LocalDate expected);
 
-    void assertEqualToIgnoreCase(AssertionsInfo info, ACTUAL actual, ACTUAL expected);
-
+    void assertAfterOrEqualTo(AssertionsInfo info, LocalDate actual, LocalDate expected);
 }

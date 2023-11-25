@@ -13,19 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.number.floats;
+package io.github.ones1kk.assertion.core.net;
 
 import io.github.ones1kk.assertion.core.ConfigurationAsserts;
 import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 
-public class FloatAssert extends AbstractFloatAssert implements ConfigurationAsserts<AbstractFloatAssert, Formattable> {
+import java.net.URL;
 
-    public FloatAssert(Float actual) {
-        super(AbstractFloatAssert.class, actual);
+public class UrlAssert extends AbstractUrlAssert implements ConfigurationAsserts<AbstractUrlAssert, Formattable> {
+
+    public UrlAssert(URL actual) {
+        super(AbstractUrlAssert.class, actual);
     }
 
     @Override
-    public AbstractFloatAssert configure(Formattable formattable) {
+    public AbstractUrlAssert configure(Formattable formattable) {
         info.configure(formattable);
         return self;
     }

@@ -15,9 +15,11 @@
  */
 package io.github.ones1kk.assertion.core;
 
+import io.github.ones1kk.assertion.core.io.FileAssert;
 import io.github.ones1kk.assertion.core.lang.booleans.BooleanAssert;
 import io.github.ones1kk.assertion.core.lang.character.CharacterAssert;
 import io.github.ones1kk.assertion.core.lang.charsequence.CharSequenceAssert;
+import io.github.ones1kk.assertion.core.lang.clazz.ClassAssert;
 import io.github.ones1kk.assertion.core.lang.number.bytes.ByteAssert;
 import io.github.ones1kk.assertion.core.lang.number.doubles.DoubleAssert;
 import io.github.ones1kk.assertion.core.lang.number.floats.FloatAssert;
@@ -25,6 +27,14 @@ import io.github.ones1kk.assertion.core.lang.number.integers.IntegerAssert;
 import io.github.ones1kk.assertion.core.lang.number.longs.LongAssert;
 import io.github.ones1kk.assertion.core.lang.object.ObjectAssert;
 import io.github.ones1kk.assertion.core.lang.string.StringAssert;
+import io.github.ones1kk.assertion.core.net.UrlAssert;
+import io.github.ones1kk.assertion.core.time.localdate.LocalDateAssert;
+import io.github.ones1kk.assertion.core.time.localdatetime.LocalDateTimeAssert;
+
+import java.io.File;
+import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * <strong> Assertions is an library that can verify jdk type of value in a chaining method.</strong>
@@ -33,7 +43,7 @@ import io.github.ones1kk.assertion.core.lang.string.StringAssert;
  *
  * @see <a href="https://assertj.github.io/doc/">AssertJ API document</a>
  */
-public class Asserts {
+public final class Asserts {
 
     /**
      * For the stable operation of the library, construct is limited to private.
@@ -78,6 +88,26 @@ public class Asserts {
     }
 
     public static BooleanAssert that(Boolean actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static ClassAssert that(Class<?> actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static UrlAssert that(URL actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static FileAssert that(File actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static LocalDateAssert that(LocalDate actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static LocalDateTimeAssert that(LocalDateTime actual) {
         return AssertsForType.that(actual);
     }
 

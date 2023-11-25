@@ -27,6 +27,6 @@ public class ClassAssert extends AbstractClassAssert implements ConfigurationAss
     @Override
     public AbstractClassAssert configure(Formattable formattable) {
         info.configure(formattable);
-        return this;
+        return self;
     }
 }

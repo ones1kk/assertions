@@ -43,7 +43,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
     public AbstractDoubleAssert isInfinite() {
         objects.assertNotNull(info, actual);
         doubles.assertInfinite(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -55,7 +55,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
     public AbstractDoubleAssert isFinite() {
         objects.assertNotNull(info, actual);
         doubles.assertFinite(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -67,7 +67,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
     public AbstractDoubleAssert isNaN() {
         objects.assertNotNull(info, actual);
         doubles.assertNaN(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -79,7 +79,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
     public AbstractDoubleAssert isPositive() {
         objects.assertNotNull(info, actual);
         doubles.assertPositive(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -91,7 +91,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
     public AbstractDoubleAssert isNotPositive() {
         objects.assertNotNull(info, actual);
         doubles.assertNotPositive(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -103,7 +103,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
     public AbstractDoubleAssert isNegative() {
         objects.assertNotNull(info, actual);
         doubles.assertNegative(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -115,7 +115,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
     public AbstractDoubleAssert isNotNegative() {
         objects.assertNotNull(info, actual);
         doubles.assertNotNegative(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -127,7 +127,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
     public AbstractDoubleAssert isZero() {
         objects.assertNotNull(info, actual);
         doubles.assertZero(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -139,7 +139,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
     public AbstractDoubleAssert isNotZero() {
         objects.assertNotNull(info, actual);
         doubles.assertNotZero(info, actual);
-        return this;
+        return self;
     }
 
     /**
@@ -153,7 +153,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
     public AbstractDoubleAssert isCloseTo(Double expected, Offset<Double> offset) {
         objects.assertNotNull(info, actual);
         doubles.assertCloseTo(info, actual, expected, offset);
-        return this;
+        return self;
     }
 
     /**
@@ -168,7 +168,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         doubles.assertCloseTo(info, actual, expected, Percentage.of(percentage));
-        return this;
+        return self;
     }
 
     /**
@@ -183,7 +183,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         doubles.assertNotCloseTo(info, actual, expected, offset);
-        return this;
+        return self;
     }
 
     /**
@@ -198,7 +198,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         doubles.assertNotCloseTo(info, actual, expected, Percentage.of(percentage));
-        return this;
+        return self;
     }
 
     /**
@@ -212,7 +212,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         doubles.assertLessThan(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -226,7 +226,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         doubles.assertLessThanOrEqualTo(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -240,7 +240,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         doubles.assertGreaterThan(info, actual, expected);
-        return this;
+        return self;
     }
 
 
@@ -255,7 +255,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
         objects.assertNotNull(info, actual);
         objects.assertNotNull(info, expected);
         doubles.assertGreaterThanOrEqualTo(info, actual, expected);
-        return this;
+        return self;
     }
 
     /**
@@ -271,7 +271,7 @@ public abstract class AbstractDoubleAssert extends AbstractObjectAssert<Abstract
         objects.assertNotNull(info, start);
         objects.assertNotNull(info, end);
         doubles.assertBetween(info, actual, start, end);
-        return this;
+        return self;
     }
 
 }

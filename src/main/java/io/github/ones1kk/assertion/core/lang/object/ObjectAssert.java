@@ -27,7 +27,7 @@ public class ObjectAssert extends AbstractObjectAssert<ObjectAssert, Object> imp
     @Override
     public ObjectAssert configure(Formattable formattable) {
         info.configure(formattable);
-        return this;
+        return self;
     }
 
 }

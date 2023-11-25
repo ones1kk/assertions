@@ -13,20 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.number.floats;
 
-import io.github.ones1kk.assertion.core.ConfigurationAsserts;
-import io.github.ones1kk.assertion.core.description.formatter.Formattable;
+package io.github.ones1kk.assertion.core.time.temporal;
 
-public class FloatAssert extends AbstractFloatAssert implements ConfigurationAsserts<AbstractFloatAssert, Formattable> {
+import java.time.temporal.TemporalAccessor;
 
-    public FloatAssert(Float actual) {
-        super(AbstractFloatAssert.class, actual);
-    }
+public interface TemporalAccessorsAssertion<ELEMENT extends TemporalAccessor> {
 
-    @Override
-    public AbstractFloatAssert configure(Formattable formattable) {
-        info.configure(formattable);
-        return self;
-    }
+    void assertIsBefore(ELEMENT actual, ELEMENT expected);
+
+    void assertIsBeforeOrEqualTo(ELEMENT actual, ELEMENT expected);
+
+    void assertIsAfter(ELEMENT actual, ELEMENT expected);
+
+    void assertIsAfterOrEqualTo(ELEMENT actual, ELEMENT expected);
 }

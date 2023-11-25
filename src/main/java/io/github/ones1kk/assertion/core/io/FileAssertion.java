@@ -13,20 +13,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ones1kk.assertion.core.lang.number.floats;
+package io.github.ones1kk.assertion.core.io;
 
-import io.github.ones1kk.assertion.core.ConfigurationAsserts;
-import io.github.ones1kk.assertion.core.description.formatter.Formattable;
+public interface FileAssertion<SELF> {
 
-public class FloatAssert extends AbstractFloatAssert implements ConfigurationAsserts<AbstractFloatAssert, Formattable> {
+    SELF exists();
 
-    public FloatAssert(Float actual) {
-        super(AbstractFloatAssert.class, actual);
-    }
+    SELF isFile();
 
-    @Override
-    public AbstractFloatAssert configure(Formattable formattable) {
-        info.configure(formattable);
-        return self;
-    }
+    SELF isNotFile();
+
+    SELF isDirectory();
+
+    SELF isNotDirectory();
+
+    SELF isHidden();
+
+    SELF isNotHidden();
+
+    SELF canRead();
+
+    SELF canNotRead();
+
+    SELF canWrite();
+
+    SELF canNotWrite();
+
+    SELF canExecute();
+
+    SELF canNotExecute();
+
+    SELF hasExtension(String extension);
+
+    SELF doesNotHaveExtension(String extension);
 }
