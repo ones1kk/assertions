@@ -15,20 +15,20 @@
  */
 package io.github.ones1kk.assertion.core.net;
 
+import io.github.ones1kk.assertion.core.AbstractAssert;
 import io.github.ones1kk.assertion.core.lang.number.DivisiblesAssertion;
 import io.github.ones1kk.assertion.core.lang.number.integers.Integers;
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 import io.github.ones1kk.assertion.core.lang.string.Strings;
 import io.github.ones1kk.assertion.core.lang.string.StringsAssertion;
 
 import java.net.URL;
 
 /**
- * <strong> The AbstractUrlAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <strong> The AbstractUrlAssert class inherits {@link AbstractAssert}</strong>
  * <br>
  * <p> This is that implements the assertion method of the URL type and verify assertion.</p>
  */
-public abstract class AbstractUrlAssert extends AbstractObjectAssert<AbstractUrlAssert, URL> implements UrlAssertion<AbstractUrlAssert> {
+public abstract class AbstractUrlAssert extends AbstractAssert<AbstractUrlAssert, URL> implements UrlAssertion<AbstractUrlAssert> {
 
     private final UrlsAssertion urls;
 

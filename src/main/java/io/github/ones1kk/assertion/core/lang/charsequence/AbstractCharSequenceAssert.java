@@ -15,16 +15,16 @@
  */
 package io.github.ones1kk.assertion.core.lang.charsequence;
 
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+import io.github.ones1kk.assertion.core.AbstractAssert;
 
 /**
- * <strong> The AbstractCharSequenceAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <strong> The AbstractCharSequenceAssert class inherits {@link AbstractAssert}</strong>
  * <br>
  * <p> This is that implements the assertion method of the CharSequence type and verify assertion.</p>
  *
  * @param <ACTUAL> {@code actual}.
  */
-public abstract class AbstractCharSequenceAssert<SELF extends AbstractCharSequenceAssert<SELF, ACTUAL>, ACTUAL extends CharSequence> extends AbstractObjectAssert<SELF, ACTUAL> implements CharSequenceAssertion<AbstractCharSequenceAssert<SELF, ACTUAL>, ACTUAL> {
+public abstract class AbstractCharSequenceAssert<SELF extends AbstractCharSequenceAssert<SELF, ACTUAL>, ACTUAL extends CharSequence> extends AbstractAssert<SELF, ACTUAL> implements CharSequenceAssertion<AbstractCharSequenceAssert<SELF, ACTUAL>, ACTUAL> {
 
     private final CharSequencesAssertion<ACTUAL> charSequences;
 

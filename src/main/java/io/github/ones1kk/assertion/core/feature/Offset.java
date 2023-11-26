@@ -16,6 +16,8 @@
 
 package io.github.ones1kk.assertion.core.feature;
 
+import io.github.ones1kk.assertion.core.Asserts;
+
 /**
  * <strong> The Offset class receives the offset of the Number class as input. </strong>
  * <br>
@@ -28,12 +30,12 @@ public class Offset<T extends Number> {
     private final T value;
 
     private Offset(T value) {
-//        Asserts.that(value)
-//                .as("The offset value cannot be null.")
-//                .isNotNull();
-//        Asserts.that(value.doubleValue())
-//                .as("The offset value should be greater than or equal to zero.")
-//                .isGreaterThanOrEqualTo(0.0);
+        Asserts.that(value)
+                .as("The offset value cannot be null.")
+                .isNotNull();
+        Asserts.that(value.doubleValue())
+                .as("The offset value should be greater than or equal to zero.")
+                .isGreaterThanOrEqualTo(0.0);
         this.value = value;
     }
 
@@ -53,12 +55,12 @@ public class Offset<T extends Number> {
      * @return expected is in offset or not.
      */
     public boolean isOffset(T actual, T expected) {
-//        Asserts.that(expected)
-//                .as("expected cannot be null.")
-//                .isNotNull();
-//        Asserts.that(expected.doubleValue())
-//                .as("Negative numbers cannot be compared.")
-//                .isPositive();
+        Asserts.that(expected)
+                .as("expected cannot be null.")
+                .isNotNull();
+        Asserts.that(expected.doubleValue())
+                .as("Negative numbers cannot be compared.")
+                .isPositive();
         return isAfter(getBefore(actual), expected.doubleValue()) &&
                 isBefore(getAfter(actual), expected.doubleValue());
     }

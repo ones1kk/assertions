@@ -17,7 +17,7 @@ package io.github.ones1kk.assertion.core.lang.number;
 
 import io.github.ones1kk.assertion.core.feature.Offset;
 import io.github.ones1kk.assertion.core.feature.Percentage;
-import io.github.ones1kk.assertion.core.feature.compare.ComparableAssertion;
+import io.github.ones1kk.assertion.core.feature.comparable.ComparableAssertion;
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 import io.github.ones1kk.assertion.core.lang.object.ObjectsAssertion;
 

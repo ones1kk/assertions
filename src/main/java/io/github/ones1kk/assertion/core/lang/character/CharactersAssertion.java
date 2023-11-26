@@ -15,7 +15,7 @@
  */
 package io.github.ones1kk.assertion.core.lang.character;
 
-import io.github.ones1kk.assertion.core.feature.compare.ComparableAssertion;
+import io.github.ones1kk.assertion.core.feature.comparable.ComparableAssertion;
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 
 public interface CharactersAssertion extends ComparableAssertion<Character> {

@@ -15,14 +15,14 @@
  */
 package io.github.ones1kk.assertion.core.lang.booleans;
 
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+import io.github.ones1kk.assertion.core.AbstractAssert;
 
 /**
- * <strong> The AbstractBooleanAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <strong> The AbstractBooleanAssert class inherits {@link AbstractAssert}</strong>
  * <br>
  * <p> This is that implements the assertion method of the Boolean type and verify assertion.</p>
  */
-public abstract class AbstractBooleanAssert extends AbstractObjectAssert<AbstractBooleanAssert, Boolean> implements BooleanAssertion<AbstractBooleanAssert> {
+public abstract class AbstractBooleanAssert extends AbstractAssert<AbstractBooleanAssert, Boolean> implements BooleanAssertion<AbstractBooleanAssert> {
 
     private final BooleansAssertion booleans;
 

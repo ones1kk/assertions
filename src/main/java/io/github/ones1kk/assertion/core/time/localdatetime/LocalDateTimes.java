@@ -16,20 +16,22 @@
 
 package io.github.ones1kk.assertion.core.time.localdatetime;
 
-import io.github.ones1kk.assertion.core.feature.compare.temporal.ComparableTemporal;
-import io.github.ones1kk.assertion.core.feature.compare.temporal.LocalDateTimeComparable;
+import io.github.ones1kk.assertion.core.feature.comparable.temporal.ComparableTemporalAccessor;
+import io.github.ones1kk.assertion.core.feature.comparable.temporal.LocalDateTimeComparable;
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 import io.github.ones1kk.assertion.core.lang.object.Objects;
 import io.github.ones1kk.assertion.core.message.TemporalErrorMessage;
+import io.github.ones1kk.assertion.core.message.YearErrorMessage;
 
 import java.time.LocalDateTime;
+import java.time.Year;
 
 /**
  * <strong> The LocalDateTimes class inherits {@link Objects} </strong>
  */
 public final class LocalDateTimes extends Objects<LocalDateTime> implements LocalDateTimesAssertions {
 
-    private final ComparableTemporal<LocalDateTime> comparable = new LocalDateTimeComparable<>();
+    private final ComparableTemporalAccessor<LocalDateTime> comparable = new LocalDateTimeComparable<>();
 
     /**
      * assert {@code actual} is before than {@code expected}.
@@ -67,7 +69,7 @@ public final class LocalDateTimes extends Objects<LocalDateTime> implements Loca
      * @param expected expected
      */
     @Override
-    public void assertIsAfter(AssertionsInfo info, LocalDateTime actual, LocalDateTime expected) {
+    public void assertAfter(AssertionsInfo info, LocalDateTime actual, LocalDateTime expected) {
         if (comparable.isBeforeOrEqualTo(actual, expected)) {
             throw failures.failure(info, TemporalErrorMessage.shouldBeAfter(actual, expected));
         }
@@ -81,9 +83,35 @@ public final class LocalDateTimes extends Objects<LocalDateTime> implements Loca
      * @param expected expected
      */
     @Override
-    public void assertIsAfterOrEqualTo(AssertionsInfo info, LocalDateTime actual, LocalDateTime expected) {
+    public void assertAfterOrEqualTo(AssertionsInfo info, LocalDateTime actual, LocalDateTime expected) {
         if (comparable.isBefore(actual, expected)) {
             throw failures.failure(info, TemporalErrorMessage.shouldBeAfterOrEqualTo(actual, expected));
+        }
+    }
+
+    /**
+     * assert {@code actual} is leap year.
+     *
+     * @param info   {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
+     * @param actual actual
+     */
+    @Override
+    public void assertLeapYear(AssertionsInfo info, LocalDateTime actual) {
+        if (!Year.of(actual.getYear()).isLeap()) {
+            throw failures.failure(info, YearErrorMessage.shouldBeLeapYear(actual));
+        }
+    }
+
+    /**
+     * assert {@code actual} is not leap year.
+     *
+     * @param info   {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
+     * @param actual actual
+     */
+    @Override
+    public void assertNotLeapYear(AssertionsInfo info, LocalDateTime actual) {
+        if (Year.of(actual.getYear()).isLeap()) {
+            throw failures.failure(info, YearErrorMessage.shouldNotBeLeapYear(actual));
         }
     }
 }

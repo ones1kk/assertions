@@ -15,6 +15,10 @@
  */
 package io.github.ones1kk.assertion.core;
 
+import io.github.ones1kk.assertion.core.array.ArrayAssert;
+import io.github.ones1kk.assertion.core.array.number.NumberArrayAssert;
+import io.github.ones1kk.assertion.core.collection.CollectionAssert;
+import io.github.ones1kk.assertion.core.collection.map.MapAssert;
 import io.github.ones1kk.assertion.core.io.FileAssert;
 import io.github.ones1kk.assertion.core.lang.booleans.BooleanAssert;
 import io.github.ones1kk.assertion.core.lang.character.CharacterAssert;
@@ -30,11 +34,16 @@ import io.github.ones1kk.assertion.core.lang.string.StringAssert;
 import io.github.ones1kk.assertion.core.net.UrlAssert;
 import io.github.ones1kk.assertion.core.time.localdate.LocalDateAssert;
 import io.github.ones1kk.assertion.core.time.localdatetime.LocalDateTimeAssert;
+import io.github.ones1kk.assertion.core.time.month.MonthAssert;
+import io.github.ones1kk.assertion.core.time.monthday.MonthDayAssert;
+import io.github.ones1kk.assertion.core.time.time.LocalTimeAssert;
+import io.github.ones1kk.assertion.core.time.year.YearAssert;
 
 import java.io.File;
 import java.net.URL;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.*;
+import java.util.Collection;
+import java.util.Map;
 
 /**
  * <strong> Assertions is an library that can verify jdk type of value in a chaining method.</strong>
@@ -110,5 +119,38 @@ public final class Asserts {
     public static LocalDateTimeAssert that(LocalDateTime actual) {
         return AssertsForType.that(actual);
     }
+
+    public static MonthAssert that(Month actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static MonthDayAssert that(MonthDay actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static LocalTimeAssert that(LocalTime actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static YearAssert that(Year actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static ArrayAssert<?> that(Object[] actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static NumberArrayAssert that(Number[] actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static CollectionAssert<?> that(Collection<?> actual) {
+        return AssertsForType.that(actual);
+    }
+
+    public static MapAssert<?, ?, ?> that(Map<?, ?> actual) {
+        return AssertsForType.that(actual);
+    }
+
 
 }

@@ -15,17 +15,17 @@
  */
 package io.github.ones1kk.assertion.core.lang.number.floats;
 
+import io.github.ones1kk.assertion.core.AbstractAssert;
 import io.github.ones1kk.assertion.core.feature.Offset;
 import io.github.ones1kk.assertion.core.feature.Percentage;
-import io.github.ones1kk.assertion.core.feature.compare.Comparable;
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+import io.github.ones1kk.assertion.core.feature.comparable.Comparable;
 
 /**
- * <strong> The AbstractFloatAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <strong> The AbstractFloatAssert class inherits {@link AbstractAssert}</strong>
  * <br>
  * <p> This is that implements the assertion method of the Float type and verify assertion.</p>
  */
-public abstract class AbstractFloatAssert extends AbstractObjectAssert<AbstractFloatAssert, Float> implements FloatAssertion<AbstractFloatAssert, Float>, Comparable<AbstractFloatAssert, Float> {
+public abstract class AbstractFloatAssert extends AbstractAssert<AbstractFloatAssert, Float> implements FloatAssertion<AbstractFloatAssert, Float>, Comparable<AbstractFloatAssert, Float> {
 
     FloatsAssertion<Float> floats;
 

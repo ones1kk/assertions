@@ -15,17 +15,16 @@
  */
 package io.github.ones1kk.assertion.core.lang.character;
 
-import io.github.ones1kk.assertion.core.feature.compare.lang.ComparableLanguage;
-import io.github.ones1kk.assertion.core.feature.compare.lang.impl.ComparableLanguageImpl;
+import io.github.ones1kk.assertion.core.feature.comparable.lang.ComparableLanguage;
+import io.github.ones1kk.assertion.core.feature.comparable.lang.ComparableLanguageImpl;
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 import io.github.ones1kk.assertion.core.info.ErrorMessageInfo;
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 import io.github.ones1kk.assertion.core.lang.object.Objects;
 import io.github.ones1kk.assertion.core.message.CharacterErrorMessage;
 import io.github.ones1kk.assertion.core.message.ComparableErrorMessage;
 
 /**
- * <strong> The Characters class inherits {@link AbstractObjectAssert} </strong>
+ * <strong> The Characters class inherits {@link AbstractAssert} </strong>
  */
 public class Characters extends Objects<Character> implements CharactersAssertion {
 

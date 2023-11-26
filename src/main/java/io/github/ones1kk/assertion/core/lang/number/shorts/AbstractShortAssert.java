@@ -15,18 +15,18 @@
  */
 package io.github.ones1kk.assertion.core.lang.number.shorts;
 
+import io.github.ones1kk.assertion.core.AbstractAssert;
 import io.github.ones1kk.assertion.core.feature.Offset;
 import io.github.ones1kk.assertion.core.feature.Percentage;
-import io.github.ones1kk.assertion.core.feature.compare.Comparable;
+import io.github.ones1kk.assertion.core.feature.comparable.Comparable;
 import io.github.ones1kk.assertion.core.lang.number.DivisiblesAssertion;
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 
 /**
- * <strong> The AbstractShortAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <strong> The AbstractShortAssert class inherits {@link AbstractAssert}</strong>
  * <br>
  * <p> This is that implements the assertion method of the Short type and verify assertion.</p>
  */
-public abstract class AbstractShortAssert extends AbstractObjectAssert<AbstractShortAssert, Short> implements ShortAssertion<AbstractShortAssert, Short>, Comparable<AbstractShortAssert, Short> {
+public abstract class AbstractShortAssert extends AbstractAssert<AbstractShortAssert, Short> implements ShortAssertion<AbstractShortAssert, Short>, Comparable<AbstractShortAssert, Short> {
 
     private final DivisiblesAssertion<Short> shorts;
 

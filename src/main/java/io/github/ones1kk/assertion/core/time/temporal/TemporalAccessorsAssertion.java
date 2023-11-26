@@ -16,15 +16,17 @@
 
 package io.github.ones1kk.assertion.core.time.temporal;
 
+import io.github.ones1kk.assertion.core.info.AssertionsInfo;
+
 import java.time.temporal.TemporalAccessor;
 
 public interface TemporalAccessorsAssertion<ELEMENT extends TemporalAccessor> {
 
-    void assertIsBefore(ELEMENT actual, ELEMENT expected);
+    void assertBefore(AssertionsInfo info, ELEMENT actual, ELEMENT expected);
 
-    void assertIsBeforeOrEqualTo(ELEMENT actual, ELEMENT expected);
+    void assertBeforeOrEqualTo(AssertionsInfo info, ELEMENT actual, ELEMENT expected);
 
-    void assertIsAfter(ELEMENT actual, ELEMENT expected);
+    void assertAfter(AssertionsInfo info, ELEMENT actual, ELEMENT expected);
 
-    void assertIsAfterOrEqualTo(ELEMENT actual, ELEMENT expected);
+    void assertAfterOrEqualTo(AssertionsInfo info, ELEMENT actual, ELEMENT expected);
 }

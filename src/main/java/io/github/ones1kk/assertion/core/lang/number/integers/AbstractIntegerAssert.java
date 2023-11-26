@@ -15,18 +15,18 @@
  */
 package io.github.ones1kk.assertion.core.lang.number.integers;
 
+import io.github.ones1kk.assertion.core.AbstractAssert;
 import io.github.ones1kk.assertion.core.feature.Offset;
 import io.github.ones1kk.assertion.core.feature.Percentage;
-import io.github.ones1kk.assertion.core.feature.compare.Comparable;
+import io.github.ones1kk.assertion.core.feature.comparable.Comparable;
 import io.github.ones1kk.assertion.core.lang.number.DivisiblesAssertion;
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 
 /**
- * <strong> The AbstractIntegerAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <strong> The AbstractIntegerAssert class inherits {@link AbstractAssert}</strong>
  * <br>
  * <p> This is that implements the assertion method of the Integer type and verify assertion.</p>
  */
-public abstract class AbstractIntegerAssert extends AbstractObjectAssert<AbstractIntegerAssert, Integer> implements IntegerAssertion<AbstractIntegerAssert, Integer>, Comparable<AbstractIntegerAssert, Integer> {
+public abstract class AbstractIntegerAssert extends AbstractAssert<AbstractIntegerAssert, Integer> implements IntegerAssertion<AbstractIntegerAssert, Integer>, Comparable<AbstractIntegerAssert, Integer> {
 
     private final DivisiblesAssertion<Integer> integers;
 

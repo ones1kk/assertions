@@ -15,18 +15,18 @@
  */
 package io.github.ones1kk.assertion.core.lang.number.longs;
 
+import io.github.ones1kk.assertion.core.AbstractAssert;
 import io.github.ones1kk.assertion.core.feature.Offset;
 import io.github.ones1kk.assertion.core.feature.Percentage;
-import io.github.ones1kk.assertion.core.feature.compare.Comparable;
+import io.github.ones1kk.assertion.core.feature.comparable.Comparable;
 import io.github.ones1kk.assertion.core.lang.number.DivisiblesAssertion;
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 
 /**
- * <strong> The AbstractLongAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <strong> The AbstractLongAssert class inherits {@link AbstractAssert}</strong>
  * <br>
  * <p> This is that implements the assertion method of the Long type and verify assertion.</p>
  */
-public abstract class AbstractLongAssert extends AbstractObjectAssert<AbstractLongAssert, Long> implements LongAssertion<AbstractLongAssert, Long>, Comparable<AbstractLongAssert, Long> {
+public abstract class AbstractLongAssert extends AbstractAssert<AbstractLongAssert, Long> implements LongAssertion<AbstractLongAssert, Long>, Comparable<AbstractLongAssert, Long> {
 
     private final DivisiblesAssertion<Long> longs;
 

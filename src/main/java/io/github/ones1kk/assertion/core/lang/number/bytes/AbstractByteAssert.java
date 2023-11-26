@@ -15,18 +15,18 @@
  */
 package io.github.ones1kk.assertion.core.lang.number.bytes;
 
+import io.github.ones1kk.assertion.core.AbstractAssert;
 import io.github.ones1kk.assertion.core.feature.Offset;
 import io.github.ones1kk.assertion.core.feature.Percentage;
-import io.github.ones1kk.assertion.core.feature.compare.Comparable;
+import io.github.ones1kk.assertion.core.feature.comparable.Comparable;
 import io.github.ones1kk.assertion.core.lang.number.DivisiblesAssertion;
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 
 /**
- * <strong> The AbstractByteAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <strong> The AbstractByteAssert class inherits {@link AbstractAssert}</strong>
  * <br>
  * <p> This is that implements the assertion method of the Byte type and verify assertion.</p>
  */
-public abstract class AbstractByteAssert extends AbstractObjectAssert<AbstractByteAssert, Byte> implements ByteAssertion<AbstractByteAssert, Byte>, Comparable<AbstractByteAssert, Byte> {
+public abstract class AbstractByteAssert extends AbstractAssert<AbstractByteAssert, Byte> implements ByteAssertion<AbstractByteAssert, Byte>, Comparable<AbstractByteAssert, Byte> {
 
     private final DivisiblesAssertion<Byte> bytes;
 

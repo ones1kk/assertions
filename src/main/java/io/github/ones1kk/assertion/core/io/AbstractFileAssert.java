@@ -15,17 +15,18 @@
  */
 package io.github.ones1kk.assertion.core.io;
 
-import io.github.ones1kk.assertion.core.feature.compare.Measurable;
+import io.github.ones1kk.assertion.core.AbstractAssert;
+import io.github.ones1kk.assertion.core.feature.comparable.Measurable;
 import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
 
 import java.io.File;
 
 /**
- * <strong> The AbstractShortAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <strong> The AbstractShortAssert class inherits {@link AbstractAssert}</strong>
  * <br>
  * <p> This is that implements the assertion method of the File type and verify assertion.</p>
  */
-public class AbstractFileAssert extends AbstractObjectAssert<AbstractFileAssert, File> implements FileAssertion<AbstractFileAssert>, Measurable<AbstractFileAssert, File> {
+public class AbstractFileAssert extends AbstractAssert<AbstractFileAssert, File> implements FileAssertion<AbstractFileAssert>, Measurable<AbstractFileAssert, File> {
 
     private final FilesAssertion files;
 

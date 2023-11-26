@@ -15,17 +15,17 @@
  */
 package io.github.ones1kk.assertion.core.lang.number.doubles;
 
+import io.github.ones1kk.assertion.core.AbstractAssert;
 import io.github.ones1kk.assertion.core.feature.Offset;
 import io.github.ones1kk.assertion.core.feature.Percentage;
-import io.github.ones1kk.assertion.core.feature.compare.Comparable;
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+import io.github.ones1kk.assertion.core.feature.comparable.Comparable;
 
 /**
- * <strong> The AbstractDoubleAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <strong> The AbstractDoubleAssert class inherits {@link AbstractAssert}</strong>
  * <br>
  * <p> This is that implements the assertion method of the Double type and verify assertion.</p>
  */
-public abstract class AbstractDoubleAssert extends AbstractObjectAssert<AbstractDoubleAssert, Double> implements DoubleAssertion<AbstractDoubleAssert, Double>, Comparable<AbstractDoubleAssert, Double> {
+public abstract class AbstractDoubleAssert extends AbstractAssert<AbstractDoubleAssert, Double> implements DoubleAssertion<AbstractDoubleAssert, Double>, Comparable<AbstractDoubleAssert, Double> {
 
     DoublesAssertion<Double> doubles;
 

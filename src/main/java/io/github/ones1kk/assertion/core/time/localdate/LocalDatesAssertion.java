@@ -30,4 +30,8 @@ public interface LocalDatesAssertion extends ObjectsAssertion<LocalDate> {
     void assertAfter(AssertionsInfo info, LocalDate actual, LocalDate expected);
 
     void assertAfterOrEqualTo(AssertionsInfo info, LocalDate actual, LocalDate expected);
+
+    void assertLeapYear(AssertionsInfo info, LocalDate actual);
+
+    void assertNotLeapYear(AssertionsInfo info, LocalDate actual);
 }

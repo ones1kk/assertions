@@ -16,17 +16,18 @@
 
 package io.github.ones1kk.assertion.core.time.localdatetime;
 
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+import io.github.ones1kk.assertion.core.AbstractAssert;
 import io.github.ones1kk.assertion.core.time.temporal.TemporalAccessorAssertion;
+import io.github.ones1kk.assertion.core.time.year.YearAssertion;
 
 import java.time.LocalDateTime;
 
 /**
- * <strong> The AbstractLocalDateTimeAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <strong> The AbstractLocalDateTimeAssert class inherits {@link AbstractAssert}</strong>
  * <br>
  * <p> This is that implements the assertion method of the LocalDateTime type and verify assertion.</p>
  */
-public class AbstractLocalDateTimeAssert extends AbstractObjectAssert<AbstractLocalDateTimeAssert, LocalDateTime> implements TemporalAccessorAssertion<AbstractLocalDateTimeAssert, LocalDateTime> {
+public abstract class AbstractLocalDateTimeAssert extends AbstractAssert<AbstractLocalDateTimeAssert, LocalDateTime> implements TemporalAccessorAssertion<AbstractLocalDateTimeAssert, LocalDateTime>, YearAssertion<AbstractLocalDateTimeAssert> {
 
     private final LocalDateTimesAssertions localDateTimes;
 
@@ -67,7 +68,7 @@ public class AbstractLocalDateTimeAssert extends AbstractObjectAssert<AbstractLo
      */
     @Override
     public AbstractLocalDateTimeAssert isAfter(LocalDateTime expected) {
-        localDateTimes.assertIsAfter(info, actual, expected);
+        localDateTimes.assertAfter(info, actual, expected);
         return self;
     }
 
@@ -79,7 +80,29 @@ public class AbstractLocalDateTimeAssert extends AbstractObjectAssert<AbstractLo
      */
     @Override
     public AbstractLocalDateTimeAssert isAfterOrEqualTo(LocalDateTime expected) {
-        localDateTimes.assertIsAfterOrEqualTo(info, actual, expected);
+        localDateTimes.assertAfterOrEqualTo(info, actual, expected);
+        return self;
+    }
+
+    /**
+     * verify {@code actual} is leap year.
+     *
+     * @return {@code self}
+     */
+    @Override
+    public AbstractLocalDateTimeAssert isLeapYear() {
+        localDateTimes.assertLeapYear(info, actual);
+        return self;
+    }
+
+    /**
+     * verify {@code actual} is not leap year.
+     *
+     * @return {@code self}
+     */
+    @Override
+    public AbstractLocalDateTimeAssert isNotLeapYear() {
+        localDateTimes.assertNotLeapYear(info, actual);
         return self;
     }
 }

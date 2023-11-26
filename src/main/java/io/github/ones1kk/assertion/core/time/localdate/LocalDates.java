@@ -16,11 +16,12 @@
 
 package io.github.ones1kk.assertion.core.time.localdate;
 
-import io.github.ones1kk.assertion.core.feature.compare.temporal.ComparableTemporal;
-import io.github.ones1kk.assertion.core.feature.compare.temporal.LocalDateComparable;
+import io.github.ones1kk.assertion.core.feature.comparable.temporal.ComparableTemporalAccessor;
+import io.github.ones1kk.assertion.core.feature.comparable.temporal.LocalDateComparable;
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 import io.github.ones1kk.assertion.core.lang.object.Objects;
 import io.github.ones1kk.assertion.core.message.TemporalErrorMessage;
+import io.github.ones1kk.assertion.core.message.YearErrorMessage;
 
 import java.time.LocalDate;
 
@@ -29,7 +30,7 @@ import java.time.LocalDate;
  */
 public final class LocalDates extends Objects<LocalDate> implements LocalDatesAssertion {
 
-    private final ComparableTemporal<LocalDate> comparable = new LocalDateComparable<>();
+    private final ComparableTemporalAccessor<LocalDate> comparable = new LocalDateComparable<>();
 
     /**
      * assert {@code actual} is before than {@code expected}.
@@ -84,6 +85,32 @@ public final class LocalDates extends Objects<LocalDate> implements LocalDatesAs
     public void assertAfterOrEqualTo(AssertionsInfo info, LocalDate actual, LocalDate expected) {
         if (comparable.isBefore(actual, expected)) {
             throw failures.failure(info, TemporalErrorMessage.shouldBeAfterOrEqualTo(actual, expected));
+        }
+    }
+
+    /**
+     * assert {@code actual} is leap year.
+     *
+     * @param info   {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
+     * @param actual actual
+     */
+    @Override
+    public void assertLeapYear(AssertionsInfo info, LocalDate actual) {
+        if (!actual.isLeapYear()) {
+            throw failures.failure(info, YearErrorMessage.shouldBeLeapYear(actual));
+        }
+    }
+
+    /**
+     * assert {@code actual} is not leap year.
+     *
+     * @param info   {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
+     * @param actual actual
+     */
+    @Override
+    public void assertNotLeapYear(AssertionsInfo info, LocalDate actual) {
+        if (actual.isLeapYear()) {
+            throw failures.failure(info, YearErrorMessage.shouldNotBeLeapYear(actual));
         }
     }
 }

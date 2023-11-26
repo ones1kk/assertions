@@ -15,14 +15,14 @@
  */
 package io.github.ones1kk.assertion.core.lang.clazz;
 
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+import io.github.ones1kk.assertion.core.AbstractAssert;
 
 /**
- * <strong> The AbstractByteAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <strong> The AbstractByteAssert class inherits {@link AbstractAssert}</strong>
  * <br>
  * <p> This is that implements the assertion method of the class type and verify assertion.</p>
  */
-public abstract class AbstractClassAssert extends AbstractObjectAssert<AbstractClassAssert, Class<?>> implements ClassAssertion<AbstractClassAssert> {
+public abstract class AbstractClassAssert extends AbstractAssert<AbstractClassAssert, Class<?>> implements ClassAssertion<AbstractClassAssert> {
 
     private final ClassesAssertion classes;
 

@@ -15,8 +15,8 @@
  */
 package io.github.ones1kk.assertion.core.io;
 
-import io.github.ones1kk.assertion.core.feature.compare.lang.ComparableLanguage;
-import io.github.ones1kk.assertion.core.feature.compare.lang.impl.ComparableLanguageImpl;
+import io.github.ones1kk.assertion.core.feature.comparable.lang.ComparableLanguage;
+import io.github.ones1kk.assertion.core.feature.comparable.lang.ComparableLanguageImpl;
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 import io.github.ones1kk.assertion.core.lang.object.Objects;
 import io.github.ones1kk.assertion.core.message.FileErrorMessage;

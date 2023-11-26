@@ -15,6 +15,14 @@
  */
 package io.github.ones1kk.assertion.core;
 
+import io.github.ones1kk.assertion.core.array.ArrayAssert;
+import io.github.ones1kk.assertion.core.array.number.NumberArrayAssert;
+import io.github.ones1kk.assertion.core.collection.CollectionAssert;
+import io.github.ones1kk.assertion.core.collection.list.ListAssert;
+import io.github.ones1kk.assertion.core.collection.map.MapAssert;
+import io.github.ones1kk.assertion.core.collection.queue.QueueAssert;
+import io.github.ones1kk.assertion.core.collection.set.SetAssert;
+import io.github.ones1kk.assertion.core.collection.stack.StackAssert;
 import io.github.ones1kk.assertion.core.io.FileAssert;
 import io.github.ones1kk.assertion.core.lang.booleans.BooleanAssert;
 import io.github.ones1kk.assertion.core.lang.character.CharacterAssert;
@@ -30,11 +38,15 @@ import io.github.ones1kk.assertion.core.lang.string.StringAssert;
 import io.github.ones1kk.assertion.core.net.UrlAssert;
 import io.github.ones1kk.assertion.core.time.localdate.LocalDateAssert;
 import io.github.ones1kk.assertion.core.time.localdatetime.LocalDateTimeAssert;
+import io.github.ones1kk.assertion.core.time.month.MonthAssert;
+import io.github.ones1kk.assertion.core.time.monthday.MonthDayAssert;
+import io.github.ones1kk.assertion.core.time.time.LocalTimeAssert;
+import io.github.ones1kk.assertion.core.time.year.YearAssert;
 
 import java.io.File;
 import java.net.URL;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.*;
+import java.util.*;
 
 /**
  * The AssertsForType Class is for Assertions of JDK Type.
@@ -102,6 +114,55 @@ public class AssertsForType {
 
     public static LocalDateTimeAssert that(LocalDateTime actual) {
         return new LocalDateTimeAssert(actual);
+    }
+
+    public static MonthAssert that(Month actual) {
+        return new MonthAssert(actual);
+    }
+
+    public static MonthDayAssert that(MonthDay actual) {
+        return new MonthDayAssert(actual);
+    }
+
+    public static LocalTimeAssert that(LocalTime actual) {
+        return new LocalTimeAssert(actual);
+    }
+
+    public static YearAssert that(Year actual) {
+        return new YearAssert(actual);
+    }
+
+    public static ArrayAssert<?> that(Object[] actual) {
+        return new ArrayAssert<>(actual);
+    }
+
+    public static NumberArrayAssert that(Number[] actual) {
+        return new NumberArrayAssert(actual);
+    }
+
+    public static <ELEMENT> CollectionAssert<?> that(Collection<ELEMENT> actual) {
+        return new CollectionAssert<>(actual);
+    }
+
+    public static ListAssert<?> that(List<?> actual) {
+        return new ListAssert<>(actual);
+    }
+
+    public static MapAssert<?, ?, ?> that(Map<?, ?> actual) {
+        return new MapAssert<>(actual);
+    }
+
+    public static QueueAssert<?> that(Queue<?> actual) {
+        return new QueueAssert<>(actual);
+    }
+
+    public static SetAssert<?> that(Set<?> actual) {
+
+        return new SetAssert<>(actual);
+    }
+
+    public static StackAssert<?> that(Stack<?> actual) {
+        return new StackAssert<>(actual);
     }
 
 }

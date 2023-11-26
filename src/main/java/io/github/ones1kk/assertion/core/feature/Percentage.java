@@ -16,6 +16,8 @@
 
 package io.github.ones1kk.assertion.core.feature;
 
+import io.github.ones1kk.assertion.core.Asserts;
+
 /**
  * <strong> The Percentage class receives the figure of the Number class as input. </strong>
  * <br>
@@ -43,11 +45,11 @@ public final class Percentage<T extends Number> {
     private Double endingRange;
 
     private Percentage(Double value) {
-//        Asserts.that(value)
-//                .as("The percentage value cannot be null.")
-//                .isNotNull()
-//                .as("The percentage value should be greater than or equal to zero.")
-//                .isGreaterThanOrEqualTo(0.0);
+        Asserts.that(value)
+                .as("The percentage value cannot be null.")
+                .isNotNull()
+                .as("The percentage value should be greater than or equal to zero.")
+                .isGreaterThanOrEqualTo(0.0);
         this.value = value;
     }
 
@@ -67,9 +69,9 @@ public final class Percentage<T extends Number> {
      * @return expected to be within range or not.
      */
     public boolean isRange(T actual, T expected) {
-//        Asserts.that(expected.doubleValue())
-//                .as("Negative numbers cannot be compared.")
-//                .isPositive();
+        Asserts.that(expected.doubleValue())
+                .as("Negative numbers cannot be compared.")
+                .isPositive();
         setRange(actual);
         return expected.doubleValue() >= startingRange && expected.doubleValue() <= endingRange;
     }

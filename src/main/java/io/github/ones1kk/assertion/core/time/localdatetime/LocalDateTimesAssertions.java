@@ -26,7 +26,11 @@ public interface LocalDateTimesAssertions {
 
     void assertBeforeOrEqualTo(AssertionsInfo info, LocalDateTime actual, LocalDateTime expected);
 
-    void assertIsAfter(AssertionsInfo info, LocalDateTime actual, LocalDateTime expected);
+    void assertAfter(AssertionsInfo info, LocalDateTime actual, LocalDateTime expected);
 
-    void assertIsAfterOrEqualTo(AssertionsInfo info, LocalDateTime actual, LocalDateTime expected);
+    void assertAfterOrEqualTo(AssertionsInfo info, LocalDateTime actual, LocalDateTime expected);
+
+    void assertLeapYear(AssertionsInfo info, LocalDateTime actual);
+
+    void assertNotLeapYear(AssertionsInfo info, LocalDateTime actual);
 }

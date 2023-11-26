@@ -15,15 +15,15 @@
  */
 package io.github.ones1kk.assertion.core.lang.character;
 
-import io.github.ones1kk.assertion.core.feature.compare.Comparable;
-import io.github.ones1kk.assertion.core.lang.object.AbstractObjectAssert;
+import io.github.ones1kk.assertion.core.AbstractAssert;
+import io.github.ones1kk.assertion.core.feature.comparable.Comparable;
 
 /**
- * <strong> The AbstractCharacterAssert class inherits {@link AbstractObjectAssert}</strong>
+ * <strong> The AbstractCharacterAssert class inherits {@link AbstractAssert}</strong>
  * <br>
  * <p> This is that implements the assertion method of the Character type and verify assertion.</p>
  */
-public abstract class AbstractCharacterAssert extends AbstractObjectAssert<AbstractCharacterAssert, Character> implements CharacterAssertion<AbstractCharacterAssert>, Comparable<AbstractCharacterAssert, Character> {
+public abstract class AbstractCharacterAssert extends AbstractAssert<AbstractCharacterAssert, Character> implements CharacterAssertion<AbstractCharacterAssert>, Comparable<AbstractCharacterAssert, Character> {
 
     private final CharactersAssertion characters;
 
