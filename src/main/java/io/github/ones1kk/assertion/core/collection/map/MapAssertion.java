@@ -20,6 +20,7 @@ package io.github.ones1kk.assertion.core.collection.map;
 import io.github.ones1kk.assertion.core.feature.comparable.size.SizeComparableAssert;
 
 import java.util.Map;
+import java.util.function.Predicate;
 
 /**
  * <strong> The MapAssertInterface class is for a comparable, assertable, iterable interface class.</strong>
@@ -43,6 +44,6 @@ public interface MapAssertion<SELF, ACTUAL extends Map<K, V>, K, V> extends Size
 
     SELF containsAllValue(Map<?, ? extends V> expected);
 
-    SELF hasSizeOf(int expected);
+    SELF hasSize(int expected);
 
 }

@@ -29,6 +29,7 @@ import io.github.ones1kk.assertion.core.lang.number.doubles.DoubleAssert;
 import io.github.ones1kk.assertion.core.lang.number.floats.FloatAssert;
 import io.github.ones1kk.assertion.core.lang.number.integers.IntegerAssert;
 import io.github.ones1kk.assertion.core.lang.number.longs.LongAssert;
+import io.github.ones1kk.assertion.core.lang.number.shorts.ShortAssert;
 import io.github.ones1kk.assertion.core.lang.object.ObjectAssert;
 import io.github.ones1kk.assertion.core.lang.string.StringAssert;
 import io.github.ones1kk.assertion.core.net.UrlAssert;
@@ -66,6 +67,10 @@ public class AssertsForType {
 
     public static CharacterAssert that(Character actual) {
         return new CharacterAssert(actual);
+    }
+
+    public static ShortAssert that(Short actual) {
+        return new ShortAssert(actual);
     }
 
     public static IntegerAssert that(Integer actual) {

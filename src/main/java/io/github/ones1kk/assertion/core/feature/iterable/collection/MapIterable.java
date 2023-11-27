@@ -19,6 +19,7 @@ package io.github.ones1kk.assertion.core.feature.iterable.collection;
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 
 import java.util.Map;
+import java.util.function.Predicate;
 
 /**
  * <strong> The MapIterable is for {@link Map} assertion assertion to implement iterable class.</strong>

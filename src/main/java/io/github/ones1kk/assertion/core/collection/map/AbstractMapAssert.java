@@ -18,6 +18,7 @@ package io.github.ones1kk.assertion.core.collection.map;
 import io.github.ones1kk.assertion.core.AbstractAssert;
 
 import java.util.Map;
+import java.util.function.Predicate;
 
 /**
  * <strong> The AbstractMapAssert class inherits {@link AbstractAssert}</strong>
@@ -32,13 +33,14 @@ public abstract class AbstractMapAssert<ACTUAL extends Map<K, V>, K, V> extends 
 
     private final MapsAssertion<ACTUAL, K, V> maps;
 
+
     public AbstractMapAssert(Class<?> self, ACTUAL actual) {
         super(self, actual);
         this.maps = new Maps<>();
     }
 
     /**
-     * verify {@code actual} is empty or not.
+     * verify {@code actual} is empty
      *
      * @return {@code self}.
      */
@@ -49,7 +51,7 @@ public abstract class AbstractMapAssert<ACTUAL extends Map<K, V>, K, V> extends 
     }
 
     /**
-     * verify {@code actual} is not empty or not.
+     * verify {@code actual} is not empty
      *
      * @return {@code self}.
      */
@@ -71,7 +73,7 @@ public abstract class AbstractMapAssert<ACTUAL extends Map<K, V>, K, V> extends 
     }
 
     /**
-     * verify {@code actual} contains key of {@code expected} or not.
+     * verify {@code actual} contains key of {@code expected}
      *
      * @param expected {@code actual} contains {@code expected}.
      * @return {@code self}.
@@ -83,7 +85,7 @@ public abstract class AbstractMapAssert<ACTUAL extends Map<K, V>, K, V> extends 
     }
 
     /**
-     * verify {@code actual} contains all key of {@code expected} or not.
+     * verify {@code actual} contains all key of {@code expected}
      *
      * @param expected {@code actual} contains {@code expected}.
      * @return {@code self}.
@@ -95,7 +97,7 @@ public abstract class AbstractMapAssert<ACTUAL extends Map<K, V>, K, V> extends 
     }
 
     /**
-     * verify {@code actual} contains value of {@code expected} or not.
+     * verify {@code actual} contains value of {@code expected}
      *
      * @param expected {@code actual} contains {@code expected}.
      * @return {@code self}.
@@ -107,7 +109,7 @@ public abstract class AbstractMapAssert<ACTUAL extends Map<K, V>, K, V> extends 
     }
 
     /**
-     * verify {@code actual} contains all value of {@code expected} or not.
+     * verify {@code actual} contains all value of {@code expected}
      *
      * @param expected {@code actual} contains {@code expected}.
      * @return {@code self}.
@@ -119,13 +121,13 @@ public abstract class AbstractMapAssert<ACTUAL extends Map<K, V>, K, V> extends 
     }
 
     /**
-     * verify {@code actual} is equal size of {@code expected} or not.
+     * verify {@code actual} is equal size of {@code expected}
      *
      * @param expected equal size of {@code actual}.
      * @return {@code self}.
      */
     @Override
-    public AbstractMapAssert<ACTUAL, K, V> hasSizeOf(int expected) {
+    public AbstractMapAssert<ACTUAL, K, V> hasSize(int expected) {
         maps.assertHasSize(info, actual, expected);
         return self;
     }

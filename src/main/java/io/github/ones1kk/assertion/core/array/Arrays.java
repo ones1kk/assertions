@@ -42,7 +42,7 @@ public final class Arrays<ELEMENT> extends Objects<ELEMENT> implements ArraysAss
     private final ArrayComparable<ELEMENT> comparable = new ArrayComparableImpl<>();
 
     /**
-     * assert {@code actual} is empty or not.
+     * assert {@code actual} is empty
      *
      * @param info   {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
      * @param actual actual
@@ -55,7 +55,7 @@ public final class Arrays<ELEMENT> extends Objects<ELEMENT> implements ArraysAss
     }
 
     /**
-     * assert {@code actual} is not empty or not.
+     * assert {@code actual} is not empty
      *
      * @param info   {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
      * @param actual actual
@@ -81,7 +81,7 @@ public final class Arrays<ELEMENT> extends Objects<ELEMENT> implements ArraysAss
     }
 
     /**
-     * assert {@code actual} contains {@code expected} or not.
+     * assert {@code actual} contains {@code expected}
      *
      * @param info     {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
      * @param actual   actual
@@ -95,7 +95,7 @@ public final class Arrays<ELEMENT> extends Objects<ELEMENT> implements ArraysAss
     }
 
     /**
-     * assert {@code actual} does not contain {@code expected} or not.
+     * assert {@code actual} does not contain {@code expected}
      *
      * @param info     {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
      * @param actual   actual
@@ -109,7 +109,7 @@ public final class Arrays<ELEMENT> extends Objects<ELEMENT> implements ArraysAss
     }
 
     /**
-     * assert {@code actual} contains all of {@code expected} or not.
+     * assert {@code actual} contains all of {@code expected}
      *
      * @param info     {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
      * @param actual   actual
@@ -124,7 +124,7 @@ public final class Arrays<ELEMENT> extends Objects<ELEMENT> implements ArraysAss
     }
 
     /**
-     * assert {@code actual} contains any of {@code expected} or not.
+     * assert {@code actual} contains any of {@code expected}
      *
      * @param info     {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
      * @param actual   actual

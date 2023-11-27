@@ -48,11 +48,11 @@ public class Offset<T extends Number> {
     }
 
     /**
-     * Verify {@code expected} is in offset area or not.
+     * Verify {@code expected} is in offset area
      *
      * @param actual   reference value.
      * @param expected expected in offset area.
-     * @return expected is in offset or not.
+     * @return expected is in offset
      */
     public boolean isOffset(T actual, T expected) {
         Asserts.that(expected)

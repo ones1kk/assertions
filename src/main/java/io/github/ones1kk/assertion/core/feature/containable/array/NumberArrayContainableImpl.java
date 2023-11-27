@@ -84,12 +84,12 @@ public final class NumberArrayContainableImpl<ELEMENT extends Number> implements
     }
 
     /**
-     * Verify {@code expected} is max in array or not.
+     * Verify {@code expected} is max in array
      * <p> Cast to Double with the largest data size among number type.</p>
      *
      * @param actual   reference value.
      * @param expected to max in array.
-     * @return {@code expected} is max or not.
+     * @return {@code expected} is max
      */
     @Override
     public boolean isMax(Number[] actual, Number expected) {
@@ -102,12 +102,12 @@ public final class NumberArrayContainableImpl<ELEMENT extends Number> implements
     }
 
     /**
-     * Verify {@code expected} is min in array or not.
+     * Verify {@code expected} is min in array
      * <p> Cast to Double with the largest data size among number type.</p>
      *
      * @param actual   reference value.
      * @param expected to min in array.
-     * @return {@code expected} is min or not.
+     * @return {@code expected} is min
      */
     @Override
     public boolean isMin(Number[] actual, Number expected) {
@@ -120,12 +120,12 @@ public final class NumberArrayContainableImpl<ELEMENT extends Number> implements
     }
 
     /**
-     * Verify {@code expected} is sum in array or not.
+     * Verify {@code expected} is sum in array
      * <p> Cast to Double with the largest data size among number type.</p>
      *
      * @param actual   reference value.
      * @param expected to sum in array.
-     * @return {@code expected} is sum or not.
+     * @return {@code expected} is sum
      */
     @Override
     public boolean isSum(Number[] actual, Number expected) {

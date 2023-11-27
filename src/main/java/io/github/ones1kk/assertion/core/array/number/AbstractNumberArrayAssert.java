@@ -71,7 +71,7 @@ public abstract class AbstractNumberArrayAssert extends AbstractAssert<AbstractN
     }
 
     /**
-     * verify {@code actual} is empty or not.
+     * verify {@code actual} is empty
      *
      * @return {@code self}.
      */
@@ -82,7 +82,7 @@ public abstract class AbstractNumberArrayAssert extends AbstractAssert<AbstractN
     }
 
     /**
-     * verify {@code actual} is not empty or not.
+     * verify {@code actual} is not empty
      *
      * @return {@code self}.
      */
@@ -104,7 +104,7 @@ public abstract class AbstractNumberArrayAssert extends AbstractAssert<AbstractN
     }
 
     /**
-     * verify {@code actual} contains {@code expected} or not.
+     * verify {@code actual} contains {@code expected}
      *
      * @param expected {@code actual} contains {@code expected}.
      * @return {@code self}.
@@ -116,7 +116,7 @@ public abstract class AbstractNumberArrayAssert extends AbstractAssert<AbstractN
     }
 
     /**
-     * verify {@code actual} does not contain {@code expected} or not.
+     * verify {@code actual} does not contain {@code expected}
      *
      * @param expected {@code actual} does not contain {@code expected}.
      * @return {@code self}.
@@ -128,7 +128,7 @@ public abstract class AbstractNumberArrayAssert extends AbstractAssert<AbstractN
     }
 
     /**
-     * verify {@code actual} contains all of {@code expected} or not.
+     * verify {@code actual} contains all of {@code expected}
      *
      * @param expected {@code actual} contains all of {@code expected}.
      * @return {@code self}.
@@ -140,7 +140,7 @@ public abstract class AbstractNumberArrayAssert extends AbstractAssert<AbstractN
     }
 
     /**
-     * verify {@code actual} contains any of {@code expected} or not.
+     * verify {@code actual} contains any of {@code expected}
      *
      * @param expected {@code actual} contains any of {@code expected}.
      * @return {@code self}.

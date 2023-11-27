@@ -39,7 +39,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     private final MapComparable<ACTUAL, K, V> comparable = new MapComparable<>();
 
     /**
-     * assert {@code actual} is empty or not.
+     * assert {@code actual} is empty
      *
      * @param info   {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
      * @param actual actual
@@ -52,7 +52,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     }
 
     /**
-     * assert {@code actual} is not empty or not.
+     * assert {@code actual} is not empty
      *
      * @param info   {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
      * @param actual actual
@@ -80,7 +80,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     }
 
     /**
-     * assert {@code actual} contains key of {@code expected} or not.
+     * assert {@code actual} contains key of {@code expected}
      *
      * @param info     {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
      * @param actual   actual
@@ -94,7 +94,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     }
 
     /**
-     * assert {@code actual} contains all key of {@code expected} or not.
+     * assert {@code actual} contains all key of {@code expected}
      *
      * @param info     {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
      * @param actual   actual
@@ -108,7 +108,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     }
 
     /**
-     * assert {@code actual} contains value of {@code expected} or not.
+     * assert {@code actual} contains value of {@code expected}
      *
      * @param info     {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
      * @param actual   actual
@@ -122,7 +122,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     }
 
     /**
-     * assert {@code actual} contains all value of {@code expected} or not.
+     * assert {@code actual} contains all value of {@code expected}
      *
      * @param info     {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
      * @param actual   actual
@@ -136,7 +136,7 @@ public final class Maps<ACTUAL extends Map<K, V>, K, V> extends Objects<ACTUAL> 
     }
 
     /**
-     * assert {@code actual} is equal size of {@code expected} or not.
+     * assert {@code actual} is equal size of {@code expected}
      *
      * @param info     {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
      * @param actual   actual

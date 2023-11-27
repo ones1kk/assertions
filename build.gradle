@@ -33,7 +33,7 @@ dependencies {
 group = 'io.github.ones1kk'
 version = '0.0.6'
 description = 'Assertion for java programming'
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
