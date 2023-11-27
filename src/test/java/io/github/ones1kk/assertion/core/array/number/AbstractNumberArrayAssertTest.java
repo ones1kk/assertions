@@ -567,4 +567,100 @@ class AbstractNumberArrayAssertTest {
 
     }
 
+    @Nested
+    @DisplayName("test isSum()()")
+    class TestIsSum {
+
+        @Test
+        @DisplayName("test isSum()() success case")
+        void testSuccess() throws Exception {
+            // given
+            Integer[] actual = {1, 2, 3, 4};
+
+            // when
+            AbstractNumberArrayAssert asserts = new NumberArrayAssert(actual);
+
+            // then
+            assertThatNoException().isThrownBy(() -> asserts.isSum(10));
+        }
+
+        @Test
+        @DisplayName("test isSum()() fail case")
+        void testFail() throws Exception {
+            // given
+            Integer[] actual = {1, 2};
+
+            // when
+            AbstractNumberArrayAssert asserts = new NumberArrayAssert(actual);
+
+            // then
+            assertThatException().isThrownBy(() -> asserts.isSum(45));
+        }
+
+    }
+
+    @Nested
+    @DisplayName("test isMax()")
+    class TestIsMax {
+
+        @Test
+        @DisplayName("test isMax() success case")
+        void testSuccess() throws Exception {
+            // given
+            Integer[] actual = {1, 2, 3, 4};
+
+            // when
+            AbstractNumberArrayAssert asserts = new NumberArrayAssert(actual);
+
+            // then
+            assertThatNoException().isThrownBy(() -> asserts.isMax(4));
+        }
+
+        @Test
+        @DisplayName("test isMax() fail case")
+        void testFail() throws Exception {
+            // given
+            Integer[] actual = {1, 2};
+
+            // when
+            AbstractNumberArrayAssert asserts = new NumberArrayAssert(actual);
+
+            // then
+            assertThatException().isThrownBy(() -> asserts.isMax(1));
+        }
+
+    }
+
+    @Nested
+    @DisplayName("test isMin()")
+    class TestIsMin {
+
+        @Test
+        @DisplayName("test isMin() success case")
+        void testSuccess() throws Exception {
+            // given
+            Integer[] actual = {1, 2, 3, 4};
+
+            // when
+            AbstractNumberArrayAssert asserts = new NumberArrayAssert(actual);
+
+            // then
+            assertThatNoException().isThrownBy(() -> asserts.isMin(1));
+        }
+
+        @Test
+        @DisplayName("test isMin() fail case")
+        void testFail() throws Exception {
+            // given
+            Integer[] actual = {1, 2};
+
+            // when
+            AbstractNumberArrayAssert asserts = new NumberArrayAssert(actual);
+
+            // then
+            assertThatException().isThrownBy(() -> asserts.isMin(2));
+        }
+
+    }
+
 }
