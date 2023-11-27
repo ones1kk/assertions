@@ -34,16 +34,16 @@ implementation 'io.github.ones1kk:assertions:0.0.6'
 * Verifies assertions for JDK types.
 * Provides assertions in the form of method chaining.
 * Overrides error message by writing custom description.
-* Customize error message format.
+* Customizes error message format.
 
 ## Example
 
 ```java
 import java.util.Formattable;
 
-List<String> actual=List.of("1","2","3","4");
+List<String> actual = List.of("1","2","3","4");
 
-List<String> expected=List.of("1");
+List<String> expected = List.of("1");
 
 class CustomFormat implements Formattable {
     ...override methods
@@ -60,6 +60,7 @@ Asserts.that(actual)
     .containsAny("1", "2", "a")
     .as("The given 'actual' should not contain null.")
     .doesNotContainNull()
+    // if above assertions are paased, then if below assertions are failed, default error message will be printed.
     // check the given 'actual size.
     .hasSize(4)
     // The size of given 'actual' should be larger than the size of given 'expected'.
