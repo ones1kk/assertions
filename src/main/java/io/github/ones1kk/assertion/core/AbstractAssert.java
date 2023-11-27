@@ -45,12 +45,22 @@ public class AbstractAssert<SELF, ACTUAL> extends AsAsserts<SELF> implements Obj
         this.objects = new Objects<>();
     }
 
+    /**
+     * verify actual is null.
+     *
+     * @return {@code self}.
+     */
     @Override
     public SELF isNull() {
         objects.assertNull(info, actual);
         return self;
     }
 
+    /**
+     * verify actual is not null.
+     *
+     * @return {@code self}.
+     */
     @Override
     public SELF isNotNull() {
         objects.assertNotNull(info, actual);
@@ -58,9 +68,9 @@ public class AbstractAssert<SELF, ACTUAL> extends AsAsserts<SELF> implements Obj
     }
 
     /**
-     * <p> As in Java, the comparison operator compare value of hashCode. </p>
+     * verify actual is same as expected.
      *
-     * @param expected same object
+     * @param expected same instance
      * @return {@code self}.
      */
     @Override
@@ -69,6 +79,12 @@ public class AbstractAssert<SELF, ACTUAL> extends AsAsserts<SELF> implements Obj
         return self;
     }
 
+    /**
+     * verify actual is not same as expected.
+     *
+     * @param expected expected.
+     * @return {@code self}.
+     */
     @Override
     public SELF isNotSameAs(ACTUAL expected) {
         objects.assertNotSameAs(info, actual, expected);
@@ -76,7 +92,7 @@ public class AbstractAssert<SELF, ACTUAL> extends AsAsserts<SELF> implements Obj
     }
 
     /**
-     * <p> Basically as in Java, the {@link Object#equals(Object)} compare value itself. </p>
+     * verify actual is equal to expected.
      *
      * @param expected same object that have same value
      * @return {@code self}.
@@ -87,36 +103,72 @@ public class AbstractAssert<SELF, ACTUAL> extends AsAsserts<SELF> implements Obj
         return self;
     }
 
+    /**
+     * verify actual is not equal to expected.
+     *
+     * @param expected expected.
+     * @return {@code self}.
+     */
     @Override
     public SELF isNotEqualTo(ACTUAL expected) {
         objects.assertNotEqualTo(info, actual, expected);
         return self;
     }
 
+    /**
+     * verify actual is instance of expected.
+     *
+     * @param expected expected.
+     * @return {@code self}.
+     */
     @Override
     public SELF isInstanceOf(Class<?> expected) {
         objects.assertInstanceOf(info, actual, expected);
         return self;
     }
 
+    /**
+     * verify actual is not instance of expected.
+     *
+     * @param expected expected.
+     * @return {@code self}.
+     */
     @Override
     public SELF isNotInstanceOf(Class<?> expected) {
         objects.assertNotInstanceOf(info, actual, expected);
         return self;
     }
 
+    /**
+     * verify actual is satisfied predicate.
+     *
+     * @param predicate predicate.
+     * @return {@code self}.
+     */
     @Override
     public SELF is(Predicate<ACTUAL> predicate) {
         objects.assertIs(info, actual, predicate);
         return self;
     }
 
+    /**
+     * verify actual is not satisfied predicate.
+     *
+     * @param predicate predicate.
+     * @return {@code self}.
+     */
     @Override
     public SELF isNot(Predicate<ACTUAL> predicate) {
         objects.assertIsNot(info, actual, predicate);
         return self;
     }
 
+    /**
+     * verify actual is returned expected.
+     *
+     * @param function function.
+     * @return {@code self}.
+     */
     @Override
     public <T> SELF returns(T expected, Function<ACTUAL, T> function) {
         objects.assertReturns(info, actual, expected, function);
