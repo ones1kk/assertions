@@ -18,11 +18,7 @@ package io.github.ones1kk.assertion.core;
 import io.github.ones1kk.assertion.core.array.ArrayAssert;
 import io.github.ones1kk.assertion.core.array.number.NumberArrayAssert;
 import io.github.ones1kk.assertion.core.collection.CollectionAssert;
-import io.github.ones1kk.assertion.core.collection.list.ListAssert;
 import io.github.ones1kk.assertion.core.collection.map.MapAssert;
-import io.github.ones1kk.assertion.core.collection.queue.QueueAssert;
-import io.github.ones1kk.assertion.core.collection.set.SetAssert;
-import io.github.ones1kk.assertion.core.collection.stack.StackAssert;
 import io.github.ones1kk.assertion.core.io.FileAssert;
 import io.github.ones1kk.assertion.core.lang.booleans.BooleanAssert;
 import io.github.ones1kk.assertion.core.lang.character.CharacterAssert;
@@ -144,25 +140,8 @@ public class AssertsForType {
         return new CollectionAssert<>(actual);
     }
 
-    public static ListAssert<?> that(List<?> actual) {
-        return new ListAssert<>(actual);
-    }
-
     public static MapAssert<?, ?, ?> that(Map<?, ?> actual) {
         return new MapAssert<>(actual);
-    }
-
-    public static QueueAssert<?> that(Queue<?> actual) {
-        return new QueueAssert<>(actual);
-    }
-
-    public static SetAssert<?> that(Set<?> actual) {
-
-        return new SetAssert<>(actual);
-    }
-
-    public static StackAssert<?> that(Stack<?> actual) {
-        return new StackAssert<>(actual);
     }
 
 }

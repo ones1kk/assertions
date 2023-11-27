@@ -25,9 +25,9 @@ import java.util.Stack;
  * <br>
  * <p> This is that implements the assertion method of the List type and verify assertion.</p>
  */
-public abstract class AbstractStackAssert<ACTUAL extends Stack<?>> extends AbstractCollectionAssert<AbstractStackAssert<ACTUAL>, ACTUAL> {
+public abstract class AbstractStackAssert<ACTUAL> extends AbstractCollectionAssert<AbstractStackAssert<ACTUAL>, ACTUAL> {
 
-    public AbstractStackAssert(Class<?> self, ACTUAL actual) {
+    public AbstractStackAssert(Class<?> self, Stack<ACTUAL> actual) {
         super(self, actual);
     }
 

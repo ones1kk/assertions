@@ -24,9 +24,9 @@ import java.util.List;
  * <br>
  * <p> This is that implements the assertion method of the List type and verify assertion.</p>
  */
-public abstract class AbstractListAssert<ACTUAL extends List<?>> extends AbstractCollectionAssert<AbstractListAssert<ACTUAL>, ACTUAL> {
+public abstract class AbstractListAssert<ACTUAL> extends AbstractCollectionAssert<AbstractListAssert<ACTUAL>, ACTUAL> {
 
-    public AbstractListAssert(Class<?> self, ACTUAL actual) {
+    public AbstractListAssert(Class<?> self, List<ACTUAL> actual) {
         super(self, actual);
     }
 

@@ -197,6 +197,20 @@ public class Collections<ACTUAL> extends Objects<Collection<ACTUAL>> implements 
     }
 
     /**
+     * assert {@code actual} has same expected size.
+     *
+     * @param info     {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
+     * @param actual   actual
+     * @param expected expected
+     */
+    @Override
+    public void assertHasSize(AssertionsInfo info, Collection<? extends ACTUAL> actual, int expected) {
+        if(actual.size() != expected) {
+            throw failures.failure(info, IterableErrorMessage.shouldHaveSameSize(expected));
+        }
+    }
+
+    /**
      * assert {@code actual} size is smaller than {@code expected}.
      *
      * @param info     {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}

@@ -22,7 +22,7 @@ import java.util.Queue;
 
 public class QueueAssert<ELEMENT extends Queue<?>> extends AbstractQueueAssert<ELEMENT> implements ConfigurationAsserts<AbstractQueueAssert<ELEMENT>, Formattable> {
 
-    public QueueAssert(ELEMENT actual) {
+    public QueueAssert(Queue<ELEMENT> actual) {
         super(AbstractQueueAssert.class, actual);
     }
 

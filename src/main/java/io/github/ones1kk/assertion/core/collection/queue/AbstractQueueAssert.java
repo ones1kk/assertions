@@ -24,9 +24,9 @@ import java.util.Queue;
  * <br>
  * <p> This is that implements the assertion method of the List type and verify assertion.</p>
  */
-public abstract class AbstractQueueAssert<ACTUAL extends Queue<?>> extends AbstractCollectionAssert<AbstractQueueAssert<ACTUAL>, ACTUAL> {
+public abstract class AbstractQueueAssert<ACTUAL> extends AbstractCollectionAssert<AbstractQueueAssert<ACTUAL>, ACTUAL> {
 
-    public AbstractQueueAssert(Class<?> self, ACTUAL actual) {
+    public AbstractQueueAssert(Class<?> self, Queue<ACTUAL> actual) {
         super(self, actual);
     }
 

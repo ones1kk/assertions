@@ -24,9 +24,9 @@ import java.util.Set;
  * <br>
  * <p> This is that implements the assertion method of the List type and verify assertion.</p>
  */
-public abstract class AbstractSetAssert<ACTUAL extends Set<?>> extends AbstractCollectionAssert<AbstractSetAssert<ACTUAL>, ACTUAL> {
+public abstract class AbstractSetAssert<ACTUAL> extends AbstractCollectionAssert<AbstractSetAssert<ACTUAL>, ACTUAL> {
 
-    public AbstractSetAssert(Class<?> self, ACTUAL actual) {
+    public AbstractSetAssert(Class<?> self, Set<ACTUAL> actual) {
         super(self, actual);
     }
 

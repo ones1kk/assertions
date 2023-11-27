@@ -25,7 +25,7 @@ import java.util.function.Predicate;
  * <br>
  * <p> This is that implements the assertion method of the Array contains type parameters {@link Number} type and verify assertion.</p>
  */
-public class AbstractNumberArrayAssert extends AbstractAssert<AbstractNumberArrayAssert, Number[]> implements NumberArrayAssertion<AbstractNumberArrayAssert> {
+public abstract class AbstractNumberArrayAssert extends AbstractAssert<AbstractNumberArrayAssert, Number[]> implements NumberArrayAssertion<AbstractNumberArrayAssert> {
 
     private final NumberArraysAssertion<Number> numberArrays;
 

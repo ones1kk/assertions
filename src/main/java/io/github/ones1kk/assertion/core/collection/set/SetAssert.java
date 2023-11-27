@@ -20,9 +20,9 @@ import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 
 import java.util.Set;
 
-public class SetAssert<ELEMENT extends Set<?>> extends AbstractSetAssert<ELEMENT> implements ConfigurationAsserts<AbstractSetAssert<ELEMENT>, Formattable> {
+public class SetAssert<ELEMENT> extends AbstractSetAssert<ELEMENT> implements ConfigurationAsserts<AbstractSetAssert<ELEMENT>, Formattable> {
 
-    public SetAssert(ELEMENT actual) {
+    public SetAssert(Set<ELEMENT> actual) {
         super(AbstractSetAssert.class, actual);
     }
 

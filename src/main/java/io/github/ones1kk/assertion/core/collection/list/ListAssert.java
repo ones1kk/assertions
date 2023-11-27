@@ -21,9 +21,9 @@ import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 import java.util.Collection;
 import java.util.List;
 
-public class ListAssert<ELEMENT extends List<?>> extends AbstractListAssert<ELEMENT> implements ConfigurationAsserts<AbstractListAssert<ELEMENT>, Formattable> {
+public class ListAssert<ELEMENT> extends AbstractListAssert<ELEMENT> implements ConfigurationAsserts<AbstractListAssert<ELEMENT>, Formattable> {
 
-    public ListAssert(ELEMENT actual) {
+    public ListAssert(List<ELEMENT> actual) {
         super(AbstractListAssert.class, actual);
     }
 

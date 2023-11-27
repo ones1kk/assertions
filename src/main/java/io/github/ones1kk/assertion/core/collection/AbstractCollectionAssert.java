@@ -33,7 +33,7 @@ public abstract class AbstractCollectionAssert<SELF extends AbstractCollectionAs
 
     private final CollectionsAssertion<ACTUAL> collections;
 
-    public AbstractCollectionAssert(Class<?> self,  Collection<ACTUAL> actual) {
+    public AbstractCollectionAssert(Class<?> self, Collection<ACTUAL> actual) {
         super(self, actual);
         this.collections = new Collections<>();
     }
@@ -167,8 +167,15 @@ public abstract class AbstractCollectionAssert<SELF extends AbstractCollectionAs
         return self;
     }
 
+    /**
+     * verify {@code actual} has same expected size.
+     *
+     * @param expected expected size.
+     * @return {@code self}.
+     */
     @Override
     public SELF hasSize(int expected) {
+        collections.assertHasSize(info, actual, expected);
         return self;
     }
 

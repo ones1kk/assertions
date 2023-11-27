@@ -52,4 +52,6 @@ public interface CollectionIterable<ELEMENT> {
 
     void assertNoneMatch(AssertionsInfo info, Collection<? extends ELEMENT> actual, Predicate<ELEMENT> expected);
 
+    void assertHasSize(AssertionsInfo info, Collection<? extends ELEMENT> actual, int expected);
+
 }

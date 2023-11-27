@@ -179,7 +179,7 @@ public abstract class AbstractMapAssert<ACTUAL extends Map<K, V>, K, V> extends 
     }
 
     /**
-     * verify {@code actual} size is between {@code start} and {@code end}
+     * verify {@code actual} size is between {@code start} and {@code end}.
      *
      * @param start smaller than or Equal to {@code actual}
      * @param end   larger than or Equal to {@code actual}

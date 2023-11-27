@@ -20,9 +20,9 @@ import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 
 import java.util.Stack;
 
-public class StackAssert<ELEMENT extends Stack<?>> extends AbstractStackAssert<ELEMENT> implements ConfigurationAsserts<AbstractStackAssert<ELEMENT>, Formattable> {
+public class StackAssert<ELEMENT> extends AbstractStackAssert<ELEMENT> implements ConfigurationAsserts<AbstractStackAssert<ELEMENT>, Formattable> {
 
-    public StackAssert(ELEMENT actual) {
+    public StackAssert(Stack<ELEMENT> actual) {
         super(AbstractStackAssert.class, actual);
     }
 
