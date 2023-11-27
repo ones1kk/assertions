@@ -24,7 +24,7 @@ import io.github.ones1kk.assertion.core.message.CharacterErrorMessage;
 import io.github.ones1kk.assertion.core.message.ComparableErrorMessage;
 
 /**
- * <strong> The Characters class inherits {@link AbstractAssert} </strong>
+ * <strong> The Characters class inherits {@link Objects} </strong>
  */
 public class Characters extends Objects<Character> implements CharactersAssertion {
 
