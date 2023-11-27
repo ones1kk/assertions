@@ -72,6 +72,17 @@ public abstract class AbstractCollectionAssert<SELF extends AbstractCollectionAs
     }
 
     /**
+     * verify {@code actual} is not null or not empty.
+     *
+     * @return {@code self}.
+     */
+    @Override
+    public SELF isNotNullOrNotEmpty() {
+        collections.assertNotNullOrNotEmpty(info, actual);
+        return self;
+    }
+
+    /**
      * verify {@code actual} contains {@code expected}
      *
      * @param expected {@code actual} contains {@code expected}.

@@ -32,6 +32,8 @@ public interface IterableAssert<SELF, ELEMENT> {
 
     SELF isNullOrEmpty();
 
+    SELF isNotNullOrNotEmpty();
+
     SELF contains(ELEMENT expected);
 
     SELF doesNotContain(ELEMENT expected);

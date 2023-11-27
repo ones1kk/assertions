@@ -34,6 +34,8 @@ public interface CollectionIterable<ELEMENT> {
 
     void assertNullOrEmpty(AssertionsInfo info, Collection<? extends ELEMENT> actual);
 
+    void assertNotNullOrNotEmpty(AssertionsInfo info, Collection<? extends ELEMENT> actual);
+
     void assertContains(AssertionsInfo info, Collection<? extends ELEMENT> actual, ELEMENT expected);
 
     void assertDoesNotContain(AssertionsInfo info, Collection<? extends ELEMENT> actual, ELEMENT expected);

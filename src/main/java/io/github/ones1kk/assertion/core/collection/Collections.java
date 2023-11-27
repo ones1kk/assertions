@@ -80,6 +80,19 @@ public class Collections<ACTUAL> extends Objects<Collection<ACTUAL>> implements 
     }
 
     /**
+     * assert {@code actual} is not null or not empty.
+     *
+     * @param info   {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
+     * @param actual actual
+     */
+    @Override
+    public void assertNotNullOrNotEmpty(AssertionsInfo info, Collection<? extends ACTUAL> actual) {
+        if (actual == null || actual.isEmpty()) {
+            throw failures.failure(info, IterableErrorMessage.shouldBeNullOrEmpty(actual));
+        }
+    }
+
+    /**
      * assert {@code actual} contains {@code expected}
      *
      * @param info     {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
@@ -205,7 +218,7 @@ public class Collections<ACTUAL> extends Objects<Collection<ACTUAL>> implements 
      */
     @Override
     public void assertHasSize(AssertionsInfo info, Collection<? extends ACTUAL> actual, int expected) {
-        if(actual.size() != expected) {
+        if (actual.size() != expected) {
             throw failures.failure(info, IterableErrorMessage.shouldHaveSameSize(expected));
         }
     }

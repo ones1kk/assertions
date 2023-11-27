@@ -35,6 +35,10 @@ public final class IterableErrorMessage {
         return new Description("The given '{}' should not be null or empty.", actual).toString();
     }
 
+    public static String shouldBeNullOrEmpty(Object actual) {
+        return new Description("The given '{}' should be null or empty.", actual).toString();
+    }
+
     public static String shouldContain(Object actual, Object expected) {
         return new Description("The given '{}' should contain '{}'.", actual, expected).toString();
     }
