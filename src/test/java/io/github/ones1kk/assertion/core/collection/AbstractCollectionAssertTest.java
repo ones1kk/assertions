@@ -21,7 +21,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test isEmpty() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Collections.emptyList();
 
@@ -34,7 +34,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test isEmpty() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
 
@@ -53,7 +53,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test isNotEmpty() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
 
@@ -66,7 +66,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test isNotEmpty() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Collections.emptyList();
 
@@ -85,7 +85,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test isNullOrEmpty() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Collections.emptyList();
 
@@ -98,7 +98,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test isNullOrEmpty() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
 
@@ -117,7 +117,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test contains() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
 
@@ -130,7 +130,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test contains() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
 
@@ -149,7 +149,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test doesNotContain() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
 
@@ -162,7 +162,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test doesNotContain() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
 
@@ -181,7 +181,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test containsAll() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
 
@@ -189,12 +189,12 @@ class AbstractCollectionAssertTest {
             CollectionAssert<Integer> asserts = new CollectionAssert<>(actual);
 
             // then
-            assertThatNoException().isThrownBy(() -> asserts.containsAll(1 ,2 ));
+            assertThatNoException().isThrownBy(() -> asserts.containsAll(1, 2));
         }
 
         @Test
         @DisplayName("test containsAll() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
 
@@ -213,7 +213,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test containsAny() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
 
@@ -221,12 +221,12 @@ class AbstractCollectionAssertTest {
             CollectionAssert<Integer> asserts = new CollectionAssert<>(actual);
 
             // then
-            assertThatNoException().isThrownBy(() -> asserts.containsAny(1 ,2, 5 ));
+            assertThatNoException().isThrownBy(() -> asserts.containsAny(1, 2, 5));
         }
 
         @Test
         @DisplayName("test containsAny() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
 
@@ -234,7 +234,7 @@ class AbstractCollectionAssertTest {
             CollectionAssert<Integer> asserts = new CollectionAssert<>(actual);
 
             // then
-            assertThatException().isThrownBy(() -> asserts.containsAny(4 ,5 ));
+            assertThatException().isThrownBy(() -> asserts.containsAny(4, 5));
         }
 
     }
@@ -245,7 +245,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test containsNull() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3, null);
 
@@ -258,7 +258,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test containsNull() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
 
@@ -277,7 +277,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test doesNotContainNull() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
 
@@ -290,7 +290,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test doesNotContainNull() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3, null);
 
@@ -309,7 +309,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test allMatch() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
 
@@ -322,7 +322,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test allMatch() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3, null);
 
@@ -341,7 +341,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test noneMatch() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
 
@@ -354,7 +354,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test noneMatch() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3, null);
 
@@ -373,7 +373,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test hasSize() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
 
@@ -386,7 +386,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test hasSize() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3, null);
 
@@ -405,7 +405,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test isSmallerThan() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
             List<Integer> expected = Arrays.asList(1, 2, 3, 4);
@@ -419,7 +419,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test isSmallerThan() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3, null);
             List<Integer> expected = Arrays.asList(1, 2);
@@ -439,7 +439,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test isSmallerThanOrEqualTo() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3);
             List<Integer> expected = Arrays.asList(1, 2, 3, 4);
@@ -453,7 +453,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test isSmallerThanOrEqualTo() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3, null);
             List<Integer> expected = Arrays.asList(1, 2);
@@ -473,7 +473,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test isLargerThan() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3, 4);
             List<Integer> expected = Arrays.asList(1, 2, 3);
@@ -487,7 +487,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test isLargerThan() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2);
             List<Integer> expected = Arrays.asList(1, 2, 3);
@@ -507,7 +507,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test isLargerThanOrEqualTo() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3, 4);
             List<Integer> expected = Arrays.asList(1, 2, 3);
@@ -521,7 +521,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test isLargerThanOrEqualTo() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2);
             List<Integer> expected = Arrays.asList(1, 2, 3);
@@ -541,7 +541,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test isBetweenSizeOf() success case")
-        void testSuccess() throws Exception{
+        void testSuccess() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3, 4);
             List<Integer> start = Arrays.asList(1, 2, 3);
@@ -556,7 +556,7 @@ class AbstractCollectionAssertTest {
 
         @Test
         @DisplayName("test isBetweenSizeOf() fail case")
-        void testFail() throws Exception{
+        void testFail() throws Exception {
             // given
             List<Integer> actual = Arrays.asList(1, 2, 3, 4, 5, 6);
             List<Integer> start = Arrays.asList(1, 2, 3);

@@ -28,7 +28,6 @@ class PercentageTest {
 
     @Test
     @DisplayName("test create")
-    @Disabled
     public void testCreate() throws Exception {
         Double actual1 = null;
         Double actual2 = -15.5;

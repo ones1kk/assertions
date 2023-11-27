@@ -49,7 +49,6 @@ class OffsetTest {
 
         @Test
         @DisplayName("test offSet() fail case")
-        @Disabled
         public void testFail() throws Exception {
             // given
             int value1 = -123;
