@@ -51,7 +51,7 @@ class CustomFormat implements Formattable {
 
 Asserts.that(actual)
     // customize error message format by using configure method.
-    .configure(new CustomFormat)
+    .configure(new CustomFormat())
     // write custom error message by using as method .
     .as("The given 'actual' should not be empty and be null.")
     .isNotEmptyOrNull()
