@@ -70,6 +70,17 @@ public abstract class AbstractArrayAssert<ACTUAL> extends AbstractAssert<Abstrac
     }
 
     /**
+     * verify {@code actual} is not null or not empty.
+     *
+     * @return {@code self}.
+     */
+    @Override
+    public AbstractArrayAssert<ACTUAL> isNotNullOrNotEmpty() {
+        arrays.assertNotNullOrNotEmpty(info, actual);
+        return self;
+    }
+
+    /**
      * verify {@code actual} contains {@code expected}
      *
      * @param expected {@code actual} contains {@code expected}.

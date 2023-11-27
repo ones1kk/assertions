@@ -17,6 +17,7 @@
 package io.github.ones1kk.assertion.core.array.number;
 
 import io.github.ones1kk.assertion.core.AbstractAssert;
+import io.github.ones1kk.assertion.core.array.AbstractArrayAssert;
 
 import java.util.function.Predicate;
 
@@ -100,6 +101,17 @@ public abstract class AbstractNumberArrayAssert extends AbstractAssert<AbstractN
     @Override
     public AbstractNumberArrayAssert isNullOrEmpty() {
         numberArrays.assertNullOrEmpty(info, actual);
+        return self;
+    }
+
+    /**
+     * verify {@code actual} is not null or not empty.
+     *
+     * @return {@code self}.
+     */
+    @Override
+    public AbstractNumberArrayAssert isNotNullOrNotEmpty() {
+        numberArrays.assertNotNullOrNotEmpty(info, actual);
         return self;
     }
 

@@ -27,6 +27,7 @@ import io.github.ones1kk.assertion.core.message.NumberArrayErrorMessage;
 
 import java.util.function.Predicate;
 
+import static java.util.Objects.isNull;
 import static org.apache.commons.lang3.ArrayUtils.isEmpty;
 import static org.apache.commons.lang3.ArrayUtils.isNotEmpty;
 
@@ -116,6 +117,19 @@ public final class NumberArrays extends Objects<Number[]> implements NumberArray
     @Override
     public void assertNullOrEmpty(AssertionsInfo info, Number[] actual) {
         if (isNotEmpty(actual)) {
+            throw failures.failure(info, IterableErrorMessage.shouldNotBeNullOrEmpty(actual));
+        }
+    }
+
+    /**
+     * assert {@code actual} is null or empty.
+     *
+     * @param info   {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
+     * @param actual actual
+     */
+    @Override
+    public void assertNotNullOrNotEmpty(AssertionsInfo info, Number[] actual) {
+        if (isNull(actual) || isEmpty(actual)) {
             throw failures.failure(info, IterableErrorMessage.shouldNotBeNullOrEmpty(actual));
         }
     }

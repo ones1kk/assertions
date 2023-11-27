@@ -27,6 +27,7 @@ import io.github.ones1kk.assertion.core.message.LengthComparableErrorMessage;
 
 import java.util.function.Predicate;
 
+import static java.util.Objects.isNull;
 import static org.apache.commons.lang3.ArrayUtils.isEmpty;
 import static org.apache.commons.lang3.ArrayUtils.isNotEmpty;
 
@@ -76,6 +77,19 @@ public final class Arrays<ELEMENT> extends Objects<ELEMENT> implements ArraysAss
     @Override
     public void assertNullOrEmpty(AssertionsInfo info, ELEMENT[] actual) {
         if (isNotEmpty(actual)) {
+            throw failures.failure(info, IterableErrorMessage.shouldBeNullOrEmpty(actual));
+        }
+    }
+
+    /**
+     * assert {@code actual} is null or empty.
+     *
+     * @param info   {@link io.github.ones1kk.assertion.core.info.ErrorMessageInfo}
+     * @param actual actual
+     */
+    @Override
+    public void assertNotNullOrNotEmpty(AssertionsInfo info, ELEMENT[] actual) {
+        if (isNull(actual) || isEmpty(actual)) {
             throw failures.failure(info, IterableErrorMessage.shouldNotBeNullOrEmpty(actual));
         }
     }

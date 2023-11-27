@@ -33,6 +33,8 @@ public interface ArrayIterable<ELEMENT> {
 
     void assertNullOrEmpty(AssertionsInfo info, ELEMENT[] actual);
 
+    void assertNotNullOrNotEmpty(AssertionsInfo info, ELEMENT[] actual);
+
     void assertContains(AssertionsInfo info, ELEMENT[] actual, ELEMENT expected);
 
     void assertDoesNotContain(AssertionsInfo info, ELEMENT[] actual, ELEMENT expected);
