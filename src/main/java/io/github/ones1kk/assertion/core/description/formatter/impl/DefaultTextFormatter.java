@@ -26,7 +26,7 @@ import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 public class DefaultTextFormatter implements Formattable {
 
     /**
-     * <p> Print expected, actual and description format like below.</p>
+     * <p> print expected, actual and description like below format.</p>
      * <pre>
      *     Expected    : expected
      *     Actual      : actual
@@ -44,7 +44,7 @@ public class DefaultTextFormatter implements Formattable {
     }
 
     /**
-     * <p> Print actual and description format like below.</p>
+     * <p> print actual and description like below format.</p>
      * <pre>
      *     Actual      : actual
      *     Description : description
@@ -60,7 +60,7 @@ public class DefaultTextFormatter implements Formattable {
     }
 
     /**
-     * <p> Print only description format like below.</p>
+     * <p> print only description like below format.</p>
      * <pre>
      *     Description : description
      * </pre>
@@ -74,7 +74,7 @@ public class DefaultTextFormatter implements Formattable {
     }
 
     /**
-     * <p> Print expected, actual and description format like below.</p>
+     * <p> print expected, actual and description like below format.</p>
      * <pre>
      *     Expected    : expected
      *     Actual      : actual
@@ -92,7 +92,7 @@ public class DefaultTextFormatter implements Formattable {
     }
 
     /**
-     * <p> Print actual and description format like below.</p>
+     * <p> print actual and description like below format.</p>
      * <pre>
      *     Actual      : actual
      *     Description : description
@@ -108,7 +108,7 @@ public class DefaultTextFormatter implements Formattable {
     }
 
     /**
-     * <p> Print only description format like below.</p>
+     * <p> print only description like below format.</p>
      * <pre>
      *     Description : description
      * </pre>

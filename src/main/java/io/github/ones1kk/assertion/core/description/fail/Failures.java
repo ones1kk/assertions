@@ -17,13 +17,13 @@ package io.github.ones1kk.assertion.core.description.fail;
 
 import io.github.ones1kk.assertion.core.description.Description;
 import io.github.ones1kk.assertion.core.description.formatter.Formattable;
-import io.github.ones1kk.assertion.core.description.formatter.impl.DefaultTextFormatter;
+import io.github.ones1kk.assertion.core.description.formatter.impl.SimpleTextFormatter;
 import io.github.ones1kk.assertion.core.exception.AssertException;
 import io.github.ones1kk.assertion.core.info.AssertionsInfo;
 
 public class Failures {
 
-    private Formattable formattable = new DefaultTextFormatter();
+    private Formattable formattable = new SimpleTextFormatter();
 
     public AssertException failure(AssertionsInfo info, String errorMessage) {
         if (info.hasOverrideErrorMessage()) {

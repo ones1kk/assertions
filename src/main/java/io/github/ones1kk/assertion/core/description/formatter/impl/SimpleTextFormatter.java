@@ -26,7 +26,7 @@ import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 public final class SimpleTextFormatter implements Formattable {
 
     /**
-     * <p> Print expected, actual and description format like below.</p>
+     * <p> print expected, actual and description like below format.</p>
      *
      * <pre>
      *     <strong>{@code description}</strong>(expected:<strong>{@code expected}</strong> actual:<strong>{@code actual}</strong>)
@@ -43,7 +43,7 @@ public final class SimpleTextFormatter implements Formattable {
     }
 
     /**
-     * <p> Print actual and description format like below.</p>
+     * <p> print actual and description like below format.</p>
      * <pre>
      *     <strong>{@code description}</strong>(actual: <strong>{@code actual}</strong>)
      * </pre>
@@ -58,7 +58,7 @@ public final class SimpleTextFormatter implements Formattable {
     }
 
     /**
-     * <p> Print only description format like below.</p>
+     * <p> print only description like below format.</p>
      * <pre>
      *     <strong>{@code description}</strong>
      * </pre>
@@ -72,7 +72,7 @@ public final class SimpleTextFormatter implements Formattable {
     }
 
     /**
-     * <p> Print expected, actual and description format like below.</p>
+     * <p> print expected, actual and description like below format.</p>
      *
      * <pre>
      *     <strong>{@code description}</strong>(expected:<strong>{@code expected}</strong> actual:<strong>{@code actual}</strong>)
@@ -89,7 +89,7 @@ public final class SimpleTextFormatter implements Formattable {
     }
 
     /**
-     * <p> Print actual and description format like below.</p>
+     * <p> print actual and description like below format.</p>
      * <pre>
      *     <strong>{@code description}</strong>(actual: <strong>{@code actual}</strong>)
      * </pre>
@@ -104,7 +104,7 @@ public final class SimpleTextFormatter implements Formattable {
     }
 
     /**
-     * <p> Print only description format like below.</p>
+     * <p> print only description like below format.</p>
      * <pre>
      *     <strong>{@code description}</strong>
      * </pre>
