@@ -48,7 +48,7 @@ public class Offset<T extends Number> {
     }
 
     /**
-     * Verify {@code expected} is in offset area
+     * verify {@code expected} is in offset area
      *
      * @param actual   reference value.
      * @param expected expected in offset area.

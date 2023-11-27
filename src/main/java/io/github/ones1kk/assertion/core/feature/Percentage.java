@@ -62,7 +62,7 @@ public final class Percentage<T extends Number> {
     }
 
     /**
-     * Verify {@code expected} is within range
+     * verify {@code expected} is within range
      *
      * @param actual   reference value.
      * @param expected expected To be within range.

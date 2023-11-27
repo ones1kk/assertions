@@ -84,7 +84,7 @@ public final class NumberArrayContainableImpl<ELEMENT extends Number> implements
     }
 
     /**
-     * Verify {@code expected} is max in array
+     * verify {@code expected} is max in array
      * <p> Cast to Double with the largest data size among number type.</p>
      *
      * @param actual   reference value.
@@ -102,7 +102,7 @@ public final class NumberArrayContainableImpl<ELEMENT extends Number> implements
     }
 
     /**
-     * Verify {@code expected} is min in array
+     * verify {@code expected} is min in array
      * <p> Cast to Double with the largest data size among number type.</p>
      *
      * @param actual   reference value.
@@ -120,7 +120,7 @@ public final class NumberArrayContainableImpl<ELEMENT extends Number> implements
     }
 
     /**
-     * Verify {@code expected} is sum in array
+     * verify {@code expected} is sum in array
      * <p> Cast to Double with the largest data size among number type.</p>
      *
      * @param actual   reference value.
