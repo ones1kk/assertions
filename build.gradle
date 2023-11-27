@@ -65,14 +65,23 @@ jacocoTestReport {
 jacocoTestCoverageVerification {
     violationRules {
         rule {
-            limit {
-            }
-        }
-
-        rule {
             enabled = true
             element = 'CLASS'
+            limit {
+                counter = 'LINE'
+                value = 'COVEREDRATIO'
+            }
         }
+    }
+
+    afterEvaluate {
+
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it,
+                    exclude: ["io.github.ones1kk.assertion.core/message/**",
+                              "io.github.ones1kk.assertion.core/constant/**"
+                    ])
+        }))
     }
 }
 
