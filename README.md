@@ -39,9 +39,9 @@ implementation 'io.github.ones1kk:assertions:1.0.0'
 ## Example
 
 ```java
-import java.util.Formattable;
+import io.github.ones1kk.assertion.core.description.formatter.Formattable;
 
-List<String> actual = List.of("1","2","3","4");
+List<String> actual = List.of("1", "2", "3", "4");
 
 List<String> expected = List.of("1");
 
@@ -61,7 +61,7 @@ Asserts.that(actual)
     .as("The given 'actual' should not contain null.")
     .doesNotContainNull()
     // if above assertions are paased, then if below assertions are failed, default error message will be printed.
-    // check the given 'actual size.
+    // check the given 'actual' size.
     .hasSize(4)
     // The size of given 'actual' should be larger than the size of given 'expected'.
     .isLargerThan(expecred);
